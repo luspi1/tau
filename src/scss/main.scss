@@ -6,10 +6,12 @@
 // Страницы
 @import "./pages/info";
 @import "./pages/documents";
+@import "./pages/organizations";
 
 // Компоненты
 @import "./components/modals";
 @import "media/media-info";
+@import "media/media-documents";
 
 @import "./components/header";
 @import "./components/footer";

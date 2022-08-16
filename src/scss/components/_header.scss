@@ -140,6 +140,14 @@
       }
     }
   }
+  .header-menu.organizations_active {
+    .header__organizations-link {
+      color: #2F65F6;
+      svg path {
+        fill: #2F65F6;
+      }
+    }
+  }
 
 
 }

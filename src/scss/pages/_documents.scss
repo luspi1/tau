@@ -1,6 +1,42 @@
 .page-doc {
-  margin-top: 26px;
-  margin-bottom: 100vh;
+  padding-top: 26px;
+  padding-bottom: 250px;
+  &__scan {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    img {
+      border-radius: 5px;
+      width: 100%;
+      height: 100%;
+    }
+    svg {
+      position: absolute;
+      right: -7px;
+      top: -7px;
+      z-index: 10;
+      cursor: pointer;
+      .delete-bg,
+      .delete-cross {
+        transition: all .3s;
+      }
+
+      &:hover .delete-bg {
+        fill: #2F65F6;
+      }
+      &:hover .delete-cross {
+        fill: #ffffff;
+      }
+    }
+  }
+
+  &__scan-title {
+    @include montserrat-regular;
+    font-size: 16px;
+    line-height: 20px;
+    color: #858584;
+    margin-bottom: 10px;
+  }
 
   &__inner {
     display: flex;
@@ -43,6 +79,33 @@
     margin-bottom: 30px;
   }
 
+  .page-doc__scans-wrapper {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__item-scans {
+    display: flex;
+    margin-right: 10px;
+  }
+
+  &__scan-add {
+    border: none;
+    background: none;
+    cursor: pointer;
+    path {
+      transition: all .3s;
+    }
+    &:hover path {
+      fill: #2F65F6;
+    }
+  }
+
+  &__item-scan:not(:last-child) {
+    margin-right: 12px;
+  }
+
   &__item-title {
     font-size: 16px;
     line-height: 20px;
@@ -72,11 +135,15 @@
     width: 32%;
   }
 
+  &__insurance {
+    margin-bottom: 25px;
+  }
+
   &__insurance,
   &__tax {
     border: 1px solid #D8D8D8;
     border-radius: 15px;
-    padding: 35px 30px 34px 30px;
+    padding: 35px 30px 62px 30px;
   }
 
 
@@ -94,6 +161,7 @@
     font-size: 22px;
     line-height: 27px;
     color: #222220;
+    margin-bottom: 25px;
   }
 
 

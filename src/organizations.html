@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html', {
+'title': 'Организации',
+
+})
+
+<script src="js/main.js"></script>
+<body class="page__body">
+<div class="site-container">
+  <div class="modal-overlay"></div>
+  @include('partials/header.html', {
+  'active': 'organizations_active'
+  })
+
+  <main class="main">
+    <section class="section page-organizations">
+      <div class="container">
+        <div class="page-organizations__top">
+          <h1 class="page-organizations__title">Организации</h1>
+          <button class="page-organizations__btn" type="button">
+            Добавить организацию
+          </button>
+        </div>
+
+        <ul class="page-organizations__table org-table">
+          <li class="org-table__row org-table__row-title org-table__row_bg">
+            <p class="org-table__cell org-table__agency">Основная деятельность</p>
+            <p class="org-table__cell org-table__reg">Регистрация</p>
+            <p class="org-table__cell org-table__employees">Сотрудников</p>
+            <p class="org-table__cell org-table__counterparties">Контрагентов</p>
+            <p class="org-table__cell org-table__deals">Сделок</p>
+          </li>
+          <li class="org-table__row">
+            <p class="org-table__cell org-table__agency">ООО «Росавтодорпроектмашинвест
+              Инновации»</p>
+            <p class="org-table__cell org-table__reg">28 февраля 2022</p>
+            <p class="org-table__cell org-table__employees">12</p>
+            <p class="org-table__cell org-table__counterparties">21</p>
+            <p class="org-table__cell org-table__deals">6</p>
+          </li>
+          <li class="org-table__row org-table__item_bg">
+            <p class="org-table__cell org-table__agency">ООО «Росавтодорпроектмашинвест
+              Инновации»</p>
+            <p class="org-table__cell org-table__reg">28 февраля 2022</p>
+            <p class="org-table__cell org-table__employees">12</p>
+            <p class="org-table__cell org-table__counterparties">21</p>
+            <p class="org-table__cell org-table__deals">6</p>
+          </li>
+          <li class="org-table__row">
+            <p class="org-table__cell org-table__agency">Якименко Алексей Викторович</p>
+            <p class="org-table__cell org-table__reg">28 февраля 2022</p>
+            <p class="org-table__cell org-table__employees">12</p>
+            <p class="org-table__cell org-table__counterparties">21</p>
+            <p class="org-table__cell org-table__deals">6</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  @include('partials/footer.html')
+</div>
+
+</body>
+
+</html>
+
+<!--<ul class="org-table__column org-table__agency-column">-->
+<!--  <li class="org-table__title">Основная деятельность</li>-->
+<!--  <li class="org-table__agency">ООО «Росавтодорпроектмашинвест-->
+<!--    Инновации»-->
+<!--  </li>-->
+<!--  <li class="org-table__agency">ООО «Росавтодорпроектмашинвест-->
+<!--    Инновации»-->
+<!--  </li>-->
+<!--  <li class="org-table__agency">Якименко Алексей Викторович</li>-->
+<!--</ul>-->
+<!--<ul class="org-table__column org-table__reg-column">-->
+<!--  <li class="org-table__title">Регистрация</li>-->
+<!--  <li class="org-table__reg">28 февраля 2022</li>-->
+<!--  <li class="org-table__reg">28 февраля 2022</li>-->
+<!--  <li class="org-table__reg">28 февраля 2022</li>-->
+<!--</ul>-->
+<!--<ul class="org-table__column org-table__employees-column">-->
+<!--  <li class="org-table__title">Сотрудников</li>-->
+<!--  <li class="org-table__employees">12</li>-->
+<!--  <li class="org-table__employees">12</li>-->
+<!--  <li class="org-table__employees">12</li>-->
+<!--</ul>-->
+<!--<ul class="org-table__column org-table__counterparties-column">-->
+<!--  <li class="org-table__title">Контрагентов</li>-->
+<!--  <li class="org-table__counterparties">21</li>-->
+<!--  <li class="org-table__counterparties">21</li>-->
+<!--  <li class="org-table__counterparties">21</li>-->
+<!--</ul>-->
+<!--<ul class="org-table__column org-table__deals-column">-->
+<!--  <li class="org-table__title">Сделок</li>-->
+<!--  <li class="org-table__deals">6</li>-->
+<!--  <li class="org-table__deals">6</li>-->
+<!--  <li class="org-table__deals">6</li>-->
+<!--</ul>-->

@@ -1,0 +1,92 @@
+.page-organizations {
+  padding-bottom: 100vh;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 25px;
+  }
+
+  &__title {
+    @include montserrat-semibold;
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  &__btn {
+    background: $link;
+    border-radius: 5px;
+    border: none;
+    @include montserrat-semibold;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    transition: all .3s;
+    padding: 10px 26px;
+    cursor: pointer;
+
+    &:hover {
+      background: #264DDB;
+    }
+  }
+
+
+  .org-table {
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+
+    &__row {
+      display: flex;
+    }
+
+    &__cell {
+      width: 100%;
+      flex: 1 1 auto;
+      max-width: 500px;
+    }
+    //&__column {
+    //  display: flex;
+    //  flex-direction: column;
+    //
+    //  li:not(.org-table__title) {
+    //    padding: 19px 0;
+    //  }
+    //
+    //  li:nth-child(odd) {
+    //    background-color: #F7F8FA;
+    //  }
+    //  &.org-table__agency-column {
+    //    li {
+    //      padding-left: 23px;
+    //    }
+    //  }
+    //  &.org-table__deals-column {
+    //    li {
+    //      padding-right: 23px;
+    //    }
+    //  }
+    //}
+    //
+    //&__title {
+    //  @include montserrat-regular;
+    //  font-size: 16px;
+    //  line-height: 20px;
+    //  color: #858584;
+    //  padding: 13px 0;
+    //}
+    //
+    //&__agency {
+    //  @include montserrat-medium;
+    //  font-size: 18px;
+    //  line-height: 22px;
+    //  color: #000000;
+    //}
+
+  }
+
+
+}
