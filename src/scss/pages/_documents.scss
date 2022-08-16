@@ -1,0 +1,100 @@
+.page-doc {
+  margin-top: 26px;
+  margin-bottom: 100vh;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    @include montserrat-semibold;
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 27px;
+  }
+
+  &__passport {
+    border: 1px solid #D8D8D8;
+    border-radius: 15px;
+    padding: 30px 30px 0 20px;
+    width: 66%;
+    margin-right: 20px;
+  }
+
+  &__passport-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__passport-title,
+  &__insurance-title,
+  &__tax-title {
+    @include montserrat-bold;
+    font-size: 26px;
+    line-height: 32px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  &__passport-item {
+    width: 47%;
+    margin-right: 20px;
+    margin-bottom: 30px;
+  }
+
+  &__item-title {
+    font-size: 16px;
+    line-height: 20px;
+    color: #858584;
+    margin-bottom: 10px;
+  }
+
+  &__item-content {
+    @include montserrat-medium;
+    font-size: 16px;
+    line-height: 24px;
+    color: #222220;
+    max-width: 390px;
+  }
+
+  .passport-number {
+    @include montserrat-medium;
+    font-size: 22px;
+    line-height: 27px;
+    color: #222220;
+  }
+
+  &__inner-right {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 32%;
+  }
+
+  &__insurance,
+  &__tax {
+    border: 1px solid #D8D8D8;
+    border-radius: 15px;
+    padding: 35px 30px 34px 30px;
+  }
+
+
+  &__insurance-subtitle,
+  &__tax-subtitle {
+    font-size: 16px;
+    line-height: 20px;
+    color: #858584;
+    margin-bottom: 10px;
+  }
+
+  &__insurance-content,
+  &__tax-content {
+    @include montserrat-medium;
+    font-size: 22px;
+    line-height: 27px;
+    color: #222220;
+  }
+
+
+}

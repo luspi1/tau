@@ -1,0 +1,404 @@
+//@media (min-width: 1710px) {
+//  .container {
+//    max-width: 1710px;
+//  }
+//}
+
+@media (max-width: 1440px) {
+  .detailed-info .detailed-item__deal-list {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1280px) {
+
+  .prime-info__desc .edit-wrapper {
+    width: 90%;
+  }
+
+
+  .prime-info__inner {
+    padding: 23px 30px 17px 25px;
+  }
+
+  .prime-info__data {
+    justify-content: flex-start;
+
+    li {
+      width: 33%;
+      margin-right: 0;
+      margin-bottom: 20px;
+
+      .edit-wrapper {
+        max-width: 65%;
+      }
+    }
+
+  }
+
+
+  .detailed-info .detailed-item {
+    padding: 21px 20px 24px 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .prime-info {
+    margin-top: 0;
+  }
+
+
+  .prime-info__person-name {
+    width: 335px;
+  }
+
+  .prime-info__desc {
+    max-width: 515px;
+  }
+  .prime-info__person h3 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+
+  .prime-info__inner p {
+    font-size: 14px;
+  }
+
+  .edit-wrapper .edit-input {
+    font-size: 14px;
+  }
+
+
+  .detailed-info__items {
+    a, p {
+      font-size: 14px;
+    }
+  }
+
+  .detailed-info .detailed-item__text.green-selection {
+    font-size: 18px;
+    line-height: 25px;
+  }
+
+  .bank-details .bank__list {
+    justify-content: space-around;
+
+    p {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .prime-info__inner {
+    padding: 23px 10px 17px 10px;
+  }
+
+  .prime-info__title {
+    font-size: 25px;
+    line-height: 34px;
+  }
+
+  .prime-info__about {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 25px;
+  }
+  .prime-info__desc {
+    max-width: 100%;
+  }
+
+  .prime-info__person {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .prime-info__person-name {
+    min-width: 330px;
+  }
+
+  .prime-info__desc .edit-wrapper {
+    width: 80%;
+  }
+
+
+  .prime-info__data {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .prime-info__data li {
+    width: 100%;
+  }
+
+  .prime-info__data .prime-info__data-title {
+    max-width: 100%;
+  }
+
+
+  .prime-info__data li {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .prime-info__person-img {
+    width: 65px;
+    height: 65px;
+    margin-right: 15px;
+  }
+  .prime-info__person-name {
+    width: 200px;
+  }
+
+  .detailed-info .detailed-info__items {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0;
+    grid-row-gap: 10px;
+  }
+
+  .detailed-info .detailed-cadre {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .detailed-info .detailed-deals {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  .detailed-info .detailed-balance {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .detailed-info .detailed-rep {
+    grid-area: 4 / 1 / 5 / 2;
+  }
+  .detailed-info .detailed-date {
+    grid-area: 5 / 1 / 6 / 2;
+  }
+
+
+  .bank-details .bank__list {
+    flex-direction: column;
+
+    .bank__list-item {
+      width: 100%;
+    }
+  }
+
+  .bank-details {
+    margin-bottom: 70px;
+  }
+}
+
+@media (max-width: 540px) {
+  .prime-info__person-name {
+    width: 200px;
+    min-width: 200px;
+  }
+}
+
+
+// Адаптив модалок
+
+@media (max-width: 1280px) {
+  .prime-info__person {
+    .modal-fullname {
+      width: 950px;
+      padding: 50px 50px 50px 45px;
+    }
+  }
+
+  .prime-info__data {
+    .modal-socials {
+      width: 950px;
+      padding: 35px 30px 40px 30px;
+
+      .socials-list__address-link {
+        width: 55%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .prime-info__person {
+    .modal-fullname {
+      width: 88%;
+      padding: 30px 40px 40px 40px;
+
+      h2 {
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: 20px;
+      }
+
+      &__input {
+        padding: 0 20px 0 15px;
+      }
+
+      &__label, &__input {
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      &__input_active ~ .modal-fullname__label {
+        top: 13px;
+        font-size: 13px;
+      }
+
+      .error-message {
+        font-size: 14px;
+        line-height: 18px;
+      }
+
+      &__item {
+        margin-bottom: 20px;
+      }
+
+    }
+  }
+  .prime-info__data {
+    .modal-socials {
+      width: 88%;
+
+      h2 {
+        font-size: 30px;
+        line-height: 40px;
+        margin-bottom: 20px;
+      }
+
+      .socials-list__address-link {
+        width: 32%;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+
+  .prime-info__person {
+    .modal-fullname {
+      min-width: 300px;
+      padding: 20px 20px 60px 20px;
+
+      h2 {
+        font-size: 26px;
+        line-height: 32px;
+      }
+
+      &__label, &__input {
+      }
+
+      &__item {
+        margin-bottom: 0;
+      }
+
+      &__input-list {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+      }
+
+      &__item-input {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+      .error-message {
+        margin-bottom: 5px;
+      }
+
+      &__btns {
+        margin: 0;
+      }
+
+    }
+  }
+  .prime-info__data {
+    .modal-socials {
+      min-width: 300px;
+      padding: 40px 20px 70px 20px;
+      h2 {
+        font-size: 26px;
+        line-height: 32px;
+      }
+
+      .socials-list__item {
+        margin-bottom: 25px;
+      }
+
+      .socials-list__item-title {
+        font-size: 18px;
+        line-height: 24px;
+      }
+
+      .socials-list__inputs-wrapper {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .socials-list .choices {
+        width: 100%;
+      }
+
+      .socials-list__address-link {
+        width: 100%;
+      }
+
+    }
+
+    .modal-socials__save-btn {
+      display: block;
+      padding: 15px 27px;
+      width: 70%;
+      margin: 0 auto 15px;
+    }
+
+    .modal-socials__close-btn {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: 540px) {
+  .prime-info__person {
+    .modal-fullname {
+
+      &__save-btn {
+        display: block;
+        margin: 0 auto 30px;
+      }
+
+      &__close-btn {
+        display: block;
+        margin: 0 auto;
+      }
+
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

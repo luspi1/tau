@@ -1,0 +1,21 @@
+$dark: #222220;
+$link: #2F65F6;
+$caption: #858584;
+
+
+@mixin montserrat-regular {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+@mixin montserrat-medium {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+@mixin montserrat-semibold {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+@mixin montserrat-bold {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
