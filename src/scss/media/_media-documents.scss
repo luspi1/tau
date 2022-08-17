@@ -64,3 +64,101 @@
 
 // Адаптив модалок
 
+
+@media (max-width: 1550px) {
+  .page-doc__inner .passport-modal {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .page-doc__inner .passport-modal {
+    padding: 35px 45px 70px 45px;
+  }
+  .page-doc__inner .passport-modal__input {
+    width: 280px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .page-doc__inner .passport-modal h2 {
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 20px;
+  }
+
+  .page-doc__inner .passport-modal {
+    padding: 30px 30px 50px 30px;
+  }
+
+  .page-doc__inner .passport-modal__item-title {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  .page-doc__inner .passport-modal__type-reg label {
+    margin-bottom: 10px;
+  }
+
+  .page-doc__inner .passport-modal__input {
+    width: 240px;
+    padding: 17px 13px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .page-doc__inner .passport-modal__label {
+    position: absolute;
+    pointer-events: none;
+    left: 20px;
+    top: 50%;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .page-doc__inner .passport-modal__item-textarea {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .page-doc__inner .passport-modal h2 {
+    font-size: 26px;
+    line-height: 32px;
+    margin-bottom: 30px;
+  }
+
+  .page-doc__inner .passport-modal {
+    width: 85%;
+  }
+
+  .page-doc__inner .passport-modal {
+    padding: 20px 20px 60px 20px;
+  }
+
+  .page-doc__inner .passport-modal__item-inner {
+    flex-direction: column;
+  }
+
+  .page-doc__inner .passport-modal__item-inputs {
+    margin-right: 0;
+    margin-bottom: 13px;
+  }
+
+  .page-doc__inner .passport-modal__input {
+    width: 100%;
+  }
+
+  .page-doc__inner .passport-modal__save-btn {
+    margin: 0 auto 20px auto;
+    display: block;
+  }
+
+  .page-doc__inner .passport-modal__close-btn {
+    display: block;
+    margin: 0 auto;
+  }
+
+}
