@@ -2,7 +2,8 @@ import { body, modalOverlay } from "./_vars";
 
 // Функция закрытия модалок, принимает элементы, по нажатию на которые модалки закроются
 const closePopup = (...clickTarget) => {
-  clickTarget.forEach(el => el.addEventListener('click', (e) => {
+  const foundedTargets = clickTarget.filter(el => el)
+  foundedTargets.forEach(el => el.addEventListener('click', (e) => {
     e.preventDefault()
     document.querySelectorAll('.modal').forEach(modal => {
       if (modal.classList.contains('_active')) {

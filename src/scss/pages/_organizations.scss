@@ -1,6 +1,5 @@
 .page-organizations {
-  padding-bottom: 100vh;
-
+  padding-bottom: 130px;
   &__top {
     display: flex;
     align-items: center;
@@ -39,52 +38,71 @@
     flex-direction: column;
     display: flex;
 
+    &__owner-label {
+      display: block;
+      @include montserrat-semibold;
+      font-size: 14px;
+      line-height: 17px;
+      color: #FFFFFF;
+      background-color: $link;
+      padding: 3px 14px;
+      border-radius: 20px;
+      width: 115px;
+      margin-top: 10px;
+    }
+
     &__row {
       display: flex;
+      padding: 21px 25px;
     }
 
     &__cell {
       width: 100%;
       flex: 1 1 auto;
-      max-width: 500px;
+      @include montserrat-regular;
+      font-size: 16px;
+      line-height: 20px;
+      color: #222220;
+      padding-right: 20px;
     }
-    //&__column {
-    //  display: flex;
-    //  flex-direction: column;
-    //
-    //  li:not(.org-table__title) {
-    //    padding: 19px 0;
-    //  }
-    //
-    //  li:nth-child(odd) {
-    //    background-color: #F7F8FA;
-    //  }
-    //  &.org-table__agency-column {
-    //    li {
-    //      padding-left: 23px;
-    //    }
-    //  }
-    //  &.org-table__deals-column {
-    //    li {
-    //      padding-right: 23px;
-    //    }
-    //  }
-    //}
-    //
-    //&__title {
-    //  @include montserrat-regular;
-    //  font-size: 16px;
-    //  line-height: 20px;
-    //  color: #858584;
-    //  padding: 13px 0;
-    //}
-    //
-    //&__agency {
-    //  @include montserrat-medium;
-    //  font-size: 18px;
-    //  line-height: 22px;
-    //  color: #000000;
-    //}
+
+    &__row:nth-child(odd) {
+      background-color: #F7F8FA;
+    }
+
+    &__agency {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 22px;
+      color: #000000;
+    }
+
+
+    &__row-title {
+      padding: 13px 25px;
+      .org-table__cell {
+        color: #858584;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+
+    &__reg {
+      max-width: 15%;
+    }
+
+    &__employees {
+      max-width: 15%;
+    }
+
+    &__counterparties {
+      max-width: 15%;
+    }
+
+    &__deals {
+      max-width: 11%;
+    }
 
   }
 

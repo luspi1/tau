@@ -78,10 +78,11 @@ select::-ms-expand {
   top: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
-  z-index: 998;
   visibility: hidden;
+  z-index: -1;
 
   &_active {
+    z-index: 998;
     visibility: visible;
   }
 }
@@ -173,6 +174,14 @@ select::-ms-expand {
   position: relative;
 }
 
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
 .choices__list--dropdown .choices__placeholder {
   display: none;
 }
@@ -190,4 +199,8 @@ select::-ms-expand {
   font-size: 16px;
   line-height: 20px;
   color: #000000;
+}
+
+.air-datepicker-global-container {
+  z-index: 9999;
 }

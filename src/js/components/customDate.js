@@ -2,9 +2,15 @@ import AirDatepicker from "air-datepicker";
 
 const dateInput = document.querySelector('.prime-info__date-input .edit-input');
 
-
 let startDate = new Date('1905-09-08');
 new AirDatepicker(dateInput, {
+  startDate,
+});
+
+
+const dateIssue = document.querySelector('.passport-modal__date-input');
+
+new AirDatepicker(dateIssue, {
   startDate,
 });
 

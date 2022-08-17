@@ -1,0 +1,66 @@
+@media (max-width: 1280px) {
+
+  .page-organizations .org-table__cell:not(.org-table__agency) {
+    text-align: center;
+  }
+
+  .page-organizations .org-table__employees,
+  .page-organizations .org-table__counterparties,
+  .page-organizations .org-table__deals {
+    max-width: 13%;
+  }
+
+  .page-organizations .org-table__reg {
+    max-width: 18%;
+  }
+
+  .page-organizations .org-table__row-title {
+    padding: 13px 0 13px 25px;
+  }
+
+  .page-organizations .org-table__row {
+
+    padding: 21px 0 21px 25px;
+  }
+
+  .page-organizations .org-table__row-title .org-table__cell {
+    text-align: center;
+  }
+
+}
+
+@media (max-width: 1024px) {
+
+  .page-organizations .org-table__agency {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .page-organizations .org-table__row-title .org-table__cell {
+    font-size: 14px;
+  }
+
+  .page-organizations .org-table__cell:not(.org-table__agency) {
+    font-size: 14px;
+  }
+
+  .page-organizations .org-table__cell{
+    padding-right: 0;
+  }
+
+  .page-organizations .org-table__employees,
+  .page-organizations .org-table__counterparties,
+  .page-organizations .org-table__reg {
+    max-width: 15%;
+  }
+
+  .page-organizations .org-table__deals {
+    max-width: 10%;
+  }
+
+  .page-organizations__table-container {
+    padding: 0 0;
+  }
+
+}

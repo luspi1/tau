@@ -60,7 +60,6 @@ if (editFullnameForm) {
 
 // Валидация
 
-
 if (editFullnameForm) {
   editFullnameForm.addEventListener('input', (e) => {
     const inputTarget = e.target
