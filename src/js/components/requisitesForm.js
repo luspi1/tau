@@ -1,4 +1,4 @@
-import { modalOverlay, modalPassport } from "../_vars";
+import { modalOverlay, modalRequisites } from "../_vars";
 import {
   formToObj,
   sendData,
@@ -8,10 +8,9 @@ import {
   updateFields
 } from "../_functions";
 
-const passportForm = document.querySelector('.passport-modal__form')
-const docPage = document.querySelector('.page-doc')
-const passportUpdatableFields = docPage?.querySelectorAll('[data-updField]')
-
+const editRequisitesForm = document.querySelector('.modal-requisites__form')
+const bankSection = document.querySelector('.bank-details')
+const requisitesUpdatableFields = bankSection?.querySelectorAll('[data-updField]')
 
 
 async function handleFormSubmit (event) {
@@ -20,17 +19,18 @@ async function handleFormSubmit (event) {
   const data = serializeForm(event.target)
   const objData = formToObj(data)
   const jsonData = JSON.stringify(objData)
+
   toggleLoader()
 
-  const response = await sendData(jsonData, '/include/ajax/save_passport.php')
+  const response = await sendData(jsonData, '/include/ajax/save_bankinfo.php')
   const finishedResponse = await response.json()
 
   toggleLoader()
 
   const {status, errortext} = finishedResponse
   if (status === 'ok') {
-    updateFields(objData, passportUpdatableFields)
-    modalPassport.classList.remove('_active')
+    updateFields(objData, requisitesUpdatableFields)
+    modalRequisites.classList.remove('_active')
     modalOverlay.classList.remove('modal-overlay_active')
   } else {
     showInfoModal(errortext)
@@ -40,14 +40,16 @@ async function handleFormSubmit (event) {
 
 // Обработка события отправки
 
-if (passportForm) {
-  passportForm.addEventListener('submit', handleFormSubmit)
+if (editRequisitesForm) {
+  editRequisitesForm.addEventListener('submit', handleFormSubmit)
 }
+
+
 
 // Валидация
 
-if (passportForm) {
-  passportForm.addEventListener('input', (e) => {
+if (editRequisitesForm) {
+  editRequisitesForm.addEventListener('input', (e) => {
     const inputTarget = e.target
     if (!inputTarget.validity.valid) {
       inputTarget.parentElement.classList.add('invalid')
@@ -55,9 +57,9 @@ if (passportForm) {
       inputTarget.parentElement.classList.remove('invalid')
     }
     if (inputTarget.value) {
-      inputTarget.classList.add('passport-modal__input_active')
+      inputTarget.classList.add('modal-requisites__input_active')
     } else {
-      inputTarget.classList.remove('passport-modal__input_active')
+      inputTarget.classList.remove('modal-requisites__input_active')
     }
   })
 }

@@ -1,4 +1,4 @@
-import { body, modalOverlay } from "./_vars";
+import { body, modalOverlay, loader, infoModal } from "./_vars";
 
 // Функция закрытия модалок, принимает элементы, по нажатию на которые модалки закроются
 const closePopup = (...clickTarget) => {
@@ -11,35 +11,7 @@ const closePopup = (...clickTarget) => {
       }
     })
     modalOverlay.classList.remove('modal-overlay_active')
-    body.classList.remove('_lock')
   }))
-}
-
-// Функция обработки данных ФИО
-const treatmentFullnameData = (dataObject) => {
-  Object.keys(dataObject).forEach(key => {
-    if (dataObject[key].lastname) {
-      dataObject[key].lastname = dataObject[key].lastname[0].toUpperCase() +
-        dataObject[key].lastname.toLowerCase().substring(1)
-    }
-    if (dataObject[key].name) {
-      dataObject[key].name = dataObject[key].name[0].toUpperCase() +
-        dataObject[key].name.toLowerCase().substring(1)
-    }
-    if (dataObject[key].patronymic) {
-      dataObject[key].patronymic = dataObject[key].patronymic[0].toUpperCase() +
-        dataObject[key].patronymic.toLowerCase().substring(1)
-    }
-  })
-}
-
-// Функция обновления полей, связанных с ФИО
-const updateFullnameFields = (nominative) => {
-  document.querySelector('.prime-info__name').innerHTML =
-    `${nominative.lastname}<br>${nominative.name} ${nominative.patronymic}`
-  document.querySelector('.bank__recipient-value').textContent =
-    `${nominative.lastname} ${nominative.name} ${nominative.patronymic}`
-  document.querySelector('.account-link span').innerHTML = nominative.lastname
 }
 
 // Функция очистки классов, принимает класс, который будет удален отовсюду
@@ -48,27 +20,65 @@ const removeClasses = (className) => {
   classArr.forEach(el => el.classList.remove(className))
 }
 
-// Функция записи основной информации из инпута в объект данных
-const writeGeneralData = (input, dataObject) => {
-  dataObject[input.dataset.input] = input.value
+
+// Фунцкия отправки fetch запросов
+async function sendData(data, url) {
+  return await fetch(url, {
+    method: 'POST',
+    headers: {'Content-Type': 'multipart/form-data'},
+    body: data,
+  })
 }
 
-// Функция обновления полей, связанных с основной информацией
-const updateGeneralFields = (input, dataObject) => {
-  const allUpdateFiels = document.querySelectorAll(`[data-value=${input.dataset.input}]`)
-  if (allUpdateFiels) {
-    allUpdateFiels.forEach(field => {
-      field.textContent = dataObject[field.dataset.value]
-    })
-  }
+// Обновление полей по дата-атрибуту
+
+const updateFields = (inputsObj, updatableFields) => {
+  updatableFields.forEach(field => {
+    field.textContent = inputsObj[field.dataset.updfield]
+  })
+}
+
+
+//Сбор данных форм
+
+const serializeForm = (formNode) => {
+  return new FormData(formNode)
+}
+
+// Преобразование formData в объект
+const formToObj = (formData) =>  {
+  return Array.from(formData.entries()).reduce((memo, pair) => ({
+    ...memo,
+    [pair[0]]: pair[1],
+  }), {})
+}
+
+// показ/скрытие модалки ошибки
+
+const toggleLoader = () => {
+  loader.classList.toggle('hidden')
+}
+
+const showInfoModal = (responseText) => {
+  infoModal.addEventListener('click', (e) => {
+    if (e.target.classList.contains('info-modal')) {
+      infoModal.classList.add('hidden')
+    }
+
+  })
+  const modalText = infoModal.querySelector('.info-modal__content-text')
+  modalText.textContent = responseText
+  infoModal.classList.remove('hidden')
 }
 
 
 export {
   closePopup,
-  treatmentFullnameData,
-  updateFullnameFields,
   removeClasses,
-  writeGeneralData,
-  updateGeneralFields
+  sendData,
+  serializeForm,
+  toggleLoader,
+  formToObj,
+  showInfoModal,
+  updateFields
 }

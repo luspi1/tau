@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html', {
+'title': 'Новая организация',
+
+})
+
+<body class="page__body">
+<div class="site-container">
+  <div class="modal-overlay"></div>
+  @include('partials/header.html', {
+  'active': 'organizations_active'
+  })
+
+  <main class="main">
+    <section class="section new-organization">
+      <div class="container">
+        <h1 class="new-organization__title">Новая организация</h1>
+        <form action="#" class="new-organization__form" autocomplete="off">
+          <div class="new-organization__section new-organization__logo-section">
+            <h2 class="new-organization__section-title">
+              Изображение (логотип и прочие)
+            </h2>
+            <div class="new-organization__item new-organization__logo-item">
+              <div class="new-organization__item-wrapper">
+                <div
+                  class="new-organization__input-wrapper logo-loading">
+                  <p class="new-organization__input-title">
+                    Укажите адрес изображения
+                  </p>
+                  <input class="new-organization__input" type="text"
+                         name="newOrgLogoLink"
+                         placeholder="https://example.com/img">
+
+                  <p class="new-organization__input-title">
+                    Или загрузите изображение с ПК
+                  </p>
+                  <button class="new-organization__btn" id="logo-add"
+                          type="button" data-id="4a817e3e-38c9-4c6b-9c84-ffbec2505453">Загрузить
+                  </button>
+                </div>
+                <div
+                  class="new-organization__input-wrapper logo-preview">
+                  <div id="new-organization-dropzone"
+                       class="dropzone">
+                    <div class="new-organization__message-wrapper">
+                      <div class="dz-message">
+                      </div>
+                      <div class="dz-message">
+                      </div>
+                      <div class="dz-message">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div
+            class="new-organization__section new-organization__org-info-section">
+            <h2 class="new-organization__section-title">
+              Данные организации*
+            </h2>
+            <div class="new-organization__item">
+              <div
+                class="new-organization__input-wrapper new-organization__fullname-wrapper">
+                <p class="new-organization__input-title">
+                  Краткое название
+                </p>
+                <input class="new-organization__input" type="text"
+                       name="newOrgShortTitle"
+                       placeholder="Краткое название организации, чтобы его можно было использовать в Договоре и других документах">
+              </div>
+            </div>
+            <div class="new-organization__item">
+              <div
+                class="new-organization__input-wrapper new-organization__fullname-wrapper">
+                <p class="new-organization__input-title">
+                  Полное название
+                </p>
+                <input class="new-organization__input" type="text"
+                       name="newOrgFullTitle"
+                       placeholder="Общество с ограниченной ответственностью «Полное название организации»">
+              </div>
+            </div>
+            <div class="new-organization__item">
+              <p class="new-organization__input-title">
+                Руководитель организации
+              </p>
+              <div
+                class="new-organization__item-wrapper new-organization__item-director">
+                <div
+                  class="new-organization__input-wrapper new-organization__director-wrapper">
+                  <select class="new-organization__input"
+                          name="newOrgDirector">
+                    <option value="">Должность руководителя</option>
+                    <option value="director">Руководитель</option>
+                    <option value="non-director">Не руководитель</option>
+                  </select>
+                </div>
+                <div
+                  class="new-organization__input-wrapper new-organization__director-btns">
+                  <button class="new-organization__btn">Подключить контакт в
+                    качестве руководителя
+                  </button>
+                </div>
+                <div
+                  class="new-organization__input-wrapper">
+                  <input type="checkbox" class="new-organization__checkbox"
+                         id="checkDirector" name="newOrgCheckDirector"
+                         value="isDirector">
+                  <label for="checkDirector">Я — руководитель</label>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div
+            class="new-organization__section new-organization__organization-section">
+            <h2 class="new-organization__section-title">
+              Отрасли организации
+            </h2>
+            <div class="new-organization__item">
+              <div
+                class="new-organization__input-wrapper new-organization__desc-wrapper">
+                <p class="new-organization__input-title">
+                  Описание деятельности
+                </p>
+                <input class="new-organization__input" type="text"
+                       name="newOrgDesc">
+              </div>
+            </div>
+            <div class="new-organization__item">
+              <p class="new-organization__input-title">
+                Отрасли из списка
+              </p>
+              <div
+                class="new-organization__item-wrapper new-organization__industries">
+                <div
+                  class="new-organization__input-wrapper">
+                  <select class="new-organization__input"
+                          name="newOrgFirstIndustry">
+                    <option value="">Первая отрасль</option>
+                    <option value="industry1">Отрасль 1</option>
+                    <option value="industry2">Отрасль 2</option>
+                  </select>
+                </div>
+                <div
+                  class="new-organization__input-wrapper">
+                  <select class="new-organization__input"
+                          name="newOrgSecondIndustry">
+                    <option value="">Вторая отрасль</option>
+                    <option value="industry1">Отрасль 1</option>
+                    <option value="industry2">Отрасль 2</option>
+                  </select>
+                </div>
+                <div
+                  class="new-organization__input-wrapper">
+                  <select class="new-organization__input"
+                          name="newOrgThirdIndustry">
+                    <option value="">Третья отрасль</option>
+                    <option value="industry1">Отрасль 1</option>
+                    <option value="industry2">Отрасль 2</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="new-organization__item">
+              <p class="new-organization__input-title">
+                Телефоны
+              </p>
+              <div
+                class="new-organization__item-wrapper new-organization__phones">
+                <div
+                  class="new-organization__input-wrapper">
+                  <input class="new-organization__input"
+                         name="newOrgPhone"
+                         placeholder="+7 (___) ___-__-__" type="tel">
+                </div>
+                <div
+                  class="new-organization__input-wrapper">
+                  <input class="new-organization__input"
+                         name="newOrgMorePhone1"
+                         placeholder="+7 (___) ___-__-__" type="tel">
+                </div>
+                <div
+                  class="new-organization__input-wrapper">
+                  <input class="new-organization__input"
+                         name="newOrgMorePhone2"
+                         placeholder="+7 (___) ___-__-__" type="tel">
+                </div>
+
+              </div>
+            </div>
+            <div class="new-organization__item">
+              <p class="new-organization__input-title">
+                Адреса e-mail
+              </p>
+              <div
+                class="new-organization__item-wrapper new-organization__emails">
+                <div
+                  class="new-organization__input-wrapper">
+                  <input class="new-organization__input"
+                         name="newOrgEmail"
+                         type="email">
+                </div>
+                <div
+                  class="new-organization__input-wrapper">
+                  <input class="new-organization__input"
+                         name="newOrgMoreEmail1"
+                         type="email">
+                </div>
+                <div
+                  class="new-organization__input-wrapper">
+                  <input class="new-organization__input"
+                         name="newOrgMoreEmail2"
+                         type="email">
+                </div>
+              </div>
+            </div>
+            <div class="new-organization__item">
+              <p class="new-organization__input-title">
+                Адреса сайтов
+              </p>
+              <div
+                class="new-organization__item-wrapper new-organization__sites">
+                <div
+                  class="new-organization__input-wrapper">
+                  <input class="new-organization__input"
+                         name="newOrgSite"
+                         type="text">
+                </div>
+                <div
+                  class="new-organization__input-wrapper">
+                  <input class="new-organization__input"
+                         name="newOrgMoreSite1"
+                         type="text">
+                </div>
+                <div
+                  class="new-organization__input-wrapper">
+                  <input class="new-organization__input"
+                         name="newOrgMoreSite2"
+                         type="text">
+                </div>
+              </div>
+            </div>
+            <div class="new-organization__item new-organization__address-item">
+              <p class="new-organization__input-title">
+                Юридический адрес
+              </p>
+              <div
+                class="new-organization__item-wrapper new-organization__address">
+                <div
+                  class="new-organization__input-wrapper new-organization__address-wrapper">
+                  <input class="new-organization__input"
+                         name="newOrgJuristicCity"
+                         type="text"
+                         placeholder="Город, населенный пункт">
+                  <input class="new-organization__input"
+                         name="newOrgJuristicIndex"
+                         type="number"
+                         placeholder="Индекс">
+                </div>
+                <div
+                  class="new-organization__input-wrapper new-organization__textarea-wrapper">
+                  <textarea class="new-organization__input"
+                            name="newOrgJuristicFulladdress"
+                            placeholder="Полный адрес (улица, дом, корпус, строение, офис, помещение)"
+                  ></textarea>
+                </div>
+
+              </div>
+            </div>
+            <div class="new-organization__item new-organization__address-item">
+              <p class="new-organization__input-title">
+                Почтовый адрес
+              </p>
+              <div
+                class="new-organization__item-wrapper new-organization__address">
+                <div
+                  class="new-organization__input-wrapper new-organization__address-wrapper">
+                  <input class="new-organization__input"
+                         name="newOrgMailCity"
+                         type="text"
+                         placeholder="Город, населенный пункт">
+                  <input class="new-organization__input"
+                         name="newOrgMailIndex"
+                         type="number"
+                         placeholder="Индекс">
+                </div>
+                <div
+                  class="new-organization__input-wrapper new-organization__textarea-wrapper">
+                  <textarea class="new-organization__input"
+                            name="newOrgMailFulladdress"
+                            placeholder="Полный адрес (улица, дом, корпус, строение, офис, помещение)"
+                  ></textarea>
+                </div>
+
+              </div>
+            </div>
+            <div
+              class="new-organization__item new-organization__address-physical">
+              <p class="new-organization__input-title">
+                Физический адрес
+              </p>
+              <div
+                class="new-organization__item-wrapper new-organization__address">
+                <div
+                  class="new-organization__input-wrapper new-organization__address-wrapper">
+                  <input class="new-organization__input"
+                         name="newOrgPhysicalCity"
+                         type="text"
+                         placeholder="Город, населенный пункт">
+                  <input class="new-organization__input"
+                         name="newOrgPhysicalIndex"
+                         type="number"
+                         placeholder="Индекс">
+                </div>
+                <div
+                  class="new-organization__input-wrapper new-organization__textarea-wrapper">
+                  <textarea class="new-organization__input"
+                            name="newOrgPhysicalFulladdress"
+                            placeholder="Полный адрес (улица, дом, корпус, строение, офис, помещение)"
+                  ></textarea>
+                </div>
+
+              </div>
+            </div>
+            <div
+              class="new-organization__item new-organization__requisites-item">
+              <p class="new-organization__input-title">
+                Основные реквизиты
+              </p>
+              <div
+                class="new-organization__item-wrapper new-organization__requisites">
+                <div
+                  class="new-organization__input-wrapper">
+                  <input class="new-organization__input"
+                         name="newOrgTaxNumber"
+                         placeholder="ИНН"
+                         type="number">
+                </div>
+                <div
+                  class="new-organization__input-wrapper">
+                  <input class="new-organization__input"
+                         name="newOrgReasonCode"
+                         placeholder="КПП"
+                         type="number">
+                </div>
+                <div
+                  class="new-organization__input-wrapper">
+                  <input class="new-organization__input"
+                         name="newOrgStateNumber"
+                         placeholder="ОГРН"
+                         type="number">
+                </div>
+                <div
+                  class="new-organization__input-wrapper">
+                  <input class="new-organization__input"
+                         name="newOrgKindActivity"
+                         placeholder="ОВЭД"
+                         type="number">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="new-organization__account-list">
+            <div
+              class="new-organization__section new-organization__bank-account">
+              <h2 class="new-organization__section-title">
+                Банковский счет №1
+              </h2>
+              <div
+                class="new-organization__input-wrapper new-organization__checkbox-wrapper">
+                <input type="radio" class="new-organization__checkbox"
+                       id="checkMasterAccount" name="newOrgCheckMasterAccount"
+                       value="isMasterAccount">
+                <label for="checkMasterAccount">Сделать этот счет основным для
+                  организации</label>
+              </div>
+              <div class="new-organization__item new-organization__bank-item">
+                <div
+                  class="new-organization__item-wrapper new-organization__requisites-more">
+                  <div
+                    class="new-organization__input-wrapper">
+                    <p class="new-organization__input-title">
+                      Название счета
+                    </p>
+                    <input class="new-organization__input"
+                           name="newOrgAccountName"
+                           type="text">
+                  </div>
+                  <div
+                    class="new-organization__input-wrapper">
+                    <p class="new-organization__input-title">
+                      Рассчетный счет
+                    </p>
+                    <input class="new-organization__input"
+                           name="newOrgCheckingAccount"
+                           type="number">
+                  </div>
+                  <div
+                    class="new-organization__input-wrapper">
+                    <p class="new-organization__input-title">
+                      Название банка
+                    </p>
+                    <input class="new-organization__input"
+                           name="newOrgBankName"
+                           type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="new-organization__item">
+
+                <div
+                  class="new-organization__item-wrapper new-organization__requisites-more">
+                  <div
+                    class="new-organization__input-wrapper">
+                    <p class="new-organization__input-title">
+                      БИК
+                    </p>
+                    <input class="new-organization__input"
+                           name="newOrgIdentificationCode"
+                           type="number">
+                  </div>
+                  <div
+                    class="new-organization__input-wrapper">
+                    <p class="new-organization__input-title">
+                      Корреспондентский счет
+                    </p>
+                    <input class="new-organization__input"
+                           name="newOrgCorrespondentAccount"
+                           type="number">
+                  </div>
+                  <div
+                    class="new-organization__input-wrapper">
+                    <p class="new-organization__input-title">
+                      Лицевой счет
+                    </p>
+                    <input class="new-organization__input"
+                           name="newOrgBankBook"
+                           type="number">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="new-organization__section new-organization__add-account">
+            <button class="new-organization__btn" type="button">Добавить еще
+              один счет
+            </button>
+          </div>
+          <div class="new-organization__btns">
+            <button class="new-organization__save-btn" type="submit">Сохранить
+              организацию
+            </button>
+            <a href="organizations.html" class="new-organization__close-btn">Отменить
+              сохранение
+            </a>
+          </div>
+        </form>
+      </div>
+    </section>
+    @include('partials/info-modal.html')
+    @include('partials/loader.html')
+  </main>
+
+  @include('partials/footer.html')
+</div>
+
+</body>
+
+</html>
+

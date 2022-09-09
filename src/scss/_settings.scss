@@ -15,10 +15,14 @@ body {
   font-size: 16px;
   line-height: 20px;
   position: relative;
+  //&._lock {
+  //  overflow-y: hidden;
+  //}
+}
 
-  &._lock {
-    overflow-y: hidden;
-  }
+main {
+  min-height: calc(100vh - 60px);
+
 }
 
 ul,
@@ -51,6 +55,10 @@ p {
   margin: 0;
 }
 
+button {
+  padding: 0;
+}
+
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -60,9 +68,14 @@ select::-ms-expand {
   display: none;
 }
 
+.hidden {
+  display: none;
+}
+
 .site-container {
   position: relative;
   overflow: hidden;
+
 }
 
 .container {
@@ -120,7 +133,6 @@ select::-ms-expand {
   top: 28px;
   visibility: hidden;
   opacity: 0;
-  transition: all .2s;
 
   .edit-input {
     @include montserrat-medium;
@@ -179,6 +191,25 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+
+.dz-details,
+.dz-progress,
+.dz-error-message,
+.dz-success-mark,
+.dz-error-mark {
+  display: none !important;
+}
+
+.dz-message {
+  button {
+    padding: 0;
+  }
+}
+
+.dz-preview:not(.dz-preview.dz-processing) {
+  display: none;
 }
 
 

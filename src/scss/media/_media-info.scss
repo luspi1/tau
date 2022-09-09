@@ -95,6 +95,10 @@
     padding: 0 20px;
   }
 
+  .prime-info__inner-container {
+    padding: 0 5px;
+  }
+
   .prime-info__inner {
     padding: 23px 10px 17px 10px;
   }
@@ -151,7 +155,7 @@
   .prime-info__person-img {
     width: 65px;
     height: 65px;
-    margin-right: 15px;
+    margin-right: 35px;
   }
   .prime-info__person-name {
     width: 200px;
@@ -205,180 +209,260 @@
 // Адаптив модалок
 
 @media (max-width: 1280px) {
-  .prime-info__person {
-    .modal-fullname {
-      width: 950px;
-      padding: 50px 50px 50px 45px;
+
+  .modal-fullname,
+  .modal-requisites {
+    width: 950px;
+    padding: 50px 50px 50px 45px;
+  }
+
+
+  .modal-socials {
+    width: 950px;
+    padding: 35px 30px 40px 30px;
+
+    .socials-list__address-link {
+      width: 55%;
+    }
+
+    .socials-list__delete-btn {
+      right: 30px;
     }
   }
 
-  .prime-info__data {
-    .modal-socials {
-      width: 950px;
-      padding: 35px 30px 40px 30px;
-
-      .socials-list__address-link {
-        width: 55%;
-      }
-    }
-  }
 }
 
 @media (max-width: 1024px) {
-  .prime-info__person {
-    .modal-fullname {
-      width: 88%;
-      padding: 30px 40px 40px 40px;
 
-      h2 {
-        font-size: 30px;
-        line-height: 40px;
-        margin-bottom: 20px;
-      }
+  .modal-fullname {
+    width: 88%;
+    padding: 30px 40px 40px 40px;
 
-      &__input {
-        padding: 0 20px 0 15px;
-      }
-
-      &__label, &__input {
-        font-size: 14px;
-        line-height: 20px;
-      }
-
-      &__input_active ~ .modal-fullname__label {
-        top: 13px;
-        font-size: 13px;
-      }
-
-      .error-message {
-        font-size: 14px;
-        line-height: 18px;
-      }
-
-      &__item {
-        margin-bottom: 20px;
-      }
-
+    h2 {
+      font-size: 30px;
+      line-height: 40px;
+      margin-bottom: 20px;
     }
-  }
-  .prime-info__data {
-    .modal-socials {
-      width: 88%;
 
-      h2 {
-        font-size: 30px;
-        line-height: 40px;
-        margin-bottom: 20px;
-      }
-
-      .socials-list__address-link {
-        width: 32%;
-      }
+    &__input {
+      padding: 0 20px 0 15px;
     }
+
+    &__label, &__input {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &__input_active ~ .modal-fullname__label {
+      top: 13px;
+      font-size: 13px;
+    }
+
+    .error-message {
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    &__item {
+      margin-bottom: 20px;
+    }
+
   }
+  .modal-requisites {
+    width: 88%;
+    padding: 30px 40px 40px 40px;
+
+    h2 {
+      font-size: 30px;
+      line-height: 40px;
+      margin-bottom: 20px;
+    }
+
+    &__input {
+      padding: 0 20px 0 15px;
+    }
+
+    &__label, &__input {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &__input_active ~ .modal-requisites__label {
+      top: 13px;
+      font-size: 13px;
+    }
+
+    &__item {
+      margin-bottom: 30px;
+    }
+
+  }
+
+
+  .modal-socials {
+    width: 88%;
+
+    h2 {
+      font-size: 30px;
+      line-height: 40px;
+      margin-bottom: 20px;
+    }
+
+    .socials-list__address-link {
+      width: 32%;
+    }
+
+    .socials-list__delete-btn {
+      right: 170px;
+    }
+
+    .socials-list__inputs-wrapper {
+      width: 790px;
+    }
+
+  }
+
 }
 
 @media (max-width: 768px) {
 
-  .prime-info__person {
-    .modal-fullname {
-      min-width: 300px;
-      padding: 20px 20px 60px 20px;
+  .modal-fullname {
+    min-width: 300px;
+    padding: 20px 20px 60px 20px;
 
-      h2 {
-        font-size: 26px;
-        line-height: 32px;
-      }
-
-      &__label, &__input {
-      }
-
-      &__item {
-        margin-bottom: 0;
-      }
-
-      &__input-list {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-      }
-
-      &__item-input {
-        width: 100%;
-        margin-bottom: 15px;
-      }
-
-      .error-message {
-        margin-bottom: 5px;
-      }
-
-      &__btns {
-        margin: 0;
-      }
-
+    h2 {
+      font-size: 26px;
+      line-height: 32px;
     }
+
+    &__item {
+      margin-bottom: 0;
+    }
+
+    &__input-list {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+    }
+
+    &__item-input {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .error-message {
+      margin-bottom: 5px;
+    }
+
+    &__btns {
+      margin: 0;
+    }
+
   }
-  .prime-info__data {
-    .modal-socials {
-      min-width: 300px;
-      padding: 40px 20px 70px 20px;
-      h2 {
-        font-size: 26px;
-        line-height: 32px;
-      }
 
-      .socials-list__item {
-        margin-bottom: 25px;
-      }
+  .modal-requisites {
+    min-width: 300px;
+    padding: 20px 20px 60px 20px;
 
-      .socials-list__item-title {
-        font-size: 18px;
-        line-height: 24px;
-      }
-
-      .socials-list__inputs-wrapper {
-        flex-direction: column;
-        width: 100%;
-      }
-
-      .socials-list .choices {
-        width: 100%;
-      }
-
-      .socials-list__address-link {
-        width: 100%;
-      }
-
+    h2 {
+      font-size: 26px;
+      line-height: 32px;
     }
 
-    .modal-socials__save-btn {
-      display: block;
-      padding: 15px 27px;
-      width: 70%;
-      margin: 0 auto 15px;
+
+    &__input-list {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
     }
 
-    .modal-socials__close-btn {
-      display: block;
-      margin: 0 auto;
+    &__item-input {
+      width: 100%;
+      margin-bottom: 15px;
     }
+
+    .requisites-bank .modal-requisites__item-input {
+      width: 100%;
+    }
+
+    .requisites-identification .modal-requisites__item-input {
+      width: 100%;
+    }
+
+    &__btns {
+      margin: 0;
+    }
+
   }
+
+  .modal-socials {
+    min-width: 300px;
+    padding: 40px 20px 70px 20px;
+    top: 40%;
+
+    h2 {
+      font-size: 26px;
+      line-height: 32px;
+    }
+
+    .socials-list__item {
+      margin-bottom: 25px;
+    }
+
+    .socials-list__item-title {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    .socials-list__inputs-wrapper {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .socials-list .choices {
+      width: 100%;
+    }
+
+    .socials-list__address-link {
+      width: 100%;
+    }
+
+    .socials-list__delete-btn {
+      right: -45px;
+      top: 50%;
+    }
+
+    .socials-list__item {
+      width: 93%;
+    }
+
+  }
+
+  .modal-socials__save-btn {
+    display: block;
+    padding: 15px 27px;
+    width: 70%;
+    margin: 0 auto 15px;
+  }
+
+  .modal-socials__close-btn {
+    display: block;
+    margin: 0 auto;
+  }
+
 }
 
 @media (max-width: 540px) {
-  .prime-info__person {
-    .modal-fullname {
+  .modal-fullname,
+  .modal-requisites {
+    &__save-btn {
+      display: block;
+      margin: 0 auto 30px;
+    }
 
-      &__save-btn {
-        display: block;
-        margin: 0 auto 30px;
-      }
-
-      &__close-btn {
-        display: block;
-        margin: 0 auto;
-      }
-
+    &__close-btn {
+      display: block;
+      margin: 0 auto;
     }
   }
 }

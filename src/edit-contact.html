@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html', {
+'title': 'Редактировать контакт',
+})
+
+<body class="page__body">
+<div class="site-container">
+  <div class="modal-overlay"></div>
+  @include('partials/header.html', {
+  'bottom-menu': 'bottom-menu_disabled'
+  })
+
+  <main class="main">
+    <section class="section edit-contact">
+      <div class="container">
+        <h1 class="edit-contact__title">Редактировать контакт</h1>
+        <form action="#" class="edit-contact__form" autocomplete="off" data-contact="entity">
+          <div class="edit-contact__item">
+            <div class="edit-contact__item-wrapper">
+              <div
+                class="edit-contact__input-wrapper edit-contact__name-wrapper">
+                <p class="edit-contact__input-title">
+                  Название контакта*
+                </p>
+                <input class="edit-contact__input" type="text"
+                       name="editContactName"
+                       placeholder="Иванов / Иванова"
+                       required
+                >
+              </div>
+              <div
+                class="edit-contact__input-wrapper edit-contact__type-wrapper">
+                <p class="edit-contact__input-title">
+                  Выбор типа контакта*
+                </p>
+                <select class="edit-contact__input edit-contact__contact-type-btn" name="editContactType">
+                  <option value="entity">Юридическое лицо</option>
+                  <option value="individual">Физическое лицо</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="edit-contact__type_entity">
+            <div class="edit-contact__section">
+              <h2 class="edit-contact__section-title">
+                Данные организации*
+              </h2>
+              <div class="edit-contact__item">
+                <div
+                  class="edit-contact__input-wrapper edit-contact__fullname-wrapper">
+                  <p class="edit-contact__input-title">
+                    Полное название
+                  </p>
+                  <input class="edit-contact__input" type="text"
+                         name="editContactFullname"
+                         data-required="entity"
+                         placeholder="Общество с ограниченной ответственностью «Полное название организации»">
+                </div>
+              </div>
+              <div class="edit-contact__item">
+                <p class="edit-contact__input-title">
+                  Руководитель организации
+                </p>
+                <div
+                  class="edit-contact__item-wrapper edit-contact__item-director">
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__director-wrapper">
+                    <select class="edit-contact__input"
+                            name="editContactDirector">
+                      <option value="director">Руководитель</option>
+                      <option value="non-director">Не руководитель</option>
+                    </select>
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__director-btns">
+                    <button class="edit-contact__btn" type="button">Подключить контакт в
+                      качестве руководителя
+                    </button>
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__director-btns edit-contact__add-contact">
+                    <button class="edit-contact__btn" type="button">Добавить контакт</button>
+                  </div>
+                </div>
+
+              </div>
+              <div class="edit-contact__item">
+                <p class="edit-contact__input-title">
+                  ФИО руководителя
+                </p>
+                <div
+                  class="edit-contact__item-wrapper edit-contact__director-fullname">
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input" type="text"
+                           name="editDirectorLastname"
+                           placeholder="Иванов / Иванова" data-required="entity">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input" type="text"
+                           name="editDirectorName"
+                           placeholder="Иван / Мария" data-required="entity">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input" type="text"
+                           name="editDirectorPatronymic"
+                           placeholder="Иванович / Ивановна" data-required="entity">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div
+              class="edit-contact__section edit-contact__organization-section">
+              <h2 class="edit-contact__section-title">
+                Отрасли организации
+              </h2>
+              <div class="edit-contact__item">
+                <div
+                  class="edit-contact__input-wrapper edit-contact__desc-wrapper">
+                  <p class="edit-contact__input-title">
+                    Описание деятельности
+                  </p>
+                  <input class="edit-contact__input" type="text"
+                         name="editOrganizationDesc">
+                </div>
+              </div>
+              <div class="edit-contact__item">
+                <p class="edit-contact__input-title">
+                  Отрасли из списка
+                </p>
+                <div
+                  class="edit-contact__item-wrapper edit-contact__industries">
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <select class="edit-contact__input"
+                            name="editFirstIndustry">
+                      <option value="">Первая отрасль</option>
+                      <option value="industry1">Отрасль 1</option>
+                      <option value="industry2">Отрасль 2</option>
+                    </select>
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <select class="edit-contact__input"
+                            name="editSecondIndustry">
+                      <option value="">Вторая отрасль</option>
+                      <option value="industry1">Отрасль 1</option>
+                      <option value="industry2">Отрасль 2</option>
+                    </select>
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <select class="edit-contact__input"
+                            name="editThirdIndustry">
+                      <option value="">Третья отрасль</option>
+                      <option value="industry1">Отрасль 1</option>
+                      <option value="industry2">Отрасль 2</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="edit-contact__item">
+                <p class="edit-contact__input-title">
+                  Телефоны
+                </p>
+                <div class="edit-contact__item-wrapper edit-contact__phones">
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input"
+                           name="editContactPhone"
+                           placeholder="+7 (___) ___-__-__" type="tel">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input"
+                           name="editContactMorePhone1"
+                           placeholder="+7 (___) ___-__-__" type="tel">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input"
+                           name="editContactMorePhone2"
+                           placeholder="+7 (___) ___-__-__" type="tel">
+                  </div>
+
+                </div>
+              </div>
+              <div class="edit-contact__item">
+                <p class="edit-contact__input-title">
+                  Адреса e-mail
+                </p>
+                <div class="edit-contact__item-wrapper edit-contact__emails">
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input"
+                           name="editContactEmail"
+                           type="email">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input"
+                           name="editContactMoreEmail1"
+                           type="email">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input"
+                           name="editContactMoreEmail2"
+                           type="email">
+                  </div>
+                </div>
+              </div>
+              <div class="edit-contact__item">
+                <p class="edit-contact__input-title">
+                  Адреса сайтов
+                </p>
+                <div class="edit-contact__item-wrapper edit-contact__sites">
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input"
+                           name="editContactSite"
+                           type="text">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input"
+                           name="editContactMoreSite1"
+                           type="text">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input"
+                           name="editContactMoreSite2"
+                           type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="edit-contact__item edit-contact__address-item">
+                <p class="edit-contact__input-title">
+                  Юридический адрес*
+                </p>
+                <div class="edit-contact__item-wrapper edit-contact__address">
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__address-wrapper">
+                    <input class="edit-contact__input"
+                           name="contactJuristicCity"
+                           type="text"
+                           placeholder="Город, населенный пункт"
+                           data-required="entity">
+                    <input class="edit-contact__input"
+                           name="contactJuristicIndex"
+                           type="number"
+                           placeholder="Индекс"
+                           data-required="entity">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__textarea-wrapper">
+                  <textarea class="edit-contact__input"
+                            name="contactJuristicFulladdress"
+                            placeholder="Полный адрес (улица, дом, корпус, строение, офис, помещение)"
+                            data-required="entity"></textarea>
+                  </div>
+
+                </div>
+              </div>
+              <div class="edit-contact__item edit-contact__address-item">
+                <p class="edit-contact__input-title">
+                  Почтовый адрес*
+                </p>
+                <div class="edit-contact__checkbox-group">
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__checkbox-wrapper">
+                    <input type="radio" class="edit-contact__checkbox"
+                           id="checkMatchesJuristic"
+                           name="editContactJuristicMatches"
+                           value="matchesJuristic">
+                    <label for="checkMatchesJuristic">Совпадает с
+                      юридическим</label>
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__checkbox-wrapper">
+                    <input type="radio" class="edit-contact__checkbox"
+                           id="checkMatchesJuristic1"
+                           name="editContactJuristicMatches"
+                           value="notMatchesJuristic">
+                    <label for="checkMatchesJuristic1">Не совпадает с
+                      юридическим</label>
+                  </div>
+                </div>
+
+                <div class="edit-contact__item-wrapper edit-contact__address">
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__address-wrapper">
+                    <input class="edit-contact__input"
+                           name="contactMailCity"
+                           type="text"
+                           placeholder="Город, населенный пункт"
+                           data-required="entity">
+                    <input class="edit-contact__input"
+                           name="contactMailIndex"
+                           type="number"
+                           placeholder="Индекс"
+                           data-required="entity">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__textarea-wrapper">
+                  <textarea class="edit-contact__input"
+                            name="contactMailFulladdress"
+                            placeholder="Полный адрес (улица, дом, корпус, строение, офис, помещение)"
+                            data-required="entity"></textarea>
+                  </div>
+
+                </div>
+              </div>
+              <div class="edit-contact__item edit-contact__address-physical">
+                <p class="edit-contact__input-title">
+                  Физический адрес
+                </p>
+
+                <div class="edit-contact__checkbox-group">
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__checkbox-wrapper">
+                    <input type="radio" class="edit-contact__checkbox"
+                           id="checkMatchesPhysical"
+                           name="editContactPhysicalMatches"
+                           value="matchesPhysical">
+                    <label for="checkMatchesPhysical">Совпадает с
+                      юридическим</label>
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__checkbox-wrapper">
+                    <input type="radio" class="edit-contact__checkbox"
+                           id="checkMatchesPhysical1"
+                           name="editContactPhysicalMatches"
+                           value="notMatchesPhysical">
+                    <label for="checkMatchesPhysical1">Не совпадает с
+                      юридическим</label>
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__checkbox-wrapper">
+                    <input type="radio" class="edit-contact__checkbox"
+                           id="checkMatchesPhysical2"
+                           name="editContactPhysicalMatches"
+                           value="matchesMail">
+                    <label for="checkMatchesPhysical2">Cовпадает с
+                      почтовым</label>
+                  </div>
+                </div>
+
+                <div class="edit-contact__item-wrapper edit-contact__address">
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__address-wrapper">
+                    <input class="edit-contact__input"
+                           name="contactPhysicalCity"
+                           type="text"
+                           placeholder="Город, населенный пункт">
+                    <input class="edit-contact__input"
+                           name="contactPhysicalIndex"
+                           type="number"
+                           placeholder="Индекс">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__textarea-wrapper">
+                  <textarea class="edit-contact__input"
+                            name="contactPhysicalFulladdress"
+                            placeholder="Полный адрес (улица, дом, корпус, строение, офис, помещение)"
+                  ></textarea>
+                  </div>
+
+                </div>
+              </div>
+              <div class="edit-contact__item edit-contact__requisites-item">
+                <p class="edit-contact__input-title">
+                  Основные реквизиты*
+                </p>
+                <div
+                  class="edit-contact__item-wrapper edit-contact__requisites">
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input"
+                           name="contactTaxNumber"
+                           placeholder="ИНН"
+                           type="number"
+                           data-required="entity">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input"
+                           name="contactReasonCode"
+                           placeholder="КПП"
+                           type="number"
+                           data-required="entity">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input"
+                           name="contactStateNumber"
+                           placeholder="ОГРН"
+                           type="number"
+                           data-required="entity">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input"
+                           name="contactKindActivity"
+                           placeholder="ОВЭД"
+                           type="number"
+                           data-required="entity">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="edit-contact__section edit-contact__logo-section">
+              <h2 class="edit-contact__section-title">
+                Логотип организации
+              </h2>
+              <div class="edit-contact__item edit-contact__logo-item">
+                <div class="edit-contact__item-wrapper">
+                  <div
+                    class="edit-contact__input-wrapper logo-loading">
+                    <p class="edit-contact__input-title">
+                      Укажите адрес изображения
+                    </p>
+                    <input class="edit-contact__input" type="text"
+                           name="contactLogoLink"
+                           placeholder="https://example.com/img">
+
+                    <p class="edit-contact__input-title">
+                      Или загрузите изображение с ПК
+                    </p>
+                    <button class="edit-contact__btn" id="logo-add"
+                            type="button">
+                      Загрузить
+                    </button>
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper logo-preview">
+
+                    <div id="contact-dropzone"
+                         class="dropzone">
+                      <div class="dz-message">
+                      </div>
+                    </div>
+
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper logo-textarea">
+                    <p class="edit-contact__input-title">
+                      Включить контакт в группы
+                    </p>
+                    <textarea class="edit-contact__input"
+                              name="contactLogoGroup"></textarea>
+                  </div>
+                </div>
+
+
+              </div>
+              <div class="edit-contact__item">
+                <div class="edit-contact__item-wrapper">
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__group-wrapper">
+                    <p class="edit-contact__input-title">
+                      Включить контакт в группы
+                    </p>
+                    <input class="edit-contact__input" type="text"
+                           name="contactGroup">
+                  </div>
+
+                </div>
+              </div>
+              <div class="edit-contact__item edit-contact__bank-item">
+
+                <div
+                  class="edit-contact__item-wrapper edit-contact__requisites-more">
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <p class="edit-contact__input-title">
+                      Рассчетный счет*
+                    </p>
+                    <input class="edit-contact__input"
+                           name="contactCheckingAccount"
+                           type="number"
+                           data-required="entity">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <p class="edit-contact__input-title">
+                      Название банка*
+                    </p>
+                    <input class="edit-contact__input"
+                           name="contactBankName"
+                           type="text"
+                           data-required="entity">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <p class="edit-contact__input-title">
+                      БИК*
+                    </p>
+                    <input class="edit-contact__input"
+                           name="contactIdentificationCode"
+                           type="number"
+                           data-required="entity">
+                  </div>
+                </div>
+              </div>
+              <div class="edit-contact__item">
+
+                <div
+                  class="edit-contact__item-wrapper edit-contact__requisites-more">
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <p class="edit-contact__input-title">
+                      Получатель*
+                    </p>
+                    <input class="edit-contact__input"
+                           name="contactRecipient"
+                           type="text"
+                           data-required="entity">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <p class="edit-contact__input-title">
+                      Корреспондентский счет*
+                    </p>
+                    <input class="edit-contact__input"
+                           name="contactCorrespondentAccount"
+                           type="number"
+                           data-required="entity">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <p class="edit-contact__input-title">
+                      Лицевой счет*
+                    </p>
+                    <input class="edit-contact__input"
+                           name="contactBankBook"
+                           type="number"
+                           data-required="entity">
+                  </div>
+                </div>
+              </div>
+              <div class="edit-contact__item">
+
+                <div
+                  class="edit-contact__item-wrapper edit-contact__contact-btns">
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <button class="edit-contact__btn contragent-btn" type="submit" data-id="b940b56c-995d-42d2-885d-0708364d100d">Сделать
+                      контрагентом
+                    </button>
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <button class="edit-contact__sm-btn" type="button">Экспорт
+                      контакта в CSV
+                    </button>
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <button class="edit-contact__sm-btn" type="button">Экспорт
+                      контакта в PDF
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="edit-contact__type_individual">
+            <div
+              class="edit-contact__section edit-contact__phys-fullname-section">
+              <h2 class="edit-contact__section-title">
+                Фамилия, имя, отчество*
+              </h2>
+
+              <div class="edit-contact__item edit-contact__phys-fullname">
+                <p class="edit-contact__input-title">
+                  Именительный падеж
+                </p>
+                <div
+                  class="edit-contact__item-wrapper">
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input" type="text"
+                           name="physImmentativeLastname"
+                           placeholder="Иванов / Иванова" data-required="individual" >
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input" type="text"
+                           name="physImmentativeName"
+                           placeholder="Иван / Мария" data-required="individual">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input" type="text"
+                           name="physImmentativePatronymic"
+                           placeholder="Иванович / Ивановна" data-required="individual">
+                  </div>
+                </div>
+              </div>
+              <div class="edit-contact__item edit-contact__phys-fullname">
+                <p class="edit-contact__input-title">
+                  Родительный падеж
+                </p>
+                <div
+                  class="edit-contact__item-wrapper">
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input" type="text"
+                           name="physGenitiveLastname"
+                           placeholder="Иванова / Ивановой" data-required="individual">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input" type="text"
+                           name="physGenitiveName"
+                           placeholder="Ивана / Марии" data-required="individual">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input" type="text"
+                           name="physGenitivePatronymic"
+                           placeholder="Ивановича / Ивановны" data-required="individual">
+                  </div>
+                </div>
+              </div>
+              <div class="edit-contact__item edit-contact__phys-fullname">
+                <p class="edit-contact__input-title">
+                  Дательный падеж
+                </p>
+                <div
+                  class="edit-contact__item-wrapper">
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input" type="text"
+                           name="physDativeLastname"
+                           placeholder="Иванову / Ивановне" data-required="individual">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input" type="text"
+                           name="physDativeName"
+                           placeholder="Ивану / Марии" data-required="individual">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input" type="text"
+                           name="physDativePatronymic"
+                           placeholder="Ивановичу / Ивановне" data-required="individual">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="edit-contact__section">
+              <div class="edit-contact__item">
+                <p class="edit-contact__input-title">
+                  Телефоны
+                </p>
+                <div class="edit-contact__item-wrapper edit-contact__phones">
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input"
+                           name="physPhone"
+                           placeholder="+7 (___) ___-__-__" type="tel">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input"
+                           name="physMorePhone1"
+                           placeholder="+7 (___) ___-__-__" type="tel">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input"
+                           name="physMorePhone2"
+                           placeholder="+7 (___) ___-__-__" type="tel">
+                  </div>
+
+                </div>
+              </div>
+              <div class="edit-contact__item">
+                <p class="edit-contact__input-title">
+                  Адреса e-mail
+                </p>
+                <div class="edit-contact__item-wrapper edit-contact__emails">
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input"
+                           name="physEmail"
+                           type="email">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input"
+                           name="physMoreEmail1"
+                           type="email">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input"
+                           name="physMoreEmail2"
+                           type="email">
+                  </div>
+                </div>
+              </div>
+              <div class="edit-contact__item">
+                <p class="edit-contact__input-title">
+                  Адреса сайтов
+                </p>
+                <div class="edit-contact__item-wrapper edit-contact__sites">
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input"
+                           name="physSite"
+                           type="text">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input"
+                           name="physMoreSite1"
+                           type="text">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <input class="edit-contact__input"
+                           name="physMoreSite2"
+                           type="text">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="edit-contact__section edit-contact__phys-passport-section">
+              <div class="edit-contact__item edit-contact__address-item">
+                <p class="edit-contact__input-title">
+                  Паспортные данные*
+                </p>
+                <div class="edit-contact__item-wrapper edit-contact__address">
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__address-wrapper">
+                    <input class="edit-contact__input"
+                           name="physNumberPassport"
+                           type="text"
+                           placeholder="Номер и серия паспорта"
+                           data-required="individual">
+                    <input class="edit-contact__input"
+                           name="physDatePassport"
+                           type="text"
+                           placeholder="Когда выдан паспорт"
+                           data-required="individual">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__textarea-wrapper">
+                  <textarea class="edit-contact__input"
+                            name="physIssuerPassport"
+                            placeholder="Кем выдан пасспорт"
+                            data-required="individual"></textarea>
+                  </div>
+
+                </div>
+              </div>
+              <div class="edit-contact__item edit-contact__address-item">
+                <p class="edit-contact__input-title">
+                  Адрес постоянной регистрации*
+                </p>
+
+                <div class="edit-contact__item-wrapper edit-contact__address">
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__address-wrapper">
+                    <input class="edit-contact__input"
+                           name="physConstantCity"
+                           type="text"
+                           placeholder="Город, населенный пункт"
+                           data-required="individual">
+                    <input class="edit-contact__input"
+                           name="physConstantIndex"
+                           type="number"
+                           placeholder="Индекс"
+                           data-required="individual">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__textarea-wrapper">
+                  <textarea class="edit-contact__input"
+                            name="physConstantFulladdress"
+                            placeholder="Полный адрес (улица, дом, корпус, строение, офис, помещение)"
+                            data-required="individual"></textarea>
+                  </div>
+
+                </div>
+              </div>
+              <div class="edit-contact__item edit-contact__address-item">
+                <p class="edit-contact__input-title">
+                  Адрес временной регистрации
+                </p>
+
+                <div class="edit-contact__item-wrapper edit-contact__address">
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__address-wrapper">
+                    <input class="edit-contact__input"
+                           name="physTemporaryCity"
+                           type="text"
+                           placeholder="Город, населенный пункт">
+                    <input class="edit-contact__input"
+                           name="physTemporaryIndex"
+                           type="number"
+                           placeholder="Индекс">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__textarea-wrapper">
+                  <textarea class="edit-contact__input"
+                            name="physTemporaryFulladdress"
+                            placeholder="Полный адрес (улица, дом, корпус, строение, офис, помещение)"
+                  ></textarea>
+                  </div>
+
+                </div>
+              </div>
+              <div class="edit-contact__item edit-contact__address-physical">
+                <p class="edit-contact__input-title">
+                  Адрес проживания
+                </p>
+                <div class="edit-contact__checkbox-group">
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__checkbox-wrapper">
+                    <input type="radio" class="edit-contact__checkbox"
+                           id="checkPhysAddressType"
+                           name="physAddressType"
+                           value="constantReg">
+                    <label for="checkPhysAddressType">По постоянной
+                      регистрации</label>
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__checkbox-wrapper">
+                    <input type="radio" class="edit-contact__checkbox"
+                           id="checkPhysAddressType1"
+                           name="physAddressType"
+                           value="temporaryReg">
+                    <label for="checkPhysAddressType1">По временной
+                      регистрации</label>
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__checkbox-wrapper">
+                    <input type="radio" class="edit-contact__checkbox"
+                           id="checkPhysAddressType2"
+                           name="physAddressType"
+                           value="notMatchesReg">
+                    <label for="checkPhysAddressType2">Не совпадает с
+                      регистрацией</label>
+                  </div>
+                </div>
+
+                <div class="edit-contact__item-wrapper edit-contact__address">
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__address-wrapper">
+                    <input class="edit-contact__input"
+                           name="residentialPhysicalCity"
+                           type="text"
+                           placeholder="Город, населенный пункт">
+                    <input class="edit-contact__input"
+                           name="residentialPhysicalIndex"
+                           type="number"
+                           placeholder="Индекс">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper edit-contact__textarea-wrapper">
+                  <textarea class="edit-contact__input"
+                            name="residentialPhysicalFulladdress"
+                            placeholder="Полный адрес (улица, дом, корпус, строение, офис, помещение)"
+                  ></textarea>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="edit-contact__item">
+              <p class="edit-contact__input-title">
+                Прочие данные*
+              </p>
+              <div class="edit-contact__item-wrapper edit-contact__other-data">
+                <div
+                  class="edit-contact__input-wrapper">
+                  <input class="edit-contact__input"
+                         name="physTaxNumber"
+                         placeholder="ИНН"
+                         type="number"
+                         data-required="individual">
+                </div>
+                <div
+                  class="edit-contact__input-wrapper">
+                  <input class="edit-contact__input"
+                         name="physInsuranceNumber"
+                         placeholder="СНИЛС"
+                         type="number"
+                         data-required="individual">
+                </div>
+                <div
+                  class="edit-contact__input-wrapper">
+                  <input class="edit-contact__input"
+                         name="physOtherData"
+                         placeholder="Еще данные"
+                         type="number"
+                         data-required="individual">
+                </div>
+              </div>
+            </div>
+
+            <div class="edit-contact__section edit-contact__logo-section">
+              <h2 class="edit-contact__section-title">
+                Фотография контакта
+              </h2>
+              <div class="edit-contact__item edit-contact__logo-item">
+                <div class="edit-contact__item-wrapper">
+                  <div
+                    class="edit-contact__input-wrapper logo-loading">
+                    <p class="edit-contact__input-title">
+                      Укажите адрес изображения
+                    </p>
+                    <input class="edit-contact__input" type="text"
+                           name="contactLogoLink"
+                           placeholder="https://example.com/img">
+
+                    <p class="edit-contact__input-title">
+                      Или загрузите изображение с ПК
+                    </p>
+                    <button class="edit-contact__btn" id="phys-add"
+                            type="button">
+                      Загрузить
+                    </button>
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper logo-preview">
+
+                    <div id="phys-dropzone"
+                         class="dropzone">
+                      <div class="dz-message">
+                      </div>
+                    </div>
+
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper logo-textarea">
+                    <p class="edit-contact__input-title">
+                      Включить контакт в группы
+                    </p>
+                    <textarea class="edit-contact__input"
+                              name="contactLogoGroup"></textarea>
+                  </div>
+                </div>
+
+
+              </div>
+              <div class="edit-contact__item edit-contact__bank-item">
+
+                <div
+                  class="edit-contact__item-wrapper edit-contact__requisites-more">
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <p class="edit-contact__input-title">
+                      Рассчетный счет*
+                    </p>
+                    <input class="edit-contact__input"
+                           name="physCheckingAccount"
+                           type="number"
+                           data-required="individual">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <p class="edit-contact__input-title">
+                      Название банка*
+                    </p>
+                    <input class="edit-contact__input"
+                           name="physBankName"
+                           type="text"
+                           data-required="individual">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <p class="edit-contact__input-title">
+                      БИК*
+                    </p>
+                    <input class="edit-contact__input"
+                           name="physIdentificationCode"
+                           type="number"
+                           data-required="individual">
+                  </div>
+                </div>
+              </div>
+              <div class="edit-contact__item">
+
+                <div
+                  class="edit-contact__item-wrapper edit-contact__recipient-wrapper">
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <p class="edit-contact__input-title">
+                      Получатель*
+                    </p>
+                    <input class="edit-contact__input"
+                           name="physRecipient"
+                           type="text"
+                           data-required="individual">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <p class="edit-contact__input-title">
+                      Корреспондентский счет*
+                    </p>
+                    <input class="edit-contact__input"
+                           name="physCorrespondentAccount"
+                           type="number"
+                           data-required="individual">
+                  </div>
+                </div>
+              </div>
+              <div class="edit-contact__item">
+
+                <div
+                  class="edit-contact__item-wrapper edit-contact__contact-btns">
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <button class="edit-contact__btn contragent-btn" type="submit" data-id="c4c7de1e-8707-4156-a81b-5234a70bbf30">Сделать
+                      контрагентом
+                    </button>
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <button class="edit-contact__sm-btn" type="button">Экспорт
+                      контакта в CSV
+                    </button>
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <button class="edit-contact__sm-btn" type="button">Экспорт
+                      контакта в PDF
+                    </button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="edit-contact__btns">
+            <button class="edit-contact__save-btn" type="submit">Сохранить
+              контакт
+            </button>
+            <a href="contacts.html" class="edit-contact__close-btn">Отменить
+              сохранение
+            </a>
+          </div>
+
+        </form>
+      </div>
+    </section>
+    @include('partials/info-modal.html')
+    @include('partials/loader.html')
+  </main>
+
+  @include('partials/footer.html')
+</div>
+
+</body>
+
+</html>
+

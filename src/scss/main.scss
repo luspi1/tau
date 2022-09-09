@@ -7,12 +7,20 @@
 @import "./pages/info";
 @import "./pages/documents";
 @import "./pages/organizations";
+@import "./pages/contacts";
+@import "./pages/edit-contact";
+@import "./pages/new-organization";
 
 // Компоненты
 @import "./components/modals";
 @import "media/media-info";
 @import "media/media-documents";
 @import "media/media-organizations";
+@import "media/media-contacts";
+@import "media/media-edit-contact";
+@import "media/media-new-organization";
 
 @import "./components/header";
 @import "./components/footer";
+@import "./components/loader";
+@import "./components/info-modal";

@@ -64,7 +64,6 @@
 
 // Адаптив модалок
 
-
 @media (max-width: 1550px) {
   .page-doc__inner .passport-modal {
     width: 80%;
@@ -138,8 +137,14 @@
     padding: 20px 20px 60px 20px;
   }
 
+
+
   .page-doc__inner .passport-modal__item-inner {
     flex-direction: column;
+  }
+
+  .page-doc__inner .passport-modal__item-code .passport-modal__item-input {
+    width: 100%;
   }
 
   .page-doc__inner .passport-modal__item-inputs {

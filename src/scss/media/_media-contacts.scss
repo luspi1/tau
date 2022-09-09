@@ -1,0 +1,135 @@
+@media (max-width: 1280px) {
+  .page-contacts .contacts-table__subject {
+    max-width: 20%;
+  }
+
+  .page-contacts .contacts-table__note {
+    max-width: 24%;
+  }
+
+
+  .page-contacts .contacts-table__row-title {
+    padding: 13px 0 13px 25px;
+  }
+
+  .page-contacts .contacts-table__row {
+    padding: 21px 0 21px 25px;
+  }
+
+  .page-contacts .contacts-table__row-title .contacts-table__subject .choices[data-type*=select-one]::after {
+    right: 20px;
+  }
+
+
+  .page-contacts .contacts-table__row-title .contacts-table__cell .choices__list {
+    width: 200px;
+  }
+
+
+  .page-contacts .contacts-table__row-title .contacts-table__role .choices__list {
+    width: 180px;
+  }
+
+  .page-contacts .contacts-table__row-title .contacts-table__role .choices[data-type*=select-one]::after {
+    right: 63px;
+  }
+
+
+}
+
+@media (max-width: 1024px) {
+  .page-contacts .contacts-table__agency {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  .page-contacts__table-container {
+    padding: 0 0;
+  }
+
+  .page-contacts .contacts-table__row-title .contacts-table__cell {
+    font-size: 14px;
+  }
+
+  .page-contacts .contacts-table__cell:not(.contacts-table__agency) {
+    font-size: 14px;
+  }
+
+  .page-contacts .contacts-table__subject {
+    max-width: 22%;
+  }
+
+  .page-contacts .contacts-table__note {
+    max-width: 16%;
+  }
+  .page-contacts .contacts-table__role {
+    max-width: 13%;
+  }
+
+  .page-contacts .contacts-table__btn {
+    max-width: 8%;
+    padding-right: 0;
+  }
+
+  .page-contacts {
+    padding-bottom: 80px;
+  }
+
+  .page-contacts .contacts-table__row-title .contacts-table__cell .choices__list {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .page-contacts .contacts-table__row-title .contacts-table__subject .choices[data-type*=select-one]::after {
+    right: 42px;
+  }
+
+  .page-contacts .contacts-table__row-title .contacts-table__role .choices[data-type*=select-one]::after {
+    right: 78px;
+  }
+
+}
+
+
+// Адаптив модалок
+
+@media (max-width: 768px) {
+
+  .new-contact {
+    border-radius: 15px;
+    padding: 30px 20px 35px 20px;
+    width: 83%;
+  }
+
+  .new-contact__title {
+    font-size: 30px;
+    line-height: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .new-contact__desc {
+    height: 150px;
+  }
+
+  .new-contact__input {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .new-contact__list-item .choices__inner {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .new-contact__btns {
+    flex-direction: column;
+  }
+
+  .new-contact__create-btn {
+    margin-right: 0;
+    margin-bottom: 25px;
+  }
+
+}

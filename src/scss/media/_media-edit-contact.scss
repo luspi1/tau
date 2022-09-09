@@ -1,0 +1,205 @@
+@media (max-width: 1100px) {
+  .edit-contact {
+    .edit-contact__director-wrapper .choices {
+      width: 285px;
+    }
+
+    .edit-contact__industries .choices {
+      width: 325px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .edit-contact {
+    &__input {
+      font-size: 14px;
+      line-height: 18px;
+      padding: 20px 10px;
+    }
+
+    .edit-contact__item .choices__inner {
+      font-size: 14px;
+      line-height: 21px;
+    }
+
+    .edit-contact__item .choices[data-type*=select-one] .choices__inner {
+      padding-left: 6px;
+    }
+
+    .edit-contact__btn {
+      font-size: 14px;
+      padding: 12px 18px;
+    }
+
+    .edit-contact__contact-btns .edit-contact__input-wrapper .edit-contact__sm-btn {
+      font-size: 14px;
+    }
+
+    .edit-contact__director-wrapper .choices {
+      margin-right: 15px;
+    }
+
+    .edit-contact__add-contact {
+      width: 50%;
+      margin-top: 15px;
+
+      button {
+        width: 283px;
+      }
+    }
+
+    .edit-contact__item-director {
+      flex-wrap: wrap;
+      justify-content: stretch;
+    }
+
+    .edit-contact__industries .choices {
+      width: 238px;
+    }
+
+    .logo-loading {
+      width: 290px;
+    }
+
+    .logo-textarea {
+      width: 32.5%;
+    }
+
+
+  }
+}
+
+@media (max-width: 768px) {
+  .edit-contact {
+
+    .edit-contact__title {
+      font-size: 32px;
+      line-height: 40px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .edit-contact__item-wrapper {
+      justify-content: stretch;
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .edit-contact__name-wrapper {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+
+    .edit-contact__item .choices {
+      width: 100%;
+    }
+
+
+    .edit-contact__director-btns {
+      margin-top: 15px;
+    }
+
+    .edit-contact__add-contact button {
+      width: 100%;
+    }
+
+    .edit-contact__add-contact {
+      width: 70%;
+    }
+
+    .edit-contact__director-btns {
+      width: 70%;
+
+      button {
+        width: 100%;
+      }
+    }
+
+  }
+
+  .edit-contact__director-fullname .edit-contact__input-wrapper,
+  .edit-contact__phones .edit-contact__input-wrapper,
+  .edit-contact__emails .edit-contact__input-wrapper,
+  .edit-contact__sites .edit-contact__input-wrapper,
+  .edit-contact__requisites .edit-contact__input-wrapper,
+  .edit-contact__requisites-more .edit-contact__input-wrapper,
+  .edit-contact__phys-fullname .edit-contact__input-wrapper,
+  .edit-contact__other-data .edit-contact__input-wrapper,
+  .edit-contact__recipient-wrapper .edit-contact__input-wrapper {
+    width: 100%;
+  }
+
+  .edit-contact__industries .choices {
+    margin-bottom: 15px;
+  }
+
+  .edit-contact__address-wrapper {
+    margin-right: 0;
+    width: 100%;
+  }
+
+
+  .edit-contact__textarea-wrapper {
+    width: 100%;
+  }
+
+  .edit-contact .logo-loading {
+    margin-bottom: 20px;
+  }
+
+  .edit-contact .logo-textarea {
+    margin-top: 30px;
+    width: 100%;
+  }
+
+  .edit-contact__contact-btns .edit-contact__input-wrapper {
+    margin-right: 0;
+  }
+  .edit-contact__contact-btns .edit-contact__input-wrapper:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  .edit-contact__btns {
+    flex-direction: column;
+  }
+
+  .edit-contact__save-btn {
+    margin-right: 0;
+    margin-bottom: 25px;
+  }
+
+  .edit-contact {
+    padding-bottom: 100px;
+  }
+
+
+  .edit-contact__checkbox-group {
+    flex-wrap: wrap;
+  }
+
+  .edit-contact__checkbox-group .edit-contact__checkbox-wrapper {
+    margin-bottom: 20px;
+  }
+
+  .edit-contact__input-wrapper {
+    margin-bottom: 15px;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+  .edit-contact {
+
+
+    .edit-contact__add-contact {
+      width: 100%;
+    }
+
+    .edit-contact__director-btns {
+      width: 100%;
+    }
+  }
+}

@@ -3,6 +3,10 @@ $link: #2F65F6;
 $caption: #858584;
 
 
+@mixin montserrat-light{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
 @mixin montserrat-regular {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;

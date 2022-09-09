@@ -1,60 +1,43 @@
-import { treatmentFullnameData, updateFullnameFields } from "../_functions";
+import {
+  formToObj, sendData,
+  serializeForm, showInfoModal, toggleLoader, updateFields
+} from "../_functions";
 import { modalOverlay, body, modalFullname } from "../_vars";
 
 const editFullnameForm = document.querySelector('.modal-fullname__form')
+const primeSection = document.querySelector('.prime-info')
+const fullnameUpdatableFields = primeSection?.querySelectorAll('[data-updField]')
 
+async function handleFormSubmit (event) {
+  event.preventDefault()
 
-export const fullNameData = {
-  nominative: {
-    lastname: '',
-    name: '',
-    patronymic: ''
-  },
-  genitive: {
-    lastname: '',
-    name: '',
-    patronymic: ''
-  },
-  dative: {
-    lastname: '',
-    name: '',
-    patronymic: ''
-  },
+  const data = serializeForm(event.target)
+  const objData = formToObj(data)
+  const jsonData = JSON.stringify(objData)
+
+  toggleLoader()
+
+  const response = await sendData(jsonData, '/include/ajax/save_fio.php')
+  const finishedResponse = await response.json()
+
+  toggleLoader()
+
+  const {status, errortext} = finishedResponse
+  if (status === 'ok') {
+    updateFields(objData, fullnameUpdatableFields)
+    modalFullname.classList.remove('_active')
+    modalOverlay.classList.remove('modal-overlay_active')
+    body.classList.remove('_lock')
+  } else {
+    showInfoModal(errortext)
+  }
 }
 
-const {nominative, genitive, dative} = fullNameData;
 
 // Обработка события отправки
 
 if (editFullnameForm) {
-  editFullnameForm.addEventListener('submit', (e) => {
-    e.preventDefault()
-    const {
-      nominativeLastname,
-      nominativeName,
-      nominativePatronymic,
-      genitiveLastname,
-      genitiveName,
-      genitivePatronymic,
-      dativeLastname,
-      dativeName,
-      dativePatronymic
-    } = e.target.elements;
-    nominative.name = nominativeName.value
-    nominative.lastname = nominativeLastname.value
-    nominative.patronymic = nominativePatronymic.value
-    genitive.name = genitiveName.value
-    genitive.lastname = genitiveLastname.value
-    genitive.patronymic = genitivePatronymic.value
-    dative.name = dativeName.value
-    dative.lastname = dativeLastname.value
-    dative.patronymic = dativePatronymic.value
-    treatmentFullnameData(fullNameData)
-    updateFullnameFields(nominative)
-    modalFullname.classList.remove('_active')
-    modalOverlay.classList.remove('modal-overlay_active')
-    body.classList.remove('_lock')
-  })
+  editFullnameForm.addEventListener('submit', handleFormSubmit)
 }
 
 

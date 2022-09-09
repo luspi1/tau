@@ -5,7 +5,6 @@
 'title': 'Информация',
 })
 
-<script src="js/main.js"></script>
 <body class="page__body">
 <div class="site-container">
   <div class="modal-overlay"></div>
@@ -13,144 +12,291 @@
   'active': 'info_active'
   })
 
-  <main class="main">
+  <main class="main info-page">
     <section class="section prime-info">
       <div class="container">
+        <div class="modal-socials modal" id="socials-modal">
+          <h2>Страницы в соцсетях и адреса сайтов</h2>
+          <form class="modal-socials__form" action="#">
+            <ul class="modal-socials__list socials-list">
+              <li class="socials-list__item">
+                <p class="socials-list__item-title">
+                  Основная ссылка
+                </p>
+                <div class="socials-list__inputs-wrapper">
+                  <select class="socials-list__selector-link">
+                    <option value="">Тип ссылки</option>
+                    <option value="link1">Тип ссылки 1</option>
+                    <option value="link2">Тип ссылки 2</option>
+                    <option value="link3">Тип ссылки 3</option>
+                    <option value="link4">Тип ссылки 4</option>
+                  </select>
+                  <input class="socials-list__address-link" type="text"
+                         placeholder="Адрес ссылки">
+                </div>
+              </li>
+
+            </ul>
+            <button type="button" class="modal-socials__add-btn">
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12.0002 0.5C12.5002 0.5 13.0002 0.5 13.6002 0.5C14.0002 0.6 14.5002 0.600012 14.9002 0.700012C18.1002 1.30001 20.8002 2.9 22.8002 5.5C25.0002 8.4 25.8002 11.8 25.1002 15.4C24.6002 18.3 23.1002 20.7 20.8002 22.6C18.0002 24.9 14.7002 25.9 11.1002 25.4C8.60019 25.1 6.40019 24.1 4.50019 22.4C2.30019 20.5 1.0002 18.1 0.400196 15.2C0.300196 14.7 0.300195 14.3 0.200195 13.8C0.200195 13.3 0.200195 12.8 0.200195 12.2C0.300195 11.8 0.300196 11.4 0.400196 10.9C0.800196 8.29999 2.00019 6.00001 3.80019 4.20001C5.70019 2.30001 7.90019 1.10001 10.5002 0.700012C11.1002 0.600012 11.5002 0.6 12.0002 0.5ZM12.7002 23.9C18.7002 23.9 23.6002 19 23.6002 13C23.6002 7 18.7002 2 12.7002 2C6.7002 2 1.80019 6.89999 1.80019 12.9C1.80019 19 6.7002 23.9 12.7002 23.9Z"
+                  fill="black"/>
+                <path
+                  d="M12.0002 13.8C11.3002 13.8 10.6002 13.8 9.9002 13.8C9.0002 13.8 7.40019 13.8 6.50019 13.8C6.00019 13.8 5.7002 13.5 5.7002 13C5.7002 12.6 6.00019 12.2 6.50019 12.2C7.90019 12.2 10.2002 12.2 11.6002 12.2C11.7002 12.2 11.8002 12.2 11.9002 12.2C11.9002 12.1 11.9002 12 11.9002 11.9C11.9002 10.4 11.9002 8.2 11.9002 6.7C11.9002 6.1 12.4002 5.69999 13.0002 5.89999C13.3002 5.99999 13.5002 6.3 13.5002 6.7C13.5002 8.1 13.5002 10.4 13.5002 11.8C13.5002 11.9 13.5002 12 13.5002 12.1C13.6002 12.1 13.7002 12.1 13.8002 12.1C15.3002 12.1 17.5002 12.1 19.0002 12.1C19.6002 12.1 20.0002 12.7 19.8002 13.2C19.7002 13.5 19.4002 13.7 19.0002 13.7C17.6002 13.7 15.3002 13.7 13.9002 13.7C13.8002 13.7 13.7002 13.7 13.6002 13.7C13.6002 13.8 13.6002 13.9 13.6002 14C13.6002 15.5 13.6002 17.7 13.6002 19.2C13.6002 19.6 13.4002 19.9 13.0002 20C12.7002 20.1 12.3002 20 12.2002 19.7C12.1002 19.5 12.1002 19.3 12.1002 19.2C12.1002 17.8 12.1002 15.6 12.1002 14.1C12.0002 14 12.0002 13.9 12.0002 13.8Z"
+                  fill="black"/>
+              </svg>
+              Добавить еще одну ссылку
+            </button>
+            <div class="modal-socials__control-btns">
+              <button class="modal-socials__save-btn" type="submit">
+                Сохранить
+              </button>
+              <button class="modal-socials__close-btn" type="button">
+                Отменить
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-fullname modal" id="fullname-modal">
+          <h2>Редактирование ФИО</h2>
+          <form class="modal-fullname__form" action="#">
+            <div class="modal-fullname__item fullname-nominative">
+              <h3 class="modal-fullname__form-title">Именительный
+                падеж</h3>
+              <ul class="modal-fullname__input-list">
+                <li class="modal-fullname__item-input">
+                  <p class="modal-fullname__input-title">Фамилия</p>
+                  <div class="modal-fullname__input-wrapper">
+                    <input class="modal-fullname__input" type="text"
+                           name="surname"
+                           pattern="^[а-яА-ЯёЁa-zA-Z]+$"
+                           required>
+                    <label class="modal-fullname__label">Иванов /
+                      Иванова</label>
+                  </div>
+                </li>
+                <li class="modal-fullname__item-input">
+                  <p class="modal-fullname__input-title">Имя</p>
+                  <div class="modal-fullname__input-wrapper">
+                    <input class="modal-fullname__input" type="text"
+                           name="firstname"
+                           pattern="^[а-яА-ЯёЁa-zA-Z]+$"
+                           required>
+                    <label class="modal-fullname__label">Иван /
+                      Мария</label>
+                  </div>
+                </li>
+                <li class="modal-fullname__item-input">
+                  <p class="modal-fullname__input-title">Отчество</p>
+                  <div class="modal-fullname__input-wrapper">
+                    <input class="modal-fullname__input" type="text"
+                           name="fathname"
+                           pattern="^[а-яА-ЯёЁa-zA-Z]+$"
+                           required>
+                    <label class="modal-fullname__label">Иванович /
+                      Ивановна</label>
+                  </div>
+                </li>
+              </ul>
+              <p class="error-message">Допускаются только символы
+                кириллического и
+                латинского алфавита</p>
+            </div>
+            <div class="modal-fullname__item fullname-genitive">
+              <h3 class="modal-fullname__form-title">Родительный
+                падеж</h3>
+              <ul class="modal-fullname__input-list">
+                <li class="modal-fullname__item-input">
+                  <div class="modal-fullname__input-wrapper">
+                    <input class="modal-fullname__input" type="text"
+                           name="surname_rod"
+                           pattern="^[а-яА-ЯёЁa-zA-Z]+$">
+                    <label class="modal-fullname__label">Иванова /
+                      Ивановой</label>
+                  </div>
+                </li>
+                <li class="modal-fullname__item-input">
+                  <div class="modal-fullname__input-wrapper">
+                    <input class="modal-fullname__input" type="text"
+                           name="firstname_rod"
+                           pattern="^[а-яА-ЯёЁa-zA-Z]+$">
+                    <label class="modal-fullname__label">Ивана /
+                      Марии</label>
+                  </div>
+                </li>
+                <li class="modal-fullname__item-input">
+                  <div class="modal-fullname__input-wrapper">
+                    <input class="modal-fullname__input" type="text"
+                           name="fathname_rod"
+                           pattern="^[а-яА-ЯёЁa-zA-Z]+$">
+                    <label class="modal-fullname__label">Ивановича /
+                      Ивановны</label>
+                  </div>
+                </li>
+              </ul>
+              <p class="error-message">Допускаются только символы
+                кириллического и
+                латинского алфавита</p>
+            </div>
+            <div class="modal-fullname__item fullname-dative">
+              <h3 class="modal-fullname__form-title">Дательный падеж</h3>
+              <ul class="modal-fullname__input-list">
+                <li class="modal-fullname__item-input">
+                  <div class="modal-fullname__input-wrapper">
+                    <input class="modal-fullname__input" type="text"
+                           name="surname_dat"
+                           pattern="^[а-яА-ЯёЁa-zA-Z]+$">
+                    <label class="modal-fullname__label">Иванову /
+                      Ивановой</label>
+                  </div>
+                </li>
+                <li class="modal-fullname__item-input">
+                  <div class="modal-fullname__input-wrapper">
+                    <input class="modal-fullname__input" type="text"
+                           name="firstname_dat"
+                           pattern="^[а-яА-ЯёЁa-zA-Z]+$">
+                    <label class="modal-fullname__label">Ивану /
+                      Марии</label>
+                  </div>
+                </li>
+                <li class="modal-fullname__item-input">
+                  <div class="modal-fullname__input-wrapper">
+                    <input class="modal-fullname__input" type="text"
+                           name="fathname_dat"
+                           pattern="^[а-яА-ЯёЁa-zA-Z]+$">
+                    <label class="modal-fullname__label">Ивановичу /
+                      Ивановне</label>
+                  </div>
+                </li>
+              </ul>
+              <p class="error-message">Допускаются только символы
+                кириллического и
+                латинского алфавита</p>
+            </div>
+            <div class="modal-fullname__btns">
+              <button class="modal-fullname__save-btn" type="submit">
+                Сохранить
+              </button>
+              <button type="button" class="modal-fullname__close-btn">
+                Отменить
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-requisites modal" id="requisites-modal">
+          <h2>Редактирование банковских реквизитов</h2>
+          <form class="modal-requisites__form" action="#">
+            <div class="modal-requisites__item requisites-recipient">
+              <h3 class="modal-requisites__form-title">Получатель</h3>
+              <ul class="modal-requisites__input-list">
+                <li class="modal-requisites__item-input">
+                  <p class="modal-requisites__input-title">Фамилия</p>
+                  <div class="modal-requisites__input-wrapper">
+                    <input class="modal-requisites__input" type="text"
+                           name="bank_surname"
+                           pattern="^[а-яА-ЯёЁa-zA-Z]+$"
+                           required>
+                    <label class="modal-requisites__label">Иванов /
+                      Иванова</label>
+                  </div>
+                </li>
+                <li class="modal-requisites__item-input">
+                  <p class="modal-requisites__input-title">Имя</p>
+                  <div class="modal-requisites__input-wrapper">
+                    <input class="modal-requisites__input" type="text"
+                           name="bank_firstname"
+                           pattern="^[а-яА-ЯёЁa-zA-Z]+$"
+                           required>
+                    <label class="modal-requisites__label">Иван /
+                      Мария</label>
+                  </div>
+                </li>
+                <li class="modal-requisites__item-input">
+                  <p class="modal-requisites__input-title">Отчество</p>
+                  <div class="modal-requisites__input-wrapper">
+                    <input class="modal-requisites__input" type="text"
+                           name="bank_fathname"
+                           pattern="^[а-яА-ЯёЁa-zA-Z]+$"
+                           required>
+                    <label class="modal-requisites__label">Иванович /
+                      Ивановна</label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="modal-requisites__item requisites-bank">
+              <h3 class="modal-requisites__form-title">Реквизиты</h3>
+              <ul class="modal-requisites__input-list">
+                <li class="modal-requisites__item-input">
+                  <div class="modal-requisites__input-wrapper">
+                    <input class="modal-requisites__input" type="text"
+                           name="bank_name"
+                    >
+                    <label class="modal-requisites__label">Название
+                      банка</label>
+                  </div>
+                </li>
+                <li class="modal-requisites__item-input">
+                  <div class="modal-requisites__input-wrapper">
+                    <input class="modal-requisites__input" type="number"
+                           name="bank_schet"
+                    >
+                    <label class="modal-requisites__label">Расчетный
+                      счет</label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="modal-requisites__item requisites-identification">
+              <ul class="modal-requisites__input-list">
+                <li class="modal-requisites__item-input">
+                  <div class="modal-requisites__input-wrapper">
+                    <input class="modal-requisites__input" type="number"
+                           name="bank_bik"
+                    >
+                    <label class="modal-requisites__label">БИК</label>
+                  </div>
+                </li>
+                <li class="modal-requisites__item-input">
+                  <div class="modal-requisites__input-wrapper">
+                    <input class="modal-requisites__input" type="number"
+                           name="bank_korschet"
+                    >
+                    <label class="modal-requisites__label">Корреспондентский
+                      счет</label>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="modal-requisites__btns">
+              <button class="modal-requisites__save-btn" type="submit">
+                Сохранить
+              </button>
+              <button type="button" class="modal-requisites__close-btn">
+                Отменить
+              </button>
+            </div>
+          </form>
+        </div>
         <h1 class="prime-info__title">Основная информация</h1>
+      </div>
+      <div class="container prime-info__inner-container">
         <div class="prime-info__inner">
           <div class="prime-info__about">
             <div class="prime-info__person edit-modal">
-              <div class="modal-fullname modal">
-                <h2>Редактирование ФИО</h2>
-                <form class="modal-fullname__form" action="#">
-                  <div class="modal-fullname__item fullname-nominative">
-                    <h3 class="modal-fullname__form-title">Именительный
-                      падеж</h3>
-                    <ul class="modal-fullname__input-list">
-                      <li class="modal-fullname__item-input">
-                        <p class="modal-fullname__input-title">Фамилия</p>
-                        <div class="modal-fullname__input-wrapper">
-                          <input class="modal-fullname__input" type="text"
-                                 name="nominativeLastname"
-                                 pattern="^[а-яА-ЯёЁa-zA-Z]+$">
-                          <label class="modal-fullname__label">Иванов /
-                            Иванова</label>
-                        </div>
-                      </li>
-                      <li class="modal-fullname__item-input">
-                        <p class="modal-fullname__input-title">Имя</p>
-                        <div class="modal-fullname__input-wrapper">
-                          <input class="modal-fullname__input" type="text"
-                                 name="nominativeName"
-                                 pattern="^[а-яА-ЯёЁa-zA-Z]+$">
-                          <label class="modal-fullname__label">Иван /
-                            Мария</label>
-                        </div>
-                      </li>
-                      <li class="modal-fullname__item-input">
-                        <p class="modal-fullname__input-title">Отчество</p>
-                        <div class="modal-fullname__input-wrapper">
-                          <input class="modal-fullname__input" type="text"
-                                 name="nominativePatronymic"
-                                 pattern="^[а-яА-ЯёЁa-zA-Z]+$">
-                          <label class="modal-fullname__label">Иванович /
-                            Ивановна</label>
-                        </div>
-                      </li>
-                    </ul>
-                    <p class="error-message">Допускаются только символы
-                      кириллического и
-                      латинского алфавита</p>
-                  </div>
-                  <div class="modal-fullname__item fullname-genitive">
-                    <h3 class="modal-fullname__form-title">Родительный
-                      падеж</h3>
-                    <ul class="modal-fullname__input-list">
-                      <li class="modal-fullname__item-input">
-                        <div class="modal-fullname__input-wrapper">
-                          <input class="modal-fullname__input" type="text"
-                                 name="genitiveLastname"
-                                 pattern="^[а-яА-ЯёЁa-zA-Z]+$">
-                          <label class="modal-fullname__label">Иванова /
-                            Ивановой</label>
-                        </div>
-                      </li>
-                      <li class="modal-fullname__item-input">
-                        <div class="modal-fullname__input-wrapper">
-                          <input class="modal-fullname__input" type="text"
-                                 name="genitiveName"
-                                 pattern="^[а-яА-ЯёЁa-zA-Z]+$">
-                          <label class="modal-fullname__label">Ивана /
-                            Марии</label>
-                        </div>
-                      </li>
-                      <li class="modal-fullname__item-input">
-                        <div class="modal-fullname__input-wrapper">
-                          <input class="modal-fullname__input" type="text"
-                                 name="genitivePatronymic"
-                                 pattern="^[а-яА-ЯёЁa-zA-Z]+$">
-                          <label class="modal-fullname__label">Ивановича /
-                            Ивановны</label>
-                        </div>
-                      </li>
-                    </ul>
-                    <p class="error-message">Допускаются только символы
-                      кириллического и
-                      латинского алфавита</p>
-                  </div>
-                  <div class="modal-fullname__item fullname-dative">
-                    <h3 class="modal-fullname__form-title">Дательный падеж</h3>
-                    <ul class="modal-fullname__input-list">
-                      <li class="modal-fullname__item-input">
-                        <div class="modal-fullname__input-wrapper">
-                          <input class="modal-fullname__input" type="text"
-                                 name="dativeLastname"
-                                 pattern="^[а-яА-ЯёЁa-zA-Z]+$">
-                          <label class="modal-fullname__label">Иванову /
-                            Ивановой</label>
-                        </div>
-                      </li>
-                      <li class="modal-fullname__item-input">
-                        <div class="modal-fullname__input-wrapper">
-                          <input class="modal-fullname__input" type="text"
-                                 name="dativeName"
-                                 pattern="^[а-яА-ЯёЁa-zA-Z]+$">
-                          <label class="modal-fullname__label">Ивану /
-                            Марии</label>
-                        </div>
-                      </li>
-                      <li class="modal-fullname__item-input">
-                        <div class="modal-fullname__input-wrapper">
-                          <input class="modal-fullname__input" type="text"
-                                 name="dativePatronymic"
-                                 pattern="^[а-яА-ЯёЁa-zA-Z]+$">
-                          <label class="modal-fullname__label">Ивановичу /
-                            Ивановне</label>
-                        </div>
-                      </li>
-                    </ul>
-                    <p class="error-message">Допускаются только символы
-                      кириллического и
-                      латинского алфавита</p>
-                  </div>
-                  <div class="modal-fullname__btns">
-                    <button class="modal-fullname__save-btn" type="submit">
-                      Сохранить
-                    </button>
-                    <button type="button" class="modal-fullname__close-btn">
-                      Отменить
-                    </button>
-                  </div>
-                </form>
-              </div>
               <div class="prime-info__person-img">
-                <img src="img/avatar.jpg" alt="avatar">
+                <form action="/target" id="person-dropzone" class="dropzone">
+                  <div class="dz-message">Изменить фото</div>
+                </form>
               </div>
               <div class="prime-info__person-name">
                 <h3 class="prime-info__name-wrapper"><span
-                  class="prime-info__name">Константинов<br>
-                  Константин Константинович</span><span><svg
-                  class="edit-btn edit-fullname" width="17" height="16"
+                  class="prime-info__name"> <span data-updfield="surname">Константинов</span><br>
+                  <span data-updfield="firstname">Константин</span> <span data-updfield="fathname">Константинович</span></span><span><svg
+                  class="edit-btn edit-fullname" data-modal="fullname-modal"
+                  width="17" height="16"
                   viewBox="0 0 17 16"
                   fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -167,7 +313,7 @@
             <div class="prime-info__desc edit-el">
               <p class="prime-info__desc-title">Кратко о себе</p>
               <div class="prime-info__about-input edit-wrapper">
-                <textarea class="edit-input" data-input="about"></textarea>
+                <textarea class="edit-input" name="about"></textarea>
                 <svg class="agree-btn" width="18" height="13"
                      viewBox="0 0 18 13" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
@@ -202,7 +348,7 @@
             <li class="edit-el">
               <p class="prime-info__data-title">Мобильный телефон</p>
               <div class="prime-info__phone-input edit-wrapper">
-                <input class="edit-input" type="tel" data-input="phone"
+                <input class="edit-input" name="telephone" type="tel"
                        required>
                 <svg class="agree-btn" width="18" height="13"
                      viewBox="0 0 18 13" fill="none"
@@ -235,7 +381,7 @@
             </li>
             <li class="edit-el">
               <div class="prime-info__email-input edit-wrapper">
-                <input class="edit-input" type="text" data-input="email"
+                <input class="edit-input" name="email" type="text"
                        required>
                 <svg class="agree-btn" width="18" height="13"
                      viewBox="0 0 18 13" fill="none"
@@ -265,72 +411,13 @@
                       fill="#9A9A9A"/>
                   </svg></span></p>
             </li>
-            <li class="edit-modal">
-              <div class="modal-socials modal">
-                <h2>Страницы в соцсетях и адреса сайтов</h2>
-                <form class="modal-socials__form" action="#">
-                  <ul class="modal-socials__list socials-list">
-                    <li class="socials-list__item">
-                      <p class="socials-list__item-title">
-                        Основная ссылка
-                      </p>
-                      <div class="socials-list__inputs-wrapper">
-                        <select class="socials-list__selector-link">
-                          <option value="">Тип ссылки</option>
-                          <option value="link1">Тип ссылки 1</option>
-                          <option value="link2">Тип ссылки 2</option>
-                          <option value="link3">Тип ссылки 3</option>
-                          <option value="link4">Тип ссылки 4</option>
-                        </select>
-                        <input class="socials-list__address-link" type="text"
-                               placeholder="Адрес ссылки">
-                      </div>
-                    </li>
-                    <li class="socials-list__item">
-                      <p class="socials-list__item-title">
-                        Ссылка №2
-                      </p>
-                      <div class="socials-list__inputs-wrapper">
-                        <select class="socials-list__selector-link">
-                          <option value="">Тип ссылки</option>
-                          <option value="link1">Тип ссылки 1</option>
-                          <option value="link2">Тип ссылки 2</option>
-                          <option value="link3">Тип ссылки 3</option>
-                          <option value="link4">Тип ссылки 4</option>
-                        </select>
-                        <input class="socials-list__address-link" type="text"
-                               placeholder="Адрес ссылки">
-                      </div>
-                    </li>
-
-                  </ul>
-                  <button type="button" class="modal-socials__add-btn">
-                    <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
-                         xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M12.0002 0.5C12.5002 0.5 13.0002 0.5 13.6002 0.5C14.0002 0.6 14.5002 0.600012 14.9002 0.700012C18.1002 1.30001 20.8002 2.9 22.8002 5.5C25.0002 8.4 25.8002 11.8 25.1002 15.4C24.6002 18.3 23.1002 20.7 20.8002 22.6C18.0002 24.9 14.7002 25.9 11.1002 25.4C8.60019 25.1 6.40019 24.1 4.50019 22.4C2.30019 20.5 1.0002 18.1 0.400196 15.2C0.300196 14.7 0.300195 14.3 0.200195 13.8C0.200195 13.3 0.200195 12.8 0.200195 12.2C0.300195 11.8 0.300196 11.4 0.400196 10.9C0.800196 8.29999 2.00019 6.00001 3.80019 4.20001C5.70019 2.30001 7.90019 1.10001 10.5002 0.700012C11.1002 0.600012 11.5002 0.6 12.0002 0.5ZM12.7002 23.9C18.7002 23.9 23.6002 19 23.6002 13C23.6002 7 18.7002 2 12.7002 2C6.7002 2 1.80019 6.89999 1.80019 12.9C1.80019 19 6.7002 23.9 12.7002 23.9Z"
-                        fill="black"/>
-                      <path
-                        d="M12.0002 13.8C11.3002 13.8 10.6002 13.8 9.9002 13.8C9.0002 13.8 7.40019 13.8 6.50019 13.8C6.00019 13.8 5.7002 13.5 5.7002 13C5.7002 12.6 6.00019 12.2 6.50019 12.2C7.90019 12.2 10.2002 12.2 11.6002 12.2C11.7002 12.2 11.8002 12.2 11.9002 12.2C11.9002 12.1 11.9002 12 11.9002 11.9C11.9002 10.4 11.9002 8.2 11.9002 6.7C11.9002 6.1 12.4002 5.69999 13.0002 5.89999C13.3002 5.99999 13.5002 6.3 13.5002 6.7C13.5002 8.1 13.5002 10.4 13.5002 11.8C13.5002 11.9 13.5002 12 13.5002 12.1C13.6002 12.1 13.7002 12.1 13.8002 12.1C15.3002 12.1 17.5002 12.1 19.0002 12.1C19.6002 12.1 20.0002 12.7 19.8002 13.2C19.7002 13.5 19.4002 13.7 19.0002 13.7C17.6002 13.7 15.3002 13.7 13.9002 13.7C13.8002 13.7 13.7002 13.7 13.6002 13.7C13.6002 13.8 13.6002 13.9 13.6002 14C13.6002 15.5 13.6002 17.7 13.6002 19.2C13.6002 19.6 13.4002 19.9 13.0002 20C12.7002 20.1 12.3002 20 12.2002 19.7C12.1002 19.5 12.1002 19.3 12.1002 19.2C12.1002 17.8 12.1002 15.6 12.1002 14.1C12.0002 14 12.0002 13.9 12.0002 13.8Z"
-                        fill="black"/>
-                    </svg>
-                    Добавить еще одну ссылку
-                  </button>
-                  <div class="modal-socials__control-btns">
-                    <button class="modal-socials__save-btn" type="submit">
-                      Сохранить
-                    </button>
-                    <button class="modal-socials__close-btn" type="button">
-                      Отменить
-                    </button>
-                  </div>
-                </form>
-              </div>
+            <li>
               <p class="prime-info__data-title">Страница в социальной сети</p>
               <img class="prime-info__data-social" src="img/vk.png"
                    alt="vk"><span>
               <svg
-                class="edit-btn edit-socials" width="17" height="16"
+                class="edit-btn edit-socials" data-modal="socials-modal"
+                width="17" height="16"
                 viewBox="0 0 17 16"
                 fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -344,7 +431,7 @@
             </li>
             <li class="edit-el">
               <div class="prime-info__date-input edit-wrapper">
-                <input class="edit-input" type="text" data-input="date"
+                <input class="edit-input" name="birthdate" type="text"
                        required>
                 <svg class="agree-btn" width="18" height="13"
                      viewBox="0 0 18 13" fill="none"
@@ -377,7 +464,7 @@
             </li>
             <li class="edit-el">
               <div class="prime-info__city-input edit-wrapper">
-                <input class="edit-input" type="text" data-input="city"
+                <input class="edit-input" name="cityname" type="text"
                        required>
                 <svg class="agree-btn" width="18" height="13"
                      viewBox="0 0 18 13" fill="none"
@@ -412,6 +499,7 @@
         </div>
 
       </div>
+
     </section>
     <section class="section detailed-info">
       <div class="container">
@@ -482,7 +570,8 @@
       <div class="container">
         <h2 class="bank-details__title">
           Банковские реквизиты<span>
-          <svg class="edit-btn" width="17" height="16"
+          <svg class="edit-btn edit-requisites" data-modal="requisites-modal"
+               width="17" height="16"
                viewBox="0 0 17 16" fill="none"
                xmlns="http://www.w3.org/2000/svg"><path
             d="M0.399902 15.5C0.499902 15.2 0.599921 14.8 0.699921 14.5C0.899921 13.6 1.1999 12.6 1.3999 11.7C1.3999 11.6 1.49991 11.5 1.59991 11.4C4.49991 8.50002 7.3999 5.60001 10.2999 2.70001L10.3999 2.59998C11.4999 3.69998 12.6999 4.9 13.7999 6L13.6999 6.09998C10.7999 8.99998 7.99991 11.8 5.09991 14.7C4.99991 14.8 4.8999 14.9 4.7999 14.9C3.5999 15.2 2.29991 15.5 1.09991 15.8H0.999908C0.899908 15.8 0.899896 15.8 0.799896 15.8C0.699896 15.7 0.599908 15.6 0.499908 15.5C0.399908 15.6 0.399902 15.6 0.399902 15.5Z"
@@ -492,12 +581,14 @@
 </svg></span>
         </h2>
         <div class="bank-details__bank-info bank">
-          <h3 class="bank__title">АО «Тинькофф Банк»</h3>
+          <h3 class="bank__title" data-updfield="bank_name">АО «Тинькофф Банк»</h3>
           <ul class="bank__list">
             <li class="bank__list-item bank__recipient">
               <p class="bank__list-title">Получатель</p>
               <p class="bank__list-data copy-field"><span
-                class="bank__recipient-value copy-value">Константинов Константин Константинович</span>
+                class="bank__recipient-value copy-value"> <span
+                data-updfield="bank_surname">Константинов</span> <span
+                data-updfield="bank_firstname">Константин</span> <span data-updfield="bank_fathname">Константинович</span></span>
                 <span><svg class="copy-btn" width="13" height="15"
                            viewBox="0 0 13 15" fill="none"
                            xmlns="http://www.w3.org/2000/svg"><g opacity="0.5"><path
@@ -509,7 +600,7 @@
             </li>
             <li class="bank__list-item">
               <p class="bank__list-title">Название банка</p>
-              <p class="bank__list-data copy-field"><span class="copy-value">АО «Тинькофф Банк»</span>
+              <p class="bank__list-data copy-field"><span class="copy-value" data-updfield="bank_name">АО «Тинькофф Банк»</span>
                 <span>
                   <svg
                     class="copy-btn" width="13" height="15" viewBox="0 0 13 15"
@@ -522,7 +613,7 @@
             </li>
             <li class="bank__list-item">
               <p class="bank__list-title">Расчетный счет</p>
-              <p class="bank__list-data copy-field"><span class="copy-value">40817810000013551194</span><span>
+              <p class="bank__list-data copy-field"><span class="copy-value" data-updfield="bank_schet">40817810000013551194</span><span>
                 <svg
                   class="copy-btn" width="13" height="15" viewBox="0 0 13 15"
                   fill="none" xmlns="http://www.w3.org/2000/svg"><g
@@ -534,7 +625,7 @@
             </li>
             <li class="bank__list-item">
               <p class="bank__list-title">БИК</p>
-              <p class="bank__list-data copy-field"><span class="copy-value">044525974</span><span>
+              <p class="bank__list-data copy-field"><span class="copy-value" data-updfield="bank_bik">044525974</span><span>
                 <svg class="copy-btn"
                      width="13"
                      height="15"
@@ -554,19 +645,23 @@
             </li>
             <li class="bank__list-item">
               <p class="bank__list-title">Корреспондентский счет</p>
-              <p class="bank__list-data copy-field"><span class="copy-value">30101810145250000974</span><span>
+              <p class="bank__list-data copy-field"><span class="copy-value" data-updfield="bank_korschet">30101810145250000974</span><span>
                 <svg
-                class="copy-btn" width="13" height="15" viewBox="0 0 13 15"
-                fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity="0.5"><path
-                d="M9.09995 0.199951C9.09995 0.599951 9.09995 1 9.09995 1.5C6.49995 1.5 3.99994 1.5 1.49994 1.5C1.49994 4.5 1.49994 7.40002 1.49994 10.4C1.09994 10.4 0.699951 10.4 0.199951 10.4C0.199951 10.3 0.199951 10.3 0.199951 10.2C0.199951 7.29995 0.199951 4.39998 0.199951 1.59998C0.199951 0.899976 0.699927 0.299951 1.29993 0.199951C3.89993 0.199951 6.49995 0.199951 9.09995 0.199951Z"
-                fill="#858584"/><path
-                d="M12.2998 8.40002C12.2998 9.90002 12.2998 11.3 12.2998 12.8C12.2998 13.3 12.0998 13.8 11.5998 14C11.3998 14.1 11.1998 14.1 10.9998 14.1C8.69982 14.1 6.39982 14.1 4.09982 14.1C3.29982 14.1 2.7998 13.5 2.7998 12.8C2.7998 9.90005 2.7998 6.9 2.7998 4C2.7998 3.2 3.29982 2.69995 4.09982 2.69995C6.39982 2.69995 8.69982 2.69995 10.9998 2.69995C11.7998 2.69995 12.2998 3.3 12.2998 4C12.2998 5.5 12.2998 7.00002 12.2998 8.40002ZM3.99982 4C3.99982 7 3.99982 9.90002 3.99982 12.9C6.29982 12.9 8.69982 12.9 10.9998 12.9C10.9998 9.90002 10.9998 7 10.9998 4C8.69982 4 6.29982 4 3.99982 4Z"
-                fill="#858584"/></g></svg></span></p>
+                  class="copy-btn" width="13" height="15" viewBox="0 0 13 15"
+                  fill="none" xmlns="http://www.w3.org/2000/svg"><g
+                  opacity="0.5"><path
+                  d="M9.09995 0.199951C9.09995 0.599951 9.09995 1 9.09995 1.5C6.49995 1.5 3.99994 1.5 1.49994 1.5C1.49994 4.5 1.49994 7.40002 1.49994 10.4C1.09994 10.4 0.699951 10.4 0.199951 10.4C0.199951 10.3 0.199951 10.3 0.199951 10.2C0.199951 7.29995 0.199951 4.39998 0.199951 1.59998C0.199951 0.899976 0.699927 0.299951 1.29993 0.199951C3.89993 0.199951 6.49995 0.199951 9.09995 0.199951Z"
+                  fill="#858584"/><path
+                  d="M12.2998 8.40002C12.2998 9.90002 12.2998 11.3 12.2998 12.8C12.2998 13.3 12.0998 13.8 11.5998 14C11.3998 14.1 11.1998 14.1 10.9998 14.1C8.69982 14.1 6.39982 14.1 4.09982 14.1C3.29982 14.1 2.7998 13.5 2.7998 12.8C2.7998 9.90005 2.7998 6.9 2.7998 4C2.7998 3.2 3.29982 2.69995 4.09982 2.69995C6.39982 2.69995 8.69982 2.69995 10.9998 2.69995C11.7998 2.69995 12.2998 3.3 12.2998 4C12.2998 5.5 12.2998 7.00002 12.2998 8.40002ZM3.99982 4C3.99982 7 3.99982 9.90002 3.99982 12.9C6.29982 12.9 8.69982 12.9 10.9998 12.9C10.9998 9.90002 10.9998 7 10.9998 4C8.69982 4 6.29982 4 3.99982 4Z"
+                  fill="#858584"/></g></svg></span></p>
             </li>
           </ul>
         </div>
       </div>
     </section>
+    @include('partials/info-modal.html')
+    @include('partials/loader.html')
+
   </main>
 
   @include('partials/footer.html')

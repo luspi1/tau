@@ -1,34 +1,46 @@
 .page-doc {
   padding-top: 26px;
   padding-bottom: 250px;
-  &__scan {
-    height: 50px;
-    width: 50px;
-    position: relative;
-    img {
-      border-radius: 5px;
-      width: 100%;
-      height: 100%;
-    }
-    svg {
-      position: absolute;
-      right: -7px;
-      top: -7px;
-      z-index: 10;
-      cursor: pointer;
-      .delete-bg,
-      .delete-cross {
-        transition: all .3s;
-      }
 
-      &:hover .delete-bg {
-        fill: #2F65F6;
+
+  #passport-dropzone {
+    display: flex;
+    align-items: center;
+    max-width: 450px;
+    flex-wrap: wrap;
+
+
+    .dz-message {
+      order: 2;
+      height: 50px;
+    }
+
+    .dz-preview {
+      width: 50px;
+      height: 50px;
+      margin: 0 12px 15px 0;
+
+      img {
+        border-radius: 5px;
       }
-      &:hover .delete-cross {
-        fill: #ffffff;
+    }
+
+    .dz-remove {
+      color: transparent;
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background: url("../img/svg/delete-avatar.svg") no-repeat;
+      width: 16px;
+      height: 16px;
+      z-index: 100;
+
+      &:hover {
+        background: url("../img/svg/delete-avatar-hover.svg") no-repeat;
       }
     }
   }
+
 
   &__scan-title {
     @include montserrat-regular;
@@ -83,6 +95,8 @@
     margin-top: 15px;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    max-width: 420px;
   }
 
   &__item-scans {
@@ -94,9 +108,11 @@
     border: none;
     background: none;
     cursor: pointer;
+
     path {
       transition: all .3s;
     }
+
     &:hover path {
       fill: #2F65F6;
     }
@@ -137,6 +153,41 @@
 
   &__insurance {
     margin-bottom: 25px;
+  }
+
+  #insurance-dropzone,
+  #tax-dropzone {
+    display: flex;
+    align-items: center;
+
+    .dz-message {
+      order: 2;
+    }
+
+    .dz-preview {
+      width: 50px;
+      height: 50px;
+      margin: 0 12px 0 0;
+
+      img {
+        border-radius: 5px;
+      }
+    }
+
+    .dz-remove {
+      color: transparent;
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background: url("../img/svg/delete-avatar.svg") no-repeat;
+      width: 16px;
+      height: 16px;
+      z-index: 100;
+
+      &:hover {
+        background: url("../img/svg/delete-avatar-hover.svg") no-repeat;
+      }
+    }
   }
 
   &__insurance,

@@ -14,3 +14,10 @@ new AirDatepicker(dateIssue, {
   startDate,
 });
 
+
+const physDatePassport = document.querySelector('input[name="physDatePassport"]');
+
+new AirDatepicker(physDatePassport, {
+  startDate,
+});
+
