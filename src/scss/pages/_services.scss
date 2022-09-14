@@ -1,0 +1,156 @@
+.page-services {
+  padding: 21px 0 270px;
+
+  &__title {
+    @include montserrat-semibold;
+    font-size: 36px;
+    line-height: 44px;
+    color: #000000;
+    margin-bottom: 34px;
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__card {
+    width: 32.5%;
+    border: 1px solid #D8D8D8;
+    border-radius: 15px;
+    padding: 24px 27px 42px 27px;
+
+    &:not(:last-child) {
+      margin-right: 21px;
+    }
+
+    .page-services__status-text {
+      display: none;
+    }
+  }
+
+  &__card_active {
+
+    .page-services__card-title {
+      color: #2F65F6;
+    }
+
+    .page-services__status-text {
+      display: block;
+    }
+
+    .page-services__status-btn {
+      display: none;
+    }
+
+  }
+
+
+  &__card-title {
+    @include montserrat-semibold;
+    font-size: 26px;
+    line-height: 32px;
+    color: #000000;
+    margin-bottom: 6px;
+  }
+
+  &__card-desc {
+    @include montserrat-regular;
+    font-size: 16px;
+    line-height: 20px;
+    color: #858584;
+    margin-bottom: 20px;
+  }
+
+  &__condition-item {
+    background: #F4F7FB;
+    border-radius: 5px;
+    padding: 21px 21px 15px 39px;
+    margin-bottom: 8px;
+
+    &.condition-item_disable {
+      .condition-item__desc {
+        color: #A5A5A5;
+
+        &::before {
+          background: #A5A5A5;
+        }
+      }
+    }
+
+  }
+
+  .condition-item__desc {
+    @include montserrat-regular;
+    font-size: 16px;
+    line-height: 20px;
+    color: #222220;
+    position: relative;
+    margin-bottom: 15px;
+
+    span {
+      font-weight: 600;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      height: 7px;
+      width: 7px;
+      border-radius: 50%;
+      background: #222220;
+      left: -20px;
+      top: 6px;
+    }
+  }
+
+  .condition-item__availability {
+    @include montserrat-regular;
+    font-size: 14px;
+    line-height: 17px;
+    color: #858584;
+
+    &.condition-item__availability_active {
+      color: #2F65F6;
+    }
+  }
+
+  &__card-status {
+    margin-top: 21px;
+  }
+
+  &__status-text {
+    @include montserrat-semibold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #2F65F6;
+    padding-top: 15px;
+  }
+
+  &__status-btn {
+    border: 1px solid #2F65F6;
+    border-radius: 5px;
+    width: 100%;
+    padding: 13px 18px;
+    cursor: pointer;
+    background: none;
+    @include montserrat-medium;
+    font-size: 17px;
+    line-height: 21px;
+    text-align: center;
+    color: #2F65F6;
+    transition: all .3s;
+
+    &:hover {
+      background-color: #2F65F6;
+      color: #ffffff;
+    }
+
+    br {
+      display: none;
+    }
+
+  }
+
+
+}

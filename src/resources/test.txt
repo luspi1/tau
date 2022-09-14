@@ -1,1 +1,1 @@
-{"status": "err", "errortext": "Произошла ошибка!"}
+{"status": "err", "errortext": "Произошла ошибка!", "id_person_image": "11"}

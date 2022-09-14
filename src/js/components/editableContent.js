@@ -64,7 +64,6 @@ editElements.forEach(el => {
 
       toggleLoader()
 
-
       const response = await sendData(jsonData, '/include/ajax/save_userfield.php')
       const finishedResponse = await response.json()
 

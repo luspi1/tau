@@ -161,6 +161,16 @@
     }
   }
 
+  .header-menu.services_active {
+    .header__services-link {
+      color: #2F65F6;
+
+      svg path {
+        fill: #2F65F6;
+      }
+    }
+  }
+
 
 }
 

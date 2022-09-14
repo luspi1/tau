@@ -104,10 +104,18 @@ if (physDatePassportInput) {
   }).mask(physDatePassportInput);
 }
 
+// Снилс на странице документов
 
 
+const snilsInput = document.querySelector('.page-doc__snils-input input');
 
-
+if (snilsInput) {
+  Inputmask({
+    "mask": "999-999-999 99",
+    showMaskOnHover: false,
+    showMaskOnFocus: false,
+  }).mask(snilsInput);
+}
 
 
 

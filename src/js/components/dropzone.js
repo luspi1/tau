@@ -1,4 +1,4 @@
-import { v4 as uuidv4 } from 'uuid';
+
 import { Dropzone } from "dropzone";
 
 import { sendData, showInfoModal } from "../_functions";
@@ -33,7 +33,7 @@ if (personAvatar) {
     removedfile: async function (file) {
       const data = {
         filetype: "avatar",
-        id_image: file._removeLink.dataset.id
+        id_person_image: file._removeLink.dataset.id
       }
 
       const jsonData = JSON.stringify(data)
@@ -52,21 +52,53 @@ if (personAvatar) {
     }
   });
 
+  personDropzone.on("error", function (file) {
+    showInfoModal('Ошибка 404')
+    file.previewElement.parentNode.removeChild(file.previewElement);
+  })
+
   personDropzone.on("sending", function (file, xhr, formData) {
     formData.append("filetype", "avatar");
   });
 
   personDropzone.on("success", function (file, response) {
     const resObj = JSON.parse(response)
-    const {status, errortext} = resObj
+    const {status, errortext, id_person_image} = resObj
 
     if (status !== 'ok') {
       showInfoModal(errortext)
       file.previewElement.parentNode.removeChild(file.previewElement);
     } else {
-      file._removeLink.setAttribute('data-id', uuidv4())
+      file._removeLink.setAttribute('data-id', id_person_image)
     }
   });
+
+  const existingImages = personAvatar.querySelectorAll('.dz-preview')
+
+  if (existingImages) {
+    existingImages.forEach(el => {
+
+      const deleteBtn = el.querySelector('.dz-remove')
+
+      deleteBtn.addEventListener('click', async (e) => {
+        const data = {
+          filetype: "avatar",
+          id_person_image: e.target.dataset.id
+        }
+
+        const jsonData = JSON.stringify(data)
+        const response = await sendData(jsonData, '/include/ajax/delete_image.php')
+        const finishedResponse = await response.json()
+
+        const {status, errortext} = finishedResponse
+        if (status === 'ok') {
+          el.parentNode.removeChild(el);
+        } else {
+          showInfoModal(errortext)
+        }
+      })
+    })
+  }
 }
 
 
@@ -79,13 +111,15 @@ if (passportScan) {
     maxFilesize: 5,
     url: "/include/ajax/upload_image.php",
     maxFiles: 16,
+    thumbnailWidth: 50,
+    thumbnailHeight: 50,
     acceptedFiles: '.png, .jpeg, .jpg',
     addRemoveLinks: true,
     clickable: '#passport-add',
     removedfile: async function (file) {
       const data = {
         filetype: "passport",
-        id_image: file._removeLink.dataset.id
+        id_person_image: file._removeLink.dataset.id
       }
 
       const jsonData = JSON.stringify(data)
@@ -110,19 +144,53 @@ if (passportScan) {
     formData.append("filetype", "passport");
   });
 
+  passportDropzone.on("error", function (file) {
+    showInfoModal('Ошибка 404')
+    file.previewElement.parentNode.removeChild(file.previewElement);
+  })
+
+
   passportDropzone.on("success", function (file, response) {
     const resObj = JSON.parse(response)
-    const {status, errortext} = resObj
+    const {status, errortext, id_person_image} = resObj
 
     if (status !== 'ok') {
       showInfoModal(errortext)
       file.previewElement.parentNode.removeChild(file.previewElement);
     } else {
-      file._removeLink.setAttribute('data-id', uuidv4())
+      file._removeLink.setAttribute('data-id', id_person_image)
       updateAmountScans()
     }
   });
+
+  const existingImages = passportScan.querySelectorAll('.dz-preview')
+  if (existingImages) {
+    existingImages.forEach(el => {
+
+      const deleteBtn = el.querySelector('.dz-remove')
+
+      deleteBtn.addEventListener('click', async (e) => {
+        const data = {
+          filetype: "passport",
+          id_person_image: e.target.dataset.id
+        }
+
+        const jsonData = JSON.stringify(data)
+        const response = await sendData(jsonData, '/include/ajax/delete_image.php')
+        const finishedResponse = await response.json()
+
+        const {status, errortext} = finishedResponse
+        if (status === 'ok') {
+          el.parentNode.removeChild(el);
+          updateAmountScans()
+        } else {
+          showInfoModal(errortext)
+        }
+      })
+    })
+  }
 }
+
 
 //Dropzone для сканов СНИЛС на странице документов
 
@@ -139,7 +207,7 @@ if (insuranceScan) {
     removedfile: async function (file) {
       const data = {
         filetype: "snils",
-        id_image: file._removeLink.dataset.id
+        id_person_image: file._removeLink.dataset.id
       }
 
       const jsonData = JSON.stringify(data)
@@ -163,19 +231,48 @@ if (insuranceScan) {
     formData.append("filetype", "snils");
   });
 
+  insuranceDropzone.on("error", function (file) {
+    showInfoModal('Ошибка 404')
+    file.previewElement.parentNode.removeChild(file.previewElement);
+  })
+
   insuranceDropzone.on("success", function (file, response) {
     const resObj = JSON.parse(response)
-    const {status, errortext} = resObj
+    const {status, errortext, id_person_image} = resObj
 
     if (status !== 'ok') {
       showInfoModal(errortext)
       file.previewElement.parentNode.removeChild(file.previewElement);
     } else {
-      file._removeLink.setAttribute('data-id', uuidv4())
+      file._removeLink.setAttribute('data-id', id_person_image)
       insuranceAddBtn.style.display = 'none'
     }
   });
 
+  const existingImages = insuranceScan.querySelectorAll('.dz-preview')
+  if (existingImages) {
+    existingImages.forEach(el => {
+      const deleteBtn = el.querySelector('.dz-remove')
+      deleteBtn.addEventListener('click', async (e) => {
+        const data = {
+          filetype: "snils",
+          id_person_image: e.target.dataset.id
+        }
+
+        const jsonData = JSON.stringify(data)
+        const response = await sendData(jsonData, '/include/ajax/delete_image.php')
+        const finishedResponse = await response.json()
+
+        const {status, errortext} = finishedResponse
+        if (status === 'ok') {
+          el.parentNode.removeChild(el);
+          insuranceAddBtn.style.display = 'block'
+        } else {
+          showInfoModal(errortext)
+        }
+      })
+    })
+  }
 }
 
 
@@ -194,7 +291,7 @@ if (taxScan) {
     removedfile: async function (file) {
       const data = {
         filetype: "inn",
-        id_image: file._removeLink.dataset.id
+        id_person_image: file._removeLink.dataset.id
       }
 
       const jsonData = JSON.stringify(data)
@@ -218,18 +315,48 @@ if (taxScan) {
     formData.append("filetype", "inn");
   });
 
+  taxDropzone.on("error", function (file) {
+    showInfoModal('Ошибка 404')
+    file.previewElement.parentNode.removeChild(file.previewElement);
+  })
+
   taxDropzone.on("success", function (file, response) {
     const resObj = JSON.parse(response)
-    const {status, errortext} = resObj
+    const {status, errortext, id_person_image} = resObj
 
     if (status !== 'ok') {
       showInfoModal(errortext)
       file.previewElement.parentNode.removeChild(file.previewElement);
     } else {
-      file._removeLink.setAttribute('data-id', uuidv4())
+      file._removeLink.setAttribute('data-id', id_person_image)
       taxAddBtn.style.display = 'none'
     }
   });
+
+  const existingImages = taxScan.querySelectorAll('.dz-preview')
+  if (existingImages) {
+    existingImages.forEach(el => {
+      const deleteBtn = el.querySelector('.dz-remove')
+      deleteBtn.addEventListener('click', async (e) => {
+        const data = {
+          filetype: "inn",
+          id_person_image: e.target.dataset.id
+        }
+
+        const jsonData = JSON.stringify(data)
+        const response = await sendData(jsonData, '/include/ajax/delete_image.php')
+        const finishedResponse = await response.json()
+
+        const {status, errortext} = finishedResponse
+        if (status === 'ok') {
+          taxAddBtn.style.display = 'block'
+          el.parentNode.removeChild(el);
+        } else {
+          showInfoModal(errortext)
+        }
+      })
+    })
+  }
 }
 
 
@@ -274,20 +401,48 @@ if (newOrgLogo) {
   newOrgDropzone.on("sending", function (file, xhr, formData) {
     formData.append("filetype", "org");
     formData.append("id_org", idDownloadBtn);
-
   });
+
+  newOrgDropzone.on("error", function (file) {
+    showInfoModal('Ошибка 404')
+    file.previewElement.parentNode.removeChild(file.previewElement);
+  })
+
 
   newOrgDropzone.on("success", function (file, response) {
     const resObj = JSON.parse(response)
-    const {status, errortext} = resObj
+    const {status, errortext, id_image} = resObj
 
     if (status !== 'ok') {
       showInfoModal(errortext)
       file.previewElement.parentNode.removeChild(file.previewElement);
     } else {
-      file._removeLink.setAttribute('data-id', uuidv4())
+      file._removeLink.setAttribute('data-id', id_image)
     }
   });
+
+  const existingImages = newOrgLogo.querySelectorAll('.dz-preview')
+  if (existingImages) {
+    existingImages.forEach(el => {
+      const deleteBtn = el.querySelector('.dz-remove')
+      deleteBtn.addEventListener('click', async (e) => {
+        const data = {
+          filetype: "org",
+          id_image: e.target.dataset.id
+        }
+        const jsonData = JSON.stringify(data)
+        const response = await sendData(jsonData, '/include/ajax/delete_image.php')
+        const finishedResponse = await response.json()
+
+        const {status, errortext} = finishedResponse
+        if (status === 'ok') {
+          el.parentNode.removeChild(el);
+        } else {
+          showInfoModal(errortext)
+        }
+      })
+    })
+  }
 }
 
 //Dropzone для лого организации на странице редактирования контакта
@@ -330,17 +485,45 @@ if (contactLogo) {
     formData.append("filetype", "contact-logo");
   });
 
+  contactDropzone.on("error", function (file) {
+    showInfoModal('Ошибка 404')
+    file.previewElement.parentNode.removeChild(file.previewElement);
+  })
+
   contactDropzone.on("success", function (file, response) {
     const resObj = JSON.parse(response)
-    const {status, errortext} = resObj
+    const {status, errortext, id_image} = resObj
 
     if (status !== 'ok') {
       showInfoModal(errortext)
       file.previewElement.parentNode.removeChild(file.previewElement);
     } else {
-      file._removeLink.setAttribute('data-id', uuidv4())
+      file._removeLink.setAttribute('data-id', id_image)
     }
   });
+
+  const existingImages = contactLogo.querySelectorAll('.dz-preview')
+  if (existingImages) {
+    existingImages.forEach(el => {
+      const deleteBtn = el.querySelector('.dz-remove')
+      deleteBtn.addEventListener('click', async (e) => {
+        const data = {
+          filetype: "contact-logo",
+          id_image: e.target.dataset.id
+        }
+        const jsonData = JSON.stringify(data)
+        const response = await sendData(jsonData, '/include/ajax/delete_image.php')
+        const finishedResponse = await response.json()
+
+        const {status, errortext} = finishedResponse
+        if (status === 'ok') {
+          el.parentNode.removeChild(el);
+        } else {
+          showInfoModal(errortext)
+        }
+      })
+    })
+  }
 }
 
 //Dropzone для физ лица на странице редактирования контакта
@@ -383,17 +566,46 @@ if (physLogo) {
     formData.append("filetype", "contact-logo");
   });
 
+  physDropzone.on("error", function (file) {
+    showInfoModal('Ошибка 404')
+    file.previewElement.parentNode.removeChild(file.previewElement);
+  })
+
   physDropzone.on("success", function (file, response) {
     const resObj = JSON.parse(response)
-    const {status, errortext} = resObj
+    const {status, errortext, id_image} = resObj
 
     if (status !== 'ok') {
       showInfoModal(errortext)
       file.previewElement.parentNode.removeChild(file.previewElement);
     } else {
-      file._removeLink.setAttribute('data-id', uuidv4())
+      file._removeLink.setAttribute('data-id', id_image)
     }
   });
+
+
+  const existingImages = physLogo.querySelectorAll('.dz-preview')
+  if (existingImages) {
+    existingImages.forEach(el => {
+      const deleteBtn = el.querySelector('.dz-remove')
+      deleteBtn.addEventListener('click', async (e) => {
+        const data = {
+          filetype: "contact-logo",
+          id_image: e.target.dataset.id
+        }
+        const jsonData = JSON.stringify(data)
+        const response = await sendData(jsonData, '/include/ajax/delete_image.php')
+        const finishedResponse = await response.json()
+
+        const {status, errortext} = finishedResponse
+        if (status === 'ok') {
+          el.parentNode.removeChild(el);
+        } else {
+          showInfoModal(errortext)
+        }
+      })
+    })
+  }
 
 }
 

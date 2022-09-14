@@ -29,4 +29,7 @@ async function handleFormSubmit (event) {
   }
 }
 
-sortBtn.addEventListener('click', handleFormSubmit)
+if (sortBtn) {
+  sortBtn.addEventListener('click', handleFormSubmit)
+}
+

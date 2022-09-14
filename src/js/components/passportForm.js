@@ -12,8 +12,6 @@ const passportForm = document.querySelector('.passport-modal__form')
 const docPage = document.querySelector('.page-doc')
 const passportUpdatableFields = docPage?.querySelectorAll('[data-updField]')
 
-
-
 async function handleFormSubmit (event) {
   event.preventDefault()
 
@@ -61,3 +59,79 @@ if (passportForm) {
     }
   })
 }
+
+// СНИЛС и ИНН
+
+const editDocWrappers = document.querySelectorAll('.edit-doc-wrapper')
+
+if (editDocWrappers) {
+  editDocWrappers.forEach(wrapper => {
+    const editBtn = wrapper.querySelector('.edit-btn')
+    const editValue = wrapper.querySelector('.edit-value')
+    const editableWrapper = wrapper.querySelector('.page-doc__editable-wrapper')
+    const editInputWrapper = wrapper.querySelector('.edit-doc-wrapper__input')
+    const editInput = wrapper.querySelector('.edit-doc-wrapper__input input')
+    const agreeBtn = wrapper.querySelector('.agree-btn')
+    const closeBtn = wrapper.querySelector('.close-btn')
+
+
+    editBtn.addEventListener('click', (e) => {
+      e.preventDefault()
+      editableWrapper.style.visibility = 'hidden'
+      editInputWrapper.classList.add('_active')
+      editInput.value = editValue.textContent
+      editInput.focus()
+    })
+
+    agreeBtn.addEventListener('click', async (e) => {
+      e.preventDefault()
+
+      const inputName = editInput.name
+      const inputValue = editInput.value
+
+      const inputData = {
+        fieldname: inputName,
+        fieldvalue: inputValue,
+      }
+      const jsonData = JSON.stringify(inputData)
+
+      toggleLoader()
+
+      const response = await sendData(jsonData, '/include/ajax/save_userfield.php')
+      const finishedResponse = await response.json()
+
+      toggleLoader()
+
+      const {status, errortext} = finishedResponse
+      if (status === 'ok') {
+        editValue.textContent = inputValue
+        editInputWrapper.classList.remove('_active')
+        editableWrapper.style.visibility = 'visible'
+      } else {
+        showInfoModal(errortext)
+      }
+    })
+
+    closeBtn.addEventListener('click', (e) => {
+      e.preventDefault()
+      editInputWrapper.classList.remove('_active')
+      editableWrapper.style.visibility = 'visible'
+    })
+  })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

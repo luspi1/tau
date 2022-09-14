@@ -182,6 +182,67 @@ select::-ms-expand {
   }
 }
 
+.edit-doc-wrapper__input{
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+  &._active {
+    visibility: visible;
+    z-index: 50;
+    opacity: 1;
+  }
+
+  input {
+    @include montserrat-medium;
+    font-size: 22px;
+    line-height: 27px;
+    color: #222220;
+    outline: 1px solid #D8D8D8;
+    border: none;
+    z-index: 9999;
+    padding: 5px 10px;
+    width: 280px;
+    @media (max-width: 1280px) {
+      width: 240px;
+    }
+
+    @media (max-width: 768px) {
+      width: 200px;
+    }
+
+    &:focus {
+      outline: 1px solid #3E29CA;
+      background-color: #ffffff;
+    }
+  }
+
+  .agree-btn,
+  .close-btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    path {
+      transition: all .3s;
+    }
+
+    &:hover path {
+      fill: #2F65F6;
+    }
+  }
+
+  .agree-btn {
+    right: -30px;
+  }
+
+  .close-btn {
+    right: -50px;
+  }
+}
+
 .edit-el {
   position: relative;
 }
@@ -206,6 +267,11 @@ input::-webkit-inner-spin-button {
   button {
     padding: 0;
   }
+}
+
+.dz-remove {
+  line-height: 0;
+  font-size: 0;
 }
 
 .dz-preview:not(.dz-preview.dz-processing) {
