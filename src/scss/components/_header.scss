@@ -170,6 +170,15 @@
       }
     }
   }
+  .header-menu.journal_active {
+    .header__journal-link {
+      color: #2F65F6;
+
+      svg path {
+        fill: #2F65F6;
+      }
+    }
+  }
 
 
 }

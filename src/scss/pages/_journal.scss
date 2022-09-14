@@ -1,0 +1,72 @@
+.page-journal {
+  padding: 20px 0 290px;
+
+  &__title {
+    @include montserrat-semibold;
+    font-size: 36px;
+    line-height: 44px;
+    color: #000000;
+    margin-bottom: 24px;
+  }
+
+  .journal-table {
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+
+    &__row {
+      display: flex;
+      padding: 23px 25px;
+    }
+
+    &__cell {
+      width: 100%;
+      flex: 1 1 auto;
+      @include montserrat-regular;
+      font-size: 16px;
+      line-height: 20px;
+      color: #222220;
+      &:not(:last-child) {
+        padding-right: 20px;
+      }
+    }
+
+    &__row:nth-child(odd) {
+      background-color: #F7F8FA;
+    }
+
+    &__row-title {
+      padding: 13px 25px;
+
+      .journal-table__cell {
+        color: #858584;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+
+
+    &__type {
+      max-width: 22%;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      color: #000000;
+    }
+
+    &__author {
+      max-width: 20%;
+      color: #2F65F6;
+    }
+
+
+    &__time {
+      color: #858584;
+      max-width: 15%;
+    }
+
+  }
+
+
+}

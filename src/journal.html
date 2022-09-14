@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html', {
+'title': 'Журнал',
+})
+
+<body class="page__body">
+<div class="site-container">
+  <div class="modal-overlay"></div>
+  @include('partials/header.html', {
+  'active': 'journal_active'
+  })
+
+  <main class="main">
+    <section class="section page-journal">
+      <div class="container">
+        <h1 class="page-journal__title">Журнал</h1>
+      </div>
+
+      <div class="container page-journal__table-container">
+        <ul class="page-journal__table journal-table">
+          <li class="journal-table__row journal-table__row-title">
+            <p class="journal-table__cell journal-table__type">Тип действия</p>
+            <p class="journal-table__cell journal-table__author">Автор
+              действия</p>
+            <p class="journal-table__cell journal-table__data">Данные
+              действия</p>
+            <p class="journal-table__cell journal-table__time">
+              Дата и время действия</p>
+          </li>
+          <li class="journal-table__row">
+            <p class="journal-table__cell journal-table__type">Регистрация</p>
+            <p class="journal-table__cell journal-table__author">Система</p>
+            <p class="journal-table__cell journal-table__data">Новый
+              ответственный за сделку Файзуллин А.Р.</p>
+            <p class="journal-table__cell journal-table__time">12.04.2022 |
+              14:31:52</p>
+          </li>
+          <li class="journal-table__row">
+            <p class="journal-table__cell journal-table__type">Верификация</p>
+            <p class="journal-table__cell journal-table__author">Система</p>
+            <p class="journal-table__cell journal-table__data">Авансовый платеж
+              от 14.04.2022 на сумму 23 000 руб.</p>
+            <p class="journal-table__cell journal-table__time">12.04.2022 |
+              14:31:42</p>
+          </li>
+          <li class="journal-table__row">
+            <p class="journal-table__cell journal-table__type">Смена тарифа</p>
+            <p class="journal-table__cell journal-table__author">
+              Пользователь</p>
+            <p class="journal-table__cell journal-table__data">Приобретен пакет
+              услуг «Пакет Базовый»</p>
+            <p class="journal-table__cell journal-table__time">12.04.2022 |
+              14:31:44</p>
+          </li>
+          <li class="journal-table__row">
+            <p class="journal-table__cell journal-table__type">Регистрация</p>
+            <p class="journal-table__cell journal-table__author">
+              Система</p>
+            <p class="journal-table__cell journal-table__data">Новый ответственный за сделку Файзуллин А.Р.</p>
+            <p class="journal-table__cell journal-table__time">12.04.2022  |  14:31:52</p>
+          </li>
+          <li class="journal-table__row">
+            <p class="journal-table__cell journal-table__type">Верификация</p>
+            <p class="journal-table__cell journal-table__author">
+              Система</p>
+            <p class="journal-table__cell journal-table__data">Авансовый платеж от 14.04.2022 на сумму 23 000 руб.</p>
+            <p class="journal-table__cell journal-table__time">12.04.2022  |  14:31:42</p>
+          </li>
+          <li class="journal-table__row">
+            <p class="journal-table__cell journal-table__type">Смена тарифа</p>
+            <p class="journal-table__cell journal-table__author">
+              Пользователь</p>
+            <p class="journal-table__cell journal-table__data">Приобретен пакет услуг «Пакет Базовый»</p>
+            <p class="journal-table__cell journal-table__time">12.04.2022  |  14:31:44</p>
+          </li>
+          <li class="journal-table__row">
+            <p class="journal-table__cell journal-table__type">Регистрация</p>
+            <p class="journal-table__cell journal-table__author">
+              Система</p>
+            <p class="journal-table__cell journal-table__data">Новый ответственный за сделку</p>
+            <p class="journal-table__cell journal-table__time">12.04.2022  |  14:31:52</p>
+          </li>
+          <li class="journal-table__row">
+            <p class="journal-table__cell journal-table__type">Верификация</p>
+            <p class="journal-table__cell journal-table__author">
+              Система</p>
+            <p class="journal-table__cell journal-table__data">Авансовый платеж от 14.04.2022 на сумму 23 000 руб.</p>
+            <p class="journal-table__cell journal-table__time">12.04.2022  |  14:31:42</p>
+          </li>
+          <li class="journal-table__row">
+            <p class="journal-table__cell journal-table__type">Смена тарифа</p>
+            <p class="journal-table__cell journal-table__author">
+              Пользователь</p>
+            <p class="journal-table__cell journal-table__data">Приобретен пакет услуг «Пакет Базовый»</p>
+            <p class="journal-table__cell journal-table__time">12.04.2022  |  14:31:44</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  @include('partials/footer.html')
+</div>
+
+</body>
+
+</html>
