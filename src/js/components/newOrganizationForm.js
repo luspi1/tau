@@ -129,8 +129,6 @@ if (addAccountBtn) {
       accountCount--
     }
   })
-
-
 }
 
 

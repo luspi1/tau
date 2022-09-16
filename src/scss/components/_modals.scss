@@ -503,6 +503,7 @@
 
     &__item-code {
       margin-top: 14px;
+
       .passport-modal__input {
         width: 100%;
       }
@@ -510,6 +511,10 @@
       .passport-modal__item-input {
         width: 49.3%;
       }
+    }
+
+    &__item-check.passport-modal__item-check_disabled {
+      display: none;
     }
 
 
@@ -881,6 +886,7 @@
     border-radius: 5px;
     padding: 18px 30px;
     margin-right: 27px;
+
     &:hover {
       background: #264DDB;
     }
@@ -895,6 +901,7 @@
     color: #2F65F6;
     cursor: pointer;
     transition: all .3s;
+
     &:hover {
       color: #264DDB;
     }

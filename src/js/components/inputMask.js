@@ -73,6 +73,7 @@ editContactPhoneInputs.forEach(el => {
 
 const newOrganizationPhoneInputs = document.querySelectorAll('.new-organization__phones .new-organization__input');
 
+
 newOrganizationPhoneInputs.forEach(el => {
   if (el) {
     Inputmask({

@@ -8,6 +8,7 @@ import {
   updateFields
 } from "../_functions";
 
+
 const passportForm = document.querySelector('.passport-modal__form')
 const docPage = document.querySelector('.page-doc')
 const passportUpdatableFields = docPage?.querySelectorAll('[data-updField]')
@@ -121,12 +122,32 @@ if (editDocWrappers) {
 }
 
 
+// Переключение адреса проживания по постоянной или временной регистрации
+
+const regCheckboxes = document.querySelectorAll('.passport-modal__reg-checkbox')
+const checkField = document.querySelector('.passport-modal__item-check')
+
+if (regCheckboxes) {
+  regCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', (e) => {
+      const checkedInputs = document.querySelectorAll('.passport-modal__reg-checkbox:checked')
+      if (checkedInputs.length) {
+        checkField.classList.add('passport-modal__item-check_disabled')
+      } else {
+        checkField.classList.remove('passport-modal__item-check_disabled')
+      }
 
 
-
-
-
-
+      if (checkedInputs.length > 1) {
+        checkedInputs.forEach(el => {
+          if (el !== e.target) {
+            el.checked = false
+          }
+        })
+      }
+    })
+  })
+}
 
 
 

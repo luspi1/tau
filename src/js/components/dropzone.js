@@ -27,7 +27,7 @@ if (personAvatar) {
   let personDropzone = new Dropzone(personAvatar, {
     maxFilesize: 5,
     url: "/include/ajax/upload_image.php",
-    maxFiles: 5,
+    maxFiles: 1,
     acceptedFiles: '.jpeg, .jpg',
     addRemoveLinks: true,
     removedfile: async function (file) {
@@ -200,7 +200,7 @@ if (insuranceScan) {
   let insuranceDropzone = new Dropzone(insuranceScan, {
     maxFilesize: 5,
     url: "/include/ajax/upload_image.php",
-    maxFiles: 16,
+    maxFiles: 1,
     acceptedFiles: '.png, .jpeg, .jpg',
     addRemoveLinks: true,
     clickable: '#insurance-add',
@@ -284,7 +284,7 @@ if (taxScan) {
   let taxDropzone = new Dropzone(taxScan, {
     maxFilesize: 5,
     url: "/include/ajax/upload_image.php",
-    maxFiles: 16,
+    maxFiles: 1,
     acceptedFiles: '.png, .jpeg, .jpg',
     addRemoveLinks: true,
     clickable: '#tax-add',
@@ -453,7 +453,7 @@ if (contactLogo) {
   let contactDropzone = new Dropzone(contactLogo, {
     maxFilesize: 5,
     url: "/include/ajax/upload_image.php",
-    maxFiles: 3,
+    maxFiles: 1,
     acceptedFiles: '.png, .jpeg, .jpg',
     addRemoveLinks: true,
     thumbnailWidth: 170,
@@ -534,7 +534,7 @@ if (physLogo) {
   let physDropzone = new Dropzone(physLogo, {
     maxFilesize: 5,
     url: "/include/ajax/upload_image.php",
-    maxFiles: 3,
+    maxFiles: 1,
     acceptedFiles: '.png, .jpeg, .jpg',
     addRemoveLinks: true,
     thumbnailWidth: 170,
