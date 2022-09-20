@@ -53,6 +53,8 @@ const formToObj = (formData) =>  {
   }), {})
 }
 
+
+
 // показ/скрытие модалки ошибки
 
 const toggleLoader = () => {
@@ -80,5 +82,5 @@ export {
   toggleLoader,
   formToObj,
   showInfoModal,
-  updateFields
+  updateFields,
 }

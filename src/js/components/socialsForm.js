@@ -1,22 +1,63 @@
-import {modalOverlay, body, modalSocials} from "../_vars";
-import {initSelects} from "./customSelect";
+import { modalOverlay, body, modalSocials, modalPassport } from "../_vars";
+import { initSelects } from "./customSelect";
+import {
+  sendData,
+  serializeForm,
+  showInfoModal,
+  toggleLoader,
+  updateFields
+} from "../_functions";
 
 const editSocialsForm = document.querySelector('.modal-socials__form')
 const addLinkBtn = document.querySelector('.modal-socials__add-btn')
 const socialLinks = document.querySelector('.modal-socials__list')
+const socialsContainer = document.querySelector('.prime-info__socials-icons')
+
+
+const updateSocials = (data) => {
+  socialsContainer.innerHTML = data
+}
+
 
 let linkCount = 2;
 
 // Обработка события отправки формы социалок
 
-if (editSocialsForm) {
-  editSocialsForm.addEventListener('submit', (e) => {
-    e.preventDefault()
+async function handleFormSubmit (event) {
+  event.preventDefault()
+
+  const data = serializeForm(event.target)
+
+  const arrData = Array.from(data.entries())
+
+  const jsonData = JSON.stringify(arrData)
+  toggleLoader()
+
+  const response = await sendData(jsonData, '/include/ajax/save_social.php')
+  const finishedResponse = await response.json()
+
+  toggleLoader()
+
+  const {status, errortext, dataHtml} = finishedResponse
+  if (status === 'ok') {
+    updateSocials(dataHtml)
     modalSocials.classList.remove('_active')
     modalOverlay.classList.remove('modal-overlay_active')
     body.classList.remove('_lock')
-  })
+  } else {
+    showInfoModal(errortext)
+  }
 }
+
+
+// Обработка события отправки
+
+if (editSocialsForm) {
+  editSocialsForm.addEventListener('submit', handleFormSubmit)
+}
+
+
+
 
 // Добавление еще одной ссылки
 
@@ -33,14 +74,14 @@ if (addLinkBtn) {
                 Ссылка №${linkCount}
              </p>
              <div class="socials-list__inputs-wrapper">
-               <select class="socials-list__selector-link">
+               <select name="id_social_type" class="socials-list__selector-link">
                  <option value="">Тип ссылки</option>
                  <option value="link1">Тип ссылки 1</option>
                  <option value="link2">Тип ссылки 2</option>
                  <option value="link3">Тип ссылки 3</option>
                  <option value="link4">Тип ссылки 4</option>
                </select>
-               <input class="socials-list__address-link" type="text"
+               <input name="social_link_name" class="socials-list__address-link" type="text"
                                placeholder="Адрес ссылки">
                <button class="socials-list__delete-btn" type="button">
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -55,7 +96,7 @@ if (addLinkBtn) {
     initSelects()
     linkCount++
 
-    const linkItems =  socialLinks.querySelectorAll('.socials-list__item')
+    const linkItems = socialLinks.querySelectorAll('.socials-list__item')
     const currentLink = linkItems[linkItems.length - 1]
 
     currentLink.querySelector('.socials-list__delete-btn').addEventListener('click', (e) => {

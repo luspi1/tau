@@ -149,6 +149,23 @@
       max-width: 250px;
     }
 
+    .prime-info__socials-wrapper {
+      display: flex;
+      margin-top: -6px;
+    }
+
+    .prime-info__socials-icons {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 280px;
+      img {
+        margin-right: 5px;
+        margin-bottom: 5px;
+        height: 27px;
+        width: 27px;
+      }
+    }
+
     .prime-info__data-social ~ span {
       display: inline-block;
       height: 26px;

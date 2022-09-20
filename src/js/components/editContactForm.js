@@ -101,9 +101,7 @@ if (editContactForm) {
     editContactForm.removeEventListener('submit', handleContragentSubmit)
   }
 
-
     if (submitBtns) {
-
       submitBtns.forEach(btn => {
         btn.addEventListener('click', e => {
           if (e.target.classList.contains('contragent-btn')) {
@@ -117,7 +115,6 @@ if (editContactForm) {
 }
 
 
-
 // Смена длинных placeholder на малых разрешениях
 const contactInputFullname = document.querySelector('input[name="editContactFullname"]')
 const mediaQuery = window.matchMedia('(max-width: 768px)')
@@ -128,7 +125,6 @@ function handleTabletChange (e) {
     contactInputFullname.placeholder = 'ООО «Название организации»'
   }
 }
-
 
 if (contactInputFullname) {
   mediaQuery.addListener(handleTabletChange)

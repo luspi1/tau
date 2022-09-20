@@ -908,3 +908,173 @@
   }
 
 }
+
+.modal-connect-leader {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  width: 880px;
+  height: auto;
+  padding: 50px 140px 75px 34px;
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  opacity: 0;
+  transition: all .2s;
+  visibility: hidden;
+
+  @media (max-width: 1024px) {
+    width: 650px;
+    padding: 30px 30px 60px 30px;
+  }
+
+  @media (max-width: 768px) {
+    width: 320px;
+    padding: 20px 20px 50px 20px;
+  }
+
+  &._active {
+    opacity: 1;
+    z-index: 999;
+    visibility: visible;
+  }
+
+  &__btn {
+    @include montserrat-bold;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    background: #2F65F6;
+    border-radius: 5px;
+    padding: 18px 25px;
+    border: none;
+    cursor: pointer;
+    transition: all .3s;
+    width: 350px;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+      line-height: 22px;
+      padding: 16px 20px;
+      width: 278px;
+    }
+
+    &:hover {
+      background-color: #264DDB;
+    }
+  }
+
+  h2 {
+    @include montserrat-semibold;
+    font-size: 38px;
+    line-height: 46px;
+    color: #000000;
+    margin-bottom: 40px;
+    @media (max-width: 768px) {
+      font-size: 30px;
+      line-height: 40px;
+    }
+  }
+
+  p {
+    @include montserrat-light;
+    font-size: 16px;
+    line-height: 22px;
+    color: #585757;
+    margin-bottom: 20px;
+    @media (max-width: 768px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__input-wrapper {
+    width: 640px;
+
+    position: relative;
+
+    svg {
+      position: absolute;
+      cursor: pointer;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      path {
+        transition: all .3s;
+      }
+
+      &:hover {
+        .modal-connect-leader__svg-bg {
+          fill: $link;
+        }
+        .modal-connect-leader__svg-icon {
+          fill: #ffffff;
+        }
+      }
+
+      @media (max-width: 768px) {
+        right: 5px;
+      }
+    }
+
+
+    @media (max-width: 1024px) {
+      width: 500px;
+    }
+    @media (max-width: 768px) {
+      width: 278px;
+    }
+  }
+
+  &__input {
+    outline: none;
+    @include montserrat-medium;
+    font-size: 20px;
+    line-height: 24px;
+    background: #F2F1F7;
+    width: 100%;
+    border: none;
+    padding: 17px 45px 17px 17px;
+    color: #000000;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+      line-height: 20px;
+      padding-right: 30px;
+    }
+
+    &::placeholder {
+      color: #817D8C;
+    }
+  }
+
+  &__connect-btn {
+    margin-bottom: 90px;
+    position: relative;
+    margin-top: 30px;
+    @media (max-width: 768px) {
+      margin-bottom: 20px;
+    }
+
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 700px;
+      height: 1px;
+      background-color: #D8D8D8;
+      bottom: -50px;
+      left: 0;
+      @media (max-width: 1024px) {
+        width: 550px;
+      }
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+  }
+
+
+}

@@ -14,9 +14,36 @@
 
   <main class="main">
     <section class="section edit-contact">
+      <div class="modal-connect-leader modal" id="connect-leader-modal">
+        <h2>Подключить руководителя</h2>
+        <p>Для того, чтобы подключить физическое лицо, уже добавленное в Ваши
+          контакты,
+          в качестве руководителя этой организации, введите его фамилию и
+          выберите подходящий контакт.</p>
+        <div class="modal-connect-leader__input-wrapper">
+          <input class="modal-connect-leader__input" type="text" name="leader_search" placeholder="Начните вводить фамилию">
+          <svg class="modal-connect-leader__delete-btn" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path class="modal-connect-leader__svg-bg" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="white"/>
+            <path class="modal-connect-leader__svg-icon" d="M9.99993 11.1249C9.49993 11.6249 8.99993 12.1249 8.37493 12.7499C7.74993 13.3749 6.99993 14.1249 6.37493 14.7499C5.99993 15.1249 5.49993 15.1249 5.12493 14.7499C4.74993 14.3749 4.74993 13.8749 5.12493 13.4999C6.24993 12.3749 7.37493 11.2499 8.49993 10.1249C8.62493 9.99991 8.62493 9.99993 8.74993 9.87493C8.62493 9.74993 8.62493 9.74991 8.49993 9.62491C7.37493 8.49991 6.24993 7.37494 5.12493 6.24994C4.62493 5.74994 4.74993 5.12493 5.37493 4.87493C5.74993 4.74993 6.12493 4.74991 6.37493 5.12491C7.49993 6.24991 8.62493 7.37491 9.62493 8.37491C9.74993 8.49991 9.74992 8.49993 9.87492 8.62493C9.99992 8.49993 9.99993 8.49991 10.1249 8.37491C11.2499 7.24991 12.3749 6.12494 13.4999 4.99994C13.9999 4.49994 14.6249 4.62491 14.8749 5.24991C14.9999 5.62491 14.8749 5.87494 14.6249 6.24994C13.4999 7.37494 12.3749 8.49991 11.2499 9.62491C11.1249 9.74991 11.1249 9.74993 10.9999 9.87493C11.1249 9.99993 11.1249 9.99991 11.2499 10.1249C12.3749 11.2499 13.4999 12.3749 14.6249 13.4999C14.8749 13.7499 14.9999 14.2499 14.7499 14.4999C14.6249 14.8749 14.2499 14.9999 13.8749 14.8749C13.7499 14.8749 13.4999 14.7499 13.3749 14.6249C12.2499 13.4999 11.1249 12.4999 10.1249 11.3749C10.2499 11.2499 10.1249 11.2499 9.99993 11.1249Z" fill="#969696"/>
+          </svg>
+
+        </div>
+
+
+        <button class="modal-connect-leader__btn modal-connect-leader__connect-btn" type="button">Подключить руководителя</button>
+
+        <p>Если этого физического лица еще нет в Ваших контактах, создайте
+          контакт.</p>
+
+        <button class="modal-connect-leader__btn modal-connect-leader__contact-btn" type="button">Создать новый контакт</button>
+
+      </div>
+
+
       <div class="container">
         <h1 class="edit-contact__title">Редактировать контакт</h1>
-        <form action="#" class="edit-contact__form" autocomplete="off" data-contact="entity">
+        <form action="#" class="edit-contact__form" autocomplete="off"
+              data-contact="entity">
           <div class="edit-contact__item">
             <div class="edit-contact__item-wrapper">
               <div
@@ -35,7 +62,9 @@
                 <p class="edit-contact__input-title">
                   Выбор типа контакта*
                 </p>
-                <select class="edit-contact__input edit-contact__contact-type-btn" name="editContactType">
+                <select
+                  class="edit-contact__input edit-contact__contact-type-btn"
+                  name="editContactType">
                   <option value="entity">Юридическое лицо</option>
                   <option value="individual">Физическое лицо</option>
                 </select>
@@ -76,13 +105,17 @@
                   </div>
                   <div
                     class="edit-contact__input-wrapper edit-contact__director-btns">
-                    <button class="edit-contact__btn" type="button">Подключить контакт в
+                    <button
+                      class="edit-contact__btn edit-contact__connect-leader-btn"
+                      type="button" data-modal="connect-leader-modal">Подключить контакт в
                       качестве руководителя
                     </button>
                   </div>
                   <div
                     class="edit-contact__input-wrapper edit-contact__director-btns edit-contact__add-contact">
-                    <button class="edit-contact__btn" type="button">Добавить контакт</button>
+                    <button class="edit-contact__btn" type="button">Добавить
+                      контакт
+                    </button>
                   </div>
                 </div>
 
@@ -97,7 +130,8 @@
                     class="edit-contact__input-wrapper">
                     <input class="edit-contact__input" type="text"
                            name="editDirectorLastname"
-                           placeholder="Иванов / Иванова" data-required="entity">
+                           placeholder="Иванов / Иванова"
+                           data-required="entity">
                   </div>
                   <div
                     class="edit-contact__input-wrapper">
@@ -109,7 +143,8 @@
                     class="edit-contact__input-wrapper">
                     <input class="edit-contact__input" type="text"
                            name="editDirectorPatronymic"
-                           placeholder="Иванович / Ивановна" data-required="entity">
+                           placeholder="Иванович / Ивановна"
+                           data-required="entity">
                   </div>
                 </div>
 
@@ -552,7 +587,10 @@
                   class="edit-contact__item-wrapper edit-contact__contact-btns">
                   <div
                     class="edit-contact__input-wrapper">
-                    <button class="edit-contact__btn contragent-btn" type="submit" data-id="b940b56c-995d-42d2-885d-0708364d100d">Сделать
+                    <button class="edit-contact__btn contragent-btn"
+                            type="submit"
+                            data-id="b940b56c-995d-42d2-885d-0708364d100d">
+                      Сделать
                       контрагентом
                     </button>
                   </div>
@@ -591,19 +629,22 @@
                     class="edit-contact__input-wrapper">
                     <input class="edit-contact__input" type="text"
                            name="physImmentativeLastname"
-                           placeholder="Иванов / Иванова" data-required="individual" >
+                           placeholder="Иванов / Иванова"
+                           data-required="individual">
                   </div>
                   <div
                     class="edit-contact__input-wrapper">
                     <input class="edit-contact__input" type="text"
                            name="physImmentativeName"
-                           placeholder="Иван / Мария" data-required="individual">
+                           placeholder="Иван / Мария"
+                           data-required="individual">
                   </div>
                   <div
                     class="edit-contact__input-wrapper">
                     <input class="edit-contact__input" type="text"
                            name="physImmentativePatronymic"
-                           placeholder="Иванович / Ивановна" data-required="individual">
+                           placeholder="Иванович / Ивановна"
+                           data-required="individual">
                   </div>
                 </div>
               </div>
@@ -617,19 +658,22 @@
                     class="edit-contact__input-wrapper">
                     <input class="edit-contact__input" type="text"
                            name="physGenitiveLastname"
-                           placeholder="Иванова / Ивановой" data-required="individual">
+                           placeholder="Иванова / Ивановой"
+                           data-required="individual">
                   </div>
                   <div
                     class="edit-contact__input-wrapper">
                     <input class="edit-contact__input" type="text"
                            name="physGenitiveName"
-                           placeholder="Ивана / Марии" data-required="individual">
+                           placeholder="Ивана / Марии"
+                           data-required="individual">
                   </div>
                   <div
                     class="edit-contact__input-wrapper">
                     <input class="edit-contact__input" type="text"
                            name="physGenitivePatronymic"
-                           placeholder="Ивановича / Ивановны" data-required="individual">
+                           placeholder="Ивановича / Ивановны"
+                           data-required="individual">
                   </div>
                 </div>
               </div>
@@ -643,19 +687,22 @@
                     class="edit-contact__input-wrapper">
                     <input class="edit-contact__input" type="text"
                            name="physDativeLastname"
-                           placeholder="Иванову / Ивановне" data-required="individual">
+                           placeholder="Иванову / Ивановне"
+                           data-required="individual">
                   </div>
                   <div
                     class="edit-contact__input-wrapper">
                     <input class="edit-contact__input" type="text"
                            name="physDativeName"
-                           placeholder="Ивану / Марии" data-required="individual">
+                           placeholder="Ивану / Марии"
+                           data-required="individual">
                   </div>
                   <div
                     class="edit-contact__input-wrapper">
                     <input class="edit-contact__input" type="text"
                            name="physDativePatronymic"
-                           placeholder="Ивановичу / Ивановне" data-required="individual">
+                           placeholder="Ивановичу / Ивановне"
+                           data-required="individual">
                   </div>
                 </div>
               </div>
@@ -1029,7 +1076,10 @@
                   class="edit-contact__item-wrapper edit-contact__contact-btns">
                   <div
                     class="edit-contact__input-wrapper">
-                    <button class="edit-contact__btn contragent-btn" type="submit" data-id="c4c7de1e-8707-4156-a81b-5234a70bbf30">Сделать
+                    <button class="edit-contact__btn contragent-btn"
+                            type="submit"
+                            data-id="c4c7de1e-8707-4156-a81b-5234a70bbf30">
+                      Сделать
                       контрагентом
                     </button>
                   </div>

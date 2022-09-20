@@ -6,6 +6,8 @@ import {
 
 const editElements = document.querySelectorAll('.edit-el')
 const confirmEmailText = 'На Вашу почту было отправлено письмо с подтверждением.'
+
+
 // Обработка событий, по нажатию на кнопки: редактировать, подтвердить, закрыть у одноинпутного
 // редактирования
 
@@ -80,7 +82,6 @@ editElements.forEach(el => {
         showInfoModal(errortext)
       }
     }
-
   })
 
   closeBtn.addEventListener('click', () => {

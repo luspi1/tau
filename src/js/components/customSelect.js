@@ -9,6 +9,7 @@ const initSelects = () => {
     const choices = new Choices(select, {
       searchEnabled: false,
       itemSelectText: '',
+      allowHTML: true
     });
   })
 }
@@ -21,6 +22,7 @@ document.querySelectorAll('.contacts-table__selector').forEach(el => {
   const choices = new Choices(el, {
     searchEnabled: false,
     itemSelectText: '',
+    allowHTML: true
   });
 })
 
@@ -31,6 +33,7 @@ if (typeContactInput) {
     searchEnabled: false,
     itemSelectText: '',
     shouldSort: false,
+    allowHTML: true
   });
 }
 
@@ -42,6 +45,7 @@ document.querySelectorAll('.edit-contact__item select').forEach(el => {
     searchEnabled: false,
     itemSelectText: '',
     shouldSort: false,
+    allowHTML: true
   });
 })
 
@@ -52,6 +56,7 @@ document.querySelectorAll('.new-organization__item select').forEach(el => {
     searchEnabled: false,
     itemSelectText: '',
     shouldSort: false,
+    allowHTML: true
   });
 })
 

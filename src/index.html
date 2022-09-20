@@ -24,14 +24,16 @@
                   Основная ссылка
                 </p>
                 <div class="socials-list__inputs-wrapper">
-                  <select class="socials-list__selector-link">
+                  <select name="id_social_type"
+                          class="socials-list__selector-link">
                     <option value="">Тип ссылки</option>
                     <option value="link1">Тип ссылки 1</option>
                     <option value="link2">Тип ссылки 2</option>
                     <option value="link3">Тип ссылки 3</option>
                     <option value="link4">Тип ссылки 4</option>
                   </select>
-                  <input class="socials-list__address-link" type="text"
+                  <input name="social_link_name"
+                         class="socials-list__address-link" type="text"
                          placeholder="Адрес ссылки">
                 </div>
               </li>
@@ -294,7 +296,8 @@
               <div class="prime-info__person-name">
                 <h3 class="prime-info__name-wrapper"><span
                   class="prime-info__name"> <span data-updfield="surname">Константинов</span><br>
-                  <span data-updfield="firstname">Константин</span> <span data-updfield="fathname">Константинович</span></span><span><svg
+                  <span data-updfield="firstname">Константин</span> <span
+                    data-updfield="fathname">Константинович</span></span><span><svg
                   class="edit-btn edit-fullname" data-modal="fullname-modal"
                   width="17" height="16"
                   viewBox="0 0 17 16"
@@ -413,8 +416,18 @@
             </li>
             <li>
               <p class="prime-info__data-title">Страница в социальной сети</p>
-              <img class="prime-info__data-social" src="img/vk.png"
-                   alt="vk"><span>
+              <div class="prime-info__socials-wrapper">
+                <div class="prime-info__socials-icons">
+                  <img class="prime-info__data-social" src="img/vk.png"
+                       alt="vk">
+                  <img class="prime-info__data-social" src="img/telegram.png"
+                       alt="telegram">
+                  <img class="prime-info__data-social" src="img/vk.png"
+                       alt="vk">
+                  <img class="prime-info__data-social" src="img/telegram.png"
+                       alt="telegram">
+                </div>
+                <span>
               <svg
                 class="edit-btn edit-socials" data-modal="socials-modal"
                 width="17" height="16"
@@ -428,6 +441,8 @@
                       fill="#9A9A9A"/>
                   </svg>
             </span>
+              </div>
+
             </li>
             <li class="edit-el">
               <div class="prime-info__date-input edit-wrapper">
@@ -581,14 +596,16 @@
 </svg></span>
         </h2>
         <div class="bank-details__bank-info bank">
-          <h3 class="bank__title" data-updfield="bank_name">АО «Тинькофф Банк»</h3>
+          <h3 class="bank__title" data-updfield="bank_name">АО «Тинькофф
+            Банк»</h3>
           <ul class="bank__list">
             <li class="bank__list-item bank__recipient">
               <p class="bank__list-title">Получатель</p>
               <p class="bank__list-data copy-field"><span
                 class="bank__recipient-value copy-value"> <span
                 data-updfield="bank_surname">Константинов</span> <span
-                data-updfield="bank_firstname">Константин</span> <span data-updfield="bank_fathname">Константинович</span></span>
+                data-updfield="bank_firstname">Константин</span> <span
+                data-updfield="bank_fathname">Константинович</span></span>
                 <span><svg class="copy-btn" width="13" height="15"
                            viewBox="0 0 13 15" fill="none"
                            xmlns="http://www.w3.org/2000/svg"><g opacity="0.5"><path
@@ -600,7 +617,8 @@
             </li>
             <li class="bank__list-item">
               <p class="bank__list-title">Название банка</p>
-              <p class="bank__list-data copy-field"><span class="copy-value" data-updfield="bank_name">АО «Тинькофф Банк»</span>
+              <p class="bank__list-data copy-field"><span class="copy-value"
+                                                          data-updfield="bank_name">АО «Тинькофф Банк»</span>
                 <span>
                   <svg
                     class="copy-btn" width="13" height="15" viewBox="0 0 13 15"
@@ -613,7 +631,8 @@
             </li>
             <li class="bank__list-item">
               <p class="bank__list-title">Расчетный счет</p>
-              <p class="bank__list-data copy-field"><span class="copy-value" data-updfield="bank_schet">40817810000013551194</span><span>
+              <p class="bank__list-data copy-field"><span class="copy-value"
+                                                          data-updfield="bank_schet">40817810000013551194</span><span>
                 <svg
                   class="copy-btn" width="13" height="15" viewBox="0 0 13 15"
                   fill="none" xmlns="http://www.w3.org/2000/svg"><g
@@ -625,7 +644,8 @@
             </li>
             <li class="bank__list-item">
               <p class="bank__list-title">БИК</p>
-              <p class="bank__list-data copy-field"><span class="copy-value" data-updfield="bank_bik">044525974</span><span>
+              <p class="bank__list-data copy-field"><span class="copy-value"
+                                                          data-updfield="bank_bik">044525974</span><span>
                 <svg class="copy-btn"
                      width="13"
                      height="15"
@@ -645,7 +665,8 @@
             </li>
             <li class="bank__list-item">
               <p class="bank__list-title">Корреспондентский счет</p>
-              <p class="bank__list-data copy-field"><span class="copy-value" data-updfield="bank_korschet">30101810145250000974</span><span>
+              <p class="bank__list-data copy-field"><span class="copy-value"
+                                                          data-updfield="bank_korschet">30101810145250000974</span><span>
                 <svg
                   class="copy-btn" width="13" height="15" viewBox="0 0 13 15"
                   fill="none" xmlns="http://www.w3.org/2000/svg"><g

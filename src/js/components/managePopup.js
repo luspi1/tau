@@ -12,11 +12,10 @@ const editSocialsBtn = document.querySelector('.edit-socials')
 const editPassportBtn = document.querySelector('.edit-passport')
 const editRequisitesBtn = document.querySelector('.edit-requisites')
 const createNewContactBtn = document.querySelector('.page-contacts__create-contact-btn')
-
+const connectLeaderBtn = document.querySelector('.edit-contact__connect-leader-btn')
 
 // Управление состоянием модалок
 const manageModals = (...editButtons) => {
-
   editButtons.forEach(btn => {
     if (btn) {
       btn.addEventListener('click', (e) => {
@@ -29,7 +28,7 @@ const manageModals = (...editButtons) => {
   })
 }
 
-manageModals(editFullnameBtn, editSocialsBtn, editPassportBtn, editRequisitesBtn, createNewContactBtn)
+manageModals(editFullnameBtn, editSocialsBtn, editPassportBtn, editRequisitesBtn, createNewContactBtn, connectLeaderBtn)
 
 
 
