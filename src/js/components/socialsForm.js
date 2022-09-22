@@ -14,7 +14,9 @@ const socialsContainer = document.querySelector('.prime-info__socials-icons')
 
 
 const updateSocials = (data) => {
-  socialsContainer.innerHTML = data
+  if (data) {
+    socialsContainer.innerHTML = data
+  }
 }
 
 
