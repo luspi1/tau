@@ -1,1 +1,6 @@
-{"status": "ok", "errortext": "Произошла ошибка!", "id_person_image": "11"}
+{
+"status": "ok",
+"errortext": "Произошла ошибка!",
+"html": "<p>ссылка</p>"
+}
+

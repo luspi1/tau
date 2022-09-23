@@ -90,3 +90,46 @@ editElements.forEach(el => {
     editBtn.style.visibility = 'visible'
   })
 })
+
+
+//  Отслеживание изменений в списке социалок
+
+const socialIconsList = document.querySelector('.prime-info__socials-icons')
+
+if (socialIconsList) {
+
+
+  const callback = (mutations) => {
+    if (mutations[0].target.childElementCount < 2) {
+      socialIconsList.classList.add('_non-icons')
+    } else {
+      socialIconsList.classList.remove('_non-icons')
+    }
+  }
+
+  const observer = new MutationObserver(callback)
+  observer.observe(socialIconsList, {
+    childList: true,
+  })
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

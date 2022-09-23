@@ -238,6 +238,10 @@
       background: none;
       cursor: pointer;
 
+      svg {
+        pointer-events: none;
+      }
+
       svg path {
         transition: all .3s;
       }
@@ -1001,6 +1005,7 @@
       top: 50%;
       right: 15px;
       transform: translateY(-50%);
+
       path {
         transition: all .3s;
       }
@@ -1009,6 +1014,7 @@
         .modal-connect-leader__svg-bg {
           fill: $link;
         }
+
         .modal-connect-leader__svg-icon {
           fill: #ffffff;
         }

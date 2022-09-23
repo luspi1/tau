@@ -1,4 +1,4 @@
-import { modalOverlay, body, modalSocials, modalPassport } from "../_vars";
+import { modalOverlay, body, modalSocials } from "../_vars";
 import { initSelects } from "./customSelect";
 import {
   sendData,
@@ -15,12 +15,10 @@ const socialsContainer = document.querySelector('.prime-info__socials-icons')
 
 const updateSocials = (data) => {
   if (data) {
-    socialsContainer.innerHTML = data
+    socialsContainer.insertAdjacentHTML('afterbegin', data)
   }
 }
 
-
-let linkCount = 2;
 
 // Обработка события отправки формы социалок
 
@@ -60,34 +58,39 @@ if (editSocialsForm) {
 
 // Добавление еще одной ссылки
 
-const templateSocialsFragment = document.querySelector('#socials-link-template').content;
+const templateSocialsFragment = document.querySelector('#socials-link-template')?.content;
 
-const templateSocials = templateSocialsFragment.querySelector('.socials-list__item')
-
-
-const deleteSocialsItem = (e) => {
-  socialLinks.removeChild(e.target)
+if (templateSocialsFragment) {
+  const templateSocials = templateSocialsFragment.querySelector('.socials-list__item')
+  if (addLinkBtn) {
+    addLinkBtn.addEventListener('click', () => {
+      const socialLink = templateSocials.cloneNode(true)
+      socialLinks.appendChild(socialLink)
+      initSelects()
+    })
+  }
 }
 
 
-if (addLinkBtn) {
-  addLinkBtn.addEventListener('click', () => {
-    const socialLink = templateSocials.cloneNode(true)
-    const socialLinkCount = socialLink.querySelector('.socials-list__item-count')
-    socialLinkCount.textContent = linkCount
+// Удаление ссылок
 
-    socialLinks.appendChild(socialLink)
-    initSelects()
-    linkCount++
-
-    const linkItems = socialLinks.querySelectorAll('.socials-list__item')
-    const currentLink = linkItems[linkItems.length - 1]
-
-    currentLink.querySelector('.socials-list__delete-btn').addEventListener('click', (e) => {
-      e.preventDefault()
-      socialLinks.removeChild(currentLink)
-      linkCount--
-    })
+if (modalSocials) {
+  modalSocials.addEventListener('click', (e) => {
+    if (e.target.classList.contains('socials-list__delete-btn')) {
+      const linkTarget = e.target.closest('.socials-list__item')
+      const socialLinks = modalSocials.querySelector('.modal-socials__list')
+      socialLinks.removeChild(linkTarget)
+    }
   })
 }
+
+
+
+
+
+
+
+
+
+
 

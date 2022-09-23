@@ -29,6 +29,7 @@
     }
 
     span {
+      height: 32px;
       position: relative;
     }
   }
@@ -158,12 +159,29 @@
       display: flex;
       flex-wrap: wrap;
       max-width: 280px;
+
+      &._non-icons {
+        .prime-info__socials-text {
+          display: block;
+        }
+      }
+
+
       img {
         margin-right: 5px;
         margin-bottom: 5px;
         height: 27px;
         width: 27px;
       }
+
+      .prime-info__socials-text {
+        display: none;
+        font-size: 14px;
+        line-height: 18px;
+        max-width: 150px;
+        text-align: center;
+      }
+
     }
 
     .prime-info__data-social ~ span {
