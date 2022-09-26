@@ -1,6 +1,6 @@
 import { formToObj, sendData, serializeForm, showInfoModal, toggleLoader } from "../_functions";
 
-const newOrgForm = document.querySelector('.new-organization__form')
+// const newOrgForm = document.querySelector('.new-organization__form')
 const addAccountBtn = document.querySelector('.new-organization__add-account button')
 const accountsContainer = document.querySelector('.new-organization__account-list')
 
@@ -8,33 +8,33 @@ let accountCount = 2;
 
 // Обработка события отправки
 
-if (newOrgForm) {
-
-  async function handleFormSubmit (event) {
-    event.preventDefault()
-
-    const data = serializeForm(event.target)
-    const objData = formToObj(data)
-    const jsonData = JSON.stringify(objData)
-
-    toggleLoader()
-
-    const response = await sendData(jsonData, '/include/ajax/new_org.php')
-    const finishedResponse = await response.json()
-
-    toggleLoader()
-
-    const {status, errortext} = finishedResponse
-    if (status === 'ok') {
-      window.location.href = 'organizations.html';
-    } else {
-      showInfoModal(errortext)
-    }
-  }
-
-  newOrgForm.addEventListener('submit', handleFormSubmit)
-
-}
+// if (newOrgForm) {
+//
+//   async function handleFormSubmit (event) {
+//     event.preventDefault()
+//
+//     const data = serializeForm(event.target)
+//     const objData = formToObj(data)
+//     const jsonData = JSON.stringify(objData)
+//
+//     toggleLoader()
+//
+//     const response = await sendData(jsonData, '/include/ajax/new_org.php')
+//     const finishedResponse = await response.json()
+//
+//     toggleLoader()
+//
+//     const {status, errortext} = finishedResponse
+//     if (status === 'ok') {
+//       window.location.href = 'organizations.html';
+//     } else {
+//       showInfoModal(errortext)
+//     }
+//   }
+//
+//   newOrgForm.addEventListener('submit', handleFormSubmit)
+//
+// }
 
 
 // Добавление еще одного счета

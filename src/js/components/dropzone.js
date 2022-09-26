@@ -365,8 +365,6 @@ if (taxScan) {
 const newOrgLogo = document.querySelector('#new-organization-dropzone');
 
 if (newOrgLogo) {
-  const idDownloadBtn = document.querySelector('#logo-add').dataset.id
-
   let newOrgDropzone = new Dropzone(newOrgLogo, {
     maxFilesize: 5,
     url: "/include/ajax/upload_image.php",
@@ -379,7 +377,7 @@ if (newOrgLogo) {
     removedfile: async function (file) {
       const data = {
         filetype: "org",
-        id_image: file._removeLink.dataset.id
+        id_person_image: file._removeLink.dataset.id
       }
 
       const jsonData = JSON.stringify(data)
@@ -400,7 +398,6 @@ if (newOrgLogo) {
 
   newOrgDropzone.on("sending", function (file, xhr, formData) {
     formData.append("filetype", "org");
-    formData.append("id_org", idDownloadBtn);
   });
 
   newOrgDropzone.on("error", function (file) {
@@ -411,13 +408,13 @@ if (newOrgLogo) {
 
   newOrgDropzone.on("success", function (file, response) {
     const resObj = JSON.parse(response)
-    const {status, errortext, id_image} = resObj
+    const {status, errortext, id_person_image} = resObj
 
     if (status !== 'ok') {
       showInfoModal(errortext)
       file.previewElement.parentNode.removeChild(file.previewElement);
     } else {
-      file._removeLink.setAttribute('data-id', id_image)
+      file._removeLink.setAttribute('data-id', id_person_image)
     }
   });
 
@@ -428,7 +425,7 @@ if (newOrgLogo) {
       deleteBtn.addEventListener('click', async (e) => {
         const data = {
           filetype: "org",
-          id_image: e.target.dataset.id
+          id_person_image: e.target.dataset.id
         }
         const jsonData = JSON.stringify(data)
         const response = await sendData(jsonData, '/include/ajax/delete_image.php')

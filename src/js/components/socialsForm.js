@@ -1,3 +1,6 @@
+import JustValidate from 'just-validate';
+
+
 import { modalOverlay, body, modalSocials } from "../_vars";
 import { initSelects } from "./customSelect";
 import {
@@ -15,6 +18,10 @@ const socialsContainer = document.querySelector('.prime-info__socials-icons')
 
 const updateSocials = (data) => {
   if (data) {
+    const previousLinks = socialsContainer.querySelectorAll('a')
+    if (previousLinks) {
+      previousLinks.forEach(link => link.remove())
+    }
     socialsContainer.insertAdjacentHTML('afterbegin', data)
   }
 }
@@ -25,6 +32,8 @@ const updateSocials = (data) => {
 async function handleFormSubmit (event) {
   event.preventDefault()
 
+  console.log(event.target)
+
   const data = serializeForm(event.target)
 
   const arrData = Array.from(data.entries())
@@ -32,7 +41,8 @@ async function handleFormSubmit (event) {
   const jsonData = JSON.stringify(arrData)
   toggleLoader()
 
-  const response = await sendData(jsonData, '/include/ajax/save_social.php')
+  // const response = await sendData(jsonData, '/include/ajax/save_social.php')
+  const response = await sendData(jsonData, 'test.txt')
   const finishedResponse = await response.json()
 
   toggleLoader()
@@ -83,9 +93,6 @@ if (modalSocials) {
     }
   })
 }
-
-
-
 
 
 

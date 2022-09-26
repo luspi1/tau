@@ -1,6 +1,7 @@
 import Choices from "choices.js";
 
 const typeContactInput = document.querySelector('.new-contact__type-input')
+const casesInput = document.querySelector('.cases__filter-input')
 
 // Селекторы в модалке социалок
 const initSelects = () => {
@@ -60,6 +61,16 @@ document.querySelectorAll('.new-organization__item select').forEach(el => {
   });
 })
 
+// Селектор филтрации на странице кейсов
+
+if (casesInput) {
+  const choices = new Choices(casesInput, {
+    searchEnabled: false,
+    itemSelectText: '',
+    shouldSort: false,
+    allowHTML: true
+  });
+}
 
 
 export {initSelects}

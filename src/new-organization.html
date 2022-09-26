@@ -3,7 +3,6 @@
 
 @include('partials/head.html', {
 'title': 'Новая организация',
-
 })
 
 <body class="page__body">
@@ -17,7 +16,7 @@
     <section class="section new-organization">
       <div class="container">
         <h1 class="new-organization__title">Новая организация</h1>
-        <form action="#" class="new-organization__form" autocomplete="off">
+        <form action="/include/ajax/new_org.php" class="new-organization__form" autocomplete="off">
           <div class="new-organization__section new-organization__logo-section">
             <h2 class="new-organization__section-title">
               Изображение (логотип и прочие)
@@ -37,7 +36,7 @@
                     Или загрузите изображение с ПК
                   </p>
                   <button class="new-organization__btn" id="logo-add"
-                          type="button" data-id="4a817e3e-38c9-4c6b-9c84-ffbec2505453">Загрузить
+                          type="button">Загрузить
                   </button>
                 </div>
                 <div

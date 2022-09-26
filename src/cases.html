@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html', {
+'title': 'Кейсы',
+})
+
+<body class="page__body">
+<div class="site-container">
+  <div class="modal-overlay"></div>
+  @include('partials/header.html', {
+  'bottom-menu': 'bottom-menu_disabled'
+  })
+
+  <main class="main cases-page">
+    <section class="section cases">
+      <div class="container">
+        <div class="cases__menu">
+          <h1>Кейсы</h1>
+          <input class="cases__input" name="cases_search" type="text"
+                 placeholder="Поиск">
+          <select class="cases__filter-input" name="cases_filter">
+            <option value="org">Организация</option>
+            <option value="non-org">Не организация</option>
+          </select>
+          <button class="cases__btn" type="button">Добавить кейс</button>
+        </div>
+
+        <ul class="cases__list">
+          <li class="cases__list-item">
+            <div class="cases__item-left">
+              <h3>
+                Ремонт автотехники (кейс 2198)
+              </h3>
+              <p>
+                применяют: <a href="#">ИП Краснощеков</a>, <a href="#">ООО НПО
+                ТАУ</a>,
+                <a href="#">ООО МЦАИ</a>
+              </p>
+            </div>
+            <div class="cases__item-right">
+              <h3>Всего сделок: 22</h3>
+              <p>
+                кейс создан <span>14 января 2022 года</span>
+              </p>
+            </div>
+          </li>
+          <li class="cases__list-item">
+            <div class="cases__item-left">
+              <h3>
+                Археологические изыскания (кейс 0017)
+              </h3>
+              <p>
+                применяют: <a href="#">ООО МЦАИ</a>
+              </p>
+            </div>
+            <div class="cases__item-right">
+              <h3>Всего сделок: 71</h3>
+              <p>
+                кейс создан <span>10 марта 2022 года</span>
+              </p>
+            </div>
+          </li>
+          <li class="cases__list-item">
+            <div class="cases__item-left">
+              <h3>
+                Ремонт автотехники (кейс 2198)
+              </h3>
+              <p>
+                применяют: <a href="#">ИП Краснощеков</a>, <a href="#">ООО НПО
+                ТАУ</a>,
+                <a href="#">ООО МЦАИ</a>
+              </p>
+            </div>
+            <div class="cases__item-right">
+              <h3>Всего сделок: 22</h3>
+              <p>
+                кейс создан <span>14 января 2022 года</span>
+              </p>
+            </div>
+          </li>
+          <li class="cases__list-item">
+            <div class="cases__item-left">
+              <h3>
+                Археологические изыскания (кейс 0017)
+              </h3>
+              <p>
+                применяют: <a href="#">ООО МЦАИ</a>
+              </p>
+            </div>
+            <div class="cases__item-right">
+              <h3>Всего сделок: 71</h3>
+              <p>
+                кейс создан <span>10 марта 2022 года</span>
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    @include('partials/info-modal.html')
+  </main>
+
+  @include('partials/footer.html')
+</div>
+
+</body>
+
+</html>
+
