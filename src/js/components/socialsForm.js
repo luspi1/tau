@@ -41,8 +41,7 @@ async function handleFormSubmit (event) {
   const jsonData = JSON.stringify(arrData)
   toggleLoader()
 
-  // const response = await sendData(jsonData, '/include/ajax/save_social.php')
-  const response = await sendData(jsonData, 'test.txt')
+  const response = await sendData(jsonData, '/include/ajax/save_social.php')
   const finishedResponse = await response.json()
 
   toggleLoader()
