@@ -119,8 +119,26 @@ if (snilsInput) {
 }
 
 
+// Дата платежа на странице создания кейса
 
 
+const initDatePaymentsMask = () => {
+  const datePayments = document.querySelectorAll('.create-case-page__date-input');
+
+  datePayments.forEach(el => {
+    Inputmask({
+      "mask": "99.99.9999",
+      showMaskOnHover: false,
+      showMaskOnFocus: false,
+    }).mask(el);
+  })
+
+}
+
+initDatePaymentsMask()
+
+
+export { initDatePaymentsMask }
 
 
 

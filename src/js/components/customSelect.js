@@ -61,7 +61,7 @@ document.querySelectorAll('.new-organization__item select').forEach(el => {
   });
 })
 
-// Селектор филтрации на странице кейсов
+// Селектор фильтрации на странице кейсов
 
 if (casesInput) {
   const choices = new Choices(casesInput, {
@@ -73,4 +73,20 @@ if (casesInput) {
 }
 
 
-export {initSelects}
+// Селекторы на странице создания кейса
+
+const initPaymentSelects = () => {
+  document.querySelectorAll('.create-case-page__input-wrapper select').forEach(el => {
+    const choices = new Choices(el, {
+      searchEnabled: false,
+      itemSelectText: '',
+      shouldSort: false,
+      allowHTML: true
+    });
+  })
+}
+
+initPaymentSelects()
+
+
+export { initSelects, initPaymentSelects }

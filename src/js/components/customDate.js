@@ -21,3 +21,17 @@ new AirDatepicker(physDatePassport, {
   startDate,
 });
 
+
+const initDatePayment = () => {
+  const datePayments = document.querySelectorAll('.create-case-page__date-input');
+
+  datePayments.forEach(el => {
+    new AirDatepicker(el, {
+      startDate,
+    });
+  })
+}
+
+initDatePayment()
+
+export { initDatePayment }
