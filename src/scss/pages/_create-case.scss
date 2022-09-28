@@ -114,6 +114,11 @@
     }
   }
 
+
+  &__wrapper-select {
+    width: 350px;
+  }
+
   &__wrapper-name,
   &__wrapper-annex-name {
     flex-grow: 1;
@@ -140,7 +145,7 @@
 
 
   .choices {
-    width: 350px;
+    width: 100%;
     border: 1px solid transparent;
 
     &.is-open {
@@ -276,10 +281,11 @@
 
     .create-case-page__inputs {
       margin-bottom: 0;
+      justify-content: flex-start;
     }
 
     .create-case-page__input-wrapper {
-      flex-grow: 1;
+      width: 350px;
     }
 
     .create-case-page__wrapper-select {
@@ -347,6 +353,7 @@
         button {
           position: relative;
           padding-left: 30px;
+          text-align: left;
           @include montserrat-medium;
           font-size: 20px;
           line-height: 24px;

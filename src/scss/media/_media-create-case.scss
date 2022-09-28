@@ -1,0 +1,73 @@
+@media (max-width: 768px) {
+
+
+  .create-case-page__input {
+    font-size: 14px;
+    line-height: 18px;
+    padding: 18px 13px;
+  }
+
+  .create-case-page .choices__inner {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .create-case-page .choices[data-type*=select-one] .choices__inner {
+    padding: 14px 8px 14px 8px;
+  }
+
+
+  .create-case-page__inputs {
+    flex-direction: column;
+
+    .create-case-page__input-wrapper {
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    .create-case-page__wrapper-symbol {
+      min-width: auto;
+    }
+  }
+
+  .create-case-page .case-terms .create-case-page__input-wrapper,
+  .create-case-page .case-optional .create-case-page__input-wrapper,
+  .create-case-page .case-annex__optional-items .create-case-page__input-wrapper {
+    width: 100%;
+  }
+
+  .create-case-page__btns {
+    flex-direction: column;
+  }
+
+  .create-case-page__save-btn {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .create-case-page .case-caption__info {
+    padding: 20px 20px;
+  }
+
+  .create-case-page .case-terms__item {
+    padding: 20px 20px 0;
+  }
+
+  .create-case-page .case-optional__item {
+    padding: 20px 20px 25px;
+  }
+  .create-case-page .case-annex__item {
+    padding: 20px 20px 25px;
+  }
+
+  .create-case-page .case-templates__inner {
+    padding: 20px 20px 25px;
+  }
+
+  .create-case-page .case-templates__list li button {
+    padding-left: 30px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+}
