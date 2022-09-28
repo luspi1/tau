@@ -14,6 +14,7 @@
 @import "./pages/journal";
 @import "./pages/cases";
 @import "pages/create-case";
+@import "pages/case-item";
 
 // Компоненты
 @import "./components/modals";
@@ -26,7 +27,9 @@
 @import "media/media-services";
 @import "media/media-journal";
 @import "media/media-cases";
+@import "media/media-case-item";
 @import "media/media-create-case";
+
 
 @import "./components/header";
 @import "./components/footer";

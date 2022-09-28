@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html', {
+'title': 'Археологические изыскания (кейс 0017)',
+})
+
+<body class="page__body">
+  <div class="site-container">
+    <div class="modal-overlay"></div>
+    @include('partials/header.html', {
+    'bottom-menu': 'bottom-menu_disabled'
+    })
+
+    <main class="main case-item">
+      <div class="container">
+        <section class="case">
+          <div class="container">
+            <h1>Археологические изыскания (кейс 0017)</h1>
+            <div class="case__deal">
+              <p class="case__minititle">Название сделки</p>
+              <h5>Название сделки (обязательные данные, поле ввода текста)</h5>
+            </div>
+            <div class="case__deal">
+              <p class="case__minititle">Контрагент</p>
+              <h5>Контрагент (обязательные данные, поле выбора из базы)</h5>
+            </div>
+            <div class="case__deal">
+              <p class="case__minititle">Дата заключения договора</p>
+              <h5>22.09.2021</h5>
+            </div>
+            <div class="case__composition composition">
+              <h3>В состав сделки всегда входят следующие платежи:</h3>
+              <ul class="composition__list">
+                <li class="composition__item">Авансовый платеж (сумма и дата)</li>
+                <li class="composition__item">Платеж (сумма и дата)</li>
+                <li class="composition__item">Платеж (сумма и дата)</li>
+                <li class="composition__item">Завершающий платеж (сумма и дата)</li>
+              </ul>
+              <p>Эти данные нельзя убрать из Кейса, они заполняются на этапе создания Сделки.</p>
+            </div>
+            <div class="case__fields">
+              <h3>Дополнительные поля</h3>
+              <p class="case__minititle">Поле номер один</p>
+              <div class="case__fields-wrap">
+                <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                  totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
+                  sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed
+                  quia
+                  consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui
+                  dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi
+                  tempora
+                  incidunt, ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+                <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
+                  aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit
+                  esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla
+                  pariatur?
+                  At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum
+                  deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non
+                  provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum
+                  fuga.
+                </p>
+                <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est
+                  eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis
+                  voluptas
+                  assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum
+                  necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non recusandae. Itaque
+                  earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur
+                  aut perferendis doloribus asperiores repella</p>
+              </div>
+              <p class="case__minititle">Поле номер два</p>
+              <div class="case__fields-wrap">
+                <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                  totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
+                  sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed
+                  quia
+                  consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui
+                  dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi
+                  tempora
+                  incidunt, ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+              </div>
+            </div>
+            <div class="case__fields app">
+              <h3>Приложения</h3>
+              <h4>Приложение №1</h4>
+              <p class="case__minititle">Наименование приложения</p>
+              <h5>Наименование приложения (данные, поле ввода текста)</h5>
+              <p class="case__minititle">Предмет приложения</p>
+              <div class="case__fields-wrap">
+                <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                  totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
+                  sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed
+                  quia
+                  consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui
+                  dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi
+                  tempora
+                  incidunt, ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+              </div>
+              <p class="case__minititle">Еще какое-то поле</p>
+              <div class="case__fields-wrap">
+                <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                  totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
+                  sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed
+                  quia
+                  consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui
+                  dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi
+                  tempora
+                  incidunt, ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+              </div>
+            </div>
+            <div class="case__fields app">
+              <h4>Приложение №2</h4>
+              <p class="case__minititle">Наименование приложения</p>
+              <h5>Наименование приложения (данные, поле ввода текста)</h5>
+              <p class="case__minititle">Предмет приложения</p>
+              <div class="case__fields-wrap">
+                <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                  totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
+                  sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed
+                  quia
+                  consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui
+                  dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi
+                  tempora
+                  incidunt, ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+              </div>
+              <p class="case__minititle">Еще какое-то поле</p>
+              <div class="case__fields-wrap">
+                <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+                  totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta
+                  sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed
+                  quia
+                  consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui
+                  dolorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi
+                  tempora
+                  incidunt, ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <aside class="aside">
+          <h3>Данные кейса</h3>
+          <div class="data-case">
+            <div class="data-case__item">
+              <p class="case__minititle">Кейс применяют:
+              <p><a href="#" target="_blank">ООО МЦАИ</a> (всего 1)</p>
+            </div>
+            <div class="data-case__item">
+              <p class="case__minititle">Кейс создан:
+              <p>10 марта 2020 года</p>
+            </div>
+            <div class="data-case__item">
+              <p class="case__minititle">Кейс использован:
+              <p>71 сделка</p>
+            </div>
+          </div>
+          <h3>Шаблоны</h3>
+          <div class="pattern">
+            <div class="pattern__item">
+              <p>Шаблон Договора</p>
+              <a href="file:#//" download target="_blank">ШД АИ-0017-Т2-14_02_2022.doc</a>
+              <a href="file:#//" download target="_blank">ШД АИ-0017-Т2-14_02_2022.pdf</a>
+            </div>
+            <div class="pattern__item">
+              <p>Шаблон Акта выполненных работ
+                или оказанных услуг</p>
+              <a href="file:#//" download target="_blank">ШД АИ-0017-Т2-14_02_2022.doc</a>
+              <a href="file:#//" download target="_blank">ШД АИ-0017-Т2-14_02_2022.pdf</a>
+            </div>
+            <div class="pattern__item">
+              <p>Шаблон Дополнительного Соглашения</p>
+              <a href="file:#//" download target="_blank">ШД АИ-0017-Т2-14_02_2022.doc</a>
+              <a href="file:#//" download target="_blank">ШД АИ-0017-Т2-14_02_2022.pdf</a>
+            </div>
+            <div class="pattern__item">
+              <p>Шаблон иного документа</p>
+              <a href="file:#//" download target="_blank">ШД АИ-0017-Т2-14_02_2022.doc</a>
+              <a href="file:#//" download target="_blank">ШД АИ-0017-Т2-14_02_2022.pdf</a>
+            </div>
+          </div>
+      </div>
+      </aside>
+  </div>
+  @include('partials/info-modal.html')
+  </main>
+
+  @include('partials/footer.html')
+  </div>
+
+</body>
+
+</html>
