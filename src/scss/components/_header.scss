@@ -1,5 +1,4 @@
 .header {
-
   &.bottom-menu_disabled .header__bottom-container {
     display: none;
   }
@@ -7,14 +6,20 @@
   &.bottom-menu_disabled .header__title {
     display: none;
   }
-
-
-  &__bg-wrapper {
-    background: linear-gradient(90deg, #5141B3 0%, #484BBD 35.77%, #2F64D8 96.83%, #2E66DA 100%);
-    padding: 30px 0 15px 0;
-
+  .header__title_deals {
+    display: none;
   }
 
+  &.deals-active {
+    .header__title_deals {
+      display: block;
+    }
+  }
+
+  &__bg-wrapper {
+    background: linear-gradient(90deg, #5141b3 0%, #484bbd 35.77%, #2f64d8 96.83%, #2e66da 100%);
+    padding: 30px 0 15px 0;
+  }
 
   &__nav {
     display: flex;
@@ -40,37 +45,35 @@
         visibility: visible;
       }
     }
-
   }
 
   &__nav-list li:not(:last-child) {
     margin-right: 15px;
   }
 
-
   &__nav-list a {
     font-size: 17px;
     line-height: 21px;
-    color: rgba(#FFFFFF, 0.8);
+    color: rgba(#ffffff, 0.8);
     display: flex;
     align-items: center;
-    transition: all .3s;
+    transition: all 0.3s;
 
     svg {
       margin-right: 5px;
     }
 
     &:hover {
-      color: #FFFFFF;
+      color: #ffffff;
     }
 
     &:hover svg {
-      fill: #FFFFFF;
+      fill: #ffffff;
     }
   }
 
   &__dropdown-menu {
-    background: linear-gradient(90deg, #5141B3 0%, #484BBD 35.77%, #2F64D8 96.83%, #2E66DA 100%);
+    background: linear-gradient(90deg, #5141b3 0%, #484bbd 35.77%, #2f64d8 96.83%, #2e66da 100%);
     border-radius: 5px;
     padding: 9px 26px 7px 26px;
     position: absolute;
@@ -82,10 +85,10 @@
     z-index: -1;
     opacity: 0;
     visibility: hidden;
-    transition: all .3s;
+    transition: all 0.3s;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: -15px;
       left: 0;
@@ -103,7 +106,7 @@
         @include montserrat-regular;
         font-size: 17px;
         line-height: 44px;
-        color: #FFFFFF;
+        color: #ffffff;
       }
 
       &:hover {
@@ -112,8 +115,6 @@
         }
       }
     }
-
-
   }
 
   &__nav-personal {
@@ -123,7 +124,7 @@
     width: 325px;
 
     a {
-      color: rgba(#FFFFFF, 0.8);
+      color: rgba(#ffffff, 0.8);
       font-size: 17px;
       line-height: 21px;
     }
@@ -138,11 +139,12 @@
     }
   }
 
-  &__title {
+  &__title,
+  &__title_deals  {
     @include montserrat-semibold;
     font-size: 36px;
     line-height: 44px;
-    color: #FFFFFF;
+    color: #ffffff;
   }
 
   &__bottom-container {
@@ -161,7 +163,7 @@
       align-items: center;
       font-size: 17px;
       line-height: 21px;
-      color: #3E3E3D;
+      color: #3e3e3d;
 
       svg {
         margin-right: 5px;
@@ -171,75 +173,72 @@
 
   .header-menu {
     &__link {
-      color: #817D8C;
+      color: #817d8c;
       font-size: 17px;
       line-height: 21px;
       position: relative;
-      transition: all .3s;
+      transition: all 0.3s;
 
       &_active {
-        color: #2F65F6;
+        color: #2f65f6;
 
         svg path {
-          transition: all .3s;
-          fill: #2F65F6;
+          transition: all 0.3s;
+          fill: #2f65f6;
         }
       }
     }
-
   }
 
   .header-menu.info_active {
     .header__info-link {
-      color: #2F65F6;
+      color: #2f65f6;
 
       svg path {
-        fill: #2F65F6;
+        fill: #2f65f6;
       }
     }
   }
 
   .header-menu.documents_active {
     .header__documents-link {
-      color: #2F65F6;
+      color: #2f65f6;
 
       svg path {
-        fill: #2F65F6;
+        fill: #2f65f6;
       }
     }
   }
 
   .header-menu.organizations_active {
     .header__organizations-link {
-      color: #2F65F6;
+      color: #2f65f6;
 
       svg path {
-        fill: #2F65F6;
+        fill: #2f65f6;
       }
     }
   }
 
   .header-menu.services_active {
     .header__services-link {
-      color: #2F65F6;
+      color: #2f65f6;
 
       svg path {
-        fill: #2F65F6;
+        fill: #2f65f6;
       }
     }
   }
 
   .header-menu.journal_active {
     .header__journal-link {
-      color: #2F65F6;
+      color: #2f65f6;
 
       svg path {
-        fill: #2F65F6;
+        fill: #2f65f6;
       }
     }
   }
-
-
 }
 
 @media (max-width: 1280px) {
@@ -269,11 +268,9 @@
     width: 19px;
     height: 19px;
   }
-
 }
 
 @media (max-width: 768px) {
-
   .header__bottom-container {
     padding: 28px 20px;
   }
@@ -302,7 +299,6 @@
     text-align: center;
   }
 
-
   .header__bottom-menu {
     flex-direction: column;
   }
@@ -311,5 +307,4 @@
     margin-right: 10px;
     margin-bottom: 10px;
   }
-
 }

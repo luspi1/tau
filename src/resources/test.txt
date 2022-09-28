@@ -1,7 +1,0 @@
-{
-"status": "ok",
-"errortext": "Произошла ошибка!",
-"id_person_image": "666q",
-"html": "<a>ссылка</a>"
-}
-
