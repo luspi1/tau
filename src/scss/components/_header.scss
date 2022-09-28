@@ -2,7 +2,9 @@
 
   &.bottom-menu_disabled .header__bottom-container {
     display: none;
-  }  &.bottom-menu_disabled .header__title {
+  }
+
+  &.bottom-menu_disabled .header__title {
     display: none;
   }
 
@@ -30,6 +32,15 @@
 
   &__nav-list li {
     cursor: pointer;
+    position: relative;
+    &:hover {
+      .header__dropdown-menu {
+        z-index: 20;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
   }
 
   &__nav-list li:not(:last-child) {
@@ -56,6 +67,53 @@
     &:hover svg {
       fill: #FFFFFF;
     }
+  }
+
+  &__dropdown-menu {
+    background: linear-gradient(90deg, #5141B3 0%, #484BBD 35.77%, #2F64D8 96.83%, #2E66DA 100%);
+    border-radius: 5px;
+    padding: 9px 26px 7px 26px;
+    position: absolute;
+    filter: drop-shadow(0px 0px 24px rgba(3, 0, 135, 0.4));
+    top: 35px;
+    left: 0;
+    width: 247px;
+    height: auto;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: 0;
+      height: 15px;
+      background-color: transparent;
+      width: 100%;
+    }
+
+    li {
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+
+      a {
+        @include montserrat-regular;
+        font-size: 17px;
+        line-height: 44px;
+        color: #FFFFFF;
+      }
+
+      &:hover {
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+
+
   }
 
   &__nav-personal {
@@ -170,6 +228,7 @@
       }
     }
   }
+
   .header-menu.journal_active {
     .header__journal-link {
       color: #2F65F6;
