@@ -1,0 +1,26 @@
+.main.deals {
+  .submenu {
+    &__list {
+      padding: 25px 0;
+      display: flex;
+    }
+
+    &__item {
+      &:not(:first-child) {
+        margin-left: 52px;
+      }
+      img {
+        transform: translateY(3px);
+      }
+      a {
+        @include montserrat-medium;
+        font-size: 17px;
+        line-height: 21px;
+        color: #3e3e3d;
+        &.link-active {
+          color: #2f65f6;
+        }
+      }
+    }
+  }
+}
