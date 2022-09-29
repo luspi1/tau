@@ -1,0 +1,101 @@
+@media (max-width: 1400px) {
+  .deals .submenu .container {
+    flex-direction: column;
+  }
+
+  .deals .submenu .container .deals__btn {
+    margin: 20px 0 0 auto;
+  }
+}
+
+@media (max-width: 1280px) {
+  .deals>.container {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .deals .aside {
+    max-width: 100%;
+    margin: 20px auto;
+  }
+
+  .deals .aside__card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .deals .submenu__list {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .deals .submenu__item {
+    padding: 0 8px;
+  }
+
+  .deals .submenu__item:nth-child(n+1) {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .deals .one-deal h1 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .deals .one-deal h1 {
+    font-size: 26px;
+  }
+
+  .deals .one-deal__data h3 {
+    font-size: 24px;
+  }
+
+  .deals .one-deal .container {
+    padding-bottom: 30px;
+  }
+
+  .deals .one-deal__name {
+    flex-direction: column;
+  }
+
+  .deals .one-deal__ok {
+    margin: 15px 0 0 auto;
+  }
+
+  .deals .one-deal__row {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  .deals .one-deal__item {
+    margin: 15px 0 0;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .deals .submenu__list {
+    flex-direction: column;
+  }
+
+  .deals .one-deal h1 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .deals .one-deal .container {
+    padding-bottom: 0;
+  }
+  .deals .aside {
+    overflow: hidden;
+  }
+
+  .deals .aside__card {
+    padding: 20px;
+  }
+
+}
