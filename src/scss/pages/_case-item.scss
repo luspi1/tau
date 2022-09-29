@@ -1,38 +1,73 @@
-.main.case-item {
-  > .container {
+.case-item {
+  .top {
+    .container {
+      padding: 40px 15px 35px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    h1 {
+      margin: 0;
+      @include montserrat-semibold;
+      font-size: 36px;
+      line-height: 44px;
+    }
+
+    .case-item__btn {
+      width: 190px;
+      height: 40px;
+      padding: 0 20px;
+      background: #2F65F6;
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      color: #FFFFFF;
+      cursor: pointer;
+      &:hover {
+        background-color: #264DDB;
+      }
+    }
+
+  }
+
+  >.container {
     display: flex;
     justify-content: space-between;
   }
 
   .case {
-    > .container {
+    >.container {
       max-width: 845px;
       padding: 0 0 150px;
     }
-    h1 {
-      margin: 35px 0;
-      @include montserrat-semibold;
-      font-size: 36px;
-      line-height: 44px;
-    }
+
     h3 {
       @include montserrat-semibold;
       font-size: 22px;
       line-height: 27px;
     }
+
     h4 {
       @include montserrat-regular;
       font-size: 20px;
       line-height: 24px;
     }
+
     h5 {
       @include montserrat-regular;
       padding-top: 4px;
       font-size: 20px;
       line-height: 24px;
     }
+
     &__deal {
       margin-top: 30px;
+      &:first-child {
+        margin-top: 0;
+      }
     }
 
     &__minititle {
@@ -44,40 +79,51 @@
 
     &__fields {
       margin-top: 45px;
+
       .case__minititle {
         margin-top: 18px;
       }
+
       h4 {
         margin-top: 20px;
       }
+
       &.app {
         margin-top: 30px;
+
         h3 {
           padding-top: 20px;
         }
+
         h5 {
           padding: 5px 0 15px;
         }
+
         .case__minititle {
           margin-top: 8px;
         }
       }
     }
+
     &__fields-wrap {
       padding: 5px 0;
+
       p {
         line-height: 24px;
+
         &:not(:first-child) {
           margin-top: 24px;
         }
       }
     }
   }
+
   .composition {
     margin-top: 50px;
     padding: 28px;
     border: 1px solid #2f65f6;
     border-radius: 15px;
+
     &__list {
       margin-top: 20px;
       padding-left: 20px;
@@ -87,36 +133,43 @@
       list-style: disc;
       line-height: 24px;
     }
+
     p {
       margin-top: 18px;
     }
   }
+
   .aside {
     max-width: 510px;
     height: 100%;
-    margin: 116px 0 0 20px;
+    margin: 0 0 0 20px;
     padding: 40px 36px 46px;
     background-color: #f7f8fa;
     border-radius: 15px;
+
     h3 {
       @include montserrat-semibold;
       font-size: 22px;
       line-height: 27px;
     }
+
     .data-case {
       margin: 18px 0 25px;
 
       &__item {
         display: flex;
+
         .case__minititle {
           width: 36%;
           padding-left: 0;
         }
+
         p {
           padding-left: 22px;
           text-align-last: left;
           line-height: 32px;
         }
+
         a {
           color: #2f65f6;
         }
@@ -126,15 +179,18 @@
     .pattern {
       &__item {
         margin-top: 28px;
+
         &:first-child {
           margin-top: 17px;
         }
+
         a {
           display: block;
           padding: 10px 0 0 30px;
           color: #2f65f6;
           line-height: 20px;
           position: relative;
+
           &::before {
             content: "";
             background-image: url("../img/svg/case_file.svg");

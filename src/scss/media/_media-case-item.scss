@@ -1,8 +1,11 @@
 @media (max-width: 992px) {
+  .case-item .top .container,
   .case-item > .container {
     flex-direction: column;
   }
-
+  .case-item .top .case-item__btn {
+    margin: 20px 0 0 auto;
+  }
   .case-item .case > .container {
     padding-bottom: 50px;
   }
@@ -18,7 +21,7 @@
 }
 
 @media (max-width: 576px) {
-  .case-item .case h1 {
+  .case-item .top h1 {
     font-size: 26px;
   }
   .case-item .composition {
@@ -31,7 +34,7 @@
   }
 }
 @media (max-width: 400px) {
-  .case-item .case h1 {
+  .case-item .top h1 {
     font-size: 22px;
     line-height: 30px;
   }

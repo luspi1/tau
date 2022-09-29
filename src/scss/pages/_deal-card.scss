@@ -1,25 +1,365 @@
-.main.deals {
+.deals {
   .submenu {
-    &__list {
-      padding: 25px 0;
+    .container {
       display: flex;
+      justify-content: space-between;
+      padding: 25px 15px;
+
+      .deals__btn {
+        width: 190px;
+        height: 40px;
+        padding: 0 20px;
+        background: #2F65F6;
+        border: none;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: #FFFFFF;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #264DDB;
+        }
+      }
     }
+
+    &__list {
+      display: flex;
+   }
 
     &__item {
       &:not(:first-child) {
         margin-left: 52px;
       }
-      img {
-        transform: translateY(3px);
-      }
+
       a {
         @include montserrat-medium;
         font-size: 17px;
         line-height: 21px;
         color: #3e3e3d;
+        display: flex;
+        flex-wrap: nowrap;
+
         &.link-active {
           color: #2f65f6;
+
+          svg {
+            path {
+              fill: #2f65f6;
+            }
+          }
         }
+
+        svg {
+          margin-right: 5px;
+        }
+
+        &:hover {
+          color: #2f65f6;
+
+          svg {
+            path {
+              fill: #2f65f6;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .minititle {
+    color: #858584;
+  }
+
+  a {
+    margin-top: 17px;
+    color: #2f65f6;
+  }
+
+  >.container {
+    margin-top: 27px;
+    display: flex;
+  }
+
+  .one-deal {
+    .container {
+      max-width: 850px;
+      padding: 0 0 65px;
+    }
+
+    &__title {
+      display: flex;
+      align-items: center;
+    }
+
+    h1 {
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 44px;
+      color: #000000;
+    }
+
+    &__disc {
+      margin-left: 12px;
+      display: flex;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: #0CB477;
+    }
+
+    &__info {
+      width: 100%;
+      border-bottom: 2px dashed #C4C4C4;
+    }
+
+    &__row {
+      display: flex;
+      width: 100%;
+      padding: 33px 0 38px;
+    }
+
+    &__item {
+      margin-left: 42px;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      p {
+        font-size: 20px;
+        line-height: 24px;
+
+      }
+
+      .minititle {
+        margin-bottom: 5px;
+        font-size: 16px;
+        line-height: 20px;
+        color: #858584;
+      }
+
+      a {
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+
+    &__data {
+      margin-top: 35px;
+
+      h3 {
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 34px;
+        color: #000000;
+      }
+    }
+
+    &__warning {
+      margin-top: 20px;
+      padding: 13px 32px 13px 41px;
+      background: #F4F7FB;
+      border-radius: 5px;
+      font-size: 16px;
+      line-height: 24px;
+      color: #2F65F6;
+      position: relative;
+
+      &::before {
+        content: '';
+        display: flex;
+        width: 18px;
+        height: 18px;
+        background-image: url('../img/svg/deal-warning.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        left: 14px;
+      }
+    }
+
+    &__name {
+      margin-top: 27px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 27px;
+      color: #000000;
+    }
+
+    &__ok {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      color: #0CB477;
+      position: relative;
+      margin-left: 20px;
+
+      &::before {
+        content: '';
+        display: flex;
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        background-image: url('../img/svg/deal-ok.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        left: -20px;
+      }
+    }
+
+    &__payments {
+      margin-top: 40px;
+
+      h4 {
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 27px;
+        color: #000000;
+      }
+    }
+
+    .table {
+      margin-top: 16px;
+
+      tbody tr {
+        text-align: left;
+        vertical-align: top;
+
+        &:nth-child(odd) {
+          background-color: #F7F8FA;
+        }
+      }
+
+      td {
+        padding: 7px 0 10px 15px;
+
+        &:nth-child(3) {
+          width: 160px;
+        }
+
+        &:nth-child(n+4) {
+          width: 120px;
+        }
+      }
+    }
+
+    &__subject {
+      padding-top: 45px;
+
+      h4 {
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 27px;
+        color: #000000;
+      }
+
+      p {
+        padding: 20px 0 55px;
+        font-size: 16px;
+        line-height: 24px;
+        color: #000000;
+      }
+    }
+
+    &__wrap {
+      padding-bottom: 35px;
+
+      h5 {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        color: #000000;
+      }
+
+      p {
+        padding: 13px 0 0;
+      }
+    }
+  }
+
+  .aside {
+    margin-left: 70px;
+
+    &__top {
+      a {
+        display: block;
+        margin-top: 17px;
+        font-size: 20px;
+        line-height: 24px;
+        word-wrap: break-word;
+      }
+    }
+
+    &__card {
+      max-width: 335px;
+      margin-top: 40px;
+      padding: 36px 10px 40px 33px;
+      background-color: #f7f8fa;
+      border-radius: 15px;
+    }
+
+    &__item {
+      margin-top: 30px;
+
+      .minititle {
+        margin-top: 8px;
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    &__price {
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 27px;
+      color: #BC0D48;
+
+      &.plan {
+        color: #0CB477;
+      }
+    }
+
+    &__people {
+      margin-top: 30px;
+      padding-top: 37px;
+      border-top: 2px dashed #C4C4C4;
+
+      .aside__item {
+        margin-top: 18px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+
+      a {
+        display: block;
+        margin-top: 5px;
+      }
+    }
+
+    &__btn-people {
+      width: 215px;
+      height: 30px;
+      margin-top: 32px;
+      color: #858584;
+      background-color: #F7F8FA;
+      border: 1px solid #858584;
+      border-radius: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #ffffff;
       }
     }
   }
