@@ -43,6 +43,9 @@
   .deals .one-deal h1 {
     font-size: 32px;
   }
+  .deals .one-deal .payments {
+    overflow-x: scroll;
+  }
 }
 
 @media (max-width: 768px) {

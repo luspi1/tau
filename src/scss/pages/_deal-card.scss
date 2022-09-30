@@ -27,7 +27,7 @@
 
     &__list {
       display: flex;
-   }
+    }
 
     &__item {
       &:not(:first-child) {
@@ -215,7 +215,7 @@
       }
     }
 
-    &__payments {
+    .payments {
       margin-top: 40px;
 
       h4 {
@@ -224,29 +224,35 @@
         line-height: 27px;
         color: #000000;
       }
-    }
 
-    .table {
-      margin-top: 16px;
 
-      tbody tr {
-        text-align: left;
-        vertical-align: top;
+      .table {
+        margin-top: 16px;
+        min-width: 850px;
 
-        &:nth-child(odd) {
-          background-color: #F7F8FA;
-        }
-      }
+        tbody tr {
+          text-align: left;
+          vertical-align: top;
 
-      td {
-        padding: 7px 0 10px 15px;
-
-        &:nth-child(3) {
-          width: 160px;
+          &:nth-child(odd) {
+            background-color: #F7F8FA;
+          }
         }
 
-        &:nth-child(n+4) {
-          width: 120px;
+        td {
+          padding: 7px 0 10px 15px;
+
+          span {
+            color: #858584;
+          }
+
+          &:nth-child(3) {
+            width: 160px;
+          }
+
+          &:nth-child(n+4) {
+            width: 120px;
+          }
         }
       }
     }

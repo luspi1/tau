@@ -1,12 +1,25 @@
-@media (max-width: 992px) {
+@media(max-width: 1200px) {
+
   .case-item .top .container,
-  .case-item > .container {
+  .case-item>.container {
     flex-direction: column;
   }
+
   .case-item .top .case-item__btn {
     margin: 20px 0 0 auto;
   }
-  .case-item .case > .container {
+
+  .case-item .case>.container {
+    padding-bottom: 50px;
+  }
+
+  .case-item .aside {
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .case-item .case>.container {
     padding-bottom: 50px;
   }
 
@@ -16,28 +29,42 @@
 
   .case-item .aside {
     max-width: 100%;
-   margin: 20px 0;
+    margin: 20px 0;
+  }
+
+  .case-item .case .payments {
+    overflow-x: scroll;
+  }
+
+  .case-item .case .payments .table {
+    width: 850px;
   }
 }
+
 
 @media (max-width: 576px) {
   .case-item .top h1 {
     font-size: 26px;
   }
+
   .case-item .composition {
     margin-top: 30px;
-    padding: 25px 15px ;
+    padding: 25px 15px;
   }
 
   .case-item .aside {
     padding: 40px 20px;
   }
+
+
 }
+
 @media (max-width: 400px) {
   .case-item .top h1 {
     font-size: 22px;
     line-height: 30px;
   }
+
   .case-item .case h3 {
     font-size: 20px;
   }
