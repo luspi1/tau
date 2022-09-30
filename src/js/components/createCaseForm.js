@@ -53,18 +53,6 @@ if (annexWrapper) {
 }
 
 
-// Удаление поля в приложении
-
-if (annexWrapper) {
-  annexWrapper.addEventListener('click', (e) => {
-    if (e.target.classList.contains('case-optional__delete-btn')) {
-      const optionalTarget = e.target.closest('.case-optional__item')
-      const optionalListTarget = e.target.closest('.case-annex__optional-items')
-      optionalListTarget.removeChild(optionalTarget)
-    }
-  })
-}
-
 const addAnnexBtn = document.querySelector('.create-case-page__add-annex')
 const annexList = document.querySelector('.case-annex__items')
 const annexFragment = document.querySelector('#case-annex-template')?.content;
@@ -82,14 +70,50 @@ if (annexFragment) {
 
 
 
+// Удаление поля в приложении
+if (annexWrapper) {
+  annexWrapper.addEventListener('click', (e) => {
+    if (e.target.classList.contains('case-optional__delete-btn')) {
+      const optionalTarget = e.target.closest('.case-optional__item')
+      const optionalListTarget = e.target.closest('.case-annex__optional-items')
+      optionalListTarget.removeChild(optionalTarget)
+    }
+  })
+}
+
+
+// Удаление поля в опциональных полях
+
+const optionalWrapper = document.querySelector('.case-optional__items')
+
+if (optionalWrapper) {
+  optionalWrapper.addEventListener('click', (e) => {
+    e.preventDefault()
+    if (e.target.classList.contains('case-optional__delete-btn')) {
+      const optionalTarget = e.target.closest('.case-optional__item')
+      const optionalListTarget = e.target.closest('.case-optional__items')
+      optionalListTarget.removeChild(optionalTarget)
+    }
+
+  })
+}
 
 
 
+// Удаление платежного условия сделки
 
+const termsWrapper = document.querySelector('.case-terms__items')
 
-
-
-
+if (termsWrapper) {
+  termsWrapper.addEventListener('click', (e) => {
+    e.preventDefault()
+    if (e.target.classList.contains('case-optional__delete-btn')) {
+      const optionalTarget = e.target.closest('.case-terms__item')
+      const optionalListTarget = e.target.closest('.case-terms__items')
+      optionalListTarget.removeChild(optionalTarget)
+    }
+  })
+}
 
 
 
