@@ -1,6 +1,12 @@
+@media(max-width: 992px) {
+  .create-case-page__wrapper-symbol {
+    min-width: auto;
+  }
+  .create-case-page__organizacion {
+    min-width: 100%;
+  }
+}
 @media (max-width: 768px) {
-
-
   .create-case-page__input {
     font-size: 14px;
     line-height: 18px;
@@ -19,6 +25,7 @@
 
   .create-case-page__inputs {
     flex-direction: column;
+    margin-bottom: 0;
 
     .create-case-page__input-wrapper {
       margin-bottom: 20px;

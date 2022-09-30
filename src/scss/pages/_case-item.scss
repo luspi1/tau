@@ -26,6 +26,7 @@
       text-align: center;
       color: #FFFFFF;
       cursor: pointer;
+
       &:hover {
         background-color: #264DDB;
       }
@@ -65,8 +66,25 @@
 
     &__deal {
       margin-top: 30px;
+
       &:first-child {
         margin-top: 0;
+      }
+    }
+
+    &__composition {
+      margin-top: 38px;
+      padding: 20px 28px;
+      border: 1px solid #2F65F6;
+      border-radius: 5px;
+
+      h3 {
+        font-size: 16px;
+        line-height: 20px;
+      }
+
+      p {
+        margin-top: 8px;
       }
     }
 
@@ -77,8 +95,55 @@
       color: #858584;
     }
 
+    .payments {
+      margin-top: 40px;
+
+      h4 {
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 27px;
+        color: #000000;
+      }
+
+
+      .table {
+        margin-top: 16px;
+        width: 100%;
+        tbody tr {
+          text-align: left;
+          vertical-align: top;
+
+          &:nth-child(odd) {
+            background-color: #F7F8FA;
+          }
+        }
+
+        td {
+          padding: 10px 0 10px 15px;
+
+          span {
+            color: #858584;
+          }
+
+          &:first-child {
+            width: 90px;
+          }
+
+          &:nth-child(2) {
+            width: 500px;
+            padding-left: 32px;
+          }
+
+          &:last-child {
+            padding: 10px 10px 10px 55px;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+
     &__fields {
-      margin-top: 45px;
+      margin-top: 38px;
 
       .case__minititle {
         margin-top: 18px;
@@ -89,7 +154,7 @@
       }
 
       &.app {
-        margin-top: 30px;
+        margin-top: 25px;
 
         h3 {
           padding-top: 20px;
@@ -118,26 +183,7 @@
     }
   }
 
-  .composition {
-    margin-top: 50px;
-    padding: 28px;
-    border: 1px solid #2f65f6;
-    border-radius: 15px;
 
-    &__list {
-      margin-top: 20px;
-      padding-left: 20px;
-    }
-
-    &__item {
-      list-style: disc;
-      line-height: 24px;
-    }
-
-    p {
-      margin-top: 18px;
-    }
-  }
 
   .aside {
     max-width: 510px;
