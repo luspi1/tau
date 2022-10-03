@@ -91,11 +91,16 @@ initPaymentSelects()
 
 // Селекторы на странице создания сделки
 const dealExecutorSelect = document.querySelector('.create-deal-page__executor-select')
-const choices = new Choices(dealExecutorSelect, {
-  itemSelectText: '',
-  shouldSort: false,
-  allowHTML: true
-});
+
+if (dealExecutorSelect) {
+  const choices = new Choices(dealExecutorSelect, {
+    itemSelectText: '',
+    shouldSort: false,
+    allowHTML: true
+  });
+}
+
+
 
 const initObserverSelect = () => {
   document.querySelectorAll('.create-deal-page__observer-select').forEach(el => {
