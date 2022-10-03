@@ -365,6 +365,9 @@ if (taxScan) {
 const newOrgLogo = document.querySelector('#new-organization-dropzone');
 
 if (newOrgLogo) {
+
+  const newOrgBtn = document.querySelector('.new-organization__btn')
+
   let newOrgDropzone = new Dropzone(newOrgLogo, {
     maxFilesize: 5,
     url: "/include/ajax/upload_image.php",
@@ -398,6 +401,7 @@ if (newOrgLogo) {
 
   newOrgDropzone.on("sending", function (file, xhr, formData) {
     formData.append("filetype", "org");
+    formData.append("id_item", newOrgBtn.dataset.id)
   });
 
   newOrgDropzone.on("error", function (file) {

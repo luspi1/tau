@@ -16,7 +16,8 @@
     <section class="section new-organization">
       <div class="container">
         <h1 class="new-organization__title">Новая организация</h1>
-        <form action="/include/ajax/new_org.php" class="new-organization__form" autocomplete="off">
+        <form action="/include/ajax/new_org.php" class="new-organization__form"
+              autocomplete="off">
           <div class="new-organization__section new-organization__logo-section">
             <h2 class="new-organization__section-title">
               Изображение (логотип и прочие)
@@ -370,14 +371,15 @@
             <div
               class="new-organization__section new-organization__bank-account">
               <h2 class="new-organization__section-title">
-                Банковский счет №1
+                Банковский счет
               </h2>
               <div
                 class="new-organization__input-wrapper new-organization__checkbox-wrapper">
-                <input type="radio" class="new-organization__checkbox"
-                       id="checkMasterAccount" name="newOrgCheckMasterAccount"
+                <input class="new-organization__checkbox" type="radio"
+                       id="checkMasterAccount" name="newOrgCheckMasterAccount[]"
                        value="isMasterAccount">
-                <label for="checkMasterAccount">Сделать этот счет основным для
+                <label class="new-organization__checkbox-label"
+                       for="checkMasterAccount">Сделать этот счет основным для
                   организации</label>
               </div>
               <div class="new-organization__item new-organization__bank-item">
@@ -389,7 +391,7 @@
                       Название счета
                     </p>
                     <input class="new-organization__input"
-                           name="newOrgAccountName"
+                           name="newOrgAccountName[]"
                            type="text">
                   </div>
                   <div
@@ -398,7 +400,7 @@
                       Рассчетный счет
                     </p>
                     <input class="new-organization__input"
-                           name="newOrgCheckingAccount"
+                           name="newOrgCheckingAccount[]"
                            type="number">
                   </div>
                   <div
@@ -407,7 +409,7 @@
                       Название банка
                     </p>
                     <input class="new-organization__input"
-                           name="newOrgBankName"
+                           name="newOrgBankName[]"
                            type="text">
                   </div>
                 </div>
@@ -422,7 +424,7 @@
                       БИК
                     </p>
                     <input class="new-organization__input"
-                           name="newOrgIdentificationCode"
+                           name="newOrgIdentificationCode[]"
                            type="number">
                   </div>
                   <div
@@ -431,7 +433,7 @@
                       Корреспондентский счет
                     </p>
                     <input class="new-organization__input"
-                           name="newOrgCorrespondentAccount"
+                           name="newOrgCorrespondentAccount[]"
                            type="number">
                   </div>
                   <div
@@ -440,7 +442,7 @@
                       Лицевой счет
                     </p>
                     <input class="new-organization__input"
-                           name="newOrgBankBook"
+                           name="newOrgBankBook[]"
                            type="number">
                   </div>
                 </div>
@@ -469,6 +471,90 @@
 
   @include('partials/footer.html')
 </div>
+
+
+<template id="account-template">
+  <div class="new-organization__section new-organization__bank-account">
+    <h2 class="new-organization__section-title">
+      Дополнительный банковский счет
+    </h2>
+    <div
+      class="new-organization__input-wrapper new-organization__checkbox-wrapper">
+      <input class="new-organization__checkbox" type="radio"
+             name="newOrgCheckMasterAccount[]" value="isMasterAccount">
+      <label class="new-organization__checkbox-label">Сделать этот счет основным
+        для организации</label>
+    </div>
+    <div class="new-organization__item new-organization__bank-item">
+      <div
+        class="new-organization__item-wrapper new-organization__requisites-more">
+        <div
+          class="new-organization__input-wrapper">
+          <p class="new-organization__input-title">
+            Название счета
+          </p>
+          <input class="new-organization__input"
+                 name="newOrgAccountName[]"
+                 type="number">
+        </div>
+        <div
+          class="new-organization__input-wrapper">
+          <p class="new-organization__input-title">
+            Рассчетный счет
+          </p>
+          <input class="new-organization__input"
+                 name="newOrgCheckingAccount[]"
+                 type="text">
+        </div>
+        <div
+          class="new-organization__input-wrapper">
+          <p class="new-organization__input-title">
+            Название банка
+          </p>
+          <input class="new-organization__input"
+                 name="newOrgBankName[]"
+                 type="number">
+        </div>
+      </div>
+    </div>
+    <div class="new-organization__item">
+
+      <div
+        class="new-organization__item-wrapper new-organization__requisites-more">
+        <div
+          class="new-organization__input-wrapper">
+          <p class="new-organization__input-title">
+            БИК
+          </p>
+          <input class="new-organization__input"
+                 name="newOrgIdentificationCode[]"
+                 type="text">
+        </div>
+        <div
+          class="new-organization__input-wrapper">
+          <p class="new-organization__input-title">
+            Корреспондентский счет
+          </p>
+          <input class="new-organization__input"
+                 name="newOrgCorrespondentAccount[]"
+                 type="number">
+        </div>
+        <div
+          class="new-organization__input-wrapper">
+          <p class="new-organization__input-title">
+            Лицевой счет
+          </p>
+          <input class="new-organization__input"
+                 name="newOrgBankBook[]"
+                 type="number">
+        </div>
+      </div>
+    </div>
+    <button class="new-organization__remove-account-btn" type="button">Удалить
+      этот счет
+    </button>
+  </div>
+</template>
 
 </body>
 

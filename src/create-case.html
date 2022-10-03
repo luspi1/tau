@@ -69,12 +69,12 @@
                 <div class="create-case-page__inputs">
                   <div class="create-case-page__input-wrapper create-case-page__wrapper-payment-type">
                     <label>Тип платежей</label>
-                    <input class="create-case-page__input" name="case_payment_type" type="text"
+                    <input class="create-case-page__input" name="case_payment_type[]" type="text"
                       placeholder="Непериодический" required>
                   </div>
                   <div class="create-case-page__input-wrapper create-case-page__wrapper-select">
                     <label>Назначение платежа</label>
-                    <select name="case_payment_purpose">
+                    <select name="case_payment_purpose[]">
                       <option value="purpose_1">Назначение 1</option>
                       <option value="purpose_2">Назначение 2</option>
                       <option value="purpose_2">Назначение 3</option>
@@ -84,11 +84,11 @@
                 <div class="create-case-page__inputs">
                   <div class="create-case-page__input-wrapper">
                     <label>Сумма платежа</label>
-                    <input class="create-case-page__input" name="case_payment_amount" type="number" required>
+                    <input class="create-case-page__input" name="case_payment_amount[]" type="number" required>
                   </div>
                   <div class="create-case-page__input-wrapper create-case-page__wrapper-payment-date">
                     <label>Плановая дата</label>
-                    <input class="create-case-page__input create-case-page__date-input" name="case_payment_date"
+                    <input class="create-case-page__input create-case-page__date-input" name="case_payment_date[]"
                       type="text" required>
                     <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
@@ -121,7 +121,7 @@
                 <div class="create-case-page__inputs">
                   <div class="create-case-page__input-wrapper create-case-page__wrapper-select">
                     <label>Тип поля</label>
-                    <select name="case_field_type">
+                    <select name="case_field_type[]">
                       <option value="type_1">Тип 1</option>
                       <option value="type_2">Тип 2</option>
                       <option value="type_2">Тип 3</option>
@@ -129,7 +129,7 @@
                   </div>
                   <div class="create-case-page__input-wrapper">
                     <label>Название поля</label>
-                    <input class="create-case-page__input" name="case_field_name" type="text" required>
+                    <input class="create-case-page__input" name="case_field_name[]" type="text" required>
                   </div>
                 </div>
               </div>
@@ -154,11 +154,11 @@
                 <div class="create-case-page__inputs">
                   <div class="create-case-page__input-wrapper create-case-page__wrapper-annex-num">
                     <label>Номер приложения</label>
-                    <input class="create-case-page__input" name="case_annex_num" type="number" required>
+                    <input class="create-case-page__input" name="case_annex_num[]" type="number" required>
                   </div>
                   <div class="create-case-page__input-wrapper create-case-page__wrapper-annex-name">
                     <label>Название приложения</label>
-                    <input class="create-case-page__input" name="case_annex_name" type="text" required>
+                    <input class="create-case-page__input" name="case_annex_name[]" type="text" required>
                   </div>
                 </div>
                 <div class="case-annex__optional-items">
@@ -166,7 +166,7 @@
                     <div class="create-case-page__inputs">
                       <div class="create-case-page__input-wrapper create-case-page__wrapper-select">
                         <label>Тип поля</label>
-                        <select name="case_annex_field_type">
+                        <select name="case_annex_field_type[]">
                           <option value="type_1">Тип 1</option>
                           <option value="type_2">Тип 2</option>
                           <option value="type_2">Тип 3</option>
@@ -174,7 +174,7 @@
                       </div>
                       <div class="create-case-page__input-wrapper">
                         <label>Название поля</label>
-                        <input class="create-case-page__input" name="case_annex_field_name" type="text" required>
+                        <input class="create-case-page__input" name="case_annex_field_name[]" type="text" required>
                       </div>
                     </div>
                   </div>
@@ -325,12 +325,12 @@
       <div class="create-case-page__inputs">
         <div class="create-case-page__input-wrapper create-case-page__wrapper-payment-type">
           <label>Тип платежей</label>
-          <input class="create-case-page__input" name="case_payment_type" type="text" placeholder="Непериодический"
+          <input class="create-case-page__input" name="case_payment_type[]" type="text" placeholder="Непериодический"
             required>
         </div>
         <div class="create-case-page__input-wrapper create-case-page__wrapper-select">
           <label>Назначение платежа</label>
-          <select name="case_payment_purpose">
+          <select name="case_payment_purpose[]">
             <option value="purpose_1">Назначение 1</option>
             <option value="purpose_2">Назначение 2</option>
             <option value="purpose_2">Назначение 3</option>
@@ -340,11 +340,11 @@
       <div class="create-case-page__inputs">
         <div class="create-case-page__input-wrapper">
           <label>Сумма платежа</label>
-          <input class="create-case-page__input" name="case_payment_amount" type="number" required>
+          <input class="create-case-page__input" name="case_payment_amount[]" type="number" required>
         </div>
         <div class="create-case-page__input-wrapper create-case-page__wrapper-payment-date">
           <label>Плановая дата</label>
-          <input class="create-case-page__input create-case-page__date-input" name="case_payment_date" type="text"
+          <input class="create-case-page__input create-case-page__date-input" name="case_payment_date[]" type="text"
             required>
           <svg width="21" height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -371,7 +371,7 @@
       <div class="create-case-page__inputs">
         <div class="create-case-page__input-wrapper create-case-page__wrapper-select">
           <label>Тип поля</label>
-          <select name="case_field_type">
+          <select name="case_field_type[]">
             <option value="type_1">Тип 1</option>
             <option value="type_2">Тип 2</option>
             <option value="type_2">Тип 3</option>
@@ -379,7 +379,7 @@
         </div>
         <div class="create-case-page__input-wrapper">
           <label>Название поля</label>
-          <input class="create-case-page__input" name="case_field_name" type="text" required>
+          <input class="create-case-page__input" name="case_field_name[]" type="text" required>
         </div>
       </div>
     </div>
@@ -400,7 +400,7 @@
       <div class="create-case-page__inputs">
         <div class="create-case-page__input-wrapper create-case-page__wrapper-select">
           <label>Тип поля</label>
-          <select name="case_annex_field_type">
+          <select name="case_annex_field_type[]">
             <option value="type_1">Тип 1</option>
             <option value="type_2">Тип 2</option>
             <option value="type_2">Тип 3</option>
@@ -408,7 +408,7 @@
         </div>
         <div class="create-case-page__input-wrapper">
           <label>Название поля</label>
-          <input class="create-case-page__input" name="case_annex_field_name" type="text" required>
+          <input class="create-case-page__input" name="case_annex_field_name[]" type="text" required>
         </div>
       </div>
     </div>
@@ -419,11 +419,11 @@
       <div class="create-case-page__inputs">
         <div class="create-case-page__input-wrapper create-case-page__wrapper-annex-num">
           <label>Номер приложения</label>
-          <input class="create-case-page__input" name="case_annex_num" type="number" required>
+          <input class="create-case-page__input" name="case_annex_num[]" type="number" required>
         </div>
         <div class="create-case-page__input-wrapper create-case-page__wrapper-annex-name">
           <label>Название приложения</label>
-          <input class="create-case-page__input" name="case_annex_name" type="text" required>
+          <input class="create-case-page__input" name="case_annex_name[]" type="text" required>
         </div>
       </div>
       <div class="case-annex__optional-items">
@@ -431,7 +431,7 @@
           <div class="create-case-page__inputs">
             <div class="create-case-page__input-wrapper create-case-page__wrapper-select">
               <label>Тип поля</label>
-              <select name="case_annex_field_type">
+              <select name="case_annex_field_type[]">
                 <option value="type_1">Тип 1</option>
                 <option value="type_2">Тип 2</option>
                 <option value="type_2">Тип 3</option>
@@ -439,7 +439,7 @@
             </div>
             <div class="create-case-page__input-wrapper">
               <label>Название поля</label>
-              <input class="create-case-page__input" name="case_annex_field_name" type="text" required>
+              <input class="create-case-page__input" name="case_annex_field_name[]" type="text" required>
             </div>
           </div>
         </div>
