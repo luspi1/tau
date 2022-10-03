@@ -1,0 +1,329 @@
+.create-deal-page {
+  padding: 35px 0 110px;
+
+  h1 {
+    @include montserrat-semibold;
+    font-size: 36px;
+    line-height: 44px;
+    color: #000000;
+    margin-bottom: 47px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    @include montserrat-regular;
+    font-size: 16px;
+    line-height: 20px;
+    color: #858584;
+  }
+
+  &__prompt {
+    background: #F4F7FB;
+    border-radius: 5px;
+    color: #2F65F6;
+    padding: 13px 20px 13px 43px;
+    position: relative;
+    max-width: 500px;
+    margin-left: 30px;
+    margin-bottom: 14px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 13px;
+      width: 20px;
+      height: 20px;
+      background: url("../img/deal-prompt-icon.svg") no-repeat;
+    }
+  }
+
+  &__prompt-wrapper {
+    display: flex;
+    align-items: flex-end;
+  }
+
+
+  .deal-subtitle {
+    @include montserrat-semibold;
+    font-size: 22px;
+    line-height: 27px;
+    color: #000000;
+    margin-bottom: 17px;
+  }
+
+  &__add-btn {
+    @include montserrat-medium;
+    font-size: 17px;
+    line-height: 21px;
+    display: inline-block;
+    color: #A0A0A0;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    padding-left: 27px;
+    background: none;
+    margin-bottom: 33px;
+
+    transition: all .3s;
+
+    svg {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      path {
+        transition: all .3s;
+      }
+    }
+
+    &:hover {
+      color: $link;
+
+      path {
+        fill: $link;
+      }
+    }
+  }
+
+  &__inputs {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .choices {
+    width: 100%;
+    border: 1px solid transparent;
+    margin-bottom: 10px;
+
+    &.is-open {
+      border: 1px solid #3E29CA;
+    }
+  }
+
+  .choices__placeholder {
+    opacity: 1;
+  }
+
+  .choices__inner {
+    border: none;
+    background: #F2F1F7;
+    @include montserrat-medium;
+    font-size: 17px;
+    line-height: 21px;
+    color: #817D8C;
+  }
+
+  .choices[data-type*=select-one] .choices__inner {
+    padding-bottom: 16px;
+    padding-top: 16px;
+    padding-left: 12px;
+  }
+
+  .choices__list--dropdown .choices__item--selectable.is-highlighted,
+  .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+    background-color: #F8F8FA;
+    color: #2F65F6;
+  }
+
+  .choices__list--dropdown,
+  .choices__list[aria-expanded] {
+    border: 1px solid #F2F1F7;
+    filter: drop-shadow(0px 0px 20px rgba(10, 35, 91, 0.15));
+    margin-top: 10px;
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    margin-top: 55px;
+  }
+
+  &__save-btn {
+    margin-right: 48px;
+    @include montserrat-bold;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+    width: 270px;
+    background-color: #2F65F6;
+    border-radius: 5px;
+    border: none;
+    padding: 18px 28px;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+      background-color: #264DDB;
+    }
+  }
+
+  &__close-btn {
+    @include montserrat-bold;
+    font-size: 20px;
+    line-height: 24px;
+    color: #2F65F6;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+      color: #264DDB;
+    }
+  }
+
+
+  &__input {
+    @include montserrat-medium;
+    font-size: 17px;
+    line-height: 21px;
+    color: #000000;
+    background: #F2F1F7;
+    border: none;
+    padding: 20px 15px;
+    width: 100%;
+
+    &:focus {
+      outline: 1px solid #3E29CA;
+      background-color: #ffffff;
+    }
+
+    &::placeholder {
+      color: #817D8C;
+    }
+  }
+
+  &__textarea-input {
+    resize: none;
+    min-height: 222px;
+  }
+
+  &__input-wrapper {
+    max-width: 710px;
+    flex-grow: 1;
+    margin-bottom: 27px;
+
+  }
+
+  &__date-wrapper {
+    position: relative;
+    margin-bottom: 33px;
+    max-width: 190px;
+
+    svg {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      pointer-events: none;
+    }
+  }
+
+
+  .create-deal-caption {
+
+    padding-bottom: 26px;
+    border-bottom: 1px dotted #C4C4C4;
+
+
+    &__counterparty-wrapper {
+      margin-left: 20px;
+      padding-top: 30px;
+
+      span {
+        color: #858584;
+        display: inline-block;
+        margin-right: 15px;
+      }
+    }
+
+    &__counterparty-btn {
+      @include montserrat-medium;
+      font-size: 17px;
+      line-height: 21px;
+      text-align: center;
+      color: #2F65F6;
+      padding: 12px 13px;
+      background: none;
+      border: 1px solid #2F65F6;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all .3s;
+
+      &:hover {
+        background-color: #2F65F6;
+        color: #ffffff;
+      }
+    }
+
+    &__treaty-date {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 485px;
+
+      svg {
+        transform: translateY(-50%);
+      }
+
+      p {
+        span {
+          font-weight: 600;
+        }
+      }
+
+      .create-deal-page__date-input {
+        max-width: 190px;
+      }
+    }
+
+
+  }
+
+  .create-deal-payments {
+    padding: 50px 0 16px;
+    border-bottom: 1px dotted #C4C4C4;
+
+    .create-deal-page__input-wrapper {
+      max-width: 532px;
+    }
+
+    .create-deal-page__inputs {
+      max-width: 532px;
+    }
+
+    .create-deal-page__date-wrapper {
+      margin-left: 10px;
+    }
+
+
+  }
+
+  .create-deal-data {
+    .create-deal-page__prompt-wrapper {
+      align-items: flex-start;
+      margin-bottom: 27px;
+      .create-deal-page__input-wrapper {
+        margin-bottom: 0;
+      }
+    }
+
+
+    .deal-subtitle {
+      margin-bottom: 23px;
+    }
+
+    .create-deal-page__prompt {
+      margin-top: 24px;
+      margin-bottom: 0;
+    }
+
+
+    &__item {
+      padding: 50px 0 35px;
+      border-bottom: 1px dotted #C4C4C4;
+    }
+  }
+
+
+}

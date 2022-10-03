@@ -138,6 +138,22 @@ const initDatePaymentsMask = () => {
 initDatePaymentsMask()
 
 
+
+// Даты на странице создания сделки
+
+  const createDealDate = document.querySelectorAll('.create-deal-page__date-input');
+
+createDealDate.forEach(el => {
+    Inputmask({
+      "mask": "99.99.9999",
+      showMaskOnHover: false,
+      showMaskOnFocus: false,
+    }).mask(el);
+  })
+
+
+
+
 export { initDatePaymentsMask }
 
 

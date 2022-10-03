@@ -2,7 +2,6 @@
 @import "vars";
 @import "settings";
 
-
 // Страницы
 @import "./pages/info";
 @import "./pages/documents";
@@ -13,11 +12,10 @@
 @import "./pages/services";
 @import "./pages/journal";
 @import "./pages/cases";
-@import "pages/create-case";
-@import "pages/case-item";
-@import "pages/deal-card";
-
-
+@import "./pages/create-case";
+@import "./pages/case-item";
+@import "./pages/deal-card";
+@import "./pages/create-deal";
 
 // Компоненты
 @import "./components/modals";
@@ -33,8 +31,6 @@
 @import "media/media-case-item";
 @import "media/media-create-case";
 @import "media/media-deal-card";
-
-
 
 @import "./components/header";
 @import "./components/footer";

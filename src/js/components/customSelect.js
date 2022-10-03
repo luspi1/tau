@@ -89,4 +89,35 @@ const initPaymentSelects = () => {
 initPaymentSelects()
 
 
-export { initSelects, initPaymentSelects }
+// Селекторы на странице создания сделки
+const dealExecutorSelect = document.querySelector('.create-deal-page__executor-select')
+const choices = new Choices(dealExecutorSelect, {
+  itemSelectText: '',
+  shouldSort: false,
+  allowHTML: true
+});
+
+const initObserverSelect = () => {
+  document.querySelectorAll('.create-deal-page__observer-select').forEach(el => {
+    const choices = new Choices(el, {
+      itemSelectText: '',
+      shouldSort: false,
+      allowHTML: true
+    });
+  })
+}
+
+initObserverSelect()
+
+document.querySelectorAll('.create-deal-page__custom-select').forEach(el => {
+  const choices = new Choices(el, {
+    searchEnabled: false,
+    itemSelectText: '',
+    shouldSort: false,
+    allowHTML: true
+  });
+})
+
+
+
+export { initSelects, initPaymentSelects, initObserverSelect }
