@@ -94,7 +94,8 @@
   }
 
   .create-deal-page__prompt,
-  .create-deal-page .create-deal-data .create-deal-page__prompt p {
+  .create-deal-page .create-deal-data .create-deal-page__prompt p,
+  .create-deal-page .choices__inner {
     font-size: 14px;
   }
 }
