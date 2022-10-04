@@ -204,10 +204,15 @@
   }
 
 
+  &__checkbox-value {
+    display: none;
+  }
+
   &__checkbox {
     position: absolute;
     z-index: -1;
     opacity: 0;
+    pointer-events: none;
 
     & + label {
       display: inline-flex;

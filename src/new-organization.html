@@ -17,7 +17,7 @@
       <div class="container">
         <h1 class="new-organization__title">Новая организация</h1>
         <form action="/include/ajax/new_org.php" class="new-organization__form"
-              autocomplete="off">
+              autocomplete="off" method="post">
           <div class="new-organization__section new-organization__logo-section">
             <h2 class="new-organization__section-title">
               Изображение (логотип и прочие)
@@ -375,9 +375,10 @@
               </h2>
               <div
                 class="new-organization__input-wrapper new-organization__checkbox-wrapper">
-                <input class="new-organization__checkbox" type="radio"
-                       id="checkMasterAccount" name="newOrgCheckMasterAccount[]"
-                       value="isMasterAccount">
+                <input class="new-organization__checkbox-value" value="1" type="text"
+                        name="newOrgCheckMaster[]">
+                <input class="new-organization__checkbox" checked type="radio"
+                       id="checkMasterAccount" name="newOrgCheckMasterAccount[]">
                 <label class="new-organization__checkbox-label"
                        for="checkMasterAccount">Сделать этот счет основным для
                   организации</label>
@@ -480,8 +481,10 @@
     </h2>
     <div
       class="new-organization__input-wrapper new-organization__checkbox-wrapper">
+      <input class="new-organization__checkbox-value" value="0" type="text"
+             name="newOrgCheckMaster[]">
       <input class="new-organization__checkbox" type="radio"
-             name="newOrgCheckMasterAccount[]" value="isMasterAccount">
+             name="newOrgCheckMasterAccount[]">
       <label class="new-organization__checkbox-label">Сделать этот счет основным
         для организации</label>
     </div>
@@ -495,7 +498,7 @@
           </p>
           <input class="new-organization__input"
                  name="newOrgAccountName[]"
-                 type="number">
+                 type="text">
         </div>
         <div
           class="new-organization__input-wrapper">
@@ -513,7 +516,7 @@
           </p>
           <input class="new-organization__input"
                  name="newOrgBankName[]"
-                 type="number">
+                 type="text">
         </div>
       </div>
     </div>

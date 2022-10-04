@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
 
+
 const addAccountBtn = document.querySelector('.new-organization__add-account button')
 const accountsContainer = document.querySelector('.new-organization__account-list')
 
@@ -53,20 +54,22 @@ if (newOrgShortInput) {
 }
 
 
+// Передача значения чекбоксов
 
+const accountList = document.querySelector('.new-organization__account-list')
+if (accountList) {
+  accountList.addEventListener('click', (e) => {
+    if (e.target.classList.contains('new-organization__checkbox')) {
+      const checkValueInputs = accountList.querySelectorAll('.new-organization__checkbox-value')
+      const targetValueInput = e.target.closest('.new-organization__bank-account').querySelector('.new-organization__checkbox-value')
+      checkValueInputs.forEach(el => {
+        el.value = '0'
+      })
+      targetValueInput.value = '1'
 
-
-
-
-
-
-
-
-
-
-
-
-
+    }
+  })
+}
 
 
 
