@@ -1,0 +1,100 @@
+@media(max-width: 1200px) {
+  .create-deal-page__inputs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .create-deal-page .create-deal-caption__counterparty-wrapper {
+    padding: 20px 0;
+    margin-left: 0;
+  }
+
+  .create-deal-page .create-deal-caption__counterparty-wrapper span {
+    display: block;
+    margin-top: -20px;
+    padding-bottom: 15px;
+  }
+
+  .create-deal-page__prompt-wrapper {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .create-deal-page__prompt,
+  .create-deal-page .create-deal-data .create-deal-page__prompt {
+    margin: 0 0 30px 0;
+  }
+
+  .create-deal-page .create-deal-data .create-deal-page__prompt-wrapper {
+    align-items: stretch;
+  }
+
+  .create-deal-page .create-deal-payments .create-deal-page__input-wrapper,
+  .create-deal-page .create-deal-payments .create-deal-page__inputs {
+    max-width: 710px;
+    margin-left: 0;
+  }
+}
+
+@media(max-width: 992px) {
+  .create-deal-page .create-deal-page__input-wrapper.create-deal-page__date-wrapper.create-deal-caption__treaty-date {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .create-deal-page .create-deal-page__input-wrapper.create-deal-page__date-wrapper.create-deal-caption__treaty-date p {
+    padding: 10px 0;
+  }
+
+  .create-deal-page .create-deal-page__input-wrapper.create-deal-page__date-wrapper.create-deal-caption__treaty-date svg {
+    right: auto;
+    left: 154px;
+    top: calc(20px + 50%);
+  }
+}
+
+@media(max-width: 768px) {
+  .create-deal-page {
+    padding-bottom: 70px;
+  }
+
+  .create-deal-page__btns {
+    flex-direction: column;
+  }
+
+  .create-deal-page__save-btn {
+    margin-right: 0;
+  }
+
+  .create-deal-page__close-btn {
+    margin-top: 35px;
+  }
+}
+
+@media(max-width: 400px) {
+  .create-deal-page h1 {
+    font-size: 30px;
+  }
+
+  .create-deal-page__input {
+    font-size: 14px;
+  }
+
+  .create-deal-page__save-btn {
+    font-size: 18px;
+  }
+
+  .create-deal-page__close-btn {
+    font-size: 18px;
+  }
+
+  .create-deal-page label {
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+
+  .create-deal-page__prompt,
+  .create-deal-page .create-deal-data .create-deal-page__prompt p {
+    font-size: 14px;
+  }
+}
