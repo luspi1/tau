@@ -95,7 +95,6 @@
                   class="new-organization__input-wrapper new-organization__director-wrapper">
                   <select class="new-organization__input"
                           name="newOrgDirector">
-                    <option value="">Должность руководителя</option>
                     <option value="director">Руководитель</option>
                     <option value="non-director">Не руководитель</option>
                   </select>
@@ -177,7 +176,7 @@
                   class="new-organization__input-wrapper">
                   <input class="new-organization__input"
                          name="newOrgPhone"
-                         placeholder="+7 (___) ___-__-__" type="tel">
+                         placeholder="+7 (___) ___-__-__*" type="tel" required>
                 </div>
                 <div
                   class="new-organization__input-wrapper">
@@ -204,19 +203,19 @@
                   class="new-organization__input-wrapper">
                   <input class="new-organization__input"
                          name="newOrgEmail"
-                         type="email">
+                         type="email" placeholder="emailaddress@website.com*" required>
                 </div>
                 <div
                   class="new-organization__input-wrapper">
                   <input class="new-organization__input"
                          name="newOrgMoreEmail1"
-                         type="email">
+                         type="email" placeholder="emailaddress@website.com">
                 </div>
                 <div
                   class="new-organization__input-wrapper">
                   <input class="new-organization__input"
                          name="newOrgMoreEmail2"
-                         type="email">
+                         type="email" placeholder="emailaddress@website.com">
                 </div>
               </div>
             </div>
@@ -248,7 +247,7 @@
             </div>
             <div class="new-organization__item new-organization__address-item">
               <p class="new-organization__input-title">
-                Юридический адрес
+                Юридический адрес*
               </p>
               <div
                 class="new-organization__item-wrapper new-organization__address">
@@ -257,17 +256,17 @@
                   <input class="new-organization__input"
                          name="newOrgJuristicCity"
                          type="text"
-                         placeholder="Город, населенный пункт">
+                         placeholder="Город, населенный пункт" required>
                   <input class="new-organization__input"
                          name="newOrgJuristicIndex"
                          type="number"
-                         placeholder="Индекс">
+                         placeholder="Индекс" required>
                 </div>
                 <div
                   class="new-organization__input-wrapper new-organization__textarea-wrapper">
                   <textarea class="new-organization__input"
                             name="newOrgJuristicFulladdress"
-                            placeholder="Полный адрес (улица, дом, корпус, строение, офис, помещение)"
+                            placeholder="Полный адрес (улица, дом, корпус, строение, офис, помещение)" required
                   ></textarea>
                 </div>
 
@@ -275,7 +274,7 @@
             </div>
             <div class="new-organization__item new-organization__address-item">
               <p class="new-organization__input-title">
-                Почтовый адрес
+                Почтовый адрес*
               </p>
               <div
                 class="new-organization__item-wrapper new-organization__address">
@@ -284,17 +283,17 @@
                   <input class="new-organization__input"
                          name="newOrgMailCity"
                          type="text"
-                         placeholder="Город, населенный пункт">
+                         placeholder="Город, населенный пункт" required>
                   <input class="new-organization__input"
                          name="newOrgMailIndex"
                          type="number"
-                         placeholder="Индекс">
+                         placeholder="Индекс" required>
                 </div>
                 <div
                   class="new-organization__input-wrapper new-organization__textarea-wrapper">
                   <textarea class="new-organization__input"
                             name="newOrgMailFulladdress"
-                            placeholder="Полный адрес (улица, дом, корпус, строение, офис, помещение)"
+                            placeholder="Полный адрес (улица, дом, корпус, строение, офис, помещение)" required
                   ></textarea>
                 </div>
 
@@ -303,7 +302,7 @@
             <div
               class="new-organization__item new-organization__address-physical">
               <p class="new-organization__input-title">
-                Физический адрес
+                Физический адрес*
               </p>
               <div
                 class="new-organization__item-wrapper new-organization__address">
@@ -312,17 +311,17 @@
                   <input class="new-organization__input"
                          name="newOrgPhysicalCity"
                          type="text"
-                         placeholder="Город, населенный пункт">
+                         placeholder="Город, населенный пункт" required>
                   <input class="new-organization__input"
                          name="newOrgPhysicalIndex"
                          type="number"
-                         placeholder="Индекс">
+                         placeholder="Индекс" required>
                 </div>
                 <div
                   class="new-organization__input-wrapper new-organization__textarea-wrapper">
                   <textarea class="new-organization__input"
                             name="newOrgPhysicalFulladdress"
-                            placeholder="Полный адрес (улица, дом, корпус, строение, офис, помещение)"
+                            placeholder="Полный адрес (улица, дом, корпус, строение, офис, помещение)" required
                   ></textarea>
                 </div>
 
@@ -331,7 +330,7 @@
             <div
               class="new-organization__item new-organization__requisites-item">
               <p class="new-organization__input-title">
-                Основные реквизиты
+                Основные реквизиты*
               </p>
               <div
                 class="new-organization__item-wrapper new-organization__requisites">
@@ -339,22 +338,22 @@
                   class="new-organization__input-wrapper">
                   <input class="new-organization__input"
                          name="newOrgTaxNumber"
-                         placeholder="ИНН"
-                         type="number">
+                         placeholder="ИНН*"
+                         type="number" required>
                 </div>
                 <div
                   class="new-organization__input-wrapper">
                   <input class="new-organization__input"
                          name="newOrgReasonCode"
-                         placeholder="КПП"
-                         type="number">
+                         placeholder="КПП*"
+                         type="number" required>
                 </div>
                 <div
                   class="new-organization__input-wrapper">
                   <input class="new-organization__input"
                          name="newOrgStateNumber"
-                         placeholder="ОГРН"
-                         type="number">
+                         placeholder="ОГРН*"
+                         type="number" required>
                 </div>
                 <div
                   class="new-organization__input-wrapper">
@@ -388,29 +387,29 @@
                   <div
                     class="new-organization__input-wrapper">
                     <p class="new-organization__input-title">
-                      Название счета
+                      Название счета*
                     </p>
                     <input class="new-organization__input"
                            name="newOrgAccountName[]"
-                           type="text">
+                           type="text" required>
                   </div>
                   <div
                     class="new-organization__input-wrapper">
                     <p class="new-organization__input-title">
-                      Рассчетный счет
+                      Рассчетный счет*
                     </p>
                     <input class="new-organization__input"
                            name="newOrgCheckingAccount[]"
-                           type="number">
+                           type="number" required>
                   </div>
                   <div
                     class="new-organization__input-wrapper">
                     <p class="new-organization__input-title">
-                      Название банка
+                      Название банка*
                     </p>
                     <input class="new-organization__input"
                            name="newOrgBankName[]"
-                           type="text">
+                           type="text" required>
                   </div>
                 </div>
               </div>
@@ -421,29 +420,29 @@
                   <div
                     class="new-organization__input-wrapper">
                     <p class="new-organization__input-title">
-                      БИК
+                      БИК*
                     </p>
                     <input class="new-organization__input"
                            name="newOrgIdentificationCode[]"
-                           type="number">
+                           type="number" required>
                   </div>
                   <div
                     class="new-organization__input-wrapper">
                     <p class="new-organization__input-title">
-                      Корреспондентский счет
+                      Корреспондентский счет*
                     </p>
                     <input class="new-organization__input"
                            name="newOrgCorrespondentAccount[]"
-                           type="number">
+                           type="number" required>
                   </div>
                   <div
                     class="new-organization__input-wrapper">
                     <p class="new-organization__input-title">
-                      Лицевой счет
+                      Лицевой счет*
                     </p>
                     <input class="new-organization__input"
                            name="newOrgBankBook[]"
-                           type="number">
+                           type="number" required>
                   </div>
                 </div>
               </div>
