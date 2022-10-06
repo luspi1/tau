@@ -9,7 +9,7 @@
   }
 
   >.container {
-    margin-top: 28px;
+    margin-top: 23px;
     display: flex;
   }
 
@@ -72,30 +72,29 @@
       padding: 20px 0;
       display: flex;
       justify-content: space-between;
+
       &__input {
         width: 100%;
         height: 40px;
         padding-left: 18px;
         line-height: 20px;
+        background: #ffffff;
         color: #858584;
         border: 1px solid #E6E6E6;
         border-radius: 5px;
-      }
-      &__select {
-        width: 200px;
-        margin-left: 13px;
-      }
-      .create-case-page {
-        &__wrapper-payment-date {
-          position: relative;
 
-          svg {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            pointer-events: none;
-          }
+        &:focus {
+          border: 1px solid #3E29CA;
         }
+
+        &:focus-visible {
+          outline: none;
+        }
+      }
+
+      &__wrap {
+        min-width: 200px;
+        margin-left: 13px;
 
         .choices {
           width: 100%;
@@ -103,6 +102,7 @@
 
           &.is-open {
             border: 1px solid #3E29CA;
+            border-radius: 5px;
           }
         }
 
@@ -111,26 +111,22 @@
         }
 
         .choices__inner {
-          border: none;
-          background: #E5E5E5;
           @include montserrat-medium;
           font-size: 17px;
           line-height: 21px;
           color: #858584;
+          background: #ffffff;
           border: 1px solid #E6E6E6;
           border-radius: 5px;
-        }
-
-        .choices[data-type*=select-one] .choices__inner {
-          padding-bottom: 16px;
-          padding-top: 16px;
-          padding-left: 12px;
+          min-height: auto;
+          height: 40px;
         }
 
         .choices__list--dropdown .choices__item--selectable.is-highlighted,
         .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
           background-color: #F8F8FA;
           color: #2F65F6;
+          border-radius: 5px;
         }
 
         .choices__list--dropdown,
@@ -142,43 +138,31 @@
       }
     }
 
-    .payments {
-      margin-top: 40px;
-
-      h4 {
-        font-weight: 600;
-        font-size: 22px;
-        line-height: 27px;
-        color: #000000;
-      }
-
-
+    .table-wrap {
       .table {
-        margin-top: 16px;
         min-width: 850px;
-
+        thead tr{
+          color: #858584;
+          background: #F7F8FA;
+        }
         tbody tr {
           text-align: left;
           vertical-align: top;
 
-          &:nth-child(odd) {
+          &:nth-child(even) {
             background-color: #F7F8FA;
           }
         }
 
         td {
-          padding: 7px 0 10px 15px;
-
-          span {
-            color: #858584;
-          }
+          padding: 15px 0 15px 14px;
 
           &:nth-child(3) {
-            width: 160px;
+            //width: 160px;
           }
 
           &:nth-child(n+4) {
-            width: 120px;
+            //width: 120px;
           }
         }
       }
