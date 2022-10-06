@@ -124,5 +124,19 @@ document.querySelectorAll('.create-deal-page__custom-select').forEach(el => {
 })
 
 
+// Селект на странице договор и документы
+
+const dealsDocSelect = document.querySelector('.deals-documents__select-input')
+
+if (dealsDocSelect) {
+  const choices = new Choices(dealsDocSelect, {
+    searchEnabled: false,
+    itemSelectText: '',
+    shouldSort: false,
+    allowHTML: true
+  });
+}
+
+
 
 export { initSelects, initPaymentSelects, initObserverSelect }
