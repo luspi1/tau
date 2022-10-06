@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html', {
+'title': 'Договор и документы',
+})
+
+<body class="page__body">
+<div class="site-container">
+  <div class="modal-overlay"></div>
+  @include('partials/header.html', {
+  'bottom-menu': 'bottom-menu_disabled',
+  'deal-title' : 'deals-active'
+  })
+
+  <main class="main deals">
+    @include('partials/deal-submenu.html', {
+    'active-deal': 'active-deal_documents',
+    })
+    <section class="deals-documents">
+      <div class="container">
+        <div class="deals-documents__content">
+          <h1 class="deals-documents__title">Договор и документы</h1>
+          <ul class="deals-documents__caption-list">
+            <li>
+              <p class="deals-documents__list-title">Сделка</p>
+              <p class="deals-documents__list-content">129/031 СТН</p>
+            </li>
+            <li>
+              <p class="deals-documents__list-title">Дата создания сделки</p>
+              <p class="deals-documents__list-content">22.09.2021</p>
+            </li>
+            <li>
+              <p class="deals-documents__list-title">Исполнитель</p>
+              <a href="#" class="deals-documents__list-content">ИП Масякин А.
+                Н.</a>
+            </li>
+          </ul>
+        </div>
+
+        <aside class="aside deals-documents__aside">
+          <div class="aside__top">
+            <p class="minititle">Контрагент</p>
+            <a href="#" target="_blank">ООО «Росавтодорпроектстроймашинвест»</a>
+          </div>
+          <div class="aside__card">
+            <div class="aside__item">
+              <p class="aside__price plan">8 921 000 &#8381;</p>
+              <p class="minititle">Плановый доход</p>
+            </div>
+            <div class="aside__item">
+              <p class="aside__price">3 022 106 &#8381;</p>
+              <p class="minititle">Фактический доход</p>
+            </div>
+            <div class="aside__item">
+              <p class="aside__price">- 5 898 902 &#8381;</p>
+              <p class="minititle">Сальдо</p>
+            </div>
+            <div class="aside__people">
+              <div class="aside__item">
+                <p>Автор сделки</p>
+                <a href="#" target="_blank">Файзуллин А.Р.</a>
+              </div>
+              <div class="aside__item">
+                <p>Исполнители сделки</p>
+                <a href="#" target="_blank">Файзуллин А.Р., Пузырёв А.О.</a>
+              </div>
+              <div class="aside__item">
+                <p>Наблюдатели сделки</p>
+                <a href="#" target="_blank">Тедорадзе А.С., Масякин А.Н.</a>
+              </div>
+            </div>
+            <button class="aside__btn-people" type="button">Поменять сотрудников
+            </button>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    @include('partials/info-modal.html')
+  </main>
+
+  @include('partials/footer.html')
+</div>
+
+</body>
+
+</html>

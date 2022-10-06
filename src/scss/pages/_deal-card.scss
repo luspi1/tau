@@ -1,85 +1,16 @@
 .deals {
-  .submenu {
-    .container {
-      display: flex;
-      justify-content: space-between;
-      padding: 25px 15px;
 
-      .deals__btn {
-        width: 190px;
-        height: 40px;
-        padding: 0 20px;
-        background: #2F65F6;
-        border: none;
-        border-radius: 5px;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 20px;
-        text-align: center;
-        color: #FFFFFF;
-        cursor: pointer;
-
-        &:hover {
-          background-color: #264DDB;
-        }
-      }
-    }
-
-    &__list {
-      display: flex;
-    }
-
-    &__item {
-      &:not(:first-child) {
-        margin-left: 52px;
-      }
-
-      a {
-        @include montserrat-medium;
-        font-size: 17px;
-        line-height: 21px;
-        color: #3e3e3d;
-        display: flex;
-        flex-wrap: nowrap;
-
-        &.link-active {
-          color: #2f65f6;
-
-          svg {
-            path {
-              fill: #2f65f6;
-            }
-          }
-        }
-
-        svg {
-          margin-right: 5px;
-        }
-
-        &:hover {
-          color: #2f65f6;
-
-          svg {
-            path {
-              fill: #2f65f6;
-            }
-          }
-        }
-      }
-    }
-  }
 
   .minititle {
     color: #858584;
   }
 
   a {
-    margin-top: 17px;
     color: #2f65f6;
   }
 
-  >.container {
-    margin-top: 27px;
+  > .container {
+    margin-top: 15px;
     display: flex;
   }
 

@@ -1,0 +1,54 @@
+.deals-documents {
+
+  padding: 26px 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__content {
+    flex-grow: 1;
+    max-width: 850px;
+  }
+
+
+  &__title {
+    @include montserrat-semibold;
+    font-size: 36px;
+    line-height: 44px;
+    color: #000000;
+    margin-bottom: 30px;
+  }
+
+  &__caption-list {
+    display: flex;
+    padding-bottom: 40px;
+    border-bottom: 2px dotted #C4C4C4;
+
+    li {
+      margin-right: 90px;
+    }
+
+    .deals-documents__list-title {
+      @include montserrat-regular;
+      font-size: 16px;
+      line-height: 20px;
+      color: #858584;
+      margin-bottom: 5px;
+    }
+
+    .deals-documents__list-content {
+      @include montserrat-regular;
+      font-size: 20px;
+      line-height: 24px;
+      color: #000000;
+    }
+
+    a.deals-documents__list-content {
+      color: #2F65F6;;
+    }
+
+  }
+
+}
