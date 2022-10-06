@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html', {
+'title': 'История сделки',
+})
+
+<body class="page__body">
+  <div class="site-container">
+    <div class="modal-overlay"></div>
+    @include('partials/header.html', {
+    'bottom-menu': 'bottom-menu_disabled',
+    'deal-title' : 'deals-active'
+    })
+
+    <main class="main deal-story">
+      <section class="submenu">
+        <div class="container">
+        </div>
+      </section>
+      <div class="container">
+        <section class="one-deal">
+          <div class="container">
+            <div class="one-deal__info">
+              <div class="one-deal__title">
+                <h1>История сделки</h1>
+              </div>
+              <div class="one-deal__row">
+                <div class="one-deal__item">
+                  <p class="minititle">Сделка</p>
+                  <p>129/031 СТН</p>
+                </div>
+                <div class="one-deal__item">
+                  <p class="minititle">Дата создания сделки</p>
+                  <p>22.09.2021</p>
+                </div>
+                <div class="one-deal__item">
+                  <p class="minititle">Исполнитель</p>
+                  <a href="#" target="_blank">ИП Масякин А. Н.</a>
+                </div>
+              </div>
+            </div>
+            <div class="search">
+              <input class="search__input" type="text"  name="" id="" placeholder="Найти активность">
+
+
+
+              <div class="create-case-page__input-wrapper search__select">
+                <select name="search__story">
+                  <option value="story_1">...</option>
+                  <option value="story_2">...1</option>
+                  <option value="story_3">...2</option>
+                </select>
+              </div>
+            </div>
+
+
+
+                <div class="payments">
+              <table class="table" cellspacing="0" cellpadding="0">
+                <thead>
+
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <span>14.02.2021</span>
+                    </td>
+                    <td>Авансовый платеж по Договору (длинное название на пару строк)</td>
+                    <td>9 032,00 &#8381;</td>
+                    <td>
+                      <span>Счет</span>
+                      <a href="file:#//" download target="_blank">pdf</a>
+                      <a href="file:#//" download target="_blank">doc</a>
+                    </td>
+                    <td>
+                      <span>Акт</span>
+                      <a href="file:#//" download target="_blank">pdf</a>
+                      <a href="file:#//" download target="_blank">doc</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>21.04.2021</span>
+                    </td>
+                    <td>Платеж по Договору</td>
+                    <td>29 400,00 &#8381;</td>
+                    <td>
+                      <span>Счет</span>
+                      <a href="file:#//" download target="_blank">pdf</a>
+                      <a href="file:#//" download target="_blank">doc</a>
+                    </td>
+                    <td>
+                      <span>Акт</span>
+                      <a href="file:#//" download target="_blank">pdf</a>
+                      <a href="file:#//" download target="_blank">doc</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span>21.04.2021</span>
+                    </td>
+                    <td>Платеж по Договору</td>
+                    <td>300 290 400,00 &#8381;</td>
+                    <td>
+                      <span>Счет</span>
+                      <a href="file:#//" download target="_blank">pdf</a>
+                      <a href="file:#//" download target="_blank">doc</a>
+                    </td>
+                    <td>
+                      <span>Акт</span>
+                      <a href="file:#//" download target="_blank">pdf</a>
+                      <a href="file:#//" download target="_blank">doc</a>
+                    </td>
+                  </tr>
+                </tbody>
+
+              </table>
+            </div>
+          </div>
+        </section>
+        <aside class="aside">
+          <div class="aside__top">
+            <p class="minititle">Контрагент</p>
+            <a href="#" target="_blank">ООО «Росавтодорпроектстроймашинвест»</a>
+          </div>
+          <div class="aside__card">
+            <div class="aside__item">
+              <p class="aside__price plan">8 921 000 &#8381;</p>
+              <p class="minititle">Плановый доход</p>
+            </div>
+            <div class="aside__item">
+              <p class="aside__price">3 022 106 &#8381;</p>
+              <p class="minititle">Фактический доход</p>
+            </div>
+            <div class="aside__item">
+              <p class="aside__price">- 5 898 902 &#8381;</p>
+              <p class="minititle">Сальдо</p>
+            </div>
+            <div class="aside__people">
+              <div class="aside__item">
+                <p>Автор сделки</p>
+                <a href="#" target="_blank">Файзуллин А.Р.</a>
+              </div>
+              <div class="aside__item">
+                <p>Исполнители сделки</p>
+                <a href="#" target="_blank">Файзуллин А.Р., Пузырёв А.О.</a>
+              </div>
+              <div class="aside__item">
+                <p>Наблюдатели сделки</p>
+                <a href="#" target="_blank">Тедорадзе А.С., Масякин А.Н.</a>
+              </div>
+            </div>
+            <button class="aside__btn-people" type="button">Поменять сотрудников</button>
+          </div>
+        </aside>
+      </div>
+  </div>
+  @include('partials/info-modal.html')
+  </main>
+
+  @include('partials/footer.html')
+  </div>
+
+</body>
+
+</html>
