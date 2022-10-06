@@ -125,4 +125,17 @@ document.querySelectorAll('.create-deal-page__custom-select').forEach(el => {
 
 
 
+// Селектор в поиске на странице история сделки
+const searchSelect = document.querySelector('.search__select');
+
+if (searchSelect) {
+  const choices = new Choices(searchSelect, {
+    searchEnabled: false,
+    itemSelectText: '',
+    shouldSort: false,
+    allowHTML: true
+  });
+}
+
+
 export { initSelects, initPaymentSelects, initObserverSelect }
