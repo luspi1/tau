@@ -14,10 +14,9 @@
     })
 
     <main class="main deal-story">
-      <section class="submenu">
-        <div class="container">
-        </div>
-      </section>
+      @include('partials/deal-submenu.html', {
+      'active-deal': 'active-deal_story',
+      })
       <div class="container">
         <section class="one-deal">
           <div class="container">

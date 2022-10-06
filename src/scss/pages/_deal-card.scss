@@ -8,7 +8,7 @@
   }
 
   > .container {
-    margin-top: 15px;
+    margin-top: 5px;
     display: flex;
   }
 
@@ -41,13 +41,13 @@
 
     &__info {
       width: 100%;
-      border-bottom: 2px dashed #C4C4C4;
     }
 
     &__row {
       display: flex;
       width: 100%;
       padding: 33px 0 38px;
+      border-bottom: 2px dotted #C4C4C4;;
     }
 
     &__item {

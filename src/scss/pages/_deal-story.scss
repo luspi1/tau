@@ -1,62 +1,10 @@
 .deal-story {
-  .submenu {
-    .container {
-      display: flex;
-      justify-content: space-between;
-      padding: 32px 15px 15px;
-    }
-
-    &__list {
-      display: flex;
-    }
-
-    &__item {
-      &:not(:first-child) {
-        margin-left: 52px;
-      }
-
-      a {
-        @include montserrat-medium;
-        margin-top: 0;
-        font-size: 17px;
-        line-height: 21px;
-        color: #3e3e3d;
-        display: flex;
-        flex-wrap: nowrap;
-
-        &.link-active {
-          color: #2f65f6;
-
-          svg {
-            path {
-              fill: #2f65f6;
-            }
-          }
-        }
-
-        svg {
-          margin-right: 5px;
-        }
-
-        &:hover {
-          color: #2f65f6;
-
-          svg {
-            path {
-              fill: #2f65f6;
-            }
-          }
-        }
-      }
-    }
-  }
 
   .minititle {
     color: #858584;
   }
 
   a {
-    margin-top: 17px;
     color: #2f65f6;
   }
 
@@ -85,7 +33,7 @@
 
     &__info {
       width: 100%;
-      border-bottom: 2px dashed #C4C4C4;
+      border-bottom: 2px dotted #C4C4C4;
     }
 
     &__row {
