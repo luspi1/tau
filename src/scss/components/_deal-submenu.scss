@@ -142,5 +142,23 @@
     }
   }
 
+  &.active-deal_balance{
+    .deals__btn {
+      display: none;
+    }
+
+    .deal-submenu__item-balance {
+      a {
+        color: #2f65f6;
+
+        svg {
+          path {
+            fill: #2f65f6;
+          }
+        }
+      }
+    }
+  }
+
 
 }

@@ -44,7 +44,7 @@
     font-size: 14px;
   }
 
-  .page-organizations .org-table__cell{
+  .page-organizations .org-table__cell {
     padding-right: 0;
   }
 
@@ -61,5 +61,27 @@
   .page-organizations__table-container {
     padding: 0 0;
   }
+
+}
+
+@media (max-width: 768px) {
+
+  .page-organizations__top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page-organizations__title {
+    margin-bottom: 20px;
+  }
+
+  .page-organizations .org-table {
+    overflow-x: auto;
+  }
+
+  .page-organizations .org-table__row {
+    min-width: 770px;
+  }
+
 
 }
