@@ -52,7 +52,11 @@
 
   .deals .one-deal__row {
     flex-direction: column;
-    padding: 15px 20px;
+    padding: 15px 20px 30px;
+  }
+
+  .deals .one-deal__data {
+    margin-top: 20px;
   }
 
   .deals .one-deal__item {

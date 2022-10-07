@@ -50,9 +50,12 @@
     margin-bottom: 30px;
   }
 
+
   .deals-documents__caption-list {
     justify-content: space-between;
     flex-wrap: wrap;
+    padding-bottom: 10px;
+
   }
   .deals-documents__caption-list li {
     margin-right: 20px;
@@ -105,6 +108,12 @@
   .deals-documents .choices {
     width: 100%;
   }
+}
 
 
+@media (max-width: 400px) {
+  .deals-documents__title {
+    font-size: 22px;
+    line-height: 30px;
+  }
 }
