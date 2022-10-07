@@ -151,10 +151,10 @@ if (searchSelect) {
   });
 }
 
-// Селектор в поиске на странице все сделки
+// Селектор в поиске на странице история сделки
 const dealsSelect = document.querySelector('.deals__select');
 
-if (searchSelect) {
+if (dealsSelect) {
   const choices = new Choices(dealsSelect, {
     searchEnabled: false,
     itemSelectText: '',
@@ -162,6 +162,5 @@ if (searchSelect) {
     allowHTML: true
   });
 }
-
 
 export { initSelects, initPaymentSelects, initObserverSelect }
