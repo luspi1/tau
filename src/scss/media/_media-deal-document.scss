@@ -1,0 +1,110 @@
+@media (max-width: 1280px) {
+  .deals-documents .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .deals-documents__content {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .deals-documents__content {
+    max-width: 100%;
+  }
+
+  .deals-documents .deals-documents-table__name {
+    width: 48%;
+  }
+
+  .deals-documents .deals-documents-table__download {
+    width: 47%;
+  }
+
+  .deals-documents .deals-documents-table__number {
+    max-width: 200px;
+  }
+
+
+}
+
+@media (max-width: 768px) {
+  .deals-documents {
+    padding: 17px 0 150px;
+  }
+
+
+  .deals-documents .deals-documents-table {
+    overflow-x: auto;
+  }
+
+  .deals-documents .deals-documents-table__row {
+    min-width: 740px;
+  }
+
+  .deals-documents__title {
+    font-size: 26px;
+    line-height: 36px;
+    margin-bottom: 30px;
+  }
+
+  .deals-documents__caption-list {
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .deals-documents__caption-list li {
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  .deals-documents__info {
+    flex-wrap: wrap;
+  }
+
+  .deals-documents__info-treaty {
+    margin-right: 0;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .deals-documents__info-download {
+    margin-right: 20px;
+  }
+
+
+}
+
+@media (max-width: 500px) {
+  .deals-documents__caption-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .deals-documents__caption-list li {
+    margin-right: 0;
+  }
+
+  .deals-documents__caption-list .deals-documents__list-title {
+    text-align: center;
+  }
+  .deals-documents__caption-list .deals-documents__list-content {
+    text-align: center;
+  }
+
+  .deals-documents__filter-inputs {
+    flex-direction: column;
+  }
+
+  .deals-documents__search-input {
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+
+  .deals-documents .choices {
+    width: 100%;
+  }
+
+
+}

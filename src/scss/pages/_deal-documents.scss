@@ -201,6 +201,7 @@
 
       button {
         color: #2F65F6;
+        cursor: pointer;
 
         svg {
           margin-right: 5px;
@@ -220,10 +221,7 @@
     &__status {
       width: 34%;
     }
-
-
   }
-
 
   .deals-documents__content {
     .deals-documents__add-btn {
