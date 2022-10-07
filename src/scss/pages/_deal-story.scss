@@ -16,7 +16,7 @@
   .one-deal {
     .container {
       max-width: 850px;
-      padding: 0 0 65px;
+      padding: 0 0 100px;
     }
 
     &__title {
@@ -141,10 +141,19 @@
     .table-wrap {
       .table {
         min-width: 850px;
-        thead tr{
-          color: #858584;
-          background: #F7F8FA;
+
+        thead {
+          td {
+            padding: 15px 0 15px 14px;
+          }
+
+          tr {
+            color: #858584;
+            background: #F7F8FA;
+            line-height: 17px;
+          }
         }
+
         tbody tr {
           text-align: left;
           vertical-align: top;
@@ -152,17 +161,37 @@
           &:nth-child(even) {
             background-color: #F7F8FA;
           }
-        }
 
-        td {
-          padding: 15px 0 15px 14px;
 
-          &:nth-child(3) {
-            //width: 160px;
-          }
+          td {
+            padding: 15px 0 10px 14px;
+            line-height: 22px;
 
-          &:nth-child(n+4) {
-            //width: 120px;
+            &:nth-child(1) {
+              width: 135px;
+            }
+
+            &:nth-child(2) {
+              width: 250px;
+            }
+
+            &:nth-child(3) {
+              width: 280px;
+            }
+
+            &:nth-child(4) {
+              width: 130px;
+            }
+
+            span {
+              &:last-child {
+                display: block;
+              }
+            }
+
+            a {
+              display: block;
+            }
           }
         }
       }
