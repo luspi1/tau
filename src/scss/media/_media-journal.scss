@@ -13,7 +13,6 @@
   }
 }
 
-
 @media (max-width: 1280px) {
 
   .page-journal .journal-table__time {
@@ -45,5 +44,14 @@
   }
 
 
+}
 
+@media (max-width: 768px) {
+  .page-journal .journal-table {
+    overflow-x: auto;
+  }
+
+  .page-journal .journal-table__row {
+    min-width: 770px;
+  }
 }
