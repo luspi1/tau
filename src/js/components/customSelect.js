@@ -151,5 +151,17 @@ if (searchSelect) {
   });
 }
 
+// Селектор в поиске на странице все сделки
+const dealsSelect = document.querySelector('.deals__select');
+
+if (searchSelect) {
+  const choices = new Choices(dealsSelect, {
+    searchEnabled: false,
+    itemSelectText: '',
+    shouldSort: false,
+    allowHTML: true
+  });
+}
+
 
 export { initSelects, initPaymentSelects, initObserverSelect }
