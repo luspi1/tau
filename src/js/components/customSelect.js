@@ -151,7 +151,7 @@ if (searchSelect) {
   });
 }
 
-// Селектор в поиске на странице история сделки
+// Селектор в поиске на странице все сделки
 const dealsSelect = document.querySelector('.deals__select');
 
 if (dealsSelect) {
@@ -162,5 +162,6 @@ if (dealsSelect) {
     allowHTML: true
   });
 }
+
 
 export { initSelects, initPaymentSelects, initObserverSelect }
