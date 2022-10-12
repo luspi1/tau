@@ -1,0 +1,51 @@
+<div class="modal-edit-card modal" id="edit-card-modal">
+  <h2>Редактирование карты</h2>
+  <form class="modal-edit-card__form" action="#">
+    <ul class="modal-edit-card__input-list">
+      <li class="modal-edit-card__item-input">
+        <p class="modal-edit-card__input-title">Номер карты</p>
+        <div class="modal-edit-card__input-wrapper">
+          <input class="modal-edit-card__input modal-edit-card__card-input" type="text"
+                 name="card_number"
+                 placeholder="4081 7810 2551 7395 6927"
+                 required>
+        </div>
+      </li>
+      <li class="modal-edit-card__item-input">
+        <p class="modal-edit-card__input-title">Срок действия</p>
+        <div class="modal-edit-card__input-wrapper">
+          <input class="modal-edit-card__input modal-edit-card__date-input" type="text"
+                 name="card_date"
+                 placeholder="10 / 2026"
+                 required>
+        </div>
+      </li>
+      <li class="modal-edit-card__item-input">
+        <p class="modal-edit-card__input-title">Владелец карты</p>
+        <div class="modal-edit-card__input-wrapper">
+          <input class="modal-edit-card__input" type="text"
+                 name="card_owner"
+                 placeholder="ADEL FAIZULLIN"
+                 required>
+        </div>
+      </li>
+      <li class="modal-edit-card__item-input">
+        <p class="modal-edit-card__input-title">Описание карты</p>
+        <div class="modal-edit-card__input-wrapper">
+          <textarea class="modal-edit-card__input modal-edit-card__input-area"
+                    name="card_desc"
+                    required></textarea>
+        </div>
+      </li>
+    </ul>
+
+    <div class="modal-edit-card__btns">
+      <button class="modal-edit-card__save-btn" type="submit">
+        Сохранить данные карты
+      </button>
+      <button type="button" class="modal-edit-card__close-btn">
+        Отменить
+      </button>
+    </div>
+  </form>
+</div>

@@ -7,7 +7,7 @@
 
 <body class="page__body">
 <div class="site-container">
-  <div class="modal-overlay"></div>
+  <div class="modal-overlay modal-overlay_active"></div>
   @include('partials/header.html', {
   'active': 'services_active'
   })
@@ -15,6 +15,9 @@
   <main class="main">
     <section class="section page-services">
       <div class="container">
+<!--        @include('partials/edit-invoice-modal.html')-->
+        @include('partials/edit-card-modal.html')
+
         <h1 class="page-services__title">Услуги пользователя</h1>
         <ul class="page-services__cards">
           <li class="page-services__card page-services__card_active">

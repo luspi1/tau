@@ -151,6 +151,31 @@ createDealDate.forEach(el => {
     }).mask(el);
   })
 
+// Номер карты в модалке редактирования карты
+
+const cardNumberInput = document.querySelector('.modal-edit-card__card-input');
+
+if (cardNumberInput) {
+  Inputmask({
+    "mask": "9999 9999 9999 9999 9999",
+    showMaskOnHover: false,
+    showMaskOnFocus: false,
+  }).mask(cardNumberInput);
+}
+
+
+// Срок действия в модалке редактирования карты
+
+const cardDateInput = document.querySelector('.modal-edit-card__date-input');
+
+if (cardDateInput) {
+  Inputmask({
+    "mask": "99 / 9999",
+    showMaskOnHover: false,
+    showMaskOnFocus: false,
+  }).mask(cardDateInput);
+}
+
 
 
 

@@ -1,0 +1,111 @@
+<div class="modal-edit-invoice modal" id="edit-invoice-modal">
+  <h2>Редактирование счета</h2>
+  <form class="modal-edit-invoice__form" action="#">
+    <ul class="modal-edit-invoice__input-list">
+      <li class="modal-edit-invoice__item-input">
+        <p class="modal-edit-invoice__input-title">Валюта счета</p>
+        <div class="modal-edit-invoice__input-wrapper">
+          <input class="modal-edit-invoice__input" type="text"
+                 name="invoice_currency"
+                 placeholder="Российский рубль (RUB)"
+                 required>
+        </div>
+      </li>
+      <li class="modal-edit-invoice__item-input">
+        <p class="modal-edit-invoice__input-title">Получатель</p>
+        <div class="modal-edit-invoice__input-wrapper">
+          <input class="modal-edit-invoice__input" type="text"
+                 name="invoice_name"
+                 placeholder="Файзуллин Адель Рустемович"
+                 required>
+        </div>
+      </li>
+      <li class="modal-edit-invoice__item-input">
+        <p class="modal-edit-invoice__input-title">Номер счета</p>
+        <div class="modal-edit-invoice__input-wrapper">
+          <input class="modal-edit-invoice__input" type="number"
+                 placeholder="40817810255173956927"
+                 name="invoice_number"
+                 required>
+        </div>
+      </li>
+      <li class="modal-edit-invoice__item-input">
+        <p class="modal-edit-invoice__input-title">Банк получателя</p>
+        <div class="modal-edit-invoice__input-wrapper">
+          <textarea
+            class="modal-edit-invoice__input modal-edit-invoice__input-area"
+            name="invoice_bank"
+            placeholder="СЕВЕРО-ЗАПАДНЫЙ БАНК ПАО СБЕРБАНК"
+            required></textarea>
+        </div>
+      </li>
+      <li class="modal-edit-invoice__item-input">
+        <p class="modal-edit-invoice__input-title">БИК</p>
+        <div class="modal-edit-invoice__input-wrapper">
+          <input class="modal-edit-invoice__input" type="number"
+                 placeholder="044030653"
+                 name="invoice_bik"
+                 required>
+        </div>
+      </li>
+      <li class="modal-edit-invoice__item-input">
+        <p class="modal-edit-invoice__input-title">Корр. счёт
+        </p>
+        <div class="modal-edit-invoice__input-wrapper">
+          <input class="modal-edit-invoice__input" type="number"
+                 name="invoice_corr"
+                 placeholder="30101810500000000653"
+                 required>
+        </div>
+      </li>
+      <li class="modal-edit-invoice__item-input">
+        <p class="modal-edit-invoice__input-title">ИНН
+        </p>
+        <div class="modal-edit-invoice__input-wrapper">
+          <input class="modal-edit-invoice__input" type="number"
+                 name="invoice_inn"
+                 placeholder="7707083893"
+                 required>
+        </div>
+      </li>
+      <li class="modal-edit-invoice__item-input">
+        <p class="modal-edit-invoice__input-title">КПП
+        </p>
+        <div class="modal-edit-invoice__input-wrapper">
+          <input class="modal-edit-invoice__input" type="number"
+                 name="invoice_kpp"
+                 placeholder="начните вводить название"
+                 required>
+        </div>
+      </li>
+      <li class="modal-edit-invoice__item-input">
+        <p class="modal-edit-invoice__input-title">SWIFT-код
+        </p>
+        <div class="modal-edit-invoice__input-wrapper">
+          <input class="modal-edit-invoice__input" type="number"
+                 name="invoice_swift"
+                 placeholder="начните вводить название"
+                 required>
+        </div>
+      </li>
+      <li class="modal-edit-invoice__item-input">
+        <p class="modal-edit-invoice__input-title">Описание счета</p>
+        <div class="modal-edit-invoice__input-wrapper">
+          <textarea
+            class="modal-edit-invoice__input modal-edit-invoice__input-area modal-edit-invoice__area-desc"
+            name="invoice_desc"
+            required></textarea>
+        </div>
+      </li>
+    </ul>
+
+    <div class="modal-edit-invoice__btns">
+      <button class="modal-edit-invoice__save-btn" type="submit">
+        Сохранить данные счета
+      </button>
+      <button type="button" class="modal-edit-invoice__close-btn">
+        Отменить
+      </button>
+    </div>
+  </form>
+</div>
