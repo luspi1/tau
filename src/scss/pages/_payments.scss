@@ -1,0 +1,173 @@
+.payments-page {
+  .container {
+    padding: 23px 15px 145px;
+    color: #000000;
+  }
+
+  .minititle {
+    font-size: 16px;
+    line-height: 24px;
+    color: #858584;
+  }
+
+  .payments {
+
+    &__title {
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+
+  .score,
+  .card {
+    margin-top: 25px;
+    padding: 29px 28px 45px 25px;
+    border: 1.5px solid #D8D8D8;
+    border-radius: 15px;
+
+    &__info {
+      padding-bottom: 24px;
+      border-bottom: 1px solid #D8D8D8;
+
+    }
+
+    &__row {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    &__info-wrap {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    &__item {
+      margin-left: 60px;
+
+      &:nth-child(1) {
+        width: 303px;
+        margin-left: 0;
+      }
+
+      &:nth-child(2) {
+        width: 370px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+
+    &__title {
+      font-weight: 600;
+      font-size: 26px;
+      line-height: 32px;
+    }
+
+    &__date-wrap {
+      display: flex;
+      margin-left: 30px;
+    }
+
+    &__date {
+      margin-left: 5px;
+      line-height: 24px;
+    }
+
+    &__icons-wrap {
+      display: flex;
+      width: 52px;
+      margin: 0 0 0 auto;
+    }
+
+    &__edit {
+      margin: 0 15px 0 auto;
+
+      &:hover {
+        cursor: pointer;
+
+        svg {
+          path {
+            fill: #2f65f6;
+          }
+        }
+      }
+    }
+
+    &__delete {
+      margin: 0 auto;
+
+      &:hover {
+        cursor: pointer;
+
+        svg {
+          path {
+            &:first-child {
+
+              fill: #2f65f6;
+            }
+          }
+        }
+      }
+    }
+
+    &__desc {
+      max-width: 893px;
+      margin-top: 22px;
+      font-size: 16px;
+      line-height: 24px;
+      color: #858584;
+
+    }
+
+    &__requisite {
+      padding-top: 21px;
+
+      .score__row {
+        margin-top: 25px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+
+
+    &__currency {
+      span {
+        text-transform: uppercase;
+      }
+    }
+
+    &__bank {
+      text-transform: uppercase;
+    }
+
+    &__recipient {
+      text-transform: uppercase;
+    }
+
+    &__swift {
+      text-transform: uppercase;
+    }
+  }
+
+  .card {
+    &__holder {
+      text-transform: uppercase;
+    }
+
+    &__item {
+      &:nth-child(1) {
+        width: 200px;
+      }
+
+      &:nth-child(2) {
+        width: 130px;
+      }
+    }
+
+  }
+}
