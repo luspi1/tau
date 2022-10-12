@@ -9,10 +9,14 @@
 <div class="site-container">
   <div class="modal-overlay"></div>
   @include('partials/header.html', {
-  'active': 'journal_active'
+  'bottom-menu': 'bottom-menu_disabled',
+  'organization-title' : 'organization-item-active'
   })
 
   <main class="main">
+    @include('partials/organization-item-submenu.html', {
+    'active-organization-item': 'active-organization_worker',
+    })
     <section class="section page-employees">
       <div class="container">
         <div class="page-employees__top">
@@ -22,10 +26,8 @@
         </div>
         <ul class="page-employees__table employees-table">
           <li class="employees-table__row">
-            <p class="employees-table__cell employees-table__name">Иванов Иван
-              Иванович (это Вы)<a href="#">
-              </a>
-            </p>
+            <a href="#" class="employees-table__cell employees-table__name">Иванов Иван
+              Иванович (это Вы)</a>
             <p class="employees-table__cell employees-table__spot">
               руководитель</p>
             <p class="employees-table__cell employees-table__date">
@@ -69,10 +71,8 @@
 
           </li>
           <li class="employees-table__row">
-            <p class="employees-table__cell employees-table__name">
-              Сержантов-Шульц Константин Владимирович<a href="#">
-            </a>
-            </p>
+            <a href="#" class="employees-table__cell employees-table__name">
+              Сержантов-Шульц Константин Владимирович</a>
             <p class="employees-table__cell employees-table__spot">
               менеджер</p>
             <p class="employees-table__cell employees-table__date">
@@ -115,10 +115,8 @@
             </button>
           </li>
           <li class="employees-table__row">
-            <p class="employees-table__cell employees-table__name">
-              Вильчес-Ногерол Антонио Владимирович<a href="#">
-            </a>
-            </p>
+            <a href="#" class="employees-table__cell employees-table__name">
+              Вильчес-Ногерол Антонио Владимирович</a>
             <p class="employees-table__cell employees-table__spot">
               менеджер</p>
             <p class="employees-table__cell employees-table__date">
@@ -161,10 +159,8 @@
             </button>
           </li>
           <li class="employees-table__row">
-            <p class="employees-table__cell employees-table__name">
-              Отрадинский-Марков Марк Федорович<a href="#">
-            </a>
-            </p>
+            <a href="#" class="employees-table__cell employees-table__name">
+              Отрадинский-Марков Марк Федорович</a>
             <p class="employees-table__cell employees-table__spot">
               сотрудник</p>
             <p class="employees-table__cell employees-table__date">
@@ -207,10 +203,8 @@
             </button>
           </li>
           <li class="employees-table__row">
-            <p class="employees-table__cell employees-table__name">
-              Иванов Иван Иванович<a href="#">
-            </a>
-            </p>
+            <a href="#" class="employees-table__cell employees-table__name">
+              Иванов Иван Иванович</a>
             <p class="employees-table__cell employees-table__spot">
               сотрудник</p>
             <p class="employees-table__cell employees-table__date">
@@ -253,10 +247,8 @@
             </button>
           </li>
           <li class="employees-table__row">
-            <p class="employees-table__cell employees-table__name">
-              Сержантов-Шульц Константин Владимирович<a href="#">
-            </a>
-            </p>
+            <a href="#" class="employees-table__cell employees-table__name">
+              Сержантов-Шульц Константин Владимирович</a>
             <p class="employees-table__cell employees-table__spot">
               сотрудник</p>
             <p class="employees-table__cell employees-table__date">
@@ -299,10 +291,8 @@
             </button>
           </li>
           <li class="employees-table__row">
-            <p class="employees-table__cell employees-table__name">
-              Вильчес-Ногерол Антонио Владимирович<a href="#">
-            </a>
-            </p>
+            <a href="#" class="employees-table__cell employees-table__name">
+              Вильчес-Ногерол Антонио Владимирович</a>
             <p class="employees-table__cell employees-table__spot">
               сотрудник</p>
             <p class="employees-table__cell employees-table__date">
@@ -345,10 +335,8 @@
             </button>
           </li>
           <li class="employees-table__row">
-            <p class="employees-table__cell employees-table__name">
-              Отрадинский-Марков Марк Федорович <a href="#">
-            </a>
-            </p>
+            <a href="#" class="employees-table__cell employees-table__name">
+              Отрадинский-Марков Марк Федорович</a>
             <p class="employees-table__cell employees-table__spot">
               сотрудник</p>
             <p class="employees-table__cell employees-table__date">
