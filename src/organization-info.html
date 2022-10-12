@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html', {
+'title': 'Информация',
+})
+
+<body class="page__body">
+<div class="site-container">
+  <div class="modal-overlay"></div>
+  @include('partials/header.html', {
+  'bottom-menu': 'bottom-menu_disabled',
+  'organization-title' : 'organization-item-active'
+  })
+
+  <main class="main organization-info">
+    @include('partials/organization-item-submenu.html', {
+      'active-organization-item': 'active-organization_info',
+      })
+<section class="information">
+  <div class="container">
+    <h1 class="information__title">ООО НПО ТАУ</h1>
+    <div class="information__row">
+      <p class="minititle">Краткое название:</p>
+      <p class="text">ООО НПО ТАУ</p>
+    </div>
+    <div class="information__row">
+      <p class="minititle">Полное название:</p>
+      <p class="text">Общество с ограниченной ответственностью «Научно-производственное объединение Технологии
+        Автоматизированного управления»</p>
+    </div>
+    <div class="information__row">
+      <p class="minititle">Руководитель:</p>
+      <p class="text">Тедорадзе Анатолий Северьянович (ВЫ), генеральный директор, номер телефона не указан</p>
+    </div>
+    <div class="information__row">
+      <p class="minititle">Основная отрасль:</p>
+      <p class="text">разработка программного обеспечения</p>
+    </div>
+  </div>
+</section>
+<section class="contacts">
+  <div class="container">
+    <h3 class="contacts__title">Контактная информация</h3>
+    <div class="contacts__row">
+       <p class="minititle">Номер телефона:</p>
+      <p class="text">+7 (999) 999-99-00</p>
+    </div>
+    <div class="contacts__row">
+       <p class="minititle">Номер телефона 2:</p>
+      <p class="text">+7 (999) 999-99-00</p>
+    </div>
+    <div class="contacts__row">
+       <p class="minititle">Номер телефона 3:</p>
+      <p class="text">+7 (999) 999-99-00</p>
+    </div>
+    <div class="contacts__row">
+       <p class="minititle">Электронная почта:</p>
+      <a href="mailto:">info@site.com</a>
+    </div>
+    <div class="contacts__row">
+       <p class="minititle">Адрес сайта:</p>
+      <a href="#" target="_blank">www.site.com</a>
+    </div>
+    <div class="contacts__row">
+       <p class="minititle">Физический адрес:</p>
+       <a href="#" target="_blank">www.site.com</a>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  @include('partials/footer.html')
+</div>
+
+</body>
+
+</html>
+

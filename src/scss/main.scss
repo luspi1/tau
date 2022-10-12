@@ -21,7 +21,9 @@
 @import "./pages/deals";
 @import "./pages/deal-balance";
 @import "./pages/payments";
+@import "./pages/organization-info";
 @import "./pages/employees";
+
 
 
 
@@ -54,5 +56,6 @@
 @import "./components/info-modal";
 @import "./components/pagination";
 @import "./components/deal-submenu";
+@import "./components/organization-item-submenu";
 @import "./components/edit-invoice-modal";
 @import "./components/edit-card-modal";
