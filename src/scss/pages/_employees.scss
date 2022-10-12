@@ -1,0 +1,115 @@
+.page-employees {
+
+  padding: 50px 0 217px;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  &__title {
+    @include montserrat-semibold;
+    font-size: 36px;
+    line-height: 44px;
+    color: #000000;
+  }
+
+  &__new-employees-link {
+    @include montserrat-semibold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    background-color: #2F65F6;
+    border-radius: 5px;
+    transition: all .3s;
+    padding: 10px 23px;
+
+    &:hover {
+      background-color: #264DDB;
+    }
+  }
+
+
+  .employees-table {
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+
+    &__row {
+      display: flex;
+      align-items: center;
+      padding: 15px 25px;
+      background: #F7F8FA;
+      border-radius: 5px;
+      margin-bottom: 5px;
+    }
+
+    &__cell {
+      width: 100%;
+      flex: 1 1 auto;
+      @include montserrat-regular;
+      font-size: 16px;
+      line-height: 20px;
+      color: #000000;
+      position: relative;
+
+      &:not(:last-child) {
+        padding-right: 20px;
+      }
+    }
+
+    &__name {
+      color: #2F65F6;
+    }
+
+
+    &__spot {
+      width: 55%;
+    }
+
+    &__date {
+      font-size: 14px;
+      line-height: 17px;
+      color: #858584;
+      width: 66%;
+    }
+
+
+    &__btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 9%;
+      position: relative;
+      svg {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+      }
+
+      svg path {
+        transition: all .3s;
+      }
+
+      &:hover {
+        svg path {
+          fill: #2F65F6;
+        }
+      }
+
+      &.employees-table__btn_disabled {
+        pointer-events: none;
+        svg path {
+          fill: #CECECE;
+        }
+      }
+    }
+
+
+  }
+
+
+}

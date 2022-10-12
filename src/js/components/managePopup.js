@@ -19,21 +19,6 @@ const connectLeaderBtn = document.querySelector('.edit-contact__connect-leader-b
 const editInvoiceBtn = document.querySelector('.payments-page .btn-add-score')
 const editCardBtn = document.querySelector('.payments-page .btn-add-card')
 
-
-// увеличение размера окна под модалку
-
-// const heightIncrease = (btn) => {
-//   const parentMain = btn.closest('main')
-//   const btnCurrentModal = btn.dataset.modal
-//
-//   console.dir(btnCurrentModal)
-//
-//   // parentMain.style.minHeight =
-//
-//   // parentMain.classList.add('modal-indent')
-// }
-
-
 // Управление состоянием модалок
 const manageModals = (...editButtons) => {
   editButtons.forEach(btn => {
