@@ -1,0 +1,81 @@
+@media(max-width: 992px) {
+  .payments-page .score__row {
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+
+  .payments-page .card__row {
+    align-items: flex-start;
+  }
+
+  .payments-page .score__info-wrap,
+  .payments-page .card__info-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .payments-page .score__date-wrap,
+  .payments-page .card__date-wrap {
+    margin: 10px 0 0;
+  }
+
+  .payments-page .score__item {
+    margin-left: 15px;
+
+    &:nth-child(1) {
+      margin-left: 0;
+    }
+  }
+}
+
+@media(max-width: 768px) {
+
+  .payments-page .score__requisite .score__row,
+  .payments-page .card__requisite .card__row {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 15px;
+  }
+
+  .payments-page .score__item,
+  .payments-page .card__item {
+    margin: 10px 0 0;
+
+    &:nth-child(1) {
+      width: 100%;
+      margin-top: 0;
+    }
+
+    &:nth-child(2) {
+      width: 100%;
+    }
+  }
+
+}
+
+@media(max-width: 576px) {
+
+  .payments-page .score__date-wrap,
+  .payments-page .card__date-wrap {
+    flex-direction: column;
+  }
+
+  .payments-page .score__desc,
+  .payments-page .card__desc {
+    margin-top: 10px;
+  }
+  .payments-page .payments__btn-wrap {
+    flex-direction: column;
+  }
+  .payments-page .payments .btn-add-score {
+    margin: 20px 0 0;
+  }
+}
+
+@media(max-width: 400px) {
+
+  .payments-page .score__icons-wrap,
+  .payments-page .card__icons-wrap {
+    margin-left: 15px;
+  }
+}
