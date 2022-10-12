@@ -10,16 +10,15 @@
   border-radius: 20px;
   padding: 50px 50px 65px 45px;
   transition: all .2s;
-  z-index: 999;
 
-  //opacity: 0;
-  //visibility: hidden;
+  opacity: 0;
+  visibility: hidden;
 
-  //&._active {
-  //  opacity: 1;
-  //  z-index: 999;
-  //  visibility: visible;
-  //}
+  &._active {
+    opacity: 1;
+    z-index: 999;
+    visibility: visible;
+  }
 
   h2 {
     @include montserrat-semibold;

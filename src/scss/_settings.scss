@@ -76,7 +76,6 @@ select::-ms-expand {
 .site-container {
   position: relative;
   overflow: hidden;
-
 }
 
 .container {
@@ -101,6 +100,10 @@ select::-ms-expand {
   }
 }
 
+
+.modal-indent {
+  padding-bottom: 500px;
+}
 
 .edit-btn {
   cursor: pointer;

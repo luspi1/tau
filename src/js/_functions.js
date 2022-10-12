@@ -8,6 +8,7 @@ const closePopup = (...clickTarget) => {
     document.querySelectorAll('.modal').forEach(modal => {
       if (modal.classList.contains('_active')) {
         modal.classList.remove('_active')
+        modal.closest('main').style.minHeight = "calc(100vh - 60px)";
       }
     })
     modalOverlay.classList.remove('modal-overlay_active')
@@ -22,7 +23,7 @@ const removeClasses = (className) => {
 
 
 // Фунцкия отправки fetch запросов
-async function sendData(data, url) {
+async function sendData (data, url) {
   return await fetch(url, {
     method: 'POST',
     headers: {'Content-Type': 'multipart/form-data'},
@@ -46,13 +47,12 @@ const serializeForm = (formNode) => {
 }
 
 // Преобразование formData в объект
-const formToObj = (formData) =>  {
+const formToObj = (formData) => {
   return Array.from(formData.entries()).reduce((memo, pair) => ({
     ...memo,
     [pair[0]]: pair[1],
   }), {})
 }
-
 
 
 // показ/скрытие модалки ошибки

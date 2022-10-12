@@ -1,7 +1,5 @@
 .page-services {
-  //padding: 21px 0 270px;
-
-  padding: 21px 0 700px;
+  padding: 21px 0 270px;
 
   &__title {
     @include montserrat-semibold;
@@ -150,6 +148,26 @@
 
     br {
       display: none;
+    }
+  }
+
+  &__add-pay-link {
+    display: block;
+    max-width: 334px;
+    @include montserrat-semibold;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 10px 5px;
+    background: #2F65F6;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 35px;
+    transition: all .3s;
+
+    &:hover {
+      background: #264DDB;
     }
 
   }
