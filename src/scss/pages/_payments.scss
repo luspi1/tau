@@ -17,6 +17,32 @@
       font-size: 36px;
       line-height: 44px;
     }
+
+    &__btn-wrap {
+      display: flex;
+      padding-top: 25px;
+    }
+
+    &__btn {
+      width: 197px;
+      height: 47px;
+      font-weight: 600;
+      font-size: 17px;
+      line-height: 21px;
+      text-align: center;
+      color: #FFFFFF;
+      background: #2F65F6;
+      border-radius: 5px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      &:hover {
+        background-color: #264DDB;
+      }
+    }
+    .btn-add-score {
+      margin-left: 23px;
+    }
   }
 
   .score,
