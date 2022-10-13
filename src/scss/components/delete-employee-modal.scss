@@ -1,0 +1,133 @@
+.modal-delete-employee {
+  position: absolute;
+  overflow-y: auto;
+  overflow-x: hidden;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 646px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 50px 50px 65px 45px;
+  transition: all .2s;
+  opacity: 0;
+  visibility: hidden;
+
+  &._active {
+    opacity: 1;
+    z-index: 999;
+    visibility: visible;
+  }
+
+  h2 {
+    @include montserrat-semibold;
+    font-size: 38px;
+    line-height: 46px;
+    color: #000000;
+    margin-bottom: 35px;
+  }
+
+  &__list {
+    margin-bottom: 20px;
+    li {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__list-sub {
+    @include montserrat-light;
+    font-size: 14px;
+    line-height: 17px;
+    color: #585757;
+    margin-bottom: 5px;
+  }
+
+  &__list-vary {
+    @include montserrat-medium;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+  }
+
+
+  &__desc {
+    @include montserrat-light;
+    font-size: 14px;
+    line-height: 17px;
+    color: #585757;
+    margin-bottom: 17px;
+  }
+
+
+  &__btns {
+    margin-top: 40px;
+  }
+
+  &__save-btn {
+    border: none;
+    background-color: #2F65F6;
+    border-radius: 5px;
+    @include montserrat-bold;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 17px 0;
+    width: 136px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+      background-color: #264DDB;
+    }
+  }
+
+  &__close-btn {
+    background: none;
+    border: none;
+    @include montserrat-bold;
+    font-size: 20px;
+    line-height: 24px;
+    color: #2F65F6;
+    cursor: pointer;
+
+    &:hover {
+      color: #264DDB;
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .modal-delete-employee {
+    width: 90%;
+    padding: 30px 25px 45px 25px;
+  }
+
+  .modal-delete-employee h2 {
+    font-size: 26px;
+    line-height: 32px;
+    margin-bottom: 37px;
+  }
+
+
+  .modal-delete-employee__list-vary {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .modal-delete-employee__btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  .modal-delete-employee__save-btn {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+}

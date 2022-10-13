@@ -19,14 +19,18 @@
     })
     <section class="section page-employees">
       <div class="container">
+        @include('partials/new-employee-modal.html')
+        @include('partials/job-change-modal.html')
+        @include('partials/delete-employee-modal.html')
         <div class="page-employees__top">
           <h1 class="page-employees__title">Сотрудники ООО НПО ТАУ</h1>
-          <a class="page-employees__new-employees-link" href="#">Новый
+          <a class="page-employees__new-employees-link" data-modal="new-employee-modal" href="#">Новый
             сотрудник</a>
         </div>
         <ul class="page-employees__table employees-table">
           <li class="employees-table__row">
-            <a href="#" class="employees-table__cell employees-table__name">Иванов Иван
+            <a href="#" class="employees-table__cell employees-table__name">Иванов
+              Иван
               Иванович (это Вы)</a>
             <p class="employees-table__cell employees-table__spot">
               руководитель</p>
@@ -34,7 +38,7 @@
               Регистрация: 28 фев 2022</p>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-close employees-table__btn_disabled">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__delete-employee-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M9.69922 19.3C4.49922 19.3 0.199219 15 0.199219 9.79999C0.199219 4.59999 4.49922 0.299988 9.69922 0.299988C14.8992 0.299988 19.1992 4.59999 19.1992 9.79999C19.1992 15 14.9992 19.3 9.69922 19.3ZM9.69922 1.29999C4.99922 1.29999 1.19922 5.09999 1.19922 9.79999C1.19922 14.5 4.99922 18.3 9.69922 18.3C14.3992 18.3 18.1992 14.5 18.1992 9.79999C18.1992 5.09999 14.3992 1.29999 9.69922 1.29999Z"
@@ -46,7 +50,7 @@
             </button>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-up employees-table__btn_disabled">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__change-job-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M9.60156 19.4C4.40156 19.4 0.101562 15.1 0.101562 9.90002C0.101562 4.70002 4.40156 0.400024 9.60156 0.400024C14.8016 0.400024 19.1016 4.70002 19.1016 9.90002C19.1016 15.1 14.9016 19.4 9.60156 19.4ZM9.60156 1.40002C4.90156 1.40002 1.10156 5.20002 1.10156 9.90002C1.10156 14.6 4.90156 18.4 9.60156 18.4C14.3016 18.4 18.1016 14.6 18.1016 9.90002C18.1016 5.20002 14.3016 1.40002 9.60156 1.40002Z"
@@ -58,7 +62,7 @@
             </button>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-down employees-table__btn_disabled">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__change-job-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M10.3984 19.6C5.19844 19.6 0.898438 15.3 0.898438 10.1C0.898438 4.89998 5.19844 0.599976 10.3984 0.599976C15.5984 0.599976 19.8984 4.89998 19.8984 10.1C19.8984 15.3 15.5984 19.6 10.3984 19.6ZM10.3984 1.59998C5.69844 1.59998 1.89844 5.39998 1.89844 10.1C1.89844 14.8 5.69844 18.6 10.3984 18.6C15.0984 18.6 18.8984 14.8 18.8984 10.1C18.8984 5.39998 15.0984 1.59998 10.3984 1.59998Z"
@@ -79,7 +83,7 @@
               Регистрация: 28 фев 2022</p>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-close ">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__delete-employee-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M9.69922 19.3C4.49922 19.3 0.199219 15 0.199219 9.79999C0.199219 4.59999 4.49922 0.299988 9.69922 0.299988C14.8992 0.299988 19.1992 4.59999 19.1992 9.79999C19.1992 15 14.9992 19.3 9.69922 19.3ZM9.69922 1.29999C4.99922 1.29999 1.19922 5.09999 1.19922 9.79999C1.19922 14.5 4.99922 18.3 9.69922 18.3C14.3992 18.3 18.1992 14.5 18.1992 9.79999C18.1992 5.09999 14.3992 1.29999 9.69922 1.29999Z"
@@ -91,7 +95,7 @@
             </button>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-up">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__change-job-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M9.60156 19.4C4.40156 19.4 0.101562 15.1 0.101562 9.90002C0.101562 4.70002 4.40156 0.400024 9.60156 0.400024C14.8016 0.400024 19.1016 4.70002 19.1016 9.90002C19.1016 15.1 14.9016 19.4 9.60156 19.4ZM9.60156 1.40002C4.90156 1.40002 1.10156 5.20002 1.10156 9.90002C1.10156 14.6 4.90156 18.4 9.60156 18.4C14.3016 18.4 18.1016 14.6 18.1016 9.90002C18.1016 5.20002 14.3016 1.40002 9.60156 1.40002Z"
@@ -103,7 +107,7 @@
             </button>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-down">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__change-job-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M10.3984 19.6C5.19844 19.6 0.898438 15.3 0.898438 10.1C0.898438 4.89998 5.19844 0.599976 10.3984 0.599976C15.5984 0.599976 19.8984 4.89998 19.8984 10.1C19.8984 15.3 15.5984 19.6 10.3984 19.6ZM10.3984 1.59998C5.69844 1.59998 1.89844 5.39998 1.89844 10.1C1.89844 14.8 5.69844 18.6 10.3984 18.6C15.0984 18.6 18.8984 14.8 18.8984 10.1C18.8984 5.39998 15.0984 1.59998 10.3984 1.59998Z"
@@ -123,7 +127,7 @@
               Регистрация: 28 фев 2022</p>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-close ">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__delete-employee-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M9.69922 19.3C4.49922 19.3 0.199219 15 0.199219 9.79999C0.199219 4.59999 4.49922 0.299988 9.69922 0.299988C14.8992 0.299988 19.1992 4.59999 19.1992 9.79999C19.1992 15 14.9992 19.3 9.69922 19.3ZM9.69922 1.29999C4.99922 1.29999 1.19922 5.09999 1.19922 9.79999C1.19922 14.5 4.99922 18.3 9.69922 18.3C14.3992 18.3 18.1992 14.5 18.1992 9.79999C18.1992 5.09999 14.3992 1.29999 9.69922 1.29999Z"
@@ -135,7 +139,7 @@
             </button>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-up employees-table__btn_disabled">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__change-job-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M9.60156 19.4C4.40156 19.4 0.101562 15.1 0.101562 9.90002C0.101562 4.70002 4.40156 0.400024 9.60156 0.400024C14.8016 0.400024 19.1016 4.70002 19.1016 9.90002C19.1016 15.1 14.9016 19.4 9.60156 19.4ZM9.60156 1.40002C4.90156 1.40002 1.10156 5.20002 1.10156 9.90002C1.10156 14.6 4.90156 18.4 9.60156 18.4C14.3016 18.4 18.1016 14.6 18.1016 9.90002C18.1016 5.20002 14.3016 1.40002 9.60156 1.40002Z"
@@ -147,7 +151,7 @@
             </button>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-down">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__change-job-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M10.3984 19.6C5.19844 19.6 0.898438 15.3 0.898438 10.1C0.898438 4.89998 5.19844 0.599976 10.3984 0.599976C15.5984 0.599976 19.8984 4.89998 19.8984 10.1C19.8984 15.3 15.5984 19.6 10.3984 19.6ZM10.3984 1.59998C5.69844 1.59998 1.89844 5.39998 1.89844 10.1C1.89844 14.8 5.69844 18.6 10.3984 18.6C15.0984 18.6 18.8984 14.8 18.8984 10.1C18.8984 5.39998 15.0984 1.59998 10.3984 1.59998Z"
@@ -167,7 +171,7 @@
               Регистрация: 28 фев 2022</p>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-close employees-table__btn_disabled">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__delete-employee-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M9.69922 19.3C4.49922 19.3 0.199219 15 0.199219 9.79999C0.199219 4.59999 4.49922 0.299988 9.69922 0.299988C14.8992 0.299988 19.1992 4.59999 19.1992 9.79999C19.1992 15 14.9992 19.3 9.69922 19.3ZM9.69922 1.29999C4.99922 1.29999 1.19922 5.09999 1.19922 9.79999C1.19922 14.5 4.99922 18.3 9.69922 18.3C14.3992 18.3 18.1992 14.5 18.1992 9.79999C18.1992 5.09999 14.3992 1.29999 9.69922 1.29999Z"
@@ -179,7 +183,7 @@
             </button>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-up">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__change-job-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M9.60156 19.4C4.40156 19.4 0.101562 15.1 0.101562 9.90002C0.101562 4.70002 4.40156 0.400024 9.60156 0.400024C14.8016 0.400024 19.1016 4.70002 19.1016 9.90002C19.1016 15.1 14.9016 19.4 9.60156 19.4ZM9.60156 1.40002C4.90156 1.40002 1.10156 5.20002 1.10156 9.90002C1.10156 14.6 4.90156 18.4 9.60156 18.4C14.3016 18.4 18.1016 14.6 18.1016 9.90002C18.1016 5.20002 14.3016 1.40002 9.60156 1.40002Z"
@@ -191,7 +195,7 @@
             </button>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-down">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__change-job-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M10.3984 19.6C5.19844 19.6 0.898438 15.3 0.898438 10.1C0.898438 4.89998 5.19844 0.599976 10.3984 0.599976C15.5984 0.599976 19.8984 4.89998 19.8984 10.1C19.8984 15.3 15.5984 19.6 10.3984 19.6ZM10.3984 1.59998C5.69844 1.59998 1.89844 5.39998 1.89844 10.1C1.89844 14.8 5.69844 18.6 10.3984 18.6C15.0984 18.6 18.8984 14.8 18.8984 10.1C18.8984 5.39998 15.0984 1.59998 10.3984 1.59998Z"
@@ -211,7 +215,7 @@
               Регистрация: 28 фев 2022</p>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-close employees-table__btn_disabled">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__delete-employee-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M9.69922 19.3C4.49922 19.3 0.199219 15 0.199219 9.79999C0.199219 4.59999 4.49922 0.299988 9.69922 0.299988C14.8992 0.299988 19.1992 4.59999 19.1992 9.79999C19.1992 15 14.9992 19.3 9.69922 19.3ZM9.69922 1.29999C4.99922 1.29999 1.19922 5.09999 1.19922 9.79999C1.19922 14.5 4.99922 18.3 9.69922 18.3C14.3992 18.3 18.1992 14.5 18.1992 9.79999C18.1992 5.09999 14.3992 1.29999 9.69922 1.29999Z"
@@ -223,7 +227,7 @@
             </button>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-up employees-table__btn_disabled">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__change-job-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M9.60156 19.4C4.40156 19.4 0.101562 15.1 0.101562 9.90002C0.101562 4.70002 4.40156 0.400024 9.60156 0.400024C14.8016 0.400024 19.1016 4.70002 19.1016 9.90002C19.1016 15.1 14.9016 19.4 9.60156 19.4ZM9.60156 1.40002C4.90156 1.40002 1.10156 5.20002 1.10156 9.90002C1.10156 14.6 4.90156 18.4 9.60156 18.4C14.3016 18.4 18.1016 14.6 18.1016 9.90002C18.1016 5.20002 14.3016 1.40002 9.60156 1.40002Z"
@@ -235,7 +239,7 @@
             </button>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-down">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__change-job-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M10.3984 19.6C5.19844 19.6 0.898438 15.3 0.898438 10.1C0.898438 4.89998 5.19844 0.599976 10.3984 0.599976C15.5984 0.599976 19.8984 4.89998 19.8984 10.1C19.8984 15.3 15.5984 19.6 10.3984 19.6ZM10.3984 1.59998C5.69844 1.59998 1.89844 5.39998 1.89844 10.1C1.89844 14.8 5.69844 18.6 10.3984 18.6C15.0984 18.6 18.8984 14.8 18.8984 10.1C18.8984 5.39998 15.0984 1.59998 10.3984 1.59998Z"
@@ -255,7 +259,7 @@
               Регистрация: 28 фев 2022</p>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-close ">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__delete-employee-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M9.69922 19.3C4.49922 19.3 0.199219 15 0.199219 9.79999C0.199219 4.59999 4.49922 0.299988 9.69922 0.299988C14.8992 0.299988 19.1992 4.59999 19.1992 9.79999C19.1992 15 14.9992 19.3 9.69922 19.3ZM9.69922 1.29999C4.99922 1.29999 1.19922 5.09999 1.19922 9.79999C1.19922 14.5 4.99922 18.3 9.69922 18.3C14.3992 18.3 18.1992 14.5 18.1992 9.79999C18.1992 5.09999 14.3992 1.29999 9.69922 1.29999Z"
@@ -267,7 +271,7 @@
             </button>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-up">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__change-job-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M9.60156 19.4C4.40156 19.4 0.101562 15.1 0.101562 9.90002C0.101562 4.70002 4.40156 0.400024 9.60156 0.400024C14.8016 0.400024 19.1016 4.70002 19.1016 9.90002C19.1016 15.1 14.9016 19.4 9.60156 19.4ZM9.60156 1.40002C4.90156 1.40002 1.10156 5.20002 1.10156 9.90002C1.10156 14.6 4.90156 18.4 9.60156 18.4C14.3016 18.4 18.1016 14.6 18.1016 9.90002C18.1016 5.20002 14.3016 1.40002 9.60156 1.40002Z"
@@ -279,7 +283,7 @@
             </button>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-down">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__change-job-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M10.3984 19.6C5.19844 19.6 0.898438 15.3 0.898438 10.1C0.898438 4.89998 5.19844 0.599976 10.3984 0.599976C15.5984 0.599976 19.8984 4.89998 19.8984 10.1C19.8984 15.3 15.5984 19.6 10.3984 19.6ZM10.3984 1.59998C5.69844 1.59998 1.89844 5.39998 1.89844 10.1C1.89844 14.8 5.69844 18.6 10.3984 18.6C15.0984 18.6 18.8984 14.8 18.8984 10.1C18.8984 5.39998 15.0984 1.59998 10.3984 1.59998Z"
@@ -299,7 +303,7 @@
               Регистрация: 28 фев 2022</p>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-close ">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__delete-employee-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M9.69922 19.3C4.49922 19.3 0.199219 15 0.199219 9.79999C0.199219 4.59999 4.49922 0.299988 9.69922 0.299988C14.8992 0.299988 19.1992 4.59999 19.1992 9.79999C19.1992 15 14.9992 19.3 9.69922 19.3ZM9.69922 1.29999C4.99922 1.29999 1.19922 5.09999 1.19922 9.79999C1.19922 14.5 4.99922 18.3 9.69922 18.3C14.3992 18.3 18.1992 14.5 18.1992 9.79999C18.1992 5.09999 14.3992 1.29999 9.69922 1.29999Z"
@@ -311,7 +315,7 @@
             </button>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-up">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__change-job-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M9.60156 19.4C4.40156 19.4 0.101562 15.1 0.101562 9.90002C0.101562 4.70002 4.40156 0.400024 9.60156 0.400024C14.8016 0.400024 19.1016 4.70002 19.1016 9.90002C19.1016 15.1 14.9016 19.4 9.60156 19.4ZM9.60156 1.40002C4.90156 1.40002 1.10156 5.20002 1.10156 9.90002C1.10156 14.6 4.90156 18.4 9.60156 18.4C14.3016 18.4 18.1016 14.6 18.1016 9.90002C18.1016 5.20002 14.3016 1.40002 9.60156 1.40002Z"
@@ -323,7 +327,7 @@
             </button>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-down">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__change-job-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M10.3984 19.6C5.19844 19.6 0.898438 15.3 0.898438 10.1C0.898438 4.89998 5.19844 0.599976 10.3984 0.599976C15.5984 0.599976 19.8984 4.89998 19.8984 10.1C19.8984 15.3 15.5984 19.6 10.3984 19.6ZM10.3984 1.59998C5.69844 1.59998 1.89844 5.39998 1.89844 10.1C1.89844 14.8 5.69844 18.6 10.3984 18.6C15.0984 18.6 18.8984 14.8 18.8984 10.1C18.8984 5.39998 15.0984 1.59998 10.3984 1.59998Z"
@@ -343,7 +347,7 @@
               Регистрация: 28 фев 2022</p>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-close employees-table__btn_disabled">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__delete-employee-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M9.69922 19.3C4.49922 19.3 0.199219 15 0.199219 9.79999C0.199219 4.59999 4.49922 0.299988 9.69922 0.299988C14.8992 0.299988 19.1992 4.59999 19.1992 9.79999C19.1992 15 14.9992 19.3 9.69922 19.3ZM9.69922 1.29999C4.99922 1.29999 1.19922 5.09999 1.19922 9.79999C1.19922 14.5 4.99922 18.3 9.69922 18.3C14.3992 18.3 18.1992 14.5 18.1992 9.79999C18.1992 5.09999 14.3992 1.29999 9.69922 1.29999Z"
@@ -355,7 +359,7 @@
             </button>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-up">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__change-job-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M9.60156 19.4C4.40156 19.4 0.101562 15.1 0.101562 9.90002C0.101562 4.70002 4.40156 0.400024 9.60156 0.400024C14.8016 0.400024 19.1016 4.70002 19.1016 9.90002C19.1016 15.1 14.9016 19.4 9.60156 19.4ZM9.60156 1.40002C4.90156 1.40002 1.10156 5.20002 1.10156 9.90002C1.10156 14.6 4.90156 18.4 9.60156 18.4C14.3016 18.4 18.1016 14.6 18.1016 9.90002C18.1016 5.20002 14.3016 1.40002 9.60156 1.40002Z"
@@ -367,7 +371,7 @@
             </button>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-down employees-table__btn_disabled">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              <svg class="employees-table__change-job-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M10.3984 19.6C5.19844 19.6 0.898438 15.3 0.898438 10.1C0.898438 4.89998 5.19844 0.599976 10.3984 0.599976C15.5984 0.599976 19.8984 4.89998 19.8984 10.1C19.8984 15.3 15.5984 19.6 10.3984 19.6ZM10.3984 1.59998C5.69844 1.59998 1.89844 5.39998 1.89844 10.1C1.89844 14.8 5.69844 18.6 10.3984 18.6C15.0984 18.6 18.8984 14.8 18.8984 10.1C18.8984 5.39998 15.0984 1.59998 10.3984 1.59998Z"

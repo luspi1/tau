@@ -8,6 +8,7 @@ const cancelRequisitesBtn = document.querySelector('.modal-requisites__close-btn
 const cancelNewContactBtn = document.querySelector('.new-contact__close-btn')
 const cancelEditCardBtn = document.querySelector('.modal-edit-card__close-btn')
 const cancelEditInvoiceBtn = document.querySelector('.modal-edit-invoice__close-btn')
+const cancelNewEmployeeBtn = document.querySelector('.modal-new-employee__close-btn')
 
 
 const editFullnameBtn = document.querySelector('.edit-fullname')
@@ -18,6 +19,8 @@ const createNewContactBtn = document.querySelector('.page-contacts__create-conta
 const connectLeaderBtn = document.querySelector('.edit-contact__connect-leader-btn')
 const editInvoiceBtn = document.querySelector('.payments-page .btn-add-score')
 const editCardBtn = document.querySelector('.payments-page .btn-add-card')
+const newEmployeeBtn = document.querySelector('.page-employees__new-employees-link')
+
 
 // Управление состоянием модалок
 const manageModals = (...editButtons) => {
@@ -31,13 +34,33 @@ const manageModals = (...editButtons) => {
         currentPageMain.style.minHeight = `${currentModal.clientHeight}px`
         currentModal.classList.add('_active')
         modalOverlay.classList.add('modal-overlay_active')
-        closePopup(modalOverlay, cancelFullnameBtn, cancelPassportBtn, cancelSocialsBtn, cancelRequisitesBtn, cancelNewContactBtn, cancelEditCardBtn, cancelEditInvoiceBtn)
+        closePopup(
+          modalOverlay,
+          cancelFullnameBtn,
+          cancelPassportBtn,
+          cancelSocialsBtn,
+          cancelRequisitesBtn,
+          cancelNewContactBtn,
+          cancelEditCardBtn,
+          cancelEditInvoiceBtn,
+          cancelNewEmployeeBtn
+        )
       })
     }
   })
 }
 
-manageModals(editFullnameBtn, editSocialsBtn, editPassportBtn, editRequisitesBtn, createNewContactBtn, connectLeaderBtn, editInvoiceBtn, editCardBtn)
+manageModals(
+  editFullnameBtn,
+  editSocialsBtn,
+  editPassportBtn,
+  editRequisitesBtn,
+  createNewContactBtn,
+  connectLeaderBtn,
+  editInvoiceBtn,
+  editCardBtn,
+  newEmployeeBtn
+)
 
 
 

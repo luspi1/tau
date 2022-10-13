@@ -24,9 +24,6 @@
 @import "./pages/organization-info";
 @import "./pages/employees";
 
-
-
-
 // Компоненты
 @import "./components/modals";
 @import "media/media-info";
@@ -47,8 +44,7 @@
 @import "media/media-deals";
 @import "media/media-deal-balance";
 @import "media/media-payments";
-
-
+@import "media/media-employees";
 
 @import "./components/header";
 @import "./components/footer";
@@ -59,3 +55,6 @@
 @import "./components/organization-item-submenu";
 @import "./components/edit-invoice-modal";
 @import "./components/edit-card-modal";
+@import "./components/new-employee-modal";
+@import "./components/job-change-modal";
+@import "./components/delete-employee-modal";
