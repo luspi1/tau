@@ -92,6 +92,7 @@
       padding: 25px 26px 21px;
       background: #F7F8FA;
       border-radius: 15px;
+      cursor: grab;
     }
 
     .swiper-title {
@@ -137,6 +138,7 @@
         width: 42px;
         font-size: 14px;
         line-height: 17px;
+        cursor: text;
       }
 
       .text {
@@ -144,6 +146,7 @@
         margin-left: 10px;
         font-size: 14px;
         line-height: 17px;
+        cursor: text;
       }
     }
     .swiper-pagination {

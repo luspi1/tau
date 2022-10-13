@@ -7,12 +7,13 @@ const sliderOrg = new Swiper(".slider-org", {
   },
   pagination: {
     el: ".swiper-pagination",
-   
+
   },
   slidesPerView: 1,
   spaceBetween: 30,
 
-
+  noSwiping: true,
+  noSwipingClass: 'swiper-no-swiping',
 
   breakpoints: {
     768: {
