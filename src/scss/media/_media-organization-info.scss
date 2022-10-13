@@ -1,0 +1,39 @@
+@media(max-width: 768px) {
+  .organization-info .slider .container {
+    padding-bottom: 80px;
+  }
+  .organization-info .swiper.slider-org {
+    padding-bottom: 40px;
+  }
+  .organization-info .slider .swiper-pagination {
+    display: block;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+}
+@media(max-width: 576px) {
+
+  .organization-info .information__row {
+    flex-direction: column;
+    margin: 15px 0 0;
+  }
+  .organization-info .information .text {
+    margin-left: 0;
+  }
+}
+
+@media(max-width: 400px) {
+  .organization-info .contacts__row,
+  .organization-info .slider .swiper-row {
+    flex-direction: column;
+  }
+  .organization-info .contacts .text,
+  .organization-info .contacts__row a,
+  .organization-info .slider .swiper-row .text {
+    margin-left: 0;
+  }
+
+}
