@@ -20,3 +20,5 @@ import './components/createDealForm'
 import './components/editInvoiceForm'
 import './components/editCardForm'
 import './components/sliders'
+import './components/changeJobForm'
+

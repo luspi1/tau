@@ -91,6 +91,7 @@
       }
 
       svg path {
+        pointer-events: none;
         transition: all .3s;
       }
 

@@ -1,0 +1,35 @@
+@media (max-width: 1024px) {
+  .page-employees .employees-table__cell {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .page-employees__title {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .page-employees .employees-table__spot {
+    width: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .page-employees__title {
+    margin-bottom: 20px;
+  }
+
+  .page-employees__top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .page-employees .employees-table {
+    overflow-x: auto;
+  }
+
+  .page-employees .employees-table__row {
+    min-width: 850px;
+  }
+}
