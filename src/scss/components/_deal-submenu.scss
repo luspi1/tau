@@ -47,6 +47,20 @@
   }
 
   &__item {
+
+    &.deal-submenu_active {
+      a {
+        color: #2f65f6;
+
+        svg {
+          path {
+            fill: #2f65f6;
+          }
+        }
+      }
+    }
+
+
     &:not(:first-child) {
       margin-left: 52px;
     }
@@ -90,76 +104,5 @@
       }
     }
   }
-
-  // активный пункт меню
-
-  &.active-deal_card {
-    .deal-submenu__item-card {
-      a {
-        color: #2f65f6;
-
-        svg {
-          path {
-            fill: #2f65f6;
-          }
-        }
-      }
-    }
-  }
-
-  &.active-deal_story {
-    .deals__btn {
-      display: none;
-    }
-
-    .deal-submenu__item-story {
-      a {
-        color: #2f65f6;
-
-        svg {
-          path {
-            fill: #2f65f6;
-          }
-        }
-      }
-    }
-  }
-
-  &.active-deal_documents {
-    .deals__btn {
-      display: none;
-    }
-
-    .deal-submenu__item-documents {
-      a {
-        color: #2f65f6;
-
-        svg {
-          path {
-            fill: #2f65f6;
-          }
-        }
-      }
-    }
-  }
-
-  &.active-deal_balance{
-    .deals__btn {
-      display: none;
-    }
-
-    .deal-submenu__item-balance {
-      a {
-        color: #2f65f6;
-
-        svg {
-          path {
-            fill: #2f65f6;
-          }
-        }
-      }
-    }
-  }
-
 
 }
