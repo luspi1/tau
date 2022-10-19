@@ -32,8 +32,6 @@ const updateSocials = (data) => {
 async function handleFormSubmit (event) {
   event.preventDefault()
 
-  console.log(event.target)
-
   const data = serializeForm(event.target)
 
   const arrData = Array.from(data.entries())

@@ -35,14 +35,15 @@ const initDatePayment = () => {
 initDatePayment()
 
 
+const initDateDeal = () => {
+  const dateCreateDeal = document.querySelectorAll('.create-deal-page__date-input');
 
-const dateCreateDeal= document.querySelectorAll('.create-deal-page__date-input');
+  dateCreateDeal.forEach(el => {
+    new AirDatepicker(el, {
+      startDate,
+    });
+  })
+}
+initDateDeal()
 
-dateCreateDeal.forEach(el => {
-  new AirDatepicker(el, {
-    startDate,
-  });
-})
-
-
-export { initDatePayment }
+export { initDatePayment, initDateDeal }

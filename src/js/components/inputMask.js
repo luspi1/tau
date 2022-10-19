@@ -141,15 +141,20 @@ initDatePaymentsMask()
 
 // Даты на странице создания сделки
 
+
+const initDateDealMask = () => {
   const createDealDate = document.querySelectorAll('.create-deal-page__date-input');
 
-createDealDate.forEach(el => {
+  createDealDate.forEach(el => {
     Inputmask({
       "mask": "99.99.9999",
       showMaskOnHover: false,
       showMaskOnFocus: false,
     }).mask(el);
   })
+}
+initDateDealMask()
+
 
 // Номер карты в модалке редактирования карты
 
@@ -179,7 +184,7 @@ if (cardDateInput) {
 
 
 
-export { initDatePaymentsMask }
+export { initDatePaymentsMask, initDateDealMask }
 
 
 

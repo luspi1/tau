@@ -8,6 +8,7 @@ const modalNewContact = document.querySelector('.new-contact')
 const infoModal = document.querySelector('.info-modal')
 const loader = document.querySelector('.loader')
 
+
 export {
   body,
   modalOverlay,
@@ -17,5 +18,5 @@ export {
   modalRequisites,
   modalNewContact,
   infoModal,
-  loader
+  loader,
 }

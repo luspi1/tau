@@ -1,0 +1,37 @@
+.select-popup {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 105%;
+  z-index: 999;
+  padding: 15px 20px;
+  border: 1px solid #C4C4C4;
+  background: #ffffff;
+  border-radius: 5px;
+  min-width: 200px;
+  min-height: 100px;
+
+  &.select-popup_active {
+    display: block;
+  }
+
+
+  &__list {
+    li {
+      @include montserrat-regular;
+      font-size: 16px;
+      line-height: 20px;
+      color: #000000;
+      cursor: pointer;
+      transition: all .3s;
+
+      &:hover {
+        color: #2F65F6;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

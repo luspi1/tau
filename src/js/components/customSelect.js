@@ -102,8 +102,8 @@ if (dealExecutorSelect) {
 
 
 
-const initObserverSelect = () => {
-  document.querySelectorAll('.create-deal-page__observer-select').forEach(el => {
+const initPaymentsSelect = () => {
+  document.querySelectorAll('.create-deal-page__payments-select').forEach(el => {
     const choices = new Choices(el, {
       itemSelectText: '',
       shouldSort: false,
@@ -112,7 +112,7 @@ const initObserverSelect = () => {
   })
 }
 
-initObserverSelect()
+initPaymentsSelect()
 
 document.querySelectorAll('.create-deal-page__custom-select').forEach(el => {
   const choices = new Choices(el, {
@@ -164,4 +164,4 @@ if (dealsSelect) {
 }
 
 
-export { initSelects, initPaymentSelects, initObserverSelect }
+export { initSelects, initPaymentSelects, initPaymentsSelect }
