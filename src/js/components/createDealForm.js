@@ -56,7 +56,7 @@ async function handlePopupSubmit (inputValue, popup) {
     const popupList = popup.querySelector('.select-popup__list')
 
     html.forEach(el => {
-      popupList.appendChild(el)
+      popupList.insertAdjacentHTML('beforeend', el)
     })
 
   } else {
