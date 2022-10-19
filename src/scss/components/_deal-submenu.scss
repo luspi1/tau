@@ -88,9 +88,12 @@
       color: #3e3e3d;
       display: flex;
       flex-wrap: nowrap;
-
+      transition: all 0.3s;
       svg {
         margin-right: 5px;
+        path {
+          transition: all 0.3s;
+        }
       }
 
       &:hover {

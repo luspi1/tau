@@ -28,6 +28,19 @@
   }
 
   &__item {
+
+    &.organization-item-submenu_active {
+      a {
+        color: #2f65f6;
+
+        svg {
+          path {
+            fill: #2f65f6;
+          }
+        }
+      }
+    }
+
     &:not(:first-child) {
       margin-left: 52px;
     }
@@ -55,9 +68,12 @@
       color: #3e3e3d;
       display: flex;
       flex-wrap: nowrap;
-
+      transition: all 0.3s;
       svg {
         margin-right: 5px;
+        path {
+          transition: all 0.3s;
+        }
       }
 
       &:hover {
@@ -71,76 +87,4 @@
       }
     }
   }
-
-  // активный пункт меню
-
-  &.active-organization_info {
-    .organization-item-submenu__item-info {
-      a {
-        color: #2f65f6;
-
-        svg {
-          path {
-            fill: #2f65f6;
-          }
-        }
-      }
-    }
-  }
-
-  &.active-organization_services {
-    .organization-item-submenu__item-services {
-      a {
-        color: #2f65f6;
-
-        svg {
-          path {
-            fill: #2f65f6;
-          }
-        }
-      }
-    }
-  }
-
-  &.active-organization_balance {
-    .organization-item-submenu__item-balance {
-      a {
-        color: #2f65f6;
-
-        svg {
-          path {
-            fill: #2f65f6;
-          }
-        }
-      }
-    }
-  }
-
-  &.active-organization_worker {
-    .organization-item-submenu__item-worker {
-      a {
-        color: #2f65f6;
-
-        svg {
-          path {
-            fill: #2f65f6;
-          }
-        }
-      }
-    }
-  }
-
-  &.active-organization_journal {
-    .organization-item-submenu__item-journal {
-      a {
-        color: #2f65f6;
-
-        svg {
-          path {
-            fill: #2f65f6;
-          }
-        }
-      }
-    }
-  }
-}
+ }

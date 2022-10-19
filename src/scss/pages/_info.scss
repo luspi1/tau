@@ -326,6 +326,7 @@
       border-radius: 15px;
       padding: 20px 5px 25px 25px;
       margin-bottom: 15px;
+      min-height: 121px;
     }
 
     &__list-item:not(:last-child) {
@@ -340,6 +341,15 @@
     &__list-data {
       @include montserrat-medium;
       line-height: 23px;
-    }
+      [data-updfield = bank_schet],
+   [data-updfield = bank_bik],
+   [data-updfield = bank_korschet] {
+    display: inline-flex;
+    max-width: 185px;
+    overflow: hidden;
+   }
+   }
+
   }
 }
+

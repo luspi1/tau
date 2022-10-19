@@ -1,0 +1,31 @@
+@media(max-width: 1200px) {
+  .organization-journal .journal .table-wrap .table tbody tr td:nth-child(n+1) {
+    width: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .organization-journal .journal__title {
+    font-size: 32px;
+  }
+  .organization-journal .journal .table-wrap {
+    overflow-x: scroll;
+  }
+  .organization-journal .journal .table-wrap .table {
+    min-width: 990px;
+
+  }
+}
+
+@media (max-width: 768px) {
+  .organization-journal .journal__title {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 400px) {
+  .organization-journal .journal__title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+ }

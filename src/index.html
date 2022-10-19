@@ -9,7 +9,8 @@
 <div class="site-container">
   <div class="modal-overlay"></div>
   @include('partials/header.html', {
-  'active': 'info_active'
+  'active': 'info_active',
+  'bottom-menu-information' : 'bottom-menu-item_active'
   })
 
   <main class="main info-page">
@@ -595,9 +596,9 @@
               <p class="bank__list-title">Получатель</p>
               <p class="bank__list-data copy-field"><span
                 class="bank__recipient-value copy-value"> <span
-                data-updfield="bank_surname">Константинов</span> <span
-                data-updfield="bank_firstname">Константин</span> <span
-                data-updfield="bank_fathname">Константинович</span></span>
+                data-updfield="bank_surname">Константинов</span>&nbsp;<span
+                data-updfield="bank_firstname">Константин</span>&nbsp; <span
+                data-updfield="bank_fathname">Константинович</span>&nbsp;</span>
                 <span><svg class="copy-btn" width="13" height="15"
                            viewBox="0 0 13 15" fill="none"
                            xmlns="http://www.w3.org/2000/svg"><g opacity="0.5"><path
