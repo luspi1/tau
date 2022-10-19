@@ -142,7 +142,6 @@
     }
 
     .account {
-
       &__group {
         position: relative;
 
@@ -200,7 +199,6 @@
         a {
           display: block;
           width: 100%;
-
         }
       }
     }
@@ -226,6 +224,20 @@
     width: 72%;
     flex-wrap: wrap;
 
+    li {
+      &.bottom-menu-item_active {
+        a {
+          color: #2f65f6;
+
+          svg {
+            path {
+              fill: #2f65f6;
+            }
+          }
+        }
+      }
+    }
+
     a {
       display: flex;
       align-items: center;
@@ -247,63 +259,20 @@
       position: relative;
       transition: all 0.3s;
 
-      &_active {
-        color: #2f65f6;
-
-        svg path {
+      svg {
+        path {
           transition: all 0.3s;
-          fill: #2f65f6;
         }
       }
-    }
-  }
 
-  .header-menu.info_active {
-    .header__info-link {
-      color: #2f65f6;
+      &:hover {
+        color: #2f65f6;
 
-      svg path {
-        fill: #2f65f6;
-      }
-    }
-  }
-
-  .header-menu.documents_active {
-    .header__documents-link {
-      color: #2f65f6;
-
-      svg path {
-        fill: #2f65f6;
-      }
-    }
-  }
-
-  .header-menu.organizations_active {
-    .header__organizations-link {
-      color: #2f65f6;
-
-      svg path {
-        fill: #2f65f6;
-      }
-    }
-  }
-
-  .header-menu.services_active {
-    .header__services-link {
-      color: #2f65f6;
-
-      svg path {
-        fill: #2f65f6;
-      }
-    }
-  }
-
-  .header-menu.journal_active {
-    .header__journal-link {
-      color: #2f65f6;
-
-      svg path {
-        fill: #2f65f6;
+        svg {
+          path {
+            fill: #2f65f6;
+          }
+        }
       }
     }
   }

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html', {
+'title': 'Сотрудники',
+})
+
+<body class="page__body">
+  <div class="site-container">
+    <div class="modal-overlay"></div>
+    @include('partials/header.html', {
+    'bottom-menu': 'bottom-menu_disabled',
+    'organization-title' : 'organization-item-active'
+    })
+
+    <main class="main organization-journal">
+      @include('partials/organization-item-submenu.html', {
+      'organization-item-journal': 'organization-item-submenu_active',
+      })
+      <section class="journal">
+        <div class="container">
+          <h1 class="journal__title">Журнал ООО НПО ТАУ</h1>
+
+          <div class="table-wrap">
+            <table class="table" cellspacing="0" cellpadding="0">
+              <thead>
+                <tr>
+                  <td>Тип действия</td>
+                  <td>Автор действия</td>
+                  <td>Данные действия</td>
+                  <td>Дата и время</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>регистрация</td>
+                  <td><a href="#">Система</a></td>
+                  <td>Новый ответственный за сделку
+                    <a href="#">Файзуллин А.Р.</a>
+                  </td>
+                  <td>
+                    <span>12.04.2022</span> : <span>14:31:52</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>верификация</td>
+                  <td><a href="#">Система</a></td>
+                  <td>Авансовый платеж от 14.04.2022 на сумму 23 000 руб</td>
+                  <td>
+                    <span>14.04.2022</span> : <span>14:21:42</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>смена тарифа</td>
+                  <td><a href="#">Пользователь</a></td>
+                  <td>Приобретен пакет услуг Пакет Базовый</td>
+                  <td>
+                    <span>12.04.2022</span> : <span>14:31:52</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    @include('partials/footer.html')
+  </div>
+
+</body>
+
+</html>

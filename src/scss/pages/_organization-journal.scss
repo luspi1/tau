@@ -1,0 +1,66 @@
+.organization-journal {
+  color: #000000;
+  .container {
+    padding-bottom: 50px;
+  }
+  .journal {
+    &__title {
+      padding: 19px 0 22px;
+      @include montserrat-semibold;
+      font-size: 36px;
+      line-height: 44px;
+
+    }
+
+    .table-wrap {
+      .table {
+        width: 100%;
+        border-spacing: 0px 5px;
+        a {
+          color: #2f65f6;
+        }
+        thead {
+          td {
+            padding: 14px 0 15px 15px;
+          }
+
+          tr {
+            color: #858584;
+            background: #F7F8FA;
+            line-height: 20px;
+            border-radius: 5px;
+          }
+        }
+
+        tbody tr {
+          text-align: left;
+          vertical-align: top;
+          background: #F7F8FA;
+          border-radius: 5px;
+
+          td {
+            padding: 15px 0 10px 14px;
+            line-height: 20px;
+
+            &:nth-child(1) {
+              width: 311px;
+            }
+
+            &:nth-child(2) {
+              width: 311px;
+            }
+
+            &:nth-child(3) {
+              width: 626px;
+            }
+
+            &:nth-child(4) {
+              width: auto;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
+  }
+}
