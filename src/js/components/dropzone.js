@@ -372,7 +372,16 @@ if (newOrgLogo) {
     maxFilesize: 5,
     url: "/include/ajax/upload_image.php",
     maxFiles: 3,
-    acceptedFiles: '.png, .jpeg, .jpg',
+    acceptedFiles: 'image/png, image/jpeg, image/jpg',
+    accept: function(file, done) {
+      //произвольная функция проверки загружаемых файлов
+      if (file.type == "image/png, image/jpeg, image/jpg") {
+        //сообщение без ошибки, если файл забракован
+        done("Неверный формат");
+      }
+      //чтобы файл был принят, нужно вызвать done без параметров
+      else { done(); }
+    },
     addRemoveLinks: true,
     thumbnailWidth: 170,
     thumbnailHeight: 170,
