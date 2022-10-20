@@ -164,4 +164,22 @@ if (dealsSelect) {
 }
 
 
+// Селекторы в модалке нового прихода
+const incomingModalSelects = document.querySelectorAll('.modal-incoming__select-wrapper select')
+
+if (incomingModalSelects) {
+  incomingModalSelects.forEach(el => {
+    const choices = new Choices(el, {
+      itemSelectText: '',
+      searchEnabled: false,
+      shouldSort: false,
+      allowHTML: true
+    });
+  })
+
+}
+
+
+
+
 export { initSelects, initPaymentSelects, initPaymentsSelect }

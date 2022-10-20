@@ -22,6 +22,15 @@ new AirDatepicker(physDatePassport, {
 });
 
 
+const dateIncomingModal = document.querySelector('.modal-incoming__date-input');
+
+new AirDatepicker(dateIncomingModal, {
+  startDate,
+});
+
+
+
+
 const initDatePayment = () => {
   const datePayments = document.querySelectorAll('.create-case-page__date-input');
 

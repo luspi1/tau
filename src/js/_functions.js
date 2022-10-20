@@ -1,4 +1,4 @@
-import { body, modalOverlay, loader, infoModal } from "./_vars";
+import { body, modalOverlay, loader, infoModal, bigImgModal } from "./_vars";
 
 // Функция закрытия модалок, принимает элементы, по нажатию на которые модалки закроются
 const closePopup = (...clickTarget) => {
@@ -73,6 +73,19 @@ const showInfoModal = (responseText) => {
   infoModal.classList.remove('hidden')
 }
 
+// Функция показа модалки большой картинки
+
+const showBigImgModal = (path) => {
+  bigImgModal.classList.add('big-img-modal_active')
+  bigImgModal.querySelector('img').src = path
+  modalOverlay.classList.add('modal-overlay_active')
+  modalOverlay.addEventListener('click', () => {
+    modalOverlay.classList.remove('modal-overlay_active')
+    bigImgModal.classList.remove('big-img-modal_active')
+  })
+
+}
+
 
 export {
   closePopup,
@@ -83,4 +96,5 @@ export {
   formToObj,
   showInfoModal,
   updateFields,
+  showBigImgModal
 }
