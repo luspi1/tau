@@ -311,12 +311,36 @@
     &__items {
       margin-bottom: 25px;
     }
+    &__delete-btn {
+      position: absolute;
+      border: none;
+      background: none;
+      cursor: pointer;
+      right: 10px;
+      top: 10px;
+
+      svg {
+        pointer-events: none;
+      }
+
+      path {
+        transition: all .3s;
+      }
+
+      &:hover {
+        path {
+          fill: $link;
+        }
+      }
+
+    }
 
     &__item {
       padding: 41px 30px 35px;
       border: 2px dotted #C4C4C4;
       border-radius: 15px;
       margin-bottom: 18px;
+      position: relative;
     }
 
     .create-case-page__inputs {

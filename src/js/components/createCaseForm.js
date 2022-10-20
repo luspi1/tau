@@ -70,13 +70,19 @@ if (annexFragment) {
 
 
 
-// Удаление поля в приложении
+// Удаление поля в приложении и всего приложения
 if (annexWrapper) {
   annexWrapper.addEventListener('click', (e) => {
     if (e.target.classList.contains('case-optional__delete-btn')) {
       const optionalTarget = e.target.closest('.case-optional__item')
       const optionalListTarget = e.target.closest('.case-annex__optional-items')
       optionalListTarget.removeChild(optionalTarget)
+    }
+
+    if (e.target.classList.contains('case-annex__delete-btn')) {
+      const annexTarget = e.target.closest('.case-annex__item')
+      const annexListTarget = e.target.closest('.case-annex__items')
+      annexListTarget.removeChild(annexTarget)
     }
   })
 }

@@ -34,11 +34,16 @@
           <div class="create-deal-page__inputs">
             <div class="create-deal-page__input-wrapper">
               <label for="dealСounterparty">Контрагент</label>
-              <input name="id_contragent" type="hidden">
-              <input class="create-deal-page__input create-deal-page__popup-input" id="dealСounterparty"
-                     name="deal_contragent" type="text"
-                     placeholder="Начните вводить название">
-              @include('partials/select-popup.html')
+              <input name="id_contragent" class="create-deal-page__data-input"
+                     type="hidden">
+              <input
+                class="create-deal-page__input create-deal-page__popup-input"
+                id="dealСounterparty"
+                name="deal_contragent" type="text"
+                placeholder="Начните вводить название">
+              @include('partials/select-popup.html', {
+              'submit-script': 'test.txt'
+              })
             </div>
             <div class="create-deal-caption__counterparty-wrapper">
               <span>или</span>
@@ -50,21 +55,28 @@
 
           <div class="create-deal-page__input-wrapper">
             <label>Исполнитель</label>
-            <input name="id_executor" type="hidden">
+            <input name="id_executor" class="create-deal-page__data-input"
+                   type="hidden">
             <input class="create-deal-page__input create-deal-page__popup-input"
                    name="deal_executor" type="text"
                    placeholder="Начните вводить название">
-            @include('partials/select-popup.html')
+            @include('partials/select-popup.html', {
+            'submit-script': 'test2.txt'
+            })
           </div>
 
           <div class="create-deal-caption__observer-list">
             <div class="create-deal-page__input-wrapper">
               <label>Наблюдатель</label>
-              <input name="id_observer" type="hidden">
-              <input class="create-deal-page__input create-deal-page__popup-input"
-                     name="deal_observer[]" type="text"
-                     placeholder="Начните вводить фамилию">
-              @include('partials/select-popup.html')
+              <input name="id_observer" class="create-deal-page__data-input"
+                     type="hidden">
+              <input
+                class="create-deal-page__input create-deal-page__popup-input"
+                name="deal_observer[]" type="text"
+                placeholder="Начните вводить фамилию">
+              @include('partials/select-popup.html', {
+              'submit-script': 'test3.txt'
+              })
             </div>
           </div>
           <button
@@ -331,11 +343,15 @@
 <template id="deal-observer-template">
   <div class="create-deal-page__input-wrapper">
     <label>Дополнительный наблюдатель</label>
-    <input name="id_observer" type="hidden">
-    <input class="create-deal-page__input create-deal-page__popup-input create-deal-page__observer-select"
-           name="deal_observer[]" type="text"
-           placeholder="Начните вводить фамилию">
-    @include('partials/select-popup.html')
+    <input name="id_observer" class="create-deal-page__data-input"
+           type="hidden">
+    <input
+      class="create-deal-page__input create-deal-page__popup-input create-deal-page__observer-select"
+      name="deal_observer[]" type="text"
+      placeholder="Начните вводить фамилию">
+    @include('partials/select-popup.html', {
+    'submit-script': 'test3.txt'
+    })
   </div>
 </template>
 
