@@ -163,6 +163,24 @@ if (dealsSelect) {
   });
 }
 
+// Селектор организации в заголовке на странице доход организации
+const titleSelect = document.querySelector('.title__select');
+
+
+if (titleSelect) {
+  const choices = new Choices(titleSelect, {
+    searchEnabled: false,
+    itemSelectText: '',
+    shouldSort: false,
+    allowHTML: true
+  });
+}
+
+const initFiltersSelects = () => {
+  document.querySelectorAll('.filter__select-wrap select').forEach(el => {
+    const choices = new Choices(el, {
+      searchEnabled: false,
+      itemSelectText: '',
 
 // Селекторы в модалке нового прихода
 const incomingModalSelects = document.querySelectorAll('.modal-incoming__select-wrapper select')
@@ -176,10 +194,9 @@ if (incomingModalSelects) {
       allowHTML: true
     });
   })
-
 }
 
-
-
+initFiltersSelects()
 
 export { initSelects, initPaymentSelects, initPaymentsSelect }
+

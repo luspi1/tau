@@ -55,4 +55,16 @@ const initDateDeal = () => {
 }
 initDateDeal()
 
-export { initDatePayment, initDateDeal }
+
+const initFiltertCalendar = () => {
+  const dateCreateDeal = document.querySelectorAll('.filter__calendar-wrap input');
+
+  dateCreateDeal.forEach(el => {
+    new AirDatepicker(el, {
+      startDate,
+    });
+  })
+}
+initFiltertCalendar();
+
+export { initDatePayment, initDateDeal}
