@@ -181,6 +181,18 @@ if (cardDateInput) {
   }).mask(cardDateInput);
 }
 
+// Дата внесения платежа в модалке овый приход
+
+const incomingDateInput = document.querySelector('.modal-incoming__date-input');
+
+if (incomingDateInput) {
+  Inputmask({
+    "mask": "99.99.9999",
+    showMaskOnHover: false,
+    showMaskOnFocus: false,
+  }).mask(incomingDateInput);
+}
+
 
 
 

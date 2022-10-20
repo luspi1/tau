@@ -166,6 +166,7 @@ if (dealsSelect) {
 // Селектор организации в заголовке на странице доход организации
 const titleSelect = document.querySelector('.title__select');
 
+
 if (titleSelect) {
   const choices = new Choices(titleSelect, {
     searchEnabled: false,
@@ -180,6 +181,15 @@ const initFiltersSelects = () => {
     const choices = new Choices(el, {
       searchEnabled: false,
       itemSelectText: '',
+
+// Селекторы в модалке нового прихода
+const incomingModalSelects = document.querySelectorAll('.modal-incoming__select-wrapper select')
+
+if (incomingModalSelects) {
+  incomingModalSelects.forEach(el => {
+    const choices = new Choices(el, {
+      itemSelectText: '',
+      searchEnabled: false,
       shouldSort: false,
       allowHTML: true
     });
@@ -188,4 +198,5 @@ const initFiltersSelects = () => {
 
 initFiltersSelects()
 
-export { initSelects, initPaymentSelects, initPaymentsSelect}
+export { initSelects, initPaymentSelects, initPaymentsSelect }
+

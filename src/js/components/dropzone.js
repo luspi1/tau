@@ -1,7 +1,7 @@
-
 import { Dropzone } from "dropzone";
 
-import { sendData, showInfoModal } from "../_functions";
+import { sendData, showBigImgModal, showInfoModal } from "../_functions";
+
 
 const passportAmount = document.querySelector('.page-doc__passport-amount')
 const passportAddBtn = document.querySelector('#passport-add')
@@ -160,6 +160,10 @@ if (passportScan) {
     } else {
       file._removeLink.setAttribute('data-id', id_person_image)
       updateAmountScans()
+      const previewPic = file.previewElement
+      previewPic.addEventListener('click', () => {
+        showBigImgModal(file.dataURL)
+      })
     }
   });
 
@@ -246,6 +250,10 @@ if (insuranceScan) {
     } else {
       file._removeLink.setAttribute('data-id', id_person_image)
       insuranceAddBtn.style.display = 'none'
+      const previewPic = file.previewElement
+      previewPic.addEventListener('click', () => {
+        showBigImgModal(file.dataURL)
+      })
     }
   });
 
@@ -330,6 +338,10 @@ if (taxScan) {
     } else {
       file._removeLink.setAttribute('data-id', id_person_image)
       taxAddBtn.style.display = 'none'
+      const previewPic = file.previewElement
+      previewPic.addEventListener('click', () => {
+        showBigImgModal(file.dataURL)
+      })
     }
   });
 
@@ -373,14 +385,16 @@ if (newOrgLogo) {
     url: "/include/ajax/upload_image.php",
     maxFiles: 3,
     acceptedFiles: 'image/png, image/jpeg, image/jpg',
-    accept: function(file, done) {
+    accept: function (file, done) {
       //произвольная функция проверки загружаемых файлов
       if (file.type == "image/png, image/jpeg, image/jpg") {
         //сообщение без ошибки, если файл забракован
         done("Неверный формат");
       }
       //чтобы файл был принят, нужно вызвать done без параметров
-      else { done(); }
+      else {
+        done();
+      }
     },
     addRemoveLinks: true,
     thumbnailWidth: 170,
