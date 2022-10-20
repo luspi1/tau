@@ -101,7 +101,6 @@ if (dealExecutorSelect) {
 }
 
 
-
 const initPaymentsSelect = () => {
   document.querySelectorAll('.create-deal-page__payments-select').forEach(el => {
     const choices = new Choices(el, {
@@ -136,7 +135,6 @@ if (dealsDocSelect) {
     allowHTML: true
   });
 }
-
 
 
 // Селектор в поиске на странице история сделки
@@ -176,11 +174,21 @@ if (titleSelect) {
   });
 }
 
-const initFiltersSelects = () => {
-  document.querySelectorAll('.filter__select-wrap select').forEach(el => {
+
+
+const incomingPageSelects = document.querySelectorAll('.filter__select-wrap select')
+
+if (incomingPageSelects) {
+  incomingPageSelects.forEach(el => {
     const choices = new Choices(el, {
       searchEnabled: false,
       itemSelectText: '',
+      shouldSort: false,
+      allowHTML: true
+
+    })
+  })
+}
 
 // Селекторы в модалке нового прихода
 const incomingModalSelects = document.querySelectorAll('.modal-incoming__select-wrapper select')
@@ -196,7 +204,6 @@ if (incomingModalSelects) {
   })
 }
 
-initFiltersSelects()
 
 export { initSelects, initPaymentSelects, initPaymentsSelect }
 
