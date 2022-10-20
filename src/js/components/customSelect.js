@@ -163,5 +163,29 @@ if (dealsSelect) {
   });
 }
 
+// Селектор организации в заголовке на странице доход организации
+const titleSelect = document.querySelector('.title__select');
 
-export { initSelects, initPaymentSelects, initPaymentsSelect }
+if (titleSelect) {
+  const choices = new Choices(titleSelect, {
+    searchEnabled: false,
+    itemSelectText: '',
+    shouldSort: false,
+    allowHTML: true
+  });
+}
+
+const initFiltersSelects = () => {
+  document.querySelectorAll('.filter__select-wrap select').forEach(el => {
+    const choices = new Choices(el, {
+      searchEnabled: false,
+      itemSelectText: '',
+      shouldSort: false,
+      allowHTML: true
+    });
+  })
+}
+
+initFiltersSelects()
+
+export { initSelects, initPaymentSelects, initPaymentsSelect}
