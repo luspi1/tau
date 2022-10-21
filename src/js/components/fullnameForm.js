@@ -60,4 +60,20 @@ if (editFullnameForm) {
       inputTarget.classList.remove('modal-fullname__input_active')
     }
   })
+
+  editFullnameForm.addEventListener('focusin', (e) => {
+    const inputTarget = e.target;
+    inputTarget.classList.add('modal-fullname__input_active')
+  })
+
+  editFullnameForm.addEventListener('focusout', (e) => {
+    const inputTarget = e.target;
+
+    if (!inputTarget.value) {
+      inputTarget.classList.remove('modal-fullname__input_active')
+    }
+
+  })
+
+
 }
