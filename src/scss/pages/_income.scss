@@ -2,6 +2,9 @@
   .filter {
     .container {
       padding-top: 20px;
+      .choices__list--dropdown, .choices__list[aria-expanded] {
+        z-index: 5;
+      }
     }
 
     .minititle {
@@ -139,7 +142,9 @@
           border-radius: 5px;
         }
       }
-
+      .choices[data-type*=select-one].is-open::after {
+        margin-top: -2px;
+      }
       .choices__inner {
         min-height: auto;
         height: 40px;
@@ -210,7 +215,7 @@
       @include montserrat-regular;
       font-size: 16px;
       line-height: 20px;
-      color: #858584;
+      color: #222220;
       border: 1px solid #e6e6e6;
       border-radius: 5px;
 
@@ -218,15 +223,17 @@
         outline: 1px solid #3e29ca;
         background-color: #ffffff;
         border-radius: 5px;
-
         &::placeholder {
           color: #ffffff;
         }
       }
 
       &::placeholder {
-        color: #817d8c;
-      }
+        color: #858584;
+        background-color: #ffffff;
+     }
+
+
     }
 
     .balance {
@@ -268,6 +275,7 @@
   .months {
     .container {
       padding-top: 30px;
+      padding-bottom: 195px;
     }
 
     &__block {

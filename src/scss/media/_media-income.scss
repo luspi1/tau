@@ -1,0 +1,100 @@
+@media(max-width: 1420px) {
+  .income-page .months__payment {
+    margin: 0 10px;
+  }
+
+  .income-page .months__organization {
+    margin-right: 10px;
+  }
+
+  .income-page .months__arrow {
+    margin-left: 20px;
+  }
+
+  .income-page .months__circle {
+    margin-left: 10px;
+  }
+}
+
+@media(max-width: 1200px) {
+  .income-page .filter__select-wrap.order1 {
+    order: 1;
+  }
+
+  .income-page .filter__select-wrap.order2 {
+    order: 2;
+  }
+
+  .income-page .filter__select-wrap.order3 {
+    order: 3;
+  }
+
+  .income-page .filter__calendar {
+    flex-direction: column;
+    order: 4;
+  }
+  .income-page .filter__calendar .minititle {
+    margin: 0 0 5px 0;
+  }
+  .income-page .months__block {
+    width: 70%;
+  }
+
+  .income-page .months__row {
+    flex-direction: column;
+
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+  }
+
+  .income-page .months__accordion {
+    width: 100%;
+  }
+
+  .income-page .months__button {
+    width: 100%;
+  }
+
+  .income-page .months__row-arrow {
+    width: 20px;
+    margin: 5px auto;
+    transform: rotate(90deg);
+    background-size: contain;
+  }
+
+  .income-page .months__item {
+    justify-content: space-between;
+  }
+
+  .income-page .months__payment,
+  .income-page .months__organization {
+    margin: 0 30px;
+  }
+}
+
+@media(max-width: 1024px) {
+  .income-page .months__block {
+    width: 100%;
+  }
+  .income-page .filter .title,
+  .income-page .filter .title__select-wrap .choices__inner {
+    font-size: 26px;
+  }
+  .income-page .filter .title__select-wrap .choices__list--dropdown .choices__item, .income-page .filter .title__select-wrap .choices__list[aria-expanded] .choices__item {
+    font-size: 18px;
+  }
+  .income-page .filter .balance {
+    padding-right: 15px;
+    justify-content: space-between;
+  }
+
+  .income-page .filter .balance__item:nth-child(2),
+  .income-page .filter .balance__item:nth-child(3) {
+    margin: 0 20px;
+  }
+}
+
+@media(max-width: 992px) {
+
+}
