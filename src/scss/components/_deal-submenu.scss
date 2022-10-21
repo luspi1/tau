@@ -1,5 +1,4 @@
 .deal-submenu {
-
   .container {
     display: flex;
     justify-content: space-between;
@@ -10,8 +9,8 @@
 
     .deals__btn {
       width: 190px;
-      height: 40px;
-      padding: 0 20px;
+      display: inline-block;
+      padding: 10px 20px;
       background: #2F65F6;
       border: none;
       border-radius: 5px;
