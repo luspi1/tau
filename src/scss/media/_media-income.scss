@@ -96,5 +96,23 @@
 }
 
 @media(max-width: 992px) {
-
+  .income-page .filter__flex-wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+  .income-page .filter__select-row {
+    flex-direction: column;
+     width:49%;
+  }
+  .income-page .filter__select-row.mt {
+    margin-top: 0;
+  }
+  .income-page .filter__select-row .filter__select-wrap {
+    margin-bottom: 10px;
+  }
+  .income-page .filter__select-row .filter__select-wrap,
+  .income-page .filter__select-row .filter__select-wrap.years, .income-page .filter__select-row .filter__select-wrap.all-months,
+  .income-page .filter__select-row .filter__select-wrap.quarter {
+    width: 100%;
+  }
 }
