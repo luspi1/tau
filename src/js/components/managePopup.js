@@ -9,6 +9,7 @@ const cancelNewContactBtn = document.querySelector('.new-contact__close-btn')
 const cancelEditCardBtn = document.querySelector('.modal-edit-card__close-btn')
 const cancelEditInvoiceBtn = document.querySelector('.modal-edit-invoice__close-btn')
 const cancelNewEmployeeBtn = document.querySelector('.modal-new-employee__close-btn')
+const cancelComingBtn = document.querySelector('.income-page .modal-incoming__close-btn')
 
 
 const editFullnameBtn = document.querySelector('.edit-fullname')
@@ -20,6 +21,7 @@ const connectLeaderBtn = document.querySelector('.edit-contact__connect-leader-b
 const editInvoiceBtn = document.querySelector('.payments-page .btn-add-score')
 const editCardBtn = document.querySelector('.payments-page .btn-add-card')
 const newEmployeeBtn = document.querySelector('.page-employees__new-employees-link')
+const comingBtns = document.querySelectorAll('.income-page .months__button')
 
 
 // Управление состоянием модалок
@@ -43,7 +45,8 @@ const manageModals = (...editButtons) => {
           cancelNewContactBtn,
           cancelEditCardBtn,
           cancelEditInvoiceBtn,
-          cancelNewEmployeeBtn
+          cancelNewEmployeeBtn,
+          cancelComingBtn
         )
       })
     }
@@ -59,7 +62,8 @@ manageModals(
   connectLeaderBtn,
   editInvoiceBtn,
   editCardBtn,
-  newEmployeeBtn
+  newEmployeeBtn,
+  ...comingBtns
 )
 
 

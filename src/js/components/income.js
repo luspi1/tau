@@ -1,11 +1,10 @@
-'use strict'
+//аккордеоны
 
-
-const accordeons = document.querySelectorAll('.months__accordeon');
+const accordions = document.querySelectorAll('.months__accordion');
 const monthsItems = document.querySelectorAll('.months__item');
 
-if (accordeons) {
-  accordeons.forEach((parent, index) => {
+if (accordions) {
+  accordions.forEach((parent, index) => {
     parent.addEventListener('click', (event) => {
       const target = event.target;
       if (target && target.classList.contains('months__arrow')) {
@@ -17,4 +16,12 @@ if (accordeons) {
 };
 
 
+// модалка прихода
+const incomingFileBtn = document.querySelector('.modal-incoming__file-wrapper input')
 
+if (incomingFileBtn) {
+  incomingFileBtn.addEventListener('change', (e) => {
+    e.target.value = ''
+    console.log('hello')
+  })
+}

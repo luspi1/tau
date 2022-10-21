@@ -22,5 +22,4 @@ import './components/editCardForm'
 import './components/sliders'
 import './components/changeJobForm'
 import './components/income'
-import './components/incomigModal'
 
