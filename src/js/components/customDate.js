@@ -57,7 +57,7 @@ initDateDeal()
 
 
 const initFiltertCalendar = () => {
-  const dateCreateDeal = document.querySelectorAll('.filter__calendar-wrap input');
+  const dateCreateDeal = document.querySelectorAll('.filter__calendar-input');
 
   dateCreateDeal.forEach(el => {
     new AirDatepicker(el, {
