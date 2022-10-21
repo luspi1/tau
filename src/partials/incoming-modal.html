@@ -4,7 +4,7 @@
   <form class="modal-incoming__form" method="post" action="#"
         enctype="multipart/form-data">
 
-    <div class="modal-incoming__manual-fill">
+    <div class="modal-incoming__manual-fill modal-incoming__manual-fill_active">
       <ul class="modal-incoming__input-list">
         <li class="modal-incoming__item-input">
           <p class="modal-incoming__input-title">Сумма поступления
@@ -114,14 +114,14 @@
       </div>
     </div>
 
-    <div class="modal-incoming__file-fill modal-incoming__file-fill_active">
+    <div class="modal-incoming__file-fill">
       <ul class="modal-incoming__input-list">
         <li class="modal-incoming__item-input">
           <p class="modal-incoming__input-title">Своя компания
           </p>
           <div class="modal-incoming__input-wrapper">
             <input class="modal-incoming__input" type="text"
-                   name="incoming_amount_file"
+                   name="incoming_amount"
                    placeholder="начните вводить название"
                    required>
           </div>
@@ -131,12 +131,41 @@
           </p>
           <div class="modal-incoming__input-wrapper">
             <input class="modal-incoming__input" type="text"
-                   name="incoming_deal-file"
+                   name="incoming_deal"
                    placeholder="начните вводить название"
                    required>
           </div>
         </li>
       </ul>
+      <p class="modal-incoming__import-desc">Импортированные поступления (всего
+        поступлений: 2)</p>
+      <ul class="modal-incoming__import-list">
+        <li>
+          <p class="modal-incoming__import-list-price">883 098 ₽</p>
+          <p class="modal-incoming__import-list-desc">Платеж по Договору
+            2899/2021 от ООО Рога, копыта и сыновья</p>
+          <p class="modal-incoming__import-list-requisites">Счет: <span>Сбербанк, 42000000000000000000</span>
+          </p>
+          <p class="modal-incoming__import-list-requisites">ИНН:
+            <span>13200200300</span>
+          </p>
+          <p class="modal-incoming__import-list-requisites">Дата: <span>28 сен 2022</span>
+          </p>
+        </li>
+        <li>
+          <p class="modal-incoming__import-list-price">883 098 ₽</p>
+          <p class="modal-incoming__import-list-desc">Платеж по Договору
+            2899/2021 от ООО Рога, копыта и сыновья</p>
+          <p class="modal-incoming__import-list-requisites">Счет: <span>Сбербанк, 42000000000000000000</span>
+          </p>
+          <p class="modal-incoming__import-list-requisites">ИНН:
+            <span>13200200300</span>
+          </p>
+          <p class="modal-incoming__import-list-requisites">Дата: <span>28 сен 2022</span>
+          </p>
+        </li>
+      </ul>
+      <button class="modal-incoming__import-return-btn" type="button">Вернуться к форме заполнения</button>
     </div>
 
     <div class="modal-incoming__btns">
