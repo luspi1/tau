@@ -186,11 +186,12 @@ select::-ms-expand {
   }
 }
 
-.edit-doc-wrapper__input{
+.edit-doc-wrapper__input {
   position: absolute;
   visibility: hidden;
   opacity: 0;
   z-index: -1;
+
   &._active {
     visibility: visible;
     z-index: 50;
@@ -249,6 +250,64 @@ select::-ms-expand {
 
 .edit-el {
   position: relative;
+}
+
+// стили для флекс-таблиц
+
+.flex-table {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  &__row {
+    display: flex;
+    padding: 23px 25px;
+  }
+
+  &__cell {
+    width: 100%;
+    flex: 1 1 auto;
+    @include montserrat-regular;
+    font-size: 16px;
+    line-height: 20px;
+    color: #222220;
+
+    &:not(:last-child) {
+      padding-right: 20px;
+    }
+  }
+
+  &__cell-title {
+    @include montserrat-regular;
+    font-size: 14px;
+    line-height: 17px;
+    color: #858584;
+    margin-bottom: 7px;
+  }
+  &__cell-text {
+    @include montserrat-regular;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+  }
+
+  &__cell-text {
+    @include montserrat-regular;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+  }
+
+  &__cell-link {
+    color: #2F65F6;
+    display: inline-block;
+    margin-bottom: 7px;
+  }
+
+  &__cell-link ~ &__cell-title {
+    margin-bottom: 0;
+  }
+
 }
 
 

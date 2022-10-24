@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html', {
+'title': 'Доходы',
+})
+
+<body class="page__body">
+<div class="site-container">
+  <div class="modal-overlay"></div>
+  @include('partials/header.html', {
+  'bottom-menu': 'bottom-menu_disabled',
+  })
+
+  <main class="main income-list-page">
+    <section class="income-list-page__caption">
+      <div class="container">
+        <div class="income-list-page__title-content">
+          <h1 class="income-list-page__title">
+            Доходы
+          </h1>
+          <select class="income-list-page__select" name="income_org_filter">
+            <option value="org">по организации</option>
+            <option value="activity">по деятельности</option>
+          </select>
+          <select class="income-list-page__select" name="income_status_filter">
+            <option value="status">по статусу</option>
+            <option value="income">по доходам</option>
+          </select>
+        </div>
+        <ul class="flex-table income-list-table">
+          <li class="flex-table__row">
+            <div class="flex-table__cell income-list-table__activity-cell">
+              <a href="#" class="flex-table__cell-text flex-table__cell-link">
+                ООО «Росавтодорпроектстроймашинвест»
+              </a>
+              <p class="flex-table__cell-title">Основная деятельность</p>
+            </div>
+            <div class="flex-table__cell income-list-table__plan-cell">
+              <p class="flex-table__cell-title">Плановый доход</p>
+              <p class="flex-table__cell-text">80 000 921 000 ₽</p>
+            </div>
+            <div class="flex-table__cell income-list-table__fact-cell">
+              <p class="flex-table__cell-title">Фактический доход</p>
+              <p class="flex-table__cell-text">3 022 106 ₽</p>
+            </div>
+            <div
+              class="flex-table__cell income-list-table__balance-cell income-list-table__balance-cell_negative">
+              <p class="flex-table__cell-title">Сальдо</p>
+              <p class="flex-table__cell-text">- 5 898 902 ₽</p>
+            </div>
+          </li>
+          <li class="flex-table__row">
+            <div class="flex-table__cell income-list-table__activity-cell">
+              <a href="#" class="flex-table__cell-text flex-table__cell-link">
+                ООО «Технологии Автоматизированного Управления»
+              </a>
+              <p class="flex-table__cell-title">Основная деятельность</p>
+            </div>
+            <div class="flex-table__cell income-list-table__plan-cell">
+              <p class="flex-table__cell-title">Плановый доход</p>
+              <p class="flex-table__cell-text">80 000 921 000 ₽</p>
+            </div>
+            <div class="flex-table__cell income-list-table__fact-cell">
+              <p class="flex-table__cell-title">Фактический доход</p>
+              <p class="flex-table__cell-text">3 022 106 ₽</p>
+            </div>
+            <div
+              class="flex-table__cell income-list-table__balance-cell income-list-table__balance-cell_positive">
+              <p class="flex-table__cell-title">Сальдо</p>
+              <p class="flex-table__cell-text">898 902 ₽</p>
+            </div>
+          </li>
+          <li class="flex-table__row">
+            <div class="flex-table__cell income-list-table__activity-cell">
+              <a href="#" class="flex-table__cell-text flex-table__cell-link">
+                ООО НПО ТАУ
+              </a>
+              <p class="flex-table__cell-title">Основная деятельность</p>
+            </div>
+            <div class="flex-table__cell income-list-table__plan-cell">
+              <p class="flex-table__cell-title">Плановый доход</p>
+              <p class="flex-table__cell-text">80 000 921 000 ₽</p>
+            </div>
+            <div class="flex-table__cell income-list-table__fact-cell">
+              <p class="flex-table__cell-title">Фактический доход</p>
+              <p class="flex-table__cell-text">3 022 106 ₽</p>
+            </div>
+            <div
+              class="flex-table__cell income-list-table__balance-cell income-list-table__balance-cell_positive">
+              <p class="flex-table__cell-title">Сальдо</p>
+              <p class="flex-table__cell-text">0 ₽</p>
+            </div>
+          </li>
+          <li class="flex-table__row">
+            <div class="flex-table__cell income-list-table__activity-cell">
+              <a href="#" class="flex-table__cell-text flex-table__cell-link">
+                ООО «Росавтодорпроектстроймашинвест»
+              </a>
+              <p class="flex-table__cell-title">Основная деятельность</p>
+            </div>
+            <div class="flex-table__cell income-list-table__plan-cell">
+              <p class="flex-table__cell-title">Плановый доход</p>
+              <p class="flex-table__cell-text">80 000 921 000 ₽</p>
+            </div>
+            <div class="flex-table__cell income-list-table__fact-cell">
+              <p class="flex-table__cell-title">Фактический доход</p>
+              <p class="flex-table__cell-text">3 022 106 ₽</p>
+            </div>
+            <div
+              class="flex-table__cell income-list-table__balance-cell income-list-table__balance-cell_negative">
+              <p class="flex-table__cell-title">Сальдо</p>
+              <p class="flex-table__cell-text">- 5 898 902 ₽</p>
+            </div>
+          </li>
+          <li class="flex-table__row">
+            <div class="flex-table__cell income-list-table__activity-cell">
+              <a href="#" class="flex-table__cell-text flex-table__cell-link">
+                ООО «Технологии Автоматизированного Управления»
+              </a>
+              <p class="flex-table__cell-title">Основная деятельность</p>
+            </div>
+            <div class="flex-table__cell income-list-table__plan-cell">
+              <p class="flex-table__cell-title">Плановый доход</p>
+              <p class="flex-table__cell-text">80 000 921 000 ₽</p>
+            </div>
+            <div class="flex-table__cell income-list-table__fact-cell">
+              <p class="flex-table__cell-title">Фактический доход</p>
+              <p class="flex-table__cell-text">3 022 106 ₽</p>
+            </div>
+            <div
+              class="flex-table__cell income-list-table__balance-cell income-list-table__balance-cell_negative">
+              <p class="flex-table__cell-title">Сальдо</p>
+              <p class="flex-table__cell-text">- 5 898 902 ₽</p>
+            </div>
+          </li>
+          <li class="flex-table__row">
+            <div class="flex-table__cell income-list-table__activity-cell">
+              <a href="#" class="flex-table__cell-text flex-table__cell-link">
+                ООО НПО ТАУ
+              </a>
+              <p class="flex-table__cell-title">Основная деятельность</p>
+            </div>
+            <div class="flex-table__cell income-list-table__plan-cell">
+              <p class="flex-table__cell-title">Плановый доход</p>
+              <p class="flex-table__cell-text">80 000 921 000 ₽</p>
+            </div>
+            <div class="flex-table__cell income-list-table__fact-cell">
+              <p class="flex-table__cell-title">Фактический доход</p>
+              <p class="flex-table__cell-text">3 022 106 ₽</p>
+            </div>
+            <div
+              class="flex-table__cell income-list-table__balance-cell income-list-table__balance-cell_positive">
+              <p class="flex-table__cell-title">Сальдо</p>
+              <p class="flex-table__cell-text">200 000 000 ₽</p>
+            </div>
+          </li>
+          <li class="flex-table__row">
+            <div class="flex-table__cell income-list-table__activity-cell">
+              <a href="#" class="flex-table__cell-text flex-table__cell-link">
+                ООО «Росавтодорпроектстроймашинвест»
+              </a>
+              <p class="flex-table__cell-title">Основная деятельность</p>
+            </div>
+            <div class="flex-table__cell income-list-table__plan-cell">
+              <p class="flex-table__cell-title">Плановый доход</p>
+              <p class="flex-table__cell-text">80 000 921 000 ₽</p>
+            </div>
+            <div class="flex-table__cell income-list-table__fact-cell">
+              <p class="flex-table__cell-title">Фактический доход</p>
+              <p class="flex-table__cell-text">3 022 106 ₽</p>
+            </div>
+            <div
+              class="flex-table__cell income-list-table__balance-cell income-list-table__balance-cell_positive">
+              <p class="flex-table__cell-title">Сальдо</p>
+              <p class="flex-table__cell-text">100 ₽</p>
+            </div>
+          </li>
+        </ul>
+        @include('partials/pagination.html')
+      </div>
+    </section>
+  </main>
+
+  @include('partials/footer.html')
+</div>
+</body>
+
+</html>
+

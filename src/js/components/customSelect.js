@@ -185,7 +185,19 @@ if (incomingPageSelects) {
       itemSelectText: '',
       shouldSort: false,
       allowHTML: true
+    })
+  })
+}
 
+const incomeListSelects = document.querySelectorAll('.income-list-page__select')
+
+if (incomeListSelects) {
+  incomeListSelects.forEach(el => {
+    const choices = new Choices(el, {
+      searchEnabled: false,
+      itemSelectText: '',
+      shouldSort: false,
+      allowHTML: true
     })
   })
 }

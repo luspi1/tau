@@ -1,0 +1,50 @@
+@media (max-width: 1280px) {
+  .income-list-page .income-list-table__activity-cell {
+    width: 55%;
+  }
+
+  .income-list-page .income-list-table__plan-cell {
+    width: 27%;
+  }
+
+  .income-list-page .income-list-table__fact-cell {
+    width: 27%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .income-list-page .income-list-table .income-list-table__activity-cell {
+    width: 300px;
+    word-break: break-all;
+    padding: 18px 15px 18px 0;
+  }
+
+  .income-list-page .income-list-table .flex-table__row .income-list-table__balance-cell {
+    width: 24%;
+    padding-left: 15px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .income-list-page__title {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .income-list-page .choices {
+    margin-bottom: 15px;
+  }
+
+
+  .income-list-page .income-list-table {
+    overflow-x: auto;
+  }
+
+  .income-list-page .income-list-table .flex-table__row {
+    width: 800px;
+  }
+
+}

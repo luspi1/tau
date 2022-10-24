@@ -1,0 +1,121 @@
+.income-list-page {
+  padding: 37px 0 96px;
+
+  &__title-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+
+  &__title {
+    @include montserrat-semibold;
+    font-size: 36px;
+    line-height: 44px;
+    color: #000000;
+    margin-right: 28px;
+  }
+
+  .choices {
+    width: 225px;
+    margin-bottom: 0;
+    margin-right: 16px;
+
+    &__inner {
+      background: #ffffff;
+      border: 1px solid #E6E6E6;
+      border-radius: 5px;
+      padding-left: 15px;
+      min-height: 40px;
+    }
+
+    &__list {
+      border: none;
+      border-radius: 5px;
+      filter: drop-shadow(0px 0px 20px rgba(10, 35, 91, 0.15));
+      font-size: 16px;
+      line-height: 20px;
+      color: #222220;
+
+      .choices__item--selectable, .choices__list[aria-expanded] .choices__item--selectable {
+        padding-right: 20px;
+        @include montserrat-regular;
+        font-size: 16px;
+        line-height: 20px;
+        color: #858584;
+      }
+    }
+
+    .choices__list--dropdown, .choices__list[aria-expanded] {
+      margin-top: 10px;
+      border: 1px solid #E6E6E6;
+    }
+
+
+    &__placeholder {
+      @include montserrat-regular;
+      font-size: 16px;
+      line-height: 20px;
+      color: #858584;
+      opacity: 1;
+    }
+
+
+    &__list--dropdown .choices__item--selectable.is-highlighted, .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+      background-color: #F2F1F7;
+    }
+
+    &[data-type*=select-one]::after {
+      right: 10px;
+    }
+
+    .choices__list--single {
+      padding: 2px 16px 2px 0;
+    }
+
+  }
+
+  .income-list-table {
+    .flex-table__row {
+      background: #F7F8FA;
+      border-radius: 5px;
+      padding: 0 0 0 25px;
+      margin-bottom: 5px;
+
+      .income-list-table__balance-cell {
+        width: 24%;
+        padding-left: 25px;
+        padding-right: 10px;
+        border-radius: 0 5px 5px 0;
+
+      }
+    }
+
+    .flex-table__cell {
+      padding: 18px 0;
+    }
+
+    &__fact-cell {
+      width: 46%;
+    }
+
+    &__plan-cell {
+      width: 52%;
+    }
+
+    &__balance-cell_negative {
+      background: #F3D4DE;
+    }
+
+    &__balance-cell_positive {
+      background: #CEF0E4;
+    }
+  }
+
+  .pagination {
+    margin-top: 32px;
+    justify-content: flex-start;
+    padding: 0 0;
+  }
+
+}
