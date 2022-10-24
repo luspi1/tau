@@ -178,7 +178,10 @@
     flex-wrap: wrap;
     justify-content: flex-start;
   }
-
+  .income-page .filter .title__select-wrap .choices__list.choices__list--single,
+  .income-page .filter .title__select-wrap .choices__inner {
+    padding-left: 0;
+  }
   .income-page .filter .balance__item:nth-child(2),
   .income-page .filter .balance__item:nth-child(3) {
     margin-left: 0;
