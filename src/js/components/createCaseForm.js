@@ -2,6 +2,9 @@ import { initPaymentSelects } from "./customSelect";
 import { initDatePayment } from "./customDate";
 import { initDatePaymentsMask } from "./inputMask";
 
+let annexOptionalIndex = 1;
+
+
 const addTermsBtn = document.querySelector('.create-case-page__add-btn')
 const termsList = document.querySelector('.case-terms__items')
 const templateTermsFragment = document.querySelector('#case-terms-template')?.content;
@@ -48,6 +51,12 @@ if (annexWrapper) {
       const optionalEl = templateAnnexOptional.cloneNode(true)
       optionalAnnexList.appendChild(optionalEl)
       initPaymentSelects()
+
+      const annexIndex = optionalEl.closest('.case-annex__item').querySelector('.case-annex__add-optional-btn').dataset.index
+      const selectInput = optionalEl.querySelector('select')
+      const fieldNameInput = optionalEl.querySelector('.create-case-page__input-name')
+      selectInput.name = `case_annex_field_type[${annexIndex}][]`
+      fieldNameInput.name = `case_annex_field_type[${annexIndex}][]`
     }
   })
 }
@@ -62,12 +71,20 @@ if (annexFragment) {
     addAnnexBtn.addEventListener('click', (e) => {
       e.preventDefault()
       const optionalEl = annexEl.cloneNode(true)
+
+      annexOptionalIndex++
+      const selectInput = optionalEl.querySelector('select')
+      const fieldNameInput = optionalEl.querySelector('.create-case-page__input-name')
+      const addFieldBtn = optionalEl.querySelector('.case-annex__add-optional-btn')
+      selectInput.name = `case_annex_field_type[${annexOptionalIndex}][]`
+      fieldNameInput.name = `case_annex_field_name[${annexOptionalIndex}][]`
+      addFieldBtn.dataset.index = annexOptionalIndex.toString()
+
       annexList.appendChild(optionalEl)
       initPaymentSelects()
     })
   }
 }
-
 
 
 // Удаление поля в приложении и всего приложения
@@ -103,7 +120,6 @@ if (optionalWrapper) {
 
   })
 }
-
 
 
 // Удаление платежного условия сделки
