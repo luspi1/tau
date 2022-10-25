@@ -3,60 +3,12 @@
 import { initPaymentsSelect } from "./customSelect";
 import { initDateDeal } from "./customDate";
 import { initDateDealMask } from "./inputMask";
-import { sendData, showInfoModal } from "../_functions";
+import { closeSelectPopups, handlePopupInputs } from "../_functions";
 
 // Появления списка элементов полученных от сервера в полях "Контрагент", "Исполнитель",
 // "Наблюдатель"
-async function handlePopupSubmit (inputValue, popup) {
-
-  const jsonData = JSON.stringify(inputValue)
-  const submitScript = popup.dataset.script
-  const response = await sendData(jsonData, submitScript)
-  const finishedResponse = await response.json()
-
-  const {status, errortext, html} = finishedResponse
-  if (status === 'ok') {
-    popup.classList.add('select-popup_active')
-    const popupList = popup.querySelector('.select-popup__list')
-
-    popupList.innerHTML = ''
-
-    html.forEach(el => {
-      popupList.insertAdjacentHTML('beforeend', el)
-    })
-
-  } else {
-    showInfoModal(errortext)
-  }
-}
-
 
 const dealPopupInputs = document.querySelectorAll('.create-deal-page__popup-input')
-
-const handlePopupInputs = (e) => {
-  let inputValue = e.target.value
-  const targetSelectPopup = e.currentTarget.closest('.create-deal-page__input-wrapper').querySelector('.select-popup')
-  if (inputValue.length > 2) {
-    handlePopupSubmit(inputValue, targetSelectPopup)
-      .then(() => {
-        const popupElements = targetSelectPopup.querySelectorAll('li')
-        if (popupElements) {
-          popupElements.forEach(el => {
-            el.addEventListener('click', () => {
-              const targetInput = el.closest('.create-deal-page__input-wrapper').querySelector('.create-deal-page__popup-input')
-              const dataInput = el.closest('.create-deal-page__input-wrapper').querySelector('.create-deal-page__data-input')
-              targetInput.value = el.textContent
-              dataInput.value = el.dataset.id
-              targetSelectPopup.classList.remove('select-popup_active')
-            })
-          })
-        } else {
-          targetSelectPopup.classList.remove('select-popup_active')
-        }
-      })
-  }
-}
-
 
 if (dealPopupInputs) {
   dealPopupInputs.forEach(input => {
@@ -64,21 +16,11 @@ if (dealPopupInputs) {
   })
 }
 
-// закрытие попапов на странице создания сделки по нажатию на другие элементы
+// закрытие попап-селектов
 
-const createDealPage = document.querySelector('.create-deal-page')?.closest('.site-container')
+const createDealPage = document.querySelector('.create-deal-page')
 
-
-if (createDealPage) {
-  createDealPage.addEventListener('click', (e) => {
-    if (!e.target.classList.contains('select-popup')) {
-      const popupSelects = createDealPage.querySelectorAll('.select-popup_active')
-      popupSelects.forEach(popup => {
-        popup.classList.remove('select-popup_active')
-      })
-    }
-  })
-}
+closeSelectPopups(createDealPage)
 
 
 // Генерация наблюдателя на странице создания сделки

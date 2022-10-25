@@ -138,7 +138,6 @@ const initDatePaymentsMask = () => {
 initDatePaymentsMask()
 
 
-
 // Даты на странице создания сделки
 
 
@@ -193,10 +192,58 @@ if (incomingDateInput) {
   }).mask(incomingDateInput);
 }
 
+// Рассчетный счет на странице создания организации
+
+const initAccountCheckMask = () => {
+  const accountCheckInputs = document.querySelectorAll('.new-organization .account-input-mask');
+  if (accountCheckInputs) {
+    accountCheckInputs.forEach(el => {
+      Inputmask({
+        "mask": "999 999 999 999 999 999",
+        showMaskOnHover: false,
+        showMaskOnFocus: false,
+      }).mask(el);
+    })
+  }
+}
+initAccountCheckMask()
+
+// БИК счет на странице создания организации
+
+const initBikMask = () => {
+  const bikInputs = document.querySelectorAll('.new-organization .bik-input-mask');
+  if (bikInputs) {
+    bikInputs.forEach(el => {
+      Inputmask({
+        "mask": "999 999 999",
+        showMaskOnHover: false,
+        showMaskOnFocus: false,
+      }).mask(el);
+    })
+  }
+}
+
+initBikMask()
+
+// Корр счет на странице создания организации
+
+const initCorrMask = () => {
+  const corrInputs = document.querySelectorAll('.new-organization .corr-input-mask');
+  if (corrInputs) {
+    corrInputs.forEach(el => {
+      Inputmask({
+        "mask": "999 999 999 999 999 999",
+        showMaskOnHover: false,
+        showMaskOnFocus: false,
+      }).mask(el);
+    })
+  }
+}
+
+initCorrMask()
 
 
-
-export { initDatePaymentsMask, initDateDealMask }
+export { initDatePaymentsMask, initDateDealMask, initAccountCheckMask, initBikMask, initCorrMask }
 
 
 

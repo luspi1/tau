@@ -83,7 +83,71 @@ const showBigImgModal = (path) => {
     modalOverlay.classList.remove('modal-overlay_active')
     bigImgModal.classList.remove('big-img-modal_active')
   })
+}
 
+// функция отправки данных с попапа
+
+async function handlePopupSubmit (inputValue, popup) {
+  const jsonData = JSON.stringify(inputValue)
+  const submitScript = popup.dataset.script
+  const response = await sendData(jsonData, submitScript)
+  const finishedResponse = await response.json()
+
+  const {status, errortext, html} = finishedResponse
+  if (status === 'ok') {
+    popup.classList.add('select-popup_active')
+    const popupList = popup.querySelector('.select-popup__list')
+
+    popupList.innerHTML = ''
+
+    html.forEach(el => {
+      popupList.insertAdjacentHTML('beforeend', el)
+    })
+
+  } else {
+    showInfoModal(errortext)
+  }
+}
+
+const handlePopupInputs = (e) => {
+  let inputValue = e.target.value
+  const targetSelectPopup = e.currentTarget.closest('.select-input-wrapper').querySelector('.select-popup')
+  if (inputValue.length > 2) {
+    handlePopupSubmit(inputValue, targetSelectPopup)
+      .then(() => {
+        const popupElements = targetSelectPopup.querySelectorAll('li')
+        if (popupElements) {
+          popupElements.forEach(el => {
+            el.addEventListener('click', () => {
+              const targetInput = el.closest('.select-input-wrapper').querySelector('.select-popup-input')
+              const dataInput = el.closest('.select-input-wrapper').querySelector('.select-popup-data')
+              targetInput.value = el.textContent
+              dataInput.value = el.dataset.id
+              targetSelectPopup.classList.remove('select-popup_active')
+            })
+          })
+        } else {
+          targetSelectPopup.classList.remove('select-popup_active')
+        }
+      })
+  }
+}
+
+
+// Закрытие попап-селектов по нажатию на другие элементы
+
+const closeSelectPopups = (page) => {
+  const siteContainer = page?.closest('.site-container')
+  if (siteContainer) {
+    siteContainer.addEventListener('click', (e) => {
+      if (!e.target.classList.contains('select-popup')) {
+        const popupSelects = siteContainer.querySelectorAll('.select-popup_active')
+        popupSelects.forEach(popup => {
+          popup.classList.remove('select-popup_active')
+        })
+      }
+    })
+  }
 }
 
 
@@ -96,5 +160,8 @@ export {
   formToObj,
   showInfoModal,
   updateFields,
-  showBigImgModal
+  showBigImgModal,
+  handlePopupSubmit,
+  handlePopupInputs,
+  closeSelectPopups
 }
