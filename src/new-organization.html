@@ -101,11 +101,11 @@
                 </div>
                 <div
                   class="new-organization__input-wrapper new-organization__director-btns">
-                  <button class="new-organization__btn" type="button">Подключить контакт в
+                  <button class="new-organization__btn join-director__btn" type="button" data-modal="join-director-modal" >Подключить контакт в
                     качестве руководителя
                   </button>
                 </div>
-                <div
+               <div
                   class="new-organization__input-wrapper">
                   <input type="checkbox" class="new-organization__checkbox"
                          id="checkDirector" name="newOrgCheckDirector"
@@ -462,6 +462,7 @@
             </a>
           </div>
         </form>
+        @include('partials/join-director-modal.html')
       </div>
     </section>
     @include('partials/info-modal.html')

@@ -22,6 +22,8 @@ const editInvoiceBtn = document.querySelector('.payments-page .btn-add-score')
 const editCardBtn = document.querySelector('.payments-page .btn-add-card')
 const newEmployeeBtn = document.querySelector('.page-employees__new-employees-link')
 const comingBtns = document.querySelectorAll('.income-page .months__button')
+const joinDirector = document.querySelector('.join-director__btn')
+
 
 
 // Управление состоянием модалок
@@ -63,7 +65,8 @@ manageModals(
   editInvoiceBtn,
   editCardBtn,
   newEmployeeBtn,
-  ...comingBtns
+  ...comingBtns,
+  joinDirector,
 )
 
 
