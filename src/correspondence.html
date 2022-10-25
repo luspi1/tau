@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html', {
+'title': 'Корреспонденция',
+})
+
+<body class="page__body">
+<div class="site-container">
+  <div class="modal-overlay"></div>
+  @include('partials/header.html', {
+  'bottom-menu': 'bottom-menu_disabled',
+  'deal-title' : 'deals-active'
+  })
+
+  <main class="main correspondence">
+    @include('partials/deal-submenu.html', {
+    'deal-corr': 'deal-submenu_active',
+    'btn-disable': 'deals__btn-disable',
+    })
+
+
+    @include('partials/info-modal.html')
+  </main>
+
+  @include('partials/footer.html')
+</div>
+
+</body>
+
+</html>
