@@ -74,6 +74,4 @@ if (editFullnameForm) {
     }
 
   })
-
-
 }
