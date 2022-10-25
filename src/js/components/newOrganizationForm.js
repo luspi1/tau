@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import { initAccountCheckMask, initBikMask, initCorrMask } from "./inputMask";
 
 
 const addAccountBtn = document.querySelector('.new-organization__add-account button')
@@ -16,12 +17,14 @@ if (addAccountBtn) {
   addAccountBtn.addEventListener('click', () => {
     const templateId = uuidv4()
     const accountEl = templateAccount.cloneNode(true)
-
     const elCheckbox = accountEl.querySelector('.new-organization__checkbox')
     const elCheckboxLabel = accountEl.querySelector('.new-organization__checkbox-label')
     elCheckbox.id = templateId
     elCheckboxLabel.setAttribute('for', templateId)
     accountsContainer.appendChild(accountEl)
+    initAccountCheckMask()
+    initBikMask()
+    initCorrMask()
   })
 
 
