@@ -180,7 +180,7 @@ if (cardDateInput) {
   }).mask(cardDateInput);
 }
 
-// Дата внесения платежа в модалке овый приход
+// Дата внесения платежа в модалке новый приход
 
 const incomingDateInput = document.querySelector('.modal-incoming__date-input');
 
@@ -190,6 +190,17 @@ if (incomingDateInput) {
     showMaskOnHover: false,
     showMaskOnFocus: false,
   }).mask(incomingDateInput);
+}
+// Дата получения или отправки в модалке создать письмо
+
+const letterDateInput = document.querySelector('.modal-create-letter__date-input');
+
+if (letterDateInput) {
+  Inputmask({
+    "mask": "99.99.9999",
+    showMaskOnHover: false,
+    showMaskOnFocus: false,
+  }).mask(letterDateInput);
 }
 
 // Рассчетный счет на странице создания организации

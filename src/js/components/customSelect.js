@@ -216,6 +216,20 @@ if (incomingModalSelects) {
   })
 }
 
+// Селекторы в модалке "создать письмо"
+const letterModalSelects = document.querySelectorAll('.modal-create-letter__select-wrapper select')
+
+if (letterModalSelects) {
+  letterModalSelects.forEach(el => {
+    const choices = new Choices(el, {
+      itemSelectText: '',
+      searchEnabled: false,
+      shouldSort: false,
+      allowHTML: true
+    });
+  })
+}
+
 
 export { initSelects, initPaymentSelects, initPaymentsSelect }
 

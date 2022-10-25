@@ -28,6 +28,12 @@ new AirDatepicker(dateIncomingModal, {
   startDate,
 });
 
+const dateLetterModal = document.querySelector('.modal-create-letter__date-input');
+
+new AirDatepicker(dateLetterModal, {
+  startDate,
+});
+
 
 
 
