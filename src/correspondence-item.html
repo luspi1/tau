@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html', {
+'title': 'Корреспонденция',
+})
+
+<body class="page__body">
+  <div class="site-container">
+    <div class="modal-overlay"></div>
+    @include('partials/header.html', {
+    'bottom-menu': 'bottom-menu_disabled',
+    'deal-title' : 'deals-active'
+    })
+
+    <main class="main correspondence-item">
+      @include('partials/deal-submenu.html', {
+      'deal-corr': 'deal-submenu_active',
+      'btn-disable': 'deals__btn-disable',
+      })
+
+      <section class="newmail-one">
+        <div class="container">
+          <div class="newmail-one__top">
+            <h1 class="newmail-one__title">Корреспонденция</h1>
+            <ul class="newmail-one__caption-list">
+              <li>
+                <p class="newmail-one__list-title">Сделка</p>
+                <p class="newmail-one__list-content">129/031 СТН</p>
+              </li>
+              <li>
+                <p class="newmail-one__list-title">Дата создания сделки</p>
+                <p class="newmail-one__list-content">22.09.2021</p>
+              </li>
+              <li>
+                <p class="newmail-one__list-title">Исполнитель</p>
+                <a href="#" class="newmail-one__list-content">ИП Масякин А.
+                  Н.</a>
+              </li>
+              <li>
+                <p class="newmail-one__list-title">Контрагент</p>
+                <a href="#" class="newmail-one__list-content wrap">ООО «Росавтодорпроектстроймашинвест»</a>
+              </li>
+            </ul>
+          </div>
+          <div class="newmail-one__mail-block mail-block">
+            <a href="#" class="mail-block__type">Бумажное письмо</a>
+            <h3 class="mail-block__title">Входящее: <span class="mail-block__name">Возражение из Когалыма в части
+                процедуры</span></h3>
+            <div class="mail-block__info">
+              <span>Получено</span> <span class="mail-block__date">27.04.2019</span> <span>Принял сотрудник</span>
+              <a href="#" class="mail-block__employee">Башлычникова Юлия Ихтиодоровна</a> <span>Адрес
+                отправителя:</span> <span class="mail-block__address">Россия, 999999, г. Когалым, ул. Ленина, д.13,
+                стр.1, офис 199</span>
+            </div>
+            <p class="mail-block__body">Добрый день! Внимательно прочитайте письмо, иначе кому-то не поздоровится, и это
+              буду не я.</p>
+            <p class="mail-block__attachment">Вложения (<span class="mail-block__attachment-count">2</span>):</p>
+            <ol class="mail-block__list">
+              <li><a href="#" download class="mail-block__link">Фотокопия письма.pdf</a> <span
+                  class="mail-block__link-size">3.41Мб</span></li>
+              <li><a href="#" download class="mail-block__link">Фотокопия письма.pdf</a> <span
+                  class="mail-block__link-size">3.41Мб</span></li>
+            </ol>
+          </div>
+          <button class="newmail-one__btn" type="button">Редактировать письмо</button>
+        </div>
+      </section>
+
+
+    </main>
+
+    @include('partials/footer.html')
+  </div>
+
+</body>
+
+</html>

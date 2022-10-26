@@ -1,0 +1,30 @@
+@media (max-width: 1400px) {
+  .correspondence-item {
+    padding-top: 0;
+  }}
+
+@media (max-width: 1024px) {
+  .correspondence-item .newmail-one__title {
+    font-size: 32px;
+  }
+
+  .correspondence-item .newmail-one__caption-list {
+    flex-direction: column;
+    margin-bottom: 0px;
+  }
+
+  .correspondence-item .newmail-one__caption-list li {
+    margin-bottom: 15px;
+  }
+
+}
+
+@media (max-width: 992px) {
+  .correspondence-item .newmail-one__title {
+    font-size: 28px;
+  }
+
+  .correspondence-item .newmail-one__list-content.wrap {
+    word-wrap: break-word;
+  }
+}

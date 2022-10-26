@@ -230,6 +230,19 @@ if (letterModalSelects) {
   })
 }
 
+// Селекторы фильтров на странице "корреспонденция(все письма)"
+const newMailsSelects = document.querySelectorAll('.newmails__search select')
+
+if (newMailsSelects) {
+  newMailsSelects.forEach(el => {
+    const choices = new Choices(el, {
+      itemSelectText: '',
+      searchEnabled: false,
+      shouldSort: false,
+      allowHTML: true
+    });
+  })
+}
 
 export { initSelects, initPaymentSelects, initPaymentsSelect }
 

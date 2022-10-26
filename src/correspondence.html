@@ -6,25 +6,101 @@
 })
 
 <body class="page__body">
-<div class="site-container">
-  <div class="modal-overlay"></div>
-  @include('partials/header.html', {
-  'bottom-menu': 'bottom-menu_disabled',
-  'deal-title' : 'deals-active'
-  })
-
-  <main class="main correspondence">
-    @include('partials/deal-submenu.html', {
-    'deal-corr': 'deal-submenu_active',
-    'btn-disable': 'deals__btn-disable',
+  <div class="site-container">
+    <div class="modal-overlay"></div>
+    @include('partials/header.html', {
+    'bottom-menu': 'bottom-menu_disabled',
+    'deal-title' : 'deals-active'
     })
 
+    <main class="main correspondence">
+      @include('partials/deal-submenu.html', {
+      'deal-corr': 'deal-submenu_active',
+      'btn-disable': 'deals__btn-disable',
+      })
 
-    @include('partials/info-modal.html')
-  </main>
+      <section class="newmails">
+        <div class="container">
+          <div class="newmails__top">
+            <h1 class="newmails__title">Корреспонденция</h1>
+            <ul class="newmails__caption-list">
+              <li>
+                <p class="newmails__list-title">Сделка</p>
+                <p class="newmails__list-content">129/031 СТН</p>
+              </li>
+              <li>
+                <p class="newmails__list-title">Дата создания сделки</p>
+                <p class="newmails__list-content">22.09.2021</p>
+              </li>
+              <li>
+                <p class="newmails__list-title">Исполнитель</p>
+                <a href="#" class="newmails__list-content">ИП Масякин А.
+                  Н.</a>
+              </li>
+              <li>
+                <p class="newmails__list-title">Контрагент</p>
+                <a href="#" class="newmails__list-content wrap">ООО «Росавтодорпроектстроймашинвест»</a>
+              </li>
+            </ul>
+          </div>
+          <div class="newmails__search search">
+            <input class="search__input" type="text" name="" id="" placeholder="поиск">
+            <div class="search__wrap">
+              <select class="search__mails" name="search-mails">
+                <option selected value="">все письма</option>
+                <option value="mail_1">...</option>
+                <option value="mail_2">... 1</option>
+                <option value="mail_3">... 2</option>
+              </select>
+            </div>
+            <div class="search__wrap">
+              <select class="search__attachments" name="search-attachments">
+                <option selected value="">вложения: все</option>
+                <option value="attachment_1">...</option>
+                <option value="attachment_2">... 1</option>
+                <option value="attachment_3">... 2</option>
+              </select>
+            </div>
+            <button class="search__btn newmail-btn" type="button">Новое письмо</button>
+          </div>
+          <ul class="newmails__table flex-table">
+            <li class="flex-table__row">
+              <p class="flex-table__cell-title flex-table__direction">Направаление</p>
+              <p class="flex-table__cell-title flex-table__date">Дата</p>
+              <p class="flex-table__cell-title flex-table__name">Наименование письма</p>
+              <p class="flex-table__cell-title flex-table__type">Тип письма</p>
+              <p class="flex-table__cell-title flex-table__attachment">Вложения</p>
+            </li>
+            <li class="flex-table__row">
+              <p class="flex-table__cell-text flex-table__direction">Входящее</p>
+              <a class="flex-table__cell-link flex-table__date" href="#">Получено 23.02.2018</a>
+              <a class="flex-table__cell-link flex-table__name" href="correspondence-item.html">Относительно длинное название с многоточием Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Которое большого последний страну переулка языкового это осталось лучше буквенных рукописи рот, ты семь напоивший что силуэт переписали рыбными жаренные.</a>
+              <a class="flex-table__cell-link flex-table__type" href="#">Бумажное письмо</a>
+              <a class="flex-table__cell-link flex-table__attachment" href="#">3 вложения</a>
+            </li>
+            <li class="flex-table__row">
+              <p class="flex-table__cell-text flex-table__direction">Исходящее</p>
+              <a class="flex-table__cell-link flex-table__date" href="#">Отправлено 23.02.2018</a>
+              <a class="flex-table__cell-link flex-table__name" href="correspondence-item.html">Относительно длинное</a>
+              <a class="flex-table__cell-link flex-table__type" href="#">Email</a>
+              <a class="flex-table__cell-link flex-table__attachment black" href="#">Нет вложения</a>
+            </li>
+            <li class="flex-table__row">
+              <p class="flex-table__cell-text flex-table__direction">Исходящее</p>
+              <a class="flex-table__cell-link flex-table__date" href="#">Отправлено 23.02.2018</a>
+              <a class="flex-table__cell-link flex-table__name" href="correspondence-item.html">Относительно длинное название с многоточием</a>
+              <a class="flex-table__cell-link flex-table__type" href="#">Email</a>
+              <a class="flex-table__cell-link flex-table__attachment" href="#">1 вложение</a>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-  @include('partials/footer.html')
-</div>
+
+    </main>
+
+    @include('partials/footer.html')
+  </div>
 
 </body>
 
