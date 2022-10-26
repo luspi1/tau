@@ -26,6 +26,10 @@
 @import "./pages/organization-journal";
 @import "./pages/income";
 @import "./pages/income-list-page";
+@import "./pages/correspondence";
+@import "./pages/correspondence-item";
+
+
 
 // Компоненты
 @import "./components/modals";
@@ -52,6 +56,9 @@
 @import "media/media-organization-journal";
 @import "media/media-income";
 @import "media/media-income-list-page";
+@import "media/media-correspondence";
+@import "media/media-correspondence-item";
+
 
 
 @import "./components/header";

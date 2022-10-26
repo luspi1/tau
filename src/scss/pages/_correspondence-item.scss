@@ -1,0 +1,135 @@
+.correspondence-item {
+  padding-top: 9px;
+  padding-bottom: 100px;
+
+  .container {
+    padding-top: 19px;
+    padding-bottom: 100px;
+  }
+
+  .newmail-one {
+    color: #000000;
+
+    &__top {
+      margin-bottom: 30px;
+    }
+
+    &__title {
+      @include montserrat-semibold;
+      font-size: 36px;
+      line-height: 44px;
+      margin-bottom: 34px;
+    }
+
+    &__caption-list {
+      display: flex;
+      padding-bottom: 10px;
+      margin-bottom: 25px;
+
+      li {
+        margin-right: 50px;
+
+        a {
+          color: #2f65f6;
+        }
+      }
+    }
+
+    &__list-title {
+      @include montserrat-regular;
+      font-size: 16px;
+      line-height: 20px;
+      color: #858584;
+      margin-bottom: 5px;
+    }
+
+    &__list-content {
+      @include montserrat-regular;
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    .mail-block {
+      max-width: 1067px;
+      padding: 30px 15px 24px 21px;
+      background: #f7f8fa;
+      border-radius: 15px;
+
+      &__type {
+        font-size: 16px;
+        line-height: 20px;
+        color: #2f65f6;
+      }
+
+      &__title {
+        margin-top: 13px;
+        @include montserrat-semibold;
+        font-size: 22px;
+        line-height: 27px;
+      }
+
+      &__name {
+        font-weight: 400;
+      }
+
+      &__info {
+        margin-top: 16px;
+        max-width: 655px;
+        line-height: 24px;
+        color: #858584;
+      }
+
+      &__body {
+        margin-top: 28px;
+        line-height: 20px;
+      }
+
+      &__employee {
+        color: #2f65f6;
+      }
+
+      &__attachment {
+        margin-top: 37px;
+        @include montserrat-semibold;
+      }
+
+      &__list {
+        margin: 12px 0 0;
+        padding-left: 17px;
+
+        li {
+          list-style: auto;
+        }
+      }
+
+      &__link {
+        color: #2f65f6;
+        line-height: 30px;
+      }
+
+      &__link-size {
+        line-height: 30px;
+        color: #858584;
+      }
+    }
+
+    &__btn {
+      margin-top: 20px;
+      padding: 13px 21px;
+      @include montserrat-medium;
+      border-radius: 5px;
+      font-size: 17px;
+      line-height: 21px;
+      color: #2f65f6;
+      background-color: #ffffff;
+      border: 1px solid #2f65f6;
+      cursor: pointer;
+      transition: .3s;
+
+      &:hover {
+        color: #FFFFFF;
+        background-color: #2f65f6;
+      }
+    }
+  }
+}
