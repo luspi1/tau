@@ -10,6 +10,7 @@ const cancelEditCardBtn = document.querySelector('.modal-edit-card__close-btn')
 const cancelEditInvoiceBtn = document.querySelector('.modal-edit-invoice__close-btn')
 const cancelNewEmployeeBtn = document.querySelector('.modal-new-employee__close-btn')
 const cancelComingBtn = document.querySelector('.income-page .modal-incoming__close-btn')
+const cancelLetterBtn = document.querySelector('.modal-create-letter__close-btn')
 
 
 const editFullnameBtn = document.querySelector('.edit-fullname')
@@ -23,7 +24,8 @@ const editCardBtn = document.querySelector('.payments-page .btn-add-card')
 const newEmployeeBtn = document.querySelector('.page-employees__new-employees-link')
 const comingBtns = document.querySelectorAll('.income-page .months__button')
 const joinDirector = document.querySelector('.join-director__btn')
-
+const createLetterBtn = document.querySelector('.correspondence .newmail-btn')
+const editLetterBtn = document.querySelector('.correspondence-item .newmail-one__btn')
 
 
 // Управление состоянием модалок
@@ -48,7 +50,8 @@ const manageModals = (...editButtons) => {
           cancelEditCardBtn,
           cancelEditInvoiceBtn,
           cancelNewEmployeeBtn,
-          cancelComingBtn
+          cancelComingBtn,
+          cancelLetterBtn
         )
       })
     }
@@ -67,6 +70,8 @@ manageModals(
   newEmployeeBtn,
   ...comingBtns,
   joinDirector,
+  createLetterBtn,
+  editLetterBtn
 )
 
 

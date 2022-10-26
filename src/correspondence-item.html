@@ -21,6 +21,9 @@
 
       <section class="newmail-one">
         <div class="container">
+          @include('partials/create-letter-modal.html', {
+          'letter-title' : 'Редактировать письмо'
+          })
           <div class="newmail-one__top">
             <h1 class="newmail-one__title">Корреспонденция</h1>
             <ul class="newmail-one__caption-list">
@@ -63,7 +66,7 @@
                   class="mail-block__link-size">3.41Мб</span></li>
             </ol>
           </div>
-          <button class="newmail-one__btn" type="button">Редактировать письмо</button>
+          <button class="newmail-one__btn" data-modal="create-letter-modal" type="button">Редактировать письмо</button>
         </div>
       </section>
 

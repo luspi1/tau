@@ -203,10 +203,10 @@ if (letterDateInput) {
   }).mask(letterDateInput);
 }
 
-// Рассчетный счет на странице создания организации
+// Рассчетный счет
 
 const initAccountCheckMask = () => {
-  const accountCheckInputs = document.querySelectorAll('.new-organization .account-input-mask');
+  const accountCheckInputs = document.querySelectorAll('.account-input-mask');
   if (accountCheckInputs) {
     accountCheckInputs.forEach(el => {
       Inputmask({
@@ -219,10 +219,10 @@ const initAccountCheckMask = () => {
 }
 initAccountCheckMask()
 
-// БИК счет на странице создания организации
+// БИК счет
 
 const initBikMask = () => {
-  const bikInputs = document.querySelectorAll('.new-organization .bik-input-mask');
+  const bikInputs = document.querySelectorAll('.bik-input-mask');
   if (bikInputs) {
     bikInputs.forEach(el => {
       Inputmask({
@@ -236,10 +236,10 @@ const initBikMask = () => {
 
 initBikMask()
 
-// Корр счет на странице создания организации
+// Корр счет
 
 const initCorrMask = () => {
-  const corrInputs = document.querySelectorAll('.new-organization .corr-input-mask');
+  const corrInputs = document.querySelectorAll('.corr-input-mask');
   if (corrInputs) {
     corrInputs.forEach(el => {
       Inputmask({

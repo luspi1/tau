@@ -21,6 +21,9 @@
 
       <section class="newmails">
         <div class="container">
+          @include('partials/create-letter-modal.html', {
+          'letter-title' : 'Создать письмо'
+          })
           <div class="newmails__top">
             <h1 class="newmails__title">Корреспонденция</h1>
             <ul class="newmails__caption-list">
@@ -61,7 +64,7 @@
                 <option value="attachment_3">... 2</option>
               </select>
             </div>
-            <button class="search__btn newmail-btn" type="button">Новое письмо</button>
+            <button class="search__btn newmail-btn" data-modal="create-letter-modal" type="button">Новое письмо</button>
           </div>
           <ul class="newmails__table flex-table">
             <li class="flex-table__row">
