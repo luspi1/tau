@@ -8,7 +8,7 @@
   width: 646px;
   background-color: #ffffff;
   border-radius: 20px;
-  padding: 50px 50px 65px 45px;
+  padding: 50px 50px 85px 45px;
   transition: all .2s;
 
   opacity: 0;
@@ -29,7 +29,7 @@
   }
 
   &__input-title {
-    margin-bottom: 8px;
+    margin-bottom: 9px;
     @include montserrat-regular;
     font-size: 16px;
     line-height: 20px;
@@ -37,7 +37,7 @@
   }
 
   &__item-input {
-    margin-bottom: 21px;
+    margin-bottom: 19px;
   }
 
   &__input-wrapper {
@@ -99,6 +99,45 @@
     height: 250px;
   }
 
+  &__attached-title {
+    @include montserrat-medium;
+    font-size: 16px;
+    line-height: 20px;
+    color: #222220;
+    margin-bottom: 21px;
+  }
+
+  &__attached-list {
+    margin-bottom: 30px;
+    width: 340px;
+
+    li {
+      margin-bottom: 15px;
+
+      p {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        color: #222220;
+
+        span {
+          color: #858584;
+          margin-left: 5px;
+          margin-right: 5px;
+        }
+      }
+
+      .modal-create-letter__attached-icon {
+        margin-right: 11px;
+        min-width: 18px;
+      }
+
+      .modal-create-letter__attached-delete-icon {
+        margin-left: auto;
+        min-width: 18px;
+      }
+    }
+  }
 
   &__file-wrapper {
     position: relative;
@@ -144,6 +183,7 @@
 
   &__btns {
     margin-top: 40px;
+
     .modal-create-letter__save-btn {
       border: none;
       background-color: #2F65F6;
@@ -261,10 +301,16 @@
   }
 
 
-  .modal-create-letter__save-btn {
+  .modal-create-letter__btns .modal-create-letter__save-btn {
     margin-right: 0;
     margin-bottom: 15px;
     width: 255px;
   }
 
+}
+
+@media (max-width: 450px) {
+  .modal-create-letter__attached-list {
+    width: 240px;
+  }
 }
