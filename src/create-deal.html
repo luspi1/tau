@@ -13,11 +13,23 @@
   })
 
   <main class="main create-deal-page">
-
     <div class="container">
       <h1>Создание сделки</h1>
       <form class="create-deal-page__form" action="#">
+        @include('partials/counterparty-alert-modal.html')
         <section class="section create-deal-caption">
+          <div
+            class="create-deal-page__prompt create-deal-page__prompt-caption">
+            <p>
+              Рекомендуем перед началом создания или редактирования сделки
+              убедиться в наличии
+              нужного контрагента или создать
+              контрагента в случае
+              его отсутствия.
+            </p>
+          </div>
+
+
           <div class="create-deal-page__input-wrapper">
             <label>Выбор кейса (шаблона) сделки</label>
             <input class="create-deal-page__input"
@@ -34,7 +46,8 @@
           <div class="create-deal-page__inputs">
             <div class="create-deal-page__input-wrapper select-input-wrapper">
               <label for="dealСounterparty">Контрагент</label>
-              <input name="id_contragent" class="create-deal-page__data-input select-popup-data"
+              <input name="id_contragent"
+                     class="create-deal-page__data-input select-popup-data"
                      type="hidden">
               <input
                 class="create-deal-page__input create-deal-page__popup-input select-popup-input"
@@ -48,6 +61,7 @@
             <div class="create-deal-caption__counterparty-wrapper">
               <span>или</span>
               <button class="create-deal-caption__counterparty-btn"
+                      data-modal="counterparty-alert-modal"
                       type="button"> Добавить нового контрагента
               </button>
             </div>
@@ -55,11 +69,13 @@
 
           <div class="create-deal-page__input-wrapper select-input-wrapper">
             <label>Исполнитель</label>
-            <input name="id_executor" class="create-deal-page__data-input select-popup-data"
+            <input name="id_executor"
+                   class="create-deal-page__data-input select-popup-data"
                    type="hidden">
-            <input class="create-deal-page__input create-deal-page__popup-input select-popup-input"
-                   name="deal_executor" type="text"
-                   placeholder="Начните вводить название">
+            <input
+              class="create-deal-page__input create-deal-page__popup-input select-popup-input"
+              name="deal_executor" type="text"
+              placeholder="Начните вводить название">
             @include('partials/select-popup.html', {
             'submit-script': 'test2.txt'
             })
@@ -68,7 +84,8 @@
           <div class="create-deal-caption__observer-list">
             <div class="create-deal-page__input-wrapper select-input-wrapper">
               <label>Наблюдатель</label>
-              <input name="id_observer" class="create-deal-page__data-input select-popup-data"
+              <input name="id_observer"
+                     class="create-deal-page__data-input select-popup-data"
                      type="hidden">
               <input
                 class="create-deal-page__input create-deal-page__popup-input select-popup-input"
@@ -343,7 +360,8 @@
 <template id="deal-observer-template">
   <div class="create-deal-page__input-wrapper select-input-wrapper">
     <label>Дополнительный наблюдатель</label>
-    <input name="id_observer" class="create-deal-page__data-input select-popup-data"
+    <input name="id_observer"
+           class="create-deal-page__data-input select-popup-data"
            type="hidden">
     <input
       class="create-deal-page__input create-deal-page__popup-input create-deal-page__observer-select select-popup-input"

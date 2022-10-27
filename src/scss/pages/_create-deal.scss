@@ -6,7 +6,7 @@
     font-size: 36px;
     line-height: 44px;
     color: #000000;
-    margin-bottom: 47px;
+    margin-bottom: 23px;
   }
 
   label {
@@ -17,6 +17,9 @@
     line-height: 20px;
     color: #858584;
   }
+
+
+
 
   &__prompt {
     background: #F4F7FB;
@@ -42,6 +45,17 @@
   &__prompt-wrapper {
     display: flex;
     align-items: flex-end;
+  }
+
+  &__prompt-caption {
+    margin-left: 0;
+    max-width: 710px;
+    margin-bottom: 27px;
+    p {
+      font-size: 16px;
+      line-height: 24px;
+      color: #000000;
+    }
   }
 
 

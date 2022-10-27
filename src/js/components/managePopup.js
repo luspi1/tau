@@ -11,6 +11,7 @@ const cancelEditInvoiceBtn = document.querySelector('.modal-edit-invoice__close-
 const cancelNewEmployeeBtn = document.querySelector('.modal-new-employee__close-btn')
 const cancelComingBtn = document.querySelector('.income-page .modal-incoming__close-btn')
 const cancelLetterBtn = document.querySelector('.modal-create-letter__close-btn')
+const cancelCounterpartyAlertBtn = document.querySelector('.modal-counterparty-alert__close-btn')
 
 
 const editFullnameBtn = document.querySelector('.edit-fullname')
@@ -26,6 +27,8 @@ const comingBtns = document.querySelectorAll('.income-page .months__button')
 const joinDirector = document.querySelector('.join-director__btn')
 const createLetterBtn = document.querySelector('.correspondence .newmail-btn')
 const editLetterBtn = document.querySelector('.correspondence-item .newmail-one__btn')
+const counterpartyAlertBtn = document.querySelector('.create-deal-page' +
+  ' .create-deal-caption__counterparty-btn')
 
 
 // Управление состоянием модалок
@@ -51,7 +54,8 @@ const manageModals = (...editButtons) => {
           cancelEditInvoiceBtn,
           cancelNewEmployeeBtn,
           cancelComingBtn,
-          cancelLetterBtn
+          cancelLetterBtn,
+          cancelCounterpartyAlertBtn
         )
       })
     }
@@ -71,7 +75,8 @@ manageModals(
   ...comingBtns,
   joinDirector,
   createLetterBtn,
-  editLetterBtn
+  editLetterBtn,
+  counterpartyAlertBtn
 )
 
 

@@ -1,0 +1,114 @@
+.modal-counterparty-alert {
+  position: absolute;
+  overflow-y: auto;
+  overflow-x: hidden;
+  left: 50%;
+  top: 10%;
+  transform: translate(-50%, -50%);
+  width: 724px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 50px 42px 60px 45px;
+  transition: all .2s;
+
+  opacity: 0;
+  visibility: hidden;
+
+  &._active {
+    opacity: 1;
+    z-index: 999;
+    visibility: visible;
+  }
+
+  h2 {
+    @include montserrat-semibold;
+    font-size: 38px;
+    line-height: 46px;
+    color: #000000;
+    margin-bottom: 22px;
+  }
+
+  p {
+    @include montserrat-regular;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+    margin-bottom: 25px;
+  }
+
+
+  &__add-btn {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+  }
+
+  &__btns {
+
+
+    .modal-counterparty-alert__save-btn {
+      border: none;
+      background-color: #2F65F6;
+      border-radius: 5px;
+      display: inline-block;
+      @include montserrat-bold;
+      font-size: 20px;
+      line-height: 24px;
+      text-align: center;
+      color: #FFFFFF;
+      padding: 17px 0;
+      width: 237px;
+      margin-right: 25px;
+      cursor: pointer;
+      transition: all .3s;
+
+      &:hover {
+        background-color: #264DDB;
+      }
+    }
+
+    .modal-counterparty-alert__close-btn {
+      background: none;
+      border: none;
+      @include montserrat-bold;
+      font-size: 20px;
+      line-height: 24px;
+      color: #2F65F6;
+      cursor: pointer;
+
+      &:hover {
+        color: #264DDB;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+
+  .modal-counterparty-alert {
+    width: 90%;
+    padding: 30px 25px 45px 25px;
+  }
+
+  .modal-counterparty-alert h2 {
+    font-size: 26px;
+    line-height: 32px;
+    margin-bottom: 37px;
+  }
+
+  .modal-counterparty-alert__btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-counterparty-alert__btns .modal-counterparty-alert__save-btn {
+    margin-right: 0;
+    margin-bottom: 15px;
+    width: 255px;
+  }
+
+}
+
+
