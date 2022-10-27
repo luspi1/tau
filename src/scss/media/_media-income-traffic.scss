@@ -1,0 +1,65 @@
+@media(max-width: 1350px) {
+  .income-traffic-page .traffic__calendar .minititle {
+    margin: 0 0 5px 0;
+  }
+
+  .income-traffic-page .traffic__select-row {
+    align-items: flex-start;
+  }
+
+  .income-traffic-page .traffic__select-wrap.agent,
+  .income-traffic-page .traffic__select-wrap.deal,
+  .income-traffic-page .traffic__select-wrap.years,
+  .income-traffic-page .traffic__select-wrap.quarter {
+    margin-top: 24px;
+  }
+
+  .income-traffic-page .traffic__calendar {
+    flex-direction: column;
+    order: 5;
+  }
+}
+
+@media(max-width: 1024px) {
+
+  .income-traffic-page .traffic .title,
+  .income-traffic-page .traffic .title__select-wrap .choices__inner {
+    font-size: 26px;
+  }
+
+  .income-traffic-page .traffic .title__select-wrap .choices__list--dropdown .choices__item,
+  .income-traffic-page .traffic .title__select-wrap .choices__list[aria-expanded] .choices__item {
+    font-size: 18px;
+  }
+  .income-traffic-page .traffic__select-row {
+    flex-wrap: wrap;
+  }
+  .income-traffic-page .traffic__select-wrap.agent,
+  .income-traffic-page .traffic__select-wrap.deal,
+  .income-traffic-page .traffic__select-wrap.years,
+  .income-traffic-page .traffic__select-wrap.quarter {
+    margin-bottom: 20px;
+  }
+
+}
+
+
+@media(max-width: 576px) {
+  .income-traffic-page .traffic__select-row {
+    flex-direction: column;
+  }
+  .income-traffic-page .traffic__select-wrap.agent,
+  .income-traffic-page .traffic__select-wrap.deal,
+  .income-traffic-page .traffic__select-row .traffic__select-wrap.years,
+  .income-traffic-page .traffic__select-row .traffic__select-wrap.quarter {
+    width: 100%;
+    margin-top: 0;
+    margin-right: 0;
+  }
+}
+
+@media(max-width: 400px) {
+  .income-traffic-page .information__link-name, .income-traffic-page .information__link-deal {
+    //
+  }
+}
