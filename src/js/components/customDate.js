@@ -73,4 +73,16 @@ const initFiltertCalendar = () => {
 }
 initFiltertCalendar();
 
+const initTrafficCalendar = () => {
+  const dateCreateDeal = document.querySelectorAll('.traffic__calendar-input');
+
+  dateCreateDeal.forEach(el => {
+    new AirDatepicker(el, {
+      startDate,
+    });
+  })
+}
+initTrafficCalendar();
+
+
 export { initDatePayment, initDateDeal}
