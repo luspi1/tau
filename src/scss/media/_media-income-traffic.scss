@@ -31,9 +31,11 @@
   .income-traffic-page .traffic .title__select-wrap .choices__list[aria-expanded] .choices__item {
     font-size: 18px;
   }
+
   .income-traffic-page .traffic__select-row {
     flex-wrap: wrap;
   }
+
   .income-traffic-page .traffic__select-wrap.agent,
   .income-traffic-page .traffic__select-wrap.deal,
   .income-traffic-page .traffic__select-wrap.years,
@@ -43,11 +45,54 @@
 
 }
 
+@media(max-width: 992px) {
 
+  .income-traffic-page .traffic .title__select-wrap .choices__list--dropdown,
+  .income-traffic-page .traffic .title__select-wrap .choices__list[aria-expanded] {
+    width: max-content;
+  }
+
+  .income-traffic-page .traffic .title__select-wrap .choices__list--single .choices__item {
+    word-wrap: break-word;
+  }
+  .income-traffic-page .traffic .title__select-wrap .choices__list--dropdown .choices__item--selectable.is-highlighted,
+  .income-traffic-page .traffic .title__select-wrap .choices__list[aria-expanded] .choices__item {
+    padding-right: 20px;
+  }
+}
+@media(max-width: 768px) {
+  .income-traffic-page .traffic .title__select-wrap {
+    width: 100%;
+  }
+  .income-traffic-page .traffic .title__select-wrap .choices__list--dropdown,
+  .income-traffic-page .traffic .title__select-wrap .choices__list[aria-expanded] {
+    width: auto;
+  }
+}
+@media (min-width: 640px) {
+   .income-traffic-page .choices__list--dropdown .choices__item--selectable,
+   .income-traffic-page .choices__list[aria-expanded] .choices__item--selectable {
+    padding-right: 0;
+  }
+}
 @media(max-width: 576px) {
+  .income-traffic-page .traffic__title-row {
+    flex-direction: column;
+  }
+
+  .income-traffic-page .traffic .title__select-wrap .choices__inner {
+    padding-left: 0;
+    font-size: 23px;
+  }
+
   .income-traffic-page .traffic__select-row {
     flex-direction: column;
   }
+
+  .income-traffic-page .traffic .title__select-wrap .choices__list.choices__list--single {
+    padding-left: 0;
+  }
+
   .income-traffic-page .traffic__select-wrap.agent,
   .income-traffic-page .traffic__select-wrap.deal,
   .income-traffic-page .traffic__select-row .traffic__select-wrap.years,
@@ -58,8 +103,3 @@
   }
 }
 
-@media(max-width: 400px) {
-  .income-traffic-page .information__link-name, .income-traffic-page .information__link-deal {
-    //
-  }
-}
