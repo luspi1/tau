@@ -29,6 +29,7 @@
 @import "./pages/correspondence";
 @import "./pages/correspondence-item";
 @import "./pages/income-traffic";
+@import "./pages/contact-card";
 
 
 
@@ -60,6 +61,7 @@
 @import "media/media-correspondence";
 @import "media/media-correspondence-item";
 @import "media/media-income-traffic";
+@import "media/media-contact-card";
 
 
 
@@ -82,3 +84,4 @@
 @import "./components/join-director-modal";
 @import "./components/create-letter-modal";
 @import "./components/counterparty-alert-modal";
+@import "./components/contact-card-submenu";

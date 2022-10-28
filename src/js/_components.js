@@ -24,4 +24,5 @@ import './components/changeJobForm'
 import './components/income'
 import './components/join-director-modal'
 import './components/newEmployeeForm'
+import './components/contactCard'
 

@@ -5,13 +5,14 @@
 'title': 'Доходы',
 })
 
-<body class="page__body customCalendar">
-  <div class="site-container">
-    <div class="modal-overlay"></div>
-    @include('partials/header.html', {
-    'bottom-menu': 'bottom-menu_disabled',
-    })
-
+<body class="page__body">
+<div class="site-container">
+  <div class="modal-overlay"></div>
+  @include('partials/header.html', {
+  'bottom-menu': 'bottom-menu_disabled',
+  'header-title': ''
+  })
+  
     <main class="main income-page">
       <section class="filter">
         <div class="container">
