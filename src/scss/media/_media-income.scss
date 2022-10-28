@@ -155,7 +155,7 @@
 
   .income-page .filter .title__select-wrap .choices__list--dropdown,
   .income-page .filter .title__select-wrap .choices__list[aria-expanded] {
-    width: auto;
+    width: max-content;
 
   }
 
@@ -178,11 +178,19 @@
   .income-page .filter .title {
     margin-right: 10px;
   }
+  .income-page .filter .title__select-wrap {
+    width: 100%;
+  }
+  .income-page .filter .title__select-wrap .choices__list--dropdown,
+  .income-page .filter .title__select-wrap .choices__list[aria-expanded] {
+    width: auto;
 
+  }
   .income-page .filter .balance {
     flex-wrap: wrap;
     justify-content: flex-start;
   }
+
   .income-page .filter .title__select-wrap .choices__list.choices__list--single,
   .income-page .filter .title__select-wrap .choices__inner {
     padding-left: 0;
@@ -209,7 +217,12 @@
     margin: 0;
   }
 }
-
+@media (min-width: 640px) {
+   .income-page.choices__list--dropdown .choices__item--selectable,
+   .income-page.choices__list[aria-expanded] .choices__item--selectable {
+    padding-right: 0;
+  }
+}
 @media(max-width: 576px) {
   .income-page .filter__title-row {
     flex-direction: column;
