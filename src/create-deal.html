@@ -31,11 +31,18 @@
           </div>
 
 
-          <div class="create-deal-page__input-wrapper">
+          <div class="create-deal-page__input-wrapper select-input-wrapper">
             <label>Выбор кейса (шаблона) сделки</label>
-            <input class="create-deal-page__input"
+            <input name="id_case"
+                   class="create-deal-page__data-input select-popup-data"
+                   type="hidden">
+            <input class="create-deal-page__input create-deal-page__popup-input select-popup-input"
                    name="deal_choice" type="text"
                    placeholder="Начните вводить название кейса...">
+            @include('partials/select-popup.html', {
+            'submit-script': 'test.txt',
+            'add-data': "{id_item:3,paramname:'test'}"
+            })
           </div>
           <div class="create-deal-page__input-wrapper">
             <label>Название сделки</label>
@@ -56,7 +63,8 @@
                 name="deal_contragent" type="text"
                 placeholder="Начните вводить название">
               @include('partials/select-popup.html', {
-              'submit-script': 'test.txt'
+              'submit-script': 'test.txt',
+              'add-data': "{id_item:3,paramname:'test'}"
               })
             </div>
             <div class="create-deal-caption__counterparty-wrapper">
@@ -78,7 +86,8 @@
               name="deal_executor" type="text"
               placeholder="Начните вводить название">
             @include('partials/select-popup.html', {
-            'submit-script': 'test2.txt'
+            'submit-script': 'test2.txt',
+            'add-data': "{id_item:3,paramname:'test'}"
             })
           </div>
 
@@ -93,7 +102,8 @@
                 name="deal_observer[]" type="text"
                 placeholder="Начните вводить фамилию">
               @include('partials/select-popup.html', {
-              'submit-script': 'test3.txt'
+              'submit-script': 'test3.txt',
+              'add-data': "{id_item:3,paramname:'test'}"
               })
             </div>
           </div>
@@ -369,7 +379,8 @@
       name="deal_observer[]" type="text"
       placeholder="Начните вводить фамилию">
     @include('partials/select-popup.html', {
-    'submit-script': 'test.txt'
+    'submit-script': 'test.txt',
+    'add-data': "{id_item:3,paramname:'test'}"
     })
   </div>
 </template>

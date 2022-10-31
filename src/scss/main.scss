@@ -31,7 +31,7 @@
 @import "./pages/income-traffic";
 @import "./pages/contact-card";
 @import "./pages/all-documents";
-
+@import "./pages/individual-card";
 
 
 
@@ -65,6 +65,7 @@
 @import "media/media-income-traffic";
 @import "media/media-contact-card";
 @import "media/media-all-documents";
+@import "media/media-individual-card";
 
 
 
@@ -89,3 +90,4 @@
 @import "./components/create-letter-modal";
 @import "./components/counterparty-alert-modal";
 @import "./components/contact-card-submenu";
+@import "./components/individual-card-submenu";

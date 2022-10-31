@@ -227,30 +227,6 @@
 
   }
 
-  .case-terms {
-    padding-bottom: 40px;
-    border-bottom: 1px dotted #C4C4C4;
-    margin-bottom: 40px;
-
-    &__item {
-      padding: 28px 35px 5px;
-      border: 2px dotted #C4C4C4;
-      border-radius: 15px;
-      margin-bottom: 18px;
-      position: relative;
-    }
-
-    .create-case-page__inputs {
-      max-width: 709px;
-      margin-bottom: 25px;
-    }
-
-    .create-case-page__input-wrapper {
-      width: 350px;
-    }
-
-
-  }
 
   .case-optional {
     margin-bottom: 72px;
@@ -332,7 +308,6 @@
           fill: $link;
         }
       }
-
     }
 
     &__item {
