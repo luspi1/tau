@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html', {
+'title': 'Карточка контакта',
+})
+
+<body class="page__body">
+<div class="site-container">
+  <div class="modal-overlay"></div>
+  @include('partials/header.html', {
+  'bottom-menu': 'bottom-menu_disabled',
+  'header-title': 'Ваши сделки'
+  })
+
+  <main class="main individual-card individual-card_counterparty">
+    @include('partials/individual-card-submenu.html', {
+    'individual-card': 'individual-card-submenu_active',
+    })
+    <div class="container">
+      <div class="individual-card__caption-img">
+        <img src="./img/contact-card-avatar.jpg" alt="Карточка контакта">
+      </div>
+
+      <div class="individual-card__inner">
+        <div class="individual-card__caption">
+          <div class="individual-card__caption-content">
+            <h1>Константинов К. К.</h1>
+            <p class="individual-card__caption-desc">
+              Физическое лицо
+            </p>
+            <ul class="individual-card__nav">
+              <li
+                class="individual-card__nav-item individual-card__nav-item_active"
+                data-nav="info">
+                Данные физлица
+              </li>
+              <li class="individual-card__nav-item" data-nav="contacts">
+                Контакты
+              </li>
+              <li class="individual-card__nav-item" data-nav="bank">
+                Банковские реквизиты
+              </li>
+            </ul>
+          </div>
+          <div class="individual-card__changeable">
+            <div
+              class="individual-card__changeable-item individual-card__changeable-item_active"
+              data-item="info">
+              <div class="individual-card__item-row">
+                <h4>
+                  Полное имя
+                </h4>
+                <p>
+                  Константинов
+                  Константин Константинович
+                </p>
+              </div>
+              <div class="individual-card__item-row">
+                <h4>
+                  Серия и номер паспорта
+                </h4>
+                <p>
+                  4003 546992
+                </p>
+              </div>
+              <div class="individual-card__item-row">
+                <h4>
+                  Когда выдан паспорт
+                </h4>
+                <p>
+                  06.11.2009
+                </p>
+              </div>
+              <div class="individual-card__item-row">
+                <h4>
+                  Кем выдан паспорт
+                </h4>
+                <p>
+                  ТП №50 отдела УФМС России по Санкт-Петербургу и Ленинградской
+                  обл. в Московском р-не гор. Санкт-Петербурга
+                </p>
+              </div>
+              <div class="individual-card__item-row">
+                <h4>
+                  ИНН
+                </h4>
+                <p>
+                  782801868911
+                </p>
+              </div>
+              <div class="individual-card__item-row">
+                <h4>
+                  СНИЛС
+                </h4>
+                <p>
+                  551-837-847 73
+                </p>
+              </div>
+            </div>
+            <div class="individual-card__changeable-item" data-item="contacts">
+              <div class="individual-card__item-row">
+                <h4>
+                  Номер телефона
+                </h4>
+                <p>
+                  +7 (999) 999-99-00
+                </p>
+              </div>
+              <div class="individual-card__item-row">
+                <h4>
+                  Номер телефона 2
+                </h4>
+                <p>
+                  +7 (999) 999-99-00
+                </p>
+              </div>
+              <div class="individual-card__item-row">
+                <h4>
+                  Номер телефона 3
+                </h4>
+                <p>
+                  +7 (999) 999-99-00
+                </p>
+              </div>
+              <div class="individual-card__item-row">
+                <h4>
+                  Электронная почта
+                </h4>
+                <p>
+                  <a href="#">info@site.com
+                  </a>
+                </p>
+              </div>
+              <div class="individual-card__item-row">
+                <h4>
+                  Адрес сайта
+                </h4>
+                <p>
+                  <a href="#">www.site.com</a>
+                </p>
+              </div>
+
+              <div class="contact-car__item-addresses">
+                <div class="individual-card__item-row">
+                  <h4>
+                    Адрес постоянной регистрации
+                  </h4>
+                  <p>
+                    <a href="#">125239, г. Москва, ул. Коптевская, д. 75Бк1</a>
+                  </p>
+                </div>
+                <div class="individual-card__item-row">
+                  <h4>
+                    Адрес временной регистрации
+                  </h4>
+                  <p>
+                    <a href="#">125239, г. Москва, ул. Коптевская, д. 75Бк1
+                    </a>
+                  </p>
+                </div>
+                <div class="individual-card__item-row">
+                  <h4>
+                    Адрес проживания
+                  </h4>
+                  <p>
+                    <a href="#">
+                      125239, г. Москва, ул. Коптевская, д. 75Бк1
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+            </div>
+            <div class="individual-card__changeable-item" data-item="bank">
+              <div class="individual-card__item-row">
+                <h4>
+                  Расчетный счет
+                </h4>
+                <p>
+                  40817810000013551194
+                </p>
+              </div>
+              <div class="individual-card__item-row">
+                <h4>
+                  Название банка
+                </h4>
+                <p>
+                  АО «Тинькофф Банк»
+                </p>
+              </div>
+              <div class="individual-card__item-row">
+                <h4>
+                  БИК
+                </h4>
+                <p>
+                  044525974
+                </p>
+              </div>
+              <div class="individual-card__item-row">
+                <h4>
+                  Корреспондентский счет
+                </h4>
+                <p>
+                  30101810145250000974
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <button class="individual-card__counter-btn" type="button">
+            Сделать контрагентом
+          </button>
+        </div>
+
+
+      </div>
+
+    </div>
+
+    @include('partials/info-modal.html')
+  </main>
+
+  @include('partials/footer.html')
+</div>
+
+</body>
+
+</html>

@@ -88,9 +88,11 @@ const showBigImgModal = (path) => {
 // функция отправки данных с попапа
 
 async function handlePopupSubmit (inputValue, popup) {
-  const jsonData = JSON.stringify(inputValue)
+  const inputData = JSON.stringify(inputValue)
+  const extraData = popup.dataset.json
   const submitScript = popup.dataset.script
-  const response = await sendData(jsonData, submitScript)
+  const totalData = [inputData, extraData]
+  const response = await sendData(totalData, submitScript)
   const finishedResponse = await response.json()
 
   const {status, errortext, html} = finishedResponse
