@@ -268,7 +268,19 @@ if (trafficSelects) {
   })
 }
 
+// Селекторы фильтров шаблонов и документов на странице "все документы и шаблоны"
+const templateDocumentsSelects = document.querySelectorAll('.all-documents__select-wrap select')
 
+if (templateDocumentsSelects) {
+  templateDocumentsSelects.forEach(el => {
+    const choices = new Choices(el, {
+      itemSelectText: '',
+      searchEnabled: false,
+      shouldSort: false,
+      allowHTML: true
+    });
+  })
+}
 
 export { initSelects, initPaymentSelects, initPaymentsSelect }
 
