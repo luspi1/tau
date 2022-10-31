@@ -1,0 +1,178 @@
+.all-documents {
+  .container {
+    padding-top: 33px;
+    padding-bottom: 150px;
+  }
+
+  &__title {
+    padding-bottom: 11px;
+    @include montserrat-semibold;
+    font-size: 36px;
+    line-height: 44px;
+    color: #000000;
+  }
+
+  &__filter-links {
+    padding: 5px 0 13px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__link {
+   display: block;
+    margin: 10px 24px 0 0;
+    line-height: 20px;
+    background-color: #ffffff;
+    border-bottom: 2px dotted #2F65F6;
+    color: #2F65F6;
+    cursor: pointer;
+
+    &.active {
+      font-weight: 600;
+      border-color: transparent;
+      cursor: auto;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__block {
+    width: 49%;
+    margin-top: 20px;
+    padding: 15px 12px 15px;
+    border: 1px solid #E6E6E6;
+    border-radius: 15px;
+  }
+
+  &__block-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__subtitle {
+    @include montserrat-semibold;
+    font-size: 22px;
+    line-height: 27px;
+    color: #000000;
+  }
+
+  &__select-wrap {
+    width: 455px;
+
+    .choices__placeholder {
+      font-size: 16px;
+      color: #858584;
+      opacity: 1;
+    }
+
+    .choices[data-type*="select-one"]::after {
+      border-width: 7px;
+      border-color: #817d8c transparent transparent transparent;
+    }
+
+    .choices {
+      width: 100%;
+
+      border: 1px solid transparent;
+
+      &.is-open {
+        border: 1px solid #3e29ca;
+        border-radius: 5px;
+      }
+    }
+
+    .choices[data-type*="select-one"].is-open::after {
+      margin-top: -2px;
+    }
+
+    .choices__inner {
+      min-height: auto;
+      height: 40px;
+      padding: 0 7.5px 0;
+      font-size: 17px;
+      line-height: 32px;
+      color: #858584;
+      background: #ffffff;
+      border: 1px solid #e6e6e6;
+      border-radius: 5px;
+    }
+
+    .choices__list[aria-expanded] .choices__item {
+      font-size: 16px;
+    }
+
+    .choices__list--dropdown .choices__item--selectable.is-highlighted,
+    .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+      background: #f8f8fa;
+      border-radius: 5px;
+    }
+
+    .choices__item.choices__item--choice.is-selected.choices__item--selectable {
+      color: #2f65f6;
+    }
+
+    .choices__list--dropdown,
+    .choices__list[aria-expanded] {
+      border: 1px solid #f8f8fa;
+      filter: drop-shadow(0px 0px 20px rgba(10, 35, 91, 0.15));
+      margin-top: 10px;
+    }
+  }
+
+
+  &__list,
+  .list {
+    padding-top: 15px;
+
+    li {
+      display: flex;
+      padding: 11px 13px 12px 17px;
+      background: #F7F8FA;
+      border-radius: 5px;
+      &:not(:last-child){
+        margin-bottom: 5px;
+      }
+    }
+
+    &__subtitle {
+      min-width: 70px;
+      line-height: 20px;
+      color: #858584;
+    }
+
+    &__title {
+      display: block;
+      padding-right: 10px;
+      margin-left: 26px;
+      line-height: 20px;
+      color: #2F65F6;
+    }
+
+    &__edit {
+      display: block;
+      margin: 0 0 0 auto;
+
+      svg {
+        &:hover path {
+          transition: .3s;
+          fill: #2F65F6;
+        }
+      }
+    }
+    &__status {
+      width: 16px;
+      height: 16px;
+      margin-left: 17px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      &.active {
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='17' height='18' viewBox='0 0 17 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M8.5 17.4C12.9183 17.4 16.5 13.8183 16.5 9.40002C16.5 4.98175 12.9183 1.40002 8.5 1.40002C4.08172 1.40002 0.5 4.98175 0.5 9.40002C0.5 13.8183 4.08172 17.4 8.5 17.4Z' stroke='%232F65F6' stroke-miterlimit='10'/%3e%3cpath d='M3.89844 9.90002C4.79844 10.9 6.09844 12.8 6.89844 14.1C8.69844 10.8 10.5984 8.10002 12.5984 5.80002L11.9984 5.10004C10.3984 6.80004 8.29844 9.60002 6.89844 11.8C6.19844 10.9 5.49839 10.1 4.59839 9.20004L3.89844 9.90002Z' fill='%232F65F6'/%3e%3c/svg%3e ");
+      }
+    }
+  }
+}

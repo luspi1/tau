@@ -282,7 +282,7 @@
       margin-top: 15px;
       margin-right: 22px;
       border: none;
-      border-bottom: 1px dotted #2f65f6;
+      border-bottom: 2px dotted #2f65f6;
       color: #2f65f6;
       background-color: #ffffff;
       white-space: nowrap;
@@ -290,6 +290,8 @@
 
       &.active {
         font-weight: 600;
+        border-color: transparent;
+        cursor: auto
       }
     }
   }
