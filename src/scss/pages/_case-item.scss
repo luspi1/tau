@@ -97,7 +97,7 @@
     }
 
     .payments {
-      margin-top: 40px;
+      margin-top: 55px;
 
       h4 {
         font-weight: 600;
@@ -108,7 +108,7 @@
 
 
       .table {
-        margin-top: 16px;
+        margin-top: 13px;
         width: 100%;
         tbody tr {
           text-align: left;
@@ -127,24 +127,18 @@
           }
 
           &:first-child {
-            width: 90px;
-          }
-
-          &:nth-child(2) {
-            width: 500px;
-            padding-left: 32px;
+            width: 37%;
           }
 
           &:last-child {
-            padding: 10px 10px 10px 55px;
-            white-space: nowrap;
+            padding: 10px 10px 10px 50px;
           }
         }
       }
     }
 
     &__fields {
-      margin-top: 38px;
+      margin-top: 50px;
 
       .case__minititle {
         margin-top: 18px;
