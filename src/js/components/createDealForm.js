@@ -1,10 +1,72 @@
 // Генерация нового наблюдателя на странице создания сделки
 
-import { initPaymentsSelect } from "./customSelect";
-import { initDateDeal } from "./customDate";
-import { initDateDealMask } from "./inputMask";
-import { closeSelectPopups, handlePopupInputs } from "../_functions";
+import {
+  closeSelectPopups,
+  handlePopupInputs,
+  handlePopupSubmit,
+} from "../_functions";
+import { modalOverlay } from "../_vars";
 
+
+// Генерация "Данные договора" в зависимости от кейса
+
+const dealCaseInput = document.querySelector('.create-deal-page__case-input')
+const dealAlertModal = document.querySelector('.deal-create-alert')
+
+const showDealAlert = () => {
+  dealAlertModal.hidden = false
+  modalOverlay.classList.add('modal-overlay_active')
+
+  const dealAlertCloseBtn = dealAlertModal.querySelector('.deal-create-alert__close-btn')
+  if (dealAlertCloseBtn) {
+    dealAlertCloseBtn.addEventListener('click', () => {
+      dealAlertModal.hidden = true
+      modalOverlay.classList.remove('modal-overlay_active')
+    })
+  }
+
+  modalOverlay.addEventListener('click', () => {
+    dealAlertModal.hidden = true
+    modalOverlay.classList.remove('modal-overlay_active')
+  })
+
+
+}
+
+
+if (dealCaseInput) {
+  dealCaseInput.addEventListener('input', (e) => {
+    let inputValue = e.target.value
+    const targetSelectPopup = e.currentTarget.closest('.select-input-wrapper').querySelector('.select-popup')
+    if (inputValue.length > 2) {
+      handlePopupSubmit(inputValue, targetSelectPopup)
+        .then(() => {
+          const popupElements = targetSelectPopup.querySelectorAll('li')
+          if (popupElements) {
+            popupElements.forEach(el => {
+              el.addEventListener('click', () => {
+                const targetInput = el.closest('.select-input-wrapper').querySelector('.select-popup-input')
+                const dataInput = el.closest('.select-input-wrapper').querySelector('.select-popup-data')
+                if (targetSelectPopup.dataset.selected === 'true' && inputValue) {
+                  showDealAlert()
+                } else {
+                  targetInput.value = el.textContent
+                  dataInput.value = el.dataset.id
+                  targetSelectPopup.classList.remove('select-popup_active')
+                  e.target.addEventListener('click', () => {
+                    targetSelectPopup.classList.add('select-popup_active')
+                  })
+                  targetSelectPopup.dataset.selected = "true"
+                }
+              })
+            })
+          } else {
+            targetSelectPopup.classList.remove('select-popup_active')
+          }
+        })
+    }
+  })
+}
 // Появления списка элементов полученных от сервера в полях "Контрагент", "Исполнитель",
 // "Наблюдатель"
 

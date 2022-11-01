@@ -36,13 +36,15 @@
                    class="create-deal-page__data-input select-popup-data"
                    type="hidden">
             <input
-              class="create-deal-page__input create-deal-page__popup-input select-popup-input"
+              class="create-deal-page__input create-deal-page__case-input select-popup-input"
               name="deal_choice" type="text"
               placeholder="Начните вводить название кейса...">
             @include('partials/select-popup.html', {
             'submit-script': 'test.txt',
             'add-data': "{id_item:3,paramname:'test'}"
             })
+            @include('partials/deal-create-alert.html')
+
           </div>
           <div class="create-deal-page__input-wrapper">
             <label>Название сделки</label>

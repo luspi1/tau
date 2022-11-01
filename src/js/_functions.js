@@ -142,7 +142,7 @@ const closeSelectPopups = (page) => {
   const siteContainer = page?.closest('.site-container')
   if (siteContainer) {
     siteContainer.addEventListener('click', (e) => {
-      if (!e.target.classList.contains('select-popup')) {
+      if (!e.target.classList.contains('select-popup') && !e.target.classList.contains('select-popup-input')) {
         const popupSelects = siteContainer.querySelectorAll('.select-popup_active')
         popupSelects.forEach(popup => {
           popup.classList.remove('select-popup_active')
