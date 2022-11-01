@@ -282,5 +282,30 @@ if (templateDocumentsSelects) {
   })
 }
 
+// Селектор фильтра типа документа на странице "только документы"
+const onlyDocumentSelect = document.querySelector('.only-documents__type-document')
+
+if (onlyDocumentSelect) {
+  const choices = new Choices(onlyDocumentSelect, {
+    itemSelectText: '',
+    searchEnabled: false,
+    shouldSort: false,
+    allowHTML: true
+  });
+}
+
+// Селектор фильтра типа шаблона на странице "только шаблоны"
+const onlyTemplateSelect = document.querySelector('.only-templates__type-templates')
+
+if (onlyTemplateSelect) {
+  const choices = new Choices(onlyTemplateSelect, {
+    itemSelectText: '',
+    searchEnabled: false,
+    shouldSort: false,
+    allowHTML: true
+  });
+}
+
+
 export { initSelects, initPaymentSelects, initPaymentsSelect }
 
