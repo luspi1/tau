@@ -43,24 +43,6 @@ if (templateObserverFragment) {
   }
 }
 
-// Генерация нового платежа на странице создания сделки
-
-const addPaymentsBtn = document.querySelector('.create-deal-caption__add-payments-btn')
-const paymentsList = document.querySelector('.create-deal-payments__list')
-const templatePaymentsFragment = document.querySelector('#deal-payments-template')?.content;
-if (templatePaymentsFragment) {
-  const templatePayment = templatePaymentsFragment.querySelector('.create-deal-payments__list-item')
-  if (addPaymentsBtn) {
-    addPaymentsBtn.addEventListener('click', (e) => {
-      e.preventDefault()
-      const paymentEl = templatePayment.cloneNode(true)
-      paymentsList.appendChild(paymentEl)
-      initPaymentsSelect()
-      initDateDeal()
-      initDateDealMask()
-    })
-  }
-}
 
 
 

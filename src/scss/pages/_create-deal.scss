@@ -19,8 +19,6 @@
   }
 
 
-
-
   &__prompt {
     background: #F4F7FB;
     border-radius: 5px;
@@ -30,6 +28,10 @@
     max-width: 500px;
     margin-left: 30px;
     margin-bottom: 14px;
+    p {
+      font-size: 16px;
+      line-height: 24px;
+    }
 
     &::before {
       content: '';
@@ -51,9 +53,8 @@
     margin-left: 0;
     max-width: 710px;
     margin-bottom: 27px;
+
     p {
-      font-size: 16px;
-      line-height: 24px;
       color: #000000;
     }
   }
@@ -107,6 +108,7 @@
     align-items: flex-start;
   }
 
+
   .choices {
     width: 100%;
     border: 1px solid transparent;
@@ -148,6 +150,7 @@
     filter: drop-shadow(0px 0px 20px rgba(10, 35, 91, 0.15));
     margin-top: 10px;
   }
+
 
   &__btns {
     display: flex;
@@ -296,19 +299,45 @@
   }
 
   .create-deal-payments {
-    padding: 50px 0 16px;
+    padding: 50px 0 60px;
     border-bottom: 1px dotted #C4C4C4;
 
-    .create-deal-page__input-wrapper {
-      max-width: 532px;
+    .create-deal-page__prompt-wrapper {
+      align-items: flex-start;
     }
 
-    .create-deal-page__inputs {
-      max-width: 532px;
+    &__list {
+      max-width: 770px;
+      flex-grow: 1;
+    }
+
+    &__list-item {
+      padding: 27px 30px 30px 30px;
+      border: 2px dotted #C4C4C4;
+      border-radius: 15px;
+      width: 100%;
+      &:not(:last-child) {
+        margin-bottom: 35px;
+      }
+    }
+
+    &__desc {
+      @include montserrat-regular;
+      font-size: 16px;
+      line-height: 20px;
+      color: #000000;
+      span {
+        font-weight: 600;
+      }
+    }
+
+    .create-deal-page__input-wrapper {
+      max-width: 711px;
     }
 
     .create-deal-page__date-wrapper {
       margin-left: 10px;
+      max-width: 262px;
     }
 
 
@@ -318,6 +347,7 @@
     .create-deal-page__prompt-wrapper {
       align-items: flex-start;
       margin-bottom: 27px;
+
       .create-deal-page__input-wrapper {
         margin-bottom: 0;
       }

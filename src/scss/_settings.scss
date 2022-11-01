@@ -186,6 +186,34 @@ select::-ms-expand {
   }
 }
 
+
+.input_disabled {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 19px;
+    background: url("../img/lock-icon.svg") no-repeat;
+    right: 25px;
+    top: 45px;
+    @media (max-width: 400px) {
+      top: 50px;
+    }
+  }
+
+
+  input {
+    background: #F2F1F7 !important;
+    color: #BFBDC7 !important;
+
+    &::placeholder {
+      color: #BFBDC7 !important;
+    }
+  }
+
+}
+
 .edit-doc-wrapper__input {
   position: absolute;
   visibility: hidden;

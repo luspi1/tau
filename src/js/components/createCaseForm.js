@@ -1,7 +1,26 @@
 import { initPaymentSelects } from "./customSelect";
+import { initDatePaymentsMask } from "./inputMask";
+import { initDatePayment } from "./customDate";
 
 let annexOptionalIndex = 1;
 
+
+const addTermsBtn = document.querySelector('.create-case-page__add-btn')
+const termsList = document.querySelector('.case-terms__items')
+const templateTermsFragment = document.querySelector('#case-terms-template')?.content;
+if (templateTermsFragment) {
+  const templateTerms = templateTermsFragment.querySelector('.case-terms__item')
+  if (addTermsBtn) {
+    addTermsBtn.addEventListener('click', (e) => {
+      e.preventDefault()
+      const termsEl = templateTerms.cloneNode(true)
+      termsList.appendChild(termsEl)
+      initPaymentSelects()
+      initDatePaymentsMask()
+      initDatePayment()
+    })
+  }
+}
 
 const addOptionalBtn = document.querySelector('.case-optional__add-btn')
 const optionalList = document.querySelector('.case-optional__items')
