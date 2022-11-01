@@ -1,4 +1,7 @@
 @media (max-width: 1024px) {
+  .all-documents .all-documents__title {
+    font-size: 32px;
+  }
   .all-documents .all-documents__wrapper {
     flex-direction: column;
   }
@@ -9,16 +12,19 @@
 }
 
 @media (max-width: 768px) {
+  .all-documents .all-documents__title {
+    font-size: 28px;
+  }
   .all-documents .all-documents__subtitle {
     margin-right: 15px;
   }
-  /* .all-documents .all-documents__wrapper {
+   .all-documents .all-documents__block {
     overflow-x: scroll;
   }
-  .all-documents .all-documents__block {
-    min-width: 600px;
 
-  } */
+  .all-documents .all-documents__list, .all-documents .list {
+    min-width: 500px;
+  }
 }
 
 @media (max-width: 578px) {

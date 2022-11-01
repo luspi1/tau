@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html', {
+'title': 'Все шаблоны',
+})
+
+<body class="page__body">
+  <div class="site-container">
+    <div class="modal-overlay"></div>
+    @include('partials/header.html', {
+    'bottom-menu': 'bottom-menu_disabled',
+    'header-title': ''
+    })
+
+    <main class="main">
+      <section class="only-templates">
+        <div class="container">
+          <div class="only-templates__top">
+            <h1 class="only-templates__title">Все шаблоны</h1>
+            <div class="only-templates__filter-links">
+              <a href="all-documents.html" class="only-templates__link">Документы и
+                шаблоны</a>
+              <a href="#" class="only-templates__link active">Только шаблоны</a>
+              <a href="only-documents.html" class="only-templates__link ">Только документы</a>
+            </div>
+            <div class="only-documents__select-wrap">
+              <select class="only-templates__type-templates" name="type-templates">
+                <option selected value="">тип шаблона</option>
+                <option value="type-templates_1">тип 1</option>
+                <option value="type-templates_2">тип 2</option>
+              </select>
+            </div>
+            <div class="only-templates__list-doc list-doc">
+              <div class="list-doc__item">
+                <div class="list-doc__row-title">
+                  <h3>Шаблон договора</h3><a href="#" target="_blank">№ 129/031 СТН от 10.04.2021</a>
+                  <p class="list-doc__status active">подписан</p>
+                </div>
+                <div class="list-doc__row-content">
+                  <div class="list-doc__wrapper">
+                    <div class="list-doc__colomn">
+                      <p class="list-doc__subtitle">Сделка</p>
+                      <a href="#" target="_blank">Раскопки в Нижнем 2194</a>
+                    </div>
+                    <div class="list-doc__colomn">
+                      <p class="list-doc__subtitle">Связи</p>
+                      <a href="#" target="_blank">12 подчиненных документов</a>
+                    </div>
+                    <div class="list-doc__colomn">
+                      <p class="list-doc__subtitle">Организация</p>
+                      <a href="#" target="_blank">ИП Краснощеков М.Е.</a>
+                    </div>
+                  </div>
+                  <div class="list-doc__wrapper">
+                    <div class="list-doc__colomn">
+                      <p class="list-doc__subtitle">Контрагент</p>
+                      <a href="#" target="_blank">ООО Четыре Танкиста и Собака</a>
+                    </div>
+                    <div class="list-doc__colomn">
+                      <p class="list-doc__subtitle">Скачать DOCX</p>
+                      <a href="#" class="list-doc__download" download>129/031 СТН.dox</a>
+                    </div>
+                    <div class="list-doc__colomn m0">
+                      <p class="list-doc__subtitle">Скачать PDF</p>
+                      <a href="#" class="list-doc__download" download>129/031 СТН.pdf</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="list-doc__item">
+                <div class="list-doc__row-title">
+                  <h3>Шаблон акта</h3><a href="#" target="_blank">№ 129/031 СТН от 10.04.2021</a>
+                  <p class="list-doc__status">подписан</p>
+                </div>
+                <div class="list-doc__row-content">
+                  <div class="list-doc__wrapper">
+                    <div class="list-doc__colomn">
+                      <p class="list-doc__subtitle">Сделка</p>
+                      <a href="#" target="_blank">Раскопки в Нижнем 2194</a>
+                    </div>
+                    <div class="list-doc__colomn">
+                      <p class="list-doc__subtitle">Связи</p>
+                      <a href="#" target="_blank">12 подчиненных документов</a>
+                    </div>
+                    <div class="list-doc__colomn">
+                      <p class="list-doc__subtitle">Организация</p>
+                      <a href="#" target="_blank">ИП Краснощеков М.Е.</a>
+                    </div>
+                  </div>
+                  <div class="list-doc__wrapper">
+                    <div class="list-doc__colomn">
+                      <p class="list-doc__subtitle">Контрагент</p>
+                      <a href="#" target="_blank">ООО Четыре Танкиста и Собака</a>
+                    </div>
+                    <div class="list-doc__colomn">
+                      <p class="list-doc__subtitle">Скачать DOCX</p>
+                      <a href="#" class="list-doc__download" download>129/031 СТН.dox</a>
+                    </div>
+                    <div class="list-doc__colomn m0">
+                      <p class="list-doc__subtitle">Скачать PDF</p>
+                      <a href="#" class="list-doc__download" download>129/031 СТН.pdf</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          @include('partials/pagination.html')
+
+        </div>
+      </section>
+    </main>
+
+    @include('partials/footer.html')
+  </div>
+
+</body>
+
+</html>
