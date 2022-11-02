@@ -24,7 +24,7 @@
             <ul class="new-contact__list">
               <li class="new-contact__list-item">
                 <p class="new-contact__input-title">Название контакта</p>
-                <input class="new-contact__input" name="newContactName"
+                <input class="new-contact__input" name="contactname"
                        type="text"
                        placeholder="Введите название контакта" required>
               </li>
@@ -32,7 +32,7 @@
               <li class="new-contact__list-item">
                 <p class="new-contact__input-title">Тип контакта</p>
                 <select class="new-contact__input new-contact__type-input"
-                        name="newContactType">
+                        name="id_contact_type">
                   <option value="">Выберите тип контакта</option>
                   <option value="counterparty">Контрагент</option>
                   <option value="non-counterparty">Не контрагент</option>
@@ -42,13 +42,13 @@
               <li class="new-contact__list-item">
                 <p class="new-contact__input-title">Телефон</p>
                 <input class="new-contact__input new-contact__phone-input"
-                       name="newContactPhone"
+                       name="telephone"
                        placeholder="+7 (___) ___-__-__" type="tel">
               </li>
               <li class="new-contact__list-item">
                 <p class="new-contact__input-title">E-mail</p>
                 <input class="new-contact__input"
-                       name="newContactEmail"
+                       name="email"
                        type="email"
                        placeholder="emailadress@website.com">
               </li>
@@ -56,7 +56,7 @@
                 <p class="new-contact__input-title">Описание контакта</p>
                 <textarea
                   class="new-contact__input new-contact__desc"
-                  name="newContactDesc"
+                  name="about"
                 ></textarea>
               </li>
             </ul>

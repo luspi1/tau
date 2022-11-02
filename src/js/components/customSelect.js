@@ -41,7 +41,7 @@ if (typeContactInput) {
 
 // Селекторы на странице редактирования контактов
 
-document.querySelectorAll('.edit-contact__item select').forEach(el => {
+document.querySelectorAll('.edit-contact__item select:not(.edit-contact__contact-type-btn)').forEach(el => {
   const choices = new Choices(el, {
     searchEnabled: false,
     itemSelectText: '',
@@ -49,6 +49,8 @@ document.querySelectorAll('.edit-contact__item select').forEach(el => {
     allowHTML: true
   });
 })
+
+
 
 // Селекторы на странице новой организации
 

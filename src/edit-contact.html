@@ -36,8 +36,7 @@
 
       <div class="container">
         <h1 class="edit-contact__title">Редактировать контакт</h1>
-        <form action="#" class="edit-contact__form" autocomplete="off"
-              data-contact="entity">
+        <form action="/include/ajax/edit_contact.php" class="edit-contact__form" autocomplete="off" data-contact="entity" method="post">
           <div class="edit-contact__item">
             <div class="edit-contact__item-wrapper">
               <div
@@ -575,34 +574,6 @@
                   </div>
                 </div>
               </div>
-              <div class="edit-contact__item">
-
-                <div
-                  class="edit-contact__item-wrapper edit-contact__contact-btns">
-                  <div
-                    class="edit-contact__input-wrapper">
-                    <button class="edit-contact__btn contragent-btn"
-                            type="submit"
-                            data-id="b940b56c-995d-42d2-885d-0708364d100d">
-                      Сделать
-                      контрагентом
-                    </button>
-                  </div>
-                  <div
-                    class="edit-contact__input-wrapper">
-                    <button class="edit-contact__sm-btn" type="button">Экспорт
-                      контакта в CSV
-                    </button>
-                  </div>
-                  <div
-                    class="edit-contact__input-wrapper">
-                    <button class="edit-contact__sm-btn" type="button">Экспорт
-                      контакта в PDF
-                    </button>
-                  </div>
-
-                </div>
-              </div>
             </div>
           </div>
 
@@ -799,6 +770,11 @@
                            name="physDatePassport"
                            type="text"
                            placeholder="Когда выдан паспорт"
+                           data-required="individual">
+                    <input class="edit-contact__input"
+                           name="physCodePassport"
+                           type="text"
+                           placeholder="Код подразделения"
                            data-required="individual">
                   </div>
                   <div
@@ -1064,36 +1040,36 @@
                   </div>
                 </div>
               </div>
-              <div class="edit-contact__item">
-
-                <div
-                  class="edit-contact__item-wrapper edit-contact__contact-btns">
-                  <div
-                    class="edit-contact__input-wrapper">
-                    <button class="edit-contact__btn contragent-btn"
-                            type="submit"
-                            data-id="c4c7de1e-8707-4156-a81b-5234a70bbf30">
-                      Сделать
-                      контрагентом
-                    </button>
-                  </div>
-                  <div
-                    class="edit-contact__input-wrapper">
-                    <button class="edit-contact__sm-btn" type="button">Экспорт
-                      контакта в CSV
-                    </button>
-                  </div>
-                  <div
-                    class="edit-contact__input-wrapper">
-                    <button class="edit-contact__sm-btn" type="button">Экспорт
-                      контакта в PDF
-                    </button>
-                  </div>
-
-                </div>
-              </div>
             </div>
 
+          </div>
+          <div class="edit-contact__item">
+
+            <div
+              class="edit-contact__item-wrapper edit-contact__contact-btns">
+              <div
+                class="edit-contact__input-wrapper">
+                <button class="edit-contact__btn contragent-btn"
+                        type="submit"
+                        data-id="b940b56c-995d-42d2-885d-0708364d100d">
+                  Сделать
+                  контрагентом
+                </button>
+              </div>
+              <div
+                class="edit-contact__input-wrapper">
+                <button class="edit-contact__sm-btn" type="button">Экспорт
+                  контакта в CSV
+                </button>
+              </div>
+              <div
+                class="edit-contact__input-wrapper">
+                <button class="edit-contact__sm-btn" type="button">Экспорт
+                  контакта в PDF
+                </button>
+              </div>
+
+            </div>
           </div>
 
           <div class="edit-contact__btns">

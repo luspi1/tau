@@ -3,7 +3,7 @@
 import {
   closeSelectPopups,
   handlePopupInputs,
-  handlePopupSubmit,
+  handlePopupSubmit, sendData, showInfoModal,
 } from "../_functions";
 import { modalOverlay } from "../_vars";
 
@@ -11,59 +11,82 @@ import { modalOverlay } from "../_vars";
 // Генерация "Данные договора" в зависимости от кейса
 
 const dealCaseInput = document.querySelector('.create-deal-page__case-input')
-const dealAlertModal = document.querySelector('.deal-create-alert')
+const dealCaseSelectPopup = dealCaseInput?.closest('.select-input-wrapper').querySelector('.select-popup')
 
+
+const dealAlertModal = document.querySelector('.deal-create-alert')
+const dealAlertCloseBtn = document.querySelector('.deal-create-alert__close-btn')
+const dealAlertSubmitBtn = document.querySelector('.deal-create-alert__agree-btn')
+
+const handleCaseSubmit = async (popupElValue) => {
+  const caseData = {id_case: 5}
+  const jsonCaseData = JSON.stringify(caseData)
+  const response = await sendData(jsonCaseData, "/include/ajax/get_case_info.php")
+  const finishedResponse = await response.json()
+
+  const {status, errortext, html} = finishedResponse
+  if (status === 'ok') {
+    dealTreatyData.innerHTML = html
+    dealCaseInput.value = popupElValue
+    dealCaseSelectPopup.dataset.selected = "true"
+  } else {
+    showInfoModal(errortext)
+  }
+}
+
+if (dealAlertCloseBtn) {
+  dealAlertCloseBtn.addEventListener('click', () => {
+    dealAlertModal.hidden = true
+    modalOverlay.classList.remove('modal-overlay_active')
+  })
+}
+if (dealAlertSubmitBtn) {
+  dealAlertSubmitBtn.addEventListener('click', () => {
+    dealAlertModal.hidden = true
+    modalOverlay.classList.remove('modal-overlay_active')
+    handleCaseSubmit(dealAlertModal.dataset.deal)
+  })
+}
+
+const dealTreatyData = document.querySelector('.create-deal-page .create-deal-data')
 const showDealAlert = () => {
   dealAlertModal.hidden = false
   modalOverlay.classList.add('modal-overlay_active')
-
-  const dealAlertCloseBtn = dealAlertModal.querySelector('.deal-create-alert__close-btn')
-  if (dealAlertCloseBtn) {
-    dealAlertCloseBtn.addEventListener('click', () => {
-      dealAlertModal.hidden = true
-      modalOverlay.classList.remove('modal-overlay_active')
-    })
-  }
-
   modalOverlay.addEventListener('click', () => {
     dealAlertModal.hidden = true
     modalOverlay.classList.remove('modal-overlay_active')
   })
+}
 
-
+if (dealCaseSelectPopup) {
+  dealCaseSelectPopup.addEventListener('click', (e) => {
+    const popupEl = e.target
+    if (popupEl.tagName === 'LI') {
+      dealAlertModal.dataset.deal = popupEl.textContent
+      if (e.currentTarget.dataset.selected === "true") {
+        showDealAlert()
+      } else {
+        handleCaseSubmit(popupEl.textContent)
+      }
+    }
+  })
 }
 
 
 if (dealCaseInput) {
+  dealCaseInput.addEventListener('click', (e) => {
+    const targetSelectPopup = e.currentTarget.closest('.select-input-wrapper').querySelector('.select-popup')
+    if (targetSelectPopup.dataset.selected === "true") {
+      targetSelectPopup.classList.add('select-popup_active')
+    }
+  })
+
+
   dealCaseInput.addEventListener('input', (e) => {
     let inputValue = e.target.value
     const targetSelectPopup = e.currentTarget.closest('.select-input-wrapper').querySelector('.select-popup')
     if (inputValue.length > 2) {
       handlePopupSubmit(inputValue, targetSelectPopup)
-        .then(() => {
-          const popupElements = targetSelectPopup.querySelectorAll('li')
-          if (popupElements) {
-            popupElements.forEach(el => {
-              el.addEventListener('click', () => {
-                const targetInput = el.closest('.select-input-wrapper').querySelector('.select-popup-input')
-                const dataInput = el.closest('.select-input-wrapper').querySelector('.select-popup-data')
-                if (targetSelectPopup.dataset.selected === 'true' && inputValue) {
-                  showDealAlert()
-                } else {
-                  targetInput.value = el.textContent
-                  dataInput.value = el.dataset.id
-                  targetSelectPopup.classList.remove('select-popup_active')
-                  e.target.addEventListener('click', () => {
-                    targetSelectPopup.classList.add('select-popup_active')
-                  })
-                  targetSelectPopup.dataset.selected = "true"
-                }
-              })
-            })
-          } else {
-            targetSelectPopup.classList.remove('select-popup_active')
-          }
-        })
     }
   })
 }

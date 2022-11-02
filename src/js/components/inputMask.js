@@ -86,7 +86,7 @@ newOrganizationPhoneInputs.forEach(el => {
 
 // Пасспортные данные на странице редактирования контакта
 
-const physPassportInput = document.querySelector('input[name="physNumberPassport"]');
+const physPassportInput = document.querySelector('.edit-contact input[name="physNumberPassport"]');
 
 if (physPassportInput) {
   Inputmask({
@@ -95,8 +95,8 @@ if (physPassportInput) {
     showMaskOnFocus: false,
   }).mask(physPassportInput);
 }
-const physDatePassportInput = document.querySelector('input[name="physDatePassport"]');
-
+const physDatePassportInput = document.querySelector('.edit-contact' +
+  ' input[name="physDatePassport"]');
 if (physDatePassportInput) {
   Inputmask({
     "mask": "99.99.9999",
@@ -104,6 +104,18 @@ if (physDatePassportInput) {
     showMaskOnFocus: false,
   }).mask(physDatePassportInput);
 }
+
+const physCodePassportInput = document.querySelector('.edit-contact' +
+  ' input[name="physCodePassport"]');
+if (physCodePassportInput) {
+  Inputmask({
+    "mask": "999-999",
+    showMaskOnHover: false,
+    showMaskOnFocus: false,
+  }).mask(physCodePassportInput);
+}
+
+
 
 // Снилс на странице документов
 

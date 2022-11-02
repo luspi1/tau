@@ -5,46 +5,62 @@ import {
   showInfoModal,
   toggleLoader
 } from "../_functions";
+import Choices from "choices.js";
 
 
-const editContactForm = document.querySelector('.edit-contact__form')
-const entityRequiredFields = document.querySelectorAll('input[data-required="entity"]')
-const entityIndividualFields = document.querySelectorAll('input[data-required="individual"]')
+const editContactForm = document.querySelector('.edit-contact .edit-contact__form')
+const editContactSelect = document.querySelector('.edit-contact .edit-contact__contact-type-btn')
+const entityRequiredFields = document.querySelectorAll('.edit-contact input[data-required="entity"]')
+const entityIndividualFields = document.querySelectorAll('.edit-contact input[data-required="individual"]')
 
 
 // Переключение обязательных полей в зависимости от типа контакта
 
-const toggleRequiredFields = (typeFields) => {
-  if (typeFields === 'entity') {
-    entityIndividualFields.forEach(el => {
+
+const toggleFieldsSelect = document.querySelector('.edit-contact__contact-type-btn')
+
+if (toggleFieldsSelect) {
+  const editContactChoices = new Choices(toggleFieldsSelect, {
+    searchEnabled: false,
+    itemSelectText: '',
+    shouldSort: false,
+    allowHTML: true
+  });
+
+  const toggleRequiredFields = (typeFields) => {
+    editContactChoices.setChoiceByValue(typeFields)
+
+    if (typeFields === 'entity') {
+      entityIndividualFields.forEach(el => {
+        el.required = false
+      })
+      entityRequiredFields.forEach(el => {
+        el.required = true
+      })
+      return
+    }
+    entityRequiredFields.forEach(el => {
       el.required = false
     })
-    entityRequiredFields.forEach(el => {
+    entityIndividualFields.forEach(el => {
       el.required = true
     })
-    return
   }
 
-  entityRequiredFields.forEach(el => {
-    el.required = false
-  })
-  entityIndividualFields.forEach(el => {
-    el.required = true
-  })
 
-}
-
-toggleRequiredFields('entity')
+  toggleRequiredFields(editContactForm.dataset.contact)
 
 // Переключения контента формы в зависимости от типа контакта
 
-const typeSelect = document.querySelector('.edit-contact__contact-type-btn')
+  const typeSelect = document.querySelector('.edit-contact__contact-type-btn')
 
-if (typeSelect) {
-  typeSelect.addEventListener('change', (e) => {
-    toggleRequiredFields(e.target.value)
-    editContactForm.dataset.contact = e.target.value
-  })
+  if (typeSelect) {
+    typeSelect.addEventListener('change', (e) => {
+      toggleRequiredFields(e.target.value)
+      editContactForm.dataset.contact = e.target.value
+    })
+  }
+
 }
 
 
@@ -52,30 +68,7 @@ if (typeSelect) {
 
 if (editContactForm) {
 
-  const submitBtns = document.querySelectorAll('button[type="submit"]')
-
-  async function handleFormSubmit (event) {
-    event.preventDefault()
-
-    const data = serializeForm(event.target)
-    const objData = formToObj(data)
-    const jsonData = JSON.stringify(objData)
-
-    toggleLoader()
-
-    const response = await sendData(jsonData, '/include/ajax/edit_contact.php')
-    const finishedResponse = await response.json()
-
-    toggleLoader()
-
-    const {status, errortext} = finishedResponse
-    if (status === 'ok') {
-      window.location.href = 'contacts.html';
-    } else {
-      showInfoModal(errortext)
-    }
-    editContactForm.removeEventListener('submit', handleFormSubmit)
-  }
+  const contragentSubmitBtn = document.querySelector('.edit-contact .contragent-btn')
 
 
   async function handleContragentSubmit (event) {
@@ -101,17 +94,11 @@ if (editContactForm) {
     editContactForm.removeEventListener('submit', handleContragentSubmit)
   }
 
-    if (submitBtns) {
-      submitBtns.forEach(btn => {
-        btn.addEventListener('click', e => {
-          if (e.target.classList.contains('contragent-btn')) {
-            editContactForm.addEventListener('submit', handleContragentSubmit)
-          } else {
-            editContactForm.addEventListener('submit', handleFormSubmit)
-          }
-        })
-      })
-    }
+  if (contragentSubmitBtn) {
+    contragentSubmitBtn.addEventListener('click', () => {
+      editContactForm.addEventListener('submit', handleContragentSubmit)
+    })
+  }
 }
 
 
