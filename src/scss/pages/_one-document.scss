@@ -1,0 +1,184 @@
+.one-document {
+  color: #000000;
+  >.container {
+    padding-bottom: 80px;
+  }
+  a {
+    color: #2F65F6;
+  }
+
+  .top {
+    .container {
+      padding: 32px 15px 16px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    h1 {
+      margin: 0;
+      @include montserrat-medium;
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+
+  >.container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .contract {
+    >.container {
+      max-width: 780px;
+      padding: 0;
+    }
+
+    h3 {
+      margin-bottom: 17px;
+      @include montserrat-semibold;
+      font-size: 20px;
+      line-height: 24px;
+
+    }
+
+    h4 {
+      margin-bottom: 11px;
+      @include montserrat-semibold;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    &__item {
+      display: flex;
+      font-size: 16px;
+      line-height: 34px;
+    }
+
+    &__minititle {
+      min-width: 190px;
+      margin-right: 25px;
+      @include montserrat-regular;
+
+      color: #858584;
+    }
+
+    &__name {
+      padding: 23px 30px 22px 0;
+      border-bottom: 2px dotted #C4C4C4;
+    }
+
+    &__payments {
+      padding: 22px 0 19px;
+      border-bottom: 2px dotted #C4C4C4;
+    }
+
+    &__data {
+      padding: 22px 0;
+      border-bottom: 2px dotted #C4C4C4;
+    }
+
+    &__app {
+      padding: 26px 0 21px;
+    }
+
+    &__btn {
+      background-color: #ffffff;
+      border: none;
+      color: #2F65F6;
+      cursor: pointer;
+    }
+    .long-hide {
+      max-width: 538px;
+      padding-right: 15px;
+      white-space: nowrap;
+      overflow: hidden;
+      position: relative;
+      &::after {
+        content: '...';
+        display: flex;
+        width: 15px;
+        height: 32px;
+        color: #2F65F6;
+        background-color: #ffffff;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+
+
+
+  .aside {
+    width: 550px;
+    height: 100%;
+    margin: 0;
+    padding: 23px 53px 25px 36px;
+    background-color: #f7f8fa;
+    border-radius: 15px;
+
+    .contract__minititle {
+      min-width: 155px;
+      margin-right: 14px;
+    }
+
+    .contract__info {
+      padding-bottom: 20px;
+      border-bottom: 2px dotted #C4C4C4;
+    }
+
+    .contract__pattern,
+    .contract__file {
+      padding: 29px 0 19px;
+      border-bottom: 2px dotted #C4C4C4;
+    }
+
+    .contract__connection {
+      padding: 29px 0 19px;
+    }
+
+    .contract__archive {
+      padding-top: 10px;
+      .contract__download {
+        margin-bottom: 20px;
+      }
+    }
+
+    .contract__download {
+      display: block;
+      &::before {
+        content: url("data:image/svg+xml;charset=UTF-8,%3csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M7.70312 14.8C6.30312 14.8 4.90317 14.8 3.50317 14.8C1.90317 14.8 0.703125 13.6 0.703125 12C0.703125 11.3 0.703125 10.7 0.703125 10C0.703125 9.6 1.00322 9.29999 1.30322 9.29999C1.70322 9.29999 1.90317 9.6 2.00317 10C2.00317 10.6 2.00317 11.3 2.00317 11.9C2.00317 12.8 2.60317 13.4 3.50317 13.4C6.30317 13.4 9.20317 13.4 12.0032 13.4C12.9032 13.4 13.5032 12.8 13.5032 11.9C13.5032 11.2 13.5032 10.6 13.5032 9.89999C13.5032 9.49999 13.8031 9.20001 14.2031 9.20001C14.6031 9.20001 14.8032 9.49999 14.8032 9.89999C14.8032 10.6 14.8032 11.3 14.8032 12C14.8032 13.5 13.6031 14.6 12.1031 14.7C10.5031 14.8 9.10312 14.8 7.70312 14.8Z' fill='%232F65F6'/%3e%3cpath d='M7.00097 8.79999C7.00097 8.69999 7.00097 8.6 7.00097 8.5C7.00097 6.2 7.00097 3.8 7.00097 1.5C7.00097 1.3 7.00092 1.09999 7.20092 0.899994C7.40092 0.699994 7.60102 0.700012 7.80102 0.700012C8.00102 0.800012 8.20102 0.900012 8.30102 1.20001C8.30102 1.30001 8.30102 1.4 8.30102 1.5C8.30102 3.8 8.30102 6.09999 8.30102 8.39999C8.30102 8.49999 8.30102 8.50001 8.30102 8.60001C8.40102 8.60001 8.40097 8.5 8.50097 8.5C9.30097 7.7 10.001 7.00001 10.801 6.20001C11.101 5.90001 11.4009 5.90001 11.7009 6.10001C12.0009 6.30001 12.001 6.7 11.801 7C11.801 7.1 11.7009 7.10001 11.6009 7.20001C10.5009 8.30001 9.30092 9.50001 8.20092 10.6C7.80092 11 7.50094 11 7.10094 10.6C5.90094 9.50001 4.80092 8.30001 3.70092 7.20001C3.30092 6.80001 3.40097 6.20001 4.00097 6.10001C4.30097 6.00001 4.50092 6.09999 4.70092 6.29999C5.40092 7.09999 6.20097 7.80001 7.00097 8.60001C6.90097 8.70001 6.90097 8.69999 7.00097 8.79999Z' fill='%232F65F6'/%3e%3c/svg%3e ");
+        margin-right: 8px;
+      }
+    }
+
+    &__item {
+      h4 {
+        margin-bottom: 20px;
+      }
+
+      a {
+        margin-bottom: 13px;
+      }
+    }
+
+    .contract__item-wrapper {
+      display: flex;
+    }
+
+    .contract__connection {
+      h4 {
+        margin-bottom: 11px;
+      }
+
+      a {
+        display: block;
+        min-width: 130px;
+
+        &:first-child {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
