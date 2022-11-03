@@ -266,6 +266,19 @@ const initCorrMask = () => {
 initCorrMask()
 
 
+// Даты на странице создания документа
+
+const docDateInputs = document.querySelectorAll('.create-doc-page .create-doc-page__date-input');
+if (docDateInputs) {
+  docDateInputs.forEach(el => {
+    Inputmask({
+      "mask": "99.99.9999",
+      showMaskOnHover: false,
+      showMaskOnFocus: false,
+    }).mask(el);
+  })
+}
+
 export { initDatePaymentsMask, initDateDealMask, initAccountCheckMask, initBikMask, initCorrMask }
 
 

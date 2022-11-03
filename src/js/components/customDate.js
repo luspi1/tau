@@ -35,8 +35,6 @@ new AirDatepicker(dateLetterModal, {
 });
 
 
-
-
 const initDatePayment = () => {
   const datePayments = document.querySelectorAll('.create-case-page__date-input');
 
@@ -85,4 +83,13 @@ const initTrafficCalendar = () => {
 initTrafficCalendar();
 
 
-export { initDatePayment, initDateDeal}
+const docDateInputs = document.querySelectorAll('.create-doc-page .create-doc-page__date-input');
+
+docDateInputs.forEach(el => {
+  new AirDatepicker(el, {
+    startDate,
+  });
+})
+
+
+export { initDatePayment, initDateDeal }

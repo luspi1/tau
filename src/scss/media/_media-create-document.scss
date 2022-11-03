@@ -1,0 +1,48 @@
+@media (max-width: 768px) {
+  .create-doc-page__input {
+    font-size: 14px;
+    line-height: 18px;
+    padding: 18px 13px;
+  }
+
+  .create-doc-page .choices__inner {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .create-doc-page .choices[data-type*=select-one] .choices__inner {
+    padding: 14px 8px 14px 8px;
+  }
+
+  .create-doc-page__inputs {
+    max-width: 272px;
+  }
+
+  .create-doc-page__input-wrapper .ask-icon {
+    top: 40px;
+  }
+  .create-doc-page__inputs .ask-icon {
+    top: 80px;
+  }
+
+  .create-doc-page__inputs {
+    flex-direction: column;
+    margin-bottom: 0;
+
+    .create-doc-page__input-wrapper {
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+  }
+
+  .create-doc-page__btns {
+    flex-direction: column;
+  }
+
+  .create-doc-page__btns .ask-icon {
+    margin: 15px 0 35px;
+  }
+
+
+}
