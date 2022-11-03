@@ -308,6 +308,18 @@ if (onlyTemplateSelect) {
   });
 }
 
+// Селектор типа документа на странице создания документа
+const typeDocSelect = document.querySelector('.create-doc-page__custom-select')
+
+if (typeDocSelect) {
+  const choices = new Choices(typeDocSelect, {
+    itemSelectText: '',
+    searchEnabled: false,
+    shouldSort: false,
+    allowHTML: true
+  });
+}
+
 
 export { initSelects, initPaymentSelects, initPaymentsSelect }
 

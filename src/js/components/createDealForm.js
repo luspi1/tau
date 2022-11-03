@@ -104,7 +104,6 @@ if (dealPopupInputs) {
 // закрытие попап-селектов
 
 const createDealPage = document.querySelector('.create-deal-page')
-
 closeSelectPopups(createDealPage)
 
 
