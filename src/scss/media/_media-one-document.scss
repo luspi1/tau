@@ -1,0 +1,81 @@
+@media(max-width: 1400px) {
+  .one-document>.container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .one-document .aside {
+    margin-top: 50px;
+  }
+}
+
+@media(max-width: 992px) {
+  .one-document .top h1 {
+    font-size: 30px;
+  }
+  .one-document .contract > .container {
+    max-width: 100%;
+  }
+  .one-document .contract .long-hide {
+    max-width: 330px;
+  }
+  .one-document .modal-contract {
+    width: 96%;
+  }
+}
+
+@media(max-width: 768px) {
+  .one-document .top .container {
+    padding-bottom: 0;
+  }
+  .one-document>.container {
+    align-items: flex-start;
+  }
+.one-document .contract .contract__item {
+  flex-direction: column;
+}
+.one-document .aside {
+  width: 100%;
+}
+.one-document .aside .contract__item {
+  white-space: nowrap;
+}
+
+.one-document .aside .contract__connection {
+  overflow-x: scroll;
+}
+.one-document .modal-contract {
+  padding: 60px 30px 80px;
+}
+.one-document .modal-contract h2 {
+  font-size: 32px;
+}
+}
+
+@media(max-width: 576px) {
+.one-document .top h1 {
+  font-size: 28px;
+}
+.one-document .contract__name {
+  padding-right: 0;
+}
+
+.one-document .contract .long-hide {
+  max-width: 260px;
+}
+
+.one-document .aside {
+  padding: 20px 10px;
+}
+
+.one-document .aside .contract__info .contract__item {
+  flex-direction: column;
+}
+.one-document .modal-contract {
+  padding: 60px 15px 80px;
+}
+.one-document .modal-contract h2 {
+  font-size: 28px;
+}
+}
+

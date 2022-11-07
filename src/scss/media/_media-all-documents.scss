@@ -2,6 +2,7 @@
   .all-documents .all-documents__title {
     font-size: 32px;
   }
+
   .all-documents .all-documents__wrapper {
     flex-direction: column;
   }
@@ -15,19 +16,30 @@
   .all-documents .all-documents__title {
     font-size: 28px;
   }
+
   .all-documents .all-documents__subtitle {
     margin-right: 15px;
   }
-   .all-documents .all-documents__block {
+
+  .all-documents .all-documents__block {
     overflow-x: scroll;
   }
 
-  .all-documents .all-documents__list, .all-documents .list {
+  .all-documents .all-documents__list,
+  .all-documents .list {
     min-width: 500px;
   }
 }
 
 @media (max-width: 578px) {
+  .all-documents .all-documents__filter-links {
+    flex-direction: column;
+  }
+
+  .all-documents .all-documents__link {
+    width: max-content;
+  }
+
   .all-documents .all-documents__block-row {
     flex-direction: column;
     justify-content: start;
