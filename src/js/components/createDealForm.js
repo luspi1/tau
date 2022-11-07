@@ -11,6 +11,7 @@ import { modalOverlay } from "../_vars";
 // Генерация "Данные договора" в зависимости от кейса
 
 const dealCaseInput = document.querySelector('.create-deal-page__case-input')
+const dealCaseDataInput = document.querySelector('.create-deal-page__data-case')
 const dealCaseSelectPopup = dealCaseInput?.closest('.select-input-wrapper').querySelector('.select-popup')
 
 
@@ -18,8 +19,9 @@ const dealAlertModal = document.querySelector('.deal-create-alert')
 const dealAlertCloseBtn = document.querySelector('.deal-create-alert__close-btn')
 const dealAlertSubmitBtn = document.querySelector('.deal-create-alert__agree-btn')
 
-const handleCaseSubmit = async (popupElValue) => {
-  const caseData = {id_case: 5}
+const handleCaseSubmit = async (popupElValue, popupElId) => {
+  const caseData = {id_case: popupElId}
+
   const jsonCaseData = JSON.stringify(caseData)
   const response = await sendData(jsonCaseData, "/include/ajax/get_case_info.php")
   const finishedResponse = await response.json()
@@ -27,6 +29,7 @@ const handleCaseSubmit = async (popupElValue) => {
   const {status, errortext, html} = finishedResponse
   if (status === 'ok') {
     dealTreatyData.innerHTML = html
+    dealCaseDataInput.value = popupElId
     dealCaseInput.value = popupElValue
     dealCaseSelectPopup.dataset.selected = "true"
   } else {
@@ -44,7 +47,7 @@ if (dealAlertSubmitBtn) {
   dealAlertSubmitBtn.addEventListener('click', () => {
     dealAlertModal.hidden = true
     modalOverlay.classList.remove('modal-overlay_active')
-    handleCaseSubmit(dealAlertModal.dataset.deal)
+    handleCaseSubmit(dealAlertModal.dataset.deal, dealAlertModal.dataset.caseId)
   })
 }
 
@@ -61,12 +64,16 @@ const showDealAlert = () => {
 if (dealCaseSelectPopup) {
   dealCaseSelectPopup.addEventListener('click', (e) => {
     const popupEl = e.target
+
+
     if (popupEl.tagName === 'LI') {
+
       dealAlertModal.dataset.deal = popupEl.textContent
+      dealAlertModal.dataset.caseId = popupEl.dataset.id
       if (e.currentTarget.dataset.selected === "true") {
         showDealAlert()
       } else {
-        handleCaseSubmit(popupEl.textContent)
+        handleCaseSubmit(popupEl.textContent, popupEl.dataset.id)
       }
     }
   })

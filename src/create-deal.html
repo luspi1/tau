@@ -33,7 +33,7 @@
           <div class="create-deal-page__input-wrapper select-input-wrapper">
             <label>Выбор кейса (шаблона) сделки</label>
             <input name="id_case"
-                   class="create-deal-page__data-input select-popup-data"
+                   class="create-deal-page__data-input create-deal-page__data-case select-popup-data"
                    type="hidden">
             <input
               class="create-deal-page__input create-deal-page__case-input select-popup-input"
@@ -41,7 +41,7 @@
               placeholder="Начните вводить название кейса...">
             @include('partials/select-popup.html', {
             'submit-script': 'test.txt',
-            'add-data': "{id_item:3,paramname:'test'}"
+            'add-data':'{"idItem":3,"paramname":"test"}'
             })
             @include('partials/deal-create-alert.html')
 
@@ -66,7 +66,7 @@
                 placeholder="Начните вводить название">
               @include('partials/select-popup.html', {
               'submit-script': 'test.txt',
-              'add-data': "{id_item:3,paramname:'test'}"
+              'add-data':'{"idItem":3,"paramname":"test"}'
               })
             </div>
             <div class="create-deal-caption__counterparty-wrapper">
@@ -89,7 +89,7 @@
               placeholder="Начните вводить название">
             @include('partials/select-popup.html', {
             'submit-script': 'test2.txt',
-            'add-data': "{id_item:3,paramname:'test'}"
+            'add-data':'{"idItem":3,"paramname":"test"}'
             })
           </div>
 
@@ -105,7 +105,7 @@
                 placeholder="Начните вводить фамилию">
               @include('partials/select-popup.html', {
               'submit-script': 'test3.txt',
-              'add-data': "{id_item:3,paramname:'test'}"
+              'add-data':'{"idItem":3,"paramname":"test"}'
               })
             </div>
           </div>
@@ -426,7 +426,7 @@
       placeholder="Начните вводить фамилию">
     @include('partials/select-popup.html', {
     'submit-script': 'test.txt',
-    'add-data': "{id_item:3,paramname:'test'}"
+    'add-data':'{"idItem":3,"paramname":"test"}'
     })
   </div>
 </template>
