@@ -42,6 +42,14 @@
 }
 
 @media (max-width: 578px) {
+  .only-documents .only-documents__filter-links {
+    flex-direction: column;
+  }
+
+  .only-documents .only-documents__link {
+    width: max-content;
+  }
+
   .only-documents .only-documents__select-wrap {
     width: 100%;
   }

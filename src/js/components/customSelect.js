@@ -297,15 +297,17 @@ if (onlyDocumentSelect) {
 }
 
 // Селектор фильтра типа шаблона на странице "только шаблоны"
-const onlyTemplateSelect = document.querySelector('.only-templates__type-templates')
+const onlyTemplatesSelects = document.querySelectorAll('.only-templates__select-wrap select')
 
-if (onlyTemplateSelect) {
-  const choices = new Choices(onlyTemplateSelect, {
-    itemSelectText: '',
-    searchEnabled: false,
-    shouldSort: false,
-    allowHTML: true
-  });
+if (onlyTemplatesSelects) {
+  onlyTemplatesSelects.forEach(el => {
+    const choices = new Choices(el, {
+      itemSelectText: '',
+      searchEnabled: false,
+      shouldSort: false,
+      allowHTML: true
+    });
+  })
 }
 
 // Селектор типа документа на странице создания документа
@@ -320,6 +322,17 @@ if (typeDocSelect) {
   });
 }
 
+// Селектор фильтра типа документа на странице "создания шаблона"
+const typeTemplateSelect = document.querySelector('.create-template__type-doc')
+
+if (typeTemplateSelect) {
+  const choices = new Choices(typeTemplateSelect, {
+    itemSelectText: '',
+    searchEnabled: false,
+    shouldSort: false,
+    allowHTML: true
+  });
+}
 
 export { initSelects, initPaymentSelects, initPaymentsSelect }
 

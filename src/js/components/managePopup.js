@@ -12,6 +12,11 @@ const cancelNewEmployeeBtn = document.querySelector('.modal-new-employee__close-
 const cancelComingBtn = document.querySelector('.income-page .modal-incoming__close-btn')
 const cancelLetterBtn = document.querySelector('.modal-create-letter__close-btn')
 const cancelCounterpartyAlertBtn = document.querySelector('.modal-counterparty-alert__close-btn')
+const cancelSubjectBtn = document.querySelector('.modal-contract__close-subject')
+const cancelConfidentialBtn = document.querySelector('.modal-contract__close-confidential')
+const cancelAppBtn = document.querySelector('.modal-contract__close-app')
+
+
 
 
 const editFullnameBtn = document.querySelector('.edit-fullname')
@@ -29,6 +34,10 @@ const createLetterBtn = document.querySelector('.correspondence .newmail-btn')
 const editLetterBtn = document.querySelector('.correspondence-item .newmail-one__btn')
 const counterpartyAlertBtn = document.querySelector('.create-deal-page' +
   ' .create-deal-caption__counterparty-btn')
+const contractSubjectBtn = document.querySelector('.contract__btn-subject')
+const contractConfidentialBtn = document.querySelector('.contract__btn-confidential')
+const contractAppBtn = document.querySelector('.contract__btn-app')
+
 
 
 // Управление состоянием модалок
@@ -55,7 +64,10 @@ const manageModals = (...editButtons) => {
           cancelNewEmployeeBtn,
           cancelComingBtn,
           cancelLetterBtn,
-          cancelCounterpartyAlertBtn
+          cancelCounterpartyAlertBtn,
+          cancelSubjectBtn,
+          cancelConfidentialBtn,
+          cancelAppBtn
         )
       })
     }
@@ -76,7 +88,10 @@ manageModals(
   joinDirector,
   createLetterBtn,
   editLetterBtn,
-  counterpartyAlertBtn
+  counterpartyAlertBtn,
+  contractSubjectBtn,
+  contractConfidentialBtn,
+  contractAppBtn
 )
 
 
