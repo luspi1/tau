@@ -1,4 +1,4 @@
-import { modalOverlay } from "../_vars";
+ import { modalOverlay } from "../_vars";
 import { closePopup } from "../_functions";
 
 const cancelFullnameBtn = document.querySelector('.modal-fullname__close-btn')
