@@ -8,6 +8,7 @@ const modalNewContact = document.querySelector('.new-contact')
 const infoModal = document.querySelector('.info-modal')
 const loader = document.querySelector('.loader')
 const bigImgModal = document.querySelector('.big-img-modal')
+const modalConnectLeader = document.querySelector('.modal-connect-leader')
 
 export {
   body,
@@ -19,5 +20,6 @@ export {
   modalNewContact,
   infoModal,
   loader,
-  bigImgModal
+  bigImgModal,
+  modalConnectLeader
 }

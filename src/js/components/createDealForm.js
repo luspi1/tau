@@ -21,7 +21,7 @@ const dealAlertSubmitBtn = document.querySelector('.deal-create-alert__agree-btn
 
 const handleCaseSubmit = async (popupElValue, popupElId) => {
   const caseData = {id_case: popupElId}
-
+  console.log(popupElId)
   const jsonCaseData = JSON.stringify(caseData)
   const response = await sendData(jsonCaseData, "/include/ajax/get_case_info.php")
   const finishedResponse = await response.json()
@@ -67,7 +67,6 @@ if (dealCaseSelectPopup) {
 
 
     if (popupEl.tagName === 'LI') {
-
       dealAlertModal.dataset.deal = popupEl.textContent
       dealAlertModal.dataset.caseId = popupEl.dataset.id
       if (e.currentTarget.dataset.selected === "true") {

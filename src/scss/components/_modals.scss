@@ -1057,29 +1057,12 @@
   }
 
   &__connect-btn {
-    margin-bottom: 90px;
     position: relative;
     margin-top: 30px;
     @media (max-width: 768px) {
       margin-bottom: 20px;
     }
 
-
-    &::after {
-      content: '';
-      position: absolute;
-      width: 700px;
-      height: 1px;
-      background-color: #D8D8D8;
-      bottom: -50px;
-      left: 0;
-      @media (max-width: 1024px) {
-        width: 550px;
-      }
-      @media (max-width: 768px) {
-        display: none;
-      }
-    }
   }
 
 

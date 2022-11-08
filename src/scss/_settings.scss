@@ -73,6 +73,11 @@ select::-ms-expand {
   display: none;
 }
 
+.hidden-text {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .site-container {
   position: relative;
   overflow: hidden;

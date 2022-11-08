@@ -122,6 +122,7 @@ async function handlePopupSubmit (inputValue, popup) {
 
 const handlePopupInputs = (e) => {
   let inputValue = e.target.value
+
   const targetSelectPopup = e.currentTarget.closest('.select-input-wrapper').querySelector('.select-popup')
   if (inputValue.length > 2) {
     handlePopupSubmit(inputValue, targetSelectPopup)
@@ -162,6 +163,15 @@ const closeSelectPopups = (page) => {
 }
 
 
+const blockFields = (inputsWrapper) => {
+  if (inputsWrapper) {
+    inputsWrapper.forEach(wrapper => {
+      wrapper.classList.add('input_disabled')
+      wrapper.querySelector('input').disabled = true
+    })
+  }
+}
+
 export {
   closePopup,
   removeClasses,
@@ -174,5 +184,6 @@ export {
   showBigImgModal,
   handlePopupSubmit,
   handlePopupInputs,
-  closeSelectPopups
+  closeSelectPopups,
+  blockFields
 }

@@ -195,19 +195,24 @@
   }
 
 
-  &__add-contact {
-    button {
-      padding: 13px 32px;
-    }
+  &__item-director {
+    justify-content: flex-start;
+  }
+
+  &__director-btns {
+    margin-left: 20px;
   }
 
   &__director-fullname {
-    padding-bottom: 45px;
-    border-bottom: 1px dotted #C4C4C4;
 
     .edit-contact__input-wrapper {
       width: 32.5%;
     }
+  }
+
+  &__fullname-section {
+    padding-bottom: 20px;
+    border-bottom: 1px dotted #C4C4C4;
   }
 
   &__organization-section {

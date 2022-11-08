@@ -13,7 +13,7 @@
   'header-title': ''
   })
 
-  <main class="main">
+  <main class="main edit-contact-page">
     <section class="section edit-contact">
       <div class="modal-connect-leader modal" id="connect-leader-modal">
         <h2>Подключить руководителя</h2>
@@ -21,22 +21,42 @@
           контакты,
           в качестве руководителя этой организации, введите его фамилию и
           выберите подходящий контакт.</p>
-        <div class="modal-connect-leader__input-wrapper">
-          <input class="modal-connect-leader__input" type="text" name="leader_search" placeholder="Начните вводить фамилию">
-          <svg class="modal-connect-leader__delete-btn" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path class="modal-connect-leader__svg-bg" d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="white"/>
-            <path class="modal-connect-leader__svg-icon" d="M9.99993 11.1249C9.49993 11.6249 8.99993 12.1249 8.37493 12.7499C7.74993 13.3749 6.99993 14.1249 6.37493 14.7499C5.99993 15.1249 5.49993 15.1249 5.12493 14.7499C4.74993 14.3749 4.74993 13.8749 5.12493 13.4999C6.24993 12.3749 7.37493 11.2499 8.49993 10.1249C8.62493 9.99991 8.62493 9.99993 8.74993 9.87493C8.62493 9.74993 8.62493 9.74991 8.49993 9.62491C7.37493 8.49991 6.24993 7.37494 5.12493 6.24994C4.62493 5.74994 4.74993 5.12493 5.37493 4.87493C5.74993 4.74993 6.12493 4.74991 6.37493 5.12491C7.49993 6.24991 8.62493 7.37491 9.62493 8.37491C9.74993 8.49991 9.74992 8.49993 9.87492 8.62493C9.99992 8.49993 9.99993 8.49991 10.1249 8.37491C11.2499 7.24991 12.3749 6.12494 13.4999 4.99994C13.9999 4.49994 14.6249 4.62491 14.8749 5.24991C14.9999 5.62491 14.8749 5.87494 14.6249 6.24994C13.4999 7.37494 12.3749 8.49991 11.2499 9.62491C11.1249 9.74991 11.1249 9.74993 10.9999 9.87493C11.1249 9.99993 11.1249 9.99991 11.2499 10.1249C12.3749 11.2499 13.4999 12.3749 14.6249 13.4999C14.8749 13.7499 14.9999 14.2499 14.7499 14.4999C14.6249 14.8749 14.2499 14.9999 13.8749 14.8749C13.7499 14.8749 13.4999 14.7499 13.3749 14.6249C12.2499 13.4999 11.1249 12.4999 10.1249 11.3749C10.2499 11.2499 10.1249 11.2499 9.99993 11.1249Z" fill="#969696"/>
-          </svg>
-        </div>
-        <button class="modal-connect-leader__btn modal-connect-leader__connect-btn" type="button">Подключить руководителя</button>
-        <p>Если этого физического лица еще нет в Ваших контактах, создайте
-          контакт.</p>
-        <button class="modal-connect-leader__btn modal-connect-leader__contact-btn" type="button">Создать новый контакт</button>
+
+        <form class="modal-connect-leader__form" action="#">
+          <div class="modal-connect-leader__input-wrapper select-input-wrapper">
+            <input name="id_leader_name"
+                   class="select-popup-data"
+                   type="hidden">
+            <input class="modal-connect-leader__input select-popup-input" type="text"
+                   name="leader_search" placeholder="Начните вводить фамилию">
+            <svg class="modal-connect-leader__delete-btn" width="20" height="20"
+                 viewBox="0 0 20 20" fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path class="modal-connect-leader__svg-bg"
+                    d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z"
+                    fill="white"/>
+              <path class="modal-connect-leader__svg-icon"
+                    d="M9.99993 11.1249C9.49993 11.6249 8.99993 12.1249 8.37493 12.7499C7.74993 13.3749 6.99993 14.1249 6.37493 14.7499C5.99993 15.1249 5.49993 15.1249 5.12493 14.7499C4.74993 14.3749 4.74993 13.8749 5.12493 13.4999C6.24993 12.3749 7.37493 11.2499 8.49993 10.1249C8.62493 9.99991 8.62493 9.99993 8.74993 9.87493C8.62493 9.74993 8.62493 9.74991 8.49993 9.62491C7.37493 8.49991 6.24993 7.37494 5.12493 6.24994C4.62493 5.74994 4.74993 5.12493 5.37493 4.87493C5.74993 4.74993 6.12493 4.74991 6.37493 5.12491C7.49993 6.24991 8.62493 7.37491 9.62493 8.37491C9.74993 8.49991 9.74992 8.49993 9.87492 8.62493C9.99992 8.49993 9.99993 8.49991 10.1249 8.37491C11.2499 7.24991 12.3749 6.12494 13.4999 4.99994C13.9999 4.49994 14.6249 4.62491 14.8749 5.24991C14.9999 5.62491 14.8749 5.87494 14.6249 6.24994C13.4999 7.37494 12.3749 8.49991 11.2499 9.62491C11.1249 9.74991 11.1249 9.74993 10.9999 9.87493C11.1249 9.99993 11.1249 9.99991 11.2499 10.1249C12.3749 11.2499 13.4999 12.3749 14.6249 13.4999C14.8749 13.7499 14.9999 14.2499 14.7499 14.4999C14.6249 14.8749 14.2499 14.9999 13.8749 14.8749C13.7499 14.8749 13.4999 14.7499 13.3749 14.6249C12.2499 13.4999 11.1249 12.4999 10.1249 11.3749C10.2499 11.2499 10.1249 11.2499 9.99993 11.1249Z"
+                    fill="#969696"/>
+            </svg>
+            @include('partials/select-popup.html', {
+            'submit-script': 'test.txt',
+            'add-data':'{"idItem":3,"paramname":"test"}'
+            })
+          </div>
+          <button
+            class="modal-connect-leader__btn modal-connect-leader__connect-btn"
+            type="submit">Подключить руководителя
+          </button>
+        </form>
+
+
       </div>
 
       <div class="container">
         <h1 class="edit-contact__title">Редактировать контакт</h1>
-        <form action="/include/ajax/edit_contact.php" class="edit-contact__form" autocomplete="off" data-contact="entity" method="post">
+        <form action="/include/ajax/edit_contact.php" class="edit-contact__form"
+              autocomplete="off" data-contact="entity" method="post">
           <div class="edit-contact__item">
             <div class="edit-contact__item-wrapper">
               <div
@@ -100,49 +120,130 @@
                     class="edit-contact__input-wrapper edit-contact__director-btns">
                     <button
                       class="edit-contact__btn edit-contact__connect-leader-btn"
-                      type="button" data-modal="connect-leader-modal">Подключить контакт в
+                      type="button" data-modal="connect-leader-modal">Подключить
+                      контакт в
                       качестве руководителя
-                    </button>
-                  </div>
-                  <div
-                    class="edit-contact__input-wrapper edit-contact__director-btns edit-contact__add-contact">
-                    <button class="edit-contact__btn" type="button">Добавить
-                      контакт
                     </button>
                   </div>
                 </div>
 
               </div>
+
+            </div>
+
+            <div class="edit-contact__section edit-contact__fullname-section">
+              <h2 class="edit-contact__section-title">
+                ФИО руководителя
+              </h2>
+
               <div class="edit-contact__item">
-                <p class="edit-contact__input-title">
-                  ФИО руководителя
-                </p>
                 <div
                   class="edit-contact__item-wrapper edit-contact__director-fullname">
                   <div
                     class="edit-contact__input-wrapper">
+                    <p class="edit-contact__input-title">
+                      Именительный падеж
+                    </p>
                     <input class="edit-contact__input" type="text"
-                           name="editDirectorLastname"
+                           name="editDirectorNominativeLastname"
                            placeholder="Иванов / Иванова"
                            data-required="entity">
                   </div>
                   <div
                     class="edit-contact__input-wrapper">
+                    <p class="edit-contact__input-title">
+                      Имя
+                    </p>
                     <input class="edit-contact__input" type="text"
-                           name="editDirectorName"
+                           name="editDirectorNominativeName"
                            placeholder="Иван / Мария" data-required="entity">
                   </div>
                   <div
                     class="edit-contact__input-wrapper">
+                    <p class="edit-contact__input-title">
+                      Отчество
+                    </p>
                     <input class="edit-contact__input" type="text"
-                           name="editDirectorPatronymic"
+                           name="editDirectorNominativePatronymic"
                            placeholder="Иванович / Ивановна"
                            data-required="entity">
                   </div>
                 </div>
 
               </div>
+              <div class="edit-contact__item">
+                <div
+                  class="edit-contact__item-wrapper edit-contact__director-fullname">
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <p class="edit-contact__input-title">
+                      Родительный падеж
+                    </p>
+                    <input class="edit-contact__input" type="text"
+                           name="editDirectorGenitiveLastname"
+                           placeholder="Иванова / Ивановы"
+                           data-required="entity">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <p class="edit-contact__input-title hidden-text">
+                      Родительный падеж
+                    </p>
+                    <input class="edit-contact__input" type="text"
+                           name="editDirectorGenitiveName"
+                           placeholder="Ивана / Марии" data-required="entity">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <p class="edit-contact__input-title hidden-text">
+                      Родительный падеж
+                    </p>
+                    <input class="edit-contact__input" type="text"
+                           name="editDirectorGenitivePatronymic"
+                           placeholder="Ивановича / Ивановны"
+                           data-required="entity">
+                  </div>
+                </div>
+
+              </div>
+              <div class="edit-contact__item">
+                <div
+                  class="edit-contact__item-wrapper edit-contact__director-fullname">
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <p class="edit-contact__input-title">
+                      Дательный падеж
+                    </p>
+                    <input class="edit-contact__input" type="text"
+                           name="editDirectorDativeLastname"
+                           placeholder="Иванову / Ивановой"
+                           data-required="entity">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <p class="edit-contact__input-title hidden-text">
+                      Дательный падеж
+                    </p>
+                    <input class="edit-contact__input" type="text"
+                           name="editDirectorDativeName"
+                           placeholder="Ивану / Марии" data-required="entity">
+                  </div>
+                  <div
+                    class="edit-contact__input-wrapper">
+                    <p class="edit-contact__input-title hidden-text">
+                      Дательный падеж
+                    </p>
+                    <input class="edit-contact__input" type="text"
+                           name="editDirectorDativePatronymic"
+                           placeholder="Ивановичу / Ивановне"
+                           data-required="entity">
+                  </div>
+                </div>
+
+              </div>
+
             </div>
+
             <div
               class="edit-contact__section edit-contact__organization-section">
               <h2 class="edit-contact__section-title">
