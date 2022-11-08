@@ -23,3 +23,8 @@ $caption: #858584;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 }
+
+@mixin inter-regular {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
