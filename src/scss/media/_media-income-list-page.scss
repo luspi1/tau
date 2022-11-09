@@ -28,23 +28,97 @@
 
 @media (max-width: 768px) {
 
+  .income-list-page {
+    padding: 15px 0 25px;
+  }
+
+  .income-list-page .pagination {
+    display: none;
+  }
+
   .income-list-page__title {
     width: 100%;
     margin-right: 0;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    line-height: 20px;
   }
+
+  .income-list-page__title-content {
+    margin-bottom: 0;
+  }
+
 
   .income-list-page .choices {
     margin-bottom: 15px;
+    width: 140px;
+    margin-right: 5px;
+  }
+
+  .income-list-page .choices__list .choices__item--selectable, .income-list-page .choices__list .choices__list[aria-expanded] .choices__item--selectable {
+    padding-right: 5px;
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .income-list-page .choices__inner {
+    padding-left: 6px;
+    min-height: 22px;
+    height: 32px;
+    font-size: 4px;
   }
 
 
-  .income-list-page .income-list-table {
-    overflow-x: auto;
+  .income-list-page .income-list-table .flex-table__row {
+    flex-direction: column;
+  }
+
+  .income-list-page .income-list-table .flex-table__cell {
+    display: flex;
+    width: 100%;
+  }
+  .income-list-page .income-list-table .flex-table__cell .flex-table__cell-title {
+    margin-right: 10px;
+    min-width: 136px;
+  }
+
+  .income-list-page .income-list-table .flex-table__cell {
+    padding: 3px 0 3px 0;
+  }
+
+  .income-list-page .income-list-table .flex-table__cell .flex-table__cell-title_desktop {
+    display: none;
+  }
+  .income-list-page .income-list-table .flex-table__cell .flex-table__cell-title_mobile{
+    display: block;
+  }
+
+  .income-list-page .income-list-table .flex-table__row .income-list-table__balance-cell {
+    width: 100%;
+    padding-left: 0;
   }
 
   .income-list-page .income-list-table .flex-table__row {
-    width: 800px;
+    background: none;
+    border-radius: 0;
+    padding: 0 0 0 0;
+    margin-bottom: 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid #E6E6E6;
+      margin-bottom: 5px;
+    }
+  }
+
+  .income-list-page .income-list-table__balance-cell_negative {
+    background: none;
+  }
+  .income-list-page .income-list-table__balance-cell_positive {
+    background: none;
+  }
+
+  .income-list-page .income-list-table .income-list-table__activity-cell .flex-table__cell-link {
+    order: 2;
   }
 
 }

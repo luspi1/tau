@@ -1,6 +1,7 @@
 .footer {
   padding: 14px 0;
   background: linear-gradient(90deg, #5141B3 0%, #484BBD 35.77%, #2F64D8 96.83%, #2E66DA 100%);
+
   .container {
     display: flex;
     align-items: center;
@@ -86,31 +87,20 @@
 }
 
 @media (max-width: 768px) {
-  .footer .container {
-    flex-direction: column;
-  }
+
   .footer__menu {
-    width: 65%;
-    margin-bottom: 15px;
+    display: none;
   }
 
-  .footer__copyright {
+  .footer .footer__copyright {
     margin-right: 0;
-    margin-bottom: 15px;
+    font-size: 10px;
+    line-height: 12px;
   }
 
   .footer__connection {
-    margin-left: 0;
+    display: none;
   }
 
 }
 
-@media (max-width: 540px) {
-  .footer__menu {
-    width: 100%;
-  }
-  .footer__email {
-    margin-right: 10px;
-  }
-
-}
