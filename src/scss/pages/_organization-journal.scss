@@ -1,34 +1,64 @@
 .organization-journal {
   color: #000000;
+
   .container {
     padding-bottom: 50px;
   }
+
   .journal {
     &__title {
-      padding: 19px 0 22px;
+      padding: 19px 0 27px;
       @include montserrat-semibold;
       font-size: 36px;
       line-height: 44px;
 
     }
 
-    .table-wrap {
-      .table {
-        width: 100%;
-        border-spacing: 0px 5px;
+    .flex-table {
+
+      &__row {
+        margin-bottom: 5px;
+        padding: 14px 20px 15px 14px;
+        border-radius: 5px;
+        background: #F7F8FA;
+
+      }
+
+      &__row-title {
+        background: #F7F8FA;
+        .flex-table__cell {
+          color: #858584;
+        }
+
+      }
+
+      &__cell {
+        color: #000000;
+
         a {
           color: #2f65f6;
         }
+      }
+      &__cell-type{
+        min-width: none;
+      }
+    }
+
+    /*  .table-wrap {
+      .table {
+        width: 100%;
+        border-spacing: 0px 5px;
+
         thead {
           td {
             padding: 14px 0 15px 15px;
           }
 
           tr {
-            color: #858584;
-            background: #F7F8FA;
+
+
             line-height: 20px;
-            border-radius: 5px;
+
           }
         }
 
@@ -61,6 +91,6 @@
           }
         }
       }
-    }
+    } */
   }
 }
