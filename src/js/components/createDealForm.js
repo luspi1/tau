@@ -21,7 +21,6 @@ const dealAlertSubmitBtn = document.querySelector('.deal-create-alert__agree-btn
 
 const handleCaseSubmit = async (popupElValue, popupElId) => {
   const caseData = {id_case: popupElId}
-  console.log(popupElId)
   const jsonCaseData = JSON.stringify(caseData)
   const response = await sendData(jsonCaseData, "/include/ajax/get_case_info.php")
   const finishedResponse = await response.json()
@@ -51,7 +50,7 @@ if (dealAlertSubmitBtn) {
   })
 }
 
-const dealTreatyData = document.querySelector('.create-deal-page .create-deal-data')
+const dealTreatyData = document.querySelector('.create-deal-page .create-deal-page__changeable-content')
 const showDealAlert = () => {
   dealAlertModal.hidden = false
   modalOverlay.classList.add('modal-overlay_active')

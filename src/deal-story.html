@@ -6,206 +6,209 @@
 })
 
 <body class="page__body">
-  <div class="site-container">
-    <div class="modal-overlay"></div>
-    @include('partials/header.html', {
-    'bottom-menu': 'bottom-menu_disabled',
-    'header-title': 'Ваши сделки'
-    })
+<div class="site-container">
+  <div class="modal-overlay"></div>
+  @include('partials/header.html', {
+  'bottom-menu': 'bottom-menu_disabled',
+  'header-title': 'Ваши сделки'
+  })
 
-    <main class="main deal-story">
-      @include('partials/deal-submenu.html', {
-      'deal-story': 'deal-submenu_active',
-      })
-      <div class="container">
-        <section class="one-deal">
-          <div class="container">
-            <div class="one-deal__info">
-              <div class="one-deal__title">
-                <h1>Журнал сделки</h1>
-              </div>
-              <div class="one-deal__row">
-                <div class="one-deal__item">
-                  <p class="minititle">Сделка</p>
-                  <p>129/031 СТН</p>
-                </div>
-                <div class="one-deal__item">
-                  <p class="minititle">Дата создания сделки</p>
-                  <p>22.09.2021</p>
-                </div>
-                <div class="one-deal__item">
-                  <p class="minititle">Исполнитель</p>
-                  <a href="#" target="_blank">ИП Масякин А. Н.</a>
-                </div>
-              </div>
+  <main class="main deal-story">
+    @include('partials/deal-submenu.html', {
+    'deal-story': 'deal-submenu_active',
+    })
+    <div class="container">
+      <section class="one-deal">
+        <div class="container">
+          <div class="one-deal__info">
+            <div class="one-deal__title">
+              <h1>Журнал сделки</h1>
             </div>
-            <div class="search">
-              <input class="search__input" type="text" name="" id="" placeholder="Найти активность">
-              <div class="search__wrap">
-                <select class="search__select" name="search__select">
-                  <option value="story_1">...</option>
-                  <option value="story_2">... 1</option>
-                  <option value="story_3">... 2</option>
-                </select>
+            <div class="one-deal__row">
+              <div class="one-deal__item">
+                <p class="minititle">Сделка</p>
+                <p>129/031 СТН</p>
               </div>
-            </div>
-            <div class="table-wrap">
-              <table class="table" cellspacing="0" cellpadding="0">
-                <thead>
-                  <tr>
-                    <td>Тип действия</td>
-                    <td>Автор действия</td>
-                    <td>Данные действия</td>
-                    <td>Дата и время</td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>смена ответственного</td>
-                    <td><a href="#">Тедорадзе А.С.</a></td>
-                    <td>Новый ответственный за сделку
-                      <a href="#">Файзуллин А.Р.</a>
-                    </td>
-                    <td>
-                      <span>12.04.2022</span> :
-                      <span>14:31:52</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>добавление факт. платежа</td>
-                    <td><a href="#">Файзуллин А.Р.</a></td>
-                    <td>Авансовый платеж от 14.04.2022 на сумму 23 000 руб</td>
-                    <td>
-                      <span>14.04.2022</span> :
-                      <span>14:21:42</span></td>
-                  </tr>
-                  <tr>
-                    <td>смена ответственного</td>
-                    <td><a href="#">Тедорадзе А.С.</a></td>
-                    <td>Новый ответственный за сделку
-                      <a href="#">Файзуллин А.Р.
-                    </td>
-                    <td>
-                      <span>12.04.2022</span> :
-                      <span>14:31:52</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>добавление факт. платежа</td>
-                    <td><a href="#">Константинопольский Константин Константинович</a></td>
-                    <td>Авансовый платеж от 14.04.2022 на сумму 23 000 руб</td>
-                    <td>
-                      <span>14.04.2022</span> :
-                      <span>14:21:42</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>смена ответственного</td>
-                    <td><a href="#">Тедорадзе А.С.</a></td>
-                    <td>Новый ответственный за сделку
-                      <a href="#">Файзуллин А.Р.
-                    </td>
-                    <td>
-                      <span>12.04.2022</span> :
-                      <span>14:31:52</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>добавление факт. платежа</td>
-                    <td><a href="#">Отрадинский-Марков Марк Федорович</a></td>
-                    <td>Авансовый платеж от 14.04.2022 на сумму 23 000 руб</td>
-                    <td>
-                      <span>14.04.2022</span> :
-                      <span>14:21:42</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>смена ответственного</td>
-                    <td><a href="#">Тедорадзе А.С.</a></td>
-                    <td>Новый ответственный за сделку
-                      <a href="#">Файзуллин А.Р.
-                    </td>
-                    <td>
-                      <span>12.04.2022</span> :
-                      <span>14:31:52</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>добавление факт. платежа</td>
-                    <td><a href="#">Сержантов-Шульц Константин Владимирович </a></td>
-                    <td>Авансовый платеж от 14.04.2022 на сумму 23 000 руб</td>
-                    <td>
-                      <span>14.04.2022</span> :
-                      <span>14:21:42</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>смена ответственного</td>
-                    <td><a href="#">Тедорадзе А.С.</a></td>
-                    <td>Новый ответственный за сделку
-                      <a href="#">Файзуллин А.Р.
-                    </td>
-                    <td>
-                      <span>12.04.2022</span> :
-                      <span>14:31:52</span>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>добавление факт. платежа</td>
-                    <td><a href="#">Вильчес-Ногерол Антонио Владимирович</a></td>
-                    <td>Авансовый платеж от 14.04.2022 на сумму 23 000 руб</td>
-                    <td>
-                      <span>14.04.2022</span> :
-                      <span>14:21:42</span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="one-deal__item">
+                <p class="minititle">Дата создания сделки</p>
+                <p>22.09.2021</p>
+              </div>
+              <div class="one-deal__item">
+                <p class="minititle">Исполнитель</p>
+                <a href="#" target="_blank">ИП Масякин А. Н.</a>
+              </div>
             </div>
           </div>
-        </section>
-        <aside class="aside">
-          <div class="aside__top">
-            <p class="minititle">Контрагент</p>
-            <a href="#" target="_blank">ООО «Росавтодорпроектстроймашинвест»</a>
+          <div class="search">
+            <input class="search__input" type="text" name="" id=""
+                   placeholder="Найти активность">
+            <div class="search__wrap">
+              <select class="search__select" name="search__select">
+                <option value="story_1">...</option>
+                <option value="story_2">... 1</option>
+                <option value="story_3">... 2</option>
+              </select>
+            </div>
           </div>
-          <div class="aside__card">
-            <div class="aside__item">
-              <p class="aside__price plan">8 921 000 &#8381;</p>
-              <p class="minititle">Плановый доход</p>
-            </div>
-            <div class="aside__item">
-              <p class="aside__price">3 022 106 &#8381;</p>
-              <p class="minititle">Фактический доход</p>
-            </div>
-            <div class="aside__item">
-              <p class="aside__price">- 5 898 902 &#8381;</p>
-              <p class="minititle">Сальдо</p>
-            </div>
-            <div class="aside__people">
-              <div class="aside__item">
-                <p>Автор сделки</p>
-                <a href="#" target="_blank">Файзуллин А.Р.</a>
-              </div>
-              <div class="aside__item">
-                <p>Исполнители сделки</p>
-                <a href="#" target="_blank">Файзуллин А.Р., Пузырёв А.О.</a>
-              </div>
-              <div class="aside__item">
-                <p>Наблюдатели сделки</p>
-                <a href="#" target="_blank">Тедорадзе А.С., Масякин А.Н.</a>
-              </div>
-            </div>
-            <a class="aside__btn-people" href="#">Поменять сотрудников</a>
+          <div class="table-wrap">
+            <table class="table" cellspacing="0" cellpadding="0">
+              <thead>
+              <tr>
+                <td>Тип действия</td>
+                <td>Автор действия</td>
+                <td>Данные действия</td>
+                <td>Дата и время</td>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>смена ответственного</td>
+                <td><a href="#">Тедорадзе А.С.</a></td>
+                <td>Новый ответственный за сделку
+                  <a href="#">Файзуллин А.Р.</a>
+                </td>
+                <td>
+                  <span>12.04.2022</span> :
+                  <span>14:31:52</span>
+                </td>
+              </tr>
+              <tr>
+                <td>добавление факт. платежа</td>
+                <td><a href="#">Файзуллин А.Р.</a></td>
+                <td>Авансовый платеж от 14.04.2022 на сумму 23 000 руб</td>
+                <td>
+                  <span>14.04.2022</span> :
+                  <span>14:21:42</span></td>
+              </tr>
+              <tr>
+                <td>смена ответственного</td>
+                <td><a href="#">Тедорадзе А.С.</a></td>
+                <td>Новый ответственный за сделку
+                  <a href="#">Файзуллин А.Р.></a>
+                </td>
+                <td>
+                  <span>12.04.2022</span> :
+                  <span>14:31:52</span>
+                </td>
+              </tr>
+              <tr>
+                <td>добавление факт. платежа</td>
+                <td><a href="#">Константинопольский Константин
+                  Константинович</a></td>
+                <td>Авансовый платеж от 14.04.2022 на сумму 23 000 руб</td>
+                <td>
+                  <span>14.04.2022</span> :
+                  <span>14:21:42</span>
+                </td>
+              </tr>
+              <tr>
+                <td>смена ответственного</td>
+                <td><a href="#">Тедорадзе А.С.</a></td>
+                <td>Новый ответственный за сделку
+                  <a href="#">Файзуллин А.Р.</a>
+                </td>
+                <td>
+                  <span>12.04.2022</span> :
+                  <span>14:31:52</span>
+                </td>
+              </tr>
+              <tr>
+                <td>добавление факт. платежа</td>
+                <td><a href="#">Отрадинский-Марков Марк Федорович</a></td>
+                <td>Авансовый платеж от 14.04.2022 на сумму 23 000 руб</td>
+                <td>
+                  <span>14.04.2022</span> :
+                  <span>14:21:42</span>
+                </td>
+              </tr>
+              <tr>
+                <td>смена ответственного</td>
+                <td><a href="#">Тедорадзе А.С.</a></td>
+                <td>Новый ответственный за сделку
+                  <a href="#">Файзуллин А.Р.</a>
+                </td>
+                <td>
+                  <span>12.04.2022</span> :
+                  <span>14:31:52</span>
+                </td>
+              </tr>
+              <tr>
+                <td>добавление факт. платежа</td>
+                <td><a href="#">Сержантов-Шульц Константин Владимирович </a>
+                </td>
+                <td>Авансовый платеж от 14.04.2022 на сумму 23 000 руб</td>
+                <td>
+                  <span>14.04.2022</span> :
+                  <span>14:21:42</span>
+                </td>
+              </tr>
+              <tr>
+                <td>смена ответственного</td>
+                <td><a href="#">Тедорадзе А.С.</a></td>
+                <td>Новый ответственный за сделку
+                  <a href="#">Файзуллин А.Р.</a>
+                </td>
+                <td>
+                  <span>12.04.2022</span> :
+                  <span>14:31:52</span>
+                </td>
+              </tr>
+              <tr>
+                <td>добавление факт. платежа</td>
+                <td><a href="#">Вильчес-Ногерол Антонио Владимирович</a></td>
+                <td>Авансовый платеж от 14.04.2022 на сумму 23 000 руб</td>
+                <td>
+                  <span>14.04.2022</span> :
+                  <span>14:21:42</span>
+                </td>
+              </tr>
+              </tbody>
+            </table>
           </div>
-        </aside>
-      </div>
-  </div>
-  @include('partials/info-modal.html')
+        </div>
+      </section>
+      <aside class="aside">
+        <div class="aside__top">
+          <p class="minititle">Контрагент</p>
+          <a href="#" target="_blank">ООО «Росавтодорпроектстроймашинвест»</a>
+        </div>
+        <div class="aside__card">
+          <div class="aside__item">
+            <p class="aside__price plan">8 921 000 &#8381;</p>
+            <p class="minititle">Плановый доход</p>
+          </div>
+          <div class="aside__item">
+            <p class="aside__price">3 022 106 &#8381;</p>
+            <p class="minititle">Фактический доход</p>
+          </div>
+          <div class="aside__item">
+            <p class="aside__price">- 5 898 902 &#8381;</p>
+            <p class="minititle">Сальдо</p>
+          </div>
+          <div class="aside__people">
+            <div class="aside__item">
+              <p>Автор сделки</p>
+              <a href="#" target="_blank">Файзуллин А.Р.</a>
+            </div>
+            <div class="aside__item">
+              <p>Исполнители сделки</p>
+              <a href="#" target="_blank">Файзуллин А.Р., Пузырёв А.О.</a>
+            </div>
+            <div class="aside__item">
+              <p>Наблюдатели сделки</p>
+              <a href="#" target="_blank">Тедорадзе А.С., Масякин А.Н.</a>
+            </div>
+          </div>
+          <a class="aside__btn-people" href="#">Поменять сотрудников</a>
+        </div>
+      </aside>
+    </div>
+
+    @include('partials/info-modal.html')
   </main>
 
   @include('partials/footer.html')
-  </div>
+</div>
 
 </body>
 
