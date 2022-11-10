@@ -1,6 +1,13 @@
-@media(max-width: 1200px) {
-  .organization-journal .journal .table-wrap .table tbody tr td:nth-child(n+1) {
-    width: auto;
+@media(max-width: 1400px) {
+
+  .organization-journal .journal .flex-table__cell-1,
+  .organization-journal .journal .flex-table__cell-2 {
+    max-width: 17%;
+  }
+
+  .organization-journal .journal .flex-table__cell-3 {
+    min-width: 400px;
+    max-width: 44%;
   }
 }
 
@@ -8,12 +15,17 @@
   .organization-journal .journal__title {
     font-size: 32px;
   }
-  .organization-journal .journal .table-wrap {
-    overflow-x: scroll;
-  }
-  .organization-journal .journal .table-wrap .table {
-    min-width: 990px;
 
+  .organization-journal .journal .flex-table__cell-1 {
+    min-width: 140px;
+  }
+
+  .organization-journal .journal .flex-table__cell-3 {
+    min-width: 313px;
+  }
+
+  .organization-journal .journal .flex-table__cell-4 {
+    white-space: break-spaces;
   }
 }
 
@@ -21,11 +33,73 @@
   .organization-journal .journal__title {
     font-size: 26px;
   }
+
+  .organization-journal .journal .flex-table__row-title.mobile {
+    display: flex;
+  }
+
+  .organization-journal .journal .flex-table__row {
+    flex-direction: column;
+  }
+
+  .organization-journal .journal .flex-table__double-row {
+    display: flex;
+    margin: 0 -20px;
+    border-top: 1px solid #E6E6E6;
+
+  }
+
+  .organization-journal .journal .flex-table__row {
+    padding-left: 0;
+    background-color: #ffffff;
+
+  }
+
+  .organization-journal .journal .flex-table__row-title {
+    padding-left: 20px;
+  }
+  .organization-journal .journal .flex-table__row-content {
+    padding-right: 40px;
+  }
+
+  .organization-journal .journal .flex-table__row-title .flex-table__cell-1,
+  .organization-journal .journal .flex-table__row-title .flex-table__cell-2,
+  .organization-journal .journal .flex-table__row-title .flex-table__cell-3,
+  .organization-journal .journal .flex-table__row-title .flex-table__cell-4 {
+    min-width: 170px;
+  }
+
+  .organization-journal .journal .flex-table__cell-1,
+  .organization-journal .journal .flex-table__cell-2,
+  .organization-journal .journal .flex-table__cell-3,
+  .organization-journal .journal .flex-table__cell-4 {
+    min-width: auto;
+    max-width: 100%;
+    width: 100%;
+  }
+  .organization-journal .journal .flex-table__cell {
+    margin-bottom: 10px;
+    padding-right: 0;
+  }
+  .organization-journal .journal .flex-table__cell,
+  .organization-journal .journal .flex-table__cell a {
+    font-size: 10px;
+  }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 576px) {
   .organization-journal .journal__title {
-    font-size: 22px;
-    line-height: 30px;
+   padding-bottom: 10px;
+    font-size: 16px;
+    line-height: 20px;
   }
- }
+  .organization-journal .journal .flex-table__row-title {
+    padding-right: 15px;
+  }
+
+  .organization-journal .journal .flex-table__row-title .flex-table__cell-1, .organization-journal .journal .flex-table__row-title .flex-table__cell-2, .organization-journal .journal .flex-table__row-title .flex-table__cell-3, .organization-journal .journal .flex-table__row-title .flex-table__cell-4 {
+    min-width: 100px;
+  }
+}
+
+
