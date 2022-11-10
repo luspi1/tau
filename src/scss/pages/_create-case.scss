@@ -7,7 +7,7 @@
     font-size: 36px;
     line-height: 44px;
     color: #000000;
-    margin-bottom: 47px;
+    margin-bottom: 26px;
   }
 
   .case-subtitle {
@@ -44,6 +44,13 @@
     }
   }
 
+  &__copy-case-prompt {
+    position: static;
+    transform: translateY(0);
+    max-width: 655px;
+    padding-right: 17px;
+  }
+
   &__btn {
     @include montserrat-medium;
     font-size: 17px;
@@ -60,6 +67,11 @@
       background-color: #2F65F6;
       color: #ffffff;
     }
+  }
+
+  &__copy-case-btn {
+    padding: 13px 17px;
+    margin-right: 32px;
   }
 
   &__add-btn {
@@ -92,6 +104,11 @@
         fill: $link;
       }
     }
+  }
+
+  &__copy-case {
+    margin-bottom: 35px;
+    display: flex;
   }
 
   &__form {

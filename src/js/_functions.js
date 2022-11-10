@@ -162,7 +162,7 @@ const closeSelectPopups = (page) => {
   }
 }
 
-
+//блокировка инпутов
 const blockFields = (inputsWrapper) => {
   if (inputsWrapper) {
     inputsWrapper.forEach(wrapper => {
@@ -170,6 +170,19 @@ const blockFields = (inputsWrapper) => {
       wrapper.querySelector('input').disabled = true
     })
   }
+}
+
+// Обрезка длинного текста на определенную длину
+
+
+const cutString = (stringArray) => {
+  stringArray.forEach(str => {
+    const cutLength = +str.dataset.shear
+
+    if (cutLength && cutLength < str.textContent.length) {
+      str.textContent = `${str.textContent.substring(0, cutLength)}...`
+    }
+  })
 }
 
 export {
@@ -185,5 +198,6 @@ export {
   handlePopupSubmit,
   handlePopupInputs,
   closeSelectPopups,
-  blockFields
+  blockFields,
+  cutString
 }

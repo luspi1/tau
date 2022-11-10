@@ -14,9 +14,16 @@
   })
 
   <main class="main create-case-page">
-
     <div class="container">
+      @include('partials/copy-case-modal.html')
       <h1>Создание кейса</h1>
+      <div class="create-case-page__copy-case">
+        <button class="create-case-page__btn create-case-page__copy-case-btn" data-modal="copy-case-modal">Скопировать другой кейс</button>
+        <div class="create-case-page__prompt create-case-page__copy-case-prompt">
+          <p>Скопировать существующий кейс, чтобы сделать новый на его основе.</p>
+        </div>
+      </div>
+
       <form class="create-case-page__form" action="#">
         <section class="section case-caption">
           <div class="create-case-page__inputs">

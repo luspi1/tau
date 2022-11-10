@@ -27,4 +27,6 @@ import './components/newEmployeeForm'
 import './components/contactCard'
 import './components/individualCard'
 import './components/createDoc'
+import './components/incomeListPage'
+import './components/copyCaseForm'
 

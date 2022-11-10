@@ -6,12 +6,24 @@
     min-width: 100%;
   }
 }
+
 @media (max-width: 768px) {
   .create-case-page__input {
     font-size: 14px;
     line-height: 18px;
     padding: 18px 13px;
   }
+
+
+  .create-case-page__copy-case {
+    flex-direction: column;
+  }
+  .create-case-page__copy-case-btn {
+    margin-right: 0;
+    margin-top: 15px;
+    order: 2;
+  }
+
 
   .create-case-page .choices__inner {
     font-size: 14px;

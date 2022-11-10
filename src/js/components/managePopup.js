@@ -15,6 +15,7 @@ const cancelCounterpartyAlertBtn = document.querySelector('.modal-counterparty-a
 const cancelSubjectBtn = document.querySelector('.modal-contract__close-subject')
 const cancelConfidentialBtn = document.querySelector('.modal-contract__close-confidential')
 const cancelAppBtn = document.querySelector('.modal-contract__close-app')
+const cancelCopyCase = document.querySelector('.modal-copy-case__close-btn')
 
 
 
@@ -37,7 +38,7 @@ const counterpartyAlertBtn = document.querySelector('.create-deal-page' +
 const contractSubjectBtn = document.querySelector('.contract__btn-subject')
 const contractConfidentialBtn = document.querySelector('.contract__btn-confidential')
 const contractAppBtn = document.querySelector('.contract__btn-app')
-
+const copyCaseBtn = document.querySelector('.create-case-page__copy-case-btn')
 
 
 // Управление состоянием модалок
@@ -67,7 +68,8 @@ const manageModals = (...editButtons) => {
           cancelCounterpartyAlertBtn,
           cancelSubjectBtn,
           cancelConfidentialBtn,
-          cancelAppBtn
+          cancelAppBtn,
+          cancelCopyCase
         )
       })
     }
@@ -91,7 +93,8 @@ manageModals(
   counterpartyAlertBtn,
   contractSubjectBtn,
   contractConfidentialBtn,
-  contractAppBtn
+  contractAppBtn,
+  copyCaseBtn
 )
 
 
