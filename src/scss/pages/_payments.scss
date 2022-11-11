@@ -36,10 +36,13 @@
       outline: none;
       border: none;
       cursor: pointer;
+      transition: all 0.3s;
+
       &:hover {
         background-color: #264DDB;
       }
     }
+
     .btn-add-score {
       margin-left: 23px;
     }
@@ -110,13 +113,14 @@
 
     &__edit {
       margin: 0 15px 0 auto;
+      cursor: pointer;
 
       &:hover {
-        cursor: pointer;
 
         svg {
           path {
             fill: #2f65f6;
+            transition: all 0.3s;
           }
         }
       }
@@ -124,14 +128,14 @@
 
     &__delete {
       margin: 0 auto;
+      cursor: pointer;
 
       &:hover {
-        cursor: pointer;
 
         svg {
           path {
             &:first-child {
-
+              transition: all 0.3s;
               fill: #2f65f6;
             }
           }
