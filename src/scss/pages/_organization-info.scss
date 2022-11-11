@@ -40,6 +40,10 @@
       text-align: center;
       color: #FFFFFF;
       cursor: pointer;
+      transition: all 0.3s;
+      &:hover {
+        background: #264DDB;
+      }
     }
 
     &__title {
