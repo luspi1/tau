@@ -157,6 +157,7 @@
   }
 
   &__input-wrapper {
+    position: relative;
     &:not(:last-child) {
       margin-right: 9px;
     }
@@ -454,48 +455,26 @@
       border-radius: 15px;
     }
 
-    &__list {
-      margin-bottom: 55px;
-
-      li {
-        margin-bottom: 25px;
-
-        button {
-          position: relative;
-          padding-left: 30px;
-          text-align: left;
-          @include montserrat-medium;
-          font-size: 20px;
-          line-height: 24px;
-          color: #A0A0A0;
-          cursor: pointer;
-          background: none;
-          border: none;
-          transition: all .3s;
-
-          svg {
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-
-            path {
-              transition: all .3s;
-            }
-          }
-
-          &:hover {
-            color: $link;
-
-            path {
-              fill: $link;
-            }
-          }
-        }
-      }
-
-
+    &__inputs {
+      align-items: center;
+      justify-content: flex-start;
     }
+
+    .create-case-page__input-wrapper {
+      min-width: 370px;
+      margin-right: 0;
+    }
+
+    &__or {
+      margin: 0 10px;
+      color: #858584;
+    }
+
+    .create-case-page__btn {
+      display: inline-block;
+      text-align: center;
+    }
+
 
 
   }

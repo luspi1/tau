@@ -138,4 +138,38 @@ if (termsWrapper) {
 }
 
 
+// Появления списка элементов полученных от сервера
+
+import { closeSelectPopups, handlePopupInputs } from "../_functions";
+
+const createCaseInputs = document.querySelectorAll('.create-case-page__popup-input')
+
+if (createCaseInputs) {
+  createCaseInputs.forEach(el => {
+    el.addEventListener('input', handlePopupInputs)
+  })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
