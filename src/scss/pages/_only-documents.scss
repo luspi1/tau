@@ -33,7 +33,32 @@
       pointer-events: none;
     }
   }
+  &__select-flex {
+    display: flex;
+  }
+  &__link-add {
+    min-width: 190px;
+    height: 40px;
+    margin: 13px 0 0 auto;
+    padding: 0 13px;
+    color: #ffffff;
+    background-color: #2F65F6;
+    border-radius: 5px;
+    border: none;
+    @include montserrat-medium;
+    font-size: 17px;
+    line-height: 21px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s;
+    cursor: pointer;
 
+    &:hover {
+      background-color: #264DDB;
+    }
+  }
   &__select-wrap {
     width: 455px;
     margin-top: 13px;
@@ -148,7 +173,7 @@
     &__wrapper {
       display: flex;
     }
-    &__colomn {
+    &__column {
       margin: 12px 40px 0 0;
       &.m0 {
         margin-right: 0;

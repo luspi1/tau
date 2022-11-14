@@ -2,7 +2,7 @@
   .only-documents .list-doc__row-content {
     flex-direction: column;
   }
-  .only-documents .list-doc__colomn {
+  .only-documents .list-doc__column {
     min-width: 33%;
   }
 }
@@ -26,6 +26,9 @@
 @media (max-width: 768px) {
   .only-documents .only-documents__title {
     font-size: 28px;
+  }
+  .only-documents .only-documents__select-flex {
+    flex-wrap: wrap;
   }
   .only-documents .list-doc__row-title {
     flex-direction: column;
