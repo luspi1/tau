@@ -39,8 +39,9 @@
     align-items: center;
   }
 
-  &__btn {
+  &__link-add {
     min-width: 190px;
+    max-width: 200px;
     height: 40px;
     margin: 13px 0 0 auto;
     color: #ffffff;
@@ -50,7 +51,16 @@
     @include montserrat-medium;
     font-size: 17px;
     line-height: 21px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s;
     cursor: pointer;
+
+    &:hover {
+      background-color: #264DDB;
+    }
   }
 
   &__select-wrap {
