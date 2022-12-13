@@ -1,5 +1,3 @@
-import JustValidate from 'just-validate';
-
 
 import { modalOverlay, body, modalSocials } from "../_vars";
 import { initSelects } from "./customSelect";

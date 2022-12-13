@@ -24,7 +24,8 @@
               Изображение (логотип и прочие)
             </h2>
             <div class="new-organization__item new-organization__logo-item">
-              <div class="new-organization__item-wrapper">
+              <div
+                class="new-organization__item-wrapper general-dropzone-wrapper">
                 <div
                   class="new-organization__input-wrapper logo-loading">
                   <p class="new-organization__input-title">
@@ -37,27 +38,25 @@
                   <p class="new-organization__input-title">
                     Или загрузите изображение с ПК
                   </p>
-                  <button class="new-organization__btn" id="logo-add"
-                          type="button">Загрузить
+                  <button
+                    class="new-organization__btn new-organization__org-logo-btn general-dropzone__add-btn"
+                    id="logo-add"
+                    type="button">Загрузить
                   </button>
                 </div>
-                <div
-                  class="new-organization__input-wrapper logo-preview">
-                  <div id="new-organization-dropzone"
-                       class="dropzone">
-                    <div class="new-organization__message-wrapper">
-                      <div class="dz-message">
-                      </div>
-                      <div class="dz-message">
-                      </div>
-                      <div class="dz-message">
-                      </div>
+                <div class="general-dropzone dropzone new-organization__general-dropzone"
+                     data-general-info='{"url": "./data/getCases.txt", "removeUrl":"./data/getCases.txt", "width":"170", "height":"170", "type":"org", "filesCount": "3"}'>
+                  <div class="general-dropzone__message-wrapper new-organization__message-wrapper">
+                    <div class="dz-message">
+                    </div>
+                    <div class="dz-message">
+                    </div>
+                    <div class="dz-message">
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
           <div
             class="new-organization__section new-organization__org-info-section">

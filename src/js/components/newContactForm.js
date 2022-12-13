@@ -12,7 +12,7 @@ async function handleFormSubmit (event) {
   const jsonData = JSON.stringify(arrData)
   toggleLoader()
 
-  const response = await sendData(jsonData, 'include/ajax/contact_new.php')
+  const response = await sendData(jsonData, '/include/ajax/contact_new.php')
   const finishedResponse = await response.json()
 
   toggleLoader()

@@ -107,7 +107,11 @@ if (personAvatar) {
 const passportScan = document.querySelector('#passport-dropzone');
 
 if (passportScan) {
-  let passportDropzone = new Dropzone(passportScan, {
+
+  const passportScanBtn = document.querySelector('.page-doc__passport-doc-btn')
+
+
+  const passportDropzone = new Dropzone(passportScan, {
     maxFilesize: 5,
     url: "/include/ajax/upload_image.php",
     maxFiles: 16,
@@ -142,6 +146,7 @@ if (passportScan) {
 
   passportDropzone.on("sending", function (file, xhr, formData) {
     formData.append("filetype", "passport");
+    formData.append("id_item", passportScanBtn.dataset.id)
   });
 
   passportDropzone.on("error", function (file) {
@@ -201,7 +206,10 @@ if (passportScan) {
 const insuranceScan = document.querySelector('#insurance-dropzone');
 
 if (insuranceScan) {
-  let insuranceDropzone = new Dropzone(insuranceScan, {
+
+  const insuranceScanBtn = document.querySelector('.page-doc__insurance-doc-btn')
+
+  const insuranceDropzone = new Dropzone(insuranceScan, {
     maxFilesize: 5,
     url: "/include/ajax/upload_image.php",
     maxFiles: 1,
@@ -233,6 +241,7 @@ if (insuranceScan) {
 
   insuranceDropzone.on("sending", function (file, xhr, formData) {
     formData.append("filetype", "snils");
+    formData.append("id_item", insuranceScanBtn.dataset.id)
   });
 
   insuranceDropzone.on("error", function (file) {
@@ -289,7 +298,10 @@ if (insuranceScan) {
 const taxScan = document.querySelector('#tax-dropzone');
 
 if (taxScan) {
-  let taxDropzone = new Dropzone(taxScan, {
+
+  const taxScanBtn = document.querySelector('.page-doc__tax-doc-btn')
+
+  const taxDropzone = new Dropzone(taxScan, {
     maxFilesize: 5,
     url: "/include/ajax/upload_image.php",
     maxFiles: 1,
@@ -321,6 +333,7 @@ if (taxScan) {
 
   taxDropzone.on("sending", function (file, xhr, formData) {
     formData.append("filetype", "inn");
+    formData.append("id_item", taxScanBtn.dataset.id)
   });
 
   taxDropzone.on("error", function (file) {
@@ -373,107 +386,111 @@ if (taxScan) {
 
 
 //Dropzone для лого организации на странице новой организации
-
-const newOrgLogo = document.querySelector('#new-organization-dropzone');
-
-if (newOrgLogo) {
-
-  const newOrgBtn = document.querySelector('.new-organization__btn')
-
-  let newOrgDropzone = new Dropzone(newOrgLogo, {
-    maxFilesize: 5,
-    url: "/include/ajax/upload_image.php",
-    maxFiles: 3,
-    acceptedFiles: 'image/png, image/jpeg, image/jpg',
-    accept: function (file, done) {
-      //произвольная функция проверки загружаемых файлов
-      if (file.type == "image/png, image/jpeg, image/jpg") {
-        //сообщение без ошибки, если файл забракован
-        done("Неверный формат");
-      }
-      //чтобы файл был принят, нужно вызвать done без параметров
-      else {
-        done();
-      }
-    },
-    addRemoveLinks: true,
-    thumbnailWidth: 170,
-    thumbnailHeight: 170,
-    clickable: '#logo-add',
-    removedfile: async function (file) {
-      const data = {
-        filetype: "org",
-        id_person_image: file._removeLink.dataset.id
-      }
-
-      const jsonData = JSON.stringify(data)
-      const response = await sendData(jsonData, '/include/ajax/delete_image.php')
-      const finishedResponse = await response.json()
-
-      const {status, errortext} = finishedResponse
-
-      if (status === 'ok') {
-        if (file.previewElement != null && file.previewElement.parentNode != null) {
-          file.previewElement.parentNode.removeChild(file.previewElement);
-        }
-      } else {
-        showInfoModal(errortext)
-      }
-    }
-  });
-
-  newOrgDropzone.on("sending", function (file, xhr, formData) {
-    formData.append("filetype", "org");
-    formData.append("id_item", newOrgBtn.dataset.id)
-  });
-
-  newOrgDropzone.on("error", function (file) {
-    showInfoModal('Ошибка 404')
-    file.previewElement.parentNode.removeChild(file.previewElement);
-  })
-
-
-  newOrgDropzone.on("success", function (file, response) {
-    const resObj = JSON.parse(response)
-    const {status, errortext, id_person_image} = resObj
-
-    if (status !== 'ok') {
-      showInfoModal(errortext)
-      file.previewElement.parentNode.removeChild(file.previewElement);
-    } else {
-      file._removeLink.setAttribute('data-id', id_person_image)
-    }
-  });
-
-  const existingImages = newOrgLogo.querySelectorAll('.dz-preview')
-  if (existingImages) {
-    existingImages.forEach(el => {
-      const deleteBtn = el.querySelector('.dz-remove')
-      deleteBtn.addEventListener('click', async (e) => {
-        const data = {
-          filetype: "org",
-          id_person_image: e.target.dataset.id
-        }
-        const jsonData = JSON.stringify(data)
-        const response = await sendData(jsonData, '/include/ajax/delete_image.php')
-        const finishedResponse = await response.json()
-
-        const {status, errortext} = finishedResponse
-        if (status === 'ok') {
-          el.parentNode.removeChild(el);
-        } else {
-          showInfoModal(errortext)
-        }
-      })
-    })
-  }
-}
+//
+// const newOrgLogo = document.querySelector('#new-organization-dropzone');
+//
+// if (newOrgLogo) {
+//
+//   const newOrgBtn = document.querySelector('.new-organization__org-logo-btn')
+//
+//   let newOrgDropzone = new Dropzone(newOrgLogo, {
+//     maxFilesize: 5,
+//     url: "/include/ajax/upload_image.php",
+//     maxFiles: 3,
+//     acceptedFiles: 'image/png, image/jpeg, image/jpg',
+//     accept: function (file, done) {
+//       //произвольная функция проверки загружаемых файлов
+//       if (file.type == "image/png, image/jpeg, image/jpg") {
+//         //сообщение без ошибки, если файл забракован
+//         done("Неверный формат");
+//       }
+//       //чтобы файл был принят, нужно вызвать done без параметров
+//       else {
+//         done();
+//       }
+//     },
+//     addRemoveLinks: true,
+//     thumbnailWidth: 170,
+//     thumbnailHeight: 170,
+//     clickable: '#logo-add',
+//     removedfile: async function (file) {
+//       const data = {
+//         filetype: "org",
+//         id_person_image: file._removeLink.dataset.id
+//       }
+//
+//       const jsonData = JSON.stringify(data)
+//       const response = await sendData(jsonData, '/include/ajax/delete_image.php')
+//       const finishedResponse = await response.json()
+//
+//       const {status, errortext} = finishedResponse
+//
+//       if (status === 'ok') {
+//         if (file.previewElement != null && file.previewElement.parentNode != null) {
+//           file.previewElement.parentNode.removeChild(file.previewElement);
+//         }
+//       } else {
+//         showInfoModal(errortext)
+//       }
+//     }
+//   });
+//
+//   newOrgDropzone.on("sending", function (file, xhr, formData) {
+//     formData.append("filetype", "org");
+//     formData.append("id_item", newOrgBtn.dataset.id)
+//   });
+//
+//   newOrgDropzone.on("error", function (file) {
+//     showInfoModal('Ошибка 404')
+//     file.previewElement.parentNode.removeChild(file.previewElement);
+//   })
+//
+//
+//   newOrgDropzone.on("success", function (file, response) {
+//     const resObj = JSON.parse(response)
+//     const {status, errortext, id_person_image} = resObj
+//
+//     if (status !== 'ok') {
+//       showInfoModal(errortext)
+//       file.previewElement.parentNode.removeChild(file.previewElement);
+//     } else {
+//       file._removeLink.setAttribute('data-id', id_person_image)
+//     }
+//   });
+//
+//   const existingImages = newOrgLogo.querySelectorAll('.dz-preview')
+//   if (existingImages) {
+//     existingImages.forEach(el => {
+//       const deleteBtn = el.querySelector('.dz-remove')
+//       deleteBtn.addEventListener('click', async (e) => {
+//         const data = {
+//           filetype: "org",
+//           id_person_image: e.target.dataset.id
+//         }
+//         const jsonData = JSON.stringify(data)
+//         const response = await sendData(jsonData, '/include/ajax/delete_image.php')
+//         const finishedResponse = await response.json()
+//
+//         const {status, errortext} = finishedResponse
+//         if (status === 'ok') {
+//           el.parentNode.removeChild(el);
+//         } else {
+//           showInfoModal(errortext)
+//         }
+//       })
+//     })
+//   }
+// }
 
 //Dropzone для лого организации на странице редактирования контакта
 
 const contactLogo = document.querySelector('#contact-dropzone');
 
+
 if (contactLogo) {
+
+const contactLogoBtn = document.querySelector('.edit-contact__add-logo-btn')
+
   let contactDropzone = new Dropzone(contactLogo, {
     maxFilesize: 5,
     url: "/include/ajax/upload_image.php",
@@ -486,7 +503,7 @@ if (contactLogo) {
     removedfile: async function (file) {
       const data = {
         filetype: "contact-logo",
-        id_image: file._removeLink.dataset.id
+        id_person_image: file._removeLink.dataset.id
       }
 
       const jsonData = JSON.stringify(data)
@@ -507,6 +524,7 @@ if (contactLogo) {
 
   contactDropzone.on("sending", function (file, xhr, formData) {
     formData.append("filetype", "contact-logo");
+    formData.append("id_item", contactLogoBtn.dataset.id)
   });
 
   contactDropzone.on("error", function (file) {
@@ -516,13 +534,13 @@ if (contactLogo) {
 
   contactDropzone.on("success", function (file, response) {
     const resObj = JSON.parse(response)
-    const {status, errortext, id_image} = resObj
+    const {status, errortext, id_person_image} = resObj
 
     if (status !== 'ok') {
       showInfoModal(errortext)
       file.previewElement.parentNode.removeChild(file.previewElement);
     } else {
-      file._removeLink.setAttribute('data-id', id_image)
+      file._removeLink.setAttribute('data-id', id_person_image)
     }
   });
 
@@ -533,7 +551,7 @@ if (contactLogo) {
       deleteBtn.addEventListener('click', async (e) => {
         const data = {
           filetype: "contact-logo",
-          id_image: e.target.dataset.id
+          id_person_image: e.target.dataset.id
         }
         const jsonData = JSON.stringify(data)
         const response = await sendData(jsonData, '/include/ajax/delete_image.php')
@@ -555,7 +573,10 @@ if (contactLogo) {
 const physLogo = document.querySelector('#phys-dropzone');
 
 if (physLogo) {
-  let physDropzone = new Dropzone(physLogo, {
+
+  const physLogoBtn = document.querySelector('.edit-contact__add-phys-btn')
+
+  const physDropzone = new Dropzone(physLogo, {
     maxFilesize: 5,
     url: "/include/ajax/upload_image.php",
     maxFiles: 1,
@@ -567,7 +588,7 @@ if (physLogo) {
     removedfile: async function (file) {
       const data = {
         filetype: "contact-logo",
-        id_image: file._removeLink.dataset.id
+        id_person_image: file._removeLink.dataset.id
       }
 
       const jsonData = JSON.stringify(data)
@@ -588,6 +609,7 @@ if (physLogo) {
 
   physDropzone.on("sending", function (file, xhr, formData) {
     formData.append("filetype", "contact-logo");
+    formData.append("id_item", physLogoBtn.dataset.id)
   });
 
   physDropzone.on("error", function (file) {
@@ -597,13 +619,13 @@ if (physLogo) {
 
   physDropzone.on("success", function (file, response) {
     const resObj = JSON.parse(response)
-    const {status, errortext, id_image} = resObj
+    const {status, errortext, id_person_image} = resObj
 
     if (status !== 'ok') {
       showInfoModal(errortext)
       file.previewElement.parentNode.removeChild(file.previewElement);
     } else {
-      file._removeLink.setAttribute('data-id', id_image)
+      file._removeLink.setAttribute('data-id', id_person_image)
     }
   });
 
@@ -615,7 +637,7 @@ if (physLogo) {
       deleteBtn.addEventListener('click', async (e) => {
         const data = {
           filetype: "contact-logo",
-          id_image: e.target.dataset.id
+          id_person_image: e.target.dataset.id
         }
         const jsonData = JSON.stringify(data)
         const response = await sendData(jsonData, '/include/ajax/delete_image.php')
@@ -630,7 +652,6 @@ if (physLogo) {
       })
     })
   }
-
 }
 
 

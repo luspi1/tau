@@ -26,9 +26,5 @@ if (employeesList) {
         cancelDeleteEmployeeBtn
       )
     }
-
-
-
-
   })
 }
