@@ -1,5 +1,41 @@
 .template-item-page {
   padding: 32px 0 304px 0;
+  .top {
+    .container {
+      padding: 0 15px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    h1 {
+      margin: 0 20px 17px 0;
+      @include montserrat-semibold;
+      font-size: 36px;
+      line-height: 44px;
+    }
+
+    .case-item__btn {
+      width: 190px;
+      max-height: 40px;
+      display: block;
+      margin-right: 86px;
+      padding: 10px 20px;
+      background: #2F65F6;
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      color: #FFFFFF;
+      cursor: pointer;
+      transition: all .3s;
+      &:hover {
+        background-color: #264DDB;
+      }
+    }
+
+  }
 
   .container {
     display: flex;
@@ -8,6 +44,7 @@
 
   &__content {
     margin-right: 56px;
+    padding-top: 25px;
     flex-grow: 1;
   }
 
@@ -88,7 +125,6 @@
   }
 
   &__sidebar {
-    margin-top: 60px;
     margin-right: 86px;
     min-width: 520px;
     background: #F7F8FA;
