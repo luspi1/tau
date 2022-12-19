@@ -1,1 +1,1 @@
-{"status": "ok", "html": "<h2>Hello world!</h2>"}
+{"status": "ok", "errortext":"Произошла ошибка!", "html": "<h2>Hello world!</h2>"}

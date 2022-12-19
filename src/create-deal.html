@@ -40,7 +40,7 @@
               name="deal_choice" type="text"
               placeholder="Начните вводить название кейса...">
             @include('partials/select-popup.html', {
-            'submit-script': 'getCases.txt',
+            'submit-script': 'data/getCases.txt',
             'add-data':'{"idItem":3,"paramname":"test"}'
             })
             @include('partials/deal-create-alert.html')
@@ -60,12 +60,12 @@
                      class="create-deal-page__data-input select-popup-data"
                      type="hidden">
               <input
-                class="create-deal-page__input create-deal-page__popup-input select-popup-input"
+                class="create-deal-page__input create-deal-page__contragent-input create-deal-page__popup-input select-popup-input"
                 id="dealСounterparty"
                 name="deal_contragent" type="text"
                 placeholder="Начните вводить название">
               @include('partials/select-popup.html', {
-              'submit-script': 'test.txt',
+              'submit-script': 'data/getCases.txt',
               'add-data':'{"idItem":3,"paramname":"test"}'
               })
             </div>
@@ -84,11 +84,11 @@
                    class="create-deal-page__data-input select-popup-data"
                    type="hidden">
             <input
-              class="create-deal-page__input create-deal-page__popup-input select-popup-input"
+              class="create-deal-page__input create-deal-page__case-info-input create-deal-page__popup-input select-popup-input"
               name="deal_executor" type="text"
               placeholder="Начните вводить название">
             @include('partials/select-popup.html', {
-            'submit-script': 'test2.txt',
+            'submit-script': 'data/getCases.txt',
             'add-data':'{"idItem":3,"paramname":"test"}'
             })
           </div>
@@ -100,11 +100,11 @@
                      class="create-deal-page__data-input select-popup-data"
                      type="hidden">
               <input
-                class="create-deal-page__input create-deal-page__popup-input select-popup-input"
+                class="create-deal-page__input create-deal-page__case-info-input create-deal-page__popup-input select-popup-input"
                 name="deal_observer[]" type="text"
                 placeholder="Начните вводить фамилию">
               @include('partials/select-popup.html', {
-              'submit-script': 'test3.txt',
+              'submit-script': 'data/getCases.txt',
               'add-data':'{"idItem":3,"paramname":"test"}'
               })
             </div>
@@ -428,7 +428,7 @@
       name="deal_observer[]" type="text"
       placeholder="Начните вводить фамилию">
     @include('partials/select-popup.html', {
-    'submit-script': 'test.txt',
+    'submit-script': 'data/getCases.txt',
     'add-data':'{"idItem":3,"paramname":"test"}'
     })
   </div>

@@ -9,6 +9,7 @@ const infoModal = document.querySelector('.info-modal')
 const loader = document.querySelector('.loader')
 const bigImgModal = document.querySelector('.big-img-modal')
 const modalConnectLeader = document.querySelector('.modal-connect-leader')
+const modalNewEmployee = document.querySelector('.modal-new-employee')
 
 export {
   body,
@@ -21,5 +22,6 @@ export {
   infoModal,
   loader,
   bigImgModal,
-  modalConnectLeader
+  modalConnectLeader,
+  modalNewEmployee
 }

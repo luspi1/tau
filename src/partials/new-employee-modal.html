@@ -15,28 +15,12 @@
           <input name="id_employee_email"
                  class="modal-new-employee__data-input select-popup-data"
                  type="hidden">
-          <input class="modal-new-employee__input select-popup-input"
-                 type="email"
-                 name="employee_email"
+          <input class="modal-new-employee__input select-popup-input "
+                 type="text"
+                 name="employee_emailOrSurname"
                  placeholder="Начните вводить адрес электронной почты...">
           @include('select-popup.html', {
-          'submit-script': 'test.txt',
-          'add-data':'{"idItem":3,"paramname":"test"}'
-          })
-        </div>
-      </li>
-      <li class="modal-new-employee__item-input">
-        <p class="modal-new-employee__input-title">или</p>
-        <div class="modal-new-employee__input-wrapper select-input-wrapper">
-          <input name="id_employee_surname"
-                 class="modal-new-employee__data-input select-popup-data"
-                 type="hidden">
-          <input class="modal-new-employee__input select-popup-input"
-                 type="text"
-                 name="employee_surname"
-                 placeholder="Начните вводить фамилию...">
-          @include('select-popup.html', {
-          'submit-script': 'test.txt',
+          'submit-script': './data/getCases.txt',
           'add-data':'{"idItem":3,"paramname":"test"}'
           })
         </div>

@@ -3,9 +3,11 @@
 import {
   closeSelectPopups,
   handlePopupInputs,
-  handlePopupSubmit, sendData, showInfoModal,
-} from "../_functions";
-import { modalOverlay } from "../_vars";
+  handlePopupSubmit,
+  sendData,
+  showInfoModal,
+}                       from "../_functions"
+import { modalOverlay } from "../_vars"
 
 
 // Генерация "Данные договора" в зависимости от кейса
@@ -22,7 +24,8 @@ const dealAlertSubmitBtn = document.querySelector('.deal-create-alert__agree-btn
 const handleCaseSubmit = async (popupElValue, popupElId) => {
   const caseData = {id_case: popupElId}
   const jsonCaseData = JSON.stringify(caseData)
-  const response = await sendData(jsonCaseData, "/include/ajax/get_case_info.php")
+  // const response = await sendData(jsonCaseData, "/include/ajax/get_case_info.php")
+  const response = await sendData(jsonCaseData, "data/getCases.txt")
   const finishedResponse = await response.json()
 
   const {status, errortext, html} = finishedResponse
@@ -64,7 +67,6 @@ if (dealCaseSelectPopup) {
   dealCaseSelectPopup.addEventListener('click', (e) => {
     const popupEl = e.target
 
-
     if (popupEl.tagName === 'LI') {
       dealAlertModal.dataset.deal = popupEl.textContent
       dealAlertModal.dataset.caseId = popupEl.dataset.id
@@ -95,16 +97,55 @@ if (dealCaseInput) {
     }
   })
 }
-// Появления списка элементов полученных от сервера в полях "Контрагент", "Исполнитель",
-// "Наблюдатель"
+// Появления списка элементов полученных от сервера в поле "Контрагент"
 
-const dealPopupInputs = document.querySelectorAll('.create-deal-page__popup-input')
+const dealContragentInput = document.querySelector('.create-deal-page__contragent-input')
 
-if (dealPopupInputs) {
-  dealPopupInputs.forEach(input => {
-    input.addEventListener('input', handlePopupInputs)
+if (dealContragentInput) {
+  dealContragentInput.addEventListener('input', handlePopupInputs)
+}
+
+
+// функция обработки полей с поисковыми запросами, с добавлением данных о выбранном кейсе
+const handleCasePopupInputs = (e) => {
+  let inputValue = e.target.value
+
+  const targetSelectPopup = e.currentTarget.closest('.select-input-wrapper').querySelector('.select-popup')
+  if (inputValue.length > 2) {
+    let caseId = dealCaseDataInput.value
+    handlePopupSubmit(inputValue, targetSelectPopup, {id_case: caseId})
+      .then(() => {
+        const popupElements = targetSelectPopup.querySelectorAll('li')
+        if (popupElements) {
+          popupElements.forEach(el => {
+            el.addEventListener('click', () => {
+              const targetInput = el.closest('.select-input-wrapper').querySelector('.select-popup-input')
+              const dataInput = el.closest('.select-input-wrapper').querySelector('.select-popup-data')
+              targetInput.value = el.textContent
+              dataInput.value = el.dataset.id
+              targetSelectPopup.classList.remove('select-popup_active')
+            })
+          })
+        } else {
+          targetSelectPopup.classList.remove('select-popup_active')
+        }
+      })
+  }
+}
+
+
+
+
+// Появления списка элементов полученных от сервера в поле "Наша организация" и "Наблюдатель"
+
+const dealCaseInfoInput = document.querySelectorAll('.create-deal-page__case-info-input')
+
+if (dealCaseInfoInput) {
+  dealCaseInfoInput.forEach(el => {
+    el.addEventListener('input', handleCasePopupInputs)
   })
 }
+
 
 // закрытие попап-селектов
 
@@ -116,7 +157,7 @@ closeSelectPopups(createDealPage)
 
 const addObserverBtn = document.querySelector('.create-deal-caption__add-observer-btn')
 const observersList = document.querySelector('.create-deal-caption__observer-list')
-const templateObserverFragment = document.querySelector('#deal-observer-template')?.content;
+const templateObserverFragment = document.querySelector('#deal-observer-template')?.content
 if (templateObserverFragment) {
   const templateObserve = templateObserverFragment.querySelector('.create-deal-page__input-wrapper')
   if (addObserverBtn) {
@@ -126,7 +167,7 @@ if (templateObserverFragment) {
       observersList.appendChild(observeEl)
       const observeSelectInput = observeEl.querySelector('.create-deal-page__popup-input')
       if (observeSelectInput) {
-        observeSelectInput.addEventListener('input', handlePopupInputs)
+        observeSelectInput.addEventListener('input', handleCasePopupInputs)
       }
     })
   }

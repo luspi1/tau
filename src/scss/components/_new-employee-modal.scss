@@ -84,6 +84,11 @@
 
   }
 
+  &__input_invalid {
+    background: #FEF2F2;
+    outline: 1px solid #BB1225;
+  }
+
 
   &__btns {
     margin-top: 50px;
