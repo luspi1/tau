@@ -106,7 +106,7 @@ const collectEmployeeInfo = (target, employeeObj, directionNumb) => {
   employeeObj.position = EmployeesTypes.indexOf(targetLine.querySelector('.employees-table__spot').textContent.trim())
   employeeObj.regDate = targetLine.querySelector('.employees-table__date span').textContent.trim()
   employeeObj.name = targetLine.querySelector('.employees-table__name').textContent.trim()
-  if (directionNumb) {
+  if (directionNumb !== undefined) {
     employeeObj.direction = directionNumb
   }
 }
