@@ -10,6 +10,10 @@ const loader = document.querySelector('.loader')
 const bigImgModal = document.querySelector('.big-img-modal')
 const modalConnectLeader = document.querySelector('.modal-connect-leader')
 const modalNewEmployee = document.querySelector('.modal-new-employee')
+const jobChangeModal = document.querySelector('#job-change-modal')
+
+const deleteEmployeeModal = document.querySelector('#delete-employee-modal')
+
 
 export {
   body,
@@ -23,5 +27,7 @@ export {
   loader,
   bigImgModal,
   modalConnectLeader,
-  modalNewEmployee
+  modalNewEmployee,
+  jobChangeModal,
+  deleteEmployeeModal
 }

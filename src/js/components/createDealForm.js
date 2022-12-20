@@ -24,8 +24,7 @@ const dealAlertSubmitBtn = document.querySelector('.deal-create-alert__agree-btn
 const handleCaseSubmit = async (popupElValue, popupElId) => {
   const caseData = {id_case: popupElId}
   const jsonCaseData = JSON.stringify(caseData)
-  // const response = await sendData(jsonCaseData, "/include/ajax/get_case_info.php")
-  const response = await sendData(jsonCaseData, "data/getCases.txt")
+  const response = await sendData(jsonCaseData, "/include/ajax/get_case_info.php")
   const finishedResponse = await response.json()
 
   const {status, errortext, html} = finishedResponse

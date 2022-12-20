@@ -38,12 +38,15 @@ async function handleFormSubmit (event) {
   const arrData = Array.from(data.entries())
   const jsonData = JSON.stringify(arrData)
 
-  const response = await sendData(jsonData, '/include/ajax/send_invitation.php')
+  // const response = await sendData(jsonData, '/include/ajax/send_invitation.php')
+  const response = await sendData(jsonData, 'data/getCases.txt')
   const finishedResponse = await response.json()
 
   const {status, errortext} = finishedResponse
   if (status === 'ok') {
     showInfoModal('Приглашение отправлено')
+    newEmployeeDataInput.value = ''
+    employeePopupInput.value = ''
     modalNewEmployee.classList.remove('_active')
     modalOverlay.classList.remove('modal-overlay_active')
     body.classList.remove('_lock')

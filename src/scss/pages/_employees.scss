@@ -83,11 +83,13 @@
       cursor: pointer;
       width: 9%;
       position: relative;
+      height: 20px;
       svg {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         left: 0;
+        pointer-events: none;
       }
 
       svg path {
