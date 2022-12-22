@@ -22,12 +22,6 @@ const showJobChangeModal = ({name, direction, position}) => {
   }
 
 
-  const cancelJobChangeBtn = jobChangeModal.querySelector('.modal-job-change__close-btn')
-  closePopup(
-    modalOverlay,
-    cancelJobChangeBtn
-  )
-
   // Отправки информации по нажатию "Изменить должность"
 
   const jobModalForm = jobChangeModal.querySelector('.modal-job-change__form')
@@ -66,12 +60,6 @@ const showDeleteEmployeeModal = ({name, position}) => {
   deleteEmployeeModalName.textContent = name
   deleteEmployeeModalPosition.textContent = EmployeesTypes[position]
 
-
-  const cancelDeleteEmployeeBtn = deleteEmployeeModal.querySelector('.modal-delete-employee__close-btn')
-  closePopup(
-    modalOverlay,
-    cancelDeleteEmployeeBtn
-  )
 
   // Отправки информации по нажатию "Удалить"
 
