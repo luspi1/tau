@@ -50,7 +50,6 @@ const manageModals = (...editButtons) => {
         const btnCurrentModal = btn.dataset.modal
         const currentPageMain = btn.closest('main')
         const currentModal = document.querySelector(`#${btnCurrentModal}`)
-        console.log(currentPageMain)
 
         currentPageMain.style.minHeight = `${currentModal.clientHeight}px`
         currentModal.classList.add('_active')
