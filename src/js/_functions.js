@@ -1,19 +1,4 @@
-import { body, modalOverlay, loader, infoModal, bigImgModal } from "./_vars";
-
-// Функция закрытия модалок, принимает элементы, по нажатию на которые модалки закроются
-const closePopup = (...clickTarget) => {
-  const foundedTargets = clickTarget.filter(el => el)
-  foundedTargets.forEach(el => el.addEventListener('click', (e) => {
-    e.preventDefault()
-    document.querySelectorAll('.modal').forEach(modal => {
-      if (modal.classList.contains('_active')) {
-        modal.classList.remove('_active')
-        modal.closest('main').style.minHeight = "calc(100vh - 60px)";
-      }
-    })
-    modalOverlay.classList.remove('modal-overlay_active')
-  }))
-}
+import { modalOverlay, loader, infoModal, bigImgModal } from "./_vars";
 
 // Функция очистки классов, принимает класс, который будет удален отовсюду
 const removeClasses = (className) => {
@@ -196,7 +181,6 @@ const cutString = (stringArray) => {
 }
 
 export {
-  closePopup,
   removeClasses,
   sendData,
   serializeForm,

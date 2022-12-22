@@ -1,5 +1,5 @@
 import { body, deleteEmployeeModal, jobChangeModal, modalOverlay } from "../_vars"
-import { closePopup, sendData, showInfoModal }                     from "../_functions"
+import { sendData, showInfoModal }                     from "../_functions"
 
 
 const EmployeesTypes = ['руководитель', 'менеджер', 'постоянный', 'временный']
