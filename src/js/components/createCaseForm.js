@@ -1,6 +1,7 @@
 import { initPaymentSelects } from "./customSelect";
 import { initDatePaymentsMask } from "./inputMask";
 import { initDatePayment } from "./customDate";
+import { handlePopupInputs } from "../_functions";
 
 let annexOptionalIndex = 1;
 
@@ -140,7 +141,6 @@ if (termsWrapper) {
 
 // Появления списка элементов полученных от сервера
 
-import { closeSelectPopups, handlePopupInputs } from "../_functions";
 
 const createCaseInputs = document.querySelectorAll('.create-case-page__popup-input')
 

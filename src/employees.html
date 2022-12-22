@@ -18,6 +18,8 @@
     'organization-item-employees': 'organization-item-submenu_active',
     })
     <section class="section page-employees">
+<!--      <input type="hidden" data-id-unit="dwa123daw">-->
+
       <div class="container">
         @include('partials/new-employee-modal.html')
         @include('partials/job-change-modal.html')
@@ -28,7 +30,7 @@
             сотрудник</a>
         </div>
         <ul class="page-employees__table employees-table">
-          <li class="employees-table__row">
+          <li class="employees-table__row" data-id="123lkj4j2j">
             <a href="#" class="employees-table__cell employees-table__name">Иванов
               Иван
               Иванович (это Вы)</a>
@@ -72,7 +74,6 @@
                   fill="#858584"/>
               </svg>
             </button>
-
           </li>
           <li class="employees-table__row">
             <a href="#" class="employees-table__cell employees-table__name">

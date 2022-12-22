@@ -1,0 +1,74 @@
+.modal-not-access {
+  position: absolute;
+  overflow-y: auto;
+  overflow-x: hidden;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 760px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 74px 33px 62px 22px;
+  transition: all .2s;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &._active {
+    opacity: 1;
+    z-index: 999;
+    visibility: visible;
+  }
+
+  @media (max-width: 1024px) {
+    width: 500px;
+    padding: 50px 20px 50px 20px;
+  }
+  @media (max-width: 550px) {
+    width: 80%;
+    padding: 50px 20px 50px 20px;
+  }
+
+  h2 {
+    @include montserrat-semibold;
+    font-size: 38px;
+    line-height: 46px;
+    color: #000000;
+    margin-bottom: 25px;
+    text-align: center;
+    @media (max-width: 550px) {
+      font-size: 32px;
+      line-height: 35px;
+    }
+  }
+
+  p {
+    text-align: center;
+  }
+
+  &__close-btn {
+    position: absolute;
+    border: none;
+    background: none;
+    cursor: pointer;
+    right: 16px;
+    top: 20px;
+
+    svg {
+      pointer-events: none;
+    }
+
+    path {
+      transition: all .3s;
+    }
+
+    &:hover {
+      path {
+        fill: $link;
+      }
+    }
+
+  }
+}

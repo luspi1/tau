@@ -16,6 +16,7 @@ const cancelSubjectBtn = document.querySelector('.modal-contract__close-subject'
 const cancelConfidentialBtn = document.querySelector('.modal-contract__close-confidential')
 const cancelAppBtn = document.querySelector('.modal-contract__close-app')
 const cancelCopyCase = document.querySelector('.modal-copy-case__close-btn')
+const cancelNotAccess = document.querySelector('#not-access-modal .modal-not-access__close-btn')
 
 
 
@@ -39,7 +40,7 @@ const contractSubjectBtn = document.querySelector('.contract__btn-subject')
 const contractConfidentialBtn = document.querySelector('.contract__btn-confidential')
 const contractAppBtn = document.querySelector('.contract__btn-app')
 const copyCaseBtn = document.querySelector('.create-case-page__copy-case-btn')
-
+const notAccessBtn = document.querySelector('.test-page__not-access-btn')
 
 // Управление состоянием модалок
 const manageModals = (...editButtons) => {
@@ -49,6 +50,7 @@ const manageModals = (...editButtons) => {
         const btnCurrentModal = btn.dataset.modal
         const currentPageMain = btn.closest('main')
         const currentModal = document.querySelector(`#${btnCurrentModal}`)
+        console.log(currentPageMain)
 
         currentPageMain.style.minHeight = `${currentModal.clientHeight}px`
         currentModal.classList.add('_active')
@@ -69,7 +71,8 @@ const manageModals = (...editButtons) => {
           cancelSubjectBtn,
           cancelConfidentialBtn,
           cancelAppBtn,
-          cancelCopyCase
+          cancelCopyCase,
+          cancelNotAccess
         )
       })
     }
@@ -94,7 +97,8 @@ manageModals(
   contractSubjectBtn,
   contractConfidentialBtn,
   contractAppBtn,
-  copyCaseBtn
+  copyCaseBtn,
+  notAccessBtn
 )
 
 
