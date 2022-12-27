@@ -222,7 +222,7 @@ const initAccountCheckMask = () => {
   if (accountCheckInputs) {
     accountCheckInputs.forEach(el => {
       Inputmask({
-        "mask": "999 999 999 999 999 999",
+        "mask": "9999 9999 9999 9999 9999",
         showMaskOnHover: false,
         showMaskOnFocus: false,
       }).mask(el);
@@ -255,7 +255,7 @@ const initCorrMask = () => {
   if (corrInputs) {
     corrInputs.forEach(el => {
       Inputmask({
-        "mask": "999 999 999 999 999 999",
+        "mask": "9999 9999 9999 9999 9999",
         showMaskOnHover: false,
         showMaskOnFocus: false,
       }).mask(el);
