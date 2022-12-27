@@ -170,9 +170,10 @@ const blockFields = (inputsWrapper) => {
 // Обрезка длинного текста на определенную длину
 
 
-const cutString = (stringArray) => {
+const cutString = (stringArray, stringLength) => {
   stringArray.forEach(str => {
-    const cutLength = +str.dataset.shear
+    let cutLength = 0
+    stringLength ? cutLength = stringLength : cutLength = +str.dataset.shear
 
     if (cutLength && cutLength < str.textContent.length) {
       str.textContent = `${str.textContent.substring(0, cutLength)}...`

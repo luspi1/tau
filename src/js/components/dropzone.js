@@ -1,6 +1,6 @@
 import { Dropzone } from "dropzone";
 
-import { sendData, showBigImgModal, showInfoModal } from "../_functions";
+import { cutString, sendData, showBigImgModal, showInfoModal } from "../_functions"
 
 
 const passportAmount = document.querySelector('.page-doc__passport-amount')
@@ -655,7 +655,27 @@ if (physLogo) {
 }
 
 
+//Dropzone загрузки документа на странице создания шаблона
 
+const createTemplateDoc = document.querySelector('#create-template-doc-dropzone');
+
+if (createTemplateDoc) {
+  let createTemplateDocDropzone = new Dropzone(createTemplateDoc, {
+    maxFilesize: 5,
+    url: "./data/photo-data.txt",
+    maxFiles: 1,
+    acceptedFiles: '.txt, .doc, .rtf, .pdf',
+    addRemoveLinks: true,
+    clickable: '#create-template-doc-add',
+    createImageThumbnails: false
+  });
+
+  createTemplateDocDropzone.on("success", function () {
+    const photoTitles = createTemplateDoc.querySelectorAll('span[data-dz-name]')
+    cutString(photoTitles, 12)
+  });
+
+}
 
 
 
