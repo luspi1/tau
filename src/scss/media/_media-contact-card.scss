@@ -36,7 +36,7 @@
   }
 
   .contact-card__changeable-item .contact-card__item-row {
-flex-direction: column;
+    flex-direction: column;
   }
 
   .contact-card__changeable-item h4 {
@@ -45,4 +45,16 @@ flex-direction: column;
   }
 
 
+}
+
+@media (max-width: 550px) {
+  .contact-card__nav {
+    flex-direction: column;
+  }
+
+
+  .contact-card .contact-card__nav li {
+    min-width: 100%;
+    min-height: 30px;
+  }
 }

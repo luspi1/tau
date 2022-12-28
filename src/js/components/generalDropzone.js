@@ -18,7 +18,7 @@ if (genDropzones) {
       maxFilesize: 5,
       url: url,
       maxFiles: filesCount,
-      acceptedFiles: 'image/png, image/jpeg, image/jpg',
+      acceptedFiles: '.png, .jpeg, .jpg',
       addRemoveLinks: true,
       thumbnailWidth: width,
       thumbnailHeight: height,

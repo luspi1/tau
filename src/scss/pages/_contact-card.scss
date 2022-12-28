@@ -84,10 +84,21 @@
       &:not(:last-child) {
         margin-right: 30px;
       }
+    }
 
+    li[data-nav="info"] {
+      min-width: 187px;
+    }
+    li[data-nav="industries"] {
+      min-width: 75px;
+    }
+    li[data-nav="contacts"] {
+      min-width: 83px;
+    }
+    li[data-nav="bank"] {
+      min-width: 197px;
     }
   }
-
 
   &__changeable {
     margin-bottom: 40px;
@@ -122,6 +133,9 @@
 
     .contact-card__item-row {
       display: flex;
+      h4 {
+        line-height: 24px;
+      }
 
       &:not(:last-child) {
         margin-bottom: 10px;

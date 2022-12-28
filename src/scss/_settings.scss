@@ -219,6 +219,11 @@ select::-ms-expand {
 
 }
 
+.btn_disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 .edit-doc-wrapper__input {
   position: absolute;
   visibility: hidden;

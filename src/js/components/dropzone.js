@@ -110,7 +110,6 @@ if (passportScan) {
 
   const passportScanBtn = document.querySelector('.page-doc__passport-doc-btn')
 
-
   const passportDropzone = new Dropzone(passportScan, {
     maxFilesize: 5,
     url: "/include/ajax/upload_image.php",
@@ -660,20 +659,67 @@ if (physLogo) {
 const createTemplateDoc = document.querySelector('#create-template-doc-dropzone');
 
 if (createTemplateDoc) {
+
+  const createTemplateBtn = document.querySelector('#create-template-doc-add')
+
   let createTemplateDocDropzone = new Dropzone(createTemplateDoc, {
     maxFilesize: 5,
-    url: "./data/photo-data.txt",
+    url: "./data/getCases.txt",
     maxFiles: 1,
     acceptedFiles: '.txt, .doc, .rtf, .pdf',
     addRemoveLinks: true,
     clickable: '#create-template-doc-add',
-    createImageThumbnails: false
+    createImageThumbnails: false,
+    removedfile: async function (file) {
+      const data = {
+        filetype: "create-template-doc",
+        id_person_doc: file._removeLink.dataset.id
+      }
+
+      const jsonData = JSON.stringify(data)
+      const response = await sendData(jsonData, './data/getCases.txt')
+      const finishedResponse = await response.json()
+
+      const {status, errortext} = finishedResponse
+
+      if (status === 'ok') {
+        if (file.previewElement != null && file.previewElement.parentNode != null) {
+
+          createTemplateBtn.classList.remove('btn_disabled')
+          file.previewElement.parentNode.removeChild(file.previewElement);
+        }
+      } else {
+        showInfoModal(errortext)
+      }
+    }
   });
 
-  createTemplateDocDropzone.on("success", function () {
-    const photoTitles = createTemplateDoc.querySelectorAll('span[data-dz-name]')
-    cutString(photoTitles, 12)
+  createTemplateDocDropzone.on("sending", function (file, xhr, formData) {
+    formData.append("filetype", "create-template-doc");
+    formData.append("id_item", createTemplateBtn.dataset.id)
   });
+
+  createTemplateDocDropzone.on("error", function (file) {
+    showInfoModal('Ошибка 404')
+    file.previewElement.parentNode.removeChild(file.previewElement);
+  })
+
+  createTemplateDocDropzone.on("success", function (file, response) {
+
+    const resObj = JSON.parse(response)
+    const {status, errortext, id_person_doc} = resObj
+
+    if (status !== 'ok') {
+      showInfoModal(errortext)
+      file.previewElement.parentNode.removeChild(file.previewElement);
+    } else {
+      createTemplateBtn.classList.add('btn_disabled')
+      const photoTitles = createTemplateDoc.querySelectorAll('span[data-dz-name]')
+      cutString(photoTitles, 12)
+      file._removeLink.setAttribute('data-id', id_person_doc)
+    }
+  });
+
 
 }
 
