@@ -283,6 +283,18 @@
     margin-right: 10px;
   }
 
+
+  &__checkbox-group {
+    display: flex;
+    padding: 20px 0;
+
+    .new-organization__checkbox-wrapper:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+
+
+
   &__textarea-wrapper {
     width: 66.1%;
     align-self: stretch;

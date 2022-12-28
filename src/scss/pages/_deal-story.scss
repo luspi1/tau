@@ -8,8 +8,8 @@
     color: #2f65f6;
   }
 
-  >.container {
-    margin-top: 23px;
+  > .container {
+    padding-top: 17px;
     display: flex;
   }
 
@@ -22,6 +22,7 @@
     &__title {
       display: flex;
       align-items: center;
+      margin-bottom: 34px;
     }
 
     h1 {
@@ -39,11 +40,11 @@
     &__row {
       display: flex;
       width: 100%;
-      padding: 33px 0 38px;
+      padding: 0 0 38px;
     }
 
     &__item {
-      margin-left: 113px;
+      margin-right: 90px;
 
       &:first-child {
         margin-left: 0;

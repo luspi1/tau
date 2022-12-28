@@ -8,7 +8,6 @@
   }
 
   > .container {
-    margin-top: 5px;
     display: flex;
   }
 
@@ -21,6 +20,7 @@
     &__title {
       display: flex;
       align-items: center;
+      margin-bottom: 34px;
     }
 
     h1 {
@@ -46,15 +46,15 @@
     &__row {
       display: flex;
       width: 100%;
-      padding: 33px 0 38px;
+      padding: 0 0 38px;
       border-bottom: 2px dotted #C4C4C4;;
     }
 
     &__item {
-      margin-left: 42px;
+      margin-right: 90px;
 
       &:first-child {
-        margin-left: 0;
+        margin-right: 22px;
       }
 
       p {
