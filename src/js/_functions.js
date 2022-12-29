@@ -181,6 +181,21 @@ const cutString = (stringArray, stringLength) => {
   })
 }
 
+
+const changePage = (selectors) => {
+  if (selectors) {
+    selectors.forEach(el => {
+      el.addEventListener('change', (e) => {
+        const selectLink = e.target.dataset.selectPage
+        const selectValue = e.target.value
+        localStorage.setItem('select-value', selectValue)
+        window.location.href = `${selectLink}/${selectValue}`
+      })
+    })
+  }
+}
+
+
 export {
   removeClasses,
   sendData,
@@ -194,5 +209,6 @@ export {
   handlePopupInputs,
   closeSelectPopups,
   blockFields,
-  cutString
+  cutString,
+  changePage
 }

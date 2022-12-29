@@ -163,22 +163,11 @@ if (dealsSelect) {
   });
 }
 
-// Селектор организации в заголовке на странице доход организации
-const titleSelect = document.querySelector('.title__select');
 
-if (titleSelect) {
-  const choices = new Choices(titleSelect, {
-    searchEnabled: false,
-    itemSelectText: '',
-    shouldSort: false,
-    allowHTML: true
-  });
-}
 
 
 
 const incomingPageSelects = document.querySelectorAll('.filter__select-wrap select')
-
 if (incomingPageSelects) {
   incomingPageSelects.forEach(el => {
     const choices = new Choices(el, {
@@ -245,17 +234,7 @@ if (newMailsSelects) {
   })
 }
 
-// Селектор организации в заголовке на странице движение денежных средств
-const titleTrafficSelect = document.querySelector('.title__traffic-select');
 
-if (titleTrafficSelect) {
-  const choices = new Choices(titleTrafficSelect, {
-    searchEnabled: false,
-    itemSelectText: '',
-    shouldSort: false,
-    allowHTML: true
-  });
-}
 
 const trafficSelects = document.querySelectorAll('.traffic__select-wrap select')
 
