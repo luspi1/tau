@@ -669,7 +669,7 @@ if (createTemplateDoc) {
     maxFilesize: 5,
     url: url,
     maxFiles: 1,
-    acceptedFiles: '.txt, .doc, .rtf, .pdf',
+    acceptedFiles: '.txt, .doc, docx, .rtf, .pdf',
     addRemoveLinks: true,
     clickable: '#create-template-doc-add',
     createImageThumbnails: false,
