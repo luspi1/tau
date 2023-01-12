@@ -1,4 +1,4 @@
-import { Dropzone } from "dropzone";
+import { Dropzone } from "dropzone"
 
 import { cutString, sendData, showBigImgModal, showInfoModal } from "../_functions"
 
@@ -22,7 +22,7 @@ const updateAmountScans = () => {
 
 //Dropzone для аватара на странице информации
 
-const personAvatar = document.querySelector('#person-dropzone');
+const personAvatar = document.querySelector('#person-dropzone')
 if (personAvatar) {
   let personDropzone = new Dropzone(personAvatar, {
     maxFilesize: 5,
@@ -44,22 +44,22 @@ if (personAvatar) {
 
       if (status === 'ok') {
         if (file.previewElement != null && file.previewElement.parentNode != null) {
-          file.previewElement.parentNode.removeChild(file.previewElement);
+          file.previewElement.parentNode.removeChild(file.previewElement)
         }
       } else {
         showInfoModal(errortext)
       }
     }
-  });
+  })
 
   personDropzone.on("error", function (file) {
     showInfoModal('Ошибка 404')
-    file.previewElement.parentNode.removeChild(file.previewElement);
+    file.previewElement.parentNode.removeChild(file.previewElement)
   })
 
   personDropzone.on("sending", function (file, xhr, formData) {
-    formData.append("filetype", "avatar");
-  });
+    formData.append("filetype", "avatar")
+  })
 
   personDropzone.on("success", function (file, response) {
     const resObj = JSON.parse(response)
@@ -67,11 +67,11 @@ if (personAvatar) {
 
     if (status !== 'ok') {
       showInfoModal(errortext)
-      file.previewElement.parentNode.removeChild(file.previewElement);
+      file.previewElement.parentNode.removeChild(file.previewElement)
     } else {
       file._removeLink.setAttribute('data-id', id_person_image)
     }
-  });
+  })
 
   const existingImages = personAvatar.querySelectorAll('.dz-preview')
 
@@ -92,7 +92,7 @@ if (personAvatar) {
 
         const {status, errortext} = finishedResponse
         if (status === 'ok') {
-          el.parentNode.removeChild(el);
+          el.parentNode.removeChild(el)
         } else {
           showInfoModal(errortext)
         }
@@ -104,7 +104,7 @@ if (personAvatar) {
 
 //Dropzone для сканов паспорта на странице документов
 
-const passportScan = document.querySelector('#passport-dropzone');
+const passportScan = document.querySelector('#passport-dropzone')
 
 if (passportScan) {
 
@@ -133,24 +133,24 @@ if (passportScan) {
 
       if (status === 'ok') {
         if (file.previewElement != null && file.previewElement.parentNode != null) {
-          file.previewElement.parentNode.removeChild(file.previewElement);
+          file.previewElement.parentNode.removeChild(file.previewElement)
           updateAmountScans()
         }
       } else {
         showInfoModal(errortext)
       }
     }
-  });
+  })
 
 
   passportDropzone.on("sending", function (file, xhr, formData) {
-    formData.append("filetype", "passport");
+    formData.append("filetype", "passport")
     formData.append("id_item", passportScanBtn.dataset.id)
-  });
+  })
 
   passportDropzone.on("error", function (file) {
     showInfoModal('Ошибка 404')
-    file.previewElement.parentNode.removeChild(file.previewElement);
+    file.previewElement.parentNode.removeChild(file.previewElement)
   })
 
 
@@ -160,7 +160,7 @@ if (passportScan) {
 
     if (status !== 'ok') {
       showInfoModal(errortext)
-      file.previewElement.parentNode.removeChild(file.previewElement);
+      file.previewElement.parentNode.removeChild(file.previewElement)
     } else {
       file._removeLink.setAttribute('data-id', id_person_image)
       updateAmountScans()
@@ -169,7 +169,7 @@ if (passportScan) {
         showBigImgModal(file.dataURL)
       })
     }
-  });
+  })
 
   const existingImages = passportScan.querySelectorAll('.dz-preview')
   if (existingImages) {
@@ -189,7 +189,7 @@ if (passportScan) {
 
         const {status, errortext} = finishedResponse
         if (status === 'ok') {
-          el.parentNode.removeChild(el);
+          el.parentNode.removeChild(el)
           updateAmountScans()
         } else {
           showInfoModal(errortext)
@@ -202,7 +202,7 @@ if (passportScan) {
 
 //Dropzone для сканов СНИЛС на странице документов
 
-const insuranceScan = document.querySelector('#insurance-dropzone');
+const insuranceScan = document.querySelector('#insurance-dropzone')
 
 if (insuranceScan) {
 
@@ -229,23 +229,23 @@ if (insuranceScan) {
 
       if (status === 'ok') {
         if (file.previewElement != null && file.previewElement.parentNode != null) {
-          file.previewElement.parentNode.removeChild(file.previewElement);
+          file.previewElement.parentNode.removeChild(file.previewElement)
           insuranceAddBtn.style.display = 'block'
         }
       } else {
         showInfoModal(errortext)
       }
     }
-  });
+  })
 
   insuranceDropzone.on("sending", function (file, xhr, formData) {
-    formData.append("filetype", "snils");
+    formData.append("filetype", "snils")
     formData.append("id_item", insuranceScanBtn.dataset.id)
-  });
+  })
 
   insuranceDropzone.on("error", function (file) {
     showInfoModal('Ошибка 404')
-    file.previewElement.parentNode.removeChild(file.previewElement);
+    file.previewElement.parentNode.removeChild(file.previewElement)
   })
 
   insuranceDropzone.on("success", function (file, response) {
@@ -254,7 +254,7 @@ if (insuranceScan) {
 
     if (status !== 'ok') {
       showInfoModal(errortext)
-      file.previewElement.parentNode.removeChild(file.previewElement);
+      file.previewElement.parentNode.removeChild(file.previewElement)
     } else {
       file._removeLink.setAttribute('data-id', id_person_image)
       insuranceAddBtn.style.display = 'none'
@@ -263,7 +263,7 @@ if (insuranceScan) {
         showBigImgModal(file.dataURL)
       })
     }
-  });
+  })
 
   const existingImages = insuranceScan.querySelectorAll('.dz-preview')
   if (existingImages) {
@@ -281,7 +281,7 @@ if (insuranceScan) {
 
         const {status, errortext} = finishedResponse
         if (status === 'ok') {
-          el.parentNode.removeChild(el);
+          el.parentNode.removeChild(el)
           insuranceAddBtn.style.display = 'block'
         } else {
           showInfoModal(errortext)
@@ -294,7 +294,7 @@ if (insuranceScan) {
 
 //Dropzone для сканов ИНН на странице документов
 
-const taxScan = document.querySelector('#tax-dropzone');
+const taxScan = document.querySelector('#tax-dropzone')
 
 if (taxScan) {
 
@@ -321,23 +321,23 @@ if (taxScan) {
 
       if (status === 'ok') {
         if (file.previewElement != null && file.previewElement.parentNode != null) {
-          file.previewElement.parentNode.removeChild(file.previewElement);
+          file.previewElement.parentNode.removeChild(file.previewElement)
           taxAddBtn.style.display = 'block'
         }
       } else {
         showInfoModal(errortext)
       }
     }
-  });
+  })
 
   taxDropzone.on("sending", function (file, xhr, formData) {
-    formData.append("filetype", "inn");
+    formData.append("filetype", "inn")
     formData.append("id_item", taxScanBtn.dataset.id)
-  });
+  })
 
   taxDropzone.on("error", function (file) {
     showInfoModal('Ошибка 404')
-    file.previewElement.parentNode.removeChild(file.previewElement);
+    file.previewElement.parentNode.removeChild(file.previewElement)
   })
 
   taxDropzone.on("success", function (file, response) {
@@ -346,7 +346,7 @@ if (taxScan) {
 
     if (status !== 'ok') {
       showInfoModal(errortext)
-      file.previewElement.parentNode.removeChild(file.previewElement);
+      file.previewElement.parentNode.removeChild(file.previewElement)
     } else {
       file._removeLink.setAttribute('data-id', id_person_image)
       taxAddBtn.style.display = 'none'
@@ -355,7 +355,7 @@ if (taxScan) {
         showBigImgModal(file.dataURL)
       })
     }
-  });
+  })
 
   const existingImages = taxScan.querySelectorAll('.dz-preview')
   if (existingImages) {
@@ -374,7 +374,7 @@ if (taxScan) {
         const {status, errortext} = finishedResponse
         if (status === 'ok') {
           taxAddBtn.style.display = 'block'
-          el.parentNode.removeChild(el);
+          el.parentNode.removeChild(el)
         } else {
           showInfoModal(errortext)
         }
@@ -483,12 +483,12 @@ if (taxScan) {
 
 //Dropzone для лого организации на странице редактирования контакта
 
-const contactLogo = document.querySelector('#contact-dropzone');
+const contactLogo = document.querySelector('#contact-dropzone')
 
 
 if (contactLogo) {
 
-const contactLogoBtn = document.querySelector('.edit-contact__add-logo-btn')
+  const contactLogoBtn = document.querySelector('.edit-contact__add-logo-btn')
 
   let contactDropzone = new Dropzone(contactLogo, {
     maxFilesize: 5,
@@ -513,22 +513,22 @@ const contactLogoBtn = document.querySelector('.edit-contact__add-logo-btn')
 
       if (status === 'ok') {
         if (file.previewElement != null && file.previewElement.parentNode != null) {
-          file.previewElement.parentNode.removeChild(file.previewElement);
+          file.previewElement.parentNode.removeChild(file.previewElement)
         }
       } else {
         showInfoModal(errortext)
       }
     }
-  });
+  })
 
   contactDropzone.on("sending", function (file, xhr, formData) {
-    formData.append("filetype", "contact-logo");
+    formData.append("filetype", "contact-logo")
     formData.append("id_item", contactLogoBtn.dataset.id)
-  });
+  })
 
   contactDropzone.on("error", function (file) {
     showInfoModal('Ошибка 404')
-    file.previewElement.parentNode.removeChild(file.previewElement);
+    file.previewElement.parentNode.removeChild(file.previewElement)
   })
 
   contactDropzone.on("success", function (file, response) {
@@ -537,11 +537,11 @@ const contactLogoBtn = document.querySelector('.edit-contact__add-logo-btn')
 
     if (status !== 'ok') {
       showInfoModal(errortext)
-      file.previewElement.parentNode.removeChild(file.previewElement);
+      file.previewElement.parentNode.removeChild(file.previewElement)
     } else {
       file._removeLink.setAttribute('data-id', id_person_image)
     }
-  });
+  })
 
   const existingImages = contactLogo.querySelectorAll('.dz-preview')
   if (existingImages) {
@@ -558,7 +558,7 @@ const contactLogoBtn = document.querySelector('.edit-contact__add-logo-btn')
 
         const {status, errortext} = finishedResponse
         if (status === 'ok') {
-          el.parentNode.removeChild(el);
+          el.parentNode.removeChild(el)
         } else {
           showInfoModal(errortext)
         }
@@ -569,7 +569,7 @@ const contactLogoBtn = document.querySelector('.edit-contact__add-logo-btn')
 
 //Dropzone для физ лица на странице редактирования контакта
 
-const physLogo = document.querySelector('#phys-dropzone');
+const physLogo = document.querySelector('#phys-dropzone')
 
 if (physLogo) {
 
@@ -598,22 +598,22 @@ if (physLogo) {
 
       if (status === 'ok') {
         if (file.previewElement != null && file.previewElement.parentNode != null) {
-          file.previewElement.parentNode.removeChild(file.previewElement);
+          file.previewElement.parentNode.removeChild(file.previewElement)
         }
       } else {
         showInfoModal(errortext)
       }
     }
-  });
+  })
 
   physDropzone.on("sending", function (file, xhr, formData) {
-    formData.append("filetype", "contact-logo");
+    formData.append("filetype", "contact-logo")
     formData.append("id_item", physLogoBtn.dataset.id)
-  });
+  })
 
   physDropzone.on("error", function (file) {
     showInfoModal('Ошибка 404')
-    file.previewElement.parentNode.removeChild(file.previewElement);
+    file.previewElement.parentNode.removeChild(file.previewElement)
   })
 
   physDropzone.on("success", function (file, response) {
@@ -622,11 +622,11 @@ if (physLogo) {
 
     if (status !== 'ok') {
       showInfoModal(errortext)
-      file.previewElement.parentNode.removeChild(file.previewElement);
+      file.previewElement.parentNode.removeChild(file.previewElement)
     } else {
       file._removeLink.setAttribute('data-id', id_person_image)
     }
-  });
+  })
 
 
   const existingImages = physLogo.querySelectorAll('.dz-preview')
@@ -644,7 +644,7 @@ if (physLogo) {
 
         const {status, errortext} = finishedResponse
         if (status === 'ok') {
-          el.parentNode.removeChild(el);
+          el.parentNode.removeChild(el)
         } else {
           showInfoModal(errortext)
         }
@@ -656,15 +656,18 @@ if (physLogo) {
 
 //Dropzone загрузки документа на странице создания шаблона
 
-const createTemplateDoc = document.querySelector('#create-template-doc-dropzone');
+const createTemplateDoc = document.querySelector('#create-template-doc-dropzone')
 
 if (createTemplateDoc) {
+
+  const dataObj = JSON.parse(createTemplateDoc.dataset.info)
+  const {url, type, removeUrl, additional} = dataObj
 
   const createTemplateBtn = document.querySelector('#create-template-doc-add')
 
   let createTemplateDocDropzone = new Dropzone(createTemplateDoc, {
     maxFilesize: 5,
-    url: "./data/getCases.txt",
+    url: url,
     maxFiles: 1,
     acceptedFiles: '.txt, .doc, .rtf, .pdf',
     addRemoveLinks: true,
@@ -672,12 +675,12 @@ if (createTemplateDoc) {
     createImageThumbnails: false,
     removedfile: async function (file) {
       const data = {
-        filetype: "create-template-doc",
-        id_person_doc: file._removeLink.dataset.id
+        filetype: type,
+        id_person_doc: file._removeLink.dataset.id,
       }
 
       const jsonData = JSON.stringify(data)
-      const response = await sendData(jsonData, './data/getCases.txt')
+      const response = await sendData(jsonData, removeUrl)
       const finishedResponse = await response.json()
 
       const {status, errortext} = finishedResponse
@@ -686,22 +689,23 @@ if (createTemplateDoc) {
         if (file.previewElement != null && file.previewElement.parentNode != null) {
 
           createTemplateBtn.classList.remove('btn_disabled')
-          file.previewElement.parentNode.removeChild(file.previewElement);
+          file.previewElement.parentNode.removeChild(file.previewElement)
         }
       } else {
         showInfoModal(errortext)
       }
     }
-  });
+  })
 
   createTemplateDocDropzone.on("sending", function (file, xhr, formData) {
-    formData.append("filetype", "create-template-doc");
+    formData.append("filetype", type)
     formData.append("id_item", createTemplateBtn.dataset.id)
-  });
+    formData.append("additional", additional)
+  })
 
   createTemplateDocDropzone.on("error", function (file) {
     showInfoModal('Ошибка 404')
-    file.previewElement.parentNode.removeChild(file.previewElement);
+    file.previewElement.parentNode.removeChild(file.previewElement)
   })
 
   createTemplateDocDropzone.on("success", function (file, response) {
@@ -711,14 +715,43 @@ if (createTemplateDoc) {
 
     if (status !== 'ok') {
       showInfoModal(errortext)
-      file.previewElement.parentNode.removeChild(file.previewElement);
+      file.previewElement.parentNode.removeChild(file.previewElement)
     } else {
       createTemplateBtn.classList.add('btn_disabled')
       const photoTitles = createTemplateDoc.querySelectorAll('span[data-dz-name]')
       cutString(photoTitles, 12)
       file._removeLink.setAttribute('data-id', id_person_doc)
     }
-  });
+  })
+
+
+  const existingDocs = createTemplateDoc.querySelectorAll('.dz-preview')
+  if (existingDocs) {
+    existingDocs.forEach(el => {
+      const deleteBtn = el.querySelector('.dz-remove')
+      deleteBtn.addEventListener('click', async (e) => {
+        const data = {
+          filetype: type,
+          id_person_doc: e.target.dataset.id
+        }
+
+        const jsonData = JSON.stringify(data)
+        const response = await sendData(jsonData, removeUrl)
+        const finishedResponse = await response.json()
+
+        const {status, errortext} = finishedResponse
+
+        if (status === 'ok') {
+          if (el.previewElement != null && el.previewElement.parentNode != null) {
+            createTemplateBtn.classList.remove('btn_disabled')
+            el.parentNode.removeChild(el)
+          }
+        } else {
+          showInfoModal(errortext)
+        }
+      })
+    })
+  }
 
 
 }
