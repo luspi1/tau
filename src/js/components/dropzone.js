@@ -726,7 +726,8 @@ if (createTemplateDoc) {
 
 
   const existingDocs = createTemplateDoc.querySelectorAll('.dz-preview')
-  if (existingDocs) {
+  if (existingDocs.length > 0) {
+    createTemplateBtn.classList.add('btn_disabled')
     existingDocs.forEach(el => {
       const deleteBtn = el.querySelector('.dz-remove')
       deleteBtn.addEventListener('click', async (e) => {
@@ -742,7 +743,9 @@ if (createTemplateDoc) {
         const {status, errortext} = finishedResponse
 
         if (status === 'ok') {
-          if (el.previewElement != null && el.previewElement.parentNode != null) {
+
+
+          if (el.previewElement !== null) {
             createTemplateBtn.classList.remove('btn_disabled')
             el.parentNode.removeChild(el)
           }
