@@ -15,3 +15,14 @@ if (docPopupInputs) {
 const createDealPage = document.querySelector('.create-doc-page')
 closeSelectPopups(createDealPage)
 
+// Смена состояние страницы, в зависимости от селекта "Тип документа"
+
+const typeDocSelect = document.querySelector('.create-doc-page__type-doc-select')
+
+if (typeDocSelect) {
+
+  typeDocSelect.addEventListener('change', (e) => {
+    createDealPage.dataset.pageState = e.target.value
+  })
+
+}

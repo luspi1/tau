@@ -1,6 +1,68 @@
 .create-doc-page {
   padding: 32px 0 135px;
 
+  &__invoice-date-title {
+    display: none;
+  }
+
+  &[data-page-state="act"] {
+    .create-doc-page__date-end {
+      display: none;
+    }
+
+    .create-doc-page__date-wrapper {
+      max-width: 260px;
+    }
+
+    .create-doc-page__inputs .ask-icon {
+      right: 16px;
+
+      @media (max-width: 768px) {
+        top: 38px;
+        right: 0;
+      }
+    }
+
+    .create-doc-page__inputs {
+      max-width: 302px;
+    }
+  }
+
+  &[data-page-state="invoice"] {
+    .create-doc-page__doc-template {
+      display: none;
+    }
+    .create-doc-page__date-end {
+      display: none;
+    }
+
+    .create-doc-page__inputs .ask-icon {
+      right: 16px;
+
+      @media (max-width: 768px) {
+        top: 38px;
+        right: 0;
+      }
+    }
+
+    .create-doc-page__initial-date-title {
+      display: none;
+    }
+    .create-doc-page__invoice-date-title {
+      display: inline;
+    }
+
+    .create-doc-page__date-wrapper {
+      max-width: 260px;
+    }
+
+    .create-doc-page__inputs {
+      max-width: 302px;
+    }
+
+
+  }
+
   h1 {
     @include montserrat-semibold;
     font-size: 36px;
@@ -122,9 +184,11 @@
       margin-left: 17px;
       margin-right: 47px;
       cursor: pointer;
+
       &__bg {
         transition: all .3s;
       }
+
       &:hover {
         .ask-icon__bg {
           fill: #2F65F6;
