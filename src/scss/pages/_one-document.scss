@@ -1,7 +1,7 @@
 .one-document-page {
   color: #000000;
 
-  >.container {
+  > .container {
     padding-bottom: 80px;
   }
 
@@ -24,13 +24,47 @@
     }
   }
 
-  >.container {
+  &__sign-btn {
+    @include montserrat-medium;
+    font-size: 17px;
+    line-height: 21px;
+    border: 1px solid #0CB477;
+    border-radius: 5px;
+    color: #0CB477;
+    transition: all .3s;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 246px;
+    height: 47px;
+
+    svg {
+      margin-right: 5px;
+
+      path {
+        transition: all .3s;
+      }
+    }
+
+    &:hover {
+      background: #0CB477;
+      color: #ffffff;
+
+      svg path {
+        fill: #ffffff;
+      }
+    }
+  }
+
+  > .container {
     display: flex;
     justify-content: space-between;
   }
 
   .contract {
-    >.container {
+    > .container {
       max-width: 780px;
       padding: 0;
     }
