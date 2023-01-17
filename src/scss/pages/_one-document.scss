@@ -64,6 +64,7 @@
   }
 
   .contract {
+
     > .container {
       max-width: 780px;
       padding: 0;
@@ -115,6 +116,7 @@
 
     &__app {
       padding: 26px 0 21px;
+      margin-bottom: 50px;
     }
 
     &__btn {
@@ -123,6 +125,24 @@
       border: none;
       color: #2F65F6;
       cursor: pointer;
+    }
+  }
+
+  &__edit-btn {
+    @include montserrat-medium;
+    font-size: 17px;
+    line-height: 21px;
+    border: 1px solid #2F65F6;
+    padding: 13px 20px;
+    border-radius: 5px;
+    color: #2F65F6;
+    transition: all .3s;
+    background: none;
+    cursor: pointer;
+
+    &:hover {
+      background: #2F65F6;
+      color: #ffffff;
     }
   }
 

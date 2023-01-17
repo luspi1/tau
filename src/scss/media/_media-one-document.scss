@@ -1,81 +1,86 @@
 @media(max-width: 1400px) {
-  .one-document>.container {
+  .one-document-page > .container {
     flex-direction: column;
-    align-items: center;
   }
 
-  .one-document .aside {
+  .one-document-page .aside {
     margin-top: 50px;
   }
 }
 
 @media(max-width: 992px) {
-  .one-document .top h1 {
+  .one-document-page .top h1 {
     font-size: 30px;
   }
-  .one-document .contract > .container {
+  .one-document-page .contract > .container {
     max-width: 100%;
   }
-  .one-document .contract .long-hide {
+  .one-document-page .contract .long-hide {
     max-width: 330px;
   }
-  .one-document .modal-contract {
+  .one-document-page .modal-contract {
     width: 96%;
   }
 }
 
 @media(max-width: 768px) {
-  .one-document .top .container {
+  .one-document-page .top .container {
     padding-bottom: 0;
+    flex-direction: column;
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
   }
-  .one-document>.container {
+  .one-document-page > .container {
     align-items: flex-start;
   }
-.one-document .contract .contract__item {
-  flex-direction: column;
-}
-.one-document .aside {
-  width: 100%;
-}
-.one-document .aside .contract__item {
-  white-space: nowrap;
-}
+  .one-document-page .contract .contract__item {
+    flex-direction: column;
+  }
+  .one-document-page .aside {
+    width: 100%;
+  }
+  .one-document-page .aside .contract__item {
+    white-space: nowrap;
+  }
 
-.one-document .aside .contract__connection {
-  overflow-x: scroll;
-}
-.one-document .modal-contract {
-  padding: 60px 30px 80px;
-}
-.one-document .modal-contract h2 {
-  font-size: 32px;
-}
+  .one-document-page .aside .contract__connection {
+    overflow-x: scroll;
+  }
+  .one-document-page .modal-contract {
+    padding: 60px 30px 80px;
+  }
+  .one-document-page .modal-contract h2 {
+    font-size: 32px;
+  }
 }
 
 @media(max-width: 576px) {
-.one-document .top h1 {
-  font-size: 28px;
-}
-.one-document .contract__name {
-  padding-right: 0;
-}
+  .one-document-page .top h1 {
+    font-size: 28px;
+  }
+  .one-document-page .contract__name {
+    padding-right: 0;
+  }
 
-.one-document .contract .long-hide {
-  max-width: 260px;
-}
+  .one-document-page .contract .long-hide {
+    max-width: 260px;
+  }
 
-.one-document .aside {
-  padding: 20px 10px;
-}
+  .one-document-page .aside {
+    padding: 20px 10px;
+  }
 
-.one-document .aside .contract__info .contract__item {
-  flex-direction: column;
-}
-.one-document .modal-contract {
-  padding: 60px 15px 80px;
-}
-.one-document .modal-contract h2 {
-  font-size: 28px;
-}
+  .one-document-page .aside .contract__info .contract__item {
+    flex-direction: column;
+  }
+  .one-document-page .modal-contract {
+    padding: 60px 15px 80px;
+  }
+  .one-document-page .modal-contract h2 {
+    font-size: 28px;
+  }
 }
 
