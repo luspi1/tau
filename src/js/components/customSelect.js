@@ -294,19 +294,10 @@ if (createDocSelects) {
       searchEnabled: false,
       shouldSort: false,
       allowHTML: true
-    });
+    })
   })
-
-
-if (typeDocSelect) {
-  const choices = new Choices(typeDocSelect, {
-    itemSelectText: '',
-    searchEnabled: false,
-    shouldSort: false,
-    allowHTML: true
-  })
-
 }
+
 
 // Селектор фильтра типа документа на странице "создания шаблона"
 const typeTemplateSelect = document.querySelector('.create-template__type-doc')
