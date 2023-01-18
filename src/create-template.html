@@ -69,7 +69,7 @@
             </button>
 
           </form>
-          <div class="instructions">
+          <div class="instructions general-dropzone-wrapper">
             <h4>Инструкции</h4>
             <div class="instructions__links">
               <a href="#" class="instructions__link-download" download>Скачать
@@ -78,16 +78,18 @@
                 образец шаблона</a>
             </div>
 
-            <div id="create-template-doc-dropzone" class="dropzone"
-                 data-info='{"url": "./data/getCases.txt", "removeUrl":"./data/getCases.txt", "type":"create-template-doc", "additional": "доп. параметры"}'>
+            <button class="instructions__btn general-dropzone__add-btn"
+                    type="button"
+                    id="create-template-doc-add">
+              Загрузить шаблон, созданный в Word
+            </button>
+            <div id="create-template-doc-dropzone"
+                 class="dropzone general-dropzone"
+                 data-general-info='{"url": "data/getCases.txt", "removeUrl":"data/getCases.txt", "acceptedFiles": ".txt, .doc, .docx, .rtf, .pdf", "type":"template-doc", "filesCount": "1", "additional": "доп.контент"}'>
               <div class="dz-message">
-                <button class="instructions__btn" type="button"
-                        id="create-template-doc-add" data-id="12d13ff">
-                  <span>Загрузить шаблон, </span><span>созданный в Word</span>
-                </button>
+
               </div>
             </div>
-
 
             <div class="instructions__tags">
               <div class="instructions__title-block">

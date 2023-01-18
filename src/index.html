@@ -55,7 +55,8 @@
               <button class="modal-socials__save-btn" type="submit">
                 Сохранить
               </button>
-              <button class="modal-socials__close-btn" type="button" data-close-modal="true">
+              <button class="modal-socials__close-btn" type="button"
+                      data-close-modal="true">
                 Отменить
               </button>
             </div>
@@ -181,7 +182,8 @@
               <button class="modal-fullname__save-btn" type="submit">
                 Сохранить
               </button>
-              <button type="button" class="modal-fullname__close-btn" data-close-modal="true">
+              <button type="button" class="modal-fullname__close-btn"
+                      data-close-modal="true">
                 Отменить
               </button>
             </div>
@@ -276,7 +278,8 @@
               <button class="modal-requisites__save-btn" type="submit">
                 Сохранить
               </button>
-              <button type="button" class="modal-requisites__close-btn" data-close-modal="true">
+              <button type="button" class="modal-requisites__close-btn"
+                      data-close-modal="true">
                 Отменить
               </button>
             </div>
@@ -289,7 +292,9 @@
           <div class="prime-info__about">
             <div class="prime-info__person edit-modal">
               <div class="prime-info__person-img">
-                <form action="/target" id="person-dropzone" class="dropzone">
+                <form action="/target" id="person-dropzone"
+                      class="general-dropzone dropzone"
+                      data-general-info='{"url": "/include/ajax/upload_image.php", "removeUrl":"/include/ajax/delete_image.php", "width":"85", "height":"85", "acceptedFiles": ".png, .jpeg, .jpg", "type":"avatar", "filesCount": "1", "additional": "доп.контент"}'>
                   <div class="dz-message">Изменить фото</div>
                 </form>
               </div>
@@ -418,7 +423,8 @@
               <p class="prime-info__data-title">Страница в социальной сети</p>
               <div class="prime-info__socials-wrapper">
                 <div class="prime-info__socials-icons _non-icons">
-                  <p class="prime-info__socials-text">Добавьте ссылку на социальную сеть</p>
+                  <p class="prime-info__socials-text">Добавьте ссылку на
+                    социальную сеть</p>
                 </div>
                 <span>
               <svg

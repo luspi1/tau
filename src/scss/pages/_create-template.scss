@@ -233,6 +233,7 @@
       color: #2F65F6;
       cursor: pointer;
       transition: .3s;
+
       &:hover {
         background-color: #264DDB;
         color: #FFFFFF;
@@ -298,6 +299,8 @@
       color: #FFFFFF;
       transition: .3s;
       cursor: pointer;
+      display: flex;
+      align-items: center;
 
       &:hover {
         background-color: #264DDB;
@@ -344,6 +347,7 @@
       color: #2F65F6;
       cursor: pointer;
       transition: .3s;
+
       &:hover {
         color: #ffffff;
         background-color: #264DDB;
@@ -368,6 +372,7 @@
 
     .dz-details {
       display: block !important;
+
       .dz-size {
         display: none;
       }

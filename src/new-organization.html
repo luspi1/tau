@@ -44,9 +44,11 @@
                     type="button">Загрузить
                   </button>
                 </div>
-                <div class="general-dropzone dropzone new-organization__general-dropzone"
-                     data-general-info='{"url": "/include/ajax/upload_image.php", "removeUrl":"/include/ajax/delete_image.php", "width":"170", "height":"170", "type":"org", "filesCount": "3"}'>
-                  <div class="general-dropzone__message-wrapper new-organization__message-wrapper">
+                <div
+                  class="general-dropzone dropzone new-organization__general-dropzone"
+                  data-general-info='{"url": "data/getCases.txt", "removeUrl":"data/getCases.txt", "width":"170", "height":"170", "acceptedFiles": ".png, .jpeg, .jpg", "type":"org", "filesCount": "3", "additional": "доп.контент"}'>
+                  <div
+                    class="general-dropzone__message-wrapper new-organization__message-wrapper">
                     <div class="dz-message">
                     </div>
                     <div class="dz-message">
@@ -54,7 +56,19 @@
                     <div class="dz-message">
                     </div>
                   </div>
+                  
                 </div>
+                <!--                <div class="general-dropzone dropzone new-organization__general-dropzone"-->
+                <!--                     data-general-info='{"url": "/include/ajax/upload_image.php", "removeUrl":"/include/ajax/delete_image.php", "width":"170", "height":"170", "acceptedFiles": ".png, .jpeg, .jpg", "type":"org", "type":"org", "filesCount": "3", "additional": "доп.контент"}'>-->
+                <!--                  <div class="general-dropzone__message-wrapper new-organization__message-wrapper">-->
+                <!--                    <div class="dz-message">-->
+                <!--                    </div>-->
+                <!--                    <div class="dz-message">-->
+                <!--                    </div>-->
+                <!--                    <div class="dz-message">-->
+                <!--                    </div>-->
+                <!--                  </div>-->
+                <!--                </div>-->
               </div>
             </div>
           </div>
@@ -71,7 +85,8 @@
                 </p>
                 <input class="new-organization__input" type="text"
                        name="newOrgShortTitle"
-                       placeholder="Краткое название организации, чтобы его можно было использовать в Договоре и других документах" required>
+                       placeholder="Краткое название организации, чтобы его можно было использовать в Договоре и других документах"
+                       required>
               </div>
             </div>
             <div class="new-organization__item">
@@ -82,7 +97,8 @@
                 </p>
                 <input class="new-organization__input" type="text"
                        name="newOrgFullTitle"
-                       placeholder="Общество с ограниченной ответственностью «Полное название организации»" required>
+                       placeholder="Общество с ограниченной ответственностью «Полное название организации»"
+                       required>
               </div>
             </div>
             <div class="new-organization__item">
@@ -101,11 +117,13 @@
                 </div>
                 <div
                   class="new-organization__input-wrapper new-organization__director-btns">
-                  <button class="new-organization__btn join-director__btn" type="button" data-modal="join-director-modal" >Подключить контакт в
+                  <button class="new-organization__btn join-director__btn"
+                          type="button" data-modal="join-director-modal">
+                    Подключить контакт в
                     качестве руководителя
                   </button>
                 </div>
-               <div
+                <div
                   class="new-organization__input-wrapper">
                   <input type="checkbox" class="new-organization__checkbox"
                          id="checkDirector" name="newOrgCheckDirector"
@@ -203,7 +221,8 @@
                   class="new-organization__input-wrapper">
                   <input class="new-organization__input"
                          name="newOrgEmail"
-                         type="email" placeholder="emailaddress@website.com*" required>
+                         type="email" placeholder="emailaddress@website.com*"
+                         required>
                 </div>
                 <div
                   class="new-organization__input-wrapper">
@@ -266,7 +285,8 @@
                   class="new-organization__input-wrapper new-organization__textarea-wrapper">
                   <textarea class="new-organization__input"
                             name="newOrgJuristicFulladdress"
-                            placeholder="Полный адрес (улица, дом, корпус, строение, офис, помещение)" required
+                            placeholder="Полный адрес (улица, дом, корпус, строение, офис, помещение)"
+                            required
                   ></textarea>
                 </div>
 
@@ -313,7 +333,8 @@
                   class="new-organization__input-wrapper new-organization__textarea-wrapper">
                   <textarea class="new-organization__input"
                             name="newOrgMailFulladdress"
-                            placeholder="Полный адрес (улица, дом, корпус, строение, офис, помещение)" required
+                            placeholder="Полный адрес (улица, дом, корпус, строение, офис, помещение)"
+                            required
                   ></textarea>
                 </div>
 
@@ -370,7 +391,8 @@
                   class="new-organization__input-wrapper new-organization__textarea-wrapper">
                   <textarea class="new-organization__input"
                             name="newOrgPhysicalFulladdress"
-                            placeholder="Полный адрес (улица, дом, корпус, строение, офис, помещение)" required
+                            placeholder="Полный адрес (улица, дом, корпус, строение, офис, помещение)"
+                            required
                   ></textarea>
                 </div>
 
@@ -422,10 +444,12 @@
               </h2>
               <div
                 class="new-organization__input-wrapper new-organization__checkbox-wrapper">
-                <input class="new-organization__checkbox-value" value="1" type="hidden"
-                        name="newOrgCheckMaster[]">
+                <input class="new-organization__checkbox-value" value="1"
+                       type="hidden"
+                       name="newOrgCheckMaster[]">
                 <input class="new-organization__checkbox" checked type="radio"
-                       id="checkMasterAccount" name="newOrgCheckMasterAccount[]">
+                       id="checkMasterAccount"
+                       name="newOrgCheckMasterAccount[]">
                 <label class="new-organization__checkbox-label"
                        for="checkMasterAccount">Сделать этот счет основным для
                   организации</label>

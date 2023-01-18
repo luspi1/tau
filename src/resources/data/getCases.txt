@@ -1,1 +1,1 @@
-{"status": "ok", "errortext":"Произошла ошибка!", "id_person_doc":"54fftllt", "html":["<li data-id=\"42\">Документ1</li>", "<li data-id=\"33\">Документ2</li>", "<li data-id=\"11\">Документ3</li>"]}
+{"status": "ok", "errortext":"Произошла ошибка!", "id_person":"54fftllt", "html":["<li data-id=\"42\">Документ1</li>", "<li data-id=\"33\">Документ2</li>", "<li data-id=\"11\">Документ3</li>"]}

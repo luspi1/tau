@@ -1,32 +1,33 @@
 import { Dropzone } from "dropzone"
 
-import { sendData, showInfoModal } from "../_functions"
+import { cutString, sendData, showInfoModal } from "../_functions"
 
 
 const genDropzones = document.querySelectorAll('.general-dropzone')
-
 
 if (genDropzones) {
   genDropzones.forEach(dropzoneEl => {
 
     const addBtn = dropzoneEl.closest('.general-dropzone-wrapper')?.querySelector('.general-dropzone__add-btn')
 
+
     const dataObj = JSON.parse(dropzoneEl.dataset.generalInfo)
-    const {url, width, height, type, filesCount, removeUrl} = dataObj
+    const {url, width, height, type, filesCount, removeUrl, additional, acceptedFiles} = dataObj
 
     const newGenDropzone = new Dropzone(dropzoneEl, {
       maxFilesize: 5,
       url: url,
       maxFiles: filesCount,
-      acceptedFiles: '.png, .jpeg, .jpg',
+      acceptedFiles: acceptedFiles,
       addRemoveLinks: true,
       thumbnailWidth: width,
       thumbnailHeight: height,
-      clickable: '.general-dropzone__add-btn',
+
+      clickable: addBtn || '.dz-message',
       removedfile: async function (file) {
         const data = {
           filetype: type,
-          id_person_image: file._removeLink.dataset.id
+          id_file: file._removeLink.dataset.id
         }
 
         const jsonData = JSON.stringify(data)
@@ -38,6 +39,11 @@ if (genDropzones) {
         if (status === 'ok') {
           if (file.previewElement != null && file.previewElement.parentNode != null) {
             file.previewElement.parentNode.removeChild(file.previewElement)
+
+            if (dropzoneEl.querySelectorAll('.dz-preview').length < filesCount) {
+              addBtn.classList.remove('btn_disabled')
+            }
+
           }
         } else {
           showInfoModal(errortext)
@@ -47,7 +53,12 @@ if (genDropzones) {
 
     newGenDropzone.on("sending", function (file, xhr, formData) {
       formData.append("filetype", type)
-      formData.append("id_item", addBtn.dataset.id)
+      formData.append("additional", additional)
+
+      if (addBtn?.dataset.id) {
+        formData.append("id_item", addBtn.dataset.id)
+      }
+
     })
 
     newGenDropzone.on("error", function (file) {
@@ -57,24 +68,39 @@ if (genDropzones) {
 
     newGenDropzone.on("success", function (file, response) {
       const resObj = JSON.parse(response)
-      const {status, errortext, id_person_image} = resObj
+      const {status, errortext, id_person} = resObj
 
       if (status !== 'ok') {
         showInfoModal(errortext)
         file.previewElement.parentNode.removeChild(file.previewElement)
       } else {
-        file._removeLink.setAttribute('data-id', id_person_image)
+        const cutTitles = dropzoneEl.querySelectorAll('span[data-dz-name]')
+        
+        if (dropzoneEl.querySelectorAll('.dz-preview').length >= filesCount) {
+          addBtn.classList.add('btn_disabled')
+        }
+
+        if (cutTitles) {
+          cutString(cutTitles, 12)
+        }
+        file._removeLink.setAttribute('data-id', id_person)
       }
     })
 
-    const existingImages = dropzoneEl.querySelectorAll('.dz-preview')
-    if (existingImages) {
-      existingImages.forEach(el => {
+    const existingFiles = dropzoneEl.querySelectorAll('.dz-preview')
+    if (existingFiles.length > 0) {
+
+      if (existingFiles.length >= filesCount) {
+        addBtn.classList.add('btn_disabled')
+      }
+
+
+      existingFiles.forEach(el => {
         const deleteBtn = el.querySelector('.dz-remove')
         deleteBtn.addEventListener('click', async (e) => {
           const data = {
             filetype: type,
-            id_person_image: e.target.dataset.id
+            id_file: e.target.dataset.id
           }
           const jsonData = JSON.stringify(data)
           const response = await sendData(jsonData, removeUrl)
@@ -82,7 +108,10 @@ if (genDropzones) {
 
           const {status, errortext} = finishedResponse
           if (status === 'ok') {
-            el.parentNode.removeChild(el);
+            el.parentNode.removeChild(el)
+            if (dropzoneEl.querySelectorAll('.dz-preview').length < filesCount) {
+              addBtn.classList.remove('btn_disabled')
+            }
           } else {
             showInfoModal(errortext)
           }

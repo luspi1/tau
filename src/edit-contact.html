@@ -27,7 +27,8 @@
             <input name="id_leader_name"
                    class="select-popup-data"
                    type="hidden">
-            <input class="modal-connect-leader__input select-popup-input" type="text"
+            <input class="modal-connect-leader__input select-popup-input"
+                   type="text"
                    name="leader_search" placeholder="Начните вводить фамилию">
             <svg class="modal-connect-leader__delete-btn" width="20" height="20"
                  viewBox="0 0 20 20" fill="none"
@@ -550,7 +551,8 @@
                 Логотип организации
               </h2>
               <div class="edit-contact__item edit-contact__logo-item">
-                <div class="edit-contact__item-wrapper">
+                <div
+                  class="edit-contact__item-wrapper general-dropzone-wrapper">
                   <div
                     class="edit-contact__input-wrapper logo-loading">
                     <p class="edit-contact__input-title">
@@ -563,8 +565,10 @@
                     <p class="edit-contact__input-title">
                       Или загрузите изображение с ПК
                     </p>
-                    <button class="edit-contact__btn edit-contact__add-logo-btn" id="logo-add"
-                            type="button">
+                    <button
+                      class="edit-contact__btn edit-contact__add-logo-btn general-dropzone__add-btn"
+                      id="logo-add"
+                      type="button">
                       Загрузить
                     </button>
                   </div>
@@ -572,7 +576,8 @@
                     class="edit-contact__input-wrapper logo-preview">
 
                     <div id="contact-dropzone"
-                         class="dropzone">
+                         class="dropzone general-dropzone"
+                         data-general-info='{"url": "/include/ajax/upload_image.php", "removeUrl":"/include/ajax/delete_image.php", "width":"170", "height":"170", "acceptedFiles": ".png, .jpeg, .jpg", "type":"contact-logo", "filesCount": "1", "additional": "доп.контент"}'>
                       <div class="dz-message">
                       </div>
                     </div>
@@ -1039,7 +1044,8 @@
                 Фотография контакта
               </h2>
               <div class="edit-contact__item edit-contact__logo-item">
-                <div class="edit-contact__item-wrapper">
+                <div
+                  class="edit-contact__item-wrapper general-dropzone-wrapper">
                   <div
                     class="edit-contact__input-wrapper logo-loading">
                     <p class="edit-contact__input-title">
@@ -1052,8 +1058,10 @@
                     <p class="edit-contact__input-title">
                       Или загрузите изображение с ПК
                     </p>
-                    <button class="edit-contact__btn edit-contact__add-phys-btn" id="phys-add"
-                            type="button">
+                    <button
+                      class="edit-contact__btn edit-contact__add-phys-btn general-dropzone__add-btn"
+                      id="phys-add"
+                      type="button">
                       Загрузить
                     </button>
                   </div>
@@ -1061,9 +1069,11 @@
                     class="edit-contact__input-wrapper logo-preview">
 
                     <div id="phys-dropzone"
-                         class="dropzone">
+                         class="dropzone general-dropzone"
+                         data-general-info='{"url": "/include/ajax/upload_image.php", "removeUrl":"/include/ajax/delete_image.php", "width":"170", "height":"170", "acceptedFiles": ".png, .jpeg, .jpg", "type":"contact-logo", "filesCount": "1", "additional": "доп.контент"}'>
                       <div class="dz-message">
                       </div>
+
                     </div>
 
                   </div>
@@ -1145,7 +1155,6 @@
 
           </div>
           <div class="edit-contact__item">
-
             <div
               class="edit-contact__item-wrapper edit-contact__contact-btns">
               <div
