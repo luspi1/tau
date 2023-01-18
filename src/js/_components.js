@@ -29,5 +29,6 @@ import './components/cutStrings'
 import './components/generalDropzone'
 import './components/employeesTable'
 import './components/pageSelection'
+import './components/manageChangeableList'
 
 
