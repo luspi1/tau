@@ -5,6 +5,14 @@
     display: none;
   }
 
+  &__invoice-doc-select {
+    display: none;
+  }
+
+  &__sum-invoice {
+    display: none;
+  }
+
   &[data-page-state="act"] {
     .create-doc-page__date-end {
       display: none;
@@ -32,6 +40,15 @@
     .create-doc-page__doc-template {
       display: none;
     }
+
+    .create-doc-page__invoice-doc-select {
+      display: block;
+    }
+    .create-doc-page__sum-invoice {
+      display: block;
+    }
+
+
     .create-doc-page__date-end {
       display: none;
     }
@@ -48,6 +65,7 @@
     .create-doc-page__initial-date-title {
       display: none;
     }
+
     .create-doc-page__invoice-date-title {
       display: inline;
     }

@@ -290,15 +290,18 @@ if (onlyTemplatesSelects) {
 }
 
 // Селектор типа документа на странице создания документа
-const typeDocSelect = document.querySelector('.create-doc-page__custom-select')
+const createDocSelects = document.querySelectorAll('.create-doc-page__custom-select')
 
-if (typeDocSelect) {
-  const choices = new Choices(typeDocSelect, {
-    itemSelectText: '',
-    searchEnabled: false,
-    shouldSort: false,
-    allowHTML: true
-  });
+if (createDocSelects) {
+  createDocSelects.forEach(el => {
+    const choices = new Choices(el, {
+      itemSelectText: '',
+      searchEnabled: false,
+      shouldSort: false,
+      allowHTML: true
+    });
+  })
+
 }
 
 // Селектор фильтра типа документа на странице "создания шаблона"
