@@ -1,4 +1,4 @@
-import Choices from "choices.js";
+import Choices from "choices.js"
 
 const typeContactInput = document.querySelector('.new-contact__type-input')
 const casesInput = document.querySelector('.cases__filter-input')
@@ -11,7 +11,7 @@ const initSelects = () => {
       searchEnabled: false,
       itemSelectText: '',
       allowHTML: true
-    });
+    })
   })
 }
 
@@ -24,7 +24,7 @@ document.querySelectorAll('.contacts-table__selector').forEach(el => {
     searchEnabled: false,
     itemSelectText: '',
     allowHTML: true
-  });
+  })
 })
 
 // Селектор в модалке нового контакта
@@ -35,7 +35,7 @@ if (typeContactInput) {
     itemSelectText: '',
     shouldSort: false,
     allowHTML: true
-  });
+  })
 }
 
 
@@ -47,9 +47,8 @@ document.querySelectorAll('.edit-contact__item select:not(.edit-contact__contact
     itemSelectText: '',
     shouldSort: false,
     allowHTML: true
-  });
+  })
 })
-
 
 
 // Селекторы на странице новой организации
@@ -60,7 +59,7 @@ document.querySelectorAll('.new-organization__item select').forEach(el => {
     itemSelectText: '',
     shouldSort: false,
     allowHTML: true
-  });
+  })
 })
 
 // Селектор фильтрации на странице кейсов
@@ -71,7 +70,7 @@ if (casesInput) {
     itemSelectText: '',
     shouldSort: false,
     allowHTML: true
-  });
+  })
 }
 
 
@@ -84,7 +83,7 @@ const initPaymentSelects = () => {
       itemSelectText: '',
       shouldSort: false,
       allowHTML: true
-    });
+    })
   })
 }
 
@@ -99,7 +98,7 @@ if (dealExecutorSelect) {
     itemSelectText: '',
     shouldSort: false,
     allowHTML: true
-  });
+  })
 }
 
 
@@ -109,7 +108,7 @@ const initPaymentsSelect = () => {
       itemSelectText: '',
       shouldSort: false,
       allowHTML: true
-    });
+    })
   })
 }
 
@@ -121,7 +120,7 @@ document.querySelectorAll('.create-deal-page__custom-select').forEach(el => {
     itemSelectText: '',
     shouldSort: false,
     allowHTML: true
-  });
+  })
 })
 
 
@@ -135,12 +134,12 @@ if (dealsDocSelect) {
     itemSelectText: '',
     shouldSort: false,
     allowHTML: true
-  });
+  })
 }
 
 
 // Селектор в поиске на странице история сделки
-const searchSelect = document.querySelector('.search__select');
+const searchSelect = document.querySelector('.search__select')
 
 if (searchSelect) {
   const choices = new Choices(searchSelect, {
@@ -148,11 +147,11 @@ if (searchSelect) {
     itemSelectText: '',
     shouldSort: false,
     allowHTML: true
-  });
+  })
 }
 
 // Селектор в поиске на странице все сделки
-const dealsSelect = document.querySelector('.deals__select');
+const dealsSelect = document.querySelector('.deals__select')
 
 if (dealsSelect) {
   const choices = new Choices(dealsSelect, {
@@ -160,11 +159,8 @@ if (dealsSelect) {
     itemSelectText: '',
     shouldSort: false,
     allowHTML: true
-  });
+  })
 }
-
-
-
 
 
 const incomingPageSelects = document.querySelectorAll('.filter__select-wrap select')
@@ -202,7 +198,7 @@ if (incomingModalSelects) {
       searchEnabled: false,
       shouldSort: false,
       allowHTML: true
-    });
+    })
   })
 }
 
@@ -216,7 +212,7 @@ if (letterModalSelects) {
       searchEnabled: false,
       shouldSort: false,
       allowHTML: true
-    });
+    })
   })
 }
 
@@ -230,10 +226,9 @@ if (newMailsSelects) {
       searchEnabled: false,
       shouldSort: false,
       allowHTML: true
-    });
+    })
   })
 }
-
 
 
 const trafficSelects = document.querySelectorAll('.traffic__select-wrap select')
@@ -259,7 +254,7 @@ if (templateDocumentsSelects) {
       searchEnabled: false,
       shouldSort: false,
       allowHTML: true
-    });
+    })
   })
 }
 
@@ -272,7 +267,7 @@ if (onlyDocumentSelect) {
     searchEnabled: false,
     shouldSort: false,
     allowHTML: true
-  });
+  })
 }
 
 // Селектор фильтра типа шаблона на странице "только шаблоны"
@@ -285,7 +280,7 @@ if (onlyTemplatesSelects) {
       searchEnabled: false,
       shouldSort: false,
       allowHTML: true
-    });
+    })
   })
 }
 
@@ -302,6 +297,15 @@ if (createDocSelects) {
     });
   })
 
+
+if (typeDocSelect) {
+  const choices = new Choices(typeDocSelect, {
+    itemSelectText: '',
+    searchEnabled: false,
+    shouldSort: false,
+    allowHTML: true
+  })
+
 }
 
 // Селектор фильтра типа документа на странице "создания шаблона"
@@ -313,8 +317,9 @@ if (typeTemplateSelect) {
     searchEnabled: false,
     shouldSort: false,
     allowHTML: true
-  });
+  })
 }
+
 
 export { initSelects, initPaymentSelects, initPaymentsSelect }
 

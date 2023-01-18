@@ -51,6 +51,15 @@
     left: 154px;
     top: calc(20px + 50%);
   }
+
+  .create-deal-page .create-deal-payments .create-deal-page__prompt-wrapper {
+    align-items: stretch;
+  }
+
+  .create-deal-page .create-deal-payments__list {
+    min-width: 100%;
+  }
+
 }
 
 @media(max-width: 768px) {
