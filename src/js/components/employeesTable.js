@@ -1,5 +1,5 @@
 import { body, deleteEmployeeModal, jobChangeModal, modalOverlay } from "../_vars"
-import { sendData, showInfoModal }                     from "../_functions"
+import { sendData, showInfoModal }                                 from "../_functions"
 
 
 const EmployeesTypes = ['руководитель', 'менеджер', 'постоянный', 'временный']
@@ -25,6 +25,7 @@ const showJobChangeModal = ({name, direction, position}) => {
   // Отправки информации по нажатию "Изменить должность"
 
   const jobModalForm = jobChangeModal.querySelector('.modal-job-change__form')
+  const changeEmployeeUrl = jobModalForm.dataset.url
 
   jobModalForm.addEventListener('submit', async (e) => {
     e.preventDefault()
@@ -35,7 +36,7 @@ const showJobChangeModal = ({name, direction, position}) => {
     }
 
     const jsonData = JSON.stringify(data)
-    const response = await sendData(jsonData, './data/getCases.txt')
+    const response = await sendData(jsonData, changeEmployeeUrl)
     const finishedResponse = await response.json()
 
     const {status, errortext} = finishedResponse
@@ -64,6 +65,7 @@ const showDeleteEmployeeModal = ({name, position}) => {
   // Отправки информации по нажатию "Удалить"
 
   const deleteEmployeeForm = deleteEmployeeModal.querySelector('.modal-delete-employee__form')
+  const deleteEmployeeUrl = deleteEmployeeForm.dataset.url
 
   deleteEmployeeForm.addEventListener('submit', async (e) => {
     e.preventDefault()
@@ -73,7 +75,7 @@ const showDeleteEmployeeModal = ({name, position}) => {
     }
 
     const jsonData = JSON.stringify(data)
-    const response = await sendData(jsonData, './data/getCases.txt')
+    const response = await sendData(jsonData, deleteEmployeeUrl)
     const finishedResponse = await response.json()
 
     const {status, errortext} = finishedResponse

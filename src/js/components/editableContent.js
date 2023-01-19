@@ -2,7 +2,7 @@ import {
   sendData,
   showInfoModal,
   toggleLoader
-} from "../_functions";
+} from "../_functions"
 
 const editElements = document.querySelectorAll('.edit-el')
 const confirmEmailText = 'На Вашу почту было отправлено письмо с подтверждением.'
@@ -18,6 +18,8 @@ editElements.forEach(el => {
   const inputWrapper = el.querySelector('.edit-wrapper')
   const editValue = el.querySelector('.edit-value')
   const input = el.querySelector('.edit-input')
+
+  const dataUrl = el.dataset.url
 
   editBtn.addEventListener('click', () => {
     inputWrapper.classList.add('_active')
@@ -41,7 +43,7 @@ editElements.forEach(el => {
       const jsonData = JSON.stringify(emailData)
 
       toggleLoader()
-      const response = await sendData(jsonData, '/include/ajax/save_email.php')
+      const response = await sendData(jsonData, dataUrl)
       const finishedResponse = await response.json()
       toggleLoader()
 
@@ -66,7 +68,7 @@ editElements.forEach(el => {
 
       toggleLoader()
 
-      const response = await sendData(jsonData, '/include/ajax/save_userfield.php')
+      const response = await sendData(jsonData, dataUrl)
       const finishedResponse = await response.json()
 
       toggleLoader()

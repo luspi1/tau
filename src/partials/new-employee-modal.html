@@ -8,7 +8,8 @@
     Если сотрудник еще не зарегистрирован на портале, попросите его
     предварительно пройти регистрацию.
   </p>
-  <form class="modal-new-employee__form" action="#">
+  <form class="modal-new-employee__form" action="#"
+        data-url="/include/ajax/send_invitation.php">
     <ul class="modal-new-employee__input-list">
       <li class="modal-new-employee__item-input">
         <div class="modal-new-employee__input-wrapper select-input-wrapper">
@@ -31,7 +32,8 @@
       <button class="modal-new-employee__save-btn" type="submit">
         Выслать приглашение
       </button>
-      <button type="button" class="modal-new-employee__close-btn" data-close-modal="true">
+      <button type="button" class="modal-new-employee__close-btn"
+              data-close-modal="true">
         Отменить
       </button>
     </div>

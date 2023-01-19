@@ -22,7 +22,8 @@
           в качестве руководителя этой организации, введите его фамилию и
           выберите подходящий контакт.</p>
 
-        <form class="modal-connect-leader__form" action="#">
+        <form class="modal-connect-leader__form" action="#"
+              data-url="data/getCases.txt">
           <div class="modal-connect-leader__input-wrapper select-input-wrapper">
             <input name="id_leader_name"
                    class="select-popup-data"
@@ -1161,6 +1162,7 @@
                 class="edit-contact__input-wrapper">
                 <button class="edit-contact__btn contragent-btn"
                         type="submit"
+                        data-url="/include/ajax/make_contragent.php"
                         data-id="b940b56c-995d-42d2-885d-0708364d100d">
                   Сделать
                   контрагентом

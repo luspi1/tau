@@ -56,7 +56,7 @@
                 fill="white"/>
             </svg>
             @include('partials/select-popup.html', {
-            'submit-script': 'test.txt',
+            'submit-script': 'data/getCases.txt',
             'add-data':'{"idItem":3,"paramname":"test"}'
             })
           </div>
@@ -113,12 +113,15 @@
                 fill="white"/>
             </svg>
           </div>
-          <div class="create-doc-page__input-wrapper create-doc-page__invoice-doc-select">
+          <div
+            class="create-doc-page__input-wrapper create-doc-page__invoice-doc-select">
             <label>Расчетный счет</label>
             <select
               class="create-doc-page__input create-doc-page__custom-select"
               name="doc_invoice">
-              <option value="invoice1">По умолчанию — тот счет, который выбран в сделке Договора</option>
+              <option value="invoice1">По умолчанию — тот счет, который выбран в
+                сделке Договора
+              </option>
               <option value="invoice2">Счет2</option>
               <option value="invoice3">Счет3</option>
             </select>

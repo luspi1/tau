@@ -1,5 +1,3 @@
-// Генерация нового наблюдателя на странице создания сделки
-
 import {
   closeSelectPopups,
   handlePopupInputs,
@@ -20,6 +18,7 @@ const dealCaseSelectPopup = dealCaseInput?.closest('.select-input-wrapper').quer
 const dealAlertModal = document.querySelector('.deal-create-alert')
 const dealAlertCloseBtn = document.querySelector('.deal-create-alert__close-btn')
 const dealAlertSubmitBtn = document.querySelector('.deal-create-alert__agree-btn')
+const dealTreatyData = document.querySelector('.create-deal-page .create-deal-page__changeable-content')
 
 const handleCaseSubmit = async (popupElValue, popupElId) => {
   const caseData = {id_case: popupElId}
@@ -52,7 +51,6 @@ if (dealAlertSubmitBtn) {
   })
 }
 
-const dealTreatyData = document.querySelector('.create-deal-page .create-deal-page__changeable-content')
 const showDealAlert = () => {
   dealAlertModal.hidden = false
   modalOverlay.classList.add('modal-overlay_active')
@@ -131,8 +129,6 @@ const handleCasePopupInputs = (e) => {
       })
   }
 }
-
-
 
 
 // Появления списка элементов полученных от сервера в поле "Наша организация" и "Наблюдатель"

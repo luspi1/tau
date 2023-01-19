@@ -2,20 +2,21 @@ const incomePageMain = document.querySelector('.income-page')
 
 //аккордеоны
 
-const accordions = document.querySelectorAll('.months__accordion');
-const monthsItems = document.querySelectorAll('.months__item');
+const accordions = document.querySelectorAll('.months__accordion')
+const monthsItems = document.querySelectorAll('.months__item')
 
 if (accordions) {
   accordions.forEach((parent, index) => {
     parent.addEventListener('click', (event) => {
-      const target = event.target;
+      const target = event.target
       if (target && target.classList.contains('months__arrow')) {
-        target.classList.toggle('active');
-        monthsItems[index].classList.toggle('active');
+        target.classList.toggle('active')
+        monthsItems[index].classList.toggle('active')
       }
-    });
-  });
-};
+    })
+  })
+}
+
 
 
 // модалка прихода
@@ -45,39 +46,40 @@ if (incomingReturnBtn) {
 
 // настройка стилей календаря + на странице /income-traffic/
 
-const filterInputCalendars = document.querySelectorAll('.filter__calendar-input');
-const filterCalendarWrappers = document.querySelectorAll('.filter__calendar-wrap');
+const filterInputCalendars = document.querySelectorAll('.filter__calendar-input')
+const filterCalendarWrappers = document.querySelectorAll('.filter__calendar-wrap')
 
-const trafficInputCalendars = document.querySelectorAll('.traffic__calendar-input');
-const trafficCalendarWrappers = document.querySelectorAll('.traffic__calendar-wrap');
+const trafficInputCalendars = document.querySelectorAll('.traffic__calendar-input')
+const trafficCalendarWrappers = document.querySelectorAll('.traffic__calendar-wrap')
 
-if (filterInputCalendars || trafficInputCalendars ) {
-function showCustomCalendar(calendarInput, calendarWrap) {
-  calendarInput.forEach((inputDate, index) => {
-    inputDate.addEventListener('focusout', () => {
-      if (inputDate.value != '') {
-        calendarWrap[index].classList.add('active')
-      }
+if (filterInputCalendars || trafficInputCalendars) {
+  function showCustomCalendar(calendarInput, calendarWrap) {
+    calendarInput.forEach((inputDate, index) => {
+      inputDate.addEventListener('focusout', () => {
+        if (inputDate.value !== '') {
+          calendarWrap[index].classList.add('active')
+        }
+      })
     })
-  });
+  }
+
+  showCustomCalendar(filterInputCalendars, filterCalendarWrappers)
+  showCustomCalendar(trafficInputCalendars, trafficCalendarWrappers)
+
+  function hideCustomCalendar(calendarWrap, calendarInput) {
+    calendarWrap.forEach((parent, index) => {
+      parent.addEventListener('click', (event) => {
+        const target = event.target
+        if (target && target.classList.contains('calendar-cross-close')) {
+          calendarWrap[index].classList.remove('active')
+          calendarInput[index].value = ''
+        }
+      })
+    })
+  }
+
+  hideCustomCalendar(filterCalendarWrappers, filterInputCalendars)
+  hideCustomCalendar(trafficCalendarWrappers, trafficInputCalendars)
 }
 
-showCustomCalendar(filterInputCalendars, filterCalendarWrappers);
-showCustomCalendar(trafficInputCalendars, trafficCalendarWrappers);
-
-function hideCustomCalendar(calendarWrap, calendarInput) {
-  calendarWrap.forEach((parent, index) => {
-    parent.addEventListener('click', (event) => {
-      const target = event.target;
-     if (target && target.classList.contains('calendar-cross-close') ) {
-      calendarWrap[index].classList.remove('active');
-      calendarInput[index].value = '';
-      }
-    });
-  });
-}
-
-hideCustomCalendar(filterCalendarWrappers, filterInputCalendars);
-hideCustomCalendar(trafficCalendarWrappers, trafficInputCalendars);
-};
 

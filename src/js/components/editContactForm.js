@@ -1,11 +1,9 @@
 import {
-  formToObj,
   sendData,
-  serializeForm,
   showInfoModal,
   toggleLoader
-} from "../_functions";
-import Choices from "choices.js";
+}              from "../_functions"
+import Choices from "choices.js"
 
 
 const editContactForm = document.querySelector('.edit-contact .edit-contact__form')
@@ -25,7 +23,7 @@ if (toggleFieldsSelect) {
     itemSelectText: '',
     shouldSort: false,
     allowHTML: true
-  });
+  })
 
   const toggleRequiredFields = (typeFields) => {
     editContactChoices.setChoiceByValue(typeFields)
@@ -69,9 +67,9 @@ if (toggleFieldsSelect) {
 if (editContactForm) {
 
   const contragentSubmitBtn = document.querySelector('.edit-contact .contragent-btn')
+  const dataUrl = contragentSubmitBtn.dataset.url
 
-
-  async function handleContragentSubmit (event) {
+  async function handleContragentSubmit(event) {
     event.preventDefault()
     const objData = {
       id_contact: event.submitter.dataset.id
@@ -80,7 +78,7 @@ if (editContactForm) {
 
     toggleLoader()
 
-    const response = await sendData(jsonData, '/include/ajax/make_contragent.php')
+    const response = await sendData(jsonData, dataUrl)
     const finishedResponse = await response.json()
 
     toggleLoader()
@@ -107,7 +105,7 @@ const contactInputFullname = document.querySelector('input[name="editContactFull
 const mediaQuery = window.matchMedia('(max-width: 768px)')
 
 
-function handleTabletChange (e) {
+function handleTabletChange(e) {
   if (e.matches) {
     contactInputFullname.placeholder = 'ООО «Название организации»'
   }

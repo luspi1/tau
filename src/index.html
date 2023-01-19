@@ -64,7 +64,8 @@
         </div>
         <div class="modal-fullname modal" id="fullname-modal">
           <h2>Редактирование ФИО</h2>
-          <form class="modal-fullname__form" action="#">
+          <form class="modal-fullname__form" action="#"
+                data-url="/include/ajax/save_fio.php">
             <div class="modal-fullname__item fullname-nominative">
               <h3 class="modal-fullname__form-title">Именительный
                 падеж</h3>
@@ -318,7 +319,8 @@
                 <p>Логин <span data-value="email">kostik@mail.ru</span></p>
               </div>
             </div>
-            <div class="prime-info__desc edit-el">
+            <div class="prime-info__desc edit-el"
+                 data-url="/include/ajax/save_userfield.php">
               <p class="prime-info__desc-title">Кратко о себе</p>
               <div class="prime-info__about-input edit-wrapper">
                 <textarea class="edit-input" name="about"></textarea>
@@ -353,7 +355,7 @@
             </div>
           </div>
           <ul class="prime-info__data">
-            <li class="edit-el">
+            <li class="edit-el" data-url="/include/ajax/save_userfield.php">
               <p class="prime-info__data-title">Мобильный телефон</p>
               <div class="prime-info__phone-input edit-wrapper">
                 <input class="edit-input" name="telephone" type="tel"
@@ -387,7 +389,7 @@
                   </svg>
               </span></p>
             </li>
-            <li class="edit-el">
+            <li class="edit-el" data-url="/include/ajax/save_email.php">
               <div class="prime-info__email-input edit-wrapper">
                 <input class="edit-input" name="email" type="text"
                        required>
@@ -443,7 +445,7 @@
               </div>
 
             </li>
-            <li class="edit-el">
+            <li class="edit-el" data-url="/include/ajax/save_userfield.php">
               <div class="prime-info__date-input edit-wrapper">
                 <input class="edit-input" name="birthdate" type="text"
                        required>
@@ -476,7 +478,7 @@
                       fill="#9A9A9A"/>
                   </svg></span></p>
             </li>
-            <li class="edit-el">
+            <li class="edit-el" data-url="/include/ajax/save_userfield.php">
               <div class="prime-info__city-input edit-wrapper">
                 <input class="edit-input" name="cityname" type="text"
                        required>
