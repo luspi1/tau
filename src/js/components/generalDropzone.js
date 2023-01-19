@@ -1,6 +1,6 @@
 import { Dropzone } from "dropzone"
 
-import { cutString, sendData, showInfoModal } from "../_functions"
+import { cutString, sendData, showBigImgModal, showInfoModal } from "../_functions"
 
 
 const genDropzones = document.querySelectorAll('.general-dropzone')
@@ -9,6 +9,32 @@ if (genDropzones) {
   genDropzones.forEach(dropzoneEl => {
 
     const addBtn = dropzoneEl.closest('.general-dropzone-wrapper')?.querySelector('.general-dropzone__add-btn')
+
+    const amountFiles = dropzoneEl.closest('.general-dropzone-wrapper')?.querySelector('.general-dropzone-amount')
+
+    const isBigPreview = dropzoneEl.dataset.showPreview
+
+
+    // Обновление счетчика файлов
+    const updateAmountFiles = () => {
+      if (amountFiles) {
+        amountFiles.textContent = dropzoneEl.querySelectorAll('.dz-preview').length.toString()
+      }
+    }
+
+    // Добавление просмотра большой версии превью
+
+    const onShowBig = (file) => {
+
+      if (isBigPreview) {
+        const previewPic = file.previewElement
+        if (previewPic) {
+          previewPic.addEventListener('click', () => {
+            showBigImgModal(file.dataURL)
+          })
+        }
+      }
+    }
 
 
     const dataObj = JSON.parse(dropzoneEl.dataset.generalInfo)
@@ -43,7 +69,7 @@ if (genDropzones) {
             if (dropzoneEl.querySelectorAll('.dz-preview').length < filesCount) {
               addBtn.classList.remove('btn_disabled')
             }
-
+            updateAmountFiles()
           }
         } else {
           showInfoModal(errortext)
@@ -75,7 +101,7 @@ if (genDropzones) {
         file.previewElement.parentNode.removeChild(file.previewElement)
       } else {
         const cutTitles = dropzoneEl.querySelectorAll('span[data-dz-name]')
-        
+
         if (dropzoneEl.querySelectorAll('.dz-preview').length >= filesCount) {
           addBtn.classList.add('btn_disabled')
         }
@@ -83,6 +109,9 @@ if (genDropzones) {
         if (cutTitles) {
           cutString(cutTitles, 12)
         }
+
+        updateAmountFiles()
+        onShowBig(file)
         file._removeLink.setAttribute('data-id', id_person)
       }
     })
@@ -94,9 +123,21 @@ if (genDropzones) {
         addBtn.classList.add('btn_disabled')
       }
 
+      updateAmountFiles()
+
 
       existingFiles.forEach(el => {
         const deleteBtn = el.querySelector('.dz-remove')
+
+        if (isBigPreview) {
+          const previewImg = el.querySelector('.dz-image img')
+          if (previewImg) {
+            previewImg.addEventListener('click', () => {
+              showBigImgModal(previewImg.src)
+            })
+          }
+        }
+
         deleteBtn.addEventListener('click', async (e) => {
           const data = {
             filetype: type,
@@ -112,6 +153,7 @@ if (genDropzones) {
             if (dropzoneEl.querySelectorAll('.dz-preview').length < filesCount) {
               addBtn.classList.remove('btn_disabled')
             }
+            updateAmountFiles()
           } else {
             showInfoModal(errortext)
           }

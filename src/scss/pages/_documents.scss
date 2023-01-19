@@ -6,16 +6,24 @@
     cursor: pointer;
   }
 
+  .general-dropzone__add-btn {
+    border: none;
+    padding: 0;
+    order: 2;
+
+    &:hover {
+      background: none;
+    }
+  }
+
   #passport-dropzone {
     display: flex;
     align-items: center;
-    max-width: 450px;
+    max-width: 260px;
     flex-wrap: wrap;
 
-
-    .dz-message {
-      order: 2;
-      height: 50px;
+    .general-dropzone__add-btn {
+      padding: 0 0 10px 0;
     }
 
     .dz-preview {
