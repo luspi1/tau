@@ -6,44 +6,46 @@ import {
   showInfoModal,
   toggleLoader,
   updateFields
-} from "../_functions";
+}                                        from "../_functions";
 
 const editRequisitesForm = document.querySelector('.modal-requisites__form')
 const bankSection = document.querySelector('.bank-details')
 const requisitesUpdatableFields = bankSection?.querySelectorAll('[data-updField]')
 
 
-async function handleFormSubmit (event) {
-  event.preventDefault()
-
-  const data = serializeForm(event.target)
-  const objData = formToObj(data)
-  const jsonData = JSON.stringify(objData)
-
-  toggleLoader()
-
-  const response = await sendData(jsonData, '/include/ajax/save_bankinfo.php')
-  const finishedResponse = await response.json()
-
-  toggleLoader()
-
-  const {status, errortext} = finishedResponse
-  if (status === 'ok') {
-    updateFields(objData, requisitesUpdatableFields)
-    modalRequisites.classList.remove('_active')
-    modalOverlay.classList.remove('modal-overlay_active')
-  } else {
-    showInfoModal(errortext)
-  }
-}
-
-
 // Обработка события отправки
 
 if (editRequisitesForm) {
+
+  const dataUrl = editRequisitesForm.dataset.url
+
+  async function handleFormSubmit(event) {
+    event.preventDefault()
+
+    const data = serializeForm(event.target)
+    const objData = formToObj(data)
+    const jsonData = JSON.stringify(objData)
+
+    toggleLoader()
+
+    const response = await sendData(jsonData, dataUrl)
+    const finishedResponse = await response.json()
+
+    toggleLoader()
+
+    const {status, errortext} = finishedResponse
+    if (status === 'ok') {
+      updateFields(objData, requisitesUpdatableFields)
+      modalRequisites.classList.remove('_active')
+      modalOverlay.classList.remove('modal-overlay_active')
+    } else {
+      showInfoModal(errortext)
+    }
+  }
+
+
   editRequisitesForm.addEventListener('submit', handleFormSubmit)
 }
-
 
 
 // Валидация

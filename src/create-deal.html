@@ -38,6 +38,8 @@
             <input
               class="create-deal-page__input create-deal-page__case-input select-popup-input"
               name="deal_choice" type="text"
+              data-info-url="/include/ajax/get_case_info.php"
+              data-invoices-url="/include/ajax/search_case_banks.php"
               placeholder="Начните вводить название кейса...">
             @include('partials/select-popup.html', {
             'submit-script': 'data/getCases.txt',
@@ -95,7 +97,7 @@
           <div class="create-deal-page__input-wrapper">
             <label>Выбор счета</label>
             <select
-              class="create-deal-page__input create-deal-page__custom-select"
+              class="create-deal-page__input create-deal-page__invoices-select"
               name="deal_score_select">
               <option value="">Выберите счет</option>
               <option value="score1">Счет 1</option>

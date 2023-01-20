@@ -1,4 +1,5 @@
-import { modalOverlay, modalPassport } from "../_vars";
+import data                            from 'inputmask/lib/dependencyLibs/data'
+import { modalOverlay, modalPassport } from "../_vars"
 import {
   formToObj,
   sendData,
@@ -6,40 +7,42 @@ import {
   showInfoModal,
   toggleLoader,
   updateFields
-} from "../_functions";
+}                                      from "../_functions"
 
 
 const passportForm = document.querySelector('.passport-modal__form')
 const docPage = document.querySelector('.page-doc')
 const passportUpdatableFields = docPage?.querySelectorAll('[data-updField]')
 
-async function handleFormSubmit (event) {
-  event.preventDefault()
-
-  const data = serializeForm(event.target)
-  const objData = formToObj(data)
-  const jsonData = JSON.stringify(objData)
-  toggleLoader()
-
-  const response = await sendData(jsonData, '/include/ajax/save_passport.php')
-  const finishedResponse = await response.json()
-
-  toggleLoader()
-
-  const {status, errortext} = finishedResponse
-  if (status === 'ok') {
-    updateFields(objData, passportUpdatableFields)
-    modalPassport.classList.remove('_active')
-    modalOverlay.classList.remove('modal-overlay_active')
-  } else {
-    showInfoModal(errortext)
-  }
-}
-
-
 // Обработка события отправки
 
 if (passportForm) {
+
+  const dataUrl = passportForm.dataset.url
+
+  async function handleFormSubmit(event) {
+    event.preventDefault()
+
+    const data = serializeForm(event.target)
+    const objData = formToObj(data)
+    const jsonData = JSON.stringify(objData)
+    toggleLoader()
+
+    const response = await sendData(jsonData, dataUrl)
+    const finishedResponse = await response.json()
+
+    toggleLoader()
+
+    const {status, errortext} = finishedResponse
+    if (status === 'ok') {
+      updateFields(objData, passportUpdatableFields)
+      modalPassport.classList.remove('_active')
+      modalOverlay.classList.remove('modal-overlay_active')
+    } else {
+      showInfoModal(errortext)
+    }
+  }
+
   passportForm.addEventListener('submit', handleFormSubmit)
 }
 
@@ -74,7 +77,8 @@ if (editDocWrappers) {
     const editInput = wrapper.querySelector('.edit-doc-wrapper__input input')
     const agreeBtn = wrapper.querySelector('.agree-btn')
     const closeBtn = wrapper.querySelector('.close-btn')
-
+    const dataUrl = wrapper.dataset.url
+    
 
     editBtn.addEventListener('click', (e) => {
       e.preventDefault()
@@ -98,7 +102,7 @@ if (editDocWrappers) {
 
       toggleLoader()
 
-      const response = await sendData(jsonData, '/include/ajax/save_userfield.php')
+      const response = await sendData(jsonData, dataUrl)
       const finishedResponse = await response.json()
 
       toggleLoader()

@@ -22,7 +22,8 @@
           <div class="passport-modal modal" id="passport-modal">
             <h2>Данные паспорта гражданина РФ</h2>
             <form action="/include/ajax/save_passport.php"
-                  class="passport-modal__form">
+                  class="passport-modal__form"
+                  data-url="/include/ajax/save_passport.php">
               <div class="passport-modal__item">
                 <h3 class="passport-modal__item-title">
                   Паспортные данные
@@ -324,7 +325,8 @@
 
           <div class="page-doc__inner-right">
             <div
-              class="page-doc__insurance edit-doc-wrapper general-dropzone-wrapper">
+              class="page-doc__insurance edit-doc-wrapper general-dropzone-wrapper"
+              data-url="/include/ajax/save_userfield.php">
               <h2 class="page-doc__insurance-title">
                 СНИЛС
                 <svg class="edit-btn edit-snils" width="17" height="16"
@@ -399,7 +401,8 @@
               </div>
             </div>
             <div
-              class="page-doc__tax edit-doc-wrapper general-dropzone-wrapper">
+              class="page-doc__tax edit-doc-wrapper general-dropzone-wrapper"
+              data-url="/include/ajax/save_userfield.php">
               <h2 class="page-doc__tax-title">
                 ИНН
                 <svg class="edit-btn" width="17" height="16" viewBox="0 0 17 16"

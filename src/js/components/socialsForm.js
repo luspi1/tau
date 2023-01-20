@@ -1,12 +1,11 @@
-
-import { modalOverlay, body, modalSocials } from "../_vars";
-import { initSelects } from "./customSelect";
+import { modalOverlay, body, modalSocials } from "../_vars"
+import { initSelects }                      from "./customSelect"
 import {
   sendData,
   serializeForm,
   showInfoModal,
   toggleLoader,
-} from "../_functions";
+}                                           from "../_functions"
 
 const editSocialsForm = document.querySelector('.modal-socials__form')
 const addLinkBtn = document.querySelector('.modal-socials__add-btn')
@@ -27,43 +26,46 @@ const updateSocials = (data) => {
 
 // Обработка события отправки формы социалок
 
-async function handleFormSubmit (event) {
-  event.preventDefault()
-
-  const data = serializeForm(event.target)
-
-  const arrData = Array.from(data.entries())
-
-  const jsonData = JSON.stringify(arrData)
-  toggleLoader()
-
-  const response = await sendData(jsonData, '/include/ajax/save_social.php')
-  const finishedResponse = await response.json()
-
-  toggleLoader()
-
-  const {status, errortext, html} = finishedResponse
-  if (status === 'ok') {
-    updateSocials(html)
-    modalSocials.classList.remove('_active')
-    modalOverlay.classList.remove('modal-overlay_active')
-    body.classList.remove('_lock')
-  } else {
-    showInfoModal(errortext)
-  }
-}
-
 
 // Обработка события отправки
 
 if (editSocialsForm) {
+
+  const dataUrl = editSocialsForm.dataset.url
+
+  async function handleFormSubmit(event) {
+    event.preventDefault()
+
+    const data = serializeForm(event.target)
+
+    const arrData = Array.from(data.entries())
+
+    const jsonData = JSON.stringify(arrData)
+    toggleLoader()
+
+    const response = await sendData(jsonData, dataUrl)
+    const finishedResponse = await response.json()
+
+    toggleLoader()
+
+    const {status, errortext, html} = finishedResponse
+    if (status === 'ok') {
+      updateSocials(html)
+      modalSocials.classList.remove('_active')
+      modalOverlay.classList.remove('modal-overlay_active')
+      body.classList.remove('_lock')
+    } else {
+      showInfoModal(errortext)
+    }
+  }
+
   editSocialsForm.addEventListener('submit', handleFormSubmit)
 }
 
 
 // Добавление еще одной ссылки
 
-const templateSocialsFragment = document.querySelector('#socials-link-template')?.content;
+const templateSocialsFragment = document.querySelector('#socials-link-template')?.content
 
 if (templateSocialsFragment) {
   const templateSocials = templateSocialsFragment.querySelector('.socials-list__item')
