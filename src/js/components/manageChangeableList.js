@@ -1,4 +1,4 @@
-import { initDateDeal }     from './customDate'
+import { initAllDates }     from './customDate'
 import { initDateDealMask } from './inputMask'
 
 const changeableLists = document.querySelectorAll('ul[data-list="changeable"]')
@@ -6,7 +6,7 @@ const changeableLists = document.querySelectorAll('ul[data-list="changeable"]')
 // Инициализация необходимых кастомных инпутов
 
 const initInputs = () => {
-  initDateDeal()
+  initAllDates()
   initDateDealMask()
 }
 

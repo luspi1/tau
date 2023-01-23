@@ -43,7 +43,8 @@
           <div
             class="modal-incoming__input-wrapper modal-incoming__date-wrapper">
             <input class="modal-incoming__input modal-incoming__date-input"
-                   name="incoming_date" placeholder="дд.мм.гггг" type="text">
+                   name="incoming_date" placeholder="дд.мм.гггг" type="text"
+                   data-date-start="2023-01-23" data-date-value="">
             <svg width="21" height="22" viewBox="0 0 21 22" fill="none"
                  xmlns="http://www.w3.org/2000/svg">
               <path
@@ -165,14 +166,17 @@
           </p>
         </li>
       </ul>
-      <button class="modal-incoming__import-return-btn" type="button">Вернуться к форме заполнения</button>
+      <button class="modal-incoming__import-return-btn" type="button">Вернуться
+        к форме заполнения
+      </button>
     </div>
 
     <div class="modal-incoming__btns">
       <button class="modal-incoming__save-btn" type="submit">
         Сохранить приход
       </button>
-      <button type="button" class="modal-incoming__close-btn" data-close-modal="true">
+      <button type="button" class="modal-incoming__close-btn"
+              data-close-modal="true">
         Отменить
       </button>
     </div>

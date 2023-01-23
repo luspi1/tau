@@ -1,95 +1,22 @@
-import AirDatepicker from "air-datepicker";
+import AirDatepicker from "air-datepicker"
 
-const dateInput = document.querySelector('.prime-info__date-input .edit-input');
+const initAllDates = () => {
+  const allDateInputs = document.querySelectorAll('input[data-date-start]')
 
-let startDate = new Date('1905-09-08');
-new AirDatepicker(dateInput, {
-  startDate,
-});
-
-
-const dateIssue = document.querySelector('.passport-modal__date-input');
-
-new AirDatepicker(dateIssue, {
-  startDate,
-});
-
-
-const physDatePassport = document.querySelector('input[name="physDatePassport"]');
-
-new AirDatepicker(physDatePassport, {
-  startDate,
-});
-
-
-const dateIncomingModal = document.querySelector('.modal-incoming__date-input');
-
-new AirDatepicker(dateIncomingModal, {
-  startDate,
-});
-
-const dateLetterModal = document.querySelector('.modal-create-letter__date-input');
-
-new AirDatepicker(dateLetterModal, {
-  startDate,
-});
-
-
-const initDatePayment = () => {
-  const datePayments = document.querySelectorAll('.create-case-page__date-input');
-
-  datePayments.forEach(el => {
-    new AirDatepicker(el, {
-      startDate,
-    });
-  })
+  if (allDateInputs) {
+    allDateInputs.forEach(el => {
+      const {dateStart, dateValue} = el.dataset
+      if (dateValue) {
+        el.value = dateValue
+      }
+      new AirDatepicker(el, {
+        dateStart,
+      })
+    })
+  }
 }
 
-initDatePayment()
+initAllDates()
 
 
-const initDateDeal = () => {
-  const dateCreateDeal = document.querySelectorAll('.create-deal-page__date-input');
-
-  dateCreateDeal.forEach(el => {
-    new AirDatepicker(el, {
-      startDate,
-    });
-  })
-}
-initDateDeal()
-
-
-const initFiltertCalendar = () => {
-  const dateCreateDeal = document.querySelectorAll('.filter__calendar-input');
-
-  dateCreateDeal.forEach(el => {
-    new AirDatepicker(el, {
-      startDate,
-    });
-  })
-}
-initFiltertCalendar();
-
-const initTrafficCalendar = () => {
-  const dateCreateDeal = document.querySelectorAll('.traffic__calendar-input');
-
-  dateCreateDeal.forEach(el => {
-    new AirDatepicker(el, {
-      startDate,
-    });
-  })
-}
-initTrafficCalendar();
-
-
-const docDateInputs = document.querySelectorAll('.create-doc-page .create-doc-page__date-input');
-
-docDateInputs.forEach(el => {
-  new AirDatepicker(el, {
-    startDate,
-  });
-})
-
-
-export { initDatePayment, initDateDeal }
+export { initAllDates }

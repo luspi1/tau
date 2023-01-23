@@ -6,100 +6,101 @@
 })
 
 <body class="page__body">
-  <div class="site-container">
-    <div class="modal-overlay"></div>
-    @include('partials/header.html', {
-    'bottom-menu': 'bottom-menu_disabled',
-    'header-title': ''
-    })
+<div class="site-container">
+  <div class="modal-overlay"></div>
+  @include('partials/header.html', {
+  'bottom-menu': 'bottom-menu_disabled',
+  'header-title': ''
+  })
 
-    <main class="main cases-page">
-      <section class="section cases">
-        <div class="container">
-          <div class="cases__menu">
-            <h1>Кейсы</h1>
-            <input class="cases__input" name="cases_search" type="text" placeholder="Поиск">
-            <select class="cases__filter-input" name="cases_filter">
-              <option value="org">Организация</option>
-              <option value="non-org">Не организация</option>
-            </select>
-            <a href="create-case.html" class="cases__btn">Добавить кейс</a>
-          </div>
-
-          <ul class="cases__list">
-            <li class="cases__list-item">
-              <div class="cases__item-left">
-                <a href="case-item.html">
-                  <h3>Ремонт автотехники (кейс 2198)</h3>
-                </a>
-                <p>
-                  применяют: <a href="#">ИП Краснощеков</a>
-                </p>
-              </div>
-              <div class="cases__item-right">
-                <h3>Всего сделок: 22</h3>
-                <p>
-                  кейс создан <span>14 января 2022 года</span>
-                </p>
-              </div>
-            </li>
-            <li class="cases__list-item">
-              <div class="cases__item-left">
-                <a href="case-item.html">
-                  <h3>Археологические изыскания (кейс 0017)</h3>
-                </a>
-                <p>
-                  применяют: <a href="#">ООО МЦАИ</a>
-                </p>
-              </div>
-              <div class="cases__item-right">
-                <h3>Всего сделок: 71</h3>
-                <p>
-                  кейс создан <span>10 марта 2022 года</span>
-                </p>
-              </div>
-            </li>
-            <li class="cases__list-item">
-              <div class="cases__item-left">
-                <a href="case-item.html">
-                  <h3>Ремонт автотехники (кейс 2198)</h3>
-                </a>
-                <p>
-                  применяют: <a href="#">ООО НПО ТАУ</a>
-                </p>
-              </div>
-              <div class="cases__item-right">
-                <h3>Всего сделок: 22</h3>
-                <p>
-                  кейс создан <span>14 января 2022 года</span>
-                </p>
-              </div>
-            </li>
-            <li class="cases__list-item">
-              <div class="cases__item-left">
-                <a href="case-item.html">
-                  <h3>Археологические изыскания (кейс 0017)</h3>
-                </a>
-                <p>
-                  применяют: <a href="#">ООО МЦАИ</a>
-                </p>
-              </div>
-              <div class="cases__item-right">
-                <h3>Всего сделок: 71</h3>
-                <p>
-                  кейс создан <span>10 марта 2022 года</span>
-                </p>
-              </div>
-            </li>
-          </ul>
+  <main class="main cases-page">
+    <section class="section cases">
+      <div class="container">
+        <div class="cases__menu">
+          <h1>Кейсы</h1>
+          <input class="cases__input" name="cases_search" type="text"
+                 placeholder="Поиск">
+          <select class="cases__filter-input" name="cases_filter">
+            <option value="org">Организация</option>
+            <option value="non-org">Не организация</option>
+          </select>
+          <a href="create-case.html" class="cases__btn">Добавить кейс</a>
         </div>
-        @include('partials/pagination.html')
-      </section>
-      @include('partials/info-modal.html')
-    </main>
 
-    @include('partials/footer.html')
-  </div>
+        <ul class="cases__list">
+          <li class="cases__list-item">
+            <div class="cases__item-left">
+              <a href="case-item.html">
+                <h3>Ремонт автотехники (кейс 2198)</h3>
+              </a>
+              <p>
+                применяют: <a href="#">ИП Краснощеков</a>
+              </p>
+            </div>
+            <div class="cases__item-right">
+              <h3>Всего сделок: 22</h3>
+              <p>
+                кейс создан <span>14 января 2022 года</span>
+              </p>
+            </div>
+          </li>
+          <li class="cases__list-item">
+            <div class="cases__item-left">
+              <a href="case-item.html">
+                <h3>Археологические изыскания (кейс 0017)</h3>
+              </a>
+              <p>
+                применяют: <a href="#">ООО МЦАИ</a>
+              </p>
+            </div>
+            <div class="cases__item-right">
+              <h3>Всего сделок: 71</h3>
+              <p>
+                кейс создан <span>10 марта 2022 года</span>
+              </p>
+            </div>
+          </li>
+          <li class="cases__list-item">
+            <div class="cases__item-left">
+              <a href="case-item.html">
+                <h3>Ремонт автотехники (кейс 2198)</h3>
+              </a>
+              <p>
+                применяют: <a href="#">ООО НПО ТАУ</a>
+              </p>
+            </div>
+            <div class="cases__item-right">
+              <h3>Всего сделок: 22</h3>
+              <p>
+                кейс создан <span>14 января 2022 года</span>
+              </p>
+            </div>
+          </li>
+          <li class="cases__list-item">
+            <div class="cases__item-left">
+              <a href="case-item.html">
+                <h3>Археологические изыскания (кейс 0017)</h3>
+              </a>
+              <p>
+                применяют: <a href="#">ООО МЦАИ</a>
+              </p>
+            </div>
+            <div class="cases__item-right">
+              <h3>Всего сделок: 71</h3>
+              <p>
+                кейс создан <span>10 марта 2022 года</span>
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      @include('partials/pagination.html')
+    </section>
+    @include('partials/info-modal.html')
+  </main>
+
+  @include('partials/footer.html')
+</div>
 
 </body>
 

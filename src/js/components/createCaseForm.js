@@ -1,14 +1,14 @@
-import { initPaymentSelects } from "./customSelect";
-import { initDatePaymentsMask } from "./inputMask";
-import { initDatePayment } from "./customDate";
-import { handlePopupInputs } from "../_functions";
+import { initPaymentSelects }   from "./customSelect"
+import { initDatePaymentsMask } from "./inputMask"
+import { initAllDates }         from "./customDate"
+import { handlePopupInputs }    from "../_functions"
 
-let annexOptionalIndex = 1;
+let annexOptionalIndex = 1
 
 
 const addTermsBtn = document.querySelector('.create-case-page__add-btn')
 const termsList = document.querySelector('.case-terms__items')
-const templateTermsFragment = document.querySelector('#case-terms-template')?.content;
+const templateTermsFragment = document.querySelector('#case-terms-template')?.content
 if (templateTermsFragment) {
   const templateTerms = templateTermsFragment.querySelector('.case-terms__item')
   if (addTermsBtn) {
@@ -18,14 +18,14 @@ if (templateTermsFragment) {
       termsList.appendChild(termsEl)
       initPaymentSelects()
       initDatePaymentsMask()
-      initDatePayment()
+      initAllDates()
     })
   }
 }
 
 const addOptionalBtn = document.querySelector('.case-optional__add-btn')
 const optionalList = document.querySelector('.case-optional__items')
-const templateOptionalFragment = document.querySelector('#case-optional-template')?.content;
+const templateOptionalFragment = document.querySelector('#case-optional-template')?.content
 if (templateOptionalFragment) {
   const templateOptional = templateOptionalFragment.querySelector('.case-optional__item')
   if (addOptionalBtn) {
@@ -42,7 +42,7 @@ const annexWrapper = document.querySelector('.case-annex__items')
 
 if (annexWrapper) {
 
-  const templateAnnexOptionalFragment = document.querySelector('#optional-annex-template')?.content;
+  const templateAnnexOptionalFragment = document.querySelector('#optional-annex-template')?.content
   const templateAnnexOptional = templateAnnexOptionalFragment.querySelector('.case-optional__item')
 
   annexWrapper.addEventListener('click', (e) => {
@@ -65,7 +65,7 @@ if (annexWrapper) {
 
 const addAnnexBtn = document.querySelector('.create-case-page__add-annex')
 const annexList = document.querySelector('.case-annex__items')
-const annexFragment = document.querySelector('#case-annex-template')?.content;
+const annexFragment = document.querySelector('#case-annex-template')?.content
 if (annexFragment) {
   const annexEl = annexFragment.querySelector('.case-annex__item')
   if (addAnnexBtn) {
