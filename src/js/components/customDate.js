@@ -5,12 +5,18 @@ const initAllDates = () => {
 
   if (allDateInputs) {
     allDateInputs.forEach(el => {
-      const {dateStart, dateValue} = el.dataset
-      if (dateValue) {
-        el.value = dateValue
-      }
-      new AirDatepicker(el, {
-        dateStart,
+      const {dateStart} = el.dataset
+
+      const customDate = new AirDatepicker(el, {
+        startDate: dateStart,
+      })
+
+      el.addEventListener('click', (e) => {
+        const featuredDate = e.currentTarget.value.split('.').reverse().join('-')
+        if (featuredDate) {
+          customDate.selectDate(featuredDate)
+          customDate.setViewDate(featuredDate)
+        }
       })
     })
   }
