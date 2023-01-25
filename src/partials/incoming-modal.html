@@ -1,8 +1,10 @@
-<div class="modal-incoming modal" id="incoming-modal">
+<div class="modal-incoming modal" id="incoming-modal" data-body-lock="true">
+
   <h2>Новый приход (поступление)</h2>
 
   <form class="modal-incoming__form" method="post" action="#"
         enctype="multipart/form-data">
+    <input class="data-modal-id" name="id_deal_term" type="hidden" value=""/>
 
     <div class="modal-incoming__manual-fill modal-incoming__manual-fill_active">
       <ul class="modal-incoming__input-list">
@@ -13,17 +15,7 @@
             <input class="modal-incoming__input" type="number"
                    name="incoming_amount"
                    placeholder="введите сумму в рублях"
-                   required>
-          </div>
-        </li>
-        <li class="modal-incoming__item-input">
-          <p class="modal-incoming__input-title">Своя компания
-          </p>
-          <div class="modal-incoming__input-wrapper">
-            <input class="modal-incoming__input" type="text"
-                   name="incoming_amount"
-                   placeholder="начните вводить название"
-                   required>
+                   data-required="true" required>
           </div>
         </li>
         <li class="modal-incoming__item-input">
@@ -54,15 +46,6 @@
           </div>
         </li>
         <li class="modal-incoming__item-input">
-          <p class="modal-incoming__input-title">Контрагент</p>
-          <div class="modal-incoming__input-wrapper">
-            <input class="modal-incoming__input" type="text"
-                   placeholder="начните вводить название"
-                   name="incoming_counterparty"
-                   required>
-          </div>
-        </li>
-        <li class="modal-incoming__item-input">
           <p class="modal-incoming__input-title">Статья внесения средств
           </p>
           <div
@@ -75,16 +58,6 @@
             </select>
           </div>
         </li>
-        <li class="modal-incoming__item-input">
-          <p class="modal-incoming__input-title">Название сделки
-          </p>
-          <div class="modal-incoming__input-wrapper">
-            <input class="modal-incoming__input" type="text"
-                   name="incoming_deal"
-                   placeholder="начните вводить название"
-                   required>
-          </div>
-        </li>
 
         <li class="modal-incoming__item-input">
           <p class="modal-incoming__input-title">Описание счета</p>
@@ -92,7 +65,7 @@
           <textarea
             class="modal-incoming__input modal-incoming__input-area modal-incoming__area-desc"
             name="incoming_desc"
-            required></textarea>
+            data-required="true" required></textarea>
           </div>
         </li>
       </ul>
@@ -124,7 +97,7 @@
             <input class="modal-incoming__input" type="text"
                    name="incoming_amount"
                    placeholder="начните вводить название"
-                   required>
+                   data-required="false">
           </div>
         </li>
         <li class="modal-incoming__item-input">
@@ -134,7 +107,7 @@
             <input class="modal-incoming__input" type="text"
                    name="incoming_deal"
                    placeholder="начните вводить название"
-                   required>
+                   data-required="false">
           </div>
         </li>
       </ul>

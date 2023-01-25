@@ -16,9 +16,10 @@ body {
   font-size: 16px;
   line-height: 20px;
   position: relative;
-  //&._lock {
-  //  overflow-y: hidden;
-  //}
+
+  &._lock {
+    overflow-y: hidden;
+  }
 }
 
 main {
@@ -194,6 +195,7 @@ select::-ms-expand {
 
 .input_disabled {
   position: relative;
+
   &::after {
     content: '';
     position: absolute;
@@ -377,7 +379,6 @@ input::-webkit-inner-spin-button {
 .choices__list--dropdown .choices__placeholder {
   display: none;
 }
-
 
 
 .air-datepicker-body--day-name {

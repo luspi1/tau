@@ -18,18 +18,36 @@ if (accordions) {
 }
 
 
-
 // модалка прихода
 const incomingFileBtn = document.querySelector('.modal-incoming__file-wrapper input')
 const incomingManualFill = document.querySelector('.modal-incoming__manual-fill')
 const incomingFileFill = document.querySelector('.modal-incoming__file-fill')
 const incomingReturnBtn = document.querySelector('.modal-incoming__import-return-btn')
 
+const requiredFields = document.querySelectorAll('.modal-incoming input[data-required]')
+
+const toggleRequiredFields = (reqInputs) => {
+  if (reqInputs) {
+    reqInputs.forEach(el => {
+      if (el.dataset.required === 'true') {
+        el.dataset.required = 'false'
+        el.required = false
+      } else {
+        el.dataset.required = 'true'
+        el.required = true
+      }
+    })
+  }
+}
+
+
 if (incomingFileBtn) {
   incomingFileBtn.addEventListener('change', (e) => {
     e.target.value = ''
     incomingManualFill.classList.remove('modal-incoming__manual-fill_active')
     incomingFileFill.classList.add('modal-incoming__file-fill_active')
+    toggleRequiredFields(requiredFields)
+
   })
 }
 
@@ -37,9 +55,9 @@ if (incomingReturnBtn) {
   incomingReturnBtn.addEventListener('click', (e) => {
     incomingManualFill.classList.add('modal-incoming__manual-fill_active')
     incomingFileFill.classList.remove('modal-incoming__file-fill_active')
-
     const incomingModal = document.querySelector('#incoming-modal')
     incomePageMain.style.minHeight = `${incomingModal.clientHeight}px`
+    toggleRequiredFields(requiredFields)
   })
 }
 

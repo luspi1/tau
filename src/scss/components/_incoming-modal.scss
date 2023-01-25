@@ -1,11 +1,11 @@
 .modal-incoming {
-  position: absolute;
+  position: fixed;
   overflow-y: auto;
-  overflow-x: hidden;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 646px;
+  max-height: 85vh;
   background-color: #ffffff;
   border-radius: 20px;
   padding: 50px 50px 65px 45px;
@@ -252,6 +252,7 @@
 
   &__import-list {
     margin-bottom: 20px;
+
     li {
       padding: 22px 76px 20px 20px;
       background: #F7F8FA;
