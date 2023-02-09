@@ -43,12 +43,13 @@
     width: 49%;
     margin-top: 20px;
   }
+
   &__link-add {
     min-width: 190px;
     max-width: 203px;
     height: 40px;
     margin: 13px 0 0;
-    color:  #2F65F6;
+    color: #2F65F6;
     background-color: #ffffff;
     border-radius: 5px;
     border: 1px solid #2F65F6;
@@ -67,6 +68,7 @@
       color: #ffffff;
     }
   }
+
   &__block {
     padding: 15px 12px 15px;
     border: 1px solid #E6E6E6;
@@ -205,4 +207,21 @@
     }
   }
 
+  &__list {
+    &.documents__list {
+      li {
+        position: relative;
+        padding-right: 29px;
+       .list__edit {
+         margin-right: 17px;
+       }
+
+        .list__status {
+          position: absolute;
+          right: 13px;
+
+        }
+      }
+    }
+  }
 }
