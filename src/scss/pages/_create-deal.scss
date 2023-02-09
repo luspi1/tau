@@ -157,6 +157,10 @@
     align-items: flex-start;
   }
 
+  &__date-inputs {
+    display: flex;
+  }
+
 
   .choices {
     width: 100%;
@@ -283,6 +287,11 @@
       top: 50%;
       pointer-events: none;
     }
+  }
+
+  &__date-wrapper_end {
+    max-width: 220px;
+    margin-left: 40px;
   }
 
 
@@ -420,7 +429,6 @@
       margin-left: 10px;
       max-width: 262px;
     }
-
 
   }
 

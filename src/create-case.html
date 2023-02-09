@@ -368,7 +368,7 @@
                 <input
                   class="create-case-page__input create-case-page__popup-input select-popup-input"
                   name="template_treaty" type="text"
-                  placeholder="Выбрать шаблон договора">
+                  placeholder="Выбрать шаблон договора" required>
                 @include('partials/select-popup.html', {
                 'submit-script': 'data/getCases.txt',
                 'add-data':'{"idItem":3,"paramname":"test"}'
@@ -399,7 +399,7 @@
                 <input
                   class="create-case-page__input create-case-page__popup-input select-popup-input"
                   name="template_act" type="text"
-                  placeholder="Выбрать шаблон акта">
+                  placeholder="Выбрать шаблон акта" required>
                 @include('partials/select-popup.html', {
                 'submit-script': 'data/getCases.txt',
                 'add-data':'{"idItem":3,"paramname":"test"}'

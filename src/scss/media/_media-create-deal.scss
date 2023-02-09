@@ -78,6 +78,14 @@
   .create-deal-page__close-btn {
     margin-top: 35px;
   }
+
+  .create-deal-page__date-inputs {
+    flex-direction: column;
+  }
+
+  .create-deal-page__date-wrapper_end {
+    margin-left: 0;
+  }
 }
 
 @media(max-width: 400px) {
