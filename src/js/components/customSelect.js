@@ -299,15 +299,17 @@ if (createDocSelects) {
 }
 
 
-// Селектор фильтра типа документа на странице "создания шаблона"
-const typeTemplateSelect = document.querySelector('.create-template__type-doc')
+// Селекторы на странице "создания шаблона"
+const typeTemplateSelects = document.querySelectorAll('.create-template__type-doc')
 
-if (typeTemplateSelect) {
-  const choices = new Choices(typeTemplateSelect, {
-    itemSelectText: '',
-    searchEnabled: false,
-    shouldSort: false,
-    allowHTML: true
+if (typeTemplateSelects) {
+  typeTemplateSelects.forEach(el => {
+    const choices = new Choices(el, {
+      itemSelectText: '',
+      searchEnabled: false,
+      shouldSort: false,
+      allowHTML: true
+    })
   })
 }
 

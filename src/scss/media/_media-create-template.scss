@@ -12,8 +12,9 @@
     min-width: auto;
     width: 100%;
     height: auto;
-    padding: 5px 10px;
-    span{
+    justify-content: center;
+
+    span {
       display: block;
     }
   }
@@ -30,9 +31,9 @@
     right: -35px;
   }
   .create-template-page .create-template__select-wrap .help-popup {
-   top: 30px;
-   left: -130px;
-   max-width: 420px;
+    top: 30px;
+    left: -130px;
+    max-width: 420px;
   }
 
   .create-template-page .instructions__title-block .help-popup {
@@ -43,6 +44,7 @@
     font-size: 18px;
   }
 }
+
 @media(max-width: 768px) {
   .create-template-page .create-template .container h1 {
     font-size: 28px;
@@ -56,14 +58,12 @@
   .create-template-page .create-template .form {
     padding-right: 0;
   }
-  .create-template-page .create-template__select-wrap {
-    padding-right: 35px;
-  }
+
   .create-template-page .create-template__select-wrap::after {
     width: 100%;
   }
   .create-template-page .create-template__select-wrap .help-block {
-    right: 0;
+    display: none;
   }
 
   .create-template-page .create-template__select-wrap .help-popup {
@@ -78,7 +78,10 @@
     margin-bottom: 40px;
     padding-bottom: 20px;
     border-bottom: 2px dotted #C4C4C4;
+  }
 
+  .create-template-page .create-template__save-btn {
+    min-width: 289px;
   }
 
   .create-template-page .instructions__title-block .help-popup {
@@ -94,7 +97,7 @@
     left: -295px;
     padding: 15px 5px;
   }
-  .create-template-page .instructions__title-block  .help-popup {
+  .create-template-page .instructions__title-block .help-popup {
     max-width: 336px;
     padding: 15px 5px;
     left: auto;

@@ -70,6 +70,10 @@ select::-ms-expand {
   display: none;
 }
 
+textarea {
+  resize: none;
+}
+
 .hidden {
   display: none;
 }
