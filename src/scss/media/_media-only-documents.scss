@@ -1,3 +1,9 @@
+@media (min-width: 1710px) {
+  .only-documents .list-doc__wrapper {
+    width: 50%;
+    justify-content: space-between;
+  }
+}
 @media (max-width: 1480px) {
   .only-documents .list-doc__row-content {
     flex-direction: column;
