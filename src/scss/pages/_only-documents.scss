@@ -36,6 +36,7 @@
 
   &__select-flex {
     display: flex;
+    flex-wrap: wrap;
   }
 
   &__link-add {
@@ -65,7 +66,7 @@
   &__select-wrap {
     width: 455px;
     margin-top: 13px;
-
+    margin-right: 20px;
     .choices__placeholder {
       font-size: 16px;
       color: #858584;
@@ -79,7 +80,6 @@
 
     .choices {
       width: 100%;
-
       border: 1px solid transparent;
 
       &.is-open {

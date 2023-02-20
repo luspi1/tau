@@ -21,7 +21,11 @@
   .create-template-page .create-template .container h1 {
     font-size: 32px;
   }
-
+  .create-template-page .create-template__cancel-btn,
+  .create-template-page .create-template__save-btn {
+    min-width: 289px;
+    width: 289px;
+  }
 }
 
 @media(max-width: 992px) {
@@ -39,10 +43,13 @@
   .create-template-page .instructions__title-block .help-popup {
     left: -390px;
   }
+
   .create-template-page .create-template__save-btn,
-  .create-template-page .create-template__publish-btn {
+  .create-template-page .create-template__publish-btn,
+  .create-template-page .create-template__cancel-btn{
     font-size: 18px;
   }
+
 }
 
 @media(max-width: 768px) {
@@ -80,9 +87,6 @@
     border-bottom: 2px dotted #C4C4C4;
   }
 
-  .create-template-page .create-template__save-btn {
-    min-width: 289px;
-  }
 
   .create-template-page .instructions__title-block .help-popup {
     left: 50%;
