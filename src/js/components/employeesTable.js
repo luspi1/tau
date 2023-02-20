@@ -1,10 +1,8 @@
-import { body, deleteEmployeeModal, jobChangeModal, modalOverlay } from "../_vars"
 import { sendData, showInfoModal }                                 from "../_functions"
+import { body, deleteEmployeeModal, jobChangeModal, modalOverlay } from "../_vars"
 
 
-const EmployeesTypes = ['руководитель', 'менеджер', 'постоянный', 'временный']
-
-const showJobChangeModal = ({name, direction, position}) => {
+const showJobChangeModal = ({name, direction, position, newPosition, id}) => {
   jobChangeModal.classList.add('_active')
   modalOverlay.classList.add('modal-overlay_active')
 
@@ -13,13 +11,8 @@ const showJobChangeModal = ({name, direction, position}) => {
   const jobModalPositionNew = jobChangeModal.querySelector('.modal-job-change__new-position')
 
   jobModalName.textContent = name
-  jobModalPositionOld.textContent = EmployeesTypes[position]
-
-  if (direction === 0) {
-    jobModalPositionNew.textContent = EmployeesTypes[position + 1]
-  } else {
-    jobModalPositionNew.textContent = EmployeesTypes[position - 1]
-  }
+  jobModalPositionOld.textContent = position
+  jobModalPositionNew.textContent = newPosition
 
 
   // Отправки информации по нажатию "Изменить должность"
@@ -27,11 +20,10 @@ const showJobChangeModal = ({name, direction, position}) => {
   const jobModalForm = jobChangeModal.querySelector('.modal-job-change__form')
   const changeEmployeeUrl = jobModalForm.dataset.url
 
-  jobModalForm.addEventListener('submit', async (e) => {
+  const changeJobSubmit = async (e) => {
     e.preventDefault()
     const data = {
-      id_person: 'some-id1221',
-      id_unit: 'some-id75677',
+      id_person: id,
       direction
     }
 
@@ -44,14 +36,18 @@ const showJobChangeModal = ({name, direction, position}) => {
       jobChangeModal.classList.remove('_active')
       modalOverlay.classList.remove('modal-overlay_active')
       body.classList.remove('_lock')
+      jobModalForm.removeEventListener('submit', changeJobSubmit)
       location.reload()
     } else {
+      jobModalForm.removeEventListener('submit', changeJobSubmit)
       showInfoModal(errortext)
     }
-  })
+  }
+
+  jobModalForm.addEventListener('submit', changeJobSubmit)
 }
 
-const showDeleteEmployeeModal = ({name, position}) => {
+const showDeleteEmployeeModal = ({name, position, id, row}) => {
   deleteEmployeeModal.classList.add('_active')
   modalOverlay.classList.add('modal-overlay_active')
 
@@ -59,7 +55,7 @@ const showDeleteEmployeeModal = ({name, position}) => {
   const deleteEmployeeModalPosition = deleteEmployeeModal.querySelector('.modal-delete-employee__position')
 
   deleteEmployeeModalName.textContent = name
-  deleteEmployeeModalPosition.textContent = EmployeesTypes[position]
+  deleteEmployeeModalPosition.textContent = position
 
 
   // Отправки информации по нажатию "Удалить"
@@ -67,11 +63,10 @@ const showDeleteEmployeeModal = ({name, position}) => {
   const deleteEmployeeForm = deleteEmployeeModal.querySelector('.modal-delete-employee__form')
   const deleteEmployeeUrl = deleteEmployeeForm.dataset.url
 
-  deleteEmployeeForm.addEventListener('submit', async (e) => {
+  const deleteEmployeeSubmit = async (e) => {
     e.preventDefault()
     const data = {
-      id_person: 'some-id1221',
-      id_unit: 'some-id75677',
+      id_unit_person: id
     }
 
     const jsonData = JSON.stringify(data)
@@ -83,22 +78,27 @@ const showDeleteEmployeeModal = ({name, position}) => {
       deleteEmployeeModal.classList.remove('_active')
       modalOverlay.classList.remove('modal-overlay_active')
       body.classList.remove('_lock')
-      location.reload()
+      row.remove()
+      deleteEmployeeForm.removeEventListener('submit', deleteEmployeeSubmit)
     } else {
+      deleteEmployeeForm.removeEventListener('submit', deleteEmployeeSubmit)
       showInfoModal(errortext)
     }
-  })
+  }
+
+
+  deleteEmployeeForm.addEventListener('submit', deleteEmployeeSubmit)
 }
 
 // Функция для сбора данных из строки сотрудника в один объект "employeeObj"
-const collectEmployeeInfo = (target, employeeObj, directionNumb) => {
+const collectEmployeeInfo = (target, employeeObj) => {
   const targetLine = target.closest('.employees-table__row')
-  employeeObj.position = EmployeesTypes.indexOf(targetLine.querySelector('.employees-table__spot').textContent.trim())
-  employeeObj.regDate = targetLine.querySelector('.employees-table__date span').textContent.trim()
+  employeeObj.position = target.dataset.current
+  employeeObj.newPosition = target.dataset.next
+  employeeObj.direction = target.dataset.direction
   employeeObj.name = targetLine.querySelector('.employees-table__name').textContent.trim()
-  if (directionNumb !== undefined) {
-    employeeObj.direction = directionNumb
-  }
+  employeeObj.id = targetLine.dataset.id
+  employeeObj.row = targetLine
 }
 
 
@@ -115,13 +115,8 @@ if (employees) {
         showDeleteEmployeeModal(employeeInfo)
       }
 
-      if (target.classList.contains('employees-table__btn-up')) {
-        collectEmployeeInfo(target, employeeInfo, 1)
-        showJobChangeModal(employeeInfo)
-      }
-
-      if (target.classList.contains('employees-table__btn-down')) {
-        collectEmployeeInfo(target, employeeInfo, 0)
+      if (target.classList.contains('employees-table__btn-up') || target.classList.contains('employees-table__btn-down')) {
+        collectEmployeeInfo(target, employeeInfo)
         showJobChangeModal(employeeInfo)
       }
     })

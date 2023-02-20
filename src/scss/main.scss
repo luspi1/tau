@@ -40,11 +40,6 @@
 @import "./pages/template-item-page";
 @import "./pages/test";
 
-
-
-
-
-
 // Компоненты
 @import "./components/modals";
 @import "media/media-info";
@@ -84,12 +79,6 @@
 @import "media/media-create-template";
 
 
-
-
-
-
-
-
 @import "./components/header";
 @import "./components/footer";
 @import "./components/loader";
@@ -115,3 +104,5 @@
 @import "./components/general-dropzone";
 @import "./components/not-access-modal";
 @import "./components/add-payment-modal";
+@import "./components/used-template-modal";
+

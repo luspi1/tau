@@ -50,7 +50,7 @@ if (newEmployeeForm) {
 
     const {status, errortext} = finishedResponse
     if (status === 'ok') {
-      showInfoModal('Приглашение отправлено')
+      // showInfoModal('Приглашение отправлено')
       newEmployeeDataInput.value = ''
       employeePopupInput.value = ''
       modalNewEmployee.classList.remove('_active')

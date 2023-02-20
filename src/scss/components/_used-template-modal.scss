@@ -1,0 +1,151 @@
+.modal-used-template {
+  position: absolute;
+  overflow-y: auto;
+  overflow-x: hidden;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 760px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 62px 33px 40px 33px;
+  transition: all .2s;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &._active {
+    opacity: 1;
+    z-index: 999;
+    visibility: visible;
+  }
+
+  svg {
+    margin-bottom: 25px;
+  }
+
+  @media (max-width: 1024px) {
+    width: 500px;
+    padding: 50px 20px 50px 20px;
+  }
+  @media (max-width: 550px) {
+    width: 80%;
+    padding: 50px 20px 50px 20px;
+  }
+
+  h2 {
+    @include montserrat-semibold;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 36px;
+    max-width: 600px;
+  }
+
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__close-btn {
+    position: absolute;
+    border: none;
+    background: none;
+    cursor: pointer;
+    right: 16px;
+    top: 20px;
+
+    svg {
+      pointer-events: none;
+    }
+
+    path {
+      transition: all .3s;
+    }
+
+    &:hover {
+      path {
+        fill: $link;
+      }
+    }
+
+  }
+
+  &__name-input {
+    background: #F2F1F7;
+    border: none;
+    width: 100%;
+    height: 60px;
+    padding: 0 40px 0 20px;
+    @include montserrat-medium;
+    font-size: 17px;
+    line-height: 21px;
+    color: $dark;
+    margin-bottom: 38px;
+
+    &:focus {
+      outline: 1px solid #3E29CA;
+      background-color: #ffffff;
+    }
+
+    &::placeholder {
+      color: #817D8C;
+    }
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 500px) {
+      flex-direction: column;
+    }
+
+  }
+
+  &__save-btn {
+    border: none;
+    background-color: #2F65F6;
+    border-radius: 5px;
+    @include montserrat-bold;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 17px 0;
+    width: 170px;
+    margin-right: 25px;
+    cursor: pointer;
+    transition: all .3s;
+
+    @media (max-width: 500px) {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+
+    &:hover {
+      background-color: #264DDB;
+    }
+  }
+
+  &__cancel-btn {
+    background: none;
+    border: none;
+    @include montserrat-bold;
+    font-size: 20px;
+    line-height: 24px;
+    color: #2F65F6;
+    cursor: pointer;
+
+    &:hover {
+      color: #264DDB;
+    }
+  }
+
+
+}
