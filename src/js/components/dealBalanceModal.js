@@ -47,19 +47,21 @@ if (addPaymentReturnBtn) {
 
 //Связка значения инпут с контентом
 
-const dealName = document.querySelector('.deals-balance__list-content.deal-name').textContent
-const dealContrAgent = document.querySelector('.deals-balance__deal-contragent').textContent
+const dealName = document.querySelector('.deals-balance__list-content.deal-name')?.textContent
+const dealContrAgent = document.querySelector('.deals-balance__deal-contragent')?.textContent
 const dealMyCompany = document.querySelector(
-  '.deals-balance__list-content.deal-company').textContent
+  '.deals-balance__list-content.deal-company')?.textContent
 const inputMyCompany = document.querySelector('.add-payment__input[name="add-payment_myCompany"]')
 const inputContrAgent = document.querySelector('.add-payment__input[name="add-payment_agent"]')
 const inputDealName = document.querySelector('.add-payment__input[name="add-payment_deal-title"]')
 
 
+if (dealsAddBtn) {
+  dealsAddBtn.addEventListener('click', () => {
+    inputMyCompany.value = dealMyCompany
+    inputContrAgent.value = dealContrAgent
+    inputDealName.value = dealName
+  })
+}
 
-dealsAddBtn.addEventListener('click', () => {
-  inputMyCompany.value = dealMyCompany
-  inputContrAgent.value = dealContrAgent
-  inputDealName.value = dealName
-})
 
