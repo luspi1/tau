@@ -45,16 +45,17 @@
 
     &__row {
       display: flex;
+      justify-content: space-between;
       width: 100%;
       padding: 0 0 38px;
       border-bottom: 2px dotted #C4C4C4;;
     }
 
     &__item {
-      margin-right: 90px;
+      margin-right: 30px;
 
-      &:first-child {
-        margin-right: 22px;
+      &:last-child {
+        margin-right: 0;
       }
 
       p {

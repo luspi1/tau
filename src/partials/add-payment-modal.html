@@ -1,37 +1,39 @@
-<div class="modal-incoming modal" id="incoming-modal" data-body-lock="true">
+<div class="add-payment modal" id="add-payment-modal" data-body-lock="true">
 
   <h2>Новый приход (поступление)</h2>
 
-  <form class="modal-incoming__form" method="post" action="#"
+  <form class="add-payment__form" method="post" action="#"
         enctype="multipart/form-data">
     <input class="data-modal-id" name="id_deal_term" type="hidden" value=""/>
 
-    <div class="modal-incoming__manual-fill modal-incoming__manual-fill_active">
-      <ul class="modal-incoming__input-list">
-        <li class="modal-incoming__item-input">
-          <p class="modal-incoming__input-title">Сумма поступления
+    <div class="add-payment__manual-fill add-payment__manual-fill_active">
+      <ul class="add-payment__input-list">
+        <li class="add-payment__item-input">
+          <p class="add-payment__input-title">Сумма поступления
           </p>
-          <div class="modal-incoming__input-wrapper">
-            <input class="modal-incoming__input" type="number"
-                   name="incoming_amount"
+          <div class="add-payment__input-wrapper">
+            <input class="add-payment__input" type="number"
+                   name="add-payment_amount"
                    placeholder="введите сумму в рублях"
                    data-required="true" required>
           </div>
         </li>
-        <li class="modal-incoming__item-input">
-          <p class="modal-incoming__input-title">Своя компания</p>
-          <div class="modal-incoming__input-wrapper">
-            <input class="modal-incoming__input" type="text"
-                   name="incoming_company-title"
+        <li class="add-payment__item-input">
+          <p class="add-payment__input-title">Своя компания
+          </p>
+          <div class="add-payment__input-wrapper">
+            <input class="add-payment__input" type="text"
+                   name="add-payment_myCompany"
                    placeholder="начните вводить название"
                    data-required="true" required>
           </div>
         </li>
-        <li class="modal-incoming__item-input">
-          <p class="modal-incoming__input-title">Выбор банковского счёта</p>
+
+        <li class="add-payment__item-input">
+          <p class="add-payment__input-title">Выбор банковского счёта</p>
           <div
-            class="modal-incoming__input-wrapper modal-incoming__select-wrapper">
-            <select name="incoming_account">
+            class="add-payment__input-wrapper add-payment__select-wrapper">
+            <select name="add-payment_account">
               <option value="">выберите счет</option>
               <option value="account_1">Счет 1</option>
               <option value="account_2">Счет 2</option>
@@ -39,12 +41,12 @@
             </select>
           </div>
         </li>
-        <li class="modal-incoming__item-input">
-          <p class="modal-incoming__input-title">Дата внесения платежа</p>
+        <li class="add-payment__item-input">
+          <p class="add-payment__input-title">Дата внесения платежа</p>
           <div
-            class="modal-incoming__input-wrapper modal-incoming__date-wrapper">
-            <input class="modal-incoming__input modal-incoming__date-input"
-                   name="incoming_date" placeholder="дд.мм.гггг" type="text"
+            class="add-payment__input-wrapper add-payment__date-wrapper">
+            <input class="add-payment__input add-payment__date-input"
+                   name="add-payment_date" placeholder="дд.мм.гггг" type="text"
                    data-date-start="2023-01-23">
             <svg width="21" height="22" viewBox="0 0 21 22" fill="none"
                  xmlns="http://www.w3.org/2000/svg">
@@ -54,23 +56,22 @@
             </svg>
           </div>
         </li>
-
-        <li class="modal-incoming__item-input">
-          <p class="modal-incoming__input-title">Контрагент</p>
-          <div class="modal-incoming__input-wrapper">
-            <input class="modal-incoming__input" type="text"
-                   name="incoming_agent"
+        <li class="add-payment__item-input">
+          <p class="add-payment__input-title">Контрагент
+          </p>
+          <div class="add-payment__input-wrapper">
+            <input class="add-payment__input" type="text"
+                   name="add-payment_agent"
                    placeholder="начните вводить название"
                    data-required="true" required>
           </div>
         </li>
-
-        <li class="modal-incoming__item-input">
-          <p class="modal-incoming__input-title">Статья внесения средств
+        <li class="add-payment__item-input">
+          <p class="add-payment__input-title">Статья внесения средств
           </p>
           <div
-            class="modal-incoming__input-wrapper modal-incoming__select-wrapper">
-            <select name="incoming_article">
+            class="add-payment__input-wrapper add-payment__select-wrapper">
+            <select name="add-payment_article">
               <option value="">статья не выбрана</option>
               <option value="article_1">Статья 1</option>
               <option value="article_2">Статья 2</option>
@@ -78,33 +79,31 @@
             </select>
           </div>
         </li>
-
-        <li class="modal-incoming__item-input">
-          <p class="modal-incoming__input-title">Название сделки</p>
-          <div class="modal-incoming__input-wrapper">
-            <input class="modal-incoming__input" type="text"
-                   name="incoming_deal-title"
+        <li class="add-payment__item-input">
+          <p class="add-payment__input-title">Название сделки
+          </p>
+          <div class="add-payment__input-wrapper">
+            <input class="add-payment__input" type="text"
+                   name="add-payment_deal-title"
                    placeholder="начните вводить название"
                    data-required="true" required>
           </div>
         </li>
-
-        <li class="modal-incoming__item-input">
-          <p class="modal-incoming__input-title">Описание платежа</p>
-          <div class="modal-incoming__input-wrapper">
+        <li class="add-payment__item-input">
+          <p class="add-payment__input-title">Описание платежа</p>
+          <div class="add-payment__input-wrapper">
           <textarea
-            class="modal-incoming__input modal-incoming__input-area modal-incoming__area-desc"
-            name="incoming_desc"
+            class="add-payment__input add-payment__input-area add-payment__area-desc"
+            name="add-payment_desc"
             data-required="true" required></textarea>
           </div>
         </li>
-
-        <li class="modal-incoming__item-input">
-          <p class="modal-incoming__input-title">Плановый платеж
+        <li class="add-payment__item-input">
+          <p class="add-payment__input-title">Плановый платеж
           </p>
           <div
-            class="modal-incoming__input-wrapper modal-incoming__select-wrapper">
-            <select name="incoming_payment">
+            class="add-payment__input-wrapper add-payment__select-wrapper">
+            <select name="add-payment_payment">
               <option value="">платеж не выбрана</option>
               <option value="payment_1">Платеж 1</option>
               <option value="payment_2">Платеж 2</option>
@@ -112,13 +111,12 @@
             </select>
           </div>
         </li>
-
       </ul>
-      <div class="modal-incoming__file-wrapper">
+      <div class="add-payment__file-wrapper">
         <input type="file"
-               class="modal-incoming__add-btn" name="modal-incomig_file"
-               id="incoming-file">
-        <label for="incoming-file">
+               class="add-payment__add-btn" name="modal-incomig_file"
+               id="add-payment-file">
+        <label for="add-payment-file">
           <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
                xmlns="http://www.w3.org/2000/svg">
             <path
@@ -133,67 +131,67 @@
       </div>
     </div>
 
-    <div class="modal-incoming__file-fill">
-      <ul class="modal-incoming__input-list">
-        <li class="modal-incoming__item-input">
-          <p class="modal-incoming__input-title">Своя компания
+    <div class="add-payment__file-fill">
+      <ul class="add-payment__input-list">
+        <li class="add-payment__item-input">
+          <p class="add-payment__input-title">Своя компания
           </p>
-          <div class="modal-incoming__input-wrapper">
-            <input class="modal-incoming__input" type="text"
-                   name="incoming_amount"
+          <div class="add-payment__input-wrapper">
+            <input class="add-payment__input" type="text"
+                   name="add-payment_amount"
                    placeholder="начните вводить название"
                    data-required="false">
           </div>
         </li>
-        <li class="modal-incoming__item-input">
-          <p class="modal-incoming__input-title">Название сделки
+        <li class="add-payment__item-input">
+          <p class="add-payment__input-title">Название сделки
           </p>
-          <div class="modal-incoming__input-wrapper">
-            <input class="modal-incoming__input" type="text"
-                   name="incoming_deal"
+          <div class="add-payment__input-wrapper">
+            <input class="add-payment__input" type="text"
+                   name="add-payment_deal"
                    placeholder="начните вводить название"
                    data-required="false">
           </div>
         </li>
       </ul>
-      <p class="modal-incoming__import-desc">Импортированные поступления (всего
+      <p class="add-payment__import-desc">Импортированные поступления (всего
         поступлений: 2)</p>
-      <ul class="modal-incoming__import-list">
+      <ul class="add-payment__import-list">
         <li>
-          <p class="modal-incoming__import-list-price">883 098 ₽</p>
-          <p class="modal-incoming__import-list-desc">Платеж по Договору
+          <p class="add-payment__import-list-price">883 098 ₽</p>
+          <p class="add-payment__import-list-desc">Платеж по Договору
             2899/2021 от ООО Рога, копыта и сыновья</p>
-          <p class="modal-incoming__import-list-requisites">Счет: <span>Сбербанк, 42000000000000000000</span>
+          <p class="add-payment__import-list-requisites">Счет: <span>Сбербанк, 42000000000000000000</span>
           </p>
-          <p class="modal-incoming__import-list-requisites">ИНН:
+          <p class="add-payment__import-list-requisites">ИНН:
             <span>13200200300</span>
           </p>
-          <p class="modal-incoming__import-list-requisites">Дата: <span>28 сен 2022</span>
+          <p class="add-payment__import-list-requisites">Дата: <span>28 сен 2022</span>
           </p>
         </li>
         <li>
-          <p class="modal-incoming__import-list-price">883 098 ₽</p>
-          <p class="modal-incoming__import-list-desc">Платеж по Договору
+          <p class="add-payment__import-list-price">883 098 ₽</p>
+          <p class="add-payment__import-list-desc">Платеж по Договору
             2899/2021 от ООО Рога, копыта и сыновья</p>
-          <p class="modal-incoming__import-list-requisites">Счет: <span>Сбербанк, 42000000000000000000</span>
+          <p class="add-payment__import-list-requisites">Счет: <span>Сбербанк, 42000000000000000000</span>
           </p>
-          <p class="modal-incoming__import-list-requisites">ИНН:
+          <p class="add-payment__import-list-requisites">ИНН:
             <span>13200200300</span>
           </p>
-          <p class="modal-incoming__import-list-requisites">Дата: <span>28 сен 2022</span>
+          <p class="add-payment__import-list-requisites">Дата: <span>28 сен 2022</span>
           </p>
         </li>
       </ul>
-      <button class="modal-incoming__import-return-btn" type="button">Вернуться
+      <button class="add-payment__import-return-btn" type="button">Вернуться
         к форме заполнения
       </button>
     </div>
 
-    <div class="modal-incoming__btns">
-      <button class="modal-incoming__save-btn" type="submit">
+    <div class="add-payment__btns">
+      <button class="add-payment__save-btn" type="submit">
         Сохранить приход
       </button>
-      <button type="button" class="modal-incoming__close-btn"
+      <button type="button" class="add-payment__close-btn"
               data-close-modal="true">
         Отменить
       </button>

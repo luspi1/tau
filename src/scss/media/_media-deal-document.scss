@@ -52,8 +52,7 @@
 
 
   .deals-documents__caption-list {
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
     padding-bottom: 10px;
 
   }
@@ -75,27 +74,9 @@
   .deals-documents__info-download {
     margin-right: 20px;
   }
-
-
 }
 
 @media (max-width: 500px) {
-  .deals-documents__caption-list {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .deals-documents__caption-list li {
-    margin-right: 0;
-  }
-
-  .deals-documents__caption-list .deals-documents__list-title {
-    text-align: center;
-  }
-  .deals-documents__caption-list .deals-documents__list-content {
-    text-align: center;
-  }
-
   .deals-documents__filter-inputs {
     flex-direction: column;
   }

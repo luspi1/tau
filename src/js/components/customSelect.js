@@ -1,4 +1,4 @@
-import Choices from "choices.js"
+import Choices from 'choices.js'
 
 const typeContactInput = document.querySelector('.new-contact__type-input')
 const casesInput = document.querySelector('.cases__filter-input')
@@ -41,14 +41,15 @@ if (typeContactInput) {
 
 // Селекторы на странице редактирования контактов
 
-document.querySelectorAll('.edit-contact__item select:not(.edit-contact__contact-type-btn)').forEach(el => {
-  const choices = new Choices(el, {
-    searchEnabled: false,
-    itemSelectText: '',
-    shouldSort: false,
-    allowHTML: true
+document.querySelectorAll('.edit-contact__item select:not(.edit-contact__contact-type-btn)')
+  .forEach(el => {
+    const choices = new Choices(el, {
+      searchEnabled: false,
+      itemSelectText: '',
+      shouldSort: false,
+      allowHTML: true
+    })
   })
-})
 
 
 // Селекторы на странице новой организации
@@ -188,6 +189,21 @@ if (incomeListSelects) {
   })
 }
 
+// Селекторы в модалке нового платежа в Баланс сделки
+const addPaymentModalSelects = document.querySelectorAll('.add-payment__select-wrapper select')
+
+if (addPaymentModalSelects) {
+  addPaymentModalSelects.forEach(el => {
+    const choices = new Choices(el, {
+      itemSelectText: '',
+      searchEnabled: false,
+      shouldSort: false,
+      allowHTML: true
+    })
+  })
+}
+
+
 // Селекторы в модалке нового прихода
 const incomingModalSelects = document.querySelectorAll('.modal-incoming__select-wrapper select')
 
@@ -259,14 +275,16 @@ if (templateDocumentsSelects) {
 }
 
 // Селектор фильтра типа документа на странице "только документы"
-const onlyDocumentSelect = document.querySelector('.only-documents__type-document')
+const onlyDocumentSelects = document.querySelectorAll('.only-documents__select-wrap select')
 
-if (onlyDocumentSelect) {
-  const choices = new Choices(onlyDocumentSelect, {
-    itemSelectText: '',
-    searchEnabled: false,
-    shouldSort: false,
-    allowHTML: true
+if (onlyDocumentSelects) {
+  onlyDocumentSelects.forEach(el => {
+    const choices = new Choices(el, {
+      itemSelectText: '',
+      searchEnabled: false,
+      shouldSort: false,
+      allowHTML: true
+    })
   })
 }
 
@@ -314,5 +332,5 @@ if (typeTemplateSelects) {
 }
 
 
-export { initSelects, initPaymentSelects, initPaymentsSelect }
+export {initSelects, initPaymentSelects, initPaymentsSelect}
 

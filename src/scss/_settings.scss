@@ -403,3 +403,10 @@ input::-webkit-inner-spin-button {
 .air-datepicker-global-container {
   z-index: 9999;
 }
+
+//отступ в выпадающих списках
+@media (min-width: 640px) {
+  .choices__list--dropdown .choices__item--selectable, .choices__list[aria-expanded] .choices__item--selectable {
+    padding-right: 0;
+  }
+}
