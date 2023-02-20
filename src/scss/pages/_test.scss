@@ -3,7 +3,13 @@
 
   height: 100vh;
 
-  &__not-access-btn {
+  &__btns {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn {
     border: none;
     background-color: #2F65F6;
     border-radius: 5px;
@@ -12,14 +18,18 @@
     line-height: 24px;
     text-align: center;
     color: #FFFFFF;
-    padding: 17px 0;
-    width: 300px;
+    padding: 17px 30px;
     margin-right: 35px;
     cursor: pointer;
     transition: all .3s;
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
 
     &:hover {
       background-color: #264DDB;
     }
   }
+
 }

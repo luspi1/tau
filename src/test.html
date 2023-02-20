@@ -16,7 +16,17 @@
   <main class="main test-page">
     <div class="container">
       @include('partials/not-access-modal.html')
-      <button class="btn test-page__not-access-btn" type="button" data-modal="not-access-modal">Модалка "Нет доступа"</button>
+      @include('partials/used-template-modal.html')
+
+      <div class="test-page test-page__btns">
+        <button class="btn test-page__not-access-btn" type="button"
+                data-modal="not-access-modal">Модалка "Нет доступа"
+        </button>
+        <button class="btn test-page__used-template" type="button"
+                data-modal="used-template-modal">Модалка "Этот шаблон уже
+          используется"
+        </button>
+      </div>
     </div>
   </main>
 
