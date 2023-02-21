@@ -100,4 +100,28 @@ if (filterInputCalendars || trafficInputCalendars) {
   hideCustomCalendar(trafficCalendarWrappers, trafficInputCalendars)
 }
 
+//Связка значения инпут с контентом
 
+const monthsButtons = document.querySelectorAll('.months__button')
+
+if (monthsButtons) {
+  monthsButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const incomeMonthCompany = document.querySelector(
+        '.title__select-wrap .choices__item.choices__item--selectable').textContent
+      const incomeMonthRow = btn.closest('.months__row')
+      const incomeMonthDeal = incomeMonthRow.querySelector('.months__deal').textContent
+      const incomeMonthAgent = incomeMonthRow.querySelector('.months__organization').textContent
+      const inputCompany = document.querySelector(
+        '.modal-incoming__input[name="incoming_company-title"]')
+      const inputAgent = document.querySelector('.modal-incoming__input[name="incoming_agent"]')
+      const inputDealTitle = document.querySelector(
+        '.modal-incoming__input[name="incoming_deal-title"]')
+
+      inputCompany.value = incomeMonthCompany
+      inputAgent.value = incomeMonthAgent
+      inputDealTitle.value = incomeMonthDeal
+
+    })
+  })
+}

@@ -163,7 +163,7 @@ if (dealsSelect) {
   })
 }
 
-
+// Селектор в поиске на странице доходы
 const incomingPageSelects = document.querySelectorAll('.filter__select-wrap select')
 if (incomingPageSelects) {
   incomingPageSelects.forEach(el => {
@@ -175,6 +175,7 @@ if (incomingPageSelects) {
     })
   })
 }
+
 
 const incomeListSelects = document.querySelectorAll('.income-list-page__select')
 
