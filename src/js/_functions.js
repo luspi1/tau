@@ -8,7 +8,7 @@ const removeClasses = (className) => {
 
 
 // Фунцкия отправки fetch запросов
-async function sendData (data, url) {
+async function sendData(data, url) {
   return await fetch(url, {
     method: 'POST',
     headers: {'Content-Type': 'multipart/form-data'},
@@ -72,7 +72,7 @@ const showBigImgModal = (path) => {
 
 // функция отправки данных с попапа
 
-async function handlePopupSubmit (inputValue, popup, optionalInfo) {
+async function handlePopupSubmit(inputValue, popup, optionalInfo) {
   const inputData = inputValue
 
   const addData = popup.dataset.json
@@ -195,6 +195,21 @@ const changePage = (selectors) => {
   }
 }
 
+// переключение обязательных полей
+
+const toggleRequiredFields = (reqInputs) => {
+  if (reqInputs) {
+    reqInputs.forEach(el => {
+      if (el.dataset.required === 'true') {
+        el.dataset.required = 'false'
+        el.required = false
+      } else {
+        el.dataset.required = 'true'
+        el.required = true
+      }
+    })
+  }
+}
 
 export {
   removeClasses,
@@ -210,5 +225,6 @@ export {
   closeSelectPopups,
   blockFields,
   cutString,
-  changePage
+  changePage,
+  toggleRequiredFields
 }

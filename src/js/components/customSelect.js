@@ -206,7 +206,7 @@ if (addPaymentModalSelects) {
 
 
 // Селекторы в модалке нового прихода
-const incomingModalSelects = document.querySelectorAll('.modal-incoming__select-wrapper select')
+const incomingModalSelects = document.querySelectorAll('.modal-incoming__select-wrapper:not(.modal-incoming__select-wrapper-payment) select')
 
 if (incomingModalSelects) {
   incomingModalSelects.forEach(el => {
@@ -333,5 +333,5 @@ if (typeTemplateSelects) {
 }
 
 
-export {initSelects, initPaymentSelects, initPaymentsSelect}
+export { initSelects, initPaymentSelects, initPaymentsSelect }
 
