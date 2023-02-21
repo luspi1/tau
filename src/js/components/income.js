@@ -1,6 +1,4 @@
 const incomePageMain = document.querySelector('.income-page')
-const dealsPageMain = document.querySelector('.deals')
-
 
 //аккордеоны
 
@@ -58,12 +56,7 @@ if (incomingReturnBtn) {
     incomingManualFill.classList.add('modal-incoming__manual-fill_active')
     incomingFileFill.classList.remove('modal-incoming__file-fill_active')
     const incomingModal = document.querySelector('#incoming-modal')
-    if (incomePageMain) {
-      incomePageMain.style.minHeight = `${incomingModal.clientHeight}px`
-    }
-    if (dealsPageMain) {
-      dealsPageMain.style.minHeight = `${incomingModal.clientHeight}px`
-    }
+    incomePageMain.style.minHeight = `${incomingModal.clientHeight}px`
     toggleRequiredFields(requiredFields)
   })
 }

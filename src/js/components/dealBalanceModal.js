@@ -1,4 +1,5 @@
 // модалка добавления платежа
+const dealsPageMain = document.querySelector('.deals')
 const addPaymentFileBtn = document.querySelector('.add-payment__file-wrapper input')
 const addPaymentManualFill = document.querySelector('.add-payment__manual-fill')
 const addPaymentFileFill = document.querySelector('.add-payment__file-fill')
@@ -40,7 +41,7 @@ if (addPaymentReturnBtn) {
     addPaymentManualFill.classList.add('add-payment__manual-fill_active')
     addPaymentFileFill.classList.remove('add-payment__file-fill_active')
     const addPaymentModal = document.querySelector('#add-payment-modal')
-    incomePageMain.style.minHeight = `${addPaymentModal.clientHeight}px`
+    dealsPageMain.style.minHeight = `${addPaymentModal.clientHeight}px`
     toggleRequiredFields(requiredFields)
   })
 }
