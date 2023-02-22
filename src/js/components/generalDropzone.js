@@ -28,7 +28,10 @@ if (genDropzones) {
 
       if (isBigPreview) {
         const previewPic = file.previewElement
+
         if (previewPic) {
+          const previewImg = previewPic.querySelector('img')
+          previewImg.setAttribute('data-big-img', file.dataURL)
           previewPic.addEventListener('click', () => {
             showBigImgModal(file.dataURL)
           })
@@ -133,7 +136,7 @@ if (genDropzones) {
           const previewImg = el.querySelector('.dz-image img')
           if (previewImg) {
             previewImg.addEventListener('click', () => {
-              showBigImgModal(previewImg.src)
+              showBigImgModal(previewImg.dataset.bigImg)
             })
           }
         }

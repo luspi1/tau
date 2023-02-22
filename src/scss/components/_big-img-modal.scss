@@ -1,25 +1,25 @@
 .big-img-modal {
-  background: #ffffff;
-  position: absolute;
-  border-radius: 25px;
-  width: 43%;
-  padding-top: 28%;
+  background: transparent;
+  position: fixed;
+  border-radius: 10px;
+  width: 30%;
   left: 50%;
   top: 50%;
+  max-height: 85vh;
   transform: translate(-50%, -50%);
   opacity: 0;
   visibility: hidden;
   z-index: -1;
   transition: all .3s;
+  display: flex;
+  align-items: center;
 
   @media (max-width: 1280px) {
-    width: 53%;
-    padding-top: 34%;
+    width: 40%;
   }
+
   @media (max-width: 768px) {
-    width: 65%;
-    padding-top: 43%;
-    border-radius: 10px;
+    width: 55%;
   }
 
   &.big-img-modal_active {
@@ -29,11 +29,8 @@
   }
 
   img {
-    border-radius: 25px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
+    border-radius: 10px;
+    max-height: 85vh;
     width: 100%;
   }
 }
