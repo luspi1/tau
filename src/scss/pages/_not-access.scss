@@ -1,0 +1,36 @@
+.not-access {
+  text-align: center;
+
+  .container {
+    padding-top: 170px;
+    color: #000000;
+  }
+
+  h1 {
+    margin-bottom: 25px;
+    @include montserrat-semibold;
+    font-size: 38px;
+    line-height: 46px;
+  }
+
+  h2 {
+    margin-bottom: 85px;
+    @include montserrat-medium;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  li {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  a {
+    @include montserrat-medium;
+    font-size: 17px;
+    line-height: 21px;
+    color: $link;
+  }
+
+}
