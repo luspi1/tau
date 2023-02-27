@@ -12,6 +12,9 @@
   .deals .deals-table__cell:nth-child(3) {
     width: 220px;
   }
+  .deals .top .container {
+   flex-wrap: wrap;
+  }
 }
 
 @media (max-width: 992px) {
@@ -20,7 +23,6 @@
   }
   .deals .top .search {
     margin-left: 0;
-    padding: 15px 0;
     justify-content: flex-start;
 
   }
@@ -31,14 +33,24 @@
   }
 }
 
-@media(max-width: 576px) {
+
+
+@media(max-width: 768px) {
   .deals .top .search {
     flex-direction: column;
+    padding-bottom: 15px;
   }
+
   .deals .top .search__input {
     width: 100%;
+    margin-bottom: 15px;
+  }
+  .deals .top .search__btn {
+    margin-left: auto;
+    margin-right: 0;
+    margin-bottom: 15px;
   }
   .deals .top .search__wrap {
-    margin: 10px 0 0;
+    margin-right: 0;
   }
 }
