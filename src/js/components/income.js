@@ -122,9 +122,16 @@ if (incomePageMain) {
         const inputDealTitle = document.querySelector(
           '.modal-incoming__input[name="incoming_deal-title"]')
 
-        inputCompany.value = incomeMonthCompany
-        inputAgent.value = incomeMonthAgent
-        inputDealTitle.value = incomeMonthDeal
+        const defaultValuesModal = (inputName, textContent) => {
+          inputName.value = textContent
+          inputName.disabled = true
+          inputName.closest('.modal-incoming__input-wrapper').classList.add('input_disabled')
+         }
+
+        defaultValuesModal(inputCompany, incomeMonthCompany)
+        defaultValuesModal(inputAgent, incomeMonthAgent)
+        defaultValuesModal(inputDealTitle, incomeMonthDeal)
+
         incomeChoices.destroy()
         incomeChoices.init()
         incomeChoices.setValue([{value: incomePayment, label: incomePayment}])
