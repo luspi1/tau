@@ -123,10 +123,10 @@ if (incomePageMain) {
           '.modal-incoming__input[name="incoming_deal-title"]')
 
         const defaultValuesModal = (inputName, textContent) => {
-          inputName.value = textContent
+          inputName.value = textContent.replace(/ +/g, ' ').trim()
           inputName.disabled = true
           inputName.closest('.modal-incoming__input-wrapper').classList.add('input_disabled')
-         }
+        }
 
         defaultValuesModal(inputCompany, incomeMonthCompany)
         defaultValuesModal(inputAgent, incomeMonthAgent)

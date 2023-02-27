@@ -22,6 +22,24 @@ if (createDocPage) {
     allowHTML: true
   })
 
+  const plannedPaymentSelect = createDocPage.querySelector('.create-doc-page__planned-payment-select .create-doc-page__select')
+  const plannedPaymentSelectWrapper = createDocPage.querySelector('.create-doc-page__planned-payment-select')
+
+  const plannedPaymentChoices = new Choices(plannedPaymentSelect, {
+    itemSelectText: '',
+    searchEnabled: false,
+    shouldSort: false,
+    allowHTML: true
+  })
+
+  // Функция инициализации селекта плановых платежей при выборе договора в типе "Счет"
+  
+  const initPlannedPaymentSelect = (plannedDataArr) => {
+    plannedPaymentSelectWrapper.classList.remove('hidden')
+    plannedPaymentChoices.destroy()
+    plannedPaymentChoices.init()
+    plannedPaymentChoices.setValue(plannedDataArr)
+  }
 
 // Появления списка элементов полученных от сервера в полях "Родительский договор", "Шаблон документа"
 
@@ -33,27 +51,28 @@ if (createDocPage) {
     })
   }
 
-
   const parentalContract = document.querySelector('.create-doc-page .parental-contract-input')
 
   if (parentalContract) {
 
-
     const invoiceDataUrl = parentalContract.dataset.invoicesUrl
-
     const updateInvoices = async (data, submitScript) => {
       const response = await sendData(data, submitScript)
       const finishedResponse = await response.json()
 
-      const {status, errortext, invoices} = finishedResponse
+      const {status, errortext, invoices, planned_payments} = finishedResponse
       if (status === 'ok') {
+
         invoicesChoices.clearChoices()
         invoicesChoices.setValue(invoices)
+
+        initPlannedPaymentSelect(planned_payments)
+
       } else {
         showInfoModal(errortext)
       }
     }
-    
+
     const handleParentalContractInput = (e) => {
       let inputValue = e.target.value
 
@@ -88,11 +107,7 @@ if (createDocPage) {
           })
       }
     }
-
-
     parentalContract.addEventListener('input', handleParentalContractInput)
-
-
   }
 
 
@@ -103,16 +118,11 @@ if (createDocPage) {
 // Смена состояние страницы, в зависимости от селекта "Тип документа"
 
   const typeDocSelect = document.querySelector('.create-doc-page__type-doc-select')
-
   if (typeDocSelect) {
-
     typeDocSelect.addEventListener('change', (e) => {
       createDocPage.dataset.pageState = e.target.value
     })
-
   }
-
-
 }
 
 

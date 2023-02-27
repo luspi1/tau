@@ -13,6 +13,12 @@
     display: none;
   }
 
+  &:not(&[data-page-state="invoice"]) {
+    .create-doc-page__planned-payment-select {
+      display: none;
+    }
+  }
+
   &[data-page-state="act"] {
     .create-doc-page__date-end {
       display: none;
@@ -44,6 +50,7 @@
     .create-doc-page__invoice-doc-select {
       display: block;
     }
+
     .create-doc-page__sum-invoice {
       display: block;
     }
