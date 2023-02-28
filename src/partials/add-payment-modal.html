@@ -45,9 +45,10 @@
           <p class="add-payment__input-title">Дата внесения платежа</p>
           <div
             class="add-payment__input-wrapper add-payment__date-wrapper">
-            <input class="add-payment__input add-payment__date-input"
-                   name="add-payment_date" placeholder="дд.мм.гггг" type="text"
-                   data-date-start="2023-01-23">
+            <input
+              class="add-payment__input add-payment__date-input date-input-mask"
+              name="add-payment_date" placeholder="дд.мм.гггг" type="text"
+              data-date-start="2023-01-23">
             <svg width="21" height="22" viewBox="0 0 21 22" fill="none"
                  xmlns="http://www.w3.org/2000/svg">
               <path
@@ -92,10 +93,10 @@
         <li class="add-payment__item-input">
           <p class="add-payment__input-title">Описание платежа</p>
           <div class="add-payment__input-wrapper">
-          <textarea
-            class="add-payment__input add-payment__input-area add-payment__area-desc"
-            name="add-payment_desc"
-            data-required="true" required></textarea>
+            <textarea
+              class="add-payment__input add-payment__input-area add-payment__area-desc"
+              name="add-payment_desc"
+              data-required="true" required></textarea>
           </div>
         </li>
         <li class="add-payment__item-input">
@@ -166,7 +167,8 @@
           <p class="add-payment__import-list-requisites">ИНН:
             <span>13200200300</span>
           </p>
-          <p class="add-payment__import-list-requisites">Дата: <span>28 сен 2022</span>
+          <p class="add-payment__import-list-requisites">Дата:
+            <span>28 сен 2022</span>
           </p>
         </li>
         <li>
@@ -178,7 +180,8 @@
           <p class="add-payment__import-list-requisites">ИНН:
             <span>13200200300</span>
           </p>
-          <p class="add-payment__import-list-requisites">Дата: <span>28 сен 2022</span>
+          <p class="add-payment__import-list-requisites">Дата:
+            <span>28 сен 2022</span>
           </p>
         </li>
       </ul>

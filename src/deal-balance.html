@@ -13,7 +13,7 @@
   'header-title': 'Ваши сделки'
   })
 
-  <main class="main deals">
+  <main class="main deals deals-balance-page">
     @include('partials/deal-submenu.html', {
     'deal-balance': 'deal-submenu_active',
     })
@@ -33,7 +33,8 @@
             </li>
             <li>
               <p class="deals-balance__list-title">Исполнитель</p>
-              <a href="#" class="deals-balance__list-content deal-company">ИП Масякин А.Н.</a>
+              <a href="#" class="deals-balance__list-content deal-company">ИП
+                Масякин А.Н.</a>
             </li>
           </ul>
 
@@ -110,14 +111,19 @@
             </li>
 
           </ul>
-          <button type="button" class="deals-balance__add-btn" data-modal="add-payment-modal">Добавить платеж
+          <button type="button" class="deals-balance__add-btn"
+                  data-modal="add-payment-modal"
+                  data-payment-id="daw123xcv"
+                  data-payment-script="./data/getPaymentModal.txt">
+            Добавить платеж
           </button>
         </div>
 
         <aside class="aside deals-balance__aside">
           <div class="aside__top">
             <p class="minititle">Контрагент</p>
-            <a class="deals-balance__deal-contragent" href="#" target="_blank">ООО «Росавтодорпроектстроймашинвест»</a>
+            <a class="deals-balance__deal-contragent" href="#" target="_blank">ООО
+              «Росавтодорпроектстроймашинвест»</a>
           </div>
           <div class="aside__card">
             <div class="aside__item">

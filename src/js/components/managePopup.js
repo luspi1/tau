@@ -21,7 +21,7 @@ if (openModalBtns) {
         const dataIdInput = currentModal.querySelector('.data-modal-id')
         dataIdInput.value = currentBtn.dataset.id
       }
-      
+
       currentPageMain.style.minHeight = `${currentModal.clientHeight}px`
       currentModal.classList.add('_active')
       modalOverlay.classList.add('modal-overlay_active')
@@ -29,26 +29,31 @@ if (openModalBtns) {
   })
 }
 
-const closeModalBtns = document.querySelectorAll('button[data-close-modal]')
 
-if (closeModalBtns) {
-  closeModalBtns.forEach(closeBtn => {
-    closeBtn.addEventListener('click', (e) => {
-      e.preventDefault()
-      body.classList.remove('_lock')
+const initCloseModals = () => {
+  const closeModalBtns = document.querySelectorAll('button[data-close-modal]')
 
-      document.querySelectorAll('.modal').forEach(modal => {
-        if (modal.classList.contains('_active')) {
-          modal.classList.remove('_active')
-          modal.closest('main').style.minHeight = "calc(100vh - 60px)"
+  if (closeModalBtns) {
+    closeModalBtns.forEach(closeBtn => {
+      closeBtn.addEventListener('click', (e) => {
+        e.preventDefault()
+        body.classList.remove('_lock')
+
+        document.querySelectorAll('.modal').forEach(modal => {
+          if (modal.classList.contains('_active')) {
+            modal.classList.remove('_active')
+            modal.closest('main').style.minHeight = "calc(100vh - 60px)"
+          }
+        })
+        if (modalOverlay) {
+          modalOverlay.classList.remove('modal-overlay_active')
         }
       })
-      if (modalOverlay) {
-        modalOverlay.classList.remove('modal-overlay_active')
-      }
     })
-  })
+  }
 }
+
+initCloseModals()
 
 
 if (modalOverlay) {
@@ -64,4 +69,4 @@ if (modalOverlay) {
   })
 }
 
-
+export { initCloseModals }

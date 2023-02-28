@@ -190,19 +190,25 @@ if (incomeListSelects) {
   })
 }
 
-// Селекторы в модалке нового платежа в Баланс сделки
-const addPaymentModalSelects = document.querySelectorAll('.add-payment__select-wrapper select')
 
-if (addPaymentModalSelects) {
-  addPaymentModalSelects.forEach(el => {
-    const choices = new Choices(el, {
-      itemSelectText: '',
-      searchEnabled: false,
-      shouldSort: false,
-      allowHTML: true
+// Селекторы в модалке нового платежа в Баланс сделки
+
+const initPaymentModalSelects = () => {
+  const addPaymentModalSelects = document.querySelectorAll('.add-payment__select-wrapper select')
+
+  if (addPaymentModalSelects) {
+    addPaymentModalSelects.forEach(el => {
+      const choices = new Choices(el, {
+        itemSelectText: '',
+        searchEnabled: false,
+        shouldSort: false,
+        allowHTML: true
+      })
     })
-  })
+  }
 }
+
+initPaymentModalSelects()
 
 
 // Селекторы в модалке нового прихода
@@ -333,5 +339,5 @@ if (typeTemplateSelects) {
 }
 
 
-export { initSelects, initPaymentSelects, initPaymentsSelect }
+export { initSelects, initPaymentSelects, initPaymentsSelect, initPaymentModalSelects }
 
