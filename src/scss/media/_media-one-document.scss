@@ -20,6 +20,7 @@
   }
   .one-document-page .modal-contract {
     width: 96%;
+    max-height: 660px;
   }
 }
 
@@ -76,7 +77,9 @@
   .one-document-page .aside .contract__info .contract__item {
     flex-direction: column;
   }
+
   .one-document-page .modal-contract {
+    max-height: 570px;
     padding: 60px 15px 80px;
   }
   .one-document-page .modal-contract h2 {
