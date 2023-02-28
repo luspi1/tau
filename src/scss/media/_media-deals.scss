@@ -13,7 +13,7 @@
     width: 220px;
   }
   .deals .top .container {
-   flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 }
 
@@ -28,11 +28,11 @@
   }
   .deals .deals-list .container {
     overflow-x: scroll;
-  }.deals .deals-table {
+  }
+  .deals .deals-table {
     min-width: 1010px;
   }
 }
-
 
 
 @media(max-width: 768px) {
@@ -52,5 +52,6 @@
   }
   .deals .top .search__wrap {
     margin-right: 0;
+    margin-bottom: 15px;
   }
 }

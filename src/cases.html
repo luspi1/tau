@@ -16,17 +16,18 @@
   <main class="main cases-page">
     <section class="section cases">
       <div class="container">
-        <div class="cases__menu">
+        <form action="#" class="cases__menu">
           <h1>Кейсы</h1>
           <input class="cases__input" name="cases_search" type="text"
                  placeholder="Поиск">
-          <button class="cases__search-btn" type="button">Искать</button>
           <select class="cases__filter-input" name="cases_filter">
             <option value="org">Организация</option>
             <option value="non-org">Не организация</option>
           </select>
+          <button class="cases__search-btn" type="submit">Искать</button>
+
           <a href="create-case.html" class="cases__btn">Добавить кейс</a>
-        </div>
+        </form>
 
         <ul class="cases__list">
           <li class="cases__list-item">

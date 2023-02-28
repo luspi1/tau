@@ -6,173 +6,191 @@
 })
 
 <body class="page__body">
-  <div class="site-container">
-    <div class="modal-overlay"></div>
-    @include('partials/header.html', {
-    'bottom-menu': 'bottom-menu_disabled',
-    'header-title': ''
-    })
+<div class="site-container">
+  <div class="modal-overlay"></div>
+  @include('partials/header.html', {
+  'bottom-menu': 'bottom-menu_disabled',
+  'header-title': ''
+  })
 
-    <main class="main deals">
-      <section class="top">
-        <div class="container">
-          <h1>Сделки</h1>
-          <div class="search">
-            <input class="search__input" type="text" name="" id="" placeholder="Найти сделку">
-            <button class="search__btn" type="button">Искать</button>
-            <div class="search__wrap">
-              <select class="deals__select" name="deals__select">
-                <option value="deals_1">...</option>
-                <option value="deals_2">... 1</option>
-                <option value="deals_3">... 2</option>
-              </select>
-            </div>
+  <main class="main deals">
+    <section class="top">
+      <div class="container">
+        <h1>Сделки</h1>
+        <form class="search" action="#">
+          <input class="search__input" type="text" name="" id=""
+                 placeholder="Найти сделку">
+          <div class="search__wrap">
+            <select class="deals__select" name="deals__select">
+              <option value="deals_1">...</option>
+              <option value="deals_2">... 1</option>
+              <option value="deals_3">... 2</option>
+            </select>
           </div>
-          <a href="./create-deal.html" class="case-item__btn">Добавить сделку</a>
-        </div>
-      </section>
-      <section class="deals-list">
-        <div class="container">
-          <ul class="deals-table">
-            <li class="deals-table__row">
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Сделка</p>
-                <a href="deal-card.html" class="deals-table__info deals-table__info-link">129/031 СТН</a>
-              </div>
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Дата создания</p>
-                <p class="deals-table__info">22.09.2021</p>
-              </div>
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Контрагент</p>
-                <a href="#" target="_blank">ООО «Росавтодорпроектстроймашинвест»</a>
-              </div>
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Плановый доход</p>
-                <p class="deals-table__info">80 000 921 000 ₽</p>
-              </div>
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Фактический доход</p>
-                <p class="deals-table__info">3 022 106 &#8381;</p>
-              </div>
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Сальдо</p>
-                <p class="deals-table__info">- 5 898 902 &#8381;</p>
-              </div>
-              <div class="deals-table__cell deals-table__check">
-                <div class="deals-table__circle ok">
-                </div>
-              </div>
-              <div class="deals-table__cell deals-table__status deals-table__status_red">
-                <span></span>
-              </div>
-            </li>
-            <li class="deals-table__row">
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Сделка</p>
-                <a href="deal-card.html" class="deals-table__info deals-table__info-link">129/031 СТН</a>
-              </div>
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Дата создания</p>
-                <p class="deals-table__info">22.09.2021</p>
-              </div>
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Контрагент</p>
-                <a href="#" target="_blank">ООО «Росавтодорпроектстроймашинвест»</a>
-              </div>
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Плановый доход</p>
-                <p class="deals-table__info">80 000 921 000 ₽</p>
-              </div>
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Фактический доход</p>
-                <p class="deals-table__info">3 022 106 &#8381;</p>
-              </div>
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Сальдо</p>
-                <p class="deals-table__info">- 5 898 902 &#8381;</p>
-              </div>
-              <div class="deals-table__cell deals-table__check">
-                <div class="deals-table__circle">
-                </div>
-              </div>
-              <div class="deals-table__cell deals-table__status deals-table__status_green">
-                <span></span>
-              </div>
-            </li>
-            <li class="deals-table__row">
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Сделка</p>
-                <a href="deal-card.html" class="deals-table__info deals-table__info-link">129/031 СТН</a>
-              </div>
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Дата создания</p>
-                <p class="deals-table__info">22.09.2021</p>
-              </div>
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Контрагент</p>
-                <a href="#" target="_blank">ООО «Росавтодорпроектстроймашинвест»</a>
-              </div>
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Плановый доход</p>
-                <p class="deals-table__info">80 000 921 000 ₽</p>
-              </div>
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Фактический доход</p>
-                <p class="deals-table__info">3 022 106 &#8381;</p>
-              </div>
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Сальдо</p>
-                <p class="deals-table__info">- 5 898 902 &#8381;</p>
-              </div>
-              <div class="deals-table__cell deals-table__check">
-                <div class="deals-table__circle ok">
-                </div>
-              </div>
-              <div class="deals-table__cell deals-table__status deals-table__status_red">
-                <span></span>
-              </div>
-            </li>
-            <li class="deals-table__row">
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Сделка</p>
-                <a href="deal-card.html" class="deals-table__info deals-table__info-link">129/031 СТН</a>
-              </div>
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Дата создания</p>
-                <p class="deals-table__info">22.09.2021</p>
-              </div>
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Контрагент</p>
-                <a href="#" target="_blank">ООО «Росавтодорпроектстроймашинвест»</a>
-              </div>
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Плановый доход</p>
-                <p class="deals-table__info">80 000 921 000 ₽</p>
-              </div>
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Фактический доход</p>
-                <p class="deals-table__info">3 022 106 &#8381;</p>
-              </div>
-              <div class="deals-table__cell">
-                <p class="deals-table__title">Сальдо</p>
-                <p class="deals-table__info">- 5 898 902 &#8381;</p>
-              </div>
-              <div class="deals-table__cell deals-table__check">
-                <div class="deals-table__circle cross">
-                </div>
-              </div>
-              <div class="deals-table__cell deals-table__status deals-table__status_grey">
-                <span></span>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </section>
-    </main>
+          <button class="search__btn" type="submit">Искать</button>
 
-    @include('partials/footer.html')
-  </div>
+        </form>
+        <a href="./create-deal.html" class="case-item__btn">Добавить сделку</a>
+      </div>
+    </section>
+    <section class="deals-list">
+      <div class="container">
+        <ul class="deals-table">
+          <li class="deals-table__row">
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Сделка</p>
+              <a href="deal-card.html"
+                 class="deals-table__info deals-table__info-link">129/031
+                СТН</a>
+            </div>
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Дата создания</p>
+              <p class="deals-table__info">22.09.2021</p>
+            </div>
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Контрагент</p>
+              <a href="#" target="_blank">ООО
+                «Росавтодорпроектстроймашинвест»</a>
+            </div>
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Плановый доход</p>
+              <p class="deals-table__info">80 000 921 000 ₽</p>
+            </div>
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Фактический доход</p>
+              <p class="deals-table__info">3 022 106 &#8381;</p>
+            </div>
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Сальдо</p>
+              <p class="deals-table__info">- 5 898 902 &#8381;</p>
+            </div>
+            <div class="deals-table__cell deals-table__check">
+              <div class="deals-table__circle ok">
+              </div>
+            </div>
+            <div
+              class="deals-table__cell deals-table__status deals-table__status_red">
+              <span></span>
+            </div>
+          </li>
+          <li class="deals-table__row">
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Сделка</p>
+              <a href="deal-card.html"
+                 class="deals-table__info deals-table__info-link">129/031
+                СТН</a>
+            </div>
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Дата создания</p>
+              <p class="deals-table__info">22.09.2021</p>
+            </div>
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Контрагент</p>
+              <a href="#" target="_blank">ООО
+                «Росавтодорпроектстроймашинвест»</a>
+            </div>
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Плановый доход</p>
+              <p class="deals-table__info">80 000 921 000 ₽</p>
+            </div>
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Фактический доход</p>
+              <p class="deals-table__info">3 022 106 &#8381;</p>
+            </div>
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Сальдо</p>
+              <p class="deals-table__info">- 5 898 902 &#8381;</p>
+            </div>
+            <div class="deals-table__cell deals-table__check">
+              <div class="deals-table__circle">
+              </div>
+            </div>
+            <div
+              class="deals-table__cell deals-table__status deals-table__status_green">
+              <span></span>
+            </div>
+          </li>
+          <li class="deals-table__row">
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Сделка</p>
+              <a href="deal-card.html"
+                 class="deals-table__info deals-table__info-link">129/031
+                СТН</a>
+            </div>
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Дата создания</p>
+              <p class="deals-table__info">22.09.2021</p>
+            </div>
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Контрагент</p>
+              <a href="#" target="_blank">ООО
+                «Росавтодорпроектстроймашинвест»</a>
+            </div>
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Плановый доход</p>
+              <p class="deals-table__info">80 000 921 000 ₽</p>
+            </div>
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Фактический доход</p>
+              <p class="deals-table__info">3 022 106 &#8381;</p>
+            </div>
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Сальдо</p>
+              <p class="deals-table__info">- 5 898 902 &#8381;</p>
+            </div>
+            <div class="deals-table__cell deals-table__check">
+              <div class="deals-table__circle ok">
+              </div>
+            </div>
+            <div
+              class="deals-table__cell deals-table__status deals-table__status_red">
+              <span></span>
+            </div>
+          </li>
+          <li class="deals-table__row">
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Сделка</p>
+              <a href="deal-card.html"
+                 class="deals-table__info deals-table__info-link">129/031
+                СТН</a>
+            </div>
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Дата создания</p>
+              <p class="deals-table__info">22.09.2021</p>
+            </div>
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Контрагент</p>
+              <a href="#" target="_blank">ООО
+                «Росавтодорпроектстроймашинвест»</a>
+            </div>
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Плановый доход</p>
+              <p class="deals-table__info">80 000 921 000 ₽</p>
+            </div>
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Фактический доход</p>
+              <p class="deals-table__info">3 022 106 &#8381;</p>
+            </div>
+            <div class="deals-table__cell">
+              <p class="deals-table__title">Сальдо</p>
+              <p class="deals-table__info">- 5 898 902 &#8381;</p>
+            </div>
+            <div class="deals-table__cell deals-table__check">
+              <div class="deals-table__circle cross">
+              </div>
+            </div>
+            <div
+              class="deals-table__cell deals-table__status deals-table__status_grey">
+              <span></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  @include('partials/footer.html')
+</div>
 
 </body>
 
