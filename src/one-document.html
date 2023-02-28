@@ -14,10 +14,12 @@
   })
 
   <main class="main one-document-page">
+    @include('partials/date-signing-modal.html')
     <section class="top">
       <div class="container">
         <h1>Договор № 129/031 СТН от 10.04.2021</h1>
-        <button class="one-document-page__sign-btn" data-modal="contract-subject-modal" type="button" >
+        <button class="one-document-page__sign-btn"
+                data-modal="date-signing-modal" type="button">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
                xmlns="http://www.w3.org/2000/svg">
             <path

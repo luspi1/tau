@@ -277,6 +277,20 @@ if (docDateInputs) {
   })
 }
 
+
+const dateInputMasks = document.querySelectorAll('.date-input-mask')
+
+if (dateInputMasks) {
+  dateInputMasks.forEach(el => {
+    Inputmask({
+      "mask": "99.99.9999",
+      showMaskOnHover: false,
+      showMaskOnFocus: false,
+    }).mask(el)
+  })
+
+}
+
 export { initDatePaymentsMask, initDateDealMask, initAccountCheckMask, initBikMask, initCorrMask }
 
 
