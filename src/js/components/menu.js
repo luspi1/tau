@@ -1,4 +1,5 @@
-import { removeClasses } from "../_functions";
+import {removeClasses} from '../_functions'
+import {body} from '../_vars'
 
 const menuLinks = document.querySelectorAll('.header-menu__link')
 
@@ -13,3 +14,15 @@ menuLinks.forEach(link => {
     }
   })
 })
+
+//Мобильное меню с бургером
+
+const burgerBtn = document.querySelector('.header__nav-burger')
+const mobileMenu = document.querySelector('.header__nav-list')
+
+if (burgerBtn) {
+  burgerBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('_active')
+    body.style.overflow === '' ? body.style.overflow = 'hidden' : body.style.overflow = ''
+  })
+}
