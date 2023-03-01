@@ -24,12 +24,13 @@
     background: none;
     border: none;
     cursor: pointer;
+    z-index: 25;
     display: none;
 
     span, span::before, span::after {
       position: absolute;
       left: 0;
-      border-radius: 2px ;
+      border-radius: 2px;
       background: #FFFFFF;
       width: 100%;
       height: 2px;
@@ -38,10 +39,12 @@
     span {
       top: 50%;
       transform: translateY(-50%);
+
       &::before {
         content: '';
         top: -7px;
       }
+
       &::after {
         content: '';
         bottom: -7px;
@@ -153,6 +156,15 @@
     .account {
       &__group {
         position: relative;
+        display: flex;
+        align-items: center;
+
+        svg {
+          min-width: 31px;
+          width: 31px;
+          margin-left: 15px;
+          z-index: 21;
+        }
 
         &:hover {
           .account__dropdown-menu {
@@ -170,35 +182,26 @@
       }
 
       &__link {
-        display: flex;
-        align-items: center;
-        position: relative;
+        max-width: 125px;
+        height: 21px;
+        overflow: hidden;
         z-index: 21;
-
-        svg {
-          margin-left: 15px;
-        }
-
-        span {
-          max-width: 150px;
-          height: 21px;
-          overflow: hidden;
-        }
       }
 
       &__dropdown-menu {
         background: linear-gradient(90deg, #5141b3 0%, #484bbd 35.77%, #2f64d8 96.83%, #2e66da 100%);
         border-radius: 5px;
-        padding: 45px 26px 7px 26px;
+        padding: 45px 0 7px 20px;
         position: absolute;
         filter: drop-shadow(0px 0px 24px rgba(3, 0, 135, 0.4));
         top: -20px;
-        left: -25px;
-        width: 247px;
+        left: -20px;
+        width: 200px;
         min-height: 160px;
         z-index: -1;
         opacity: 0;
         visibility: hidden;
+        overflow-x: hidden;
         transition: all 0.3s;
 
         li {
@@ -285,6 +288,14 @@
   }
 }
 
+@media (min-width: 1800px) {
+  .header__nav-personal .account__dropdown-menu {
+    left: -25px;
+    width: 247px;
+    padding: 45px 0 7px 26px;
+  }
+}
+
 @media (max-width: 1280px) {
   .header__bottom-menu {
     width: 100%;
@@ -299,7 +310,12 @@
   .header__nav-personal {
     width: 345px;
   }
-
+  .header__nav-personal .account__dropdown-menu {
+    width: 180px;
+  }
+  .header__nav-personal .account__link {
+    width: 105px;
+  }
   .header {
     .header-menu {
       &__link {
@@ -312,6 +328,7 @@
     width: 19px;
     height: 19px;
   }
+
 }
 
 @media (max-width: 768px) {
@@ -333,11 +350,27 @@
   }
 
   .header__nav-list {
-    display: none;
-  }
+    position: fixed;
+    flex-direction: column;
+    background: linear-gradient(90deg, #5141b3 0%, #484bbd 35.77%, #2f64d8 96.83%, #2e66da 100%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    padding-left: 20px;
+    z-index: 20;
+    transform: translateX(-200%);
+    opacity: 0;
+    transition: all 0.3s;
 
-  .header__nav-personal .account__link span {
-    display: none;
+    &._active {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .header__nav-list a {
+    font-size: 22px;
   }
 
   .header__nav-doc {
@@ -345,9 +378,12 @@
   }
 
   .header__nav-list li:not(:last-child) {
+    margin-bottom: 40px;
+    margin-right: 0;
+  }
+  .header__dropdown-menu li:not(:last-child) {
     margin-bottom: 10px;
   }
-
   .header__title {
     font-size: 25px;
     text-align: center;
