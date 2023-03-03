@@ -30,4 +30,5 @@ import './components/employeesTable'
 import './components/pageSelection'
 import './components/manageChangeableList'
 import './components/dealBalanceModal'
+import './components/changeableLists'
 

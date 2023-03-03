@@ -17,6 +17,13 @@
     max-width: 850px;
   }
 
+  &__content-title {
+    @include montserrat-semibold;
+    font-size: 22px;
+    line-height: 27px;
+    color: #000000;
+    margin-bottom: 15px;
+  }
 
   &__title {
     @include montserrat-semibold;
@@ -93,6 +100,25 @@
     &__price {
       margin-left: auto;
     }
+
+
+    &__delete-btn {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      svg path {
+        transition: all .3s;
+      }
+
+      &:hover {
+        svg path {
+          fill: #BC0D48;
+        }
+      }
+
+    }
+
   }
 
   .deals-balance__content {
