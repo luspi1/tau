@@ -211,6 +211,7 @@
         transform: translateY(-50%);
         pointer-events: none;
       }
+
       .calendar-cross-close {
         display: none;
         width: 21px;
@@ -224,6 +225,7 @@
         background-position: center;
         background-size: contain;
       }
+
       &.active {
         transition: .3s;
 
@@ -358,19 +360,25 @@
         background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='31' height='7' viewBox='0 0 31 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.300781 3.30005H27.4008' stroke='%232F65F6' stroke-miterlimit='10'/%3e%3cpath d='M21.4992 6.5L21.1992 5.59998L27.2992 3.29999L21.1992 1.09998L21.4992 0.0999756L30.2992 3.29999L21.4992 6.5Z' fill='%232F65F6'/%3e%3c/svg%3e ");
       }
     }
+
     &__row-wrapper {
       width: 49%;
+
       .months__accordion {
-      width: 100%;
+        width: 100%;
+        .months__circle {
+          margin-right: 0;
+        }
         .months__indicators {
-          width: 100px;
           justify-content: space-between;
         }
+
         .months__arrow {
           margin: 0 10px;
         }
       }
     }
+
     &__accordion {
       display: flex;
       justify-content: space-between;
@@ -381,25 +389,45 @@
       border-radius: 5px;
     }
 
-    &__button {
-      width: 49%;
+    &__button-wrapper {
+      width: 100%;
       height: 44px;
+      margin-top: 5px;
       padding: 0 18px;
-      font-size: 16px;
-      line-height: 20px;
-      background-color: #ffffff;
-      color: #2F65F6;
-      text-align: left;
       border: 1px dotted #2F65F6;
       border-radius: 5px;
-      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        width: max-content;
+        font-size: 16px;
+        line-height: 20px;
+        background-color: #ffffff;
+        border: none;
+        cursor: pointer;
+      }
     }
-    &__button-delete{
+
+    &__button {
+      margin-right: 15px;
+      color: #2F65F6;
+
+    }
+
+    &__button-close {
+      color: #BC0D48;
+
+    }
+
+    &__button-delete {
       width: 16px;
       height: 16px;
       border: none;
       cursor: pointer;
+      background-color: transparent;
     }
+
     &__item {
       display: flex;
 
@@ -490,7 +518,9 @@
 
     &__indicators {
       display: flex;
-     width: 110px;
+      justify-content: space-between;
+      min-width: 100px;
+      width: 100px;
     }
 
     &__circle {
@@ -526,9 +556,8 @@
     }
 
     &__arrow {
-      width: 28px;
+      width: 14px;
       height: 18px;
-      margin-left: 56px;
       background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='14' height='10' viewBox='0 0 14 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath opacity='0.5' d='M6.70134 6.90002C7.20134 6.30002 7.70132 5.69998 8.30132 5.09998C9.40132 3.79998 10.5013 2.59999 11.5013 1.29999C11.7013 0.999988 12.0014 0.900024 12.4014 0.900024C12.8014 0.900024 13.0013 1.1 13.2013 1.5C13.3013 1.8 13.3013 2.2 13.0013 2.5C12.6013 3 12.2013 3.40002 11.8013 3.90002C10.4013 5.60002 8.90133 7.20002 7.50133 8.90002C7.20133 9.20002 6.90133 9.39999 6.50133 9.29999C6.30133 9.19999 6.10133 9.1 6.00133 9C4.10133 6.8 2.30135 4.7 0.401355 2.5C0.101355 2.1 0.10133 1.50001 0.50133 1.20001C0.90133 0.900012 1.50132 0.899988 1.80132 1.29999C3.40132 3.09999 4.90133 4.99999 6.50133 6.79999C6.60133 6.79999 6.70134 6.80002 6.70134 6.90002Z' fill='%23858584'/%3e%3c/svg%3e");
       background-repeat: no-repeat;
       background-position: center;

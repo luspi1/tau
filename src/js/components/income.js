@@ -1,25 +1,20 @@
-import Choices                  from 'choices.js'
-import { toggleRequiredFields } from '../_functions'
+import Choices from 'choices.js'
+import {toggleRequiredFields} from '../_functions'
 
 const incomePageMain = document.querySelector('.income-page')
 
 if (incomePageMain) {
-//аккордеоны
 
-  const accordions = document.querySelectorAll('.months__accordion')
-  const monthsItems = document.querySelectorAll('.months__item')
+  //аккордеоны
 
-  if (accordions) {
-    accordions.forEach((parent, index) => {
-      parent.addEventListener('click', (event) => {
-        const target = event.target
-        if (target && target.classList.contains('months__arrow')) {
-          target.classList.toggle('active')
-          monthsItems[index].classList.toggle('active')
-        }
-      })
-    })
-  }
+ document.addEventListener('click', (event) => {
+    const target = event.target
+    if (target && target.classList.contains('months__arrow')) {
+      target.classList.toggle('active')
+      target.closest('.months__accordion').querySelector('.months__item').classList
+        .toggle('active')
+    }
+  })
 
 
 // настройка стилей календаря + на странице /income-traffic/
