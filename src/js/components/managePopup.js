@@ -12,6 +12,7 @@ if (openModalBtns) {
       const currentPageMain = btn.closest('main')
       const currentModal = document.querySelector(`#${btnCurrentModal}`)
       const isBodyLock = currentModal.dataset.bodyLock
+      currentModal.scrollTo(0, 0)
 
       if (isBodyLock) {
         body.classList.add('_lock')
