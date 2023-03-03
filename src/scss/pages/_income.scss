@@ -358,12 +358,24 @@
         background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='31' height='7' viewBox='0 0 31 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0.300781 3.30005H27.4008' stroke='%232F65F6' stroke-miterlimit='10'/%3e%3cpath d='M21.4992 6.5L21.1992 5.59998L27.2992 3.29999L21.1992 1.09998L21.4992 0.0999756L30.2992 3.29999L21.4992 6.5Z' fill='%232F65F6'/%3e%3c/svg%3e ");
       }
     }
-
+    &__row-wrapper {
+      width: 49%;
+      .months__accordion {
+      width: 100%;
+        .months__indicators {
+          width: 100px;
+          justify-content: space-between;
+        }
+        .months__arrow {
+          margin: 0 10px;
+        }
+      }
+    }
     &__accordion {
       display: flex;
       justify-content: space-between;
       width: 49%;
-      height: 100%;
+      height: max-content;
       padding: 12px 17px 8px 17px;
       background: #F7F8FA;
       border-radius: 5px;
@@ -382,7 +394,12 @@
       border-radius: 5px;
       cursor: pointer;
     }
-
+    &__button-delete{
+      width: 16px;
+      height: 16px;
+      border: none;
+      cursor: pointer;
+    }
     &__item {
       display: flex;
 
@@ -473,7 +490,7 @@
 
     &__indicators {
       display: flex;
-      max-width: 110px;
+     width: 110px;
     }
 
     &__circle {
