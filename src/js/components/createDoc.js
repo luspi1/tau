@@ -33,9 +33,8 @@ if (createDocPage) {
   })
 
   // Функция инициализации селекта плановых платежей при выборе договора в типе "Счет"
-  
+
   const initPlannedPaymentSelect = (plannedDataArr) => {
-    plannedPaymentSelectWrapper.classList.remove('hidden')
     plannedPaymentChoices.destroy()
     plannedPaymentChoices.init()
     plannedPaymentChoices.setValue(plannedDataArr)
@@ -94,11 +93,7 @@ if (createDocPage) {
                     id_dogovor: el.dataset.id
                   }
                   const selectDataJson = JSON.stringify(selectData)
-
-                  if (createDocPage.getAttribute('data-page-state') === 'invoice') {
-                    updateInvoices(selectDataJson, invoiceDataUrl)
-                  }
-
+                  updateInvoices(selectDataJson, invoiceDataUrl)
                 })
               })
             } else {

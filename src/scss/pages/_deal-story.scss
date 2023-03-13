@@ -11,11 +11,13 @@
   > .container {
     padding-top: 17px;
     display: flex;
+    justify-content: space-between;
   }
 
   .one-deal {
+    flex-grow: 1;
+
     .container {
-      max-width: 850px;
       padding: 0 0 100px;
     }
 
@@ -142,7 +144,7 @@
 
     .table-wrap {
       .table {
-        min-width: 850px;
+        width: 100%;
 
         thead {
           td {
@@ -202,6 +204,8 @@
 
   .aside {
     margin-left: 70px;
+    min-width: 450px;
+    max-width: 450px;
 
     &__top {
       a {
@@ -214,7 +218,6 @@
     }
 
     &__card {
-      max-width: 335px;
       margin-top: 40px;
       padding: 36px 10px 40px 33px;
       background-color: #f7f8fa;

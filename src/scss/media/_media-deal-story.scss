@@ -1,6 +1,8 @@
 @media(max-width: 1400px) {
   .deal-story .aside {
     margin-left: 20px;
+    min-width: 350px;
+    max-width: 350px;
   }
 }
 
@@ -11,8 +13,9 @@
   }
 
   .deal-story .aside {
-    max-width: 100%;
     margin: 20px auto;
+    max-width: 100%;
+    min-width: 100%;
   }
 
   .deal-story .aside__card {
