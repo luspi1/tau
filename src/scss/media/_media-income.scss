@@ -241,10 +241,22 @@
   }
 
   .income-page .filter__flex-wrap {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
-
-  .income-page .filter__select-row {
+  .income-page .filter__calendar {
+    margin-bottom: 15px;
+    order:1;
+  }
+  .income-page .filter__select-wrap.order1 {
+    order: 2;
+  }
+  .income-page .filter__select-wrap.order2 {
+    order: 3;
+  }
+  .income-page .filter__btn-search {
+    margin-left: auto;
+  }
+    .income-page .filter__select-row {
     width: 100%;
   }
 

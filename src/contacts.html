@@ -24,18 +24,18 @@
                 data-url="/include/ajax/contact_new.php">
             <ul class="new-contact__list">
               <li class="new-contact__list-item">
-                <p class="new-contact__input-title">Название контакта</p>
+                <p class="new-contact__input-title">Название контакта*</p>
                 <input class="new-contact__input" name="contactname"
                        type="text"
                        placeholder="Введите название контакта" required>
               </li>
 
               <li class="new-contact__list-item">
-                <p class="new-contact__input-title">Тип контакта</p>
+                <p class="new-contact__input-title">Тип контакта*</p>
                 <select class="new-contact__input new-contact__type-input"
-                        name="id_contact_type">
-                  <option value="">Выберите тип контакта</option>
-                  <option value="counterparty">Контрагент</option>
+                        name="id_contact_type" required>
+                  <option value="*" disabled>Выберите тип контакта</option>
+                  <option selected value="counterparty">Контрагент</option>
                   <option value="non-counterparty">Не контрагент</option>
                 </select>
               </li>
