@@ -159,7 +159,11 @@
       .table {
         margin-top: 16px;
         min-width: 850px;
-
+        &__wrapper-flex {
+          display: flex;
+          width: 100%;
+          align-items: center;
+        }
         tbody tr {
           text-align: left;
           vertical-align: top;
@@ -173,7 +177,28 @@
           padding: 7px 0 10px 15px;
 
           span {
+            display: block;
+            margin-right: 5px;
             color: #858584;
+          }
+          a {
+            display: flex;
+            width: 15px;
+            margin-right: 9px;
+            svg {
+              margin: auto;
+            }
+          }
+
+          button {
+            display: flex;
+            width: 21px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            svg {
+              margin: auto;
+            }
           }
 
           &:nth-child(3) {
@@ -181,7 +206,9 @@
           }
 
           &:nth-child(n+4) {
-            width: 120px;
+            width: 135px;
+
+
           }
         }
       }
