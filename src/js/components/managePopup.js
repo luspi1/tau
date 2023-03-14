@@ -20,7 +20,9 @@ if (openModalBtns) {
 
       if (currentBtn.dataset.id) {
         const dataIdInput = currentModal.querySelector('.data-modal-id')
-        dataIdInput.value = currentBtn.dataset.id
+        if (dataIdInput) {
+          dataIdInput.value = currentBtn.dataset.id
+        }
       }
 
       currentPageMain.style.minHeight = `${currentModal.clientHeight}px`

@@ -1,6 +1,7 @@
 // Работа модалки на странице deal-card.html
 
-import {sendData, showInfoModal} from "../_functions";
+import { sendData, showInfoModal } from "../_functions"
+import { initCloseModals }         from './managePopup'
 
 const dealCardPageMain = document.querySelector('.deals')
 
@@ -22,7 +23,8 @@ if (dealCardPageMain) {
 
       if (status === 'ok') {
         admissionModal.innerHTML = html
-       } else {
+        initCloseModals()
+      } else {
         showInfoModal(errortext)
       }
     })
