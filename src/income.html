@@ -420,12 +420,13 @@
                 <div class="months__button-wrapper">
                   <button type="button" class="months__button"
                           data-modal="add-payment-modal"
-                          data-payment-id="ioty12jhj"
+                          data-payment-id="qwert"
                           data-payment-script="./data/getPaymentModal.txt">
                     Добавить
                     поступление
                   </button>
-                  <button type="button" class="months__button-close">
+                  <button type="button" class="months__button-close"
+                          data-script="/include/ajax/payment_close.php">
                     Закрыть платеж
                   </button>
                 </div>
@@ -599,7 +600,8 @@
                     Добавить
                     поступление
                   </button>
-                  <button type="button" class="months__button-close">
+                  <button type="button" class="months__button-close"
+                          data-script="/include/ajax/payment_close.php">
                     Закрыть платеж
                   </button>
                 </div>
@@ -610,7 +612,7 @@
       </div>
     </section>
   </main>
-
+  @include('partials/info-modal.html')
   @include('partials/footer.html')
 </div>
 </body>

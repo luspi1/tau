@@ -13,12 +13,6 @@
     display: none;
   }
 
-  &:not(&[data-page-state="invoice"]) {
-    .create-doc-page__planned-payment-select {
-      display: none;
-    }
-  }
-
   &[data-page-state="act"] {
     .create-doc-page__date-end {
       display: none;

@@ -70,5 +70,48 @@ if (incomePageMain) {
       }
     })
   })
+
+  // Закрытие/открытие платежа
+
+  const monthItem = incomePageMain.querySelector('.months')
+
+
+  const togglePaymentState = (checkBtn, closeBtn) => {
+    if (checkBtn.classList.contains('red')) {
+      checkBtn.classList.remove('red')
+      checkBtn.classList.add('green')
+      closeBtn.textContent = 'Открыть платеж'
+      closeBtn.style.color = '#0CB477'
+    } else {
+      checkBtn.classList.remove('green')
+      checkBtn.classList.add('red')
+      closeBtn.textContent = 'Закрыть платеж'
+      closeBtn.style.color = '#bc0d48'
+    }
+  }
+  const getPaymentState = async (dataId, dataScript, checkBtn, closeBtn) => {
+    const paymentData = {id_payment: dataId}
+    const jsonPaymentData = JSON.stringify(paymentData)
+    const response = await sendData(jsonPaymentData, dataScript)
+    const finishedResponse = await response.json()
+    const {status, errortext} = finishedResponse
+
+    if (status === 'ok') {
+      togglePaymentState(checkBtn, closeBtn)
+    } else {
+      showInfoModal(errortext)
+    }
+  }
+
+  monthItem.addEventListener('click', (e) => {
+    if (e.target.className === "months__button-close") {
+      const closePaymentBtn = e.target
+      const paymentWrapper = closePaymentBtn.closest('.months__row')
+      const paymentId = paymentWrapper.querySelector('[data-payment-id]').dataset.paymentId
+      const paymentCheckBtn = paymentWrapper.querySelector('.months__indicators .months__circle')
+      const paymentScript = closePaymentBtn.dataset.script
+      getPaymentState(paymentId, paymentScript, paymentCheckBtn, closePaymentBtn)
+    }
+  })
 }
 
