@@ -31,4 +31,5 @@ import './components/pageSelection'
 import './components/manageChangeableList'
 import './components/dealBalanceModal'
 import './components/changeableLists'
+import './components/documentPreviewModal'
 
