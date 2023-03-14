@@ -1,9 +1,8 @@
 .modal-counterparty-alert {
-  position: absolute;
-  overflow-y: auto;
-  overflow-x: hidden;
+  position: fixed;
+  overflow: auto;
   left: 50%;
-  top: 10%;
+  top: 50%;
   transform: translate(-50%, -50%);
   width: 724px;
   background-color: #ffffff;
