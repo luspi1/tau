@@ -1,7 +1,7 @@
-import { initPaymentSelects }   from "./customSelect"
-import { initDatePaymentsMask } from "./inputMask"
-import { initAllDates }         from "./customDate"
-import { handlePopupInputs }    from "../_functions"
+import { initPaymentSelects }            from "./customSelect"
+import { initDatePaymentsMask }          from "./inputMask"
+import { initAllDates }                  from "./customDate"
+import { checkValue, handlePopupInputs } from "../_functions"
 
 let annexOptionalIndex = 1
 
@@ -13,6 +13,13 @@ if (templateTermsFragment) {
   const templateTerms = templateTermsFragment.querySelector('.case-terms__item')
   if (addTermsBtn) {
     addTermsBtn.addEventListener('click', (e) => {
+
+      const changeableList = document.querySelector('.case-terms__items')
+      const changeableInputs = changeableList.querySelectorAll('input, textarea')
+      if (!checkValue(changeableInputs)) {
+        return
+      }
+
       e.preventDefault()
       const termsEl = templateTerms.cloneNode(true)
       termsList.appendChild(termsEl)
@@ -30,6 +37,11 @@ if (templateOptionalFragment) {
   const templateOptional = templateOptionalFragment.querySelector('.case-optional__item')
   if (addOptionalBtn) {
     addOptionalBtn.addEventListener('click', (e) => {
+      const changeableList = document.querySelector('.case-optional__items')
+      const changeableInputs = changeableList.querySelectorAll('input')
+      if (!checkValue(changeableInputs)) {
+        return
+      }
       e.preventDefault()
       const optionalEl = templateOptional.cloneNode(true)
       optionalList.appendChild(optionalEl)
@@ -47,6 +59,12 @@ if (annexWrapper) {
 
   annexWrapper.addEventListener('click', (e) => {
     if (e.target.classList.contains('case-annex__add-optional-btn')) {
+
+      const changeableList = document.querySelector('.case-annex .case-annex__optional-items')
+      const changeableInputs = changeableList.querySelectorAll('input')
+      if (!checkValue(changeableInputs)) {
+        return
+      }
       const currentOptional = e.target.closest('.case-annex__item')
       const optionalAnnexList = currentOptional.querySelector('.case-annex__optional-items')
       const optionalEl = templateAnnexOptional.cloneNode(true)
@@ -71,6 +89,12 @@ if (annexFragment) {
   if (addAnnexBtn) {
     addAnnexBtn.addEventListener('click', (e) => {
       e.preventDefault()
+
+      const changeableList = document.querySelector('.case-annex__items')
+      const changeableInputs = changeableList.querySelectorAll('input')
+      if (!checkValue(changeableInputs)) {
+        return
+      }
       const optionalEl = annexEl.cloneNode(true)
 
       annexOptionalIndex++
@@ -149,8 +173,6 @@ if (createCaseInputs) {
     el.addEventListener('input', handlePopupInputs)
   })
 }
-
-
 
 
 

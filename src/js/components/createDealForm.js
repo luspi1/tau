@@ -1,5 +1,6 @@
 import Choices          from 'choices.js'
 import {
+  checkValue,
   closeSelectPopups,
   handlePopupInputs,
   handlePopupSubmit,
@@ -187,6 +188,7 @@ if (createDealPage) {
 
 // Генерация наблюдателя на странице создания сделки
 
+
   const addObserverBtn = document.querySelector('.create-deal-caption__add-observer-btn')
   const observersList = document.querySelector('.create-deal-caption__observer-list')
   const templateObserverFragment = document.querySelector('#deal-observer-template')?.content
@@ -194,6 +196,9 @@ if (createDealPage) {
     const templateObserve = templateObserverFragment.querySelector('.create-deal-page__input-wrapper')
     if (addObserverBtn) {
       addObserverBtn.addEventListener('click', (e) => {
+        if (!checkValue('.create-deal-page__observer-input')) {
+          return
+        }
         e.preventDefault()
         const observeEl = templateObserve.cloneNode(true)
         observersList.appendChild(observeEl)

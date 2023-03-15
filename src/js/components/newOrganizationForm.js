@@ -1,4 +1,5 @@
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 }                                    from 'uuid';
+import { checkValue }                                      from '../_functions'
 import { initAccountCheckMask, initBikMask, initCorrMask } from "./inputMask";
 
 
@@ -15,6 +16,13 @@ if (addAccountBtn) {
 
 
   addAccountBtn.addEventListener('click', () => {
+
+    const changeableList = document.querySelector('.new-organization__account-list')
+    const changeableInputs = changeableList.querySelectorAll('input')
+    if (!checkValue(changeableInputs)) {
+      return
+    }
+
     const templateId = uuidv4()
     const accountEl = templateAccount.cloneNode(true)
     const elCheckbox = accountEl.querySelector('.new-organization__checkbox')
@@ -44,7 +52,7 @@ const newOrgFullInput = document.querySelector('input[name="newOrgFullTitle"]')
 const mediaQuery = window.matchMedia('(max-width: 1024px)')
 
 
-function handleTabletChange (e) {
+function handleTabletChange(e) {
   if (e.matches) {
     newOrgShortInput.placeholder = 'Краткое название организации'
     newOrgFullInput.placeholder = 'ООО «Полное название»'

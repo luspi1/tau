@@ -1,3 +1,4 @@
+import { checkValue }       from '../_functions'
 import { initAllDates }     from './customDate'
 import { initDateDealMask } from './inputMask'
 
@@ -32,10 +33,17 @@ if (addToListBtns) {
   addToListBtns.forEach(addBtn => {
     addBtn.addEventListener('click', (e) => {
       e.preventDefault()
+      const targetChangeableList = e.currentTarget.parentElement.querySelector('ul[data-list="changeable"]')
+      let changeableInputs = targetChangeableList.querySelectorAll('input')
+
+      //проверка наличия значений в инпутах, для запрета создания новых элементов без значения
+      if (!checkValue(changeableInputs)) {
+        return
+      }
+
       const templateId = e.currentTarget.dataset.template
       let templateFragment = document.querySelector(`#${templateId}`)?.content
       let templateElement = templateFragment.firstElementChild.cloneNode(true)
-      const targetChangeableList = e.currentTarget.parentElement.querySelector('ul[data-list="changeable"]')
       targetChangeableList.appendChild(templateElement)
       initInputs()
     })

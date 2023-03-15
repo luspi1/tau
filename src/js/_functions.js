@@ -1,4 +1,4 @@
-import { modalOverlay, loader, infoModal, bigImgModal } from "./_vars";
+import { modalOverlay, loader, infoModal, bigImgModal } from "./_vars"
 
 // Функция очистки классов, принимает класс, который будет удален отовсюду
 const removeClasses = (className) => {
@@ -211,6 +211,24 @@ const toggleRequiredFields = (reqInputs) => {
   }
 }
 
+// проверка наличия значение в инпутах
+const checkValue = (checkClasses) => {
+  let isValue = true
+  let checkInputs
+
+  if (typeof checkClasses === 'string') {
+    checkInputs = document.querySelectorAll(checkClasses)
+  } else {
+    checkInputs = checkClasses
+  }
+  checkInputs.forEach(el => {
+    if (!el.value.trim()) {
+      isValue = false
+    }
+  })
+  return isValue
+}
+
 export {
   removeClasses,
   sendData,
@@ -226,5 +244,6 @@ export {
   blockFields,
   cutString,
   changePage,
-  toggleRequiredFields
+  toggleRequiredFields,
+  checkValue
 }

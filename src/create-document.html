@@ -46,7 +46,7 @@
               class="create-doc-page__input parental-contract-input"
               data-invoices-url="./data/getInvoices.txt"
               name="doc_parents" type="text"
-              placeholder="Начните вводить название">
+              placeholder="Начните вводить название" required>
             <svg class="ask-icon" width="24" height="24" viewBox="0 0 24 24"
                  fill="none" xmlns="http://www.w3.org/2000/svg">
               <path class="ask-icon__bg"
@@ -83,7 +83,7 @@
           <div class="create-doc-page__input-wrapper">
             <label>Название документа</label>
             <input class="create-doc-page__input"
-                   name="doc_name" type="text">
+                   name="doc_name" type="text" required>
             <svg class="ask-icon" width="24" height="24" viewBox="0 0 24 24"
                  fill="none" xmlns="http://www.w3.org/2000/svg">
               <path class="ask-icon__bg"
@@ -103,7 +103,7 @@
                 документа</label>
               <input class="create-doc-page__input create-doc-page__date-input"
                      name="doc_create_date" placeholder="дд.мм.гггг"
-                     type="text" data-date-start="2023-01-23">
+                     type="text" data-date-start="2023-01-23" required>
               <svg width="21" height="22" viewBox="0 0 21 22" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -116,7 +116,8 @@
               <label>Дата окончания действия</label>
               <input class="create-doc-page__input create-doc-page__date-input"
                      name="doc_end_date" placeholder="дд.мм.гггг" type="text"
-                     data-date-start="2023-01-23">
+                     data-date-start="2023-01-23" data-required="initial"
+                     required>
               <svg width="21" height="22" viewBox="0 0 21 22" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -165,7 +166,7 @@
             <input
               class="create-doc-page__input create-doc-page__case-input select-popup-input"
               name="sum_invoice" type="text"
-              placeholder="Введите сумму в рублях">
+              placeholder="Введите сумму в рублях" data-required="invoice">
             <svg class="ask-icon" width="24" height="24" viewBox="0 0 24 24"
                  fill="none" xmlns="http://www.w3.org/2000/svg">
               <path class="ask-icon__bg"
@@ -191,7 +192,9 @@
             <input
               class="create-doc-page__input create-doc-page__case-input select-popup-input"
               name="doc_template" type="text"
-              placeholder="Начните вводить название">
+              placeholder="Начните вводить название"
+              data-required="initial, act"
+              required>
             <svg class="ask-icon" width="24" height="24" viewBox="0 0 24 24"
                  fill="none" xmlns="http://www.w3.org/2000/svg">
               <path class="ask-icon__bg"
@@ -212,10 +215,9 @@
             <label>Описание документа</label>
             <textarea
               class="create-doc-page__input create-doc-page__textarea-input"
-              name="doc_desc"></textarea>
+              name="doc_desc" required></textarea>
           </div>
         </section>
-
 
         <div class="create-doc-page__btns">
           <button class="create-doc-page__save-btn" type="submit">

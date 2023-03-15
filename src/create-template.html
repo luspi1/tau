@@ -21,15 +21,14 @@
           <form class="form" action="#" method="post">
 
             <div class="create-template__input-wrap">
-              <label>Название шаблона</label>
+              <label>Название шаблона*</label>
               <input type="text" name="template-name"
                      placeholder="Введите название">
             </div>
 
             <div class="create-template__select-wrap">
-              <label>Тип документа</label>
+              <label>Тип документа*</label>
               <select class="create-template__type-doc" name="type-doc">
-                <option selected value="">Тип документа не выбран</option>
                 <option value="type-doc_1">тип 1</option>
                 <option value="type-doc_2">тип 2</option>
               </select>
@@ -55,9 +54,8 @@
             </div>
             <div
               class="create-template__select-wrap create-template__select-wrap_border">
-              <label>Принадлежность шаблона</label>
+              <label>Принадлежность шаблона*</label>
               <select class="create-template__type-doc" name="own-template">
-                <option selected value="">Принадлежность не выбрана</option>
                 <option value="own-template_1">Открытый шаблон</option>
                 <option value="own-template_2">Организация 1</option>
                 <option value="own-template_3">Организация 2</option>
@@ -71,13 +69,16 @@
                         rows="10"></textarea>
             </div>
 
-            <button class="create-template__save-btn" type="submit">Сохранить
+            <button class="create-template__save-btn btn_disabled"
+                    type="submit">Сохранить
               шаблон
             </button>
-            <button class="create-template__publish-btn" type="submit">
+            <button class="create-template__publish-btn btn_disabled"
+                    type="submit">
               Опубликовать шаблон
             </button>
-            <button class="create-template__cancel-btn" type="button">Отмена</button>
+            <button class="create-template__cancel-btn" type="button">Отмена
+            </button>
 
           </form>
           <div class="instructions general-dropzone-wrapper">

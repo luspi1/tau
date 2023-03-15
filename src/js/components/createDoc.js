@@ -112,10 +112,37 @@ if (createDocPage) {
 
 // Смена состояние страницы, в зависимости от селекта "Тип документа"
 
+
+  const changeRequiredOnTarget = (inputs, state) => {
+    inputs.forEach(el => {
+      if (el.dataset.required.includes(state)) {
+        el.required = true
+      }
+    })
+  }
+  const changeRequiredInputs = (pageState) => {
+    const allOptionalRequiredInputs = createDocPage.querySelectorAll('[data-required]')
+    allOptionalRequiredInputs.forEach(el => el.required = false)
+
+    switch (pageState) {
+      case 'initial':
+        changeRequiredOnTarget(allOptionalRequiredInputs, 'initial')
+        break
+      case 'invoice':
+        changeRequiredOnTarget(allOptionalRequiredInputs, 'invoice')
+        break
+      case 'act':
+        changeRequiredOnTarget(allOptionalRequiredInputs, 'act')
+        break
+    }
+  }
+
+
   const typeDocSelect = document.querySelector('.create-doc-page__type-doc-select')
   if (typeDocSelect) {
     typeDocSelect.addEventListener('change', (e) => {
       createDocPage.dataset.pageState = e.target.value
+      changeRequiredInputs(e.target.value)
     })
   }
 }

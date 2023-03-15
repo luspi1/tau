@@ -107,12 +107,12 @@
           </div>
           <div class="create-deal-caption__observer-list">
             <div class="create-deal-page__input-wrapper select-input-wrapper">
-              <label>Наблюдатель</label>
+              <label>Наблюдатель*</label>
               <input name="id_observer"
                      class="create-deal-page__data-input select-popup-data"
                      type="hidden">
               <input
-                class="create-deal-page__input create-deal-page__case-info-input create-deal-page__popup-input select-popup-input"
+                class="create-deal-page__observer-input create-deal-page__input create-deal-page__case-info-input create-deal-page__popup-input select-popup-input"
                 name="deal_observer[]" type="text"
                 placeholder="Начните вводить фамилию">
               @include('partials/select-popup.html', {
@@ -187,7 +187,7 @@
         <div class="create-deal-page__changeable-content">
           <section class="section create-deal-payments">
             <h2 class="deal-subtitle">
-              Платежи сделки
+              Платежи сделки*
             </h2>
 
             <div class="create-deal-page__prompt-wrapper">
@@ -221,7 +221,8 @@
                       <label>Тип платежа</label>
                       <input class="create-deal-page__input"
                              name="advance_payment"
-                             placeholder="Авансовый платеж" type="text"
+                             value="Авансовый платеж"
+                             type="text"
                              disabled>
                     </div>
                     <div class="create-deal-page__inputs">
@@ -279,7 +280,7 @@
                     <div class="create-deal-page__input-wrapper input_disabled">
                       <label>Тип платежа</label>
                       <input class="create-deal-page__input"
-                             placeholder="Платеж" type="text" name="payment"
+                             value="Платеж" type="text" name="payment"
                              disabled>
                     </div>
                     <div class="create-deal-page__inputs">
@@ -338,7 +339,7 @@
                     <div class="create-deal-page__input-wrapper input_disabled">
                       <label>Тип платежа</label>
                       <input class="create-deal-page__input"
-                             placeholder="Завершающий платеж" type="text"
+                             value="Завершающий платеж" type="text"
                              name="final_payment" disabled>
                     </div>
                     <div class="create-deal-page__inputs">
@@ -606,12 +607,12 @@
 
 <template id="deal-observer-template">
   <div class="create-deal-page__input-wrapper select-input-wrapper">
-    <label>Дополнительный наблюдатель</label>
+    <label>Дополнительный наблюдатель*</label>
     <input name="id_observer"
            class="create-deal-page__data-input select-popup-data"
            type="hidden">
     <input
-      class="create-deal-page__input create-deal-page__popup-input create-deal-page__observer-select select-popup-input"
+      class="create-deal-page__observer-input create-deal-page__input create-deal-page__popup-input create-deal-page__observer-select select-popup-input"
       name="deal_observer[]" type="text"
       placeholder="Начните вводить фамилию">
     @include('partials/select-popup.html', {
