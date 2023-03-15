@@ -36,7 +36,19 @@
       width: 14px;
       height: 14px;
       border-radius: 50%;
-      background-color: #0CB477;
+
+      &._green {
+        background-color: #0CB477;
+      }
+
+      &._red {
+        background-color: #BC0D48;
+      }
+
+      &._yellow {
+        background-color: #f6c72a;
+      }
+
     }
 
     &__info {
@@ -159,11 +171,13 @@
       .table {
         margin-top: 16px;
         min-width: 850px;
+
         &__wrapper-flex {
           display: flex;
           width: 100%;
           align-items: center;
         }
+
         tbody tr {
           text-align: left;
           vertical-align: top;
@@ -181,10 +195,12 @@
             margin-right: 5px;
             color: #858584;
           }
+
           a {
             display: flex;
             width: 15px;
             margin-right: 9px;
+
             svg {
               margin: auto;
             }
@@ -196,6 +212,7 @@
             border: none;
             background-color: transparent;
             cursor: pointer;
+
             svg {
               margin: auto;
             }
@@ -249,9 +266,9 @@
   }
 
   .aside {
-    margin-left: 70px;
-    min-width: 450px;
-    max-width: 450px;
+    margin-left: 23px;
+    min-width: 335px;
+    max-width: 335px;
 
     &__top {
       a {

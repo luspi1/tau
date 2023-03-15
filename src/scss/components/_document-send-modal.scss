@@ -1,0 +1,50 @@
+.modal-document-send {
+  position: fixed;
+  overflow-y: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 930px;
+  max-height: 85vh;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 50px 50px 60px 50px;
+  transition: all .2s;
+
+  opacity: 0;
+  visibility: hidden;
+
+  //visibility: visible;
+  //opacity: 1;
+
+  h2 {
+    @include montserrat-semibold;
+    font-size: 36px;
+    line-height: 44px;
+    color: #000000;
+    margin-bottom: 30px;
+
+  }
+  &__close-btn {
+    position: absolute;
+    border: none;
+    background: none;
+    cursor: pointer;
+    right: 19px;
+    top: 18px;
+
+    svg {
+      pointer-events: none;
+    }
+
+    path {
+      transition: all .3s;
+    }
+
+    &:hover {
+      path {
+        fill: $link;
+      }
+    }
+  }
+}

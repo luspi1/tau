@@ -20,3 +20,10 @@ cutString(trimOneDocStrings);
 
 const trimTemplateItemStrings = document.querySelectorAll('.template-item-page a[data-shear]');
 cutString(trimTemplateItemStrings);
+
+//обрезка длинных строк в aside на страницах - deal-card, deal-documents, deal-story,  deal-balance
+
+const trimAsideStrings = document.querySelectorAll('.aside__top a[data-shear]');
+cutString(trimAsideStrings);
+
+

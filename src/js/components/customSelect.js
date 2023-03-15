@@ -208,7 +208,7 @@ const initPaymentModalSelects = () => {
   }
 }
 
-initPaymentModalSelects()
+
 
 
 // Селекторы в модалке нового прихода
