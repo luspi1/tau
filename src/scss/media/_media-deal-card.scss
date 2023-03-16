@@ -29,6 +29,10 @@
   }
   .deals .one-deal .payments {
     overflow-x: scroll;
+    margin-top: 25px;
+  }
+  .deals .one-deal .payments .table {
+    min-width: 990px;
   }
 }
 
@@ -52,10 +56,10 @@
     flex-direction: column;
   }
 
-  .deals .one-deal__ok {
-    margin: 15px 0 0 auto;
+  .deals .one-deal__name > p {
+    margin-right: 0;
+    margin-bottom: 15px;
   }
-
   .deals .one-deal__row {
     flex-direction: column;
     padding-bottom: 20px;
