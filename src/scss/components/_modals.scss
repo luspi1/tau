@@ -774,10 +774,11 @@
 }
 
 .new-contact {
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  max-height: 95vh;
   background: #ffffff;
   border-radius: 20px;
   padding: 46px 50px 55px 45px;
@@ -785,6 +786,7 @@
   z-index: -1;
   opacity: 0;
   visibility: hidden;
+  overflow-y: auto;
 
   &._active {
     z-index: 999;
