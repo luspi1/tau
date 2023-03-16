@@ -4,9 +4,11 @@ import { sendData, showInfoModal } from "../_functions"
 import { initCloseModals }         from './managePopup'
 
 const dealCardPageMain = document.querySelector('.deals')
+const dealCardPage = document.querySelector('.deals .one-deal')
+const dealDocumentsPage = document.querySelector('.deals .deals-documents')
 
-if (dealCardPageMain) {
-
+if (dealCardPage || dealDocumentsPage) {
+  
   const admissionModal = dealCardPageMain.querySelector('#document-preview-modal')
   const admissionButtons = document.querySelectorAll('[data-modal="document-preview-modal"]')
 
