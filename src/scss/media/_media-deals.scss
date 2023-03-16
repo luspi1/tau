@@ -1,3 +1,18 @@
+@media (max-width: 1710px) {
+
+
+  .deals .deals-table__status {
+    margin-left: 40px;
+    padding-left: 15px;
+    padding-right: 20px;
+  }
+
+  .deals .deals-table__cell:nth-child(1) {
+    min-width: 101px;
+  }
+}
+
+
 @media(max-width: 1400px) {
   .deals .deals-table__cell {
     margin-left: 17px;
