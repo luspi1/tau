@@ -14,8 +14,6 @@
   opacity: 0;
   visibility: hidden;
 
-  //visibility: visible;
-  //opacity: 1;
 
   h2 {
     @include montserrat-semibold;
@@ -23,7 +21,14 @@
     line-height: 44px;
     color: #000000;
     margin-bottom: 30px;
-
+    @media (max-width: 576px) {
+      font-size: 28px;
+    }
+  }
+  &._active {
+    opacity: 1;
+    z-index: 999;
+    visibility: visible;
   }
   &__close-btn {
     position: absolute;
@@ -47,4 +52,182 @@
       }
     }
   }
+
+  &__information {
+    padding-top: 28px;
+    border-top: 2px dashed #C4C4C4;
+
+    h3 {
+      margin-bottom: 19px;
+      color: #000000;
+
+
+      span {
+        font-weight: 400;
+      }
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 7px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #858584;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__cell {
+    font-size: 14px;
+    line-height: 17px;
+
+    &:nth-child(1) {
+      min-width: 140px;
+      width: 140px;
+    }
+
+    &:nth-child(2) {
+      min-width: 215px;
+      width: 215px;
+    }
+
+    &:nth-child(3) {
+      min-width: 225px;
+      width: 225px;
+    }
+
+    &:nth-child(4) {
+      min-width: 100px;
+      width: 100px;
+    }
+  }
+
+  &__list {
+    .modal-document-send__cell {
+      margin-bottom: 15px;
+
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+
+    }
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 17px 50px 2px 0;
+      color: #000000;
+
+      &:nth-child(odd) {
+        background-color: #F7F8FA;
+      }
+
+      @media (max-width: 768px) {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+    }
+
+  }
+
+  &__btn-send {
+    height: 17px;
+    display: flex;
+    align-items: center;
+    color: #9A9A9A;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all .3s;
+
+    svg {
+      min-width: 15px;
+      width: 15px;
+      height: 15px;
+      margin-right: 7px;
+      transition: all .3s;
+
+      path {
+        transition: all .3s;
+      }
+
+    }
+
+    &:hover {
+      color: $link;
+
+      svg {
+        path {
+          fill: $link;
+        }
+      }
+    }
+
+  }
+
+  .send-form {
+    display: flex;
+    max-width: 650px;
+    padding-bottom: 33px;
+    @media (max-width: 576px) {
+      flex-direction: column;
+    }
+
+    &__input {
+      width: 100%;
+      height: 40px;
+      margin-right: 10px;
+      padding: 0 15px;
+      font-size: 16px;
+      line-height: 20px;
+      background-color: #F2F1F7;
+      border-radius: 5px;
+      border: none;
+
+      &::placeholder {
+        color: #858584;
+      }
+
+      @media (max-width: 576px) {
+        margin-bottom: 15px;
+      }
+    }
+
+    &__btn {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      max-width: 150px;
+      height: 40px;
+      padding: 0 15px 0 12px;
+      @include montserrat-medium;
+      font-size: 17px;
+      line-height: 21px;
+      color: #FFFFFF;
+      background-color: $link;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all .3s;
+
+      svg {
+        margin-right: 5px;
+      }
+
+      &:hover {
+        background-color: #264DDB;
+      }
+    }
+  }
+
+  @media (max-width: 992px) {
+    width: 98%;
+    padding: 50px 20px;
+  }
 }
+
