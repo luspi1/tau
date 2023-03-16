@@ -257,7 +257,7 @@
                         fill="#2F65F6"/>
                     </svg>
                   </button>
-                  <button class="deals-documents__btn-status">подписать</button>
+                  <button class="deals-documents__btn-status" data-modal="document-sign-modal">подписать</button>
                 </div>
               </li>
               <li class="deals-documents-table__row">
@@ -467,7 +467,7 @@
                         fill="#2F65F6"/>
                     </svg>
                   </button>
-                  <button class="deals-documents__btn-status">подписан</button>
+                  <button class="deals-documents__btn-status" >подписан</button>
                 </div>
               </li>
             </ul>
@@ -517,6 +517,7 @@
     </section>
     @include('partials/document-preview-modal.html')
     @include('partials/document-send-modal.html')
+    @include('partials/document-sign-modal.html')
     @include('partials/info-modal.html')
   </main>
 
