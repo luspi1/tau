@@ -787,6 +787,12 @@
   opacity: 0;
   visibility: hidden;
   overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 
   &._active {
     z-index: 999;
