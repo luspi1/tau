@@ -239,6 +239,21 @@ if (letterModalSelects) {
   })
 }
 
+// Селекторы в модалке "Подписать документ" /document-sign-modal/
+const signModalSelect = document.querySelector('.modal-document-sign__select')
+
+if (signModalSelect) {
+   const choices = new Choices(signModalSelect, {
+      itemSelectText: '',
+      searchEnabled: false,
+      shouldSort: false,
+      allowHTML: true
+    })
+
+}
+
+
+
 // Селекторы фильтров на странице "корреспонденция(все письма)"
 const newMailsSelects = document.querySelectorAll('.newmails__search select')
 
