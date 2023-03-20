@@ -33,4 +33,5 @@ import './components/dealBalanceModal'
 import './components/changeableLists'
 import './components/documentPreviewModal'
 import './components/createTemplate'
+import './components/generatedModals'
 

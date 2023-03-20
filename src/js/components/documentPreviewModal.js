@@ -1,4 +1,4 @@
-// Работа модалки на странице deal-card.html
+// Работа модалки на странице deal-card.html и deal-document
 
 import { sendData, showInfoModal } from "../_functions"
 import { initCloseModals }         from './managePopup'
@@ -8,7 +8,7 @@ const dealCardPage = document.querySelector('.deals .one-deal')
 const dealDocumentsPage = document.querySelector('.deals .deals-documents')
 
 if (dealCardPage || dealDocumentsPage) {
-  
+
   const admissionModal = dealCardPageMain.querySelector('#document-preview-modal')
   const admissionButtons = document.querySelectorAll('[data-modal="document-preview-modal"]')
 
