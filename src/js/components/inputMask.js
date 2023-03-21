@@ -294,6 +294,21 @@ const initDateInputMasks = () => {
 
 initDateInputMasks()
 
+const initCustomMasks = () => {
+  const dateCustomMasks = document.querySelectorAll("input[data-custom-mask]")
+  if (dateCustomMasks) {
+    dateCustomMasks.forEach(el => {
+      Inputmask({
+        "mask": el.dataset.customMask,
+        showMaskOnHover: false,
+        showMaskOnFocus: false,
+      }).mask(el)
+    })
+  }
+}
+
+initCustomMasks()
+
 
 export {
   initDatePaymentsMask,
@@ -301,7 +316,8 @@ export {
   initAccountCheckMask,
   initBikMask,
   initCorrMask,
-  initDateInputMasks
+  initDateInputMasks,
+  initCustomMasks
 }
 
 

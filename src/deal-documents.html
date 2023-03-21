@@ -196,7 +196,7 @@
                   <button class="deals-documents__btn-status"
                           data-modal="document-sign-modal"
                           data-type-btn="generated"
-                          data-script="/include/ajax/get_document_sign.php"
+                          data-script="./data/getSignModal.txt"
                           data-id="vt9O50x5"
                   >подписан
                   </button>
@@ -554,6 +554,7 @@
     @include('partials/document-send-modal.html')
     @include('partials/document-sign-modal.html')
     @include('partials/info-modal.html')
+    @include('partials/loader.html')
   </main>
 
   @include('partials/footer.html')

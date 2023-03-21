@@ -1,7 +1,5 @@
 import Choices from 'choices.js'
 
-const typeContactInput = document.querySelector('.new-contact__type-input')
-const casesInput = document.querySelector('.cases__filter-input')
 
 // Селекторы в модалке социалок
 const initSelects = () => {
@@ -13,36 +11,47 @@ const initSelects = () => {
       allowHTML: true
     })
   })
-}
 
-initSelects()
 
 // Селекторы в таблице контактов
 
-document.querySelectorAll('.contacts-table__selector').forEach(el => {
-  const choices = new Choices(el, {
-    searchEnabled: false,
-    itemSelectText: '',
-    allowHTML: true
+  document.querySelectorAll('.contacts-table__selector').forEach(el => {
+    const choices = new Choices(el, {
+      searchEnabled: false,
+      itemSelectText: '',
+      allowHTML: true
+    })
   })
-})
 
 // Селектор в модалке нового контакта
+  const typeContactInput = document.querySelector('.new-contact__type-input')
 
-if (typeContactInput) {
-  const choices = new Choices(typeContactInput, {
-    searchEnabled: false,
-    itemSelectText: '',
-    shouldSort: false,
-    allowHTML: true
-  })
-}
+  if (typeContactInput) {
+    const choices = new Choices(typeContactInput, {
+      searchEnabled: false,
+      itemSelectText: '',
+      shouldSort: false,
+      allowHTML: true
+    })
+  }
 
 
 // Селекторы на странице редактирования контактов
 
-document.querySelectorAll('.edit-contact__item select:not(.edit-contact__contact-type-btn)')
-  .forEach(el => {
+  document.querySelectorAll('.edit-contact__item select:not(.edit-contact__contact-type-btn)')
+    .forEach(el => {
+      const choices = new Choices(el, {
+        searchEnabled: false,
+        itemSelectText: '',
+        shouldSort: false,
+        allowHTML: true
+      })
+    })
+
+
+// Селекторы на странице новой организации
+
+  document.querySelectorAll('.new-organization__item select').forEach(el => {
     const choices = new Choices(el, {
       searchEnabled: false,
       itemSelectText: '',
@@ -51,33 +60,21 @@ document.querySelectorAll('.edit-contact__item select:not(.edit-contact__contact
     })
   })
 
-
-// Селекторы на странице новой организации
-
-document.querySelectorAll('.new-organization__item select').forEach(el => {
-  const choices = new Choices(el, {
-    searchEnabled: false,
-    itemSelectText: '',
-    shouldSort: false,
-    allowHTML: true
-  })
-})
-
 // Селектор фильтрации на странице кейсов
+  const casesInput = document.querySelector('.cases__filter-input')
 
-if (casesInput) {
-  const choices = new Choices(casesInput, {
-    searchEnabled: false,
-    itemSelectText: '',
-    shouldSort: false,
-    allowHTML: true
-  })
-}
+  if (casesInput) {
+    const choices = new Choices(casesInput, {
+      searchEnabled: false,
+      itemSelectText: '',
+      shouldSort: false,
+      allowHTML: true
+    })
+  }
 
 
 // Селекторы на странице создания кейса
 
-const initPaymentSelects = () => {
   document.querySelectorAll('.create-case-page__input-wrapper select').forEach(el => {
     const choices = new Choices(el, {
       searchEnabled: false,
@@ -86,24 +83,19 @@ const initPaymentSelects = () => {
       allowHTML: true
     })
   })
-}
-
-initPaymentSelects()
 
 
 // Селекторы на странице создания сделки
-const dealExecutorSelect = document.querySelector('.create-deal-page__executor-select')
+  const dealExecutorSelect = document.querySelector('.create-deal-page__executor-select')
 
-if (dealExecutorSelect) {
-  const choices = new Choices(dealExecutorSelect, {
-    itemSelectText: '',
-    shouldSort: false,
-    allowHTML: true
-  })
-}
+  if (dealExecutorSelect) {
+    const choices = new Choices(dealExecutorSelect, {
+      itemSelectText: '',
+      shouldSort: false,
+      allowHTML: true
+    })
+  }
 
-
-const initPaymentsSelect = () => {
   document.querySelectorAll('.create-deal-page__payments-select').forEach(el => {
     const choices = new Choices(el, {
       itemSelectText: '',
@@ -111,89 +103,87 @@ const initPaymentsSelect = () => {
       allowHTML: true
     })
   })
-}
 
-initPaymentsSelect()
 
-document.querySelectorAll('.create-deal-page__custom-select').forEach(el => {
-  const choices = new Choices(el, {
-    searchEnabled: false,
-    itemSelectText: '',
-    shouldSort: false,
-    allowHTML: true
+  document.querySelectorAll('.create-deal-page__custom-select').forEach(el => {
+    const choices = new Choices(el, {
+      searchEnabled: false,
+      itemSelectText: '',
+      shouldSort: false,
+      allowHTML: true
+    })
   })
-})
 
 
 // Селект на странице договор и документы
 
-const dealsDocSelect = document.querySelector('.deals-documents__select-input')
+  const dealsDocSelect = document.querySelector('.deals-documents__select-input')
 
-if (dealsDocSelect) {
-  const choices = new Choices(dealsDocSelect, {
-    searchEnabled: false,
-    itemSelectText: '',
-    shouldSort: false,
-    allowHTML: true
-  })
-}
+  if (dealsDocSelect) {
+    const choices = new Choices(dealsDocSelect, {
+      searchEnabled: false,
+      itemSelectText: '',
+      shouldSort: false,
+      allowHTML: true
+    })
+  }
 
 
 // Селектор в поиске на странице история сделки
-const searchSelect = document.querySelector('.search__select')
+  const searchSelect = document.querySelector('.search__select')
 
-if (searchSelect) {
-  const choices = new Choices(searchSelect, {
-    searchEnabled: false,
-    itemSelectText: '',
-    shouldSort: false,
-    allowHTML: true
-  })
-}
+  if (searchSelect) {
+    const choices = new Choices(searchSelect, {
+      searchEnabled: false,
+      itemSelectText: '',
+      shouldSort: false,
+      allowHTML: true
+    })
+  }
 
 // Селектор в поиске на странице все сделки
-const dealsSelect = document.querySelector('.deals__select')
+  const dealsSelect = document.querySelector('.deals__select')
 
-if (dealsSelect) {
-  const choices = new Choices(dealsSelect, {
-    searchEnabled: false,
-    itemSelectText: '',
-    shouldSort: false,
-    allowHTML: true
-  })
-}
+  if (dealsSelect) {
+    const choices = new Choices(dealsSelect, {
+      searchEnabled: false,
+      itemSelectText: '',
+      shouldSort: false,
+      allowHTML: true
+    })
+  }
 
 // Селектор в поиске на странице доходы
-const incomingPageSelects = document.querySelectorAll('.filter__select-wrap select')
-if (incomingPageSelects) {
-  incomingPageSelects.forEach(el => {
-    const choices = new Choices(el, {
-      searchEnabled: false,
-      itemSelectText: '',
-      shouldSort: false,
-      allowHTML: true
+  const incomingPageSelects = document.querySelectorAll('.filter__select-wrap select')
+  if (incomingPageSelects) {
+    incomingPageSelects.forEach(el => {
+      const choices = new Choices(el, {
+        searchEnabled: false,
+        itemSelectText: '',
+        shouldSort: false,
+        allowHTML: true
+      })
     })
-  })
-}
+  }
 
 
-const incomeListSelects = document.querySelectorAll('.income-list-page__select')
+  const incomeListSelects = document.querySelectorAll('.income-list-page__select')
 
-if (incomeListSelects) {
-  incomeListSelects.forEach(el => {
-    const choices = new Choices(el, {
-      searchEnabled: false,
-      itemSelectText: '',
-      shouldSort: false,
-      allowHTML: true
+  if (incomeListSelects) {
+    incomeListSelects.forEach(el => {
+      const choices = new Choices(el, {
+        searchEnabled: false,
+        itemSelectText: '',
+        shouldSort: false,
+        allowHTML: true
+      })
     })
-  })
-}
+  }
 
 
 // Селекторы в модалке нового платежа в Баланс сделки
 
-const initPaymentModalSelects = () => {
+
   const addPaymentModalSelects = document.querySelectorAll('.add-payment__select-wrapper select')
 
   if (addPaymentModalSelects) {
@@ -206,153 +196,153 @@ const initPaymentModalSelects = () => {
       })
     })
   }
-}
-
-
 
 
 // Селекторы в модалке нового прихода
-const incomingModalSelects = document.querySelectorAll('.modal-incoming__select-wrapper:not(.modal-incoming__select-wrapper-payment) select')
+  const incomingModalSelects = document.querySelectorAll('.modal-incoming__select-wrapper:not(.modal-incoming__select-wrapper-payment) select')
 
-if (incomingModalSelects) {
-  incomingModalSelects.forEach(el => {
-    const choices = new Choices(el, {
-      itemSelectText: '',
-      searchEnabled: false,
-      shouldSort: false,
-      allowHTML: true
+  if (incomingModalSelects) {
+    incomingModalSelects.forEach(el => {
+      const choices = new Choices(el, {
+        itemSelectText: '',
+        searchEnabled: false,
+        shouldSort: false,
+        allowHTML: true
+      })
     })
-  })
-}
+  }
 
 // Селекторы в модалке "создать письмо"
-const letterModalSelects = document.querySelectorAll('.modal-create-letter__select-wrapper select')
+  const letterModalSelects = document.querySelectorAll('.modal-create-letter__select-wrapper select')
 
-if (letterModalSelects) {
-  letterModalSelects.forEach(el => {
-    const choices = new Choices(el, {
-      itemSelectText: '',
-      searchEnabled: false,
-      shouldSort: false,
-      allowHTML: true
+  if (letterModalSelects) {
+    letterModalSelects.forEach(el => {
+      const choices = new Choices(el, {
+        itemSelectText: '',
+        searchEnabled: false,
+        shouldSort: false,
+        allowHTML: true
+      })
     })
-  })
-}
+  }
 
 // Селекторы в модалке "Подписать документ" /document-sign-modal/
-const signModalSelect = document.querySelector('.modal-document-sign__select')
+  const signModalSelect = document.querySelector('.modal-document-sign__select')
 
-if (signModalSelect) {
-   const choices = new Choices(signModalSelect, {
+  if (signModalSelect) {
+    const choices = new Choices(signModalSelect, {
       itemSelectText: '',
       searchEnabled: false,
       shouldSort: false,
       allowHTML: true
     })
 
-}
-
+  }
 
 
 // Селекторы фильтров на странице "корреспонденция(все письма)"
-const newMailsSelects = document.querySelectorAll('.newmails__search select')
+  const newMailsSelects = document.querySelectorAll('.newmails__search select')
 
-if (newMailsSelects) {
-  newMailsSelects.forEach(el => {
-    const choices = new Choices(el, {
-      itemSelectText: '',
-      searchEnabled: false,
-      shouldSort: false,
-      allowHTML: true
+  if (newMailsSelects) {
+    newMailsSelects.forEach(el => {
+      const choices = new Choices(el, {
+        itemSelectText: '',
+        searchEnabled: false,
+        shouldSort: false,
+        allowHTML: true
+      })
     })
-  })
-}
+  }
 
 
-const trafficSelects = document.querySelectorAll('.traffic__select-wrap select')
+  const trafficSelects = document.querySelectorAll('.traffic__select-wrap select')
 
-if (trafficSelects) {
-  trafficSelects.forEach(el => {
-    const choices = new Choices(el, {
-      searchEnabled: false,
-      itemSelectText: '',
-      shouldSort: false,
-      allowHTML: true
+  if (trafficSelects) {
+    trafficSelects.forEach(el => {
+      const choices = new Choices(el, {
+        searchEnabled: false,
+        itemSelectText: '',
+        shouldSort: false,
+        allowHTML: true
+      })
     })
-  })
-}
+  }
 
 // Селекторы фильтров шаблонов и документов на странице "все документы и шаблоны"
-const templateDocumentsSelects = document.querySelectorAll('.all-documents__select-wrap select')
+  const templateDocumentsSelects = document.querySelectorAll('.all-documents__select-wrap select')
 
-if (templateDocumentsSelects) {
-  templateDocumentsSelects.forEach(el => {
-    const choices = new Choices(el, {
-      itemSelectText: '',
-      searchEnabled: false,
-      shouldSort: false,
-      allowHTML: true
+  if (templateDocumentsSelects) {
+    templateDocumentsSelects.forEach(el => {
+      const choices = new Choices(el, {
+        itemSelectText: '',
+        searchEnabled: false,
+        shouldSort: false,
+        allowHTML: true
+      })
     })
-  })
-}
+  }
 
 // Селектор фильтра типа документа на странице "только документы"
-const onlyDocumentSelects = document.querySelectorAll('.only-documents__select-wrap select')
+  const onlyDocumentSelects = document.querySelectorAll('.only-documents__select-wrap select')
 
-if (onlyDocumentSelects) {
-  onlyDocumentSelects.forEach(el => {
-    const choices = new Choices(el, {
-      itemSelectText: '',
-      searchEnabled: false,
-      shouldSort: false,
-      allowHTML: true
+  if (onlyDocumentSelects) {
+    onlyDocumentSelects.forEach(el => {
+      const choices = new Choices(el, {
+        itemSelectText: '',
+        searchEnabled: false,
+        shouldSort: false,
+        allowHTML: true
+      })
     })
-  })
-}
+  }
 
 // Селектор фильтра типа шаблона на странице "только шаблоны"
-const onlyTemplatesSelects = document.querySelectorAll('.only-templates__select-wrap select')
+  const onlyTemplatesSelects = document.querySelectorAll('.only-templates__select-wrap select')
 
-if (onlyTemplatesSelects) {
-  onlyTemplatesSelects.forEach(el => {
-    const choices = new Choices(el, {
-      itemSelectText: '',
-      searchEnabled: false,
-      shouldSort: false,
-      allowHTML: true
+  if (onlyTemplatesSelects) {
+    onlyTemplatesSelects.forEach(el => {
+      const choices = new Choices(el, {
+        itemSelectText: '',
+        searchEnabled: false,
+        shouldSort: false,
+        allowHTML: true
+      })
     })
-  })
-}
+  }
 
 // Селектор типа документа на странице создания документа
-const createDocSelects = document.querySelectorAll('.create-doc-page__custom-select')
+  const createDocSelects = document.querySelectorAll('.create-doc-page__custom-select')
 
-if (createDocSelects) {
-  createDocSelects.forEach(el => {
-    const choices = new Choices(el, {
-      itemSelectText: '',
-      searchEnabled: false,
-      shouldSort: false,
-      allowHTML: true
+  if (createDocSelects) {
+    createDocSelects.forEach(el => {
+      const choices = new Choices(el, {
+        itemSelectText: '',
+        searchEnabled: false,
+        shouldSort: false,
+        allowHTML: true
+      })
     })
-  })
-}
+  }
 
 
 // Селекторы на странице "создания шаблона"
-const typeTemplateSelects = document.querySelectorAll('.create-template__type-doc')
+  const typeTemplateSelects = document.querySelectorAll('.create-template__type-doc')
 
-if (typeTemplateSelects) {
-  typeTemplateSelects.forEach(el => {
-    const choices = new Choices(el, {
-      itemSelectText: '',
-      searchEnabled: false,
-      shouldSort: false,
-      allowHTML: true
+  if (typeTemplateSelects) {
+    typeTemplateSelects.forEach(el => {
+      const choices = new Choices(el, {
+        itemSelectText: '',
+        searchEnabled: false,
+        shouldSort: false,
+        allowHTML: true
+      })
     })
-  })
+  }
+
 }
 
+initSelects()
 
-export { initSelects, initPaymentSelects, initPaymentsSelect, initPaymentModalSelects }
+
+export { initSelects }
 

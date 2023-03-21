@@ -13,12 +13,14 @@
   </button>
   <h2>Подписать документ «название документа»</h2>
   <h3>Наш исполнитель ООО «Наш исполнитель»</h3>
-  <form class="modal-document-sign__form-author">
-    <div class="modal-document-sign__author-info _completed">
+  <form class="modal-document-sign__form-author"
+        action="/include/ajax/document_sign.php">
+    <input type="hidden" name="sign_type" value="our">
+    <div class="modal-document-sign__author-info">
       <div class="modal-document-sign__select-wrapper">
         <p class="modal-document-sign__label">Подписывает</p>
         <select class="modal-document-sign__select"
-                name="signAuthor">
+                name="id_contact">
           <option value="">выбрать подписанта</option>
           <option value="Author1">Author1</option>
           <option value="Author2">Author2</option>
@@ -28,8 +30,8 @@
       </div>
       <div class="modal-document-sign__date-wrapper">
         <p class="modal-document-sign__label">Дата подписания нами</p>
-        <input data-date-start name="dateSign" type="text"
-               class="modal-document-sign__input">
+        <input data-date-start name="sign_date" type="text"
+               class="modal-document-sign__input" data-custom-mask="99.99.9999">
         <p class="modal-document-sign__date">13 марта 2023</p>
       </div>
       <div class="modal-document-sign__buttons">
@@ -40,14 +42,17 @@
         </button>
         <button
           class="modal-document-sign__btn modal-document-sign__btn-doc-send"
-          type="button">Отправить документ
+          type="button" data-script="/include/ajax/document_send.php">Отправить
+          документ
           Заказчику
         </button>
       </div>
     </div>
   </form>
   <h3>Заказчик ООО «Название заказчика»</h3>
-  <form class="modal-document-sign__form-client">
+  <form class="modal-document-sign__form-client"
+        action="/include/ajax/document_sign.php">
+    <input type="hidden" name="sign_type" value="customer">
     <div class="modal-document-sign__lastname-wrapper">
       <p class="modal-document-sign__label">Подписывает</p>
       <p class="modal-document-sign__lastname">Иванов И. И.</p>
@@ -69,8 +74,8 @@
             Заказчиком, его правка будет
             заблокирована!</p>
         </div>
-        <input data-date-start name="dateClientSign" type="text"
-               class="modal-document-sign__input">
+        <input data-date-start name="sign_date_customer" type="text"
+               class="modal-document-sign__input" data-custom-mask="99.99.9999">
         <p class="modal-document-sign__date">13 марта 2023</p>
         <button class="modal-document-sign__btn modal-document-sign__btn-tag"
                 type="submit">

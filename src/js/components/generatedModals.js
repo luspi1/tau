@@ -1,7 +1,25 @@
 import { sendData, showInfoModal } from '../_functions'
+import { initAllDates }            from './customDate'
+import { initSelects }             from './customSelect'
+import { initCustomMasks }         from './inputMask'
 import { initCloseModals }         from './managePopup'
+import { handleDocumentSignModal } from './signDocModal'
 
 const generatedModalBtns = document.querySelectorAll('button[data-type-btn="generated"]')
+
+
+const initGeneratedModal = (modal) => {
+  //инициализация всех кастомных библиотек
+  initCloseModals()
+  initSelects()
+  initAllDates()
+  initCustomMasks()
+
+  //обработка конкретных модалок
+  handleDocumentSignModal(modal)  // Модалка подписания документа
+}
+
+
 if (generatedModalBtns) {
 
   generatedModalBtns.forEach(btn => {
@@ -20,7 +38,8 @@ if (generatedModalBtns) {
 
       if (status === 'ok') {
         generatedModal.innerHTML = html
-        initCloseModals()
+        generatedModal.setAttribute('data-id', generateId)
+        initGeneratedModal(generatedModal)
       } else {
         showInfoModal(errortext)
       }
@@ -28,3 +47,17 @@ if (generatedModalBtns) {
   })
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

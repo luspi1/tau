@@ -1,12 +1,12 @@
 // модалка добавления платежа
 import { sendData, showInfoModal, toggleRequiredFields } from '../_functions'
 import { initAllDates }                                  from './customDate'
-import { initPaymentModalSelects }                       from './customSelect'
+import { initSelects }                                   from './customSelect'
 import { initDateInputMasks }                            from './inputMask'
 import { initCloseModals }                               from './managePopup'
 
 const initPaymentModal = () => {
-  initPaymentModalSelects()
+  initSelects()
   initAllDates()
   initDateInputMasks()
   initCloseModals()

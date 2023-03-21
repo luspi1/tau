@@ -1,4 +1,4 @@
-import { initPaymentSelects }            from "./customSelect"
+import { initSelects }                   from './customSelect'
 import { initDatePaymentsMask }          from "./inputMask"
 import { initAllDates }                  from "./customDate"
 import { checkValue, handlePopupInputs } from "../_functions"
@@ -23,7 +23,7 @@ if (templateTermsFragment) {
       e.preventDefault()
       const termsEl = templateTerms.cloneNode(true)
       termsList.appendChild(termsEl)
-      initPaymentSelects()
+      initSelects()
       initDatePaymentsMask()
       initAllDates()
     })
@@ -45,7 +45,7 @@ if (templateOptionalFragment) {
       e.preventDefault()
       const optionalEl = templateOptional.cloneNode(true)
       optionalList.appendChild(optionalEl)
-      initPaymentSelects()
+      initSelects()
     })
   }
 }
@@ -69,7 +69,7 @@ if (annexWrapper) {
       const optionalAnnexList = currentOptional.querySelector('.case-annex__optional-items')
       const optionalEl = templateAnnexOptional.cloneNode(true)
       optionalAnnexList.appendChild(optionalEl)
-      initPaymentSelects()
+      initSelects()
 
       const annexIndex = optionalEl.closest('.case-annex__item').querySelector('.case-annex__add-optional-btn').dataset.index
       const selectInput = optionalEl.querySelector('select')
@@ -106,7 +106,7 @@ if (annexFragment) {
       addFieldBtn.dataset.index = annexOptionalIndex.toString()
 
       annexList.appendChild(optionalEl)
-      initPaymentSelects()
+      initSelects()
     })
   }
 }
