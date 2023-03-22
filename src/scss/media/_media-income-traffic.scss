@@ -5,15 +5,21 @@
 
   .income-traffic-page .traffic__select-row {
     align-items: flex-start;
+    flex-wrap: wrap;
   }
 
   .income-traffic-page .traffic__select-wrap.agent,
   .income-traffic-page .traffic__select-wrap.deal,
   .income-traffic-page .traffic__select-wrap.years,
-  .income-traffic-page .traffic__select-wrap.quarter {
+  .income-traffic-page .traffic__select-wrap.quarter,
+  .income-traffic-page .traffic__btn-submit{
     margin-top: 24px;
+    margin-bottom: 20px;
   }
-
+   .income-traffic-page .traffic__btn-submit {
+    margin-right: 24px;
+    order: 6;
+  }
   .income-traffic-page .traffic__calendar {
     flex-direction: column;
     order: 5;
@@ -36,12 +42,7 @@
     flex-wrap: wrap;
   }
 
-  .income-traffic-page .traffic__select-wrap.agent,
-  .income-traffic-page .traffic__select-wrap.deal,
-  .income-traffic-page .traffic__select-wrap.years,
-  .income-traffic-page .traffic__select-wrap.quarter {
-    margin-bottom: 20px;
-  }
+
 
 }
 
