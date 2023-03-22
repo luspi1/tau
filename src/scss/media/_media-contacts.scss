@@ -7,37 +7,22 @@
     max-width: 24%;
   }
 
-
-  .page-contacts .contacts-table__row-title {
-    padding: 13px 0 13px 25px;
-  }
-
-  .page-contacts .contacts-table__row {
-    padding: 21px 0 21px 25px;
-  }
-
-  .page-contacts .contacts-table__row-title .contacts-table__subject .choices[data-type*=select-one]::after {
-    right: 20px;
-  }
-
-
-  .page-contacts .contacts-table__row-title .contacts-table__cell .choices__list {
-    width: 200px;
-  }
-
-
-  .page-contacts .contacts-table__row-title .contacts-table__role .choices__list {
-    width: 180px;
-  }
-
-  .page-contacts .contacts-table__row-title .contacts-table__role .choices[data-type*=select-one]::after {
-    right: 63px;
-  }
-
-
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1040px) {
+  .page-contacts__top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page-contacts__top-search {
+    margin-bottom: 20px;
+  }
+
+  .page-contacts__btns {
+    margin-left: auto;
+  }
+
   .page-contacts .contacts-table__agency {
     font-weight: 400;
     font-size: 16px;
@@ -46,10 +31,6 @@
 
   .page-contacts__table-container {
     padding: 0 0;
-  }
-
-  .page-contacts .contacts-table__row-title .contacts-table__cell {
-    font-size: 14px;
   }
 
   .page-contacts .contacts-table__cell:not(.contacts-table__agency) {
@@ -76,29 +57,13 @@
     padding-bottom: 80px;
   }
 
-  .page-contacts .contacts-table__row-title .contacts-table__cell .choices__list {
-    font-size: 14px;
-    line-height: 16px;
-  }
-
-  .page-contacts .contacts-table__row-title .contacts-table__subject .choices[data-type*=select-one]::after {
-    right: 42px;
-  }
-
-  .page-contacts .contacts-table__row-title .contacts-table__role .choices[data-type*=select-one]::after {
-    right: 78px;
-  }
-
 }
 
 @media (max-width: 768px) {
-  .page-contacts__top {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 
-  .page-contacts__title {
-    margin-bottom: 20px;
+  .page-contacts__search-input {
+    width: auto;
+    min-width: 150px;
   }
 
 
@@ -112,16 +77,31 @@
 
 }
 
-@media (max-width: 500px) {
-  .page-contacts__btns {
-    display: flex;
-    flex-direction: column;
+@media (max-width: 600px) {
+  .page-contacts__top-search {
+    flex-wrap: wrap;
   }
 
-  .page-contacts__sort-btn {
-    margin-left: 0;
-    margin-top: 15px;
+  .page-contacts__title {
+    width: 100%;
+    margin-bottom: 5px;
   }
+
+  .page-contacts__btns {
+    margin-left: 0;
+  }
+
+  .page-contacts__search-input {
+    margin-bottom: 10px;
+  }
+  .page-contacts__search-btn {
+    margin-bottom: 10px;
+  }
+
+  .page-contacts__create-contact-btn {
+    margin-bottom: 10px;
+  }
+
 }
 
 // Адаптив модалок

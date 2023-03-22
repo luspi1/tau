@@ -11,17 +11,7 @@ const initSelects = () => {
       allowHTML: true
     })
   })
-
-
-// Селекторы в таблице контактов
-
-  document.querySelectorAll('.contacts-table__selector').forEach(el => {
-    const choices = new Choices(el, {
-      searchEnabled: false,
-      itemSelectText: '',
-      allowHTML: true
-    })
-  })
+  
 
 // Селектор в модалке нового контакта
   const typeContactInput = document.querySelector('.new-contact__type-input')

@@ -85,19 +85,13 @@
           </form>
         </div>
         <div class="page-contacts__top">
-          <h1 class="page-contacts__title">Контакты <span>
-            <svg class="page-contacts__search-btn" width="21" height="21"
-                 viewBox="0 0 21 21" fill="none"
-                 xmlns="http://www.w3.org/2000/svg">
-<path
-  d="M19.9 17.1L16 13.9C15.9 13.8 15.8 13.8 15.7 13.8C15.5 13.8 15.4 13.9 15.3 14C14.9 14.6 14.3 15.1 13.7 15.6C13.6 15.7 13.5 15.8 13.5 15.9C13.5 16 13.5 16.2 13.6 16.3L16.8 20.2C17 20.5 17.3 20.6 17.7 20.6C18 20.6 18.3 20.5 18.5 20.3L19.8 19C20 18.8 20.1 18.5 20.1 18.2C20.3 17.6 20.2 17.3 19.9 17.1Z"
-  fill="#9A9A9A"/>
-<path
-  d="M8.89981 17.5C11.1998 17.5 13.3998 16.6 14.9998 15C16.5998 13.4 17.4998 11.3 17.4998 8.89998C17.4998 4.09998 13.5998 0.299988 8.89981 0.299988C4.09981 0.399988 0.299805 4.29998 0.299805 8.99998C0.299805 13.7 4.09981 17.5 8.89981 17.5ZM2.99982 8.99998C2.99982 5.79998 5.5998 3.19998 8.7998 3.19998C11.9998 3.19998 14.5998 5.79998 14.5998 8.99998C14.5998 10.5 13.9998 12 12.8998 13.1C11.7998 14.2 10.3998 14.8 8.7998 14.8C5.5998 14.8 2.99982 12.2 2.99982 8.99998Z"
-  fill="#9A9A9A"/>
-</svg>
-
-          </span></h1>
+          <form class="page-contacts__top-search" action="#">
+            <h1 class="page-contacts__title">Контакты</h1>
+            <input class="page-contacts__search-input" type="text"
+                   name="contacts_search" placeholder="Поиск">
+            <button class="page-contacts__search-btn" type="submit">Искать
+            </button>
+          </form>
           <div class="page-contacts__btns">
             <button class="page-contacts__btn page-contacts__create-contact-btn"
                     data-modal="new-contact-modal" type="button">
@@ -112,41 +106,6 @@
       </div>
       <div class="container page-contacts__table-container">
         <ul class="page-contacts__table contacts-table">
-          <li class="contacts-table__row contacts-table__row-title">
-            <div class="contacts-table__cell contacts-table__agency">
-              <input class="edit-input" type="text" placeholder="Контакт"
-                     name="filter_contactname"
-                     data-input="sort">
-            </div>
-
-            <p class="contacts-table__cell contacts-table__note">Заметка</p>
-            <div class="contacts-table__cell contacts-table__subject">
-              <select
-                class="contacts-table__subject-select contacts-table__selector"
-                name="filter_id_contact_type"
-                data-input="sort"
-              >
-                <option value="">Субъект</option>
-                <option value="all">Все субъекты</option>
-                <option value="entity">Юридическое лицо</option>
-                <option value="individual">Физическое лицо</option>
-              </select>
-            </div>
-
-            <div class="contacts-table__cell contacts-table__role">
-              <select
-                class="contacts-table__role-select contacts-table__selector"
-                name="filter_contragent" data-input="sort">
-                <option value="">Роль</option>
-                <option value="all">Все роли</option>
-                <option value="1">Контрагент</option>
-                <option value="0">Не контрагент</option>
-              </select>
-            </div>
-            <p class="contacts-table__cell contacts-table__btn"></p>
-            <p class="contacts-table__cell contacts-table__status">
-            </p>
-          </li>
           <li class="contacts-table__row">
             <p class="contacts-table__cell contacts-table__agency">ООО
               «Росавтодорпроектмашинвест
@@ -183,7 +142,6 @@
             </button>
             <p
               class="contacts-table__cell contacts-table__status contacts-table__status_red">
-              <span></span>
             </p>
           </li>
           <li class="contacts-table__row">
@@ -219,7 +177,6 @@
             </button>
             <p
               class="contacts-table__cell contacts-table__status contacts-table__status_green">
-              <span></span>
             </p>
           </li>
           <li class="contacts-table__row">
@@ -253,8 +210,7 @@
               </svg>
             </button>
             <p
-              class="contacts-table__cell contacts-table__status contacts-table__status_green">
-              <span></span>
+              class="contacts-table__cell contacts-table__status contacts-table__status_yellow">
             </p>
           </li>
           <li class="contacts-table__row">
@@ -290,7 +246,6 @@
             </button>
             <p
               class="contacts-table__cell contacts-table__status contacts-table__status_grey">
-              <span></span>
             </p>
           </li>
           <li class="contacts-table__row">
@@ -326,7 +281,6 @@
             </button>
             <p
               class="contacts-table__cell contacts-table__status contacts-table__status_red">
-              <span></span>
             </p>
           </li>
           <li class="contacts-table__row">
@@ -361,7 +315,6 @@
             </button>
             <p
               class="contacts-table__cell contacts-table__status contacts-table__status_green">
-              <span></span>
             </p>
           </li>
           <li class="contacts-table__row">
@@ -397,7 +350,6 @@
             </button>
             <p
               class="contacts-table__cell contacts-table__status contacts-table__status_green">
-              <span></span>
             </p>
           </li>
           <li class="contacts-table__row">
@@ -433,7 +385,6 @@
             </button>
             <p
               class="contacts-table__cell contacts-table__status contacts-table__status_red">
-              <span></span>
             </p>
           </li>
           <li class="contacts-table__row">
@@ -469,7 +420,6 @@
             </button>
             <p
               class="contacts-table__cell contacts-table__status contacts-table__status_green">
-              <span></span>
             </p>
           </li>
         </ul>
