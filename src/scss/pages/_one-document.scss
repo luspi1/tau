@@ -42,15 +42,54 @@
 
     svg {
       margin-right: 5px;
+      display: none;
 
       path {
-        fill: #2F65F6;
         transition: all .3s;
       }
     }
 
+    &._completed {
+      color: #0CB477;
+      border: 1px solid #0CB477;
+
+      .sign-icon_completed {
+        display: block;
+      }
+
+      &:hover {
+        background: #0CB477;
+      }
+
+    }
+
+    &._active {
+      color: #2F65F6;
+      border: 1px solid #2F65F6;
+
+      .sign-icon_active {
+        display: block;
+      }
+
+      &:hover {
+        background: #2F65F6;
+      }
+    }
+
+    &._posted {
+      color: #0CB477;
+      border: 1px solid #0CB477;
+
+      .sign-icon_posted {
+        display: block;
+      }
+
+      &:hover {
+        background: #0CB477;
+      }
+    }
+
     &:hover {
-      background: #2F65F6;
       color: #ffffff;
 
       svg path {

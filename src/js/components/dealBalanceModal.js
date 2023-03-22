@@ -17,11 +17,26 @@ const initPaymentModal = () => {
 
   const requiredFields = document.querySelectorAll('.add-payment input[data-required]')
   if (addPaymentFileBtn) {
-    addPaymentFileBtn.addEventListener('change', (e) => {
-      e.target.value = ''
-      addPaymentManualFill.classList.remove('add-payment__manual-fill_active')
-      addPaymentFileFill.classList.add('add-payment__file-fill_active')
-      toggleRequiredFields(requiredFields)
+    addPaymentFileBtn.addEventListener('change', async (e) => {
+
+      const paymentScript = e.currentTarget.dataset.script
+      const paymentId = e.currentTarget.dataset.id
+
+      const paymentData = {id_payment: paymentId}
+      const jsonPaymentData = JSON.stringify(paymentData)
+      const response = await sendData(jsonPaymentData, paymentScript)
+      const finishedResponse = await response.json()
+      const {status, errortext} = finishedResponse
+
+      if (status === 'ok') {
+        e.target.value = ''
+        addPaymentManualFill.classList.remove('add-payment__manual-fill_active')
+        addPaymentFileFill.classList.add('add-payment__file-fill_active')
+        toggleRequiredFields(requiredFields)
+      } else {
+        showInfoModal(errortext)
+      }
+
     })
   }
   if (addPaymentReturnBtn) {

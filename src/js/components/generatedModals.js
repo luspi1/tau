@@ -1,9 +1,10 @@
-import { sendData, showInfoModal } from '../_functions'
-import { initAllDates }            from './customDate'
-import { initSelects }             from './customSelect'
-import { initCustomMasks }         from './inputMask'
-import { initCloseModals }         from './managePopup'
-import { handleDocumentSignModal } from './signDocModal'
+import { sendData, showInfoModal }    from '../_functions'
+import { initAllDates }               from './customDate'
+import { initSelects }                from './customSelect'
+import { handleDocumentPreviewModal } from './documentPreviewModal'
+import { initCustomMasks }            from './inputMask'
+import { initCloseModals }            from './managePopup'
+import { handleDocumentSignModal }    from './signDocModal'
 
 const generatedModalBtns = document.querySelectorAll('button[data-type-btn="generated"]')
 
@@ -17,14 +18,15 @@ const initGeneratedModal = (modal) => {
 
   //обработка конкретных модалок
   handleDocumentSignModal(modal)  // Модалка подписания документа
+  handleDocumentPreviewModal(modal)  // Модалка предпросмотра документа
 }
 
 
 if (generatedModalBtns) {
 
   generatedModalBtns.forEach(btn => {
-    btn.addEventListener('click', async () => {
-      const generatedModalId = generatedModalBtns[0].dataset.modal
+    btn.addEventListener('click', async (e) => {
+      const generatedModalId = e.currentTarget.dataset.modal
       const generatedModal = document.querySelector(`#${generatedModalId}`)
 
       const generateId = btn.dataset.id

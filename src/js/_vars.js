@@ -14,6 +14,7 @@ const jobChangeModal = document.querySelector('#job-change-modal')
 
 const deleteEmployeeModal = document.querySelector('#delete-employee-modal')
 
+const sendDocModal = document.querySelector('#document-send-modal')
 
 export {
   body,
@@ -29,5 +30,6 @@ export {
   modalConnectLeader,
   modalNewEmployee,
   jobChangeModal,
-  deleteEmployeeModal
+  deleteEmployeeModal,
+  sendDocModal
 }

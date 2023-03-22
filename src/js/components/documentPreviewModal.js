@@ -1,35 +1,29 @@
-// Работа модалки на странице deal-card.html и deal-document
+import { sendData, showInfoModal } from '../_functions'
+import { sendDocModal }            from '../_vars'
 
-import { sendData, showInfoModal } from "../_functions"
-import { initCloseModals }         from './managePopup'
+export const handleDocumentPreviewModal = (previewModal) => {
+  if (previewModal.classList.contains('modal-document-preview')) {
+    const submitBtn = previewModal.querySelector('.modal-document-preview__send-btn')
+    submitBtn.addEventListener('click', async (e) => {
+      const dataScript = e.currentTarget.dataset.script
+      const dataId = e.currentTarget.dataset.id
 
-const dealCardPageMain = document.querySelector('.deals')
-const dealCardPage = document.querySelector('.deals .one-deal')
-const dealDocumentsPage = document.querySelector('.deals .deals-documents')
+      const previewData = {id: dataId}
+      const jsonData = JSON.stringify(previewData)
 
-if (dealCardPage || dealDocumentsPage) {
-
-  const admissionModal = dealCardPageMain.querySelector('#document-preview-modal')
-  const admissionButtons = document.querySelectorAll('[data-modal="document-preview-modal"]')
-
-  admissionButtons.forEach(btn => {
-    const dealBtnId = btn.dataset.id
-    const dealBtnScript = btn.dataset.script
-
-    btn.addEventListener('click', async () => {
-      const paymentData = {id: dealBtnId}
-      const jsonPaymentData = JSON.stringify(paymentData)
-      const response = await sendData(jsonPaymentData, dealBtnScript)
+      const response = await sendData(jsonData, dataScript)
       const finishedResponse = await response.json()
-      const {status, errortext, html} = finishedResponse
+
+      const {status, errortext} = finishedResponse
 
       if (status === 'ok') {
-        admissionModal.innerHTML = html
-        initCloseModals()
+        previewModal.classList.remove('_active')
+        sendDocModal.classList.add('_active')
       } else {
         showInfoModal(errortext)
       }
+
     })
-  })
+  }
 }
 
