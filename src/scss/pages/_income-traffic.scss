@@ -271,7 +271,18 @@
         background-color: #ffffff;
       }
     }
-
+    &__btn-submit {
+      min-width: 96px;
+      width: 96px;
+      height: 40px;
+      @include montserrat-medium;
+      color: #9A9A9A;
+      text-align: center;
+      border: 1px solid #9A9A9A;
+      border-radius: 5px;
+      background: none;
+      cursor: pointer;
+    }
     &__btn-row {
       display: flex;
       margin-top: 16px;
