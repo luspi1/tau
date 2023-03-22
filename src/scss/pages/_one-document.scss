@@ -28,9 +28,9 @@
     @include montserrat-medium;
     font-size: 17px;
     line-height: 21px;
-    border: 1px solid #0CB477;
+    color: #2F65F6;
+    border: 1px solid #2F65F6;
     border-radius: 5px;
-    color: #0CB477;
     transition: all .3s;
     background: none;
     cursor: pointer;
@@ -44,12 +44,13 @@
       margin-right: 5px;
 
       path {
+        fill: #2F65F6;
         transition: all .3s;
       }
     }
 
     &:hover {
-      background: #0CB477;
+      background: #2F65F6;
       color: #ffffff;
 
       svg path {

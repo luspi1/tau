@@ -82,15 +82,16 @@
     background: none;
     color: $link;
     padding: 0;
+    display: none;
 
     &:hover {
       background: none;
     }
   }
 
-  &__create-contact-btn {
-    margin-right: 25px;
-  }
+  //&__create-contact-btn {
+  //  margin-right: 25px;
+  //}
 
   .contacts-table {
     justify-content: space-between;
