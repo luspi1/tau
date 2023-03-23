@@ -1,5 +1,6 @@
 .modal-edit-invoice {
-  position: absolute;
+  position: fixed;
+  max-height: 90vh;
   overflow-y: auto;
   overflow-x: hidden;
   left: 50%;
@@ -70,7 +71,8 @@
       outline: 1px solid #3E29CA;
       background-color: #ffffff;
     }
-    &::placeholder{
+
+    &::placeholder {
       color: #817D8C;
     }
   }
@@ -84,7 +86,6 @@
   &__area-desc {
     height: 250px;
   }
-
 
 
   &__btns {
@@ -148,7 +149,6 @@
   .modal-edit-invoice__input-area {
     padding-top: 15px;
   }
-
 
 
   .modal-edit-invoice__input::placeholder {

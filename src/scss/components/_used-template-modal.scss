@@ -1,7 +1,8 @@
 .modal-used-template {
-  position: absolute;
+  position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
+  max-height: 80vh;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);

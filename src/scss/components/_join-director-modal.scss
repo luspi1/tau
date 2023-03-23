@@ -1,8 +1,10 @@
 .modal-join-director {
-  position: absolute;
+  position: fixed;
+  max-height: 90vh;
+  overflow-y: auto;
   left: 50%;
-  top: 2%;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 99999;
   width: 1086px;
   height: auto;
@@ -12,6 +14,7 @@
   opacity: 0;
   transition: all 0.2s;
   visibility: hidden;
+
 
   @media (max-width: 1024px) {
     width: 650px;
@@ -88,6 +91,7 @@
     p {
       margin-bottom: 8px;
     }
+
     .error-message {
       font-weight: 400;
       font-size: 16px;
@@ -193,10 +197,12 @@
       }
     }
   }
+
   .modal-fullname {
     &__item {
       margin-bottom: 32px;
     }
+
     &__form-title {
       @include montserrat-semibold;
       font-size: 22px;

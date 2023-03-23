@@ -114,6 +114,14 @@ textarea {
   }
 }
 
+.modal {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
 
 .modal-indent {
   padding-bottom: 500px;
@@ -129,6 +137,7 @@ textarea {
 
 
 .copy-btn {
+  display: inline;
   position: absolute;
   left: 5px;
   top: 50%;

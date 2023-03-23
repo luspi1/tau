@@ -1,5 +1,6 @@
 .modal-fullname {
-  position: absolute;
+  position: fixed;
+  max-height: 90vh;
   overflow-y: auto;
   overflow-x: hidden;
   left: 50%;
@@ -163,12 +164,13 @@
 }
 
 .modal-socials {
-  position: absolute;
+  position: fixed;
+  max-height: 85vh;
   overflow-y: auto;
   overflow-x: hidden;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: 40%;
+  transform: translate(-50%, -40%);
   width: 1100px;
   background-color: #ffffff;
   border-radius: 20px;
@@ -368,7 +370,9 @@
 .page-doc__inner {
 
   .passport-modal {
-    position: absolute;
+    position: fixed;
+    max-height: 90vh;
+    overflow-y: auto;
     overflow-x: hidden;
     left: 50%;
     top: 50%;
@@ -609,7 +613,8 @@
 }
 
 .modal-requisites {
-  position: absolute;
+  position: fixed;
+  max-height: 90vh;
   overflow-y: auto;
   overflow-x: hidden;
   left: 50%;

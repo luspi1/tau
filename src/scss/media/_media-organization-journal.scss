@@ -59,7 +59,8 @@
     padding-left: 20px;
   }
   .organization-journal .journal .flex-table__row-content {
-    padding-right: 40px;
+    padding-right: 10px;
+    width: 100%;
   }
 
   .organization-journal .journal .flex-table__row-title .flex-table__cell-1,
@@ -80,6 +81,7 @@
   .organization-journal .journal .flex-table__cell {
     margin-bottom: 10px;
     padding-right: 0;
+    height: 40px;
   }
   .organization-journal .journal .flex-table__cell,
   .organization-journal .journal .flex-table__cell a {
@@ -89,7 +91,7 @@
 
 @media (max-width: 576px) {
   .organization-journal .journal__title {
-   padding-bottom: 10px;
+    padding-bottom: 10px;
     font-size: 16px;
     line-height: 20px;
   }

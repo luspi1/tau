@@ -2,11 +2,28 @@ import { body, modalOverlay } from "../_vars"
 
 const openModalBtns = document.querySelectorAll('[data-modal]')
 
+const handleCloseModalKeyboard = (e) => {
+  if (e.keyCode === 27) {
+    document.querySelectorAll('.modal').forEach(modal => {
+      if (modal.classList.contains('_active')) {
+        modal.classList.remove('_active')
+        modal.closest('main').style.minHeight = "calc(100vh - 60px)"
+      }
+    })
+    if (modalOverlay) {
+      modalOverlay.classList.remove('modal-overlay_active')
+    }
+    document.removeEventListener('keydown', handleCloseModalKeyboard)
+  }
+}
+
+
 if (openModalBtns) {
   openModalBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault()
 
+      document.addEventListener('keydown', handleCloseModalKeyboard)
       const btnCurrentModal = btn.dataset.modal
       const currentBtn = e.currentTarget
       const currentPageMain = btn.closest('main')
@@ -42,6 +59,7 @@ const initCloseModals = () => {
         e.preventDefault()
         body.classList.remove('_lock')
 
+        document.removeEventListener('keydown', handleCloseModalKeyboard)
         document.querySelectorAll('.modal').forEach(modal => {
           if (modal.classList.contains('_active')) {
             modal.classList.remove('_active')
@@ -58,10 +76,10 @@ const initCloseModals = () => {
 
 initCloseModals()
 
-
 if (modalOverlay) {
   modalOverlay.addEventListener('click', (e) => {
     e.preventDefault()
+    document.removeEventListener('keydown', handleCloseModalKeyboard)
     body.classList.remove('_lock')
     e.currentTarget.classList.remove('modal-overlay_active')
     const activeModal = document.querySelector('.modal._active')
