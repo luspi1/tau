@@ -1,11 +1,12 @@
 .modal-delete-employee {
-  position: absolute;
+  position: fixed;
   overflow-y: auto;
   overflow-x: hidden;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 646px;
+  max-height: 90vh;
   background-color: #ffffff;
   border-radius: 20px;
   padding: 50px 50px 65px 45px;
