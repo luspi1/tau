@@ -143,12 +143,41 @@
     margin-right: 5px;
   }
 
+  &__cancel-sign {
+    @include montserrat-medium;
+    font-size: 16px;
+    line-height: 20px;
+    color: #BC0D48;
+    border: 1px solid #BC0D48;
+    border-radius: 3px;
+    width: 180px;
+    transition: all .3s;
+    padding: 6px 11px;
+    background: none;
+    cursor: pointer;
+
+    &:hover {
+      color: #ffffff;
+      background: #BC0D48;
+    }
+  }
+
   &__lastname {
-    margin-bottom: 22px;
     @include montserrat-medium;
     font-size: 16px;
     line-height: 20px;
     color: #000000;
+    margin-right: 15px;
+  }
+
+  &__form-author-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__lastname-wrapper {
+    margin-bottom: 20px;
   }
 
   &__author-info {
@@ -246,11 +275,6 @@
 }
 
 .page-deals {
-  .air-datepicker {
-    transform: translate(0, -300px) !important;
-
-  }
-
   .air-datepicker--pointer {
     display: none;
   }

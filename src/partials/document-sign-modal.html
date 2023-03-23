@@ -1,4 +1,5 @@
-<div class="modal-document-sign modal" id="document-sign-modal">
+<div class="modal-document-sign modal" id="document-sign-modal"
+     data-body-lock="true">
   <button class="modal-document-sign__close-btn" type="button"
           data-close-modal="true">
     <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
@@ -26,12 +27,20 @@
           <option value="Author2">Author2</option>
           <option value="Author3">Author3</option>
         </select>
-        <p class="modal-document-sign__lastname">Иванов И. И.</p>
+        <div class="modal-document-sign__form-author-wrapper">
+          <p class="modal-document-sign__lastname">Иванов И. И.</p>
+          <button class="modal-document-sign__cancel-sign hidden"
+                  type="button"
+                  data-script="./data/getCases.txt">
+            отменить подпись
+          </button>
+        </div>
       </div>
       <div class="modal-document-sign__date-wrapper">
         <p class="modal-document-sign__label">Дата подписания нами</p>
         <input data-date-start name="sign_date" type="text"
                class="modal-document-sign__input" data-custom-mask="99.99.9999">
+        <div class="date-custom-container"></div>
         <p class="modal-document-sign__date">13 марта 2023</p>
       </div>
       <div class="modal-document-sign__buttons">
@@ -76,6 +85,7 @@
         </div>
         <input data-date-start name="sign_date_customer" type="text"
                class="modal-document-sign__input" data-custom-mask="99.99.9999">
+        <div class="date-custom-container"></div>
         <p class="modal-document-sign__date">13 марта 2023</p>
         <button class="modal-document-sign__btn modal-document-sign__btn-tag"
                 type="submit">

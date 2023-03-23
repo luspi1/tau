@@ -9,7 +9,9 @@ const initAllDates = () => {
 
       const customDate = new AirDatepicker(el, {
         startDate: dateStart,
+        container: '.date-custom-container',
       })
+
 
       el.addEventListener('click', (e) => {
         const featuredDate = e.currentTarget.value.split('.').reverse().join('-')
