@@ -608,13 +608,15 @@
                 <a href="#" target="_blank">Тедорадзе А.С., Масякин А.Н.</a>
               </div>
             </div>
-            <a class="aside__btn-people" href="#">Поменять сотрудников
-            </a>
+            <button class="aside__btn-people" type="button"
+                    data-modal="change-employee-modal">Поменять сотрудников
+            </button>
           </div>
         </aside>
 
       </div>
     </section>
+    @include('partials/change-employee-modal.html')
     @include('partials/document-preview-modal.html')
     @include('partials/document-send-modal.html')
     @include('partials/document-sign-modal.html')

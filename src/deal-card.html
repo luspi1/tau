@@ -471,12 +471,14 @@
               <a href="#" target="_blank">Тедорадзе А.С., Масякин А.Н.</a>
             </div>
           </div>
-          <a href="#" class="aside__btn-people">Поменять сотрудников
-          </a>
+          <button class="aside__btn-people" data-modal="change-employee-modal"
+                  type="button">Поменять сотрудников
+          </button>
         </div>
       </aside>
     </div>
     @include('partials/document-preview-modal.html')
+    @include('partials/change-employee-modal.html')
     @include('partials/info-modal.html')
     @include('partials/document-send-modal.html')
     @include('partials/loader.html')

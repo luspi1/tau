@@ -4,6 +4,7 @@ const openModalBtns = document.querySelectorAll('[data-modal]')
 
 const handleCloseModalKeyboard = (e) => {
   if (e.keyCode === 27) {
+    body.classList.remove('_lock')
     document.querySelectorAll('.modal').forEach(modal => {
       if (modal.classList.contains('_active')) {
         modal.classList.remove('_active')
