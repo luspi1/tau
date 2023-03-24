@@ -11,7 +11,7 @@ const initSelects = () => {
       allowHTML: true
     })
   })
-  
+
 
 // Селектор в модалке нового контакта
   const typeContactInput = document.querySelector('.new-contact__type-input')
@@ -331,8 +331,22 @@ const initSelects = () => {
 
 }
 
+// Селекторы модалки  на странице "Баланс сделки"
+const changeEmployeeSelects = document.querySelectorAll('.change-employee__select')
+
+if (changeEmployeeSelects) {
+  changeEmployeeSelects.forEach(el => {
+    const choices = new Choices(el, {
+      itemSelectText: '',
+      searchEnabled: false,
+      shouldSort: false,
+      allowHTML: true
+    })
+  })
+}
+
 initSelects()
 
 
-export { initSelects }
+export {initSelects}
 
