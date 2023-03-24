@@ -19,6 +19,7 @@
     'deal-balance': 'deal-submenu_active',
     })
     @include('partials/add-payment-modal.html')
+    @include('partials/change-employee-modal.html')
     <section class="deals-balance">
       <div class="container">
         <div class="deals-balance__content">
@@ -80,7 +81,6 @@
                 class="deals-balance-table__cell deals-balance-table__type"
                 href="#">
                 Платеж 1 этапа</a>
-
               <p
                 class="deals-balance-table__cell deals-balance-table__price">
                 892 000 100 ₽</p>
@@ -222,8 +222,7 @@
                 <a href="#" target="_blank">Тедорадзе А.С., Масякин А.Н.</a>
               </div>
             </div>
-            <a class="aside__btn-people" href="#">Поменять сотрудников
-            </a>
+            <button class="aside__btn-people" type="button" data-modal="change-employee-modal">Поменять сотрудников</button>
           </div>
         </aside>
 
