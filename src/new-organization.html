@@ -46,7 +46,7 @@
                 </div>
                 <div
                   class="general-dropzone dropzone new-organization__general-dropzone"
-                  data-general-info='{"url": "/include/ajax/upload_image.php", "removeUrl":"/include/ajax/delete_image.php", "width":"170", "height":"170", "acceptedFiles": ".png, .jpeg, .jpg", "type":"org", "type":"org", "filesCount": "3", "additional": "доп.контент"}'>
+                  data-general-info='{"url": "/include/ajax/upload_image.php", "removeUrl":"/include/ajax/delete_image.php", "width":"170", "height":"170", "acceptedFiles": ".png, .jpeg, .jpg", "type":"org", "filesCount": "3", "additional": "доп.контент"}'>
                   <div
                     class="general-dropzone__message-wrapper new-organization__message-wrapper">
                     <div class="dz-message">
@@ -55,6 +55,60 @@
                     </div>
                     <div class="dz-message">
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="new-organization__section new-organization__seal-section">
+            <h2 class="new-organization__section-title">Загрузка печати</h2>
+            <div class="new-organization__prompt">
+              <p>Печать и подпись загружаются в формате PNG, с прозрачным нижним
+                слоем, НЕ на белом фоне.</p>
+            </div>
+            <div
+              class="new-organization__item-wrapper general-dropzone-wrapper">
+              <div
+                class="new-organization__input-wrapper seal-loading">
+                <button
+                  class="new-organization__btn general-dropzone__add-btn"
+                  id="seal-add"
+                  type="button">Загрузить
+                </button>
+              </div>
+              <div
+                class="general-dropzone dropzone new-organization__general-dropzone"
+                data-show-preview="true"
+                data-general-info='{"url": "./data/getCases.txt", "removeUrl":"./data/getCases.txt", "width":"170", "height":"170", "acceptedFiles": ".png", "type":"org-seal", "filesCount": "1", "additional": "доп.контент"}'>
+                <div
+                  class="general-dropzone__message-wrapper new-organization__message-wrapper">
+                  <div class="dz-message">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="new-organization__section new-organization__sign-section">
+            <h2 class="new-organization__section-title">Загрузка подписи</h2>
+            <div
+              class="new-organization__item-wrapper general-dropzone-wrapper">
+              <div
+                class="new-organization__input-wrapper sign-loading">
+                <button
+                  class="new-organization__btn general-dropzone__add-btn"
+                  id="sign-add"
+                  type="button">Загрузить
+                </button>
+              </div>
+              <div
+                class="general-dropzone dropzone new-organization__general-dropzone"
+                data-show-preview="true"
+                data-general-info='{"url": "./data/getCases.txt", "removeUrl":"./data/getCases.txt", "width":"170", "height":"170", "acceptedFiles": ".png", "type":"org-sign", "filesCount": "1", "additional": "доп.контент"}'>
+                <div
+                  class="general-dropzone__message-wrapper new-organization__message-wrapper">
+                  <div class="dz-message">
                   </div>
                 </div>
               </div>
@@ -527,12 +581,12 @@
       </div>
     </section>
     @include('partials/info-modal.html')
+    @include('partials/big-img-modal.html')
     @include('partials/loader.html')
   </main>
 
   @include('partials/footer.html')
 </div>
-
 
 <template id="account-template">
   <div class="new-organization__section new-organization__bank-account">

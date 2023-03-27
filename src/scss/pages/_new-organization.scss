@@ -9,6 +9,31 @@
     margin-bottom: 40px;
   }
 
+  &__prompt {
+    background: #F4F7FB;
+    border-radius: 5px;
+    position: relative;
+    color: #2F65F6;
+    padding: 13px 20px 13px 43px;
+    max-width: 876px;
+    margin-bottom: 20px;
+
+    p {
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 15px;
+      width: 20px;
+      height: 20px;
+      background: url("../img/deal-prompt-icon.svg") no-repeat;
+    }
+  }
+
   &__form {
     max-width: 1070px;
   }
@@ -153,6 +178,7 @@
       margin: 12px 20px 0 0;
       width: 170px;
       height: 170px;
+
       img {
         border-radius: 5px;
       }
@@ -165,7 +191,6 @@
       border-radius: 5px;
       margin-right: 20px;
     }
-
 
 
   }
@@ -218,6 +243,88 @@
     &:checked + label::before {
       background-image: url("../img/org-mark.svg");
     }
+  }
+
+
+  &__seal-section {
+    padding: 40px 0;
+    border-bottom: 1px dotted #C4C4C4;
+    border-top: 1px dotted #C4C4C4;
+
+    .new-organization__item-wrapper {
+      justify-content: flex-start;
+    }
+
+    #seal-add {
+      width: 351px;
+
+      &.btn_disabled {
+        display: none;
+      }
+    }
+
+    .general-dropzone {
+      height: auto;
+    }
+
+    .general-dropzone-wrapper {
+      align-items: flex-start;
+    }
+
+
+    .new-organization__general-dropzone .dz-preview img {
+      height: 100%;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .new-organization__general-dropzone .dz-message {
+      background: none;
+      border-radius: 5px;
+      margin-right: 0;
+    }
+
+
+  }
+
+  &__sign-section {
+    padding: 0 0 40px;
+    border-bottom: 1px dotted #C4C4C4;
+
+    .new-organization__item-wrapper {
+      justify-content: flex-start;
+    }
+
+    #sign-add {
+      width: 351px;
+
+      &.btn_disabled {
+        display: none;
+      }
+    }
+
+    .general-dropzone {
+      height: auto;
+    }
+
+    .general-dropzone-wrapper {
+      align-items: flex-start;
+    }
+
+
+    .new-organization__general-dropzone .dz-preview img {
+      height: 100%;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .new-organization__general-dropzone .dz-message {
+      background: none;
+      border-radius: 5px;
+      margin-right: 0;
+    }
+
+
   }
 
 
@@ -292,7 +399,6 @@
       margin-right: 30px;
     }
   }
-
 
 
   &__textarea-wrapper {
