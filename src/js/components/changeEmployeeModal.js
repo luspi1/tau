@@ -15,11 +15,15 @@ if (changeEmployeeModal) {
 
   const executorForm = changeEmployeeModal.querySelector('.change-employee__executor-form')
   const executorFio = executorForm.querySelector('.change-employee__surname')
+  const dealId = changeEmployeeModal.querySelector('h2[data-deal-id]').dataset.dealId
 
   executorForm.addEventListener('submit', async (e) => {
     e.preventDefault()
     const data = serializeForm(e.target)
-    const objData = formToObj(data)
+    const objData = {
+      ...formToObj(data),
+      id_deal: dealId
+    }
     const jsonData = JSON.stringify(objData)
 
     toggleLoader()
@@ -48,7 +52,8 @@ if (changeEmployeeModal) {
     const data = serializeForm(e.target)
     const objData = {
       ...formToObj(data),
-      type: 'add'
+      type: 'add',
+      id_deal: dealId
     }
     const jsonData = JSON.stringify(objData)
 
@@ -75,7 +80,8 @@ if (changeEmployeeModal) {
       const currentDelBtn = e.target
       const data = {
         type: 'delete',
-        id_person: currentDelBtn.dataset.id
+        id_person: currentDelBtn.dataset.id,
+        id_deal: dealId
       }
       const jsonData = JSON.stringify(data)
 
