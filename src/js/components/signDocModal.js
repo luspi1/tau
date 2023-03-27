@@ -29,8 +29,7 @@ export const handleDocumentSignModal = (signModal) => {
 
       toggleLoader()
 
-      // const response = await sendData(jsonData, event.target.action)
-      const response = await sendData(jsonData, './data/getCases.txt')
+      const response = await sendData(jsonData, event.target.action)
       const finishedResponse = await response.json()
 
       toggleLoader()

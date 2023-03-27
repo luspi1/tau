@@ -1,4 +1,4 @@
-import { modalOverlay, loader, infoModal, bigImgModal } from "./_vars"
+import { bigImgModal, infoModal, loader, modalOverlay } from "./_vars"
 
 // Функция очистки классов, принимает класс, который будет удален отовсюду
 const removeClasses = (className) => {
@@ -229,6 +229,13 @@ const checkValue = (checkClasses) => {
   return isValue
 }
 
+//преобразование строки в HTML элемент
+
+const parseStringToHtml = (string, endElement) => {
+  return new DOMParser().parseFromString(string, "text/html").querySelector(endElement)
+}
+
+
 export {
   removeClasses,
   sendData,
@@ -245,5 +252,6 @@ export {
   cutString,
   changePage,
   toggleRequiredFields,
-  checkValue
+  checkValue,
+  parseStringToHtml
 }

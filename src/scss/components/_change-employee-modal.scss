@@ -45,7 +45,7 @@
     color: #000000;
   }
 
-  &__inner {
+  &__executor-form {
     margin-bottom: 32px;
     padding-bottom: 35px;
     border-bottom: 2px dotted #C4C4C4;
@@ -88,6 +88,13 @@
     border: 1px solid $link;
     border-radius: 5px;
     cursor: pointer;
+    transition: .3s all;
+
+    &:hover {
+      color: #ffffff;
+      background: $link;
+    }
+    
   }
 
   &__list {
@@ -159,10 +166,6 @@
     }
   }
 
-  &__btn-save {
-    color: #FFFFFF;
-    background-color: $link;
-  }
 
   @media (max-width: 768px) {
     max-width: 94%;

@@ -35,4 +35,5 @@ import './components/documentPreviewModal'
 import './components/createTemplate'
 import './components/generatedModals'
 import './components/signDocModal'
+import './components/changeEmployeeModal'
 
