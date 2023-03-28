@@ -54,7 +54,7 @@
 
     &__row-title {
       padding-top: 15px;
-      padding-bottom:  12px;
+      padding-bottom: 12px;
       background-color: #F7F8FA;
 
       .flex-table__cell {
@@ -65,10 +65,12 @@
     &__row-content {
       padding-top: 18px;
       padding-bottom: 19px;
-      .flex-table__cell-1{
+
+      .flex-table__cell-1 {
         font-weight: 500;
         font-size: 18px;
-        line-height: 22px;}
+        line-height: 22px;
+      }
     }
 
     &__owner-label {
@@ -87,10 +89,14 @@
     &__cell {
       color: #000000;
       min-width: 15%;
+
+      a {
+        color: #000000;
+      }
     }
 
     &__cell-1 {
-     min-width: 44%;
+      min-width: 44%;
     }
   }
 }
