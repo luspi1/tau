@@ -1,5 +1,5 @@
-import Choices from 'choices.js'
-import {toggleRequiredFields} from '../_functions'
+import { checkConfirm, sendData, showInfoModal, toggleLoader } from '../_functions'
+import { modalOverlay }                                        from '../_vars'
 
 const incomePageMain = document.querySelector('.income-page')
 
@@ -7,7 +7,7 @@ if (incomePageMain) {
 
   //аккордеоны
 
- document.addEventListener('click', (event) => {
+  document.addEventListener('click', (event) => {
     const target = event.target
     if (target && target.classList.contains('months__arrow')) {
       target.classList.toggle('active')
@@ -55,6 +55,36 @@ if (incomePageMain) {
     hideCustomCalendar(trafficCalendarWrappers, trafficInputCalendars)
   }
 
+
+  // Удаление months__accordion с подтверждением от сервера
+
+  incomePageMain.addEventListener('click', (e) => {
+    if (e.target.classList.contains('months__button-delete')) {
+      const delBtn = e.target
+      const delEl = delBtn.closest('.months__accordion[data-delete="element"]')
+      const delElId = delEl.dataset.id
+      const delScript = delBtn.dataset.script
+      const handleDelMonthEl = async () => {
+        const data = {id_deal_payment: delElId}
+        const jsonData = JSON.stringify(data)
+
+        toggleLoader()
+
+        const response = await sendData(jsonData, delScript)
+        const finishedResponse = await response.json()
+
+        toggleLoader()
+
+        const {status, errortext} = finishedResponse
+        if (status === 'ok') {
+          delEl.remove()
+        } else {
+          showInfoModal(errortext)
+        }
+      }
+      checkConfirm(handleDelMonthEl)
+    }
+  })
 }
 
 

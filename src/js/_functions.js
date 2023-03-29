@@ -1,14 +1,14 @@
-import { bigImgModal, infoModal, loader, modalOverlay } from "./_vars"
+import { bigImgModal, checkConfirmModal, infoModal, loader, modalOverlay } from "./_vars"
 
 // Функция очистки классов, принимает класс, который будет удален отовсюду
-const removeClasses = (className) => {
+export const removeClasses = (className) => {
   const classArr = document.querySelectorAll(`.${className}`)
   classArr.forEach(el => el.classList.remove(className))
 }
 
 
 // Фунцкия отправки fetch запросов
-async function sendData(data, url) {
+export async function sendData(data, url) {
   return await fetch(url, {
     method: 'POST',
     headers: {'Content-Type': 'multipart/form-data'},
@@ -18,7 +18,7 @@ async function sendData(data, url) {
 
 // Обновление полей по дата-атрибуту
 
-const updateFields = (inputsObj, updatableFields) => {
+export const updateFields = (inputsObj, updatableFields) => {
   updatableFields.forEach(field => {
     field.textContent = inputsObj[field.dataset.updfield]
   })
@@ -27,12 +27,12 @@ const updateFields = (inputsObj, updatableFields) => {
 
 //Сбор данных форм
 
-const serializeForm = (formNode) => {
+export const serializeForm = (formNode) => {
   return new FormData(formNode)
 }
 
 // Преобразование formData в объект
-const formToObj = (formData) => {
+export const formToObj = (formData) => {
   return Array.from(formData.entries()).reduce((memo, pair) => ({
     ...memo,
     [pair[0]]: pair[1],
@@ -42,11 +42,11 @@ const formToObj = (formData) => {
 
 // показ/скрытие модалки ошибки
 
-const toggleLoader = () => {
+export const toggleLoader = () => {
   loader.classList.toggle('hidden')
 }
 
-const showInfoModal = (responseText) => {
+export const showInfoModal = (responseText) => {
   infoModal.addEventListener('click', (e) => {
     if (e.target.classList.contains('info-modal')) {
       infoModal.classList.add('hidden')
@@ -60,7 +60,7 @@ const showInfoModal = (responseText) => {
 
 // Функция показа модалки большой картинки
 
-const showBigImgModal = (path) => {
+export const showBigImgModal = (path) => {
   bigImgModal.classList.add('big-img-modal_active')
   bigImgModal.querySelector('img').src = path
   modalOverlay.classList.add('modal-overlay_active')
@@ -72,7 +72,7 @@ const showBigImgModal = (path) => {
 
 // функция отправки данных с попапа
 
-async function handlePopupSubmit(inputValue, popup, optionalInfo) {
+export async function handlePopupSubmit(inputValue, popup, optionalInfo) {
   const inputData = inputValue
 
   const addData = popup.dataset.json
@@ -115,7 +115,7 @@ async function handlePopupSubmit(inputValue, popup, optionalInfo) {
   }
 }
 
-const handlePopupInputs = (e) => {
+export const handlePopupInputs = (e) => {
   let inputValue = e.target.value
 
   const targetSelectPopup = e.currentTarget.closest('.select-input-wrapper').querySelector('.select-popup')
@@ -143,7 +143,7 @@ const handlePopupInputs = (e) => {
 
 // Закрытие попап-селектов по нажатию на другие элементы
 
-const closeSelectPopups = (page) => {
+export const closeSelectPopups = (page) => {
   const siteContainer = page?.closest('.site-container')
   if (siteContainer) {
     siteContainer.addEventListener('click', (e) => {
@@ -158,7 +158,7 @@ const closeSelectPopups = (page) => {
 }
 
 //блокировка инпутов
-const blockFields = (inputsWrapper) => {
+export const blockFields = (inputsWrapper) => {
   if (inputsWrapper) {
     inputsWrapper.forEach(wrapper => {
       wrapper.classList.add('input_disabled')
@@ -170,7 +170,7 @@ const blockFields = (inputsWrapper) => {
 // Обрезка длинного текста на определенную длину
 
 
-const cutString = (stringArray, stringLength) => {
+export const cutString = (stringArray, stringLength) => {
   stringArray.forEach(str => {
     let cutLength = 0
     stringLength ? cutLength = stringLength : cutLength = +str.dataset.shear
@@ -182,7 +182,7 @@ const cutString = (stringArray, stringLength) => {
 }
 
 
-const changePage = (selectors) => {
+export const changePage = (selectors) => {
   if (selectors) {
     selectors.forEach(el => {
       el.addEventListener('change', (e) => {
@@ -197,7 +197,7 @@ const changePage = (selectors) => {
 
 // переключение обязательных полей
 
-const toggleRequiredFields = (reqInputs) => {
+export const toggleRequiredFields = (reqInputs) => {
   if (reqInputs) {
     reqInputs.forEach(el => {
       if (el.dataset.required === 'true') {
@@ -212,7 +212,7 @@ const toggleRequiredFields = (reqInputs) => {
 }
 
 // проверка наличия значение в инпутах
-const checkValue = (checkClasses) => {
+export const checkValue = (checkClasses) => {
   let isValue = true
   let checkInputs
 
@@ -231,27 +231,43 @@ const checkValue = (checkClasses) => {
 
 //преобразование строки в HTML элемент
 
-const parseStringToHtml = (string, endElement) => {
+export const parseStringToHtml = (string, endElement) => {
   return new DOMParser().parseFromString(string, "text/html").querySelector(endElement)
 }
 
 
-export {
-  removeClasses,
-  sendData,
-  serializeForm,
-  toggleLoader,
-  formToObj,
-  showInfoModal,
-  updateFields,
-  showBigImgModal,
-  handlePopupSubmit,
-  handlePopupInputs,
-  closeSelectPopups,
-  blockFields,
-  cutString,
-  changePage,
-  toggleRequiredFields,
-  checkValue,
-  parseStringToHtml
+// функция появления/скрытия модалки подтверждения. Возвращает true/false (подтверждено или нет)
+
+export const checkConfirm = (confirmFunc, textConfirm) => {
+  if (checkConfirmModal) {
+    if (textConfirm) {
+      const confirmDesc = checkConfirmModal.querySelector('.check-confirm-modal__content-text')
+      confirmDesc.textContent = textConfirm
+    }
+    checkConfirmModal.classList.remove('hidden')
+    const handleClickConfirm = (e) => {
+      e.preventDefault()
+      if (e.target.classList.contains('check-confirm-modal') || e.target.classList.contains('_cancel')) {
+        checkConfirmModal.classList.add('hidden')
+        checkConfirmModal.removeEventListener('click', handleClickConfirm)
+      }
+      if (e.target.classList.contains('_confirm')) {
+        checkConfirmModal.classList.add('hidden')
+        confirmFunc()
+        checkConfirmModal.removeEventListener('click', handleClickConfirm)
+      }
+    }
+    checkConfirmModal.addEventListener('click', handleClickConfirm)
+  }
 }
+
+
+
+
+
+
+
+
+
+
+

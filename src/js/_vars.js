@@ -16,6 +16,8 @@ const deleteEmployeeModal = document.querySelector('#delete-employee-modal')
 
 const sendDocModal = document.querySelector('#document-send-modal')
 
+const checkConfirmModal = document.querySelector('.check-confirm-modal')
+
 export {
   body,
   modalOverlay,
@@ -31,5 +33,6 @@ export {
   modalNewEmployee,
   jobChangeModal,
   deleteEmployeeModal,
-  sendDocModal
+  sendDocModal,
+  checkConfirmModal
 }
