@@ -265,6 +265,7 @@
 
     &__cancel-btn {
       border: none;
+      cursor: pointer;
       background: none;
       color: #2F65F6;
       @include montserrat-bold;
