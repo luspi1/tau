@@ -1,0 +1,227 @@
+.templater {
+  .container {
+    padding-top: 33px;
+    padding-bottom: 150px;
+  }
+
+  &__top {
+    margin-bottom: 20px;
+  }
+
+  &__top-wrapper {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 13px;
+  }
+
+  &__title {
+    max-width: 60%;
+    width: max-content;
+    margin-right: 60px;
+    margin-bottom: 10px;
+    @include montserrat-semibold;
+    font-size: 36px;
+    line-height: 44px;
+    color: #000000;
+  }
+
+  &__links {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+
+    a {
+      color: $link;
+      font-weight: 500;
+    }
+  }
+
+  &__label {
+    margin-bottom: 5px;
+    color: #858584;
+  }
+
+  &__select-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__input-wrap {
+    width: 50%;
+    margin-right: 15px;
+    margin-bottom: 10px;
+
+    input {
+      width: 100%;
+      height: 40px;
+      padding: 0 14px;
+      line-height: 20px;
+      background-color: #F2F1F7;
+      border-radius: 5px;
+      border: none;
+
+      &:focus-visible {
+        outline: 1px solid #3e29ca;
+        background-color: #FFFFFF;
+      }
+
+    }
+  }
+
+  &__select-wrap {
+    width: 276px;
+    margin-right: 15px;
+    margin-bottom: 10px;
+
+    .choices__placeholder {
+      font-size: 16px;
+      color: #858584;
+      opacity: 1;
+    }
+
+    .choices[data-type*="select-one"]::after {
+      border-width: 7px;
+      border-color: #817d8c transparent transparent transparent;
+    }
+
+    .choices {
+      width: 100%;
+      border: 1px solid transparent;
+
+
+      &.is-open {
+        border: 1px solid #3e29ca;
+        border-radius: 5px;
+      }
+    }
+
+    .choices[data-type*="select-one"].is-open::after {
+      margin-top: -2px;
+    }
+
+    .choices__inner {
+      min-height: auto;
+      height: 40px;
+      padding: 0 7.5px 0;
+      font-size: 16px;
+      line-height: 32px;
+      color: #858584;
+      background-color: #F2F1F7;
+      border: 1px solid #e6e6e6;
+      border-radius: 5px;
+    }
+
+    .choices__list[aria-expanded] .choices__item {
+      font-size: 16px;
+    }
+
+    .choices__list--dropdown .choices__item--selectable.is-highlighted,
+    .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+      background: #f8f8fa;
+      border-radius: 5px;
+    }
+
+    .choices__item.choices__item--choice.is-selected.choices__item--selectable {
+      color: #2f65f6;
+    }
+
+    .choices__list--dropdown,
+    .choices__list[aria-expanded] {
+      border: 1px solid #f8f8fa;
+      filter: drop-shadow(0px 0px 20px rgba(10, 35, 91, 0.15));
+      margin-top: 10px;
+    }
+  }
+
+  &__btn-search {
+    min-width: 96px;
+    max-width: 100px;
+    height: 40px;
+    margin: auto 0 10px;
+    padding: 0 17px;
+    color: $link;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: 1px solid $link;
+    @include montserrat-medium;
+    font-size: 17px;
+    line-height: 21px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s;
+    cursor: pointer;
+  }
+
+  &__list {
+    margin-bottom: 35px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 14px 30px 13px 14px;
+    background: #F7F8FA;
+    border-radius: 5px;
+
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+
+    .col-1 {
+      width: 38%;
+      margin-right: 20px;
+    }
+
+    .col-2 {
+      width: 49%;
+      margin-right: 20px;
+      padding-left: 50px;
+      display: flex;
+      position: relative;
+
+      .copy-values {
+        color: $link;
+        cursor: pointer;
+      }
+    }
+
+    .col-3 {
+      min-width: 145px;
+      width: 145px;
+    }
+  }
+
+  &__svg-wrap {
+    width: 23px;
+    height: 23px;
+    position: absolute;
+    left: 0;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+  flex-wrap: wrap;
+    .templater__label {
+      margin-right: 70px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__btn {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: left;
+    background: none;
+    border: none;
+    color: $link;
+    cursor: pointer;
+
+    &:first-of-type {
+      margin-right: 50px;
+    }
+  }
+}

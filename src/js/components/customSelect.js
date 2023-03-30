@@ -328,7 +328,6 @@ const initSelects = () => {
       })
     })
   }
-
 }
 
 // Селекторы модалки  на странице "Баланс сделки"
@@ -336,6 +335,20 @@ const changeEmployeeSelects = document.querySelectorAll('.change-employee__selec
 
 if (changeEmployeeSelects) {
   changeEmployeeSelects.forEach(el => {
+    const choices = new Choices(el, {
+      itemSelectText: '',
+      searchEnabled: false,
+      shouldSort: false,
+      allowHTML: true
+    })
+  })
+}
+
+// Селекторы на странице "шаблонизатор теги шаблона"
+const templaterSelects = document.querySelectorAll('.templater__select-wrap select')
+
+if (templaterSelects) {
+  templaterSelects.forEach(el => {
     const choices = new Choices(el, {
       itemSelectText: '',
       searchEnabled: false,

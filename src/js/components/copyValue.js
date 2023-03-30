@@ -1,4 +1,4 @@
- const copyBtns = document.querySelectorAll('.copy-btn')
+const copyBtns = document.querySelectorAll('.copy-btn')
 
 copyBtns.forEach(btn => {
   const copyField = btn.closest('.copy-field')
@@ -11,3 +11,10 @@ copyBtns.forEach(btn => {
 })
 
 
+const copyCurrentValues = document.querySelectorAll('.copy-values')
+
+copyCurrentValues.forEach(item => {
+  item.addEventListener('click', ({currentTarget}) => {
+    navigator.clipboard.writeText(currentTarget.textContent)
+  })
+})
