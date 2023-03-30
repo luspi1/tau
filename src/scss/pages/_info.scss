@@ -93,6 +93,7 @@
       width: 16px;
       height: 16px;
       z-index: 100;
+
       &:hover {
         background: url("../img/svg/delete-avatar-hover.svg") no-repeat;
       }
@@ -213,10 +214,91 @@
     margin-bottom: 22px;
   }
 
+
+  &__table {
+    .flex-table__row {
+      padding: 0;
+      justify-content: space-between;
+
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+    }
+
+    .flex-table__cell {
+      width: auto;
+    }
+  }
+
+  &__table-deals {
+    .detailed-info__cell-date {
+      text-align: left;
+    }
+  }
+
+  &__cell-title {
+    @include montserrat-medium;
+    font-size: 16px;
+    line-height: 20px;
+    color: #222220;
+    max-width: 30%;
+  }
+
+  &__cell-link {
+    @include montserrat-medium;
+    font-size: 16px;
+    line-height: 20px;
+    color: #2F65F6;
+    max-width: 37%;
+  }
+
+  &__cell-date {
+    @include montserrat-regular;
+    font-size: 16px;
+    line-height: 20px;
+    color: #858584;
+    text-align: right;
+    max-width: 30%;
+  }
+
+  &__cell-status {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    max-width: 10%;
+
+    span {
+      display: inline-block;
+      border-radius: 20px;
+      width: 45px;
+      height: 8px;
+    }
+
+    &._green {
+      span {
+        background-color: #0CB477;
+      }
+    }
+
+    &._red {
+      span {
+        background-color: #BC0D48;
+      }
+    }
+
+    &._yellow {
+      span {
+        background-color: #EFD910;
+      }
+    }
+  }
+
+
   &__items {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: 1fr 120px;
     grid-column-gap: 22px;
     grid-row-gap: 25px;
   }
@@ -244,7 +326,7 @@
   .detailed-item {
     background-color: #F7F8FA;
     border-radius: 15px;
-    padding: 21px 110px 24px 25px;
+    padding: 21px 18px 32px 25px;
     min-height: 120px;
 
     a {
@@ -341,14 +423,15 @@
     &__list-data {
       @include montserrat-medium;
       line-height: 23px;
+
       [data-updfield = bank_schet],
-   [data-updfield = bank_bik],
-   [data-updfield = bank_korschet] {
-    display: inline-flex;
-    max-width: 185px;
-    overflow: hidden;
-   }
-   }
+      [data-updfield = bank_bik],
+      [data-updfield = bank_korschet] {
+        display: inline-flex;
+        max-width: 185px;
+        overflow: hidden;
+      }
+    }
 
   }
 }

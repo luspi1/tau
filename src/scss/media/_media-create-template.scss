@@ -1,13 +1,19 @@
-@media(max-width: 1200px) {
+@media(max-width: 1024px) {
   .create-template-page .create-template__select-wrap .help-popup {
     max-width: 380px;
-  }
-  .create-template-page .instructions__title-block .help-popup {
     left: -290px;
   }
-}
 
-@media(max-width: 1024px) {
+  .create-template-page .instructions__btn-wrapper .help-popup {
+    left: 30px;
+    right: auto;
+  }
+
+  .create-template-page .create-template__wrappers {
+    flex-direction: column;
+    padding-bottom: 45px;
+  }
+
   .create-template-page .instructions__btn {
     min-width: auto;
     width: 100%;
@@ -18,26 +24,28 @@
       display: block;
     }
   }
+
+
   .create-template-page .create-template .container h1 {
     font-size: 32px;
   }
-  .create-template-page .create-template__cancel-btn,
+
   .create-template-page .create-template__save-btn {
     min-width: 289px;
     width: 289px;
+    margin-bottom: 20px;
   }
+
+  .create-template-page .create-template__publish-btn {
+    margin-bottom: 20px;
+  }
+
 }
 
 @media(max-width: 992px) {
-  .create-template-page .create-template__select-wrap .help-block {
-    width: 24px;
-    height: 35px;
-    right: -35px;
-  }
-  .create-template-page .create-template__select-wrap .help-popup {
-    top: 30px;
-    left: -130px;
-    max-width: 420px;
+  .create-template-page .instructions__btn-wrapper .help-popup {
+    left: auto;
+    right: 30px;
   }
 
   .create-template-page .instructions__title-block .help-popup {
@@ -46,7 +54,7 @@
 
   .create-template-page .create-template__save-btn,
   .create-template-page .create-template__publish-btn,
-  .create-template-page .create-template__cancel-btn{
+  .create-template-page .create-template__cancel-btn {
     font-size: 18px;
   }
 
@@ -69,7 +77,7 @@
   .create-template-page .create-template__select-wrap::after {
     width: 100%;
   }
-  .create-template-page .create-template__select-wrap .help-block {
+  .create-template-page .help-block {
     display: none;
   }
 
@@ -110,6 +118,14 @@
   }
   .create-template-page .create-template__select-wrap .choices__placeholder {
     font-size: 15px;
+  }
+
+  .create-template-page .instructions__btn {
+    width: 300px;
+  }
+
+  .create-template-page .create-template__wrapper-right {
+    min-width: 100%
   }
 
 }

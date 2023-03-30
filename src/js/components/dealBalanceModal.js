@@ -1,9 +1,9 @@
 // модалка добавления платежа
-import { sendData, showInfoModal, toggleRequiredFields } from '../_functions'
-import { initAllDates }                                  from './customDate'
-import { initSelects }                                   from './customSelect'
-import { initDateInputMasks }                            from './inputMask'
-import { initCloseModals }                               from './managePopup'
+import { sendData, showInfoModal, togglePaymentState, toggleRequiredFields } from '../_functions'
+import { initAllDates }                                                      from './customDate'
+import { initSelects }                                                       from './customSelect'
+import { initDateInputMasks }                                                from './inputMask'
+import { initCloseModals }                                                   from './managePopup'
 
 const initPaymentModal = () => {
   initSelects()
@@ -90,20 +90,6 @@ if (incomePageMain) {
 
   const monthItem = incomePageMain.querySelector('.months')
 
-
-  const togglePaymentState = (checkBtn, closeBtn) => {
-    if (checkBtn.classList.contains('red')) {
-      checkBtn.classList.remove('red')
-      checkBtn.classList.add('green')
-      closeBtn.textContent = 'Открыть платеж'
-      closeBtn.style.color = '#0CB477'
-    } else {
-      checkBtn.classList.remove('green')
-      checkBtn.classList.add('red')
-      closeBtn.textContent = 'Закрыть платеж'
-      closeBtn.style.color = '#bc0d48'
-    }
-  }
   const getPaymentState = async (dataId, dataScript, checkBtn, closeBtn) => {
     const paymentData = {id_payment: dataId}
     const jsonPaymentData = JSON.stringify(paymentData)

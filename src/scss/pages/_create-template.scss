@@ -13,23 +13,6 @@
       }
     }
 
-    .form {
-      min-width: 60%;
-      padding-right: 35px;
-
-      label {
-        margin-bottom: 6px;
-        color: #858584;
-      }
-
-      h3 {
-        margin-bottom: 22px;
-        @include montserrat-semibold;
-        font-size: 20px;
-        line-height: 24px;
-      }
-    }
-
     .help-block {
       position: absolute;
       width: 40px;
@@ -75,10 +58,44 @@
 
     }
 
+
+    .form {
+      min-width: 60%;
+      padding-right: 35px;
+
+      label {
+        margin-bottom: 6px;
+        color: #858584;
+      }
+
+      h3 {
+        margin-bottom: 22px;
+        @include montserrat-semibold;
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+
+
+    &__wrappers {
+      display: flex;
+      padding-bottom: 5px;
+      border-bottom: 1px dotted #C4C4C4;
+      margin-bottom: 50px;
+    }
+
+    &__wrapper-left {
+      flex-grow: 1;
+      margin-right: 60px;
+    }
+
+    &__wrapper-right {
+      min-width: 500px;
+    }
+
+
     &__wrapper {
       margin-top: 23px;
-      display: flex;
-      width: 100%;
     }
 
     &__input-wrap {
@@ -177,18 +194,6 @@
 
     &__select-wrap_border {
       margin: 25px 18px 34px 0;
-      padding-bottom: 46px;
-
-
-      &::after {
-        content: '';
-        display: flex;
-        width: 172%;
-        height: 2px;
-        position: absolute;
-        bottom: 0;
-        border-bottom: 2px dotted #C4C4C4;
-      }
     }
 
     &__textarea-wrap {
@@ -219,7 +224,7 @@
       min-width: 259px;
       width: 259px;
       height: 60px;
-      margin: 10px 10px 0 0;
+      margin-right: 23px;
       background-color: #2F65F6;
       border: 1px solid #2F65F6;
       border-radius: 5px;
@@ -235,12 +240,12 @@
       }
     }
 
-    &__publish-btn,
-    &__cancel-btn {
+    &__publish-btn {
       min-width: 289px;
       width: 289px;
+      margin-right: 23px;
+
       height: 60px;
-      margin-top: 10px;
       background-color: #ffffff;
       border: 1px solid #2F65F6;
       border-radius: 5px;
@@ -257,13 +262,14 @@
       }
     }
 
-    &__publish-btn {
-      margin-right: 10px;
-    }
 
     &__cancel-btn {
-      min-width: 259px;
-      width: 259px;
+      border: none;
+      background: none;
+      color: #2F65F6;
+      @include montserrat-bold;
+      font-size: 20px;
+      line-height: 24px;
     }
 
     ::-webkit-scrollbar {
@@ -288,8 +294,6 @@
   }
 
   .instructions {
-    padding-left: 30px;
-
     &__tags {
       display: none;
     }
@@ -299,9 +303,27 @@
       margin-bottom: 20px;
     }
 
+    &__desc {
+      @include montserrat-regular;
+      font-size: 16px;
+      line-height: 20px;
+      color: #858584;
+      margin-bottom: 10px;
+      max-width: 500px;
+    }
+
+    &__fields-link {
+      @include montserrat-regular;
+      font-size: 16px;
+      line-height: 20px;
+      color: #2F65F6;
+      margin-bottom: 60px;
+      display: inline-block;
+    }
+
     &__links {
       padding-top: 6px;
-      margin-bottom: 295px;
+      margin-bottom: 35px;
     }
 
     &__link-download {
@@ -317,9 +339,8 @@
 
 
     &__btn {
-      min-width: 386px;
+      width: 100%;
       height: 40px;
-      margin-bottom: 50px;
       border: 1px solid #2F65F6;
       background: #2F65F6;
       border-radius: 5px;
@@ -334,6 +355,21 @@
 
       &:hover {
         background-color: #264DDB;
+      }
+    }
+
+    &__btn-wrapper {
+      width: 386px;
+      position: relative;
+
+      .help-block {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .help-popup {
+        left: auto;
+        right: 50px;
       }
     }
 
@@ -396,7 +432,7 @@
       width: 121px;
       height: 172px;
       display: flex;
-      margin: 0 30px 10px 0;
+      margin: 15px 30px 10px 0;
       align-items: flex-end;
     }
 

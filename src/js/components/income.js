@@ -1,5 +1,11 @@
-import { checkConfirm, sendData, showInfoModal, toggleLoader } from '../_functions'
-import { modalOverlay }                                        from '../_vars'
+import {
+  checkConfirm,
+  sendData,
+  showInfoModal,
+  toggleLoader,
+  togglePaymentState
+}                       from '../_functions'
+import { modalOverlay } from '../_vars'
 
 const incomePageMain = document.querySelector('.income-page')
 
@@ -64,6 +70,10 @@ if (incomePageMain) {
       const delEl = delBtn.closest('.months__accordion[data-delete="element"]')
       const delElId = delEl.dataset.id
       const delScript = delBtn.dataset.script
+
+      const paymentWrapper = delBtn.closest('.months__row')
+      const paymentCheckBtn = paymentWrapper.querySelector('.months__indicators .months__circle')
+      const paymentCloseBtn = paymentWrapper.querySelector('.months__button-close')
       const handleDelMonthEl = async () => {
         const data = {id_deal_payment: delElId}
         const jsonData = JSON.stringify(data)
@@ -78,6 +88,9 @@ if (incomePageMain) {
         const {status, errortext} = finishedResponse
         if (status === 'ok') {
           delEl.remove()
+          if (paymentCheckBtn.classList.contains('green')) {
+            togglePaymentState(paymentCheckBtn, paymentCloseBtn)
+          }
         } else {
           showInfoModal(errortext)
         }
