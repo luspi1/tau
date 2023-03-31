@@ -101,8 +101,17 @@
     <form
       class="modal-document-preview__bottom-btns-right modal-document-preview__btns-group"
       action="#">
-      <input class="modal-document-preview__input" type="email"
-             placeholder="введите e-mail получателя">
+
+      <select class="modal-document-preview__email-select custom-select"
+              name="email">
+        <option selected value="">email получателя</option>
+        <option value="1">email-1</option>
+        <option value="2">email-2</option>
+        <option value="3">email-3</option>
+        <option value="4">email-4</option>
+      </select>
+
+
       <button class="modal-document-preview__main-btn _btn-active"
               type="submit">
         <svg width="19" height="18" viewBox="0 0 19 18" fill="none"

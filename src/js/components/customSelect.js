@@ -328,38 +328,52 @@ const initSelects = () => {
       })
     })
   }
-}
 
-// Селекторы модалки  на странице "Баланс сделки"
-const changeEmployeeSelects = document.querySelectorAll('.change-employee__select')
+  // Селекторы модалки  на странице "Баланс сделки"
+  const changeEmployeeSelects = document.querySelectorAll('.change-employee__select')
 
-if (changeEmployeeSelects) {
-  changeEmployeeSelects.forEach(el => {
-    const choices = new Choices(el, {
-      itemSelectText: '',
-      searchEnabled: false,
-      shouldSort: false,
-      allowHTML: true
+  if (changeEmployeeSelects) {
+    changeEmployeeSelects.forEach(el => {
+      const choices = new Choices(el, {
+        itemSelectText: '',
+        searchEnabled: false,
+        shouldSort: false,
+        allowHTML: true
+      })
     })
-  })
-}
+  }
 
 // Селекторы на странице "шаблонизатор теги шаблона"
-const templaterSelects = document.querySelectorAll('.templater__select-wrap select')
+  const templaterSelects = document.querySelectorAll('.templater__select-wrap select')
 
-if (templaterSelects) {
-  templaterSelects.forEach(el => {
-    const choices = new Choices(el, {
-      itemSelectText: '',
-      searchEnabled: false,
-      shouldSort: false,
-      allowHTML: true
+  if (templaterSelects) {
+    templaterSelects.forEach(el => {
+      const choices = new Choices(el, {
+        itemSelectText: '',
+        searchEnabled: false,
+        shouldSort: false,
+        allowHTML: true
+      })
     })
-  })
+  }
+
+  // Общая инциализация селекторов
+
+  const generalSelects = document.querySelectorAll('.custom-select')
+  if (generalSelects) {
+    generalSelects.forEach(el => {
+      const choices = new Choices(el, {
+        itemSelectText: '',
+        searchEnabled: false,
+        shouldSort: false,
+        allowHTML: true,
+      })
+    })
+  }
 }
 
 initSelects()
 
 
-export {initSelects}
+export { initSelects }
 
