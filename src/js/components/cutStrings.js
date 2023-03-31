@@ -26,4 +26,8 @@ cutString(trimTemplateItemStrings);
 const trimAsideStrings = document.querySelectorAll('.aside__top a[data-shear]');
 cutString(trimAsideStrings);
 
+//обрезка длинных строк в aside на странице - correspondence
+
+const trimCorrStrings = document.querySelectorAll('.correspondence a[data-shear]');
+cutString(trimCorrStrings);
 

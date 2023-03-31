@@ -50,24 +50,24 @@
         </div>
         <div class="newmails__search search">
           <form action="#" class="search__form">
-          <input class="search__input" type="text" name="" id=""
-                 placeholder="поиск">
-          <div class="search__wrap">
-            <select class="search__mails" name="search-mails">
-              <option selected value="">все письма</option>
-              <option value="mail_1">...</option>
-              <option value="mail_2">... 1</option>
-              <option value="mail_3">... 2</option>
-            </select>
-          </div>
-          <div class="search__wrap">
-            <select class="search__attachments" name="search-attachments">
-              <option selected value="">вложения: все</option>
-              <option value="attachment_1">...</option>
-              <option value="attachment_2">... 1</option>
-              <option value="attachment_3">... 2</option>
-            </select>
-          </div>
+            <input class="search__input" type="text" name="" id=""
+                   placeholder="поиск">
+            <div class="search__wrap">
+              <select class="search__mails" name="search-mails">
+                <option selected value="">все письма</option>
+                <option value="mail_1">...</option>
+                <option value="mail_2">... 1</option>
+                <option value="mail_3">... 2</option>
+              </select>
+            </div>
+            <div class="search__wrap">
+              <select class="search__attachments" name="search-attachments">
+                <option selected value="">вложения: все</option>
+                <option value="attachment_1">...</option>
+                <option value="attachment_2">... 1</option>
+                <option value="attachment_3">... 2</option>
+              </select>
+            </div>
             <button class="search__btn-submit" type="submit">Искать</button>
           </form>
           <button class="search__btn newmail-btn"
@@ -75,52 +75,53 @@
           </button>
         </div>
         <ul class="newmails__table flex-table">
-          <li class="flex-table__row">
-            <p class="flex-table__cell-title flex-table__direction">
-              Направление</p>
-            <p class="flex-table__cell-title flex-table__date">Дата</p>
-            <p class="flex-table__cell-title flex-table__name">Наименование
-              письма</p>
-            <p class="flex-table__cell-title flex-table__type">Тип письма</p>
-            <p class="flex-table__cell-title flex-table__attachment">
-              Вложения</p>
+          <li class="flex-table__row top">
+            <p class="flex-table__col-1">Направление</p>
+            <p class="flex-table__col-2">№ ВХД</p>
+            <p class="flex-table__col-3">№ ИСХД</p>
+            <p class="flex-table__col-4">Дата отправки и получения</p>
+            <p class="flex-table__col-5">Наименование письма</p>
+            <p class="flex-table__col-6">Принял / отправил</p>
+            <p class="flex-table__col-7">Тип письма</p>
+            <p class="flex-table__col-8">Вложения</p>
           </li>
           <li class="flex-table__row">
-            <p class="flex-table__cell-text flex-table__direction">Входящее</p>
-            <a class="flex-table__cell-link flex-table__date" href="#">Получено
-              23.02.2018</a>
-            <a class="flex-table__cell-link flex-table__name"
-               href="correspondence-item.html">Относительно длинное название с
-              многоточием Далеко-далеко за словесными горами в стране гласных и
-              согласных живут рыбные тексты. Которое большого последний страну
-              переулка языкового это осталось лучше буквенных рукописи рот, ты
-              семь напоивший что силуэт переписали рыбными жаренные.</a>
-            <a class="flex-table__cell-link flex-table__type" href="#">Бумажное
-              письмо</a>
-            <a class="flex-table__cell-link flex-table__attachment" href="#">3
-              вложения</a>
+            <p class="flex-table__col-1">Входящее</p>
+            <a href="#" class="flex-table__col-2">23-127-09</a>
+            <a href="#" class="flex-table__col-3">23-127-09</a>
+            <p class="flex-table__col-4">
+              <span>23.02.2018</span> <span>23.02.2018</span>
+            </p>
+            <a href="correspondence-item.html" class="flex-table__col-5" data-shear="20">Относительно длинное455666</a>
+            <a href="#" class="flex-table__col-6">Тедорадзе А.С.</a>
+            <a href="#" class="flex-table__col-7">ТВК — Почта РФ</a>
+            <a href="#" class="flex-table__col-8">3 вложения</a>
           </li>
           <li class="flex-table__row">
-            <p class="flex-table__cell-text flex-table__direction">Исходящее</p>
-            <a class="flex-table__cell-link flex-table__date" href="#">Отправлено
-              23.02.2018</a>
-            <a class="flex-table__cell-link flex-table__name"
-               href="correspondence-item.html">Относительно длинное</a>
-            <a class="flex-table__cell-link flex-table__type" href="#">Email</a>
-            <a class="flex-table__cell-link flex-table__attachment black"
-               href="#">Нет вложения</a>
+            <p class="flex-table__col-1">Исходящее</p>
+            <a href="#" class="flex-table__col-2">39-008-02</a>
+            <a href="#" class="flex-table__col-3">39-008-02</a>
+            <p class="flex-table__col-4">
+              <span>23.02.2018</span> <span>23.02.2018</span>
+            </p>
+            <a href="correspondence-item.html" class="flex-table__col-5" data-shear="20">Относительно длинное455666</a>
+            <a href="#" class="flex-table__col-6">Файзуллин А.Р.</a>
+            <a href="#" class="flex-table__col-7">ТВК — СДЭК</a>
+            <a href="#" class="flex-table__col-8 _empty">Нет вложений</a>
           </li>
           <li class="flex-table__row">
-            <p class="flex-table__cell-text flex-table__direction">Исходящее</p>
-            <a class="flex-table__cell-link flex-table__date" href="#">Отправлено
-              23.02.2018</a>
-            <a class="flex-table__cell-link flex-table__name"
-               href="correspondence-item.html">Относительно длинное название с
-              многоточием</a>
-            <a class="flex-table__cell-link flex-table__type" href="#">Email</a>
-            <a class="flex-table__cell-link flex-table__attachment" href="#">1
-              вложение</a>
+            <p class="flex-table__col-1">Исходящее</p>
+            <a href="#" class="flex-table__col-2">64-408-22</a>
+            <a href="#" class="flex-table__col-3">64-408-22</a>
+            <p class="flex-table__col-4">
+              <span>23.02.2018</span> <span>23.02.2018</span>
+            </p>
+            <a href="correspondence-item.html" class="flex-table__col-5" data-shear="20">Относительно длинное455666</a>
+            <a href="#" class="flex-table__col-6">Джанибеков И.Р.</a>
+            <a href="#" class="flex-table__col-7">Email</a>
+            <a href="#" class="flex-table__col-8">1 вложение</a>
           </li>
+
         </ul>
       </div>
     </section>
