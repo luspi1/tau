@@ -16,28 +16,7 @@
   .correspondence .newmails .search__wrap {
     min-width: 225px;
   }
-
-  .correspondence .newmails__table .flex-table__direction,
-  .correspondence .newmails__table .flex-table__date,
-  .correspondence .newmails__table .flex-table__name,
-  .correspondence .newmails__table .flex-table__type {
-    margin-right: 30px;
   }
-}
-
-@media (max-width: 1200px) {
-
-  .correspondence .newmails__table .flex-table__direction,
-  .correspondence .newmails__table .flex-table__date,
-  .correspondence .newmails__table .flex-table__name,
-  .correspondence .newmails__table .flex-table__type {
-    margin-right: 20px;
-  }
-
-  .correspondence .newmails__table .flex-table__date {
-    width: 120px;
-  }
-}
 
 @media (max-width: 1024px) {
   .correspondence .newmails__title {
@@ -59,13 +38,6 @@
     font-size: 28px;
   }
 
-  .correspondence .newmails .flex-table {
-    overflow-x: scroll;
-  }
-
-  .correspondence .newmails__table .flex-table__row {
-    min-width: 1050px;
-  }
   .correspondence .newmails .search__form {
     flex-wrap: wrap;
     justify-content: flex-start;
