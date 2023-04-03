@@ -34,6 +34,9 @@
 }
 
 @media (max-width: 992px) {
+  .correspondence .newmails__top-wrapper {
+    flex-wrap: wrap;
+  }
   .correspondence .newmails__title {
     font-size: 28px;
   }

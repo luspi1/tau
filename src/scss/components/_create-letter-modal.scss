@@ -15,6 +15,7 @@
   opacity: 0;
   visibility: hidden;
 
+
   &._active {
     opacity: 1;
     z-index: 999;
@@ -39,6 +40,25 @@
 
   &__item-input {
     margin-bottom: 19px;
+
+    &.flex {
+      display: flex;
+
+      .modal-create-letter__wrap {
+        &:first-child {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+
+  &__dflex {
+    display: flex;
+    justify-content: space-between;
+
+    .modal-create-letter__select-wrapper {
+      width: 49%;
+    }
   }
 
   &__input-wrapper {
@@ -54,6 +74,10 @@
         }
       }
     }
+  }
+
+  &__wrap {
+    width: 173px;
   }
 
   &__input {
@@ -78,7 +102,7 @@
   }
 
   &__date-wrapper {
-    width: 173px;
+    width: 100%;
     position: relative;
 
     svg {
@@ -312,7 +336,16 @@
     margin-bottom: 15px;
     width: 255px;
   }
+}
 
+@media (max-width: 576px) {
+  .modal-create-letter__dflex,
+  .modal-create-letter__item-input.flex {
+    flex-direction: column;
+  }
+  .modal-create-letter__dflex .modal-create-letter__select-wrapper {
+    width: 100%;
+  }
 }
 
 @media (max-width: 450px) {

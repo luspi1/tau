@@ -10,7 +10,7 @@
   <div class="modal-overlay"></div>
   @include('partials/header.html', {
   'bottom-menu': 'bottom-menu_disabled',
-  'header-title': 'Ваши сделки',
+  'header-title': 'Сделки',
   'deal-title': 'deal-link_active'
   })
 
@@ -26,7 +26,12 @@
         'letter-title' : 'Создать письмо'
         })
         <div class="newmails__top">
+          <div class="newmails__top-wrapper">
           <h1 class="newmails__title">Корреспонденция</h1>
+          <button class="search__btn newmail-btn"
+                  data-modal="create-letter-modal" type="button">Новое письмо
+          </button>
+          </div>
           <ul class="newmails__caption-list">
             <li>
               <p class="newmails__list-title">Сделка</p>
@@ -70,9 +75,7 @@
             </div>
             <button class="search__btn-submit" type="submit">Искать</button>
           </form>
-          <button class="search__btn newmail-btn"
-                  data-modal="create-letter-modal" type="button">Новое письмо
-          </button>
+
         </div>
         <ul class="newmails__table flex-table">
           <li class="flex-table__row top">
