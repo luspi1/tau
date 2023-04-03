@@ -1,20 +1,12 @@
 @media (max-width: 1400px) {
   .correspondence-item {
     padding-top: 0;
-  }}
+  }
+}
 
 @media (max-width: 1024px) {
   .correspondence-item .newmail-one__title {
     font-size: 32px;
-  }
-
-  .correspondence-item .newmail-one__caption-list {
-    flex-direction: column;
-    margin-bottom: 0px;
-  }
-
-  .correspondence-item .newmail-one__caption-list li {
-    margin-bottom: 15px;
   }
 
 }
@@ -27,4 +19,45 @@
   .correspondence-item .newmail-one__list-content.wrap {
     word-wrap: break-word;
   }
+}
+
+@media (max-width: 768px) {
+  .newmail-one__inner {
+    flex-direction: column;
+  }
+
+  .correspondence-item .newmail-one .mail-block {
+    margin-right: 0;
+    margin-top: 30px;
+    order: 2;
+  }
+
+  .correspondence-item .newmail-one .mail-block__info li {
+    flex-direction: column;
+  }
+
+  .correspondence-item .newmail-one .mail-block__info .mail-block__info-title {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+  .correspondence-item .newmail-one .mail-block__info {
+    margin-bottom: 30px;
+  }
+
+  .correspondence-item .newmail-one .mail-block__body {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 30px;
+  }
+
+  .correspondence-item .newmail-one .mail-block__link {
+    line-height: 22px;
+  }
+
+  .correspondence-item .newmail-one .mail-block__list li {
+    margin-bottom: 5px;
+  }
+
 }

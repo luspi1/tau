@@ -10,30 +10,68 @@
   .newmail-one {
     color: #000000;
 
-    &__top {
-      margin-bottom: 30px;
-    }
 
     &__title {
       @include montserrat-semibold;
       font-size: 36px;
       line-height: 44px;
-      margin-bottom: 34px;
+      margin-bottom: 23px;
+    }
+
+    &__inner {
+      display: flex;
+    }
+
+    &__right-block {
+      min-width: 250px;
     }
 
     &__caption-list {
-      display: flex;
-      padding-bottom: 10px;
-      margin-bottom: 25px;
-
       li {
-        margin-right: 50px;
+        &:not(:last-child) {
+          margin-bottom: 15px;
+        }
 
         a {
           color: #2f65f6;
         }
       }
     }
+
+    &__caption-list-top {
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+
+    &__caption-list-bottom {
+      li {
+        display: flex;
+        align-items: center;
+
+        .newmail-one__list-title {
+          margin-bottom: 0;
+          margin-right: 5px;
+        }
+
+        &.newmail-one__caption-item-nowrap {
+          flex-direction: column;
+          align-items: flex-start;
+
+          .newmail-one__list-title {
+            margin-bottom: 5px;
+            margin-right: 0;
+          }
+
+          .newmail-one__list-content {
+            color: #2F65F6;
+          }
+
+        }
+
+      }
+    }
+
 
     &__list-title {
       @include montserrat-regular;
@@ -45,43 +83,74 @@
 
     &__list-content {
       @include montserrat-regular;
-      font-size: 20px;
-      line-height: 24px;
+      font-size: 16px;
+      line-height: 20px;
     }
 
     .mail-block {
-      max-width: 1067px;
-      padding: 30px 15px 24px 21px;
+      flex-grow: 1;
+      margin-right: 30px;
+      padding: 30px 34px 47px 21px;
       background: #f7f8fa;
       border-radius: 15px;
 
       &__type {
         font-size: 16px;
         line-height: 20px;
+        margin-bottom: 13px;
+        display: inline-block;
         color: #2f65f6;
       }
 
       &__title {
-        margin-top: 13px;
         @include montserrat-semibold;
         font-size: 22px;
         line-height: 27px;
+        margin-bottom: 43px;
       }
 
       &__name {
-        font-weight: 400;
+        font-weight: 500;
       }
 
       &__info {
-        margin-top: 16px;
-        max-width: 655px;
-        line-height: 24px;
-        color: #858584;
+        margin-bottom: 55px;
+
+        li {
+          display: flex;
+
+          &:not(:last-child) {
+            margin-bottom: 13px;
+          }
+        }
+
+        p {
+          @include montserrat-regular;
+          font-size: 16px;
+          line-height: 20px;
+          color: #000000;
+        }
+
+        .mail-block__info-title {
+          color: #858584;
+          margin-right: 5px;
+        }
+
       }
 
       &__body {
-        margin-top: 28px;
-        line-height: 20px;
+        @include montserrat-medium;
+        font-size: 18px;
+        line-height: 26px;
+        color: #000000;
+        margin-bottom: 55px;
+
+        a {
+          color: #2F65F6;
+          font-size: 16px;
+          line-height: 20px;
+
+        }
       }
 
       &__employee {
@@ -89,20 +158,23 @@
       }
 
       &__attachment {
-        margin-top: 37px;
         @include montserrat-semibold;
+        margin-bottom: 12px;
       }
 
       &__list {
-        margin: 12px 0 0;
-        padding-left: 17px;
-
         li {
-          list-style: auto;
+          display: flex;
+          align-items: center;
+
+          svg {
+            margin-right: 7px;
+          }
         }
       }
 
       &__link {
+        margin-right: 10px;
         color: #2f65f6;
         line-height: 30px;
       }

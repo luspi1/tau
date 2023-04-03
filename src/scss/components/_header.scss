@@ -10,7 +10,8 @@
     }
   }
 
-  &__deals-link {
+  &__deals-link,
+  &__letters-link {
     display: none;
     margin-left: 23px;
     align-items: center;
@@ -30,6 +31,12 @@
 
     svg {
       margin-left: 5px;
+    }
+  }
+
+  &.letters-link_active {
+    .header__letters-link {
+      display: flex;
     }
   }
 
