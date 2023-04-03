@@ -7,12 +7,19 @@
   }
 
   .newmails {
+    &__top-wrapper {
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
     &__title {
+      margin-right: 20px;
+      margin-bottom: 10px;
       @include montserrat-semibold;
       font-size: 36px;
       line-height: 44px;
       color: #000000;
-      margin-bottom: 34px;
     }
 
     &__caption-list {
@@ -54,11 +61,10 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
-        margin-right: 20px;
-      }
+              }
 
       &__input {
-        width: 630px;
+        width: 54%;
         height: 40px;
         padding-left: 13px;
         line-height: 20px;
@@ -77,7 +83,8 @@
       }
 
       &__wrap {
-        width: 225px;
+        min-width: 260px;
+        width: 260px;
         margin: 0 5px;
 
         .choices {
@@ -131,9 +138,9 @@
         width: 96px;
         height: 40px;
         @include montserrat-medium;
-        color: #9A9A9A;
+        color: #2F65F6;
         text-align: center;
-        border: 1px solid #9A9A9A;
+        border: 1px solid #2F65F6;
         border-radius: 5px;
         background: none;
         cursor: pointer;
@@ -143,6 +150,7 @@
         min-width: 150px;
         max-height: 40px;
         display: block;
+        margin-bottom: 10px;
         padding: 10px 13px;
         background: #2F65F6;
         border: none;
