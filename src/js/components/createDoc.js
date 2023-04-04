@@ -137,6 +137,10 @@ if (createDocPage) {
     }
   }
 
+  document.addEventListener("DOMContentLoaded", () => {
+    const currentPageState = createDocPage.dataset.pageState
+    changeRequiredInputs(currentPageState)
+  })
 
   const typeDocSelect = document.querySelector('.create-doc-page__type-doc-select')
   if (typeDocSelect) {
