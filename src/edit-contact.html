@@ -372,11 +372,13 @@
                   </div>
                 </div>
               </div>
-              <div class="edit-contact__item edit-contact__address-item">
+              <div
+                class="edit-contact__item edit-contact__address-item edit-contact__juristic-type">
                 <p class="edit-contact__input-title">
                   Юридический адрес*
                 </p>
-                <div class="edit-contact__item-wrapper edit-contact__address">
+                <div
+                  class="edit-contact__item-wrapper edit-contact__address edit-contact__juristic-wrapper">
                   <div
                     class="edit-contact__input-wrapper edit-contact__address-wrapper">
                     <input class="edit-contact__input"
@@ -400,7 +402,8 @@
 
                 </div>
               </div>
-              <div class="edit-contact__item edit-contact__address-item">
+              <div
+                class="edit-contact__item edit-contact__address-item edit-contact__mail-type">
                 <p class="edit-contact__input-title">
                   Почтовый адрес*
                 </p>
@@ -409,8 +412,8 @@
                     class="edit-contact__input-wrapper edit-contact__checkbox-wrapper">
                     <input type="radio" class="edit-contact__checkbox"
                            id="checkMatchesJuristic"
-                           name="editContactJuristicMatches"
-                           value="matchesJuristic">
+                           value="isMatchesJuristic"
+                           name="editContactJuristicMatches">
                     <label for="checkMatchesJuristic">Совпадает с
                       юридическим</label>
                   </div>
@@ -418,8 +421,8 @@
                     class="edit-contact__input-wrapper edit-contact__checkbox-wrapper">
                     <input type="radio" class="edit-contact__checkbox"
                            id="checkMatchesJuristic1"
-                           name="editContactJuristicMatches"
-                           value="notMatchesJuristic">
+                           value="isNotMatches"
+                           name="editContactJuristicMatches" checked>
                     <label for="checkMatchesJuristic1">Не совпадает с
                       юридическим</label>
                   </div>
@@ -459,28 +462,27 @@
                     class="edit-contact__input-wrapper edit-contact__checkbox-wrapper">
                     <input type="radio" class="edit-contact__checkbox"
                            id="checkMatchesPhysical"
-                           name="editContactPhysicalMatches"
-                           value="matchesPhysical">
+                           value="isMatchesJuristic"
+                           name="editContactPhysicalMatches">
                     <label for="checkMatchesPhysical">Совпадает с
                       юридическим</label>
                   </div>
                   <div
                     class="edit-contact__input-wrapper edit-contact__checkbox-wrapper">
                     <input type="radio" class="edit-contact__checkbox"
-                           id="checkMatchesPhysical1"
-                           name="editContactPhysicalMatches"
-                           value="notMatchesPhysical">
-                    <label for="checkMatchesPhysical1">Не совпадает с
-                      юридическим</label>
+                           id="checkMatchesPhysical2"
+                           value="isMatchesMail"
+                           name="editContactPhysicalMatches">
+                    <label for="checkMatchesPhysical2">Cовпадает с
+                      почтовым</label>
                   </div>
                   <div
                     class="edit-contact__input-wrapper edit-contact__checkbox-wrapper">
                     <input type="radio" class="edit-contact__checkbox"
-                           id="checkMatchesPhysical2"
-                           name="editContactPhysicalMatches"
-                           value="matchesMail">
-                    <label for="checkMatchesPhysical2">Cовпадает с
-                      почтовым</label>
+                           id="checkMatchesPhysical1"
+                           value="isNotMatches"
+                           name="editContactPhysicalMatches" checked>
+                    <label for="checkMatchesPhysical1">Отдельный адрес</label>
                   </div>
                 </div>
 
@@ -532,7 +534,7 @@
                     class="edit-contact__input-wrapper">
                     <input class="edit-contact__input"
                            name="contactStateNumber"
-                           placeholder="ОГРН"
+                           placeholder="ОГРН или ОГРНИП"
                            type="number"
                            data-required="entity">
                   </div>
@@ -540,7 +542,7 @@
                     class="edit-contact__input-wrapper">
                     <input class="edit-contact__input"
                            name="contactKindActivity"
-                           placeholder="ОВЭД"
+                           placeholder="ОКВЭД"
                            type="number"
                            data-required="entity">
                   </div>

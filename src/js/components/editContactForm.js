@@ -1,9 +1,5 @@
-import {
-  sendData,
-  showInfoModal,
-  toggleLoader
-}              from "../_functions"
-import Choices from "choices.js"
+import Choices                                   from "choices.js"
+import { sendData, showInfoModal, toggleLoader } from "../_functions"
 
 
 const editContactForm = document.querySelector('.edit-contact .edit-contact__form')
@@ -97,6 +93,55 @@ if (editContactForm) {
       editContactForm.addEventListener('submit', handleContragentSubmit)
     })
   }
+
+
+  // Логика radio btn совпадений адресов
+
+  const contactRadioBtns = editContactForm.querySelectorAll('.edit-contact__checkbox')
+
+  const setJuristicMatches = (setInputs, radioType) => {
+    let inputsOnType
+    switch (radioType) {
+      case 'juristic':
+        inputsOnType = editContactForm.querySelectorAll('.edit-contact__juristic-type .edit-contact__input')
+        break
+      case 'mail':
+        inputsOnType = editContactForm.querySelectorAll('.edit-contact__mail-type .edit-contact__input')
+        break
+      case 'empty':
+        inputsOnType = []
+    }
+
+    setInputs?.forEach((el, i) => {
+      if (inputsOnType[i]?.value) {
+        el.value = inputsOnType[i].value
+      } else {
+        el.value = ''
+      }
+    })
+  }
+
+
+  contactRadioBtns.forEach(el => {
+    el.addEventListener('input', (e) => {
+
+      let setInputs = e.target.closest('.edit-contact__item')?.querySelectorAll('.edit-contact__input')
+
+      switch (e.target.value) {
+        case 'isMatchesJuristic' :
+          setJuristicMatches(setInputs, 'juristic')
+          break
+        case 'isMatchesMail' :
+          setJuristicMatches(setInputs, 'mail')
+          break
+        default :
+          setJuristicMatches(setInputs, 'empty')
+          break
+      }
+
+    })
+  })
+
 }
 
 
@@ -115,14 +160,6 @@ if (contactInputFullname) {
   mediaQuery.addListener(handleTabletChange)
   handleTabletChange(mediaQuery)
 }
-
-
-
-
-
-
-
-
 
 
 
