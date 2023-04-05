@@ -96,12 +96,24 @@
   }
 
   &__date {
-    margin-bottom: 25px;
     @include montserrat-medium;
     font-size: 16px;
     line-height: 20px;
     color: #000000;
     display: none;
+    margin-bottom: 25px;
+  }
+
+  &__date-icon-wrapper {
+    position: relative;
+    display: inline-block;
+
+
+    svg {
+      position: absolute;
+      right: 15px;
+      top: 9px;
+    }
   }
 
   &__label {
@@ -187,7 +199,8 @@
 
     &._completed {
       .choices,
-      .modal-document-sign__input {
+      .modal-document-sign__input,
+      svg {
         display: none;
       }
 
@@ -215,10 +228,15 @@
     }
   }
 
+  &__btn-tag {
+    display: block;
+  }
+
   &__client-info {
     &._completed {
       .modal-document-sign__input,
-      .modal-document-sign__warning {
+      .modal-document-sign__warning,
+      svg {
         display: none;
       }
 

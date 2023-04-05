@@ -152,6 +152,12 @@
   }
 
 
+  .templates__list {
+    li {
+      display: flex;
+    }
+  }
+
   &__list,
   .list {
     padding-top: 15px;
@@ -168,7 +174,7 @@
     }
 
     &__subtitle {
-      min-width: 70px;
+      width: 27%;
       line-height: 20px;
       color: #858584;
     }
@@ -179,6 +185,14 @@
       margin-left: 26px;
       line-height: 20px;
       color: #2F65F6;
+      width: 47%;
+    }
+
+    &__status-doc {
+      cursor: pointer;
+      border: none;
+      background: none;
+      width: 10%;
     }
 
     &__edit {
@@ -223,12 +237,12 @@
 
         .list__edit {
           margin-right: 17px;
+          width: 42%;
         }
 
         .list__status {
-          position: absolute;
-          right: 13px;
-
+          min-width: 16px;
+          margin-left: auto;
         }
       }
     }

@@ -1,4 +1,6 @@
 .deals {
+  padding-bottom: 420px;
+
   .top {
     .container {
       padding: 40px 15px 35px;
@@ -204,32 +206,39 @@
       padding: 20px 0;
 
       &:nth-child(1) {
-        width: 95px;
         margin-left: 0;
+        min-width: 202px;
       }
 
       &:nth-child(2) {
-        width: 110px;
+        min-width: 8%;
       }
 
       &:nth-child(3) {
-        width: 360px;
+        min-width: 16%;
+
+        a {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
       }
 
       &:nth-child(4) {
-        width: 140px;
+        min-width: 13%;
       }
 
       &:nth-child(5) {
-        width: 145px;
+        min-width: 11%;
       }
 
       &:nth-child(6) {
-        width: 110px;
+        min-width: 7.5%;
       }
 
       &:nth-child(7) {
-        width: 90px;
+        min-width: 7%;
         margin-left: 30px;
       }
 
