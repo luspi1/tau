@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html', {
+'title': 'Подписание документа',
+})
+
+<body class="page__body">
+<div class="site-container">
+  <div class="modal-overlay"></div>
+  @include('partials/header.html', {
+  'bottom-menu': 'bottom-menu_disabled',
+  'header-title': ''
+  })
+
+  <main class="main signing-document-multistage">
+    <section class="signing-doc">
+      <div class="container">
+        <div class="signing-doc__wrapper">
+          <h1 class="signing-doc__title">Подписание документа</h1>
+          <p class="signing-doc__description">Документ « <a href="#">Акт № 23343 от 20.02.2023</a>» будет направлен на
+            подписание руководителю организации или структурного подразделения.</p>
+          <p class="signing-doc__description">Этот документ входит в структуру Договора «<a href="#">Название
+            Договора</a>» и
+            относится к сделке «
+            <a href="#">Название сделки</a>».</p>
+          <p class="signing-doc__description">Подписание этого документа проходит в несколько последовательных этапов.
+            Участники подписания будут получать документ последовательно, с отметкой о подписании предыдущими
+            участниками. Руководителя организации необходимо поставить в цепочке последним.
+          </p>
+          <form class="signing-doc__form">
+           <ul>
+             <li class="signing-doc__item">
+
+             </li>
+           </ul>
+
+
+
+            <div class="signing-doc__buttons">
+              <button class="signing-doc__btn signing-doc__btn-submit">Отправить документ на подписание руководителем
+              </button>
+              <button class="signing-doc__btn">Отменить подписание документа</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  @include('partials/footer.html')
+</div>
+
+</body>
+
+</html>
