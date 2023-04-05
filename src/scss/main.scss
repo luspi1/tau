@@ -41,6 +41,8 @@
 @import "./pages/test";
 @import "./pages/not-access";
 @import "./pages/templater-tags";
+@import "./pages/signing-document";
+@import "./pages/signing-document-multistage";
 
 // Компоненты
 @import "./components/modals";
@@ -80,6 +82,7 @@
 @import "media/media-template-item-page";
 @import "media/media-create-template";
 @import "media/media-templater-tags";
+@import "media/media-signing-document";
 
 
 @import "./components/header";

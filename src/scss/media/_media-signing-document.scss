@@ -1,0 +1,17 @@
+@media (max-width: 1024px) {
+  .signing-document .signing-doc__title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .signing-document .signing-doc__title {
+    font-size: 28px;
+  }
+  .signing-document .signing-doc__select-wrap {
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+
