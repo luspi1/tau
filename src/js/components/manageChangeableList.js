@@ -1,6 +1,7 @@
 import { checkValue }       from '../_functions'
 import { initAllDates }     from './customDate'
 import { initDateDealMask } from './inputMask'
+import {initSelects} from "./customSelect";
 
 
 const changeablePage = document.querySelector('ul[data-list="changeable"]')?.closest('main')
@@ -11,6 +12,7 @@ const changeablePage = document.querySelector('ul[data-list="changeable"]')?.clo
 const initInputs = () => {
   initAllDates()
   initDateDealMask()
+  initSelects()
 }
 
 // добавление/удаление элементов в изменяемых списках
@@ -42,7 +44,7 @@ if (changeablePage) {
       initInputs()
     }
   })
-           
+
 }
 
 

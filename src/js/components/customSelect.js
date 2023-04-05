@@ -372,18 +372,23 @@ const initSelects = () => {
   }
 }
 
-// Селектор выбора отв.лица на стр "Подписание документа" /signing-document/
-const signModalSelect = document.querySelector('.signing-doc__member')
 
-if (signModalSelect) {
-  const choices = new Choices(signModalSelect, {
-    itemSelectText: '',
-    searchEnabled: false,
-    shouldSort: false,
-    allowHTML: true
-  })
+document.addEventListener('click', ({target})=> {
+  if(target && target.classList.contains('signing-doc__list-add')){
+    const signingDocSelects = document.querySelectorAll('.signing-doc-select')
 
-}
+    if (signingDocSelects) {
+      signingDocSelects.forEach(el => {
+        const choices = new Choices(el, {
+          itemSelectText: '',
+          searchEnabled: false,
+          shouldSort: false,
+          allowHTML: true
+        })
+      })
+    }
+   }
+})
 
 initSelects()
 
