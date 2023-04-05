@@ -1,0 +1,18 @@
+@media (max-width: 1024px) {
+  .signing-document-multistage .signing-doc__title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .signing-document-multistage .signing-doc__title {
+    font-size: 28px;
+  }
+  .signing-document-multistage .signing-doc__input-wrapper,
+  .signing-document-multistage .signing-doc__select-wrap {
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+

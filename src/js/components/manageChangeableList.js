@@ -2,6 +2,7 @@ import { checkValue }       from '../_functions'
 import { initAllDates }     from './customDate'
 import { initSelects }      from './customSelect'
 import { initDateDealMask } from './inputMask'
+import {initSelects} from "./customSelect";
 
 
 const changeablePage = document.querySelector('ul[data-list="changeable"]')?.closest('main')
