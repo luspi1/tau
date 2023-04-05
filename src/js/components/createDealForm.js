@@ -8,6 +8,7 @@ import {
   showInfoModal,
 }                       from "../_functions"
 import { modalOverlay } from "../_vars"
+import { initAllDates } from './customDate'
 
 
 const createDealPage = document.querySelector('.create-deal-page')
@@ -49,7 +50,9 @@ if (createDealPage) {
     const {status, errortext, invoices} = finishedResponse
     if (status === 'ok') {
       invoicesChoices.clearChoices()
-      invoicesChoices.setValue(invoices)
+      if (invoices) {
+        invoicesChoices.setValue(invoices)
+      }
     } else {
       showInfoModal(errortext)
     }
@@ -69,7 +72,7 @@ if (createDealPage) {
       dealCaseSelectPopup.dataset.selected = "true"
 
       updateInvoices(jsonCaseData, caseInvoicesUrl)
-
+      initAllDates()
     } else {
       showInfoModal(errortext)
     }

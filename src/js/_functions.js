@@ -106,9 +106,11 @@ export async function handlePopupSubmit(inputValue, popup, optionalInfo) {
 
     popupList.innerHTML = ''
 
-    html.forEach(el => {
+
+    html?.forEach(el => {
       popupList.insertAdjacentHTML('beforeend', el)
     })
+
 
   } else {
     showInfoModal(errortext)
