@@ -99,7 +99,7 @@ if (editContactForm) {
 
   const contactRadioBtns = editContactForm.querySelectorAll('.edit-contact__checkbox')
 
-  const setJuristicMatches = (setInputs, radioType) => {
+  const setMatches = (setInputs, radioType) => {
     let inputsOnType
     switch (radioType) {
       case 'juristic':
@@ -129,13 +129,13 @@ if (editContactForm) {
 
       switch (e.target.value) {
         case 'isMatchesJuristic' :
-          setJuristicMatches(setInputs, 'juristic')
+          setMatches(setInputs, 'juristic')
           break
         case 'isMatchesMail' :
-          setJuristicMatches(setInputs, 'mail')
+          setMatches(setInputs, 'mail')
           break
         default :
-          setJuristicMatches(setInputs, 'empty')
+          setMatches(setInputs, 'empty')
           break
       }
 
