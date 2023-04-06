@@ -22,7 +22,6 @@ if (changeablePage) {
   // Удаление элементов в изменяемых списках
 
   changeablePage.addEventListener('click', (e) => {
-    e.preventDefault()
     if (e.target.dataset.btn === "delete") {
       e.target.closest('li').remove()
     }

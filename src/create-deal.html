@@ -13,11 +13,11 @@
   'header-title': ''
   })
 
+  @include('partials/counterparty-alert-modal.html')
   <main class="main create-deal-page">
     <div class="container">
       <h1>Создание сделки</h1>
-      <form class="create-deal-page__form" action="#">
-        @include('partials/counterparty-alert-modal.html')
+      <form class="create-deal-page__form" action="./data/getCases.txt">
         <section class="section create-deal-caption">
           <div
             class="create-deal-page__prompt create-deal-page__prompt-caption">
@@ -31,7 +31,7 @@
           </div>
 
           <div class="create-deal-page__input-wrapper select-input-wrapper">
-            <label>Выбор кейса (шаблона) сделки</label>
+            <label>Выбор кейса (шаблона) сделки*</label>
             <input name="id_case"
                    class="create-deal-page__data-input create-deal-page__data-case select-popup-data"
                    type="hidden">
@@ -40,7 +40,7 @@
               name="deal_choice" type="text"
               data-info-url="/include/ajax/get_case_info.php"
               data-invoices-url="/include/ajax/search_case_banks.php"
-              placeholder="Начните вводить название кейса...">
+              placeholder="Начните вводить название кейса..." required>
             @include('partials/select-popup.html', {
             'submit-script': 'data/getCases.txt',
             'add-data':'{"idItem":3,"paramname":"test"}'
@@ -49,9 +49,10 @@
 
           </div>
           <div class="create-deal-page__input-wrapper">
-            <label>Название сделки</label>
+            <label>Название сделки*</label>
             <input class="create-deal-page__input"
                    name="deal_name" type="text"
+                   minlength="3" maxlength="50"
                    placeholder="Введите понятное название сделки" required>
           </div>
 
@@ -530,7 +531,8 @@
 
 
         <div class="create-deal-page__btns">
-          <button class="create-deal-page__save-btn" type="submit">Сохранить
+          <button class="create-deal-page__save-btn btn_disabled" type="submit">
+            Сохранить
             кейс
           </button>
           <a href="cases.html" class="create-deal-page__close-btn">Отменить

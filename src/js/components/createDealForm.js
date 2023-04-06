@@ -15,6 +15,8 @@ const createDealPage = document.querySelector('.create-deal-page')
 
 if (createDealPage) {
 
+  const submitBtn = createDealPage.querySelector('.create-deal-page__save-btn')
+
 // Генерация "Данные договора" в зависимости от кейса
 
   const dealCaseInput = document.querySelector('.create-deal-page__case-input')
@@ -70,6 +72,7 @@ if (createDealPage) {
       dealCaseDataInput.value = popupElId
       dealCaseInput.value = popupElValue
       dealCaseSelectPopup.dataset.selected = "true"
+      submitBtn.classList.remove('btn_disabled')
 
       updateInvoices(jsonCaseData, caseInvoicesUrl)
       initAllDates()
@@ -213,6 +216,14 @@ if (createDealPage) {
     }
   }
 
+  //запрет ввода пробелов в инпуте названия сделки
+
+  const dealNameInput = createDealPage.querySelector('input[name="deal_name"]')
+  dealNameInput.addEventListener('input', (e) => {
+    if (e.currentTarget.value[0] === ' ') {
+      e.currentTarget.value = e.currentTarget.value.trim()
+    }
+  })
 }
 
 
