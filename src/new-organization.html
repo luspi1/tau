@@ -5,7 +5,7 @@
 'title': 'Новая организация',
 })
 
-<body class="page__body">
+<body class="page__body new-organization-page ">
 <div class="site-container">
   <div class="modal-overlay"></div>
   @include('partials/header.html', {
@@ -23,6 +23,9 @@
             <h2 class="new-organization__section-title">
               Изображение (логотип и прочие)
             </h2>
+            <div class="new-organization__prompt">
+              <p>Логотип организации загружается в виде изображения, в формате png, jpg или svg.</p>
+            </div>
             <div class="new-organization__item new-organization__logo-item">
               <div
                 class="new-organization__item-wrapper general-dropzone-wrapper">
@@ -43,23 +46,37 @@
                     id="logo-add"
                     type="button">Загрузить
                   </button>
-                </div>
-                <div
-                  class="general-dropzone dropzone new-organization__general-dropzone"
-                  data-general-info='{"url": "/include/ajax/upload_image.php", "removeUrl":"/include/ajax/delete_image.php", "width":"170", "height":"170", "acceptedFiles": ".png, .jpeg, .jpg", "type":"org", "filesCount": "3", "additional": "доп.контент"}'>
+                 </div>
+                <div class="general-dropzone dropzone new-organization__general-dropzone"
+                  data-general-info='{"url": "/include/ajax/upload_image.php", "removeUrl":"/include/ajax/delete_image.php", "width":"350", "height":"170", "acceptedFiles": ".png, .jpeg, .jpg, .svg", "type":"org", "filesCount": "1", "additional": "доп.контент"}'>
                   <div
                     class="general-dropzone__message-wrapper new-organization__message-wrapper">
                     <div class="dz-message">
-                    </div>
-                    <div class="dz-message">
-                    </div>
-                    <div class="dz-message">
+                      <svg width="38" height="26" viewBox="0 0 38 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M34.7038 0H2.58182C1.15592 0 0 1.15592 0 2.58182V23.4182C0 24.8441 1.15592 26 2.58182 26H34.7038C36.1297 26 37.2856 24.8441 37.2856 23.4182V2.58182C37.2856 1.15592 36.1297 0 34.7038 0Z"
+                          fill="#F4F7FB"/>
+                        <path
+                          d="M12.3545 10.6861C14.1465 10.6861 15.5992 9.23345 15.5992 7.44146C15.5992 5.64947 14.1465 4.19678 12.3545 4.19678C10.5626 4.19678 9.10986 5.64947 9.10986 7.44146C9.10986 9.23345 10.5626 10.6861 12.3545 10.6861Z"
+                          fill="#2F65F6"/>
+                        <path
+                          d="M10.9227 10.3535C11.9244 10.3535 12.7364 9.04969 12.7364 7.44139C12.7364 5.83309 11.9244 4.5293 10.9227 4.5293C9.92094 4.5293 9.10889 5.83309 9.10889 7.44139C9.10889 9.04969 9.92094 10.3535 10.9227 10.3535Z"
+                          fill="#91D9F9"/>
+                        <path
+                          d="M23.0539 26H2.44028C1.79314 25.9998 1.17256 25.7427 0.714968 25.2851C0.257371 24.8275 0.000205018 24.2069 0 23.5597V19.1085L5.93402 14.9364C6.25678 14.7098 6.64262 14.5904 7.03696 14.5951C7.43131 14.5998 7.81418 14.7284 8.13143 14.9627L23.0539 26Z"
+                          fill="#91D9F9"/>
+                        <path
+                          d="M27.1825 11.3019L37.2855 17.4069V23.4801C37.2853 24.1485 37.0196 24.7895 36.5469 25.262C36.0742 25.7346 35.4331 26 34.7647 26H4.64062L23.0491 11.5571C23.6308 11.1004 24.3378 10.8313 25.076 10.7857C25.8143 10.7402 26.5489 10.9202 27.1825 11.3019Z"
+                          fill="#2F65F6"/>
+                      </svg>
+                      <p>Перетащите изображение на это поле</p>
                     </div>
                   </div>
+
                 </div>
               </div>
             </div>
-          </div>
+           </div>
           <div
             class="new-organization__section new-organization__seal-section">
             <h2 class="new-organization__section-title">Загрузка печати</h2>
@@ -71,6 +88,9 @@
               class="new-organization__item-wrapper general-dropzone-wrapper">
               <div
                 class="new-organization__input-wrapper seal-loading">
+                <p class="new-organization__input-title">
+                  Или загрузите изображение с ПК
+                </p>
                 <button
                   class="new-organization__btn general-dropzone__add-btn"
                   id="seal-add"
@@ -80,10 +100,28 @@
               <div
                 class="general-dropzone dropzone new-organization__general-dropzone"
                 data-show-preview="true"
-                data-general-info='{"url": "data/getCases.txt", "removeUrl":"data/getCases.txt", "width":"170", "height":"170", "acceptedFiles": ".png", "type":"org-seal", "filesCount": "1", "additional": "доп.контент"}'>
+                          data-general-info='{"url": "/include/ajax/upload_image.php", "removeUrl":"/include/ajax/delete_image.php", "width":"350", "height":"170", "acceptedFiles": ".png", "type":"org-seal", "filesCount": "1", "additional": "доп.контент"}'>
                 <div
                   class="general-dropzone__message-wrapper new-organization__message-wrapper">
                   <div class="dz-message">
+                    <svg width="38" height="26" viewBox="0 0 38 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M34.7038 0H2.58182C1.15592 0 0 1.15592 0 2.58182V23.4182C0 24.8441 1.15592 26 2.58182 26H34.7038C36.1297 26 37.2856 24.8441 37.2856 23.4182V2.58182C37.2856 1.15592 36.1297 0 34.7038 0Z"
+                        fill="#F4F7FB"/>
+                      <path
+                        d="M12.3545 10.6861C14.1465 10.6861 15.5992 9.23345 15.5992 7.44146C15.5992 5.64947 14.1465 4.19678 12.3545 4.19678C10.5626 4.19678 9.10986 5.64947 9.10986 7.44146C9.10986 9.23345 10.5626 10.6861 12.3545 10.6861Z"
+                        fill="#2F65F6"/>
+                      <path
+                        d="M10.9227 10.3535C11.9244 10.3535 12.7364 9.04969 12.7364 7.44139C12.7364 5.83309 11.9244 4.5293 10.9227 4.5293C9.92094 4.5293 9.10889 5.83309 9.10889 7.44139C9.10889 9.04969 9.92094 10.3535 10.9227 10.3535Z"
+                        fill="#91D9F9"/>
+                      <path
+                        d="M23.0539 26H2.44028C1.79314 25.9998 1.17256 25.7427 0.714968 25.2851C0.257371 24.8275 0.000205018 24.2069 0 23.5597V19.1085L5.93402 14.9364C6.25678 14.7098 6.64262 14.5904 7.03696 14.5951C7.43131 14.5998 7.81418 14.7284 8.13143 14.9627L23.0539 26Z"
+                        fill="#91D9F9"/>
+                      <path
+                        d="M27.1825 11.3019L37.2855 17.4069V23.4801C37.2853 24.1485 37.0196 24.7895 36.5469 25.262C36.0742 25.7346 35.4331 26 34.7647 26H4.64062L23.0491 11.5571C23.6308 11.1004 24.3378 10.8313 25.076 10.7857C25.8143 10.7402 26.5489 10.9202 27.1825 11.3019Z"
+                        fill="#2F65F6"/>
+                    </svg>
+                    <p>Перетащите изображение на это поле</p>
                   </div>
                 </div>
               </div>
@@ -92,10 +130,16 @@
           <div
             class="new-organization__section new-organization__sign-section">
             <h2 class="new-organization__section-title">Загрузка подписи</h2>
+            <div class="new-organization__prompt">
+              <p>Подпись загружается в формате PNG, с прозрачным нижним слоем, НЕ на белом фоне.</p>
+            </div>
             <div
               class="new-organization__item-wrapper general-dropzone-wrapper">
               <div
                 class="new-organization__input-wrapper sign-loading">
+                <p class="new-organization__input-title">
+                  Или загрузите изображение с ПК
+                </p>
                 <button
                   class="new-organization__btn general-dropzone__add-btn"
                   id="sign-add"
@@ -105,10 +149,29 @@
               <div
                 class="general-dropzone dropzone new-organization__general-dropzone"
                 data-show-preview="true"
-                data-general-info='{"url": "data/getCases.txt", "removeUrl":"data/getCases.txt", "width":"170", "height":"170", "acceptedFiles": ".png", "type":"org-sign", "filesCount": "1", "additional": "доп.контент"}'>
+                data-general-info='{"url": "/include/ajax/upload_image.php", "removeUrl":"/include/ajax/delete_image.php", "width":"350", "height":"170", "acceptedFiles": ".png", "type":"org-sign", "filesCount": "1", "additional": "доп.контент"}'>
                 <div
                   class="general-dropzone__message-wrapper new-organization__message-wrapper">
                   <div class="dz-message">
+                    <svg width="38" height="26" viewBox="0 0 38 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M34.7038 0H2.58182C1.15592 0 0 1.15592 0 2.58182V23.4182C0 24.8441 1.15592 26 2.58182 26H34.7038C36.1297 26 37.2856 24.8441 37.2856 23.4182V2.58182C37.2856 1.15592 36.1297 0 34.7038 0Z"
+                        fill="#F4F7FB"/>
+                      <path
+                        d="M12.3545 10.6861C14.1465 10.6861 15.5992 9.23345 15.5992 7.44146C15.5992 5.64947 14.1465 4.19678 12.3545 4.19678C10.5626 4.19678 9.10986 5.64947 9.10986 7.44146C9.10986 9.23345 10.5626 10.6861 12.3545 10.6861Z"
+                        fill="#2F65F6"/>
+                      <path
+                        d="M10.9227 10.3535C11.9244 10.3535 12.7364 9.04969 12.7364 7.44139C12.7364 5.83309 11.9244 4.5293 10.9227 4.5293C9.92094 4.5293 9.10889 5.83309 9.10889 7.44139C9.10889 9.04969 9.92094 10.3535 10.9227 10.3535Z"
+                        fill="#91D9F9"/>
+                      <path
+                        d="M23.0539 26H2.44028C1.79314 25.9998 1.17256 25.7427 0.714968 25.2851C0.257371 24.8275 0.000205018 24.2069 0 23.5597V19.1085L5.93402 14.9364C6.25678 14.7098 6.64262 14.5904 7.03696 14.5951C7.43131 14.5998 7.81418 14.7284 8.13143 14.9627L23.0539 26Z"
+                        fill="#91D9F9"/>
+                      <path
+                        d="M27.1825 11.3019L37.2855 17.4069V23.4801C37.2853 24.1485 37.0196 24.7895 36.5469 25.262C36.0742 25.7346 35.4331 26 34.7647 26H4.64062L23.0491 11.5571C23.6308 11.1004 24.3378 10.8313 25.076 10.7857C25.8143 10.7402 26.5489 10.9202 27.1825 11.3019Z"
+                        fill="#2F65F6"/>
+                    </svg>
+
+                    <p>Перетащите изображение на это поле</p>
                   </div>
                 </div>
               </div>

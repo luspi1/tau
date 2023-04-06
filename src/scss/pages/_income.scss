@@ -398,7 +398,7 @@
       padding: 12px 17px 8px 17px;
       background: #F7F8FA;
       border-radius: 5px;
-    }
+      }
 
     &__button-wrapper {
       width: 100%;
@@ -445,11 +445,11 @@
       &.active {
         flex-direction: column;
 
-        a {
+        a,p   {
           margin: 6px 0 0;
           line-height: 25px;
         }
-
+        .months__description,
         .months__deal {
           display: block;
         }
@@ -461,7 +461,9 @@
         .months__payment,
         .months__organization {
           overflow: visible;
-
+          max-width: 90%;
+          width: unset;
+          white-space: normal;
           &::after {
             content: none;
           }
@@ -473,7 +475,7 @@
         color: #2F65F6;
         line-height: 20px;
       }
-
+      .months__description,
       .months__deal {
         display: none;
       }
