@@ -1,8 +1,12 @@
 import {
-  formToObj, sendData,
-  serializeForm, showInfoModal, toggleLoader, updateFields
+  formToObj,
+  sendData,
+  serializeForm,
+  showInfoModal,
+  toggleLoader,
+  updateFields
 }                                            from "../_functions"
-import { modalOverlay, body, modalFullname } from "../_vars"
+import { body, modalFullname, modalOverlay } from "../_vars"
 
 const editFullnameForm = document.querySelector('.modal-fullname__form')
 const primeSection = document.querySelector('.prime-info')

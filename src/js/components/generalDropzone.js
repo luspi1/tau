@@ -1,7 +1,6 @@
-import {Dropzone} from "dropzone"
+import { Dropzone } from "dropzone"
 
-import {cutString, sendData, showBigImgModal, showInfoModal} from "../_functions"
-import it from "air-datepicker/locale/it";
+import { cutString, sendData, showBigImgModal, showInfoModal } from "../_functions"
 
 
 const genDropzones = document.querySelectorAll('.general-dropzone')
@@ -42,7 +41,17 @@ if (genDropzones) {
 
 
     const dataObj = JSON.parse(dropzoneEl.dataset.generalInfo)
-    const {url, width, height, type, filesCount, removeUrl, additional, acceptedFiles} = dataObj
+    const {
+      url,
+      width,
+      height,
+      type,
+      filesCount,
+      removeUrl,
+      additional,
+      acceptedFiles,
+      customText
+    } = dataObj
 
     const newGenDropzone = new Dropzone(dropzoneEl, {
       maxFilesize: 5,
@@ -92,9 +101,12 @@ if (genDropzones) {
     })
 
     newGenDropzone.on("error", function (file) {
-       showInfoModal('Неправильный формат. Загрузите изображение в указанном формате')
+      if (customText) {
+        showInfoModal(customText)
+      } else {
+        showInfoModal('Ошибка 404')
+      }
       file.previewElement.parentNode.removeChild(file.previewElement)
-
     })
 
     newGenDropzone.on("success", function (file, response) {
