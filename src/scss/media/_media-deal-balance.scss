@@ -8,10 +8,16 @@
     margin-bottom: 50px;
     min-width: 100%;
   }
+  .deals-balance .deals-balance-table {
+    overflow-x: auto;
+  }
+
+  .deals-balance .deals-balance-table__row {
+    min-width: 990px;
+  }
 }
 
 @media (max-width: 1024px) {
-
   .deals-balance__content {
     max-width: 100%;
   }
@@ -39,17 +45,6 @@
   }
 
 }
-
-@media (max-width: 550px) {
-  .deals-balance .deals-balance-table {
-    overflow-x: auto;
-  }
-
-  .deals-balance .deals-balance-table__row {
-    min-width: 550px;
-  }
-}
-
 
 @media (max-width: 400px) {
   .deals-balance__title {

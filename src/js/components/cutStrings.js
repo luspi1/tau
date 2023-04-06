@@ -34,3 +34,12 @@ cutString(trimCorrStrings)
 //обрезка длинных строк в aside на странице - correspondence-item
 const trimCorrItemStrings = document.querySelectorAll('.newmail-one [data-shear]')
 cutString(trimCorrItemStrings)
+
+
+//обрезка длинных строк на странице - deal-balance
+const trimBallanceItemStrings = document.querySelectorAll('.deals-balance-table__description[data-shear]')
+cutString(trimBallanceItemStrings)
+
+//обрезка длинных строк на странице - deal-balance
+const trimIncomePageStrings = document.querySelectorAll('.income-page [data-shear]')
+cutString(trimIncomePageStrings)
