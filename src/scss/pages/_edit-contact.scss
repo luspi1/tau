@@ -124,7 +124,11 @@
       margin-top: 10px;
     }
   }
-
+  &__charter-wrapper {
+    .edit-contact__input {
+      width: 50%;
+    }
+  }
   &__item-wrapper {
     display: flex;
     justify-content: space-between;

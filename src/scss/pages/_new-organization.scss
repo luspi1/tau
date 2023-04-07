@@ -239,7 +239,11 @@
     padding-bottom: 20px;
     border-bottom: 1px dotted #C4C4C4;
   }
-
+  &__charter-wrapper {
+    .new-organization__input {
+      width: 50%;
+    }
+  }
   &__item-director {
     justify-content: stretch;
 

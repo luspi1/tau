@@ -55,7 +55,12 @@
   .case-item .aside {
     padding: 40px 20px;
   }
-
+  .case-item .aside .data-case__item {
+    flex-direction: column;
+  }
+  .case-item .aside .data-case__item p {
+    padding-left: 0;
+  }
 
 }
 
@@ -72,4 +77,6 @@
   .case-item .case h5 {
     font-size: 19px;
   }
-}
+
+
+ }

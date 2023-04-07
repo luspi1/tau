@@ -199,16 +199,19 @@
 
       &__item {
         display: flex;
+      &:not(:last-child) {
+        margin-bottom: 10px;
+      }
 
         .case__minititle {
-          width: 36%;
+          min-width: 158px;
+          width: 158px;
           padding-left: 0;
         }
 
         p {
           padding-left: 22px;
-          text-align-last: left;
-          line-height: 32px;
+          line-height: 26px;
         }
 
         a {
