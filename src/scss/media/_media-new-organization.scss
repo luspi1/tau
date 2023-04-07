@@ -34,6 +34,7 @@
       margin-bottom: 15px;
       font-size: 14px;
       padding: 12px 18px;
+
       &.join-director__btn {
         margin-bottom: 0;
       }
@@ -63,8 +64,6 @@
     .new-organization__industries .choices {
       width: 242px;
     }
-
-
   }
 
 }
@@ -76,7 +75,9 @@
     margin-bottom: 30px;
     text-align: center;
   }
-
+  .new-organization__charter-wrapper .new-organization__input {
+    width: 100%
+  }
   .new-organization .new-organization__item-wrapper {
     flex-direction: column;
     align-items: stretch;
@@ -188,10 +189,9 @@
   .new-organization .new-organization__general-dropzone,
   .new-organization .general-dropzone-wrapper .general-dropzone__message-wrapper,
   .new-organization .new-organization__general-dropzone .dz-message,
-  .new-organization .new-organization__general-dropzone .dz-preview{
+  .new-organization .new-organization__general-dropzone .dz-preview {
     width: 100%;
   }
-
 
 
   .new-organization .new-organization__director-wrapper .choices,
