@@ -127,6 +127,10 @@
   &__item-wrapper {
     display: flex;
     align-items: flex-end;
+    justify-content: space-between;
+  &.general-dropzone-wrapper {justify-content: flex-start;
+
+  }
   }
 
   &__input-title {
@@ -450,6 +454,8 @@
   &__requisites {
     padding-bottom: 40px;
     border-bottom: 1px dotted #C4C4C4;
+    display: flex;
+    justify-content: space-between;
 
     .new-organization__input-wrapper {
       width: 24%;
