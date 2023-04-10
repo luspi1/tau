@@ -1,10 +1,10 @@
 // модалка добавления платежа
-import {sendData, showInfoModal, togglePaymentState, toggleRequiredFields} from '../_functions'
-import {initAllDates} from './customDate'
-import {initSelects} from './customSelect'
-import {initDateInputMasks} from './inputMask'
-import {initCloseModals} from './managePopup'
-import {body, modalOverlay} from "../_vars"
+import { sendData, showInfoModal, togglePaymentState, toggleRequiredFields } from '../_functions'
+import { body, modalOverlay }                                                from "../_vars"
+import { initAllDates }                                                      from './customDate'
+import { initSelects }                                                       from './customSelect'
+import { initDateInputMasks }                                                from './inputMask'
+import { initCloseModals }                                                   from './managePopup'
 
 const initPaymentModal = () => {
   initSelects()
@@ -25,18 +25,24 @@ const initPaymentModal = () => {
 
       const paymentData = {id_payment: paymentId}
       const jsonPaymentData = JSON.stringify(paymentData)
-      const response = await sendData(jsonPaymentData, paymentScript)
-      const finishedResponse = await response.json()
-      const {status, errortext} = finishedResponse
 
-      if (status === 'ok') {
-        e.target.value = ''
-        addPaymentManualFill.classList.remove('add-payment__manual-fill_active')
-        addPaymentFileFill.classList.add('add-payment__file-fill_active')
-        toggleRequiredFields(requiredFields)
-      } else {
-        showInfoModal(errortext)
+      try {
+        const response = await sendData(jsonPaymentData, paymentScript)
+        const finishedResponse = await response.json()
+        const {status, errortext} = finishedResponse
+
+        if (status === 'ok') {
+          e.target.value = ''
+          addPaymentManualFill.classList.remove('add-payment__manual-fill_active')
+          addPaymentFileFill.classList.add('add-payment__file-fill_active')
+          toggleRequiredFields(requiredFields)
+        } else {
+          showInfoModal(errortext)
+        }
+      } catch {
+        showInfoModal("Во время выполнения запроса произошла ошибка")
       }
+
 
     })
   }
@@ -74,16 +80,22 @@ if (incomePageMain) {
     btn.addEventListener('click', async () => {
       const paymentData = {id_payment: admissionBtnId}
       const jsonPaymentData = JSON.stringify(paymentData)
-      const response = await sendData(jsonPaymentData, admissionBtnScript)
-      const finishedResponse = await response.json()
-      const {status, errortext, html} = finishedResponse
 
-      if (status === 'ok') {
-        admissionModal.innerHTML = html
-        initPaymentModal()
-      } else {
-        showInfoModal(errortext)
+      try {
+        const response = await sendData(jsonPaymentData, admissionBtnScript)
+        const finishedResponse = await response.json()
+        const {status, errortext, html} = finishedResponse
+
+        if (status === 'ok') {
+          admissionModal.innerHTML = html
+          initPaymentModal()
+        } else {
+          showInfoModal(errortext)
+        }
+      } catch {
+        showInfoModal("Во время выполнения запроса произошла ошибка")
       }
+
     })
   })
 
@@ -94,14 +106,20 @@ if (incomePageMain) {
   const getPaymentState = async (dataId, dataScript, checkBtn, closeBtn) => {
     const paymentData = {id_payment: dataId}
     const jsonPaymentData = JSON.stringify(paymentData)
-    const response = await sendData(jsonPaymentData, dataScript)
-    const finishedResponse = await response.json()
-    const {status, errortext} = finishedResponse
 
-    if (status === 'ok') {
-      togglePaymentState(checkBtn, closeBtn)
-    } else {
-      showInfoModal(errortext)
+
+    try {
+      const response = await sendData(jsonPaymentData, dataScript)
+      const finishedResponse = await response.json()
+      const {status, errortext} = finishedResponse
+
+      if (status === 'ok') {
+        togglePaymentState(checkBtn, closeBtn)
+      } else {
+        showInfoModal(errortext)
+      }
+    } catch {
+      showInfoModal("Во время выполнения запроса произошла ошибка")
     }
   }
 
@@ -117,7 +135,7 @@ if (incomePageMain) {
   })
 }
 
-// Подтверждение удаления сделки
+// Подтверждение удаления сделки deal-balance.html
 
 const deleteDealBtns = document.querySelectorAll('.deals-balance-table__cell.deals-balance-table__delete-btn')
 let dataIdBtn
@@ -139,29 +157,31 @@ if (confirmDealBtn) {
   confirmDealBtn.addEventListener('click', async () => {
     const dealData = {id_deal_payment: dataIdBtn}
     const jsonDealData = JSON.stringify(dealData)
-    const response = await sendData(jsonDealData, dataScriptId)
-    const finishedResponse = await response.json()
-    const {status, errortext, dohod, saldo} = finishedResponse
+    try {
+      const response = await sendData(jsonDealData, dataScriptId)
+      const finishedResponse = await response.json()
+      const {status, errortext, dohod, saldo} = finishedResponse
 
-    if (status === 'ok') {
-      document.querySelector('#dohod').innerText = dohod
-      document.querySelector('#saldo').innerText = saldo
+      if (status === 'ok') {
+        document.querySelector('#dohod').innerText = dohod
+        document.querySelector('#saldo').innerText = saldo
 
+        dealRow.remove()
+        body.classList.remove('_lock')
+        modalOverlay.classList.remove('modal-overlay_active')
+        document.querySelectorAll('.modal').forEach(modal => {
+          if (modal.classList.contains('_active')) {
+            modal.classList.remove('_active')
+            modal.closest('main').style.minHeight = "calc(100vh - 60px)"
+          }
+        })
 
-      dealRow.remove()
-      body.classList.remove('_lock')
-      modalOverlay.classList.remove('modal-overlay_active')
-      document.querySelectorAll('.modal').forEach(modal => {
-        if (modal.classList.contains('_active')) {
-          modal.classList.remove('_active')
-          modal.closest('main').style.minHeight = "calc(100vh - 60px)"
-        }
-      })
-
-    } else {
-      showInfoModal(errortext)
+      } else {
+        showInfoModal(errortext)
+      }
+    } catch {
+      showInfoModal("Во время выполнения запроса произошла ошибка")
     }
   })
-
-
+  
 }

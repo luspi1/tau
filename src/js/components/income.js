@@ -4,8 +4,7 @@ import {
   showInfoModal,
   toggleLoader,
   togglePaymentState
-}                       from '../_functions'
-import { modalOverlay } from '../_vars'
+} from '../_functions'
 
 const incomePageMain = document.querySelector('.income-page')
 
@@ -80,19 +79,24 @@ if (incomePageMain) {
 
         toggleLoader()
 
-        const response = await sendData(jsonData, delScript)
-        const finishedResponse = await response.json()
+        try {
+          const response = await sendData(jsonData, delScript)
+          const finishedResponse = await response.json()
 
-        toggleLoader()
+          toggleLoader()
 
-        const {status, errortext} = finishedResponse
-        if (status === 'ok') {
-          delEl.remove()
-          if (paymentCheckBtn.classList.contains('green')) {
-            togglePaymentState(paymentCheckBtn, paymentCloseBtn)
+          const {status, errortext} = finishedResponse
+          if (status === 'ok') {
+            delEl.remove()
+            if (paymentCheckBtn.classList.contains('green')) {
+              togglePaymentState(paymentCheckBtn, paymentCloseBtn)
+            }
+          } else {
+            showInfoModal(errortext)
           }
-        } else {
-          showInfoModal(errortext)
+        } catch {
+          toggleLoader()
+          showInfoModal("Во время выполнения запроса произошла ошибка")
         }
       }
       checkConfirm(handleDelMonthEl)

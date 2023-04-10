@@ -266,16 +266,18 @@ export const checkConfirm = (confirmFunc, textConfirm) => {
 
 // переключение открытия/закрытия платежа на income.html
 export const togglePaymentState = (checkBtn, closeBtn) => {
-  if (checkBtn.classList.contains('red')) {
-    checkBtn.classList.remove('red')
-    checkBtn.classList.add('green')
-    closeBtn.textContent = 'Открыть платеж'
-    closeBtn.style.color = '#0CB477'
-  } else {
-    checkBtn.classList.remove('green')
-    checkBtn.classList.add('red')
-    closeBtn.textContent = 'Закрыть платеж'
-    closeBtn.style.color = '#bc0d48'
+  if (checkBtn && closeBtn) {
+    if (checkBtn.classList.contains('red')) {
+      checkBtn.classList.remove('red')
+      checkBtn.classList.add('green')
+      closeBtn.textContent = 'Открыть платеж'
+      closeBtn.style.color = '#0CB477'
+    } else {
+      checkBtn.classList.remove('green')
+      checkBtn.classList.add('red')
+      closeBtn.textContent = 'Закрыть платеж'
+      closeBtn.style.color = '#bc0d48'
+    }
   }
 }
 
