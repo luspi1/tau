@@ -1,9 +1,10 @@
 // модалка добавления платежа
-import { sendData, showInfoModal, togglePaymentState, toggleRequiredFields } from '../_functions'
-import { initAllDates }                                                      from './customDate'
-import { initSelects }                                                       from './customSelect'
-import { initDateInputMasks }                                                from './inputMask'
-import { initCloseModals }                                                   from './managePopup'
+import {sendData, showInfoModal, togglePaymentState, toggleRequiredFields} from '../_functions'
+import {initAllDates} from './customDate'
+import {initSelects} from './customSelect'
+import {initDateInputMasks} from './inputMask'
+import {initCloseModals} from './managePopup'
+import {body, modalOverlay} from "../_vars"
 
 const initPaymentModal = () => {
   initSelects()
@@ -116,3 +117,51 @@ if (incomePageMain) {
   })
 }
 
+// Подтверждение удаления сделки
+
+const deleteDealBtns = document.querySelectorAll('.deals-balance-table__cell.deals-balance-table__delete-btn')
+let dataIdBtn
+let dataScriptId
+let dealRow
+if (deleteDealBtns) {
+  deleteDealBtns.forEach(btn => {
+    btn.addEventListener('click', ({currentTarget}) => {
+      dataIdBtn = currentTarget.dataset.id
+      dataScriptId = currentTarget.dataset.script
+      dealRow = currentTarget.closest('.deals-balance-table__row')
+    })
+  })
+
+}
+
+const confirmDealBtn = document.querySelector('#confirmDealBtn')
+if (confirmDealBtn) {
+  confirmDealBtn.addEventListener('click', async () => {
+    const dealData = {id_deal_payment: dataIdBtn}
+    const jsonDealData = JSON.stringify(dealData)
+    const response = await sendData(jsonDealData, dataScriptId)
+    const finishedResponse = await response.json()
+    const {status, errortext, dohod, saldo} = finishedResponse
+
+    if (status === 'ok') {
+      document.querySelector('#dohod').innerText = dohod
+      document.querySelector('#saldo').innerText = saldo
+
+
+      dealRow.remove()
+      body.classList.remove('_lock')
+      modalOverlay.classList.remove('modal-overlay_active')
+      document.querySelectorAll('.modal').forEach(modal => {
+        if (modal.classList.contains('_active')) {
+          modal.classList.remove('_active')
+          modal.closest('main').style.minHeight = "calc(100vh - 60px)"
+        }
+      })
+
+    } else {
+      showInfoModal(errortext)
+    }
+  })
+
+
+}

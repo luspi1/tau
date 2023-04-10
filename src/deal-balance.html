@@ -21,6 +21,14 @@
     })
     @include('partials/add-payment-modal.html')
     @include('partials/change-employee-modal.html')
+    <div class="check-confirm-deal-modal modal" id="check-confirm-deal-modal" data-body-lock="true">
+        <p class="check-confirm-deal-modal__content-text">Вы действительно хотите
+          совершить данное действие?</p>
+        <div class="check-confirm-deal-modal__btns">
+          <button class="btn _confirm" id="confirmDealBtn" type="button">Подтвердить</button>
+          <button class="btn _cancel" type="button" data-close-modal="true">Отменить</button>
+        </div>
+    </div>
     <section class="deals-balance">
       <div class="container">
         <div class="deals-balance__content">
@@ -63,7 +71,9 @@
                 892 100 ₽</p>
               <button
                 class="deals-balance-table__cell deals-balance-table__delete-btn"
-                data-delete="btn"
+                data-id="53a9a4fb"
+                data-script="data/deleteDeal.txt"
+               data-modal="check-confirm-deal-modal"
                 type="button">
                 <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
@@ -93,7 +103,9 @@
                 892 000 100 ₽</p>
               <button
                 class="deals-balance-table__cell deals-balance-table__delete-btn"
-                data-delete="btn"
+                data-id="6ef60dbe"
+                data-script="data/deleteDeal.txt"
+               data-modal="check-confirm-deal-modal"
                 type="button">
                 <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
@@ -123,7 +135,9 @@
                 8 000 092 100 ₽</p>
               <button
                 class="deals-balance-table__cell deals-balance-table__delete-btn"
-                data-delete="btn"
+                data-id="4c7d301e"
+                data-script="data/deleteDeal.txt"
+               data-modal="check-confirm-deal-modal"
                 type="button">
                 <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
@@ -152,7 +166,9 @@
                 8 092 1000 000 ₽</p>
               <button
                 class="deals-balance-table__cell deals-balance-table__delete-btn"
-                data-delete="btn"
+                data-id="fbd89191"
+                data-script="data/deleteDeal.txt"
+               data-modal="check-confirm-deal-modal"
                 type="button">
                 <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
@@ -181,7 +197,9 @@
                 8 000 092 100 ₽</p>
               <button
                 class="deals-balance-table__cell deals-balance-table__delete-btn"
-                data-delete="btn"
+                data-id="341829e8"
+                data-script="data/deleteDeal.txt"
+               data-modal="check-confirm-deal-modal"
                 type="button">
                 <svg width="19" height="19" viewBox="0 0 19 19" fill="none"
                      xmlns="http://www.w3.org/2000/svg">
@@ -212,11 +230,15 @@
               <p class="minititle">Плановый доход</p>
             </div>
             <div class="aside__item">
-              <p class="aside__price">3 022 106 &#8381;</p>
+              <p class="aside__price">
+               <span id="dohod">3 022 106</span> &#8381;
+              </p>
               <p class="minititle">Фактический доход</p>
             </div>
             <div class="aside__item">
-              <p class="aside__price">- 5 898 902 &#8381;</p>
+              <p class="aside__price">
+                <span id="saldo">- 5 898 902</span>
+                &#8381;</p>
               <p class="minititle">Сальдо</p>
             </div>
             <div class="aside__people">
