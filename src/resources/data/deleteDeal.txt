@@ -1,0 +1,1 @@
+{"status": "ok", "errortext":"Произошла ошибка!",  "dohod" : "555", "saldo": "666"  }
