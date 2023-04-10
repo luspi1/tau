@@ -9,10 +9,16 @@ export const removeClasses = (className) => {
 
 // Фунцкия отправки fetch запросов
 export async function sendData(data, url) {
+
+  // установка времени прерывания запроса
+  let controller = new AbortController()
+  setTimeout(() => controller.abort(), 6000)
+
   return await fetch(url, {
     method: 'POST',
     headers: {'Content-Type': 'multipart/form-data'},
     body: data,
+    signal: controller.signal
   })
 }
 
