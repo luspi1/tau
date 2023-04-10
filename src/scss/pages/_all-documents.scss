@@ -82,6 +82,7 @@
   }
 
   &__subtitle {
+    margin-right: 20px;
     @include montserrat-semibold;
     font-size: 22px;
     line-height: 27px;
@@ -186,6 +187,7 @@
       line-height: 20px;
       color: #2F65F6;
       width: 47%;
+      word-break: break-word;
     }
 
     &__status-doc {
