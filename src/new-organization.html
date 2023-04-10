@@ -5,7 +5,7 @@
 'title': 'Новая организация',
 })
 
-<body class="page__body new-organization-page ">
+<body class="page__body new-organization-page">
 <div class="site-container">
   <div class="modal-overlay"></div>
   @include('partials/header.html', {
@@ -19,6 +19,9 @@
         <h1 class="new-organization__title">Новая организация</h1>
         <form action="/include/ajax/new_org.php" class="new-organization__form"
               autocomplete="off" method="post">
+
+          <input class="new-organization__input-leader-id" name="leader_id"
+                 type="hidden">
           <div class="new-organization__section new-organization__logo-section">
             <h2 class="new-organization__section-title">
               Изображение (логотип и прочие)

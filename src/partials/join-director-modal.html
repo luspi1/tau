@@ -5,21 +5,29 @@
     в качестве руководителя этой организации, введите его фамилию и
     выберите подходящий контакт.</p>
   <div class="modal-join-director__input-wrapper">
-    <input class="modal-join-director__input" type="text" name="leader_search" placeholder="Начните вводить фамилию">
-    <svg class="modal-join-director__delete-btn" width="20" height="20" viewBox="0 0 20 20" fill="none"
-      xmlns="http://www.w3.org/2000/svg">
-      <path class="modal-join-director__svg-bg"
-        d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z"
-        fill="white"></path>
-      <path class="modal-join-director__svg-icon"
-        d="M9.99993 11.1249C9.49993 11.6249 8.99993 12.1249 8.37493 12.7499C7.74993 13.3749 6.99993 14.1249 6.37493 14.7499C5.99993 15.1249 5.49993 15.1249 5.12493 14.7499C4.74993 14.3749 4.74993 13.8749 5.12493 13.4999C6.24993 12.3749 7.37493 11.2499 8.49993 10.1249C8.62493 9.99991 8.62493 9.99993 8.74993 9.87493C8.62493 9.74993 8.62493 9.74991 8.49993 9.62491C7.37493 8.49991 6.24993 7.37494 5.12493 6.24994C4.62493 5.74994 4.74993 5.12493 5.37493 4.87493C5.74993 4.74993 6.12493 4.74991 6.37493 5.12491C7.49993 6.24991 8.62493 7.37491 9.62493 8.37491C9.74993 8.49991 9.74992 8.49993 9.87492 8.62493C9.99992 8.49993 9.99993 8.49991 10.1249 8.37491C11.2499 7.24991 12.3749 6.12494 13.4999 4.99994C13.9999 4.49994 14.6249 4.62491 14.8749 5.24991C14.9999 5.62491 14.8749 5.87494 14.6249 6.24994C13.4999 7.37494 12.3749 8.49991 11.2499 9.62491C11.1249 9.74991 11.1249 9.74993 10.9999 9.87493C11.1249 9.99993 11.1249 9.99991 11.2499 10.1249C12.3749 11.2499 13.4999 12.3749 14.6249 13.4999C14.8749 13.7499 14.9999 14.2499 14.7499 14.4999C14.6249 14.8749 14.2499 14.9999 13.8749 14.8749C13.7499 14.8749 13.4999 14.7499 13.3749 14.6249C12.2499 13.4999 11.1249 12.4999 10.1249 11.3749C10.2499 11.2499 10.1249 11.2499 9.99993 11.1249Z"
-        fill="#969696"></path>
-    </svg>
+
+    <div class="create-deal-page__input-wrapper select-input-wrapper">
+      <input name="id_leader_search"
+             class="select-popup-data"
+             type="hidden">
+      <input class="modal-join-director__input select-popup-input" type="text"
+             name="leader_search"
+             placeholder="Начните вводить фамилию">
+      @include('select-popup.html', {
+      'submit-script': './data/getCases.txt',
+      'add-data':'{"idItem":3,"paramname":"test"}'
+      })
+    </div>
+
+
   </div>
-  <button class="modal-join-director__btn modal-join-director__connect-btn" type="button">Подключить
-    руководителя</button>
-  <p>Если этого физического лица еще нет в Ваших контактах, введите фамилию, имя и отчество вручную.</p>
-  <div class="modal-join-director__wrap">
+  <button class="modal-join-director__btn modal-join-director__connect-btn"
+          type="button">Подключить
+    руководителя
+  </button>
+  <p>Если этого физического лица еще нет в Ваших контактах, введите фамилию, имя
+    и отчество вручную.</p>
+  <form action="./data/getCases.txt" class="modal-join-director__wrap">
     <div class="modal-fullname__item fullname-nominative">
       <h3 class="modal-fullname__form-title">Именительный
         падеж</h3>
@@ -27,7 +35,8 @@
         <li class="modal-fullname__item-input">
           <p class="modal-fullname__input-title">Фамилия</p>
           <div class="modal-fullname__input-wrapper">
-            <input class="modal-fullname__input" type="text" name="surname" pattern="^[а-яА-ЯёЁa-zA-Z]+$" required>
+            <input class="modal-fullname__input" type="text" name="surname"
+                   pattern="^[а-яА-ЯёЁa-zA-Z]+$" required>
             <label class="modal-fullname__label">Иванов /
               Иванова</label>
           </div>
@@ -35,7 +44,8 @@
         <li class="modal-fullname__item-input">
           <p class="modal-fullname__input-title">Имя</p>
           <div class="modal-fullname__input-wrapper">
-            <input class="modal-fullname__input" type="text" name="firstname" pattern="^[а-яА-ЯёЁa-zA-Z]+$" required>
+            <input class="modal-fullname__input" type="text" name="firstname"
+                   pattern="^[а-яА-ЯёЁa-zA-Z]+$" required>
             <label class="modal-fullname__label">Иван /
               Мария</label>
           </div>
@@ -43,7 +53,8 @@
         <li class="modal-fullname__item-input">
           <p class="modal-fullname__input-title">Отчество</p>
           <div class="modal-fullname__input-wrapper">
-            <input class="modal-fullname__input" type="text" name="fathname" pattern="^[а-яА-ЯёЁa-zA-Z]+$" required>
+            <input class="modal-fullname__input" type="text" name="fathname"
+                   pattern="^[а-яА-ЯёЁa-zA-Z]+$" required>
             <label class="modal-fullname__label">Иванович /
               Ивановна</label>
           </div>
@@ -59,21 +70,24 @@
       <ul class="modal-fullname__input-list">
         <li class="modal-fullname__item-input">
           <div class="modal-fullname__input-wrapper">
-            <input class="modal-fullname__input" type="text" name="surname_rod" pattern="^[а-яА-ЯёЁa-zA-Z]+$">
+            <input class="modal-fullname__input" type="text" name="surname_rod"
+                   pattern="^[а-яА-ЯёЁa-zA-Z]+$">
             <label class="modal-fullname__label">Иванова /
               Ивановой</label>
           </div>
         </li>
         <li class="modal-fullname__item-input">
           <div class="modal-fullname__input-wrapper">
-            <input class="modal-fullname__input" type="text" name="firstname_rod" pattern="^[а-яА-ЯёЁa-zA-Z]+$">
+            <input class="modal-fullname__input" type="text"
+                   name="firstname_rod" pattern="^[а-яА-ЯёЁa-zA-Z]+$">
             <label class="modal-fullname__label">Ивана /
               Марии</label>
           </div>
         </li>
         <li class="modal-fullname__item-input">
           <div class="modal-fullname__input-wrapper">
-            <input class="modal-fullname__input" type="text" name="fathname_rod" pattern="^[а-яА-ЯёЁa-zA-Z]+$">
+            <input class="modal-fullname__input" type="text" name="fathname_rod"
+                   pattern="^[а-яА-ЯёЁa-zA-Z]+$">
             <label class="modal-fullname__label">Ивановича /
               Ивановны</label>
           </div>
@@ -88,21 +102,24 @@
       <ul class="modal-fullname__input-list">
         <li class="modal-fullname__item-input">
           <div class="modal-fullname__input-wrapper">
-            <input class="modal-fullname__input" type="text" name="surname_dat" pattern="^[а-яА-ЯёЁa-zA-Z]+$">
+            <input class="modal-fullname__input" type="text" name="surname_dat"
+                   pattern="^[а-яА-ЯёЁa-zA-Z]+$">
             <label class="modal-fullname__label">Иванову /
               Ивановой</label>
           </div>
         </li>
         <li class="modal-fullname__item-input">
           <div class="modal-fullname__input-wrapper">
-            <input class="modal-fullname__input" type="text" name="firstname_dat" pattern="^[а-яА-ЯёЁa-zA-Z]+$">
+            <input class="modal-fullname__input" type="text"
+                   name="firstname_dat" pattern="^[а-яА-ЯёЁa-zA-Z]+$">
             <label class="modal-fullname__label">Ивану /
               Марии</label>
           </div>
         </li>
         <li class="modal-fullname__item-input">
           <div class="modal-fullname__input-wrapper">
-            <input class="modal-fullname__input" type="text" name="fathname_dat" pattern="^[а-яА-ЯёЁa-zA-Z]+$">
+            <input class="modal-fullname__input" type="text" name="fathname_dat"
+                   pattern="^[а-яА-ЯёЁa-zA-Z]+$">
             <label class="modal-fullname__label">Ивановичу /
               Ивановне</label>
           </div>
@@ -117,5 +134,6 @@
         Сохранить данные руководителя
       </button>
     </div>
-  </div>
+  </form>
+
 </div>
