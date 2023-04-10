@@ -1,10 +1,6 @@
 import Choices from 'choices.js'
 import {
-  closeSelectPopups,
-  handlePopupInputs,
-  handlePopupSubmit,
-  sendData,
-  showInfoModal
+  closeSelectPopups, handlePopupInputs, handlePopupSubmit, sendData, showInfoModal
 }              from "../_functions"
 
 const createDocPage = document.querySelector('.create-doc-page')
@@ -16,20 +12,14 @@ if (createDocPage) {
   const invoicesSelect = createDocPage.querySelector('.create-doc-page__invoice-doc-select .create-doc-page__select')
 
   const invoicesChoices = new Choices(invoicesSelect, {
-    itemSelectText: '',
-    searchEnabled: false,
-    shouldSort: false,
-    allowHTML: true
+    itemSelectText: '', searchEnabled: false, shouldSort: false, allowHTML: true
   })
 
   const plannedPaymentSelect = createDocPage.querySelector('.create-doc-page__planned-payment-select .create-doc-page__select')
   const plannedPaymentSelectWrapper = createDocPage.querySelector('.create-doc-page__planned-payment-select')
 
   const plannedPaymentChoices = new Choices(plannedPaymentSelect, {
-    itemSelectText: '',
-    searchEnabled: false,
-    shouldSort: false,
-    allowHTML: true
+    itemSelectText: '', searchEnabled: false, shouldSort: false, allowHTML: true
   })
 
   // Функция инициализации селекта плановых платежей при выборе договора в типе "Счет"
@@ -56,19 +46,25 @@ if (createDocPage) {
 
     const invoiceDataUrl = parentalContract.dataset.invoicesUrl
     const updateInvoices = async (data, submitScript) => {
-      const response = await sendData(data, submitScript)
-      const finishedResponse = await response.json()
 
-      const {status, errortext, invoices, planned_payments} = finishedResponse
-      if (status === 'ok') {
 
-        invoicesChoices.clearChoices()
-        invoicesChoices.setValue(invoices)
+      try {
+        const response = await sendData(data, submitScript)
+        const finishedResponse = await response.json()
 
-        initPlannedPaymentSelect(planned_payments)
+        const {status, errortext, invoices, planned_payments} = finishedResponse
+        if (status === 'ok') {
 
-      } else {
-        showInfoModal(errortext)
+          invoicesChoices.clearChoices()
+          invoicesChoices.setValue(invoices)
+
+          initPlannedPaymentSelect(planned_payments)
+
+        } else {
+          showInfoModal(errortext)
+        }
+      } catch {
+        showInfoModal("Во время выполнения запроса произошла ошибка")
       }
     }
 

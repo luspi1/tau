@@ -28,17 +28,22 @@ if (changeEmployeeModal) {
 
     toggleLoader()
 
-    const response = await sendData(jsonData, e.target.action)
-    const finishedResponse = await response.json()
+    try {
+      const response = await sendData(jsonData, e.target.action)
+      const finishedResponse = await response.json()
 
-    toggleLoader()
+      toggleLoader()
 
-    const {status, errortext, fio} = finishedResponse
+      const {status, errortext, fio} = finishedResponse
 
-    if (status === 'ok') {
-      executorFio.textContent = fio
-    } else {
-      showInfoModal(errortext)
+      if (status === 'ok') {
+        executorFio.textContent = fio
+      } else {
+        showInfoModal(errortext)
+      }
+    } catch {
+      toggleLoader()
+      showInfoModal("Во время выполнения запроса произошла ошибка")
     }
   })
 
@@ -59,17 +64,22 @@ if (changeEmployeeModal) {
 
     toggleLoader()
 
-    const response = await sendData(jsonData, observerFormScript)
-    const finishedResponse = await response.json()
+    try {
+      const response = await sendData(jsonData, observerFormScript)
+      const finishedResponse = await response.json()
 
-    toggleLoader()
+      toggleLoader()
 
-    const {status, errortext, html} = finishedResponse
+      const {status, errortext, html} = finishedResponse
 
-    if (status === 'ok') {
-      observerList.insertAdjacentElement('beforeend', parseStringToHtml(html, 'li'))
-    } else {
-      showInfoModal(errortext)
+      if (status === 'ok') {
+        observerList.insertAdjacentElement('beforeend', parseStringToHtml(html, 'li'))
+      } else {
+        showInfoModal(errortext)
+      }
+    } catch {
+      toggleLoader()
+      showInfoModal("Во время выполнения запроса произошла ошибка")
     }
   })
 
@@ -87,16 +97,21 @@ if (changeEmployeeModal) {
 
       toggleLoader()
 
-      const response = await sendData(jsonData, observerFormScript)
-      const finishedResponse = await response.json()
-      toggleLoader()
+      try {
+        const response = await sendData(jsonData, observerFormScript)
+        const finishedResponse = await response.json()
+        toggleLoader()
 
-      const {status, errortext} = finishedResponse
+        const {status, errortext} = finishedResponse
 
-      if (status === 'ok') {
-        currentDelBtn.parentElement.remove()
-      } else {
-        showInfoModal(errortext)
+        if (status === 'ok') {
+          currentDelBtn.parentElement.remove()
+        } else {
+          showInfoModal(errortext)
+        }
+      } catch {
+        toggleLoader()
+        showInfoModal("Во время выполнения запроса произошла ошибка")
       }
     }
   })

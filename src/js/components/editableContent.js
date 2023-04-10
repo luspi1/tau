@@ -1,8 +1,4 @@
-import {
-  sendData,
-  showInfoModal,
-  toggleLoader
-} from "../_functions"
+import { sendData, showInfoModal, toggleLoader } from "../_functions"
 
 const editElements = document.querySelectorAll('.edit-el')
 const confirmEmailText = 'На Вашу почту было отправлено письмо с подтверждением.'
@@ -43,45 +39,53 @@ editElements.forEach(el => {
       const jsonData = JSON.stringify(emailData)
 
       toggleLoader()
-      const response = await sendData(jsonData, dataUrl)
-      const finishedResponse = await response.json()
-      toggleLoader()
 
-      const {status, errortext} = finishedResponse
-      if (status === 'ok') {
-        inputWrapper.classList.remove('_active')
-        editValue.textContent = input.value
-        editValue.style.visibility = 'visible'
-        editBtn.style.visibility = 'visible'
-        inputWrapper.classList.remove('_active')
-        showInfoModal(confirmEmailText)
-      } else {
-        showInfoModal(errortext)
+      try {
+        const response = await sendData(jsonData, dataUrl)
+        const finishedResponse = await response.json()
+        toggleLoader()
+
+        const {status, errortext} = finishedResponse
+        if (status === 'ok') {
+          inputWrapper.classList.remove('_active')
+          editValue.textContent = input.value
+          editValue.style.visibility = 'visible'
+          editBtn.style.visibility = 'visible'
+          inputWrapper.classList.remove('_active')
+          showInfoModal(confirmEmailText)
+        } else {
+          showInfoModal(errortext)
+        }
+      } catch {
+        toggleLoader()
+        showInfoModal("Во время выполнения запроса произошла ошибка")
       }
-
     } else {
       const inputData = {
         fieldname: inputName,
         fieldvalue: inputValue,
       }
       const jsonData = JSON.stringify(inputData)
-
       toggleLoader()
+      try {
+        const response = await sendData(jsonData, dataUrl)
+        const finishedResponse = await response.json()
 
-      const response = await sendData(jsonData, dataUrl)
-      const finishedResponse = await response.json()
+        toggleLoader()
 
-      toggleLoader()
-
-      const {status, errortext} = finishedResponse
-      if (status === 'ok') {
-        inputWrapper.classList.remove('_active')
-        editValue.textContent = input.value
-        editValue.style.visibility = 'visible'
-        editBtn.style.visibility = 'visible'
-        inputWrapper.classList.remove('_active')
-      } else {
-        showInfoModal(errortext)
+        const {status, errortext} = finishedResponse
+        if (status === 'ok') {
+          inputWrapper.classList.remove('_active')
+          editValue.textContent = input.value
+          editValue.style.visibility = 'visible'
+          editBtn.style.visibility = 'visible'
+          inputWrapper.classList.remove('_active')
+        } else {
+          showInfoModal(errortext)
+        }
+      } catch {
+        toggleLoader()
+        showInfoModal("Во время выполнения запроса произошла ошибка")
       }
     }
   })

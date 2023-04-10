@@ -1,4 +1,3 @@
-import { modalOverlay, modalRequisites } from "../_vars";
 import {
   formToObj,
   sendData,
@@ -6,7 +5,8 @@ import {
   showInfoModal,
   toggleLoader,
   updateFields
-}                                        from "../_functions";
+}                                        from "../_functions"
+import { modalOverlay, modalRequisites } from "../_vars"
 
 const editRequisitesForm = document.querySelector('.modal-requisites__form')
 const bankSection = document.querySelector('.bank-details')
@@ -28,21 +28,25 @@ if (editRequisitesForm) {
 
     toggleLoader()
 
-    const response = await sendData(jsonData, dataUrl)
-    const finishedResponse = await response.json()
+    try {
+      const response = await sendData(jsonData, dataUrl)
+      const finishedResponse = await response.json()
 
-    toggleLoader()
+      toggleLoader()
 
-    const {status, errortext} = finishedResponse
-    if (status === 'ok') {
-      updateFields(objData, requisitesUpdatableFields)
-      modalRequisites.classList.remove('_active')
-      modalOverlay.classList.remove('modal-overlay_active')
-    } else {
-      showInfoModal(errortext)
+      const {status, errortext} = finishedResponse
+      if (status === 'ok') {
+        updateFields(objData, requisitesUpdatableFields)
+        modalRequisites.classList.remove('_active')
+        modalOverlay.classList.remove('modal-overlay_active')
+      } else {
+        showInfoModal(errortext)
+      }
+    } catch {
+      toggleLoader()
+      showInfoModal("Во время выполнения запроса произошла ошибка")
     }
   }
-
 
   editRequisitesForm.addEventListener('submit', handleFormSubmit)
 }

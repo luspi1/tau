@@ -1,6 +1,6 @@
-import { v4 as uuidv4 }                                    from 'uuid';
+import { v4 as uuidv4 }                                    from 'uuid'
 import { checkValue }                                      from '../_functions'
-import { initAccountCheckMask, initBikMask, initCorrMask } from "./inputMask";
+import { initAccountCheckMask, initBikMask, initCorrMask } from "./inputMask"
 
 
 const addAccountBtn = document.querySelector('.new-organization__add-account button')
@@ -11,7 +11,7 @@ const accountsContainer = document.querySelector('.new-organization__account-lis
 
 if (addAccountBtn) {
 
-  const accountFragment = document.querySelector('#account-template')?.content;
+  const accountFragment = document.querySelector('#account-template')?.content
   const templateAccount = accountFragment.querySelector('.new-organization__bank-account')
 
 
@@ -77,7 +77,6 @@ if (accountList) {
         el.value = '0'
       })
       targetValueInput.value = '1'
-
     }
   })
 }

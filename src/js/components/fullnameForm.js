@@ -28,19 +28,24 @@ if (editFullnameForm) {
 
     toggleLoader()
 
-    const response = await sendData(jsonData, dataUrl)
-    const finishedResponse = await response.json()
+    try {
+      const response = await sendData(jsonData, dataUrl)
+      const finishedResponse = await response.json()
 
-    toggleLoader()
+      toggleLoader()
 
-    const {status, errortext} = finishedResponse
-    if (status === 'ok') {
-      updateFields(objData, fullnameUpdatableFields)
-      modalFullname.classList.remove('_active')
-      modalOverlay.classList.remove('modal-overlay_active')
-      body.classList.remove('_lock')
-    } else {
-      showInfoModal(errortext)
+      const {status, errortext} = finishedResponse
+      if (status === 'ok') {
+        updateFields(objData, fullnameUpdatableFields)
+        modalFullname.classList.remove('_active')
+        modalOverlay.classList.remove('modal-overlay_active')
+        body.classList.remove('_lock')
+      } else {
+        showInfoModal(errortext)
+      }
+    } catch {
+      toggleLoader()
+      showInfoModal("Во время выполнения запроса произошла ошибка")
     }
   }
 

@@ -1,5 +1,5 @@
-import { modalOverlay, modalNewContact, body }                  from "../_vars"
 import { sendData, serializeForm, showInfoModal, toggleLoader } from "../_functions"
+import { body, modalNewContact, modalOverlay }                  from "../_vars"
 
 const createContactForm = document.querySelector('.new-contact__form')
 
@@ -19,19 +19,24 @@ if (createContactForm) {
     const jsonData = JSON.stringify(arrData)
     toggleLoader()
 
-    const response = await sendData(jsonData, dataUrl)
-    const finishedResponse = await response.json()
+    try {
+      const response = await sendData(jsonData, dataUrl)
+      const finishedResponse = await response.json()
 
-    toggleLoader()
+      toggleLoader()
 
-    const {status, errortext} = finishedResponse
-    if (status === 'ok') {
-      modalNewContact.classList.remove('_active')
-      modalOverlay.classList.remove('modal-overlay_active')
-      body.classList.remove('_lock')
-      location.reload()
-    } else {
-      showInfoModal(errortext)
+      const {status, errortext} = finishedResponse
+      if (status === 'ok') {
+        modalNewContact.classList.remove('_active')
+        modalOverlay.classList.remove('modal-overlay_active')
+        body.classList.remove('_lock')
+        location.reload()
+      } else {
+        showInfoModal(errortext)
+      }
+    } catch {
+      toggleLoader()
+      showInfoModal("Во время выполнения запроса произошла ошибка")
     }
   }
 

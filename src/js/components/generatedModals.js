@@ -34,16 +34,21 @@ if (generatedModalBtns) {
 
       const paymentData = {id: generateId}
       const jsonPaymentData = JSON.stringify(paymentData)
-      const response = await sendData(jsonPaymentData, generateScript)
-      const finishedResponse = await response.json()
-      const {status, errortext, html} = finishedResponse
 
-      if (status === 'ok') {
-        generatedModal.innerHTML = html
-        generatedModal.setAttribute('data-id', generateId)
-        initGeneratedModal(generatedModal)
-      } else {
-        showInfoModal(errortext)
+      try {
+        const response = await sendData(jsonPaymentData, generateScript)
+        const finishedResponse = await response.json()
+        const {status, errortext, html} = finishedResponse
+
+        if (status === 'ok') {
+          generatedModal.innerHTML = html
+          generatedModal.setAttribute('data-id', generateId)
+          initGeneratedModal(generatedModal)
+        } else {
+          showInfoModal(errortext)
+        }
+      } catch {
+        showInfoModal("Во время выполнения запроса произошла ошибка")
       }
     })
   })

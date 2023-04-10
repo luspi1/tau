@@ -1,5 +1,3 @@
-import data                            from 'inputmask/lib/dependencyLibs/data'
-import { modalOverlay, modalPassport } from "../_vars"
 import {
   formToObj,
   sendData,
@@ -8,6 +6,7 @@ import {
   toggleLoader,
   updateFields
 }                                      from "../_functions"
+import { modalOverlay, modalPassport } from "../_vars"
 
 
 const passportForm = document.querySelector('.passport-modal__form')
@@ -28,18 +27,23 @@ if (passportForm) {
     const jsonData = JSON.stringify(objData)
     toggleLoader()
 
-    const response = await sendData(jsonData, dataUrl)
-    const finishedResponse = await response.json()
+    try {
+      const response = await sendData(jsonData, dataUrl)
+      const finishedResponse = await response.json()
 
-    toggleLoader()
+      toggleLoader()
 
-    const {status, errortext} = finishedResponse
-    if (status === 'ok') {
-      updateFields(objData, passportUpdatableFields)
-      modalPassport.classList.remove('_active')
-      modalOverlay.classList.remove('modal-overlay_active')
-    } else {
-      showInfoModal(errortext)
+      const {status, errortext} = finishedResponse
+      if (status === 'ok') {
+        updateFields(objData, passportUpdatableFields)
+        modalPassport.classList.remove('_active')
+        modalOverlay.classList.remove('modal-overlay_active')
+      } else {
+        showInfoModal(errortext)
+      }
+    } catch {
+      toggleLoader()
+      showInfoModal("Во время выполнения запроса произошла ошибка")
     }
   }
 
@@ -78,7 +82,7 @@ if (editDocWrappers) {
     const agreeBtn = wrapper.querySelector('.agree-btn')
     const closeBtn = wrapper.querySelector('.close-btn')
     const dataUrl = wrapper.dataset.url
-    
+
 
     editBtn.addEventListener('click', (e) => {
       e.preventDefault()
@@ -102,18 +106,23 @@ if (editDocWrappers) {
 
       toggleLoader()
 
-      const response = await sendData(jsonData, dataUrl)
-      const finishedResponse = await response.json()
+      try {
+        const response = await sendData(jsonData, dataUrl)
+        const finishedResponse = await response.json()
 
-      toggleLoader()
+        toggleLoader()
 
-      const {status, errortext} = finishedResponse
-      if (status === 'ok') {
-        editValue.textContent = inputValue
-        editInputWrapper.classList.remove('_active')
-        editableWrapper.style.visibility = 'visible'
-      } else {
-        showInfoModal(errortext)
+        const {status, errortext} = finishedResponse
+        if (status === 'ok') {
+          editValue.textContent = inputValue
+          editInputWrapper.classList.remove('_active')
+          editableWrapper.style.visibility = 'visible'
+        } else {
+          showInfoModal(errortext)
+        }
+      } catch {
+        toggleLoader()
+        showInfoModal("Во время выполнения запроса произошла ошибка")
       }
     })
 

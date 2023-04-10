@@ -74,16 +74,21 @@ if (editContactForm) {
 
     toggleLoader()
 
-    const response = await sendData(jsonData, dataUrl)
-    const finishedResponse = await response.json()
+    try {
+      const response = await sendData(jsonData, dataUrl)
+      const finishedResponse = await response.json()
 
-    toggleLoader()
+      toggleLoader()
 
-    const {status, errortext} = finishedResponse
-    if (status === 'ok') {
-      showInfoModal('Контакт успешно сделан контрагентом')
-    } else {
-      showInfoModal(errortext)
+      const {status, errortext} = finishedResponse
+      if (status === 'ok') {
+        showInfoModal('Контакт успешно сделан контрагентом')
+      } else {
+        showInfoModal(errortext)
+      }
+    } catch {
+      toggleLoader()
+      showInfoModal("Во время выполнения запроса произошла ошибка")
     }
     editContactForm.removeEventListener('submit', handleContragentSubmit)
   }

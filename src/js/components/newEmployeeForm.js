@@ -4,7 +4,8 @@ import {
   closeSelectPopups,
   handlePopupInputs,
   sendData,
-  serializeForm, showInfoModal,
+  serializeForm,
+  showInfoModal,
 }                                               from "../_functions"
 import { body, modalNewEmployee, modalOverlay } from '../_vars'
 
@@ -45,20 +46,24 @@ if (newEmployeeForm) {
     const arrData = Array.from(data.entries())
     const jsonData = JSON.stringify(arrData)
 
-    const response = await sendData(jsonData, dataUrl)
-    const finishedResponse = await response.json()
+    try {
+      const response = await sendData(jsonData, dataUrl)
+      const finishedResponse = await response.json()
 
-    const {status, errortext} = finishedResponse
-    if (status === 'ok') {
-      // showInfoModal('Приглашение отправлено')
-      newEmployeeDataInput.value = ''
-      employeePopupInput.value = ''
-      modalNewEmployee.classList.remove('_active')
-      modalOverlay.classList.remove('modal-overlay_active')
-      body.classList.remove('_lock')
-    } else {
-      showInfoModal(errortext)
+      const {status, errortext} = finishedResponse
+      if (status === 'ok') {
+        newEmployeeDataInput.value = ''
+        employeePopupInput.value = ''
+        modalNewEmployee.classList.remove('_active')
+        modalOverlay.classList.remove('modal-overlay_active')
+        body.classList.remove('_lock')
+      } else {
+        showInfoModal(errortext)
+      }
+    } catch {
+      showInfoModal("Во время выполнения запроса произошла ошибка")
     }
+    
   }
 
   newEmployeeForm.addEventListener('submit', handleFormSubmit)

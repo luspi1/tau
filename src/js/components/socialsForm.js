@@ -1,11 +1,6 @@
-import { modalOverlay, body, modalSocials } from "../_vars"
-import { initSelects }                      from "./customSelect"
-import {
-  sendData,
-  serializeForm,
-  showInfoModal,
-  toggleLoader,
-}                                           from "../_functions"
+import { sendData, serializeForm, showInfoModal, toggleLoader, } from "../_functions"
+import { body, modalOverlay, modalSocials }                      from "../_vars"
+import { initSelects }                                           from "./customSelect"
 
 const editSocialsForm = document.querySelector('.modal-socials__form')
 const addLinkBtn = document.querySelector('.modal-socials__add-btn')
@@ -43,19 +38,24 @@ if (editSocialsForm) {
     const jsonData = JSON.stringify(arrData)
     toggleLoader()
 
-    const response = await sendData(jsonData, dataUrl)
-    const finishedResponse = await response.json()
+    try {
+      const response = await sendData(jsonData, dataUrl)
+      const finishedResponse = await response.json()
 
-    toggleLoader()
+      toggleLoader()
 
-    const {status, errortext, html} = finishedResponse
-    if (status === 'ok') {
-      updateSocials(html)
-      modalSocials.classList.remove('_active')
-      modalOverlay.classList.remove('modal-overlay_active')
-      body.classList.remove('_lock')
-    } else {
-      showInfoModal(errortext)
+      const {status, errortext, html} = finishedResponse
+      if (status === 'ok') {
+        updateSocials(html)
+        modalSocials.classList.remove('_active')
+        modalOverlay.classList.remove('modal-overlay_active')
+        body.classList.remove('_lock')
+      } else {
+        showInfoModal(errortext)
+      }
+    } catch {
+      toggleLoader()
+      showInfoModal("Во время выполнения запроса произошла ошибка")
     }
   }
 

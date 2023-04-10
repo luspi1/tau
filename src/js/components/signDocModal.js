@@ -29,28 +29,33 @@ export const handleDocumentSignModal = (signModal) => {
 
       toggleLoader()
 
-      const response = await sendData(jsonData, event.target.action)
-      const finishedResponse = await response.json()
+      try {
+        const response = await sendData(jsonData, event.target.action)
+        const finishedResponse = await response.json()
 
-      toggleLoader()
+        toggleLoader()
 
-      const {status, errortext, sign_fio, sign_date, sign_date_customer} = finishedResponse
-      if (status === 'ok') {
-        if (isOur) {
-          ourFormContent.classList.add('_completed')
-          ourNameField.textContent = sign_fio
-          ourDateField.textContent = sign_date
-          checkSigns()
-        } else {
-          customerFormContent.classList.add('_completed')
-          customerNameField.textContent = sign_fio
-          customerDateField.textContent = sign_date_customer
-          if (ourFormContent.classList.contains('_completed')) {
+        const {status, errortext, sign_fio, sign_date, sign_date_customer} = finishedResponse
+        if (status === 'ok') {
+          if (isOur) {
+            ourFormContent.classList.add('_completed')
+            ourNameField.textContent = sign_fio
+            ourDateField.textContent = sign_date
             checkSigns()
+          } else {
+            customerFormContent.classList.add('_completed')
+            customerNameField.textContent = sign_fio
+            customerDateField.textContent = sign_date_customer
+            if (ourFormContent.classList.contains('_completed')) {
+              checkSigns()
+            }
           }
+        } else {
+          showInfoModal(errortext)
         }
-      } else {
-        showInfoModal(errortext)
+      } catch {
+        toggleLoader()
+        showInfoModal("Во время выполнения запроса произошла ошибка")
       }
     }
 
@@ -72,18 +77,23 @@ export const handleDocumentSignModal = (signModal) => {
 
       toggleLoader()
 
-      const response = await sendData(jsonData, docSendScript)
-      const finishedResponse = await response.json()
+      try {
+        const response = await sendData(jsonData, docSendScript)
+        const finishedResponse = await response.json()
 
-      toggleLoader()
+        toggleLoader()
 
-      const {status, errortext} = finishedResponse
-      if (status === 'ok') {
-        signModal.classList.remove('_active')
-        modalOverlay.classList.remove('modal-overlay_active')
-        showInfoModal('Документ успешно отправлен')
-      } else {
-        showInfoModal(errortext)
+        const {status, errortext} = finishedResponse
+        if (status === 'ok') {
+          signModal.classList.remove('_active')
+          modalOverlay.classList.remove('modal-overlay_active')
+          showInfoModal('Документ успешно отправлен')
+        } else {
+          showInfoModal(errortext)
+        }
+      } catch {
+        toggleLoader()
+        showInfoModal("Во время выполнения запроса произошла ошибка")
       }
     })
 
@@ -111,17 +121,20 @@ export const handleDocumentSignModal = (signModal) => {
 
       toggleLoader()
 
-      const response = await sendData(jsonData, cancelSignScript)
-      const finishedResponse = await response.json()
-
-      toggleLoader()
-
-      const {status, errortext} = finishedResponse
-      if (status === 'ok') {
-        ourFormContent.classList.remove('_completed')
-        cancelSignBtn.classList.add('hidden')
-      } else {
-        showInfoModal(errortext)
+      try {
+        const response = await sendData(jsonData, cancelSignScript)
+        const finishedResponse = await response.json()
+        toggleLoader()
+        const {status, errortext} = finishedResponse
+        if (status === 'ok') {
+          ourFormContent.classList.remove('_completed')
+          cancelSignBtn.classList.add('hidden')
+        } else {
+          showInfoModal(errortext)
+        }
+      } catch {
+        toggleLoader()
+        showInfoModal("Во время выполнения запроса произошла ошибка")
       }
     })
   }

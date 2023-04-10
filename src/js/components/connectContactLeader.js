@@ -3,7 +3,8 @@ import {
   closeSelectPopups,
   handlePopupInputs,
   sendData,
-  serializeForm, showInfoModal,
+  serializeForm,
+  showInfoModal,
   toggleLoader
 }                                                 from "../_functions"
 import { body, modalConnectLeader, modalOverlay } from "../_vars"
@@ -47,20 +48,25 @@ if (connectLeaderForm) {
     const jsonData = JSON.stringify(arrData)
     toggleLoader()
 
-    const response = await sendData(jsonData, dataUrl)
-    const finishedResponse = await response.json()
-
-    toggleLoader()
-
-    const {status, errortext} = finishedResponse
-    if (status === 'ok') {
-      modalConnectLeader.classList.remove('_active')
-      modalOverlay.classList.remove('modal-overlay_active')
-      body.classList.remove('_lock')
-      blockFields(fullnameInputsWrapper)
-    } else {
-      showInfoModal(errortext)
+    try {
+      const response = await sendData(jsonData, dataUrl)
+      const finishedResponse = await response.json()
+      toggleLoader()
+      const {status, errortext} = finishedResponse
+      if (status === 'ok') {
+        modalConnectLeader.classList.remove('_active')
+        modalOverlay.classList.remove('modal-overlay_active')
+        body.classList.remove('_lock')
+        blockFields(fullnameInputsWrapper)
+      } else {
+        showInfoModal(errortext)
+      }
+    } catch {
+      toggleLoader()
+      showInfoModal("Во время выполнения запроса произошла ошибка")
     }
+
+
   }
 
 

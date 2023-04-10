@@ -10,19 +10,22 @@ export const handleDocumentPreviewModal = (previewModal) => {
 
       const previewData = {id: dataId}
       const jsonData = JSON.stringify(previewData)
+      try {
+        const response = await sendData(jsonData, dataScript)
+        const finishedResponse = await response.json()
 
-      const response = await sendData(jsonData, dataScript)
-      const finishedResponse = await response.json()
+        const {status, errortext} = finishedResponse
 
-      const {status, errortext} = finishedResponse
-
-      if (status === 'ok') {
-        previewModal.classList.remove('_active')
-        sendDocModal.classList.add('_active')
-      } else {
-        showInfoModal(errortext)
+        if (status === 'ok') {
+          previewModal.classList.remove('_active')
+          sendDocModal.classList.add('_active')
+        } else {
+          showInfoModal(errortext)
+        }
+      } catch {
+        showInfoModal("Во время выполнения запроса произошла ошибка")
       }
-
+      
     })
   }
 }

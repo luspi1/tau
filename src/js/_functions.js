@@ -96,24 +96,23 @@ export async function handlePopupSubmit(inputValue, popup, optionalInfo) {
 
   const totalDataJson = JSON.stringify(totalData)
 
-  const response = await sendData(totalDataJson, submitScript)
-  const finishedResponse = await response.json()
+  try {
+    const response = await sendData(totalDataJson, submitScript)
+    const finishedResponse = await response.json()
 
-  const {status, errortext, html} = finishedResponse
-  if (status === 'ok') {
-    popup.classList.add('select-popup_active')
-    const popupList = popup.querySelector('.select-popup__list')
-
-    popupList.innerHTML = ''
-
-
-    html?.forEach(el => {
-      popupList.insertAdjacentHTML('beforeend', el)
-    })
-
-
-  } else {
-    showInfoModal(errortext)
+    const {status, errortext, html} = finishedResponse
+    if (status === 'ok') {
+      popup.classList.add('select-popup_active')
+      const popupList = popup.querySelector('.select-popup__list')
+      popupList.innerHTML = ''
+      html?.forEach(el => {
+        popupList.insertAdjacentHTML('beforeend', el)
+      })
+    } else {
+      showInfoModal(errortext)
+    }
+  } catch {
+    showInfoModal("Во время выполнения запроса произошла ошибка")
   }
 }
 

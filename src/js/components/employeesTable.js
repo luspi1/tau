@@ -23,24 +23,27 @@ const showJobChangeModal = ({name, direction, position, newPosition, id}) => {
   const changeJobSubmit = async (e) => {
     e.preventDefault()
     const data = {
-      id_person: id,
-      direction
+      id_person: id, direction
     }
 
     const jsonData = JSON.stringify(data)
-    const response = await sendData(jsonData, changeEmployeeUrl)
-    const finishedResponse = await response.json()
+    try {
+      const response = await sendData(jsonData, changeEmployeeUrl)
+      const finishedResponse = await response.json()
 
-    const {status, errortext} = finishedResponse
-    if (status === 'ok') {
-      jobChangeModal.classList.remove('_active')
-      modalOverlay.classList.remove('modal-overlay_active')
-      body.classList.remove('_lock')
-      jobModalForm.removeEventListener('submit', changeJobSubmit)
-      location.reload()
-    } else {
-      jobModalForm.removeEventListener('submit', changeJobSubmit)
-      showInfoModal(errortext)
+      const {status, errortext} = finishedResponse
+      if (status === 'ok') {
+        jobChangeModal.classList.remove('_active')
+        modalOverlay.classList.remove('modal-overlay_active')
+        body.classList.remove('_lock')
+        jobModalForm.removeEventListener('submit', changeJobSubmit)
+        location.reload()
+      } else {
+        jobModalForm.removeEventListener('submit', changeJobSubmit)
+        showInfoModal(errortext)
+      }
+    } catch {
+      showInfoModal("Во время выполнения запроса произошла ошибка")
     }
   }
 
@@ -70,19 +73,23 @@ const showDeleteEmployeeModal = ({name, position, id, row}) => {
     }
 
     const jsonData = JSON.stringify(data)
-    const response = await sendData(jsonData, deleteEmployeeUrl)
-    const finishedResponse = await response.json()
+    try {
+      const response = await sendData(jsonData, deleteEmployeeUrl)
+      const finishedResponse = await response.json()
 
-    const {status, errortext} = finishedResponse
-    if (status === 'ok') {
-      deleteEmployeeModal.classList.remove('_active')
-      modalOverlay.classList.remove('modal-overlay_active')
-      body.classList.remove('_lock')
-      row.remove()
-      deleteEmployeeForm.removeEventListener('submit', deleteEmployeeSubmit)
-    } else {
-      deleteEmployeeForm.removeEventListener('submit', deleteEmployeeSubmit)
-      showInfoModal(errortext)
+      const {status, errortext} = finishedResponse
+      if (status === 'ok') {
+        deleteEmployeeModal.classList.remove('_active')
+        modalOverlay.classList.remove('modal-overlay_active')
+        body.classList.remove('_lock')
+        row.remove()
+        deleteEmployeeForm.removeEventListener('submit', deleteEmployeeSubmit)
+      } else {
+        deleteEmployeeForm.removeEventListener('submit', deleteEmployeeSubmit)
+        showInfoModal(errortext)
+      }
+    } catch {
+      showInfoModal("Во время выполнения запроса произошла ошибка")
     }
   }
 

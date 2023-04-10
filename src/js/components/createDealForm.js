@@ -63,21 +63,26 @@ if (createDealPage) {
   const handleCaseSubmit = async (popupElValue, popupElId) => {
     const caseData = {id_case: popupElId}
     const jsonCaseData = JSON.stringify(caseData)
-    const response = await sendData(jsonCaseData, caseInfoUrl)
-    const finishedResponse = await response.json()
 
-    const {status, errortext, html} = finishedResponse
-    if (status === 'ok') {
-      dealTreatyData.innerHTML = html
-      dealCaseDataInput.value = popupElId
-      dealCaseInput.value = popupElValue
-      dealCaseSelectPopup.dataset.selected = "true"
-      submitBtn.classList.remove('btn_disabled')
+    try {
+      const response = await sendData(jsonCaseData, caseInfoUrl)
+      const finishedResponse = await response.json()
 
-      updateInvoices(jsonCaseData, caseInvoicesUrl)
-      initAllDates()
-    } else {
-      showInfoModal(errortext)
+      const {status, errortext, html} = finishedResponse
+      if (status === 'ok') {
+        dealTreatyData.innerHTML = html
+        dealCaseDataInput.value = popupElId
+        dealCaseInput.value = popupElValue
+        dealCaseSelectPopup.dataset.selected = "true"
+        submitBtn.classList.remove('btn_disabled')
+
+        updateInvoices(jsonCaseData, caseInvoicesUrl)
+        initAllDates()
+      } else {
+        showInfoModal(errortext)
+      }
+    } catch {
+      showInfoModal("Во время выполнения запроса произошла ошибка")
     }
   }
 

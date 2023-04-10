@@ -19,17 +19,22 @@ if (sortBtn) {
     const jsonData = JSON.stringify(objData)
 
     toggleLoader()
-    
-    const response = await sendData(jsonData, dataUrl)
-    const finishedResponse = await response.json()
 
-    toggleLoader()
+    try {
+      const response = await sendData(jsonData, dataUrl)
+      const finishedResponse = await response.json()
 
-    const {status, errortext} = finishedResponse
-    if (status === 'ok') {
-      console.log('отсортировано')
-    } else {
-      showInfoModal(errortext)
+      toggleLoader()
+
+      const {status, errortext} = finishedResponse
+      if (status === 'ok') {
+        console.log('отсортировано')
+      } else {
+        showInfoModal(errortext)
+      }
+    } catch {
+      toggleLoader()
+      showInfoModal("Во время выполнения запроса произошла ошибка")
     }
   }
 
