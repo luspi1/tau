@@ -163,8 +163,12 @@ if (confirmDealBtn) {
       const {status, errortext, dohod, saldo} = finishedResponse
 
       if (status === 'ok') {
-        document.querySelector('#dohod').innerText = dohod
-        document.querySelector('#saldo').innerText = saldo
+
+        const incomeValue = document.querySelector('#dohod')
+        const saldoValue = document.querySelector('#saldo')
+
+        incomeValue.innerText = dohod ?? incomeValue.innerText
+        saldoValue.innerText = saldo ?? saldoValue.innerText
 
         dealRow.remove()
         body.classList.remove('_lock')
@@ -172,7 +176,6 @@ if (confirmDealBtn) {
         document.querySelectorAll('.modal').forEach(modal => {
           if (modal.classList.contains('_active')) {
             modal.classList.remove('_active')
-            modal.closest('main').style.minHeight = "calc(100vh - 60px)"
           }
         })
 
@@ -183,5 +186,5 @@ if (confirmDealBtn) {
       showInfoModal("Во время выполнения запроса произошла ошибка")
     }
   })
-  
+
 }
