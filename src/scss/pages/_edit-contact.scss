@@ -23,6 +23,7 @@
     .edit-contact__type_entity {
       display: block;
     }
+
     .edit-contact__type_individual {
       display: none;
     }
@@ -32,6 +33,7 @@
     .edit-contact__type_entity {
       display: none;
     }
+
     .edit-contact__type_individual {
       display: block;
     }
@@ -124,11 +126,79 @@
       margin-top: 10px;
     }
   }
+
+  &__list-director {
+
+    li {
+      margin-bottom: 13px;
+      padding: 14px 10px 19px 15px;
+      background: #F7F8FA;
+      border-radius: 5px;
+      position: relative;
+    }
+
+    span {
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    a {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+      color: $link;
+    }
+  }
+
+  &__btn-director-delete {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 21px;
+    height: 21px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    svg path {
+      transition: all .3s;
+    }
+
+    &:hover {
+      svg path {
+        fill: #BC0D48;
+      }
+    }
+  }
+
+  &__warning {
+    display: flex;
+    align-items: flex-start;
+    padding: 16px;
+    background: #F4F7FB;
+    border-radius: 5px;
+
+    svg {
+      min-width: 19px;
+      width: 19px;
+      margin-top: 2px;
+      margin-right: 8px;
+    }
+
+    p {
+      color: $link;
+      line-height: 24px;
+    }
+
+  }
+
   &__charter-wrapper {
     .edit-contact__input {
       width: 50%;
     }
   }
+
   &__item-wrapper {
     display: flex;
     justify-content: space-between;
