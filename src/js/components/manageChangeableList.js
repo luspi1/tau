@@ -4,9 +4,6 @@ import { initSelects }      from './customSelect'
 import { initDateDealMask } from './inputMask'
 
 
-const changeablePage = document.querySelector('ul[data-list="changeable"]')?.closest('main')
-
-
 // Инициализация необходимых кастомных инпутов
 
 const initInputs = () => {
@@ -17,34 +14,40 @@ const initInputs = () => {
 
 // добавление/удаление элементов в изменяемых списках
 
-if (changeablePage) {
+export const initChangeableLists = () => {
+  const changeablePage = document.querySelector('ul[data-list="changeable"]')?.closest('main')
 
-  // Удаление элементов в изменяемых списках
+  if (changeablePage) {
 
-  changeablePage.addEventListener('click', (e) => {
-    if (e.target.dataset.btn === "delete") {
-      e.target.closest('li').remove()
-    }
+    // Удаление элементов в изменяемых списках
 
-    // Добавление элементов в изменяемых списках
-
-    if (e.target.dataset.btn === "add") {
-      const targetChangeableList = e.target.parentElement.querySelector('ul[data-list="changeable"]')
-      let changeableInputs = targetChangeableList.querySelectorAll('input')
-
-      //проверка наличия значений в инпутах, для запрета создания новых элементов без значения
-      if (!checkValue(changeableInputs)) {
-        return
+    changeablePage.addEventListener('click', (e) => {
+      if (e.target.dataset.btn === "delete") {
+        e.target.closest('li').remove()
       }
-      const templateId = e.target.dataset.template
-      let templateFragment = document.querySelector(`#${templateId}`)?.content
-      let templateElement = templateFragment.firstElementChild.cloneNode(true)
-      targetChangeableList.appendChild(templateElement)
-      initInputs()
-    }
-  })
 
+      // Добавление элементов в изменяемых списках
+
+      if (e.target.dataset.btn === "add") {
+        const targetChangeableList = e.target.parentElement.querySelector('ul[data-list="changeable"]')
+        let changeableInputs = targetChangeableList.querySelectorAll('input')
+
+        //проверка наличия значений в инпутах, для запрета создания новых элементов без значения
+        if (!checkValue(changeableInputs)) {
+          return
+        }
+        const templateId = e.target.dataset.template
+        let templateFragment = document.querySelector(`#${templateId}`)?.content
+        let templateElement = templateFragment.firstElementChild.cloneNode(true)
+        targetChangeableList.appendChild(templateElement)
+        initInputs()
+      }
+    })
+
+  }
 }
+
+initChangeableLists()
 
 
 

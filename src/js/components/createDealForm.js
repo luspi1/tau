@@ -1,4 +1,4 @@
-import Choices          from 'choices.js'
+import Choices                 from 'choices.js'
 import {
   checkValue,
   closeSelectPopups,
@@ -6,9 +6,10 @@ import {
   handlePopupSubmit,
   sendData,
   showInfoModal,
-}                       from "../_functions"
-import { modalOverlay } from "../_vars"
-import { initAllDates } from './customDate'
+}                              from "../_functions"
+import { modalOverlay }        from "../_vars"
+import { initAllDates }        from './customDate'
+import { initChangeableLists } from './manageChangeableList'
 
 
 const createDealPage = document.querySelector('.create-deal-page')
@@ -77,6 +78,7 @@ if (createDealPage) {
         submitBtn.classList.remove('btn_disabled')
 
         updateInvoices(jsonCaseData, caseInvoicesUrl)
+        initChangeableLists()
         initAllDates()
       } else {
         showInfoModal(errortext)
@@ -230,13 +232,4 @@ if (createDealPage) {
     }
   })
 }
-
-
-
-
-
-
-
-
-
 
