@@ -195,17 +195,6 @@
               <div class="create-deal-payments__list-wrapper">
                 <ul class="create-deal-payments__list" data-list="changeable">
                   <li class="create-deal-payments__list-item">
-                    <button class="create-deal-page__edit-btn" type="button">
-                      <svg width="17" height="16" viewBox="0 0 17 16"
-                           fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M0.399902 15.5C0.499902 15.2 0.599921 14.8 0.699921 14.5C0.899921 13.6 1.1999 12.6 1.3999 11.7C1.3999 11.6 1.49991 11.5 1.59991 11.4C4.49991 8.50002 7.3999 5.60001 10.2999 2.70001L10.3999 2.59998C11.4999 3.69998 12.6999 4.9 13.7999 6L13.6999 6.09998C10.7999 8.99998 7.99991 11.8 5.09991 14.7C4.99991 14.8 4.8999 14.9 4.7999 14.9C3.5999 15.2 2.29991 15.5 1.09991 15.8H0.999908C0.899908 15.8 0.899896 15.8 0.799896 15.8C0.699896 15.7 0.599908 15.6 0.499908 15.5C0.399908 15.6 0.399902 15.6 0.399902 15.5Z"
-                          fill="#9A9A9A"/>
-                        <path
-                          d="M16.3998 2.90002C16.3998 3.00002 16.3998 3.10001 16.2998 3.20001C16.1998 3.40001 16.0998 3.69999 15.9998 3.79999C15.5998 4.19999 15.0998 4.69998 14.6998 5.09998C13.5998 3.99998 12.3998 2.80001 11.2998 1.70001C11.6998 1.30001 12.0998 0.800024 12.5998 0.400024C13.1998 -0.0999756 14.1998 -0.0999756 14.7998 0.400024C15.1998 0.800024 15.5998 1.19998 15.9998 1.59998C16.1998 1.79998 16.2998 2.2 16.3998 2.5C16.3998 2.6 16.3998 2.80002 16.3998 2.90002Z"
-                          fill="#9A9A9A"/>
-                      </svg>
-                    </button>
                     <button class="create-deal-page__delete-btn" type="button"
                             data-btn="delete">
                       <svg width="21" height="22" viewBox="0 0 21 22"
@@ -220,11 +209,15 @@
                     </button>
                     <div class="create-deal-page__input-wrapper input_disabled">
                       <label>Тип платежа</label>
-                      <input class="create-deal-page__input"
-                             name="advance_payment"
-                             value="Авансовый платеж"
-                             type="text"
-                             disabled>
+                      <select
+                        class="create-deal-page__input create-deal-page__custom-select"
+                        name="advance_payment" disabled>
+                        <option value="advance-payment">Авансовый платеж
+                        </option>
+                        <option value="regular-payment">Платеж</option>
+                        <option value="final-payment">Завершающий платеж
+                        </option>
+                      </select>
                     </div>
                     <div class="create-deal-page__inputs">
                       <div
@@ -255,17 +248,6 @@
                       <span>5 дней</span> со дня заключения Договора.</p>
                   </li>
                   <li class="create-deal-payments__list-item">
-                    <button class="create-deal-page__edit-btn" type="button">
-                      <svg width="17" height="16" viewBox="0 0 17 16"
-                           fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M0.399902 15.5C0.499902 15.2 0.599921 14.8 0.699921 14.5C0.899921 13.6 1.1999 12.6 1.3999 11.7C1.3999 11.6 1.49991 11.5 1.59991 11.4C4.49991 8.50002 7.3999 5.60001 10.2999 2.70001L10.3999 2.59998C11.4999 3.69998 12.6999 4.9 13.7999 6L13.6999 6.09998C10.7999 8.99998 7.99991 11.8 5.09991 14.7C4.99991 14.8 4.8999 14.9 4.7999 14.9C3.5999 15.2 2.29991 15.5 1.09991 15.8H0.999908C0.899908 15.8 0.899896 15.8 0.799896 15.8C0.699896 15.7 0.599908 15.6 0.499908 15.5C0.399908 15.6 0.399902 15.6 0.399902 15.5Z"
-                          fill="#9A9A9A"/>
-                        <path
-                          d="M16.3998 2.90002C16.3998 3.00002 16.3998 3.10001 16.2998 3.20001C16.1998 3.40001 16.0998 3.69999 15.9998 3.79999C15.5998 4.19999 15.0998 4.69998 14.6998 5.09998C13.5998 3.99998 12.3998 2.80001 11.2998 1.70001C11.6998 1.30001 12.0998 0.800024 12.5998 0.400024C13.1998 -0.0999756 14.1998 -0.0999756 14.7998 0.400024C15.1998 0.800024 15.5998 1.19998 15.9998 1.59998C16.1998 1.79998 16.2998 2.2 16.3998 2.5C16.3998 2.6 16.3998 2.80002 16.3998 2.90002Z"
-                          fill="#9A9A9A"/>
-                      </svg>
-                    </button>
                     <button class="create-deal-page__delete-btn" type="button"
                             data-btn="delete">
                       <svg width="21" height="22" viewBox="0 0 21 22"
@@ -280,9 +262,15 @@
                     </button>
                     <div class="create-deal-page__input-wrapper input_disabled">
                       <label>Тип платежа</label>
-                      <input class="create-deal-page__input"
-                             value="Платеж" type="text" name="payment"
-                             disabled>
+                      <select
+                        class="create-deal-page__input create-deal-page__custom-select"
+                        name="payment" disabled>
+                        <option value="regular-payment">Платеж</option>
+                        <option value="advance-payment">Авансовый платеж
+                        </option>
+                        <option value="final-payment">Завершающий платеж
+                        </option>
+                      </select>
                     </div>
                     <div class="create-deal-page__inputs">
                       <div
@@ -314,17 +302,6 @@
                       Исполнителем промежуточного Акта.</p>
                   </li>
                   <li class="create-deal-payments__list-item">
-                    <button class="create-deal-page__edit-btn" type="button">
-                      <svg width="17" height="16" viewBox="0 0 17 16"
-                           fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M0.399902 15.5C0.499902 15.2 0.599921 14.8 0.699921 14.5C0.899921 13.6 1.1999 12.6 1.3999 11.7C1.3999 11.6 1.49991 11.5 1.59991 11.4C4.49991 8.50002 7.3999 5.60001 10.2999 2.70001L10.3999 2.59998C11.4999 3.69998 12.6999 4.9 13.7999 6L13.6999 6.09998C10.7999 8.99998 7.99991 11.8 5.09991 14.7C4.99991 14.8 4.8999 14.9 4.7999 14.9C3.5999 15.2 2.29991 15.5 1.09991 15.8H0.999908C0.899908 15.8 0.899896 15.8 0.799896 15.8C0.699896 15.7 0.599908 15.6 0.499908 15.5C0.399908 15.6 0.399902 15.6 0.399902 15.5Z"
-                          fill="#9A9A9A"/>
-                        <path
-                          d="M16.3998 2.90002C16.3998 3.00002 16.3998 3.10001 16.2998 3.20001C16.1998 3.40001 16.0998 3.69999 15.9998 3.79999C15.5998 4.19999 15.0998 4.69998 14.6998 5.09998C13.5998 3.99998 12.3998 2.80001 11.2998 1.70001C11.6998 1.30001 12.0998 0.800024 12.5998 0.400024C13.1998 -0.0999756 14.1998 -0.0999756 14.7998 0.400024C15.1998 0.800024 15.5998 1.19998 15.9998 1.59998C16.1998 1.79998 16.2998 2.2 16.3998 2.5C16.3998 2.6 16.3998 2.80002 16.3998 2.90002Z"
-                          fill="#9A9A9A"/>
-                      </svg>
-                    </button>
                     <button class="create-deal-page__delete-btn" type="button"
                             data-btn="delete">
                       <svg width="21" height="22" viewBox="0 0 21 22"
@@ -339,9 +316,15 @@
                     </button>
                     <div class="create-deal-page__input-wrapper input_disabled">
                       <label>Тип платежа</label>
-                      <input class="create-deal-page__input"
-                             value="Завершающий платеж" type="text"
-                             name="final_payment" disabled>
+                      <select
+                        class="create-deal-page__input create-deal-page__custom-select"
+                        name="final_payment" disabled>
+                        <option value="final-payment">Завершающий платеж
+                        </option>
+                        <option value="regular-payment">Платеж</option>
+                        <option value="advance-payment">Авансовый платеж
+                        </option>
+                      </select>
                     </div>
                     <div class="create-deal-page__inputs">
                       <div
@@ -576,9 +559,15 @@
     </button>
     <div class="create-deal-page__input-wrapper">
       <label>Тип платежа</label>
-      <input class="create-deal-page__input"
-             name="advance_payment"
-             placeholder="Платеж" type="text">
+      <select
+        class="create-deal-page__input create-deal-page__custom-select"
+        name="payment">
+        <option value="regular-payment">Платеж</option>
+        <option value="advance-payment">Авансовый платеж
+        </option>
+        <option value="final-payment">Завершающий платеж
+        </option>
+      </select>
     </div>
     <div class="create-deal-page__inputs">
       <div

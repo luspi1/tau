@@ -161,6 +161,11 @@
     display: flex;
   }
 
+  .input_disabled {
+    .choices[data-type*=select-one]::after {
+      display: none;
+    }
+  }
 
   .choices {
     width: 100%;

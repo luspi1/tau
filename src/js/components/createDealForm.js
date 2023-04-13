@@ -9,6 +9,7 @@ import {
 }                              from "../_functions"
 import { modalOverlay }        from "../_vars"
 import { initAllDates }        from './customDate'
+import { initSelects }         from './customSelect'
 import { initChangeableLists } from './manageChangeableList'
 
 
@@ -80,6 +81,7 @@ if (createDealPage) {
         updateInvoices(jsonCaseData, caseInvoicesUrl)
         initChangeableLists()
         initAllDates()
+        initSelects()
       } else {
         showInfoModal(errortext)
       }
