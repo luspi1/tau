@@ -1,0 +1,224 @@
+.closed-deals-page {
+  padding-bottom: 50px;
+
+  h1 {
+    @include montserrat-semibold;
+    font-size: 36px;
+    line-height: 44px;
+    color: #000000;
+    margin-right: 28px;
+    padding-bottom: 5px;
+  }
+
+
+  &__top {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0 25px;
+  }
+
+  .closed-deals-filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    &__btn {
+      width: 96px;
+      height: 40px;
+      background: #ffffff;
+      border: 1px solid #2F65F6;
+      border-radius: 5px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      color: #2F65F6;
+      cursor: pointer;
+      transition: all .3s;
+
+      &:hover {
+        background-color: #2F65F6;
+        color: #ffffff;
+      }
+    }
+
+    &__input {
+      width: 360px;
+      height: 40px;
+      margin-right: 10px;
+      padding-left: 18px;
+      line-height: 20px;
+      background: #F2F1F7;
+      color: #858584;
+      border: 1px solid #E6E6E6;
+      border-radius: 5px;
+
+      &:focus {
+        border: 1px solid #3E29CA;
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    .choices {
+      width: 200px;
+      min-width: 200px;
+      margin-right: 10px;
+      border: 1px solid transparent;
+      margin-bottom: 0;
+
+      &.is-open {
+        border: 1px solid #3E29CA;
+        border-radius: 5px;
+      }
+    }
+
+    .choices__placeholder {
+      opacity: 1;
+    }
+
+    .choices__inner {
+      @include montserrat-medium;
+      font-size: 17px;
+      line-height: 21px;
+      color: #858584;
+      background: #F2F1F7;
+      border: 1px solid #E6E6E6;
+      border-radius: 5px;
+      min-height: auto;
+      height: 40px;
+    }
+
+    .choices__list--dropdown .choices__item--selectable.is-highlighted,
+    .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+      background: #F2F1F7;
+      color: #2F65F6;
+      border-radius: 5px;
+    }
+
+    .choices__list--dropdown,
+    .choices__list[aria-expanded] {
+      border: 1px solid #F2F1F7;
+      filter: drop-shadow(0px 0px 20px rgba(10, 35, 91, 0.15));
+      margin-top: 10px;
+    }
+
+  }
+
+
+  .closed-deals-table {
+
+    a {
+      color: #2f65f6;
+    }
+
+    &__row {
+      background: #F7F8FA;
+      border-radius: 5px;
+
+
+      &:not(:last-child) {
+        margin-bottom: 5px;
+      }
+
+      a {
+        margin-top: 5px;
+        display: block;
+        word-break: break-all;
+      }
+    }
+
+    .flex-table__row {
+      padding: 0 0 0 25px;
+    }
+
+    &__title {
+      font-size: 14px;
+      line-height: 17px;
+      color: #858584;
+
+      .expired-text {
+        color: #BC0D48;
+      }
+
+      span {
+        display: none;
+      }
+
+      &._expired {
+        span {
+          display: inline;
+        }
+      }
+
+    }
+
+    &__info {
+      margin-top: 5px;
+      color: #000000;
+    }
+
+    &__cell {
+      margin-left: 40px;
+      padding: 20px 0;
+
+      &:nth-child(1) {
+        margin-left: 0;
+        min-width: 202px;
+      }
+
+      &:nth-child(2) {
+        min-width: 8%;
+      }
+
+      &:nth-child(3) {
+        min-width: 16%;
+
+        a {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+      }
+
+      &:nth-child(4) {
+        min-width: 13%;
+      }
+
+      &:nth-child(5) {
+        min-width: 11%;
+      }
+
+      &:nth-child(6) {
+        min-width: 7.5%;
+      }
+
+      &:nth-child(7) {
+        min-width: 7%;
+        margin-left: 30px;
+      }
+
+    }
+
+    &__status {
+      padding: 20px 28px;
+      border-radius: 0 5px 5px 0;
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #DDDDDE;
+
+      .closed-deals-table__info {
+        margin-top: 0;
+        font-size: 14px;
+      }
+    }
+
+  }
+
+}

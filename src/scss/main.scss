@@ -43,6 +43,7 @@
 @import "./pages/templater-tags";
 @import "./pages/signing-document";
 @import "./pages/signing-document-multistage";
+@import "./pages/close-deals";
 
 // Компоненты
 @import "./components/modals";
@@ -84,7 +85,7 @@
 @import "media/media-templater-tags";
 @import "media/media-signing-document";
 @import "media/media-signing-document-multistage";
-
+@import "media/media-closed-deals";
 
 @import "./components/header";
 @import "./components/footer";
