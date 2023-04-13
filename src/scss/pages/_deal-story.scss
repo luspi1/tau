@@ -1,5 +1,15 @@
 .deal-story {
-  padding-top: 9px;
+  .deal-submenu .container .deals__btn.deals__btn-open-btn {
+    display: block;
+  }
+  &._closed {
+   .deal-submenu .container .deals__btn.deals__btn-open-btn{
+      display: none;
+    }
+    .deal-submenu .container .deals__btn.deals__btn-closed-btn {
+      display: block;
+    }
+  }
   .minititle {
     color: #858584;
   }

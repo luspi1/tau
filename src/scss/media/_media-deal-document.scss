@@ -1,9 +1,10 @@
 @media (max-width: 1480px) {
   .deals-documents__buttons a,
-  .deals-documents__buttons button:not(:last-of-type){
+  .deals-documents__buttons button:not(:last-of-type) {
     margin-right: 35px;
   }
 }
+
 @media (max-width: 1280px) {
   .deals-documents .container {
     flex-direction: column;
@@ -35,7 +36,7 @@
     min-width: 920px;
   }
   .deals-documents__buttons a,
-  .deals-documents__buttons button:not(:last-of-type){
+  .deals-documents__buttons button:not(:last-of-type) {
     margin-right: 50px;
   }
 }
@@ -49,17 +50,28 @@
     flex-direction: column;
   }
   .deals-documents__search-input,
-  .deals-documents .choices{
+  .deals-documents .choices {
     margin-bottom: 15px;
     margin-right: 0;
   }
   .deals-documents__title {
     font-size: 26px;
-    line-height: 36px;
-    margin-bottom: 30px;
   }
 
-
+  .deals-documents__flex-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .deals-documents__flex-wrapper.title {
+    margin-bottom: 20px;
+  }
+  .deals-documents__info-status {
+    margin-left: 0;
+  }
+  .deals-documents__term span:first-child {
+    display: none;
+  }
   .deals-documents__caption-list {
     flex-direction: column;
 
@@ -69,33 +81,32 @@
     margin-bottom: 20px;
   }
 
-    .deals-documents__info .deals-documents__buttons a,
+  .deals-documents__info .deals-documents__buttons a,
   .deals-documents__info .deals-documents__buttons button:not(:last-of-type) {
     margin-right: 30px;
   }
-
-
-
 }
 
+@media (max-width: 576px) {
+  .deals-documents__info .deals-documents__buttons {
+    flex-wrap: wrap;
+  }
+  .deals-documents__info {
+    margin-bottom: 0;
+  }
+  .deals-documents__info .deals-documents__buttons a,
+  .deals-documents__info .deals-documents__buttons button,
+  .deals-documents__term-svg {
+    margin-bottom: 16px;
+  }
+}
 
 @media (max-width: 420px) {
   .deals-documents .choices {
     width: 100%;
   }
-  .deals-documents__info .deals-documents__buttons {
-    flex-wrap: wrap;
-  }
-  .deals-documents__info .deals-documents__buttons a,
-  .deals-documents__info .deals-documents__buttons button:not(:last-of-type) {
-    margin-right: 50px;
-  }
-  .deals-documents__info .deals-documents__buttons button:nth-of-type(3){
-    margin-right: 0;
-  }
-  .deals-documents__info .deals-documents__btn-status {
-    margin-top: 20px;
-  }
+
+
   .deals-documents__title {
     font-size: 22px;
     line-height: 30px;

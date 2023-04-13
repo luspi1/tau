@@ -14,12 +14,12 @@
   'deal-title': 'letters-link_active'
   })
 
-  <main class="main correspondence-item">
+  <main class="main correspondence-item _closed">
     @include('partials/deal-submenu.html', {
     'deal-corr': 'deal-submenu_active',
-    'btn-disable': 'deals__btn-disable',
-    })
-
+   })
+    @include('partials/open-deal-modal.html')
+    @include('partials/closed-deal-modal.html')
     <section class="newmail-one">
       <div class="container">
         @include('partials/create-letter-modal.html', {

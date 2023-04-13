@@ -27,9 +27,13 @@
       &:hover {
         background-color: #264DDB;
       }
-     &.deals__btn-disable {
-      display: none;
-     }
+
+      &.deals__btn-open-btn {
+        display: none;
+      }
+      &.deals__btn-closed-btn {
+        display: none;
+      }
 
     }
   }

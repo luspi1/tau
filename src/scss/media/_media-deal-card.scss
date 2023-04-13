@@ -37,14 +37,26 @@
 }
 
 @media (max-width: 768px) {
-  .deals .one-deal__title {
+  .deals .one-deal__flex-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+  .deals .one-deal__term span:first-child {
+    display: none;
+  }
+  .deals .one-deal__flex-wrapper.title {
     margin-bottom: 0;
+  }
+  .deals .one-deal__info-status {
+    margin-left: 0;
   }
   .deals .one-deal h1 {
     font-size: 26px;
   }
 
   .deals .one-deal__data h3 {
+    margin-bottom: 15px;
     font-size: 24px;
   }
 

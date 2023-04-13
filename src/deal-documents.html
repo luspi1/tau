@@ -14,19 +14,36 @@
   'deal-title': 'deal-link_active'
   })
 
-  <main class="main deals">
+  <main class="main deals deal-doc _overdue _closed">
     @include('partials/deal-submenu.html', {
-    'deal-documents': 'deal-submenu_active',
-    'btn-disable': 'deals__btn-disable'
+    'deal-documents': 'deal-submenu_active'
     })
     <section class="deals-documents">
       <div class="container">
+
         <div class="deals-documents__content">
-          <h1 class="deals-documents__title">Договор и документы</h1>
+          <div class="deals-documents__flex-wrapper title">
+            <h1 class="deals-documents__title">Договор и документы</h1>
+            <div class="deals-documents__info-status term">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M9 18C13.9706 18 18 13.9706 18 9C18 4.02944 13.9706 0 9 0C4.02944 0 0 4.02944 0 9C0 13.9706 4.02944 18 9 18Z"
+                  fill="#BC0D48"/>
+                <path
+                  d="M7.70157 14.3C7.40157 14 7.20157 13.6 7.20157 13.1C7.20157 12.6 7.40157 12.2 7.70157 11.9C8.00157 11.6 8.50157 11.4 9.00157 11.4C9.50157 11.4 10.0016 11.6 10.3016 11.9C10.6016 12.2 10.8016 12.6 10.8016 13.1C10.8016 13.6 10.6016 14 10.3016 14.3C10.0016 14.6 9.50157 14.8 9.00157 14.8C8.40157 14.8 8.00157 14.6 7.70157 14.3ZM7.10156 3.29999H10.8016L10.2016 10.5H7.80157L7.10156 3.29999Z"
+                  fill="white"/>
+              </svg>
+              <p>Срок договора истёк</p>
+            </div>
+          </div>
+
           <div class="deals-documents__wrapper-width">
             <ul class="deals-documents__caption-list">
               <li>
-                <p class="deals-documents__list-title">Сделка</p>
+                <div class="deals-documents__flex-wrapper">
+                  <p class="deals-documents__list-title">Сделка</p>
+                  <p class="deals-documents__term"><span>|</span><span>Договор истёк</span></p>
+                </div>
                 <a href="#" class="deals-documents__list-content">Тест сделки
                   202302-14-2</a>
               </li>
@@ -103,6 +120,12 @@
                     fill="#2F65F6"/>
                 </svg>
               </a>
+              <svg class="deals-documents__term-svg" width="18" height="17" viewBox="0 0 18 17" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <circle cx="8.89258" cy="8.5" r="7.85" stroke="#BC0D48" stroke-width="1.3"/>
+                <path d="M3.22656 14.6389L14.5599 2.83336" stroke="#BC0D48" stroke-width="1.3"/>
+              </svg>
+
               <button class="deals-documents__btn-status"
                       data-modal="document-sign-modal"
                       data-type-btn="generated"
@@ -621,6 +644,8 @@
     @include('partials/document-preview-modal.html')
     @include('partials/document-send-modal.html')
     @include('partials/document-sign-modal.html')
+    @include('partials/open-deal-modal.html')
+    @include('partials/closed-deal-modal.html')
     @include('partials/info-modal.html')
     @include('partials/loader.html')
   </main>
