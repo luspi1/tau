@@ -1,4 +1,18 @@
 .correspondence-item {
+  .deal-submenu .container .deals__btn.deals__btn-open-btn {
+    display: block;
+  }
+
+  &._closed {
+    .deal-submenu .container .deals__btn.deals__btn-open-btn {
+      display: none;
+    }
+
+    .deal-submenu .container .deals__btn.deals__btn-closed-btn {
+      display: block;
+    }
+  }
+
   padding-top: 9px;
   padding-bottom: 100px;
 

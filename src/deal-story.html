@@ -14,10 +14,9 @@
   'deal-title': 'deal-link_active'
   })
 
-  <main class="main deal-story">
+  <main class="main deal-story _closed">
     @include('partials/deal-submenu.html', {
     'deal-story': 'deal-submenu_active',
-    'btn-disable': 'deals__btn-disable'
     })
     <div class="container">
       <section class="one-deal">
@@ -219,6 +218,8 @@
     </div>
     @include('partials/change-employee-modal.html')
     @include('partials/info-modal.html')
+    @include('partials/open-deal-modal.html')
+    @include('partials/closed-deal-modal.html')
     @include('partials/loader.html')
 
   </main>

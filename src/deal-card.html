@@ -14,18 +14,36 @@
   'deal-title': 'deal-link_active'
   })
 
-  <main class="main deals">
+  <main class="main deals _overdue _closed">
     @include('partials/deal-submenu.html', {
-    'deal-card': 'deal-submenu_active',
+    'deal-card': 'deal-submenu_active'
     })
     <div class="container">
       <section class="one-deal">
         <div class="container">
           <div class="one-deal__info">
-            <p class="minititle">Название сделки</p>
-            <div class="one-deal__title">
-              <h1>Раскопки-211 129/031 СТН</h1><span
-              class="one-deal__disc _yellow"></span>
+            <div class="one-deal__flex-wrapper">
+              <p class="minititle">Название сделки</p>
+              <p class="one-deal__term"><span>|</span><span>Срок договора истёк</span></p>
+            </div>
+            <div class="one-deal__flex-wrapper title">
+              <div class="one-deal__title">
+                <h1>Раскопки-211 129/031 СТН</h1><span
+                class="one-deal__disc _yellow"></span>
+              </div>
+
+              <div class="one-deal__info-status completed">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M9 18C13.9706 18 18 13.9706 18 9C18 4.02944 13.9706 0 9 0C4.02944 0 0 4.02944 0 9C0 13.9706 4.02944 18 9 18Z"
+                    fill="#BC0D48"/>
+                  <path
+                    d="M7.70157 14.3C7.40157 14 7.20157 13.6 7.20157 13.1C7.20157 12.6 7.40157 12.2 7.70157 11.9C8.00157 11.6 8.50157 11.4 9.00157 11.4C9.50157 11.4 10.0016 11.6 10.3016 11.9C10.6016 12.2 10.8016 12.6 10.8016 13.1C10.8016 13.6 10.6016 14 10.3016 14.3C10.0016 14.6 9.50157 14.8 9.00157 14.8C8.40157 14.8 8.00157 14.6 7.70157 14.3ZM7.10156 3.29999H10.8016L10.2016 10.5H7.80157L7.10156 3.29999Z"
+                    fill="white"/>
+                </svg>
+                <p>Сделка закрыта</p>
+              </div>
+              <button class="one-deal__btn-editing" type="button">Редактировать</button>
             </div>
             <div class="one-deal__row">
               <div class="one-deal__wrapper-width">
@@ -44,7 +62,20 @@
               </div>
             </div>
             <div class="one-deal__data">
-              <h3>Данные сделки, входящие в Договор</h3>
+              <div class="one-deal__flex-wrapper">
+                <h3>Данные сделки, входящие в Договор</h3>
+                <div class="one-deal__info-status term">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M9 18C13.9706 18 18 13.9706 18 9C18 4.02944 13.9706 0 9 0C4.02944 0 0 4.02944 0 9C0 13.9706 4.02944 18 9 18Z"
+                      fill="#BC0D48"/>
+                    <path
+                      d="M7.70157 14.3C7.40157 14 7.20157 13.6 7.20157 13.1C7.20157 12.6 7.40157 12.2 7.70157 11.9C8.00157 11.6 8.50157 11.4 9.00157 11.4C9.50157 11.4 10.0016 11.6 10.3016 11.9C10.6016 12.2 10.8016 12.6 10.8016 13.1C10.8016 13.6 10.6016 14 10.3016 14.3C10.0016 14.6 9.50157 14.8 9.00157 14.8C8.40157 14.8 8.00157 14.6 7.70157 14.3ZM7.10156 3.29999H10.8016L10.2016 10.5H7.80157L7.10156 3.29999Z"
+                      fill="white"/>
+                  </svg>
+                  <p>Срок договора истёк</p>
+                </div>
+              </div>
               <div class="one-deal__warning">
                 ВНИМАНИЕ! В случае изменения данных Договора этой сделки,
                 потребуется выпустить дополнительное
@@ -441,8 +472,8 @@
       <aside class="aside">
         <div class="aside__top">
           <p class="minititle">Контрагент</p>
-          <a href="#" target="_blank" data-shear="24">ООО
-            «Росавтодорпроектстроймашинвест»</a>
+          <a href="#" target="_blank"
+             data-shear="24">ООО «Росавтодорпроектстроймашинвест»</a>
         </div>
         <div class="aside__card">
           <div class="aside__item">
@@ -479,6 +510,8 @@
     </div>
     @include('partials/document-preview-modal.html')
     @include('partials/change-employee-modal.html')
+    @include('partials/open-deal-modal.html')
+    @include('partials/closed-deal-modal.html')
     @include('partials/info-modal.html')
     @include('partials/document-send-modal.html')
     @include('partials/loader.html')

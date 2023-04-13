@@ -1,26 +1,45 @@
 .deals-balance-page {
-  padding-top: 9px;
-  .check-confirm-deal-modal {
-      position: fixed;
-      border-radius: 15px;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      background: #FFFFFF;
-      width: 500px;
-      height: 400px;
+  .deal-submenu .container .deals__btn.deals__btn-open-btn {
+    display: block;
+  }
+
+  &._closed {
+    .deal-submenu .container .deals__btn.deals__btn-open-btn {
+      display: none;
+    }
+
+    .deal-submenu .container .deals__btn.deals__btn-closed-btn {
+      display: block;
+    }
+  }
+
+  &._overdue {
+    .deals-balance__term {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 35px 20px;
+    }
+  }
 
-      opacity: 0;
-      visibility: hidden;
+  .check-confirm-deal-modal {
+    position: fixed;
+    border-radius: 15px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #FFFFFF;
+    width: 500px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 35px 20px;
 
-      @media (max-width: 576px) {
-        width: 94%;
-      }
+    opacity: 0;
+    visibility: hidden;
+
+    @media (max-width: 576px) {
+      width: 94%;
+    }
 
     &._active {
       opacity: 1;
@@ -73,6 +92,7 @@
   }
 
 }
+
 .deals-balance {
 
   padding: 17px 0 385px;
@@ -107,10 +127,39 @@
     color: #000000;
     margin-bottom: 34px;
   }
+
   &__wrapper-width {
     border-bottom: 2px dotted #C4C4C4;
     margin-bottom: 25px;
   }
+
+  &__flex-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &.title {
+      margin-bottom: 34px;
+    }
+
+  }
+
+  &__term {
+    display: none;
+
+    span {
+      &:first-child {
+        margin-right: 5px;
+        color: #858584;
+      }
+
+      &:last-child {
+        color: #BC0D48;
+      }
+    }
+
+  }
+
   &__caption-list {
     max-width: 900px;
     display: flex;
@@ -131,6 +180,11 @@
       line-height: 20px;
       color: #858584;
       margin-bottom: 5px;
+    }
+
+    .deals-balance__flex-wrapper .deals-balance__list-title {
+      margin-right: 5px;
+      margin-bottom: 0;
     }
 
     .deals-balance__list-content {
@@ -168,21 +222,25 @@
     &__row:nth-child(odd) {
       background-color: #F7F8FA;
     }
+
     &__date {
       min-width: 120px;
       width: 120px;
       margin-right: 10px;
     }
+
     &__type {
       min-width: 230px;
       width: 230px;
       margin-right: 10px;
       color: #2F65F6;
     }
-    &__description{
+
+    &__description {
       min-width: 350px;
       width: 350px;
     }
+
     &__price {
       min-width: 140px;
       width: 140px;

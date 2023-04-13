@@ -1,5 +1,17 @@
 .correspondence {
-  padding-top: 9px;
+  .deal-submenu .container .deals__btn.deals__btn-open-btn {
+    display: block;
+  }
+
+  &._closed {
+    .deal-submenu .container .deals__btn.deals__btn-open-btn {
+      display: none;
+    }
+
+    .deal-submenu .container .deals__btn.deals__btn-closed-btn {
+      display: block;
+    }
+  }
 
   .container {
     padding-top: 26px;
@@ -13,6 +25,7 @@
       justify-content: space-between;
       align-items: center;
     }
+
     &__title {
       margin-right: 20px;
       margin-bottom: 10px;
@@ -61,7 +74,7 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
-              }
+      }
 
       &__input {
         width: 54%;

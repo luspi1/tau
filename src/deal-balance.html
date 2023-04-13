@@ -14,13 +14,14 @@
   'deal-title': 'deal-link_active'
   })
 
-  <main class="main deals deals-balance-page">
+  <main class="main deals deals-balance-page _overdue _closed">
     @include('partials/deal-submenu.html', {
-    'deal-balance': 'deal-submenu_active',
-    'btn-disable': 'deals__btn-disable'
+    'deal-balance': 'deal-submenu_active'
     })
     @include('partials/add-payment-modal.html')
     @include('partials/change-employee-modal.html')
+    @include('partials/open-deal-modal.html')
+    @include('partials/closed-deal-modal.html')
     <div class="check-confirm-deal-modal modal" id="check-confirm-deal-modal" data-body-lock="true">
         <p class="check-confirm-deal-modal__content-text">Вы действительно хотите
           совершить данное действие?</p>
@@ -33,10 +34,13 @@
       <div class="container">
         <div class="deals-balance__content">
           <h1 class="deals-balance__title">Баланс сделки</h1>
-          <div class="deals-documents__wrapper-width">
+          <div class="deals-balance__wrapper-width">
             <ul class="deals-balance__caption-list">
               <li>
-                <p class="deals-balance__list-title">Сделка</p>
+                <div class="deals-balance__flex-wrapper">
+                  <p class="deals-balance__list-title">Сделка</p>
+                  <p class="deals-balance__term"><span>|</span><span>Договор истёк</span></p>
+                </div>
                 <a href="#" class="deals-balance__list-content deal-name">Тест
                   сделки 202302-14-2</a>
               </li>

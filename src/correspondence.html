@@ -14,17 +14,18 @@
   'deal-title': 'deal-link_active'
   })
 
-  <main class="main correspondence">
+  <main class="main correspondence _closed">
     @include('partials/deal-submenu.html', {
     'deal-corr': 'deal-submenu_active',
-    'btn-disable': 'deals__btn-disable',
-    })
-
+   })
+    @include('partials/open-deal-modal.html')
+    @include('partials/closed-deal-modal.html')
     <section class="newmails">
       <div class="container">
         @include('partials/create-letter-modal.html', {
         'letter-title' : 'Создать письмо'
         })
+
         <div class="newmails__top">
           <div class="newmails__top-wrapper">
           <h1 class="newmails__title">Корреспонденция</h1>
