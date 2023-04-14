@@ -2,14 +2,16 @@
   &._overdue {
     .deals-documents__term,
     .deals-documents__info-status.term,
-    .deals-documents__term-svg{
+    .deals-documents__term-svg {
       display: flex;
     }
   }
+
   &._closed {
-    .deal-submenu .container .deals__btn.deals__btn-open-btn{
+    .deal-submenu .container .deals__btn.deals__btn-open-btn {
       display: none;
     }
+
     .deal-submenu .container .deals__btn.deals__btn-closed-btn {
       display: block;
     }
@@ -40,7 +42,7 @@
     font-size: 36px;
     line-height: 44px;
     color: #000000;
-    }
+  }
 
   &__wrapper-width {
     border-bottom: 2px dotted #C4C4C4;
@@ -67,7 +69,6 @@
       font-size: 16px;
       line-height: 20px;
       color: #858584;
-      margin-bottom: 5px;
     }
 
     .deals-documents__list-content {
@@ -87,9 +88,11 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+
     &.title {
       margin-bottom: 34px;
     }
+
     .deals-documents__list-title {
       margin-right: 5px;
     }

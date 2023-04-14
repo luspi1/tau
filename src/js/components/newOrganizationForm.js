@@ -1,5 +1,5 @@
 import { v4 as uuidv4 }                                    from 'uuid'
-import { checkValue }                                      from '../_functions'
+import { checkValue, showInfoModal }                       from '../_functions'
 import { initAccountCheckMask, initBikMask, initCorrMask } from "./inputMask"
 
 
@@ -20,6 +20,7 @@ if (addAccountBtn) {
     const changeableList = document.querySelector('.new-organization__account-list')
     const changeableInputs = changeableList.querySelectorAll('input')
     if (!checkValue(changeableInputs)) {
+      showInfoModal('Для создания нового элемента необходимо заполнить все предыдущие поля!')
       return
     }
 

@@ -1,7 +1,7 @@
-import { initSelects }                   from './customSelect'
-import { initDatePaymentsMask }          from "./inputMask"
-import { initAllDates }                  from "./customDate"
-import { checkValue, handlePopupInputs } from "../_functions"
+import { initSelects }                                  from './customSelect'
+import { initDatePaymentsMask }                         from "./inputMask"
+import { initAllDates }                                 from "./customDate"
+import { checkValue, handlePopupInputs, showInfoModal } from "../_functions"
 
 let annexOptionalIndex = 1
 
@@ -17,6 +17,7 @@ if (templateTermsFragment) {
       const changeableList = document.querySelector('.case-terms__items')
       const changeableInputs = changeableList.querySelectorAll('input, textarea')
       if (!checkValue(changeableInputs)) {
+        showInfoModal('Для создания нового элемента необходимо заполнить все предыдущие поля!')
         return
       }
 
@@ -40,6 +41,7 @@ if (templateOptionalFragment) {
       const changeableList = document.querySelector('.case-optional__items')
       const changeableInputs = changeableList.querySelectorAll('input')
       if (!checkValue(changeableInputs)) {
+        showInfoModal('Для создания нового элемента необходимо заполнить все предыдущие поля!')
         return
       }
       e.preventDefault()
@@ -63,6 +65,7 @@ if (annexWrapper) {
       const changeableList = document.querySelector('.case-annex .case-annex__optional-items')
       const changeableInputs = changeableList.querySelectorAll('input')
       if (!checkValue(changeableInputs)) {
+        showInfoModal('Для создания нового элемента необходимо заполнить все предыдущие поля!')
         return
       }
       const currentOptional = e.target.closest('.case-annex__item')
@@ -93,6 +96,7 @@ if (annexFragment) {
       const changeableList = document.querySelector('.case-annex__items')
       const changeableInputs = changeableList.querySelectorAll('input')
       if (!checkValue(changeableInputs)) {
+        showInfoModal('Для создания нового элемента необходимо заполнить все предыдущие поля!')
         return
       }
       const optionalEl = annexEl.cloneNode(true)

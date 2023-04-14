@@ -212,6 +212,7 @@ if (createDealPage) {
     if (addObserverBtn) {
       addObserverBtn.addEventListener('click', (e) => {
         if (!checkValue('.create-deal-page__observer-input')) {
+          showInfoModal('Для создания нового элемента необходимо заполнить все предыдущие поля!')
           return
         }
         e.preventDefault()

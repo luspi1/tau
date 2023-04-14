@@ -1,7 +1,7 @@
-import { checkValue }       from '../_functions'
-import { initAllDates }     from './customDate'
-import { initSelects }      from './customSelect'
-import { initDateDealMask } from './inputMask'
+import { checkValue, showInfoModal } from '../_functions'
+import { initAllDates }              from './customDate'
+import { initSelects }               from './customSelect'
+import { initDateDealMask }          from './inputMask'
 
 
 // Инициализация необходимых кастомных инпутов
@@ -34,6 +34,7 @@ export const initChangeableLists = () => {
 
         //проверка наличия значений в инпутах, для запрета создания новых элементов без значения
         if (!checkValue(changeableInputs)) {
+          showInfoModal('Для создания нового элемента необходимо заполнить все предыдущие поля!')
           return
         }
         const templateId = e.target.dataset.template
