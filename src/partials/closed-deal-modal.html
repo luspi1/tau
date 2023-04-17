@@ -18,10 +18,11 @@
     <p class="closed-deal__label">Название сделки</p>
     <p class="closed-deal__description">Длинное название сделки, не ссылка</p>
   </div>
-  <form action="">
+  <form id="form-closed-deal" name="formClosedDeal" action="">
+    <input type="hidden" name="id_deal" value="715cas76dhb">
     <div class="closed-deal__select-wrapper">
       <p class="closed-deal__label">Основание закрытия сделки*</p>
-      <select class="closed-deal__select custom-select" required>
+      <select class="closed-deal__select custom-select" name="closeDealSelect" required>
         <option value="">выбрать основание закрытия сделки</option>
         <option value="basis_1">Основание 1</option>
         <option value="basis_2">Основание 2</option>
@@ -53,7 +54,9 @@
       </ul>
     </div>
 
-    <button class="closed-deal__btn" type="submit">Закрыть сделку</button>
+    <button class="closed-deal__btn closed-deal__btn-submit" type="submit"
+            data-script="data/getCases.txt"
+    >Закрыть сделку</button>
     <button class="closed-deal__btn closed-deal__btn-cancel" data-close-modal="true" type="button">Отменить</button>
   </form>
 

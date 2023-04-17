@@ -1,19 +1,17 @@
 .deals {
-  .deal-submenu .container .deals__btn.deals__btn-open-btn {
-    display: block;
-  }
   &._closed {
     .one-deal__info-status.completed {
       display: flex;
     }
+
     .one-deal__btn-editing,
-    .deal-submenu .container .deals__btn.deals__btn-open-btn{
+    .deal-submenu .container .deals__btn.deals__btn-closed-btn {
       display: none;
     }
-    .deal-submenu .container .deals__btn.deals__btn-closed-btn {
+
+    .deal-submenu .container .deals__btn.deals__btn-open-btn {
       display: block;
     }
-
   }
 
   &._overdue {
@@ -33,7 +31,7 @@
 
   > .container {
     padding-top: 17px;
-     display: flex;
+    display: flex;
   }
 
   .one-deal {
