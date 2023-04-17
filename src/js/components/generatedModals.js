@@ -1,10 +1,11 @@
-import { sendData, showInfoModal }    from '../_functions'
-import { initAllDates }               from './customDate'
-import { initSelects }                from './customSelect'
-import { handleDocumentPreviewModal } from './documentPreviewModal'
-import { initCustomMasks }            from './inputMask'
-import { initCloseModals }            from './managePopup'
-import { handleDocumentSignModal }    from './signDocModal'
+import {sendData, showInfoModal} from '../_functions'
+import {initAllDates} from './customDate'
+import {initSelects} from './customSelect'
+import {handleDocumentPreviewModal} from './documentPreviewModal'
+import {initCustomMasks} from './inputMask'
+import {initCloseModals} from './managePopup'
+import {handleDocumentSignModal} from './signDocModal'
+import {handleCloseDealModal} from './closeDealModal'
 
 const generatedModalBtns = document.querySelectorAll('button[data-type-btn="generated"]')
 
@@ -19,6 +20,7 @@ const initGeneratedModal = (modal) => {
   //обработка конкретных модалок
   handleDocumentSignModal(modal)  // Модалка подписания документа
   handleDocumentPreviewModal(modal)  // Модалка предпросмотра документа
+  handleCloseDealModal(modal)
 }
 
 
@@ -47,24 +49,10 @@ if (generatedModalBtns) {
         } else {
           showInfoModal(errortext)
         }
-      } catch {
-        showInfoModal("Во время выполнения запроса произошла ошибка")
+      } catch (error) {
+        console.error(error)
+          showInfoModal("Во время выполнения запроса произошла ошибка")
       }
     })
   })
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

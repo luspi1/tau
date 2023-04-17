@@ -9,7 +9,7 @@
 
     .deals__btn {
       width: 190px;
-      display: inline-block;
+      display: block;
       padding: 10px 20px;
       background: #2F65F6;
       border: none;
@@ -29,9 +29,6 @@
       }
 
       &.deals__btn-open-btn {
-        display: none;
-      }
-      &.deals__btn-closed-btn {
         display: none;
       }
 

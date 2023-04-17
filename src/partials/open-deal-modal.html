@@ -18,10 +18,11 @@
     <p class="open-deal__label">Название сделки</p>
     <p class="open-deal__description">Длинное название сделки, не ссылка</p>
   </div>
-  <form action="">
+  <form id="form-open-deal" name="formOpenDeal"  action="">
+    <input type="hidden" name="id_deal" value="567xvs1100A" >
     <div class="open-deal__select-wrapper">
       <p class="open-deal__label">Основание закрытия сделки*</p>
-      <select class="open-deal__select custom-select" required>
+      <select class="open-deal__select custom-select" name="openDealSelect"  required>
         <option value="">выбрать основание открытия сделки</option>
         <option value="basis_1">Основание 1</option>
         <option value="basis_2">Основание 2</option>
@@ -73,7 +74,7 @@
       </ul>
     </div>
 
-    <button class="open-deal__btn" type="submit">Открыть сделку</button>
+    <button class="open-deal__btn open-deal__btn-submit" type="submit" data-script="data/getCases.txt">Открыть сделку</button>
     <button class="open-deal__btn open-deal__btn-cancel" data-close-modal="true" type="button">Отменить</button>
   </form>
 

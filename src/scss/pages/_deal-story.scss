@@ -1,13 +1,11 @@
 .deal-story {
-  .deal-submenu .container .deals__btn.deals__btn-open-btn {
-    display: block;
-  }
+
   &._closed {
-   .deal-submenu .container .deals__btn.deals__btn-open-btn{
-      display: none;
+    .deal-submenu .container .deals__btn.deals__btn-open-btn {
+      display: block;
     }
     .deal-submenu .container .deals__btn.deals__btn-closed-btn {
-      display: block;
+      display: none;
     }
   }
   .minititle {
