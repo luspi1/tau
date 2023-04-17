@@ -343,19 +343,6 @@ const initSelects = () => {
     })
   }
 
-// Селекторы на странице "шаблонизатор теги шаблона"
-  const templaterSelects = document.querySelectorAll('.templater__select-wrap select')
-
-  if (templaterSelects) {
-    templaterSelects.forEach(el => {
-      const choices = new Choices(el, {
-        itemSelectText: '',
-        searchEnabled: false,
-        shouldSort: false,
-        allowHTML: true
-      })
-    })
-  }
 
   // Общая инциализация селекторов
 
@@ -373,8 +360,8 @@ const initSelects = () => {
 }
 
 
-document.addEventListener('click', ({target})=> {
-  if(target && target.classList.contains('signing-doc__list-add')){
+document.addEventListener('click', ({target}) => {
+  if (target && target.classList.contains('signing-doc__list-add')) {
     const signingDocSelects = document.querySelectorAll('.signing-doc-select')
 
     if (signingDocSelects) {
@@ -387,7 +374,7 @@ document.addEventListener('click', ({target})=> {
         })
       })
     }
-   }
+  }
 })
 
 initSelects()

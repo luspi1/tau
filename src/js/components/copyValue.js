@@ -11,10 +11,12 @@ copyBtns.forEach(btn => {
 })
 
 
-const copyCurrentValues = document.querySelectorAll('.copy-values')
-
-copyCurrentValues.forEach(item => {
-  item.addEventListener('click', ({currentTarget}) => {
-    navigator.clipboard.writeText(currentTarget.textContent)
+export const initCopyValues = () => {
+  const mainPage = document.querySelector('main')
+  mainPage.addEventListener('click', (e) => {
+    if (e.target.classList.contains('copy-values')) {
+      navigator.clipboard.writeText(e.target.textContent)
+    }
   })
-})
+}
+

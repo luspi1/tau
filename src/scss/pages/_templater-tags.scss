@@ -42,13 +42,11 @@
 
   &__select-flex {
     display: flex;
-    justify-content: space-between;
   }
 
   &__input-wrap {
     width: 50%;
     margin-right: 15px;
-    margin-bottom: 10px;
 
     input {
       width: 100%;
@@ -100,10 +98,10 @@
 
     .choices__inner {
       min-height: auto;
-      height: 40px;
+      height: 38px;
       padding: 0 7.5px 0;
       font-size: 16px;
-      line-height: 32px;
+      line-height: 28px;
       color: #858584;
       background-color: #F2F1F7;
       border: 1px solid #e6e6e6;
@@ -174,6 +172,11 @@
     }
 
     .col-2 {
+      width: 38%;
+      margin-right: 20px;
+    }
+
+    .col-3 {
       width: 49%;
       margin-right: 20px;
       padding-left: 50px;
@@ -186,7 +189,7 @@
       }
     }
 
-    .col-3 {
+    .col-4 {
       min-width: 145px;
       width: 145px;
     }
@@ -202,7 +205,8 @@
   &__bottom {
     display: flex;
     align-items: center;
-  flex-wrap: wrap;
+    flex-wrap: wrap;
+
     .templater__label {
       margin-right: 70px;
       margin-bottom: 15px;

@@ -1,6 +1,12 @@
 // Валидация
-import { closeSelectPopups, handlePopupInputs } from '../_functions'
-import { modalOverlay }                         from '../_vars'
+import {
+  closeSelectPopups,
+  formToObj,
+  handlePopupInputs, sendData,
+  serializeForm,
+  showInfoModal
+}                       from '../_functions'
+import { modalOverlay } from '../_vars'
 
 
 const editFullnameForm = document.querySelector('.modal-join-director__wrap')
@@ -57,6 +63,44 @@ if (newOrgPage) {
     joinLeaderModal.classList.remove('_active')
     modalOverlay.classList.remove('modal-overlay_active')
   })
+
+
+  // подключение руководителя через ввод данных в инпуты фио
+
+  const saveDataBtn = joinLeaderModal.querySelector('.modal-fullname__save-btn')
+  const fullNameForm = joinLeaderModal.querySelector('.modal-join-director__wrap')
+  const fullNameLeader = document.querySelector('.new-organization__leader-fullname')
+
+  const dataScript = saveDataBtn.dataset.script
+  const addData = JSON.parse(saveDataBtn.dataset.json)
+  fullNameForm.addEventListener('submit', async (e) => {
+    e.preventDefault()
+
+    const data = serializeForm(e.target)
+    const objData = formToObj(data)
+    const totalData = {...objData, ...addData}
+    const jsonData = JSON.stringify(totalData)
+    const fullnameString = `${objData.surname} ${objData.firstname} ${objData.fathname}`
+
+    try {
+      const response = await sendData(jsonData, dataScript)
+      const finishedResponse = await response.json()
+      const {status, errortext} = finishedResponse
+
+      if (status === 'ok') {
+        joinLeaderModal.classList.remove('_active')
+        modalOverlay.classList.remove('modal-overlay_active')
+        fullNameLeader.textContent = fullnameString
+        joinLeaderValueInput.value = 0
+      } else {
+        showInfoModal(errortext)
+      }
+    } catch {
+      showInfoModal("Во время выполнения запроса произошла ошибка")
+    }
+  })
+
+
 }
 
 
