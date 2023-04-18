@@ -1,11 +1,11 @@
-import {sendData, showInfoModal} from '../_functions'
-import {initAllDates} from './customDate'
-import {initSelects} from './customSelect'
-import {handleDocumentPreviewModal} from './documentPreviewModal'
-import {initCustomMasks} from './inputMask'
-import {initCloseModals} from './managePopup'
-import {handleDocumentSignModal} from './signDocModal'
-import {handleCloseDealModal} from './closeDealModal'
+import { sendData, showInfoModal }    from '../_functions'
+import { handleCloseDealModal }       from './closeDealModal'
+import { initAllDates }               from './customDate'
+import { initSelects }                from './customSelect'
+import { handleDocumentPreviewModal } from './documentPreviewModal'
+import { initCustomMasks }            from './inputMask'
+import { initCloseModals }            from './managePopup'
+import { handleDocumentSignModal }    from './signDocModal'
 
 const generatedModalBtns = document.querySelectorAll('button[data-type-btn="generated"]')
 
@@ -49,9 +49,9 @@ if (generatedModalBtns) {
         } else {
           showInfoModal(errortext)
         }
-      } catch (error) {
-        console.error(error)
-          showInfoModal("Во время выполнения запроса произошла ошибка")
+      } catch (err) {
+        showInfoModal("Во время выполнения запроса произошла ошибка")
+        console.error(err)
       }
     })
   })

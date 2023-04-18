@@ -1,5 +1,5 @@
-import {formToObj, sendData, serializeForm, showInfoModal} from '../_functions'
-import {body, modalOverlay} from '../_vars'
+import { formToObj, sendData, serializeForm, showInfoModal } from '../_functions'
+import { body, modalOverlay }                                from '../_vars'
 
 
 export const handleCloseDealModal = (closeDealModal) => {
@@ -31,8 +31,9 @@ export const handleCloseDealModal = (closeDealModal) => {
         } else {
           showInfoModal(errortext)
         }
-      } catch {
-          showInfoModal("Во время выполнения запроса произошла ошибка")
+      } catch (err) {
+        showInfoModal("Во время выполнения запроса произошла ошибка")
+        console.error(err)
       }
 
     })

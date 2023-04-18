@@ -117,8 +117,9 @@ export async function handlePopupSubmit(inputValue, popup, optionalInfo) {
     } else {
       showInfoModal(errortext)
     }
-  } catch {
+  } catch (err) {
     showInfoModal("Во время выполнения запроса произошла ошибка")
+    console.error(err)
   }
 }
 

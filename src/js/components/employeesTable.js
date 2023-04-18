@@ -42,8 +42,9 @@ const showJobChangeModal = ({name, direction, position, newPosition, id}) => {
         jobModalForm.removeEventListener('submit', changeJobSubmit)
         showInfoModal(errortext)
       }
-    } catch {
+    } catch (err) {
       showInfoModal("Во время выполнения запроса произошла ошибка")
+      console.error(err)
     }
   }
 
@@ -88,8 +89,9 @@ const showDeleteEmployeeModal = ({name, position, id, row}) => {
         deleteEmployeeForm.removeEventListener('submit', deleteEmployeeSubmit)
         showInfoModal(errortext)
       }
-    } catch {
+    } catch (err) {
       showInfoModal("Во время выполнения запроса произошла ошибка")
+      console.error(err)
     }
   }
 

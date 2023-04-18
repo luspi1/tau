@@ -39,8 +39,9 @@ const initPaymentModal = () => {
         } else {
           showInfoModal(errortext)
         }
-      } catch {
+      } catch (err) {
         showInfoModal("Во время выполнения запроса произошла ошибка")
+        console.error(err)
       }
 
 
@@ -92,8 +93,9 @@ if (incomePageMain) {
         } else {
           showInfoModal(errortext)
         }
-      } catch {
+      } catch (err) {
         showInfoModal("Во время выполнения запроса произошла ошибка")
+        console.error(err)
       }
 
     })
@@ -118,8 +120,9 @@ if (incomePageMain) {
       } else {
         showInfoModal(errortext)
       }
-    } catch {
+    } catch (err) {
       showInfoModal("Во время выполнения запроса произошла ошибка")
+      console.error(err)
     }
   }
 
@@ -182,8 +185,9 @@ if (confirmDealBtn) {
       } else {
         showInfoModal(errortext)
       }
-    } catch {
+    } catch (err) {
       showInfoModal("Во время выполнения запроса произошла ошибка")
+      console.error(err)
     }
   })
 

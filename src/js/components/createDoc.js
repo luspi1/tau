@@ -63,8 +63,9 @@ if (createDocPage) {
         } else {
           showInfoModal(errortext)
         }
-      } catch {
+      } catch (err) {
         showInfoModal("Во время выполнения запроса произошла ошибка")
+        console.error(err)
       }
     }
 
