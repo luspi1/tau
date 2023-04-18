@@ -1,6 +1,7 @@
-import Choices            from 'choices.js'
-import tagsData           from '../../resources/data/tagsData.json'
-import { initCopyValues } from './copyValue'
+import Choices               from 'choices.js'
+import tagsData              from '../../resources/data/tagsData.json'
+import { nothingFoundBlock } from '../_vars'
+import { initCopyValues }    from './copyValue'
 
 
 const tagsPage = document.querySelector('.templater-page')
@@ -32,7 +33,7 @@ if (tagsPage) {
     if (currentArr?.length > 0) {
       tagsCount.textContent = currentArr.length
       templaterList.innerHTML = currentArr.map(el => `
-    <li class="templater__item" data-type=${tagsTypeMap[el.type]}>
+    <li class="templater__item">
             <p class="col-1">${el.chapter}</p>
             <p class="col-2">${el.title}</p>
             <div class="col-3">
@@ -54,7 +55,7 @@ if (tagsPage) {
           </li>
   `).join('')
     } else {
-      templaterList.innerHTML = '<li>Подходящий полей не найдено</li>'
+      templaterList.innerHTML = nothingFoundBlock
       tagsCount.textContent = "0"
     }
   }

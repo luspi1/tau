@@ -424,6 +424,21 @@ input::-webkit-inner-spin-button {
   top: 0;
 }
 
+.nothing-found-block {
+  max-width: 420px;
+  padding: 15px 0;
+
+  p {
+    @include montserrat-regular;
+    font-size: 16px;
+    color: #3E3E3D;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+}
+
 //отступ в выпадающих списках
 @media (min-width: 640px) {
   .choices__list--dropdown .choices__item--selectable, .choices__list[aria-expanded] .choices__item--selectable {
