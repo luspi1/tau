@@ -76,6 +76,10 @@
     }
   }
 
+  .choices__list--single .choices__item {
+    line-height: 16px;
+  }
+
   &__row {
     display: flex;
     justify-content: space-between;
@@ -189,10 +193,11 @@
 
     .choices__inner {
       min-height: unset;
-     height: 40px;
+      height: 40px;
       font-size: 16px;
 
     }
+
     &__select-wrapper {
       width: 493px;
       margin-right: 10px;
@@ -202,6 +207,7 @@
         margin-bottom: 15px;
       }
     }
+
     &__btn {
       display: flex;
       align-items: center;
