@@ -1,9 +1,6 @@
 @media (max-width: 1400px) {
-  .template-item-page .template-item-table__date-cell {
-    width: 40%;
-  }
-  .template-item-page .template-item-table__author-cell {
-    width: 55%;
+  .template-item-page__content {
+    margin-right: 20px;
   }
 }
 
@@ -18,18 +15,9 @@
     margin-right: 0;
     min-width: 410px;
   }
-
-  .template-item-page .template-item-table__date-cell {
-    width: 45%;
-  }
-
-  .template-item-page .template-item-table__author-cell {
-    width: 65%;
-  }
 }
 
 @media (max-width: 1024px) {
-
   .template-item-page {
     padding-bottom: 150px;
   }
@@ -41,18 +29,22 @@
 
   .template-item-page__content {
     margin-right: 0;
+    margin-bottom: 30px;
   }
 
   .template-item-page__sidebar {
     margin-right: 0;
     min-width: auto;
+    width: auto;
     max-width: 520px;
   }
-
-
 }
 
 @media (max-width: 768px) {
+  .template-item-page {
+    padding-bottom: 70px;
+  }
+
   .template-item-page .top h1 {
     font-size: 30px;
     line-height: 40px;
@@ -63,9 +55,8 @@
   }
 
   .template-item-page .template-item-table .flex-table__row {
-    min-width: 750px;
+    min-width: 860px;
   }
-
 }
 
 @media (max-width: 500px) {
