@@ -3,11 +3,10 @@ import { handleCloseDealModal }       from './closeDealModal'
 import { initAllDates }               from './customDate'
 import { initSelects }                from './customSelect'
 import { handleDocumentPreviewModal } from './documentPreviewModal'
+import { handleDocumentSendModal }    from './documentSendModal'
 import { initCustomMasks }            from './inputMask'
 import { initCloseModals }            from './managePopup'
 import { handleDocumentSignModal }    from './signDocModal'
-
-const generatedModalBtns = document.querySelectorAll('button[data-type-btn="generated"]')
 
 
 const initGeneratedModal = (modal) => {
@@ -20,39 +19,47 @@ const initGeneratedModal = (modal) => {
   //обработка конкретных модалок
   handleDocumentSignModal(modal)  // Модалка подписания документа
   handleDocumentPreviewModal(modal)  // Модалка предпросмотра документа
-  handleCloseDealModal(modal)
+  handleCloseDealModal(modal) // Модалка закрытия сделки
+  handleDocumentSendModal(modal) // Модалка отправки документа
 }
 
 
-if (generatedModalBtns) {
+const initGeneratedBtns = () => {
+  const generatedModalBtns = document.querySelectorAll('button[data-type-btn="generated"]')
+  if (generatedModalBtns) {
+    generatedModalBtns.forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        const generatedModalId = e.currentTarget.dataset.modal
+        const generatedModal = document.querySelector(`#${generatedModalId}`)
 
-  generatedModalBtns.forEach(btn => {
-    btn.addEventListener('click', async (e) => {
-      const generatedModalId = e.currentTarget.dataset.modal
-      const generatedModal = document.querySelector(`#${generatedModalId}`)
+        const generateId = btn.dataset.id
+        const generateScript = btn.dataset.script
 
-      const generateId = btn.dataset.id
-      const generateScript = btn.dataset.script
+        const paymentData = {id: generateId}
+        const jsonPaymentData = JSON.stringify(paymentData)
 
-      const paymentData = {id: generateId}
-      const jsonPaymentData = JSON.stringify(paymentData)
+        try {
+          const response = await sendData(jsonPaymentData, generateScript)
+          const finishedResponse = await response.json()
+          const {status, errortext, html} = finishedResponse
 
-      try {
-        const response = await sendData(jsonPaymentData, generateScript)
-        const finishedResponse = await response.json()
-        const {status, errortext, html} = finishedResponse
-
-        if (status === 'ok') {
-          generatedModal.innerHTML = html
-          generatedModal.setAttribute('data-id', generateId)
-          initGeneratedModal(generatedModal)
-        } else {
-          showInfoModal(errortext)
+          if (status === 'ok') {
+            generatedModal.innerHTML = html
+            generatedModal.setAttribute('data-id', generateId)
+            initGeneratedModal(generatedModal)
+          } else {
+            showInfoModal(errortext)
+          }
+        } catch (err) {
+          showInfoModal("Во время выполнения запроса произошла ошибка")
+          console.error(err)
         }
-      } catch (err) {
-        showInfoModal("Во время выполнения запроса произошла ошибка")
-        console.error(err)
-      }
+      })
     })
-  })
+  }
 }
+
+
+initGeneratedBtns()
+
+

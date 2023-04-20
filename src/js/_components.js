@@ -37,4 +37,5 @@ import './components/generatedModals'
 import './components/signDocModal'
 import './components/changeEmployeeModal'
 import './components/tagsFiltration'
+import './components/documentSendModal'
 

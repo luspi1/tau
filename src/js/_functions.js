@@ -287,9 +287,30 @@ export const togglePaymentState = (checkBtn, closeBtn) => {
   }
 }
 
+// Управление активностью кнопки при переключениях в кастомных селектах.
+// при value = 'none' кнопка не активна
+export const manageActivitySubmitBtn = (select, activityBtn) => {
+  if (select && activityBtn) {
+    select.addEventListener('change', (e) => {
+      if (e.detail.value === 'none') {
+        activityBtn.classList.add('btn_disabled')
+      } else {
+        activityBtn.classList.remove('btn_disabled')
+      }
+    })
+  }
+}
 
+// сброс селекта к изначальному состоянию
 
-
+export const resetSelect = (select, activityBtn) => {
+  if (select && activityBtn) {
+    const resetPlaceholder = select.querySelector('.choices__item--selectable')
+    const selectPlaceholder = select.querySelector('.choices__list[role="listbox"]').firstElementChild
+    resetPlaceholder.textContent = selectPlaceholder.textContent
+    activityBtn.classList.add('btn_disabled')
+  }
+}
 
 
 
