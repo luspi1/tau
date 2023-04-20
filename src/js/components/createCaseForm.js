@@ -1,7 +1,12 @@
-import { initSelects }                                  from './customSelect'
-import { initDatePaymentsMask }                         from "./inputMask"
-import { initAllDates }                                 from "./customDate"
-import { checkValue, handlePopupInputs, showInfoModal } from "../_functions"
+import { initSelects }          from './customSelect'
+import { initDatePaymentsMask } from "./inputMask"
+import { initAllDates }         from "./customDate"
+import {
+  checkValue,
+  handlePopupInputs, sendData,
+  serializeForm,
+  showInfoModal, toggleLoader
+}                               from "../_functions"
 
 let annexOptionalIndex = 1
 
@@ -179,7 +184,43 @@ if (createCaseInputs) {
 }
 
 
+// валидация формы
 
+const createCasePage = document.querySelector('.create-case-page')
+
+if (createCasePage) {
+  const createCaseForm = createCasePage.querySelector('.create-case-page__form')
+  const warningText = createCaseForm.querySelector('.case-templates__warning')
+  createCaseForm.addEventListener('submit', async (e) => {
+    e.preventDefault()
+    const verifiableSelects = e.currentTarget.querySelectorAll('.select-popup-data')
+
+    const isVerified = Array.from(verifiableSelects).every(selectData => selectData.value)
+
+    if (!isVerified) {
+      warningText.classList.remove('hidden')
+      return
+    }
+
+    const submitScript = e.currentTarget.action
+    const data = serializeForm(e.currentTarget)
+
+    try {
+      const response = await sendData(data, submitScript)
+      const finishedResponse = await response.json()
+      const {status, errortext} = finishedResponse
+      if (status === 'ok') {
+        window.location.href = 'cases.html'
+      } else {
+        showInfoModal(errortext)
+      }
+    } catch (err) {
+      showInfoModal("Во время выполнения запроса произошла ошибка")
+      console.error(err)
+    }
+  })
+
+}
 
 
 

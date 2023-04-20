@@ -445,3 +445,11 @@ input::-webkit-inner-spin-button {
     padding-right: 0;
   }
 }
+
+.warning-title {
+  @include montserrat-semibold;
+  font-size: 16px;
+  line-height: 22px;
+  color: #BC0D48;
+  padding: 15px 0;
+}

@@ -125,8 +125,12 @@ export async function handlePopupSubmit(inputValue, popup, optionalInfo) {
 
 export const handlePopupInputs = (e) => {
   let inputValue = e.target.value
-
+  const targetInput = e.target.closest('.select-input-wrapper').querySelector('.select-popup-input')
+  let dataInput = e.target.closest('.select-input-wrapper').querySelector('.select-popup-data')
   const targetSelectPopup = e.currentTarget.closest('.select-input-wrapper').querySelector('.select-popup')
+
+  dataInput.value = ''
+
   if (inputValue.length > 2) {
     handlePopupSubmit(inputValue, targetSelectPopup)
       .then(() => {
@@ -134,8 +138,6 @@ export const handlePopupInputs = (e) => {
         if (popupElements) {
           popupElements.forEach(el => {
             el.addEventListener('click', () => {
-              const targetInput = el.closest('.select-input-wrapper').querySelector('.select-popup-input')
-              const dataInput = el.closest('.select-input-wrapper').querySelector('.select-popup-data')
               targetInput.value = el.textContent
               dataInput.value = el.dataset.id
               targetSelectPopup.classList.remove('select-popup_active')

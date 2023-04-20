@@ -28,6 +28,7 @@
     color: #2F65F6;
     padding: 13px 20px 13px 43px;
     max-width: 500px;
+
     p {
       font-size: 16px;
       line-height: 24px;
@@ -158,6 +159,7 @@
 
   &__input-wrapper {
     position: relative;
+
     &:not(:last-child) {
       margin-right: 9px;
     }
@@ -391,6 +393,7 @@
     &__items {
       margin-bottom: 25px;
     }
+
     &__delete-btn {
       position: absolute;
       border: none;
@@ -455,26 +458,17 @@
       border-radius: 15px;
     }
 
-    &__inputs {
-      align-items: center;
-      justify-content: flex-start;
-    }
-
     .create-case-page__input-wrapper {
       min-width: 370px;
       margin-right: 0;
+      margin-bottom: 20px;
     }
-
-    &__or {
-      margin: 0 10px;
-      color: #858584;
-    }
+    
 
     .create-case-page__btn {
       display: inline-block;
       text-align: center;
     }
-
 
 
   }

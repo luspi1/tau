@@ -28,7 +28,7 @@
         </div>
       </div>
 
-      <form class="create-case-page__form" action="#">
+      <form class="create-case-page__form" action="./data/getCases.txt">
         <section class="section case-caption">
           <div class="create-case-page__inputs">
             <div
@@ -364,103 +364,56 @@
         <section class="section case-templates">
           <h2 class="case-subtitle">Шаблоны документов</h2>
           <div class="case-templates__inner">
-            <div class="create-case-page__inputs case-templates__inputs">
-              <div class="create-case-page__input-wrapper select-input-wrapper">
-                <input name="id_template_treaty"
-                       class="create-case-page__data-input select-popup-data"
-                       type="hidden">
-                <input
-                  class="create-case-page__input create-case-page__popup-input select-popup-input"
-                  name="template_treaty" type="text"
-                  placeholder="Выбрать шаблон договора" required>
-                @include('partials/select-popup.html', {
-                'submit-script': 'data/getCases.txt',
-                'add-data':'{"idItem":3,"paramname":"test"}'
-                })
-              </div>
-
-              <span class="case-templates__or">или</span>
-
-              <div class="create-case-page__input-wrapper select-input-wrapper">
-                <input name="id_treaty_type"
-                       class="create-case-page__data-input select-popup-data"
-                       type="hidden">
-                <input
-                  class="create-case-page__input create-case-page__popup-input select-popup-input"
-                  name="treaty_type" type="text"
-                  placeholder="Выбрать тип сделки">
-                @include('partials/select-popup.html', {
-                'submit-script': 'data/getCases.txt',
-                'add-data':'{"idItem":3,"paramname":"test"}'
-                })
-              </div>
+            <div class="create-case-page__input-wrapper select-input-wrapper">
+              <input name="id_template_treaty"
+                     class="create-case-page__data-input select-popup-data"
+                     type="hidden">
+              <input
+                class="create-case-page__input create-case-page__popup-input select-popup-input"
+                name="template_treaty" type="text"
+                placeholder="Выбрать шаблон договора" minlength="3"
+                maxlength="60" required>
+              @include('partials/select-popup.html', {
+              'submit-script': 'data/getCases.txt',
+              'add-data':'{"idItem":3,"paramname":"test"}'
+              })
             </div>
-            <div class="create-case-page__inputs case-templates__inputs">
-              <div class="create-case-page__input-wrapper select-input-wrapper">
-                <input name="id_template_act"
-                       class="create-case-page__data-input select-popup-data"
-                       type="hidden">
-                <input
-                  class="create-case-page__input create-case-page__popup-input select-popup-input"
-                  name="template_act" type="text"
-                  placeholder="Выбрать шаблон акта" required>
-                @include('partials/select-popup.html', {
-                'submit-script': 'data/getCases.txt',
-                'add-data':'{"idItem":3,"paramname":"test"}'
-                })
-              </div>
-
-              <span class="case-templates__or">или</span>
-
-              <div class="create-case-page__input-wrapper select-input-wrapper">
-                <input name="id_act_type"
-                       class="create-case-page__data-input select-popup-data"
-                       type="hidden">
-                <input
-                  class="create-case-page__input create-case-page__popup-input select-popup-input"
-                  name="act_type" type="text"
-                  placeholder="Выбрать тип сделки">
-                @include('partials/select-popup.html', {
-                'submit-script': 'data/getCases.txt',
-                'add-data':'{"idItem":3,"paramname":"test"}'
-                })
-              </div>
+            <div class="create-case-page__input-wrapper select-input-wrapper">
+              <input name="id_template_act"
+                     class="create-case-page__data-input select-popup-data"
+                     type="hidden">
+              <input
+                class="create-case-page__input create-case-page__popup-input select-popup-input"
+                name="template_act" type="text"
+                placeholder="Выбрать шаблон акта" minlength="3" maxlength="60"
+                required>
+              @include('partials/select-popup.html', {
+              'submit-script': 'data/getCases.txt',
+              'add-data':'{"idItem":3,"paramname":"test"}'
+              })
             </div>
-            <div class="create-case-page__inputs case-templates__inputs">
-              <div class="create-case-page__input-wrapper select-input-wrapper">
-                <input name="id_template_agreement"
-                       class="create-case-page__data-input select-popup-data"
-                       type="hidden">
-                <input
-                  class="create-case-page__input create-case-page__popup-input select-popup-input"
-                  name="template_agreement" type="text"
-                  placeholder="Выбрать шаблон допсоглашения">
-                @include('partials/select-popup.html', {
-                'submit-script': 'data/getCases.txt',
-                'add-data':'{"idItem":3,"paramname":"test"}'
-                })
-              </div>
-
-              <span class="case-templates__or">или</span>
-
-              <div class="create-case-page__input-wrapper select-input-wrapper">
-                <input name="id_agreement_type"
-                       class="create-case-page__data-input select-popup-data"
-                       type="hidden">
-                <input
-                  class="create-case-page__input create-case-page__popup-input select-popup-input"
-                  name="agreement_type" type="text"
-                  placeholder="Выбрать тип сделки">
-                @include('partials/select-popup.html', {
-                'submit-script': 'data/getCases.txt',
-                'add-data':'{"idItem":3,"paramname":"test"}'
-                })
-              </div>
+            <div class="create-case-page__input-wrapper select-input-wrapper">
+              <input name="id_template_agreement"
+                     class="create-case-page__data-input select-popup-data"
+                     type="hidden">
+              <input
+                class="create-case-page__input create-case-page__popup-input select-popup-input"
+                name="template_agreement" type="text"
+                placeholder="Выбрать шаблон допсоглашения" minlength="3"
+                maxlength="60" required>
+              @include('partials/select-popup.html', {
+              'submit-script': 'data/getCases.txt',
+              'add-data':'{"idItem":3,"paramname":"test"}'
+              })
             </div>
             <a href="create-template.html" class="create-case-page__btn">
               Создать шаблон документа
             </a>
           </div>
+          <p class="warning-title case-templates__warning hidden">Необходимо
+            выбрать
+            "шаблон договора", "шаблон акта", "шаблон
+            допсоглашения!</p>
         </section>
         <div class="create-case-page__btns">
           <button class="create-case-page__save-btn" type="submit">Сохранить
