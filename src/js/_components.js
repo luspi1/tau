@@ -38,4 +38,5 @@ import './components/signDocModal'
 import './components/changeEmployeeModal'
 import './components/tagsFiltration'
 import './components/documentSendModal'
+import './components/income-traffic'
 
