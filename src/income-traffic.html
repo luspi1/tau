@@ -30,7 +30,9 @@
             </select>
           </div>
         </div>
-        <form class="traffic__select-row">
+
+        <form name="trafficFormFilter"   action="data/getCases.txt">
+        <div class="traffic__select-row">
           <div class="traffic__select-wrap agent">
             <select class="traffic__agent" name="traffic-agent">
               <option selected value="">по контрагенту</option>
@@ -52,7 +54,7 @@
           <div class="traffic__calendar">
             <p class="minititle">За период</p>
             <div class="traffic__calendar-wrap">
-              <input class="traffic__calendar-input " name="" type="text"
+              <input class="traffic__calendar-input" name="deal_create_dateFrom" type="text"
                      placeholder="дд.мм.гггг"
                      data-date-start="2023-01-23">
               <svg class="calendar-choice-date" width="15" height="16"
@@ -132,19 +134,16 @@
             </select>
           </div>
           <button class="traffic__btn-submit" type="submit">Искать</button>
-        </form>
-        <div class="traffic__btn-row">
-          <button type="button" class="traffic__btn traffic__btn-plan">план
-          </button>
-          <button type="button" class="traffic__btn traffic__btn-fact">факт
-          </button>
-          <button type="button" class="traffic__btn traffic__btn-ru">отклонение,
-            &#8381;
-          </button>
-          <button type="button"
-                  class="traffic__btn traffic__btn-percent active">отклонение, %
-          </button>
+          <input id="traffic-hidden-input" type="hidden" name="hiddenInput" value="" >
         </div>
+        <div class="traffic__btn-row">
+          <button data-traffic="plan" type="submit" class="traffic__btn traffic__btn-plan">план</button>
+          <button data-traffic="fact" type="submit" class="traffic__btn traffic__btn-fact">факт</button>
+          <button data-traffic="currency" type="submit" class="traffic__btn traffic__btn-ru">отклонение,&#8381;</button>
+          <button data-traffic="percent" type="submit" class="traffic__btn traffic__btn-percent">отклонение, % </button>
+        </div>
+        </form>
+
       </div>
     </section>
     <section class="information">
