@@ -31,117 +31,126 @@
           </div>
         </div>
 
-        <form name="trafficFormFilter"   action="data/getCases.txt">
-        <div class="traffic__select-row">
-          <div class="traffic__select-wrap agent">
-            <select class="traffic__agent" name="traffic-agent">
-              <option selected value="">по контрагенту</option>
-              <option value="agent_1">Агент__1</option>
-              <option value="agent_2">Агент__2</option>
-              <option value="agent_3">Агент__3</option>
-              <option value="agent_4">Агент__4</option>
-            </select>
-          </div>
-          <div class="traffic__select-wrap deal">
-            <select class="traffic__deals" name="traffic-deals">
-              <option selected value="">по сделке</option>
-              <option value="deals_1">Сделка__1</option>
-              <option value="deals_2">Сделка__2</option>
-              <option value="deals_3">Сделка__3</option>
-              <option value="deals_4">Сделка__4</option>
-            </select>
-          </div>
-          <div class="traffic__calendar">
-            <p class="minititle">За период</p>
-            <div class="traffic__calendar-wrap">
-              <input class="traffic__calendar-input" name="deal_create_dateFrom" type="text"
-                     placeholder="дд.мм.гггг"
-                     data-date-start="2023-01-23">
-              <svg class="calendar-choice-date" width="15" height="16"
-                   viewBox="0 0 15 16" fill="none"
-                   xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M14.9016 14.2V3.29996C14.8016 2.99996 14.7016 2.79995 14.6016 2.49995C14.3016 2.09995 13.8016 1.79996 13.3016 1.79996C13.1016 1.79996 12.9016 1.79996 12.7016 1.79996H11.6016V0.699951H10.6016V1.69995H4.50159V0.699951H3.50159V1.79996H1.80157C0.901575 1.79996 0.301563 2.29995 0.101562 3.19995C0.101562 3.19995 0.101562 3.19996 0.101562 3.29996V14.2C0.101562 14.3 0.201599 14.4 0.201599 14.4C0.301599 14.6 0.301611 14.8 0.401611 14.9C0.601611 15.3 1.00159 15.5 1.50159 15.6C1.50159 15.6 1.50156 15.6 1.60156 15.6H13.5016H13.7016C14.3016 15.4 14.7016 14.9 14.9016 14.2ZM1.10156 3.49995C1.10156 3.09995 1.40157 2.79996 1.80157 2.79996H2.90161H3.50159V3.99995H4.50159V2.79996H10.6016V3.99995H11.6016V2.89996H11.7016H11.8016H12.5016H13.2016C13.6016 2.89996 13.9016 3.19995 13.9016 3.59995C13.9016 3.99995 13.9016 4.39996 13.9016 4.89996V5.39996H1.00159V4.59995C1.10159 4.19995 1.10156 3.89995 1.10156 3.49995ZM13.2016 14.6H1.90161C1.40161 14.6 1.10156 14.3 1.10156 13.8V6.29996H14.0016V13.8C13.9016 14.3 13.7016 14.6 13.2016 14.6Z"
-                  fill="#CECECE"/>
-                <path d="M5.20233 8.09998H3.40234V8.79998H5.20233V8.09998Z"
-                      fill="#CECECE"/>
-                <path d="M8.30157 8.09998H6.60156V8.79998H8.30157V8.09998Z"
-                      fill="#CECECE"/>
-                <path d="M11.6008 8.09998H9.80078V8.79998H11.6008V8.09998Z"
-                      fill="#CECECE"/>
-                <path d="M5.20233 10.2H3.40234V10.9H5.20233V10.2Z"
-                      fill="#CECECE"/>
-                <path d="M8.40161 10.2H6.60156V10.9H8.40161V10.2Z"
-                      fill="#CECECE"/>
-                <path d="M11.6008 10.2H9.80078V10.9H11.6008V10.2Z"
-                      fill="#CECECE"/>
-                <path d="M5.20233 12.2999H3.40234V12.9999H5.20233V12.2999Z"
-                      fill="#CECECE"/>
-                <path d="M8.40161 12.2999H6.60156V12.9999H8.40161V12.2999Z"
-                      fill="#CECECE"/>
-                <path d="M11.6008 12.2999H9.80078V12.9999H11.6008V12.2999Z"
-                      fill="#CECECE"/>
-              </svg>
-              <div class="calendar-cross-close"></div>
+        <form name="trafficFormFilter" action="data/getCases.txt">
+          <div class="traffic__select-row">
+            <div class="traffic__select-wrap agent">
+              <select class="traffic__agent" name="traffic-agent">
+                <option selected value="">по контрагенту</option>
+                <option value="agent_1">Агент__1</option>
+                <option value="agent_2">Агент__2</option>
+                <option value="agent_3">Агент__3</option>
+                <option value="agent_4">Агент__4</option>
+              </select>
             </div>
-            <span>&mdash;</span>
-            <div class="traffic__calendar-wrap">
-              <input class="traffic__calendar-input" name="deal_create_date"
-                     type="text" placeholder="дд.мм.гггг"
-                     data-date-start="2023-01-23">
-              <svg class="calendar-choice-date" width="15" height="16"
-                   viewBox="0 0 15 16" fill="none"
-                   xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M14.9016 14.2V3.29996C14.8016 2.99996 14.7016 2.79995 14.6016 2.49995C14.3016 2.09995 13.8016 1.79996 13.3016 1.79996C13.1016 1.79996 12.9016 1.79996 12.7016 1.79996H11.6016V0.699951H10.6016V1.69995H4.50159V0.699951H3.50159V1.79996H1.80157C0.901575 1.79996 0.301563 2.29995 0.101562 3.19995C0.101562 3.19995 0.101562 3.19996 0.101562 3.29996V14.2C0.101562 14.3 0.201599 14.4 0.201599 14.4C0.301599 14.6 0.301611 14.8 0.401611 14.9C0.601611 15.3 1.00159 15.5 1.50159 15.6C1.50159 15.6 1.50156 15.6 1.60156 15.6H13.5016H13.7016C14.3016 15.4 14.7016 14.9 14.9016 14.2ZM1.10156 3.49995C1.10156 3.09995 1.40157 2.79996 1.80157 2.79996H2.90161H3.50159V3.99995H4.50159V2.79996H10.6016V3.99995H11.6016V2.89996H11.7016H11.8016H12.5016H13.2016C13.6016 2.89996 13.9016 3.19995 13.9016 3.59995C13.9016 3.99995 13.9016 4.39996 13.9016 4.89996V5.39996H1.00159V4.59995C1.10159 4.19995 1.10156 3.89995 1.10156 3.49995ZM13.2016 14.6H1.90161C1.40161 14.6 1.10156 14.3 1.10156 13.8V6.29996H14.0016V13.8C13.9016 14.3 13.7016 14.6 13.2016 14.6Z"
-                  fill="#CECECE"/>
-                <path d="M5.20233 8.09998H3.40234V8.79998H5.20233V8.09998Z"
-                      fill="#CECECE"/>
-                <path d="M8.30157 8.09998H6.60156V8.79998H8.30157V8.09998Z"
-                      fill="#CECECE"/>
-                <path d="M11.6008 8.09998H9.80078V8.79998H11.6008V8.09998Z"
-                      fill="#CECECE"/>
-                <path d="M5.20233 10.2H3.40234V10.9H5.20233V10.2Z"
-                      fill="#CECECE"/>
-                <path d="M8.40161 10.2H6.60156V10.9H8.40161V10.2Z"
-                      fill="#CECECE"/>
-                <path d="M11.6008 10.2H9.80078V10.9H11.6008V10.2Z"
-                      fill="#CECECE"/>
-                <path d="M5.20233 12.2999H3.40234V12.9999H5.20233V12.2999Z"
-                      fill="#CECECE"/>
-                <path d="M8.40161 12.2999H6.60156V12.9999H8.40161V12.2999Z"
-                      fill="#CECECE"/>
-                <path d="M11.6008 12.2999H9.80078V12.9999H11.6008V12.2999Z"
-                      fill="#CECECE"/>
-              </svg>
-              <div class="calendar-cross-close"></div>
+            <div class="traffic__select-wrap deal">
+              <select class="traffic__deals" name="traffic-deals">
+                <option selected value="">по сделке</option>
+                <option value="deals_1">Сделка__1</option>
+                <option value="deals_2">Сделка__2</option>
+                <option value="deals_3">Сделка__3</option>
+                <option value="deals_4">Сделка__4</option>
+              </select>
             </div>
+            <div class="traffic__calendar">
+              <p class="minititle">За период</p>
+              <div class="traffic__calendar-wrap">
+                <input class="traffic__calendar-input"
+                       name="deal_create_dateFrom" type="text"
+                       placeholder="дд.мм.гггг"
+                       data-date-start="2023-01-23">
+                <svg class="calendar-choice-date" width="15" height="16"
+                     viewBox="0 0 15 16" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.9016 14.2V3.29996C14.8016 2.99996 14.7016 2.79995 14.6016 2.49995C14.3016 2.09995 13.8016 1.79996 13.3016 1.79996C13.1016 1.79996 12.9016 1.79996 12.7016 1.79996H11.6016V0.699951H10.6016V1.69995H4.50159V0.699951H3.50159V1.79996H1.80157C0.901575 1.79996 0.301563 2.29995 0.101562 3.19995C0.101562 3.19995 0.101562 3.19996 0.101562 3.29996V14.2C0.101562 14.3 0.201599 14.4 0.201599 14.4C0.301599 14.6 0.301611 14.8 0.401611 14.9C0.601611 15.3 1.00159 15.5 1.50159 15.6C1.50159 15.6 1.50156 15.6 1.60156 15.6H13.5016H13.7016C14.3016 15.4 14.7016 14.9 14.9016 14.2ZM1.10156 3.49995C1.10156 3.09995 1.40157 2.79996 1.80157 2.79996H2.90161H3.50159V3.99995H4.50159V2.79996H10.6016V3.99995H11.6016V2.89996H11.7016H11.8016H12.5016H13.2016C13.6016 2.89996 13.9016 3.19995 13.9016 3.59995C13.9016 3.99995 13.9016 4.39996 13.9016 4.89996V5.39996H1.00159V4.59995C1.10159 4.19995 1.10156 3.89995 1.10156 3.49995ZM13.2016 14.6H1.90161C1.40161 14.6 1.10156 14.3 1.10156 13.8V6.29996H14.0016V13.8C13.9016 14.3 13.7016 14.6 13.2016 14.6Z"
+                    fill="#CECECE"/>
+                  <path d="M5.20233 8.09998H3.40234V8.79998H5.20233V8.09998Z"
+                        fill="#CECECE"/>
+                  <path d="M8.30157 8.09998H6.60156V8.79998H8.30157V8.09998Z"
+                        fill="#CECECE"/>
+                  <path d="M11.6008 8.09998H9.80078V8.79998H11.6008V8.09998Z"
+                        fill="#CECECE"/>
+                  <path d="M5.20233 10.2H3.40234V10.9H5.20233V10.2Z"
+                        fill="#CECECE"/>
+                  <path d="M8.40161 10.2H6.60156V10.9H8.40161V10.2Z"
+                        fill="#CECECE"/>
+                  <path d="M11.6008 10.2H9.80078V10.9H11.6008V10.2Z"
+                        fill="#CECECE"/>
+                  <path d="M5.20233 12.2999H3.40234V12.9999H5.20233V12.2999Z"
+                        fill="#CECECE"/>
+                  <path d="M8.40161 12.2999H6.60156V12.9999H8.40161V12.2999Z"
+                        fill="#CECECE"/>
+                  <path d="M11.6008 12.2999H9.80078V12.9999H11.6008V12.2999Z"
+                        fill="#CECECE"/>
+                </svg>
+                <div class="calendar-cross-close"></div>
+              </div>
+              <span>&mdash;</span>
+              <div class="traffic__calendar-wrap">
+                <input class="traffic__calendar-input" name="deal_create_date"
+                       type="text" placeholder="дд.мм.гггг"
+                       data-date-start="2023-01-23">
+                <svg class="calendar-choice-date" width="15" height="16"
+                     viewBox="0 0 15 16" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M14.9016 14.2V3.29996C14.8016 2.99996 14.7016 2.79995 14.6016 2.49995C14.3016 2.09995 13.8016 1.79996 13.3016 1.79996C13.1016 1.79996 12.9016 1.79996 12.7016 1.79996H11.6016V0.699951H10.6016V1.69995H4.50159V0.699951H3.50159V1.79996H1.80157C0.901575 1.79996 0.301563 2.29995 0.101562 3.19995C0.101562 3.19995 0.101562 3.19996 0.101562 3.29996V14.2C0.101562 14.3 0.201599 14.4 0.201599 14.4C0.301599 14.6 0.301611 14.8 0.401611 14.9C0.601611 15.3 1.00159 15.5 1.50159 15.6C1.50159 15.6 1.50156 15.6 1.60156 15.6H13.5016H13.7016C14.3016 15.4 14.7016 14.9 14.9016 14.2ZM1.10156 3.49995C1.10156 3.09995 1.40157 2.79996 1.80157 2.79996H2.90161H3.50159V3.99995H4.50159V2.79996H10.6016V3.99995H11.6016V2.89996H11.7016H11.8016H12.5016H13.2016C13.6016 2.89996 13.9016 3.19995 13.9016 3.59995C13.9016 3.99995 13.9016 4.39996 13.9016 4.89996V5.39996H1.00159V4.59995C1.10159 4.19995 1.10156 3.89995 1.10156 3.49995ZM13.2016 14.6H1.90161C1.40161 14.6 1.10156 14.3 1.10156 13.8V6.29996H14.0016V13.8C13.9016 14.3 13.7016 14.6 13.2016 14.6Z"
+                    fill="#CECECE"/>
+                  <path d="M5.20233 8.09998H3.40234V8.79998H5.20233V8.09998Z"
+                        fill="#CECECE"/>
+                  <path d="M8.30157 8.09998H6.60156V8.79998H8.30157V8.09998Z"
+                        fill="#CECECE"/>
+                  <path d="M11.6008 8.09998H9.80078V8.79998H11.6008V8.09998Z"
+                        fill="#CECECE"/>
+                  <path d="M5.20233 10.2H3.40234V10.9H5.20233V10.2Z"
+                        fill="#CECECE"/>
+                  <path d="M8.40161 10.2H6.60156V10.9H8.40161V10.2Z"
+                        fill="#CECECE"/>
+                  <path d="M11.6008 10.2H9.80078V10.9H11.6008V10.2Z"
+                        fill="#CECECE"/>
+                  <path d="M5.20233 12.2999H3.40234V12.9999H5.20233V12.2999Z"
+                        fill="#CECECE"/>
+                  <path d="M8.40161 12.2999H6.60156V12.9999H8.40161V12.2999Z"
+                        fill="#CECECE"/>
+                  <path d="M11.6008 12.2999H9.80078V12.9999H11.6008V12.2999Z"
+                        fill="#CECECE"/>
+                </svg>
+                <div class="calendar-cross-close"></div>
+              </div>
+            </div>
+            <div class="traffic__select-wrap years">
+              <select class="traffic__years" name="traffic-years">
+                <option selected value="">все годы</option>
+                <option value="year_2022">2022</option>
+                <option value="year_2021">2021</option>
+                <option value="year_2020">2020</option>
+                <option value="year_2019">2019</option>
+              </select>
+            </div>
+            <div class="traffic__select-wrap quarter">
+              <select class="traffic__quarter" name="traffic-quarter">
+                <option selected value="">периоды</option>
+                <option value="quarter_1">месяцы</option>
+                <option value="quarter_2">кварталы</option>
+              </select>
+            </div>
+            <button class="traffic__btn-submit" type="submit">Искать</button>
+            <input id="traffic-hidden-input" type="hidden" name="type">
           </div>
-          <div class="traffic__select-wrap years">
-            <select class="traffic__years" name="traffic-years">
-              <option selected value="">все годы</option>
-              <option value="year_2022">2022</option>
-              <option value="year_2021">2021</option>
-              <option value="year_2020">2020</option>
-              <option value="year_2019">2019</option>
-            </select>
+          <div class="traffic__btn-row">
+            <button data-traffic="plan" type="submit"
+                    class="traffic__btn traffic__btn-plan">план
+            </button>
+            <button data-traffic="fact" type="submit"
+                    class="traffic__btn traffic__btn-fact">факт
+            </button>
+            <button data-traffic="currency" type="submit"
+                    class="traffic__btn traffic__btn-ru">отклонение,&#8381;
+            </button>
+            <button data-traffic="percent" type="submit"
+                    class="traffic__btn traffic__btn-percent">отклонение, %
+            </button>
           </div>
-          <div class="traffic__select-wrap quarter">
-            <select class="traffic__quarter" name="traffic-quarter">
-              <option selected value="">периоды</option>
-              <option value="quarter_1">месяцы</option>
-              <option value="quarter_2">кварталы</option>
-            </select>
-          </div>
-          <button class="traffic__btn-submit" type="submit">Искать</button>
-          <input id="traffic-hidden-input" type="hidden" name="hiddenInput" value="" >
-        </div>
-        <div class="traffic__btn-row">
-          <button data-traffic="plan" type="submit" class="traffic__btn traffic__btn-plan">план</button>
-          <button data-traffic="fact" type="submit" class="traffic__btn traffic__btn-fact">факт</button>
-          <button data-traffic="currency" type="submit" class="traffic__btn traffic__btn-ru">отклонение,&#8381;</button>
-          <button data-traffic="percent" type="submit" class="traffic__btn traffic__btn-percent">отклонение, % </button>
-        </div>
         </form>
 
       </div>
