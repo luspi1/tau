@@ -453,3 +453,16 @@ input::-webkit-inner-spin-button {
   color: #BC0D48;
   padding: 15px 0;
 }
+
+.imask-wrapper {
+  display: flex;
+}
+.text-ar {
+  text-align: right;
+}
+.currency-mask {
+  border: none;
+  color: black;
+  width: 100%;
+   text-align: right;
+}
