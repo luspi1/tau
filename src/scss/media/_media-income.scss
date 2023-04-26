@@ -7,7 +7,42 @@
     margin-right: 10px;
   }
 
+  .income-page .months__row {
+    flex-direction: column;
 
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+  }
+  .income-page .months__row-wrapper,
+  .income-page .months__accordion {
+    width: 100%;
+  }
+  .income-page .months__indicators {
+    justify-content: flex-start;
+  }
+
+  .income-page .months__circle {
+    margin-right: 20px;
+  }
+  .income-page .months__row-arrow {
+    width: 20px;
+    margin: 5px auto;
+    transform: rotate(90deg);
+    background-size: contain;
+  }
+
+  .income-page .months__item {
+    justify-content: space-between;
+  }
+
+  .income-page .months__payment,
+  .income-page .months__organization {
+    margin: 0 30px;
+  }
+  .income-page .months__block {
+    width: 80%;
+  }
 }
 
 @media(max-width: 1200px) {
@@ -49,43 +84,6 @@
     margin: 0 0 5px 0;
   }
 
-  .income-page .months__block {
-    width: 70%;
-  }
-
-  .income-page .months__row {
-    flex-direction: column;
-
-    &:not(:first-child) {
-      margin-top: 20px;
-    }
-  }
-  .income-page .months__row-wrapper,
-  .income-page .months__accordion{
-    width: 100%;
-  }
-  .income-page .months__indicators {
-    justify-content: flex-start;
-  }
-
-  .income-page .months__circle {
-    margin-right: 27px;
-  }
-  .income-page .months__row-arrow {
-    width: 20px;
-    margin: 5px auto;
-    transform: rotate(90deg);
-    background-size: contain;
-  }
-
-  .income-page .months__item {
-    justify-content: space-between;
-  }
-
-  .income-page .months__payment,
-  .income-page .months__organization {
-    margin: 0 30px;
-  }
 }
 
 @media(max-width: 1024px) {
@@ -167,10 +165,15 @@
   .income-page .filter .balance {
     white-space: nowrap;
   }
+  .income-page .months__list {
+    overflow-x: auto;
+  }
+  .income-page .months__row {
+    min-width: max-content;
+  }
 }
 
 @media(max-width: 768px) {
-
   .income-page .filter .title {
     margin-right: 10px;
   }
@@ -201,10 +204,7 @@
     margin-right: 25px;
     margin-top: 8px;
   }
-  .income-page .months__payment, .income-page .months__organization,
-  .income-page .months__summ {
-    margin: 0 0 0 5px;
-  }
+
   .income-page .months__circle,
   .income-page .months__arrow {
     margin-left: 5px;
@@ -215,22 +215,17 @@
   .income-page .months__item {
     margin-right: 15px;
   }
-  .income-page .months__list {
-    overflow-x: scroll;
-  }
-  .income-page .months__row {
-    min-width: 550px;
-  }
-  .income-page .months__summ {
-    min-width: max-content;
-  }
+
+
 }
+
 @media (min-width: 640px) {
-   .income-page.choices__list--dropdown .choices__item--selectable,
-   .income-page.choices__list[aria-expanded] .choices__item--selectable {
+  .income-page.choices__list--dropdown .choices__item--selectable,
+  .income-page.choices__list[aria-expanded] .choices__item--selectable {
     padding-right: 0;
   }
 }
+
 @media(max-width: 576px) {
   .income-page .filter__title-row {
     flex-direction: column;
@@ -245,7 +240,7 @@
   }
   .income-page .filter__calendar {
     margin-bottom: 15px;
-    order:1;
+    order: 1;
   }
   .income-page .filter__select-wrap.order1 {
     order: 2;
@@ -256,7 +251,7 @@
   .income-page .filter__btn-search {
     margin-left: auto;
   }
-    .income-page .filter__select-row {
+  .income-page .filter__select-row {
     width: 100%;
   }
 

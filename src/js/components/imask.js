@@ -4,21 +4,15 @@ import IMask from 'imask'
 const currencyMasks = document.querySelectorAll('.currency-mask')
 if (currencyMasks) {
     currencyMasks.forEach(itemMask => {
-        const dataMask = itemMask.dataset.mask
         const inputMask = IMask(
             itemMask,
             {
-                mask: dataMask,
-                blocks: {
-                    num: {
-                        mask: Number,
-                        thousandsSeparator: ' '
-                    }
-                }
+                mask: Number,
+                min: -1000000000000,
+                max:  1000000000000,
+                thousandsSeparator: ' '
             }
         )
     })
-
-
 }
 
