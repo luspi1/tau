@@ -162,7 +162,7 @@
     &__status {
       color: #0CB477;
       display: none;
-
+      white-space: nowrap;
       &::before {
         content: url("data:image/svg+xml;charset=UTF-8,%3csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0 8C1.5 9.7 3.7 12.7 5 15C8 9.5 11.1 5.10001 14.4 1.10001L13.4 0C10.7 2.8 7.19996 7.40001 4.89996 11.1C3.79996 9.60001 2.49998 8.29999 1.09998 6.79999L0 8Z' fill='%230CB477'/%3e%3c/svg%3e");
       }
@@ -171,7 +171,14 @@
         display: block;
       }
     }
-
+    &__sum{
+      &.imask-wrapper {
+        margin-left: auto;
+        .currency-mask {
+          font-weight: 600;
+        }
+     }
+    }
     &__row-content {
       display: flex;
       justify-content: space-between;
