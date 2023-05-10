@@ -69,14 +69,21 @@
   }
 
 
-
   .income-list-page .income-list-table .flex-table__cell {
     display: flex;
     width: 100%;
-    a, p {
+
+    a, p, .imask-wrapper, .currency-mask {
       font-size: 10px;
     }
+    .imask-wrapper {
+      padding-right: 15px;
+    }
+    .currency-mask {
+      text-align: left;
+    }
   }
+
   .income-list-page .income-list-table .flex-table__cell .flex-table__cell-title {
     margin-right: 10px;
     min-width: 115px;
@@ -90,7 +97,7 @@
   .income-list-page .income-list-table .flex-table__cell .flex-table__cell-title_desktop {
     display: none;
   }
-  .income-list-page .income-list-table .flex-table__cell .flex-table__cell-title_mobile{
+  .income-list-page .income-list-table .flex-table__cell .flex-table__cell-title_mobile {
     display: block;
   }
 
@@ -127,6 +134,9 @@
     background: #F3D4DE;
   }
 
+  .income-list-page .income-list-table__balance-cell_negative .flex-table__cell-title.text-ar {
+    text-align: left;
+  }
 
   .income-list-page .income-list-table .income-list-table__activity-cell .flex-table__cell-link {
     order: 2;

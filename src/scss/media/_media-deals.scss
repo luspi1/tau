@@ -13,47 +13,13 @@
 
   .deals {
     .deals-table {
-      &__cell {
-
-        &:nth-child(1) {
-          min-width: auto;
-          width: 13%;
-        }
-
-        &:nth-child(2) {
-          min-width: auto;
-          width: 11%;
-        }
-
-        &:nth-child(3) {
-          min-width: auto;
-          width: 11%;
-        }
-
-        &:nth-child(4) {
-          min-width: auto;
-          width: 11%;
-        }
-
-        &:nth-child(5) {
-          min-width: auto;
-          width: 11%;
-        }
-
-        &:nth-child(6) {
-          min-width: auto;
-          width: 7%;
-        }
-
-        &:nth-child(7) {
-          min-width: auto;
-          width: 10%;
-        }
-
-      }
-
+    overflow-x: auto;
+    }
+    .deals-table__row {
+        min-width: 1370px;
     }
   }
+
 
 }
 
@@ -76,10 +42,7 @@
   .deals .deals-list .container {
     overflow-x: scroll;
   }
-  .deals .deals-table {
-    min-width: 1010px;
   }
-}
 
 
 @media(max-width: 768px) {

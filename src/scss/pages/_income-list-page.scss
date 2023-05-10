@@ -87,7 +87,6 @@
         padding-left: 25px;
         padding-right: 10px;
         border-radius: 0 5px 5px 0;
-
       }
     }
 
@@ -95,8 +94,13 @@
     .flex-table__cell-title_mobile {
       display: none;
     }
+
     .flex-table__cell {
-      padding: 18px 0;
+      padding-top: 18px;
+      padding-bottom: 18px;
+      a {
+        word-break: break-word;
+      }
     }
 
     &__fact-cell {
