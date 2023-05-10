@@ -16,6 +16,16 @@ if (mediaQuery.matches) {
 const trimOneDocStrings = document.querySelectorAll('.one-document-page a[data-shear]')
 cutString(trimOneDocStrings)
 
+//обрезка длинных строк  на странице одного счета
+
+const trimOneScoreStrings = document.querySelectorAll('.one-score-page a[data-shear]')
+cutString(trimOneScoreStrings)
+
+//обрезка длинных строк  на странице одного акта
+
+const trimOneActStrings = document.querySelectorAll('.one-act-page a[data-shear]')
+cutString(trimOneActStrings)
+
 //обрезка длинных строк  на странице элемент шаблона
 
 const trimTemplateItemStrings = document.querySelectorAll('.template-item-page a[data-shear]')

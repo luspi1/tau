@@ -367,6 +367,9 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+input[type="number"] {
+  -moz-appearance: textfield;
+}
 
 
 .dz-details,
@@ -452,4 +455,21 @@ input::-webkit-inner-spin-button {
   line-height: 22px;
   color: #BC0D48;
   padding: 15px 0;
+}
+
+.imask-wrapper {
+  display: flex;
+}
+
+.text-ar {
+  text-align: right;
+}
+
+.currency-mask {
+  border: none;
+  color: black;
+  width: 100%;
+  text-align: right;
+  background: none;
+  line-height: 20px;
 }

@@ -1,4 +1,4 @@
-.one-document-page {
+.one-act-page {
   color: #000000;
 
   > .container {
@@ -141,22 +141,21 @@
       border-bottom: 2px dotted #C4C4C4;
     }
 
-    &__payments {
-      padding: 22px 0 19px;
-      border-bottom: 2px dotted #C4C4C4;
-      .imask-wrapper {
-        white-space: nowrap;
-      }
-      .currency-mask {
-        width: 100%;
-        margin-right: 5px;
-      }
-
-    }
-
     &__data {
+      margin-bottom: 45px;
       padding: 22px 0;
       border-bottom: 2px dotted #C4C4C4;
+
+      .imask-wrapper {
+        white-space: nowrap;
+        font-weight: 600;
+      }
+      .currency-mask {
+        width: 45%;
+        font-weight: 600;
+        margin-right: 5px;
+        text-align: left;
+              }
     }
 
     &__app {
@@ -190,12 +189,11 @@
       color: #ffffff;
     }
   }
-
   .aside {
     width: 550px;
     height: 100%;
     margin: 0;
-    padding: 23px 53px 25px 36px;
+    padding: 23px 40px 25px 36px;
     background-color: #f7f8fa;
     border-radius: 15px;
 
@@ -266,55 +264,4 @@
     }
   }
 
-  .modal-contract {
-    position: fixed;
-    overflow-y: auto;
-    overflow-x: hidden;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 910px;
-    background-color: #ffffff;
-    border-radius: 20px;
-    padding: 60px 100px 80px 65px;
-    transition: all .2s;
-    opacity: 0;
-    visibility: hidden;
-
-    &._active {
-      opacity: 1;
-      z-index: 999;
-      visibility: visible;
-    }
-
-    &__close {
-      position: absolute;
-      right: 25px;
-      top: 30px;
-      border: none;
-      background-color: transparent;
-      cursor: pointer;
-
-      &:hover {
-        path {
-          transition: .3s;
-          fill: #2F65F6;
-        }
-
-      }
-    }
-
-    h2 {
-      margin-bottom: 35px;
-      @include montserrat-semibold;
-      font-size: 38px;
-      line-height: 46px;
-      color: #000000;
-    }
-
-    p {
-      margin-bottom: 24px;
-      line-height: 24px;
-    }
-  }
 }
