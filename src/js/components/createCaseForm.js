@@ -1,12 +1,13 @@
-import { initSelects }          from './customSelect'
-import { initDatePaymentsMask } from "./inputMask"
-import { initAllDates }         from "./customDate"
 import {
   checkValue,
-  handlePopupInputs, sendData,
+  handlePopupInputs,
+  sendData,
   serializeForm,
-  showInfoModal, toggleLoader
+  showInfoModal
 }                               from "../_functions"
+import { initAllDates }         from "./customDate"
+import { initSelects }          from './customSelect'
+import { initDatePaymentsMask } from "./inputMask"
 
 let annexOptionalIndex = 1
 
@@ -220,10 +221,21 @@ if (createCasePage) {
     }
   })
 
+
+  // передача id_unit из поля организации скрипту поиска шаблона
+
+  const orgCaseSelect = createCasePage.querySelector('.create-case-page__organization select')
+  const docTemplatePopupInputs = createCasePage.querySelectorAll('.case-templates .select-popup')
+
+  orgCaseSelect.addEventListener('change', e => {
+    let orgIdUnit = e.detail.value
+    docTemplatePopupInputs.forEach(el => {
+      const prevTemplateData = JSON.parse(el.dataset.json)
+      const newTemplateData = {...prevTemplateData, id_unit: orgIdUnit}
+      el.dataset.json = JSON.stringify(newTemplateData)
+    })
+  })
 }
-
-
-
 
 
 

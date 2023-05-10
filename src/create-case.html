@@ -50,12 +50,13 @@
           </div>
           <div class="create-case-page__inputs">
             <div
-              class="create-case-page__input-wrapper create-case-page__wrapper-select create-case-page__organizacion ">
+              class="create-case-page__input-wrapper create-case-page__wrapper-select create-case-page__organization">
               <label>Организация, для которой создается кейс</label>
-              <select name="case_organization">
-                <option value="purpose_1">Название организации</option>
-                <option value="purpose_2">Название организации 1</option>
-                <option value="purpose_2">Название организации 2</option>
+              <select name="id_unit">
+                <option value="0">Организация не выбрана</option>
+                <option value="13">Название организации 1</option>
+                <option value="25">Название организации 2</option>
+                <option value="18">Название организации 3</option>
               </select>
             </div>
           </div>
@@ -375,7 +376,7 @@
                 maxlength="60" required>
               @include('partials/select-popup.html', {
               'submit-script': 'data/getCases.txt',
-              'add-data':'{"idItem":3,"paramname":"test"}'
+              'add-data':'{"idItem":3,"paramname":"test","id_unit":"0"}'
               })
             </div>
             <div class="create-case-page__input-wrapper select-input-wrapper">
@@ -389,7 +390,7 @@
                 required>
               @include('partials/select-popup.html', {
               'submit-script': 'data/getCases.txt',
-              'add-data':'{"idItem":3,"paramname":"test"}'
+              'add-data':'{"idItem":3,"paramname":"test","id_unit":"0"}'
               })
             </div>
             <div class="create-case-page__input-wrapper select-input-wrapper">
@@ -403,7 +404,7 @@
                 maxlength="60" required>
               @include('partials/select-popup.html', {
               'submit-script': 'data/getCases.txt',
-              'add-data':'{"idItem":3,"paramname":"test"}'
+              'add-data':'{"idItem":3,"paramname":"test","id_unit":"0"}'
               })
             </div>
             <a href="create-template.html" class="create-case-page__btn">
