@@ -17,11 +17,12 @@
     .create-doc-page__date-end {
       display: none;
     }
-
+    .create-doc-page__sum-invoice {
+      display: block;
+    }
     .create-doc-page__date-wrapper {
       max-width: 260px;
     }
-
     .create-doc-page__inputs .ask-icon {
       right: 16px;
 
@@ -48,7 +49,6 @@
     .create-doc-page__sum-invoice {
       display: block;
     }
-
 
     .create-doc-page__date-end {
       display: none;
