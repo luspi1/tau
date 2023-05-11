@@ -1,7 +1,8 @@
-import Choices               from 'choices.js'
-import tagsData              from '../../resources/data/tagsData.json'
-import { nothingFoundBlock } from '../_vars'
-import { initCopyValues }    from './copyValue'
+import Choices                                    from 'choices.js'
+import { sendData, serializeForm, showInfoModal } from '../_functions'
+// import tagsData              from '../../resources/data/tagsData.json'
+import { nothingFoundBlock }                      from '../_vars'
+import { initCopyValues }                         from './copyValue'
 
 
 const tagsPage = document.querySelector('.templater-page')
@@ -21,12 +22,13 @@ if (tagsPage) {
     allowHTML: true
   })
 
-
   initCopyValues()
-  const tagsArr = [...tagsData]
-  const templaterList = tagsPage.querySelector('.templater__list')
 
-  // рендер массива с тегами
+  const templaterList = tagsPage.querySelector('.templater__list')
+  const templaterSubmitScript = tagsPage.querySelector('.templater').dataset.templatersScript
+
+
+  // функция рендера массива с тегами
   const renderTags = (currentArr) => {
     let tagsCount = tagsPage.querySelector('.templater__tags-count')
 
@@ -59,7 +61,29 @@ if (tagsPage) {
       tagsCount.textContent = "0"
     }
   }
-  renderTags(tagsArr)
+
+  let tagsArr = []
+
+  //Получение массива тегов
+  const getTemplatersData = async () => {
+    const data = ''
+    try {
+      const response = await sendData(data, templaterSubmitScript)
+      const finishedResponse = await response.json()
+      const {status, errortext, templaters} = finishedResponse
+      if (status === 'ok') {
+        renderTags(templaters)
+        tagsArr = templaters
+      } else {
+        showInfoModal(errortext)
+      }
+    } catch (err) {
+      showInfoModal("Во время выполнения запроса произошла ошибка")
+      console.error(err)
+    }
+  }
+
+  getTemplatersData()
 
   // функционал фильтрации
   const searchInput = tagsPage.querySelector('.templater__input-wrap input')

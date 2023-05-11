@@ -14,7 +14,7 @@
   })
 
   <main class="main">
-    <section class="templater">
+    <section class="templater" data-templaters-script="data/tagsData.txt">
       <div class="container">
         <div class="templater__top">
           <div class="templater__top-wrapper">
@@ -61,7 +61,6 @@
                 <option value="extra">Дополнительное</option>
               </select>
             </div>
-            <!--            <button type="submit" class="templater__btn-search">Искать</button>-->
           </form>
         </div>
         <div class="templater__item">
@@ -88,6 +87,7 @@
   </main>
 
   @include('partials/footer.html')
+  @include('partials/info-modal.html')
 </div>
 
 </body>
