@@ -161,6 +161,7 @@
     border: none;
     background: none;
     cursor: pointer;
+
     svg path {
       transition: all .3s;
     }
@@ -543,7 +544,7 @@
 
   &__other-data {
     .edit-contact__input-wrapper {
-      width: 32.5%;
+      width: 49.5%;
     }
   }
 

@@ -10,6 +10,15 @@
     margin-bottom: 50px;
   }
 
+  .create-case-page__prompt-wrapper {
+    flex-direction: column;
+  }
+
+  .create-case-page__prompt-terms {
+    margin-left: 0;
+    order: -1;
+  }
+
 }
 
 @media (max-width: 768px) {

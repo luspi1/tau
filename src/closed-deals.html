@@ -7,214 +7,216 @@
 
 <body class="page__body">
 <div class="site-container">
-	<div class="modal-overlay"></div>
-	@include('partials/header.html', {
-	'bottom-menu': 'bottom-menu_disabled',
-	'header-title': ''
-	})
+  <div class="modal-overlay"></div>
+  @include('partials/header.html', {
+  'bottom-menu': 'bottom-menu_disabled',
+  'header-title': ''
+  })
 
-	<main class="main closed-deals-page">
-		<section>
-			<div class="container">
-				<div class="closed-deals-page__top">
-					<h1>Закрытые сделки</h1>
-					<form class="closed-deals-page__filter-form closed-deals-filter"
-						  action="#">
-						<input
-								class="closed-deals-filter__input"
-								type="text" name="close_search"
-								placeholder="Найти сделку">
-						<select
-								class="closed-deals-filter__select custom-select"
-								name="close_select">
-							<option value="deals_1">...</option>
-							<option value="deals_2">... 1</option>
-							<option value="deals_3">... 2</option>
-						</select>
-						<button class="closed-deals-filter__btn" type="submit">Искать
-						</button>
-					</form>
-				</div>
-				<ul class="closed-deals-page__table closed-deals-table flex-table">
-					<li class="closed-deals-table__row flex-table__row">
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title _expired">Сделка
-								<span>| <span class="expired-text">Договор истек</span></span>
-							</p>
-							<a href="deal-card.html"
-							   class="closed-deals-table__info closed-deals-table__info-link">129/031
-								СТН и еще что-то
-							</a>
-						</div>
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title">Дата создания</p>
-							<p class="closed-deals-table__info">22.09.2021</p>
-						</div>
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title">Контрагент</p>
-							<a href="#" target="_blank">ООО
-								«Росавтодорпроектстроймашинвест»
-							</a>
-						</div>
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title text-ar text-ar">Плановый доход</p>
-							<div class="closed-deals-table__info imask-wrapper">
-								<input class="currency-mask" disabled value="ч8000092430,054"> ₽
-							</div>
-						</div>
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title text-ar">Фактический доход</p>
-							<div class="closed-deals-table__info imask-wrapper">
-								<input class="currency-mask" disabled value="3022106"> ₽
-							</div>
-						</div>
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title text-ar">Сальдо</p>
-							<div class="closed-deals-table__info imask-wrapper">
-								<input class="currency-mask" disabled value="-5898902"> ₽
-							</div>
-						</div>
-						<div class="closed-deals-table__cell flex-table__cell closed-deals-table__status">
-							<p class="closed-deals-table__info">Сделка закрыта</p>
-						</div>
-					</li>
-					<li class="closed-deals-table__row flex-table__row">
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title _expired">Сделка
-								<span>| <span class="expired-text">Договор истек</span></span>
-							</p>
-							<a href="deal-card.html"
-							   class="closed-deals-table__info closed-deals-table__info-link">129/031
-								СТН и еще что-то
-							</a>
-						</div>
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title">Дата создания</p>
-							<p class="closed-deals-table__info">22.09.2021</p>
-						</div>
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title">Контрагент</p>
-							<a href="#" target="_blank">ООО
-								«Росавтодорпроектстроймашинвест»
-							</a>
-						</div>
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title text-ar">Плановый доход</p>
-							<div class="closed-deals-table__info imask-wrapper">
-								<input class="currency-mask" disabled value="80000921000,054"> ₽
-							</div>
-						</div>
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title text-ar">Фактический доход</p>
-							<div class="closed-deals-table__info imask-wrapper">
-								<input class="currency-mask" disabled value="3022106"> ₽
-							</div>
-						</div>
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title text-ar">Сальдо</p>
-							<div class="closed-deals-table__info imask-wrapper">
-								<input class="currency-mask" disabled value="-5898902"> ₽
-							</div>
-						</div>
-						<div
-								class="closed-deals-table__cell flex-table__cell closed-deals-table__status">
-							<p class="closed-deals-table__info">Сделка закрыта</p>
-						</div>
-					</li>
-					<li class="closed-deals-table__row flex-table__row">
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title _expired">Сделка
-								<span>| <span class="expired-text">Договор истек</span></span>
-							</p>
-							<a href="deal-card.html"
-							   class="closed-deals-table__info closed-deals-table__info-link">129/031
-								СТН и еще что-то
-							</a>
-						</div>
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title">Дата создания</p>
-							<p class="closed-deals-table__info">22.09.2021</p>
-						</div>
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title">Контрагент</p>
-							<a href="#" target="_blank">ООО
-								«Росавтодорпроектстроймашинвест»
-							</a>
-						</div>
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title text-ar">Плановый доход</p>
-							<div class="closed-deals-table__info imask-wrapper">
-								<input class="currency-mask" disabled value="80000921000,054"> ₽
-							</div>
-						</div>
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title text-ar">Фактический доход</p>
-							<div class="closed-deals-table__info imask-wrapper">
-								<input class="currency-mask" disabled value="3022106"> ₽
-							</div>
-						</div>
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title text-ar">Сальдо</p>
-							<div class="closed-deals-table__info imask-wrapper">
-								<input class="currency-mask" disabled value="-5898902"> ₽
-							</div>
-						</div>
-						<div
-								class="closed-deals-table__cell flex-table__cell closed-deals-table__status">
-							<p class="closed-deals-table__info">Сделка закрыта</p>
-						</div>
-					</li>
-					<li class="closed-deals-table__row flex-table__row">
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title">Сделка
-								<span>| <span class="expired-text">Договор истек</span></span>
-							</p>
-							<a href="deal-card.html"
-							   class="closed-deals-table__info closed-deals-table__info-link">129/031
-								СТН и еще что-то
-							</a>
-						</div>
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title">Дата создания</p>
-							<p class="closed-deals-table__info">22.09.2021</p>
-						</div>
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title">Контрагент</p>
-							<a href="#" target="_blank">ООО
-								«Росавтодорпроектстроймашинвест»
-							</a>
-						</div>
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title text-ar">Плановый доход</p>
-							<div class="closed-deals-table__info imask-wrapper">
-								<input class="currency-mask" disabled value="80000921000,054"> ₽
-							</div>
-						</div>
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title text-ar">Фактический доход</p>
-							<div class="closed-deals-table__info imask-wrapper">
-								<input class="currency-mask" disabled value="3022106"> ₽
-							</div>
-						</div>
-						<div class="closed-deals-table__cell flex-table__cell">
-							<p class="closed-deals-table__title text-ar">Сальдо</p>
-							<div class="closed-deals-table__info imask-wrapper">
-								<input class="currency-mask" disabled value="-5898902"> ₽
-							</div>
-						</div>
-						<div
-								class="closed-deals-table__cell flex-table__cell closed-deals-table__status">
-							<p class="closed-deals-table__info">Сделка закрыта</p>
-						</div>
-					</li>
+  <main class="main closed-deals-page">
+    <section>
+      <div class="container">
+        <div class="closed-deals-page__top">
+          <h1>Закрытые сделки</h1>
+          <form class="closed-deals-page__filter-form closed-deals-filter"
+                action="#">
+            <input
+              class="closed-deals-filter__input"
+              type="text" name="close_search"
+              placeholder="Найти сделку">
+            <select
+              class="closed-deals-filter__select custom-select"
+              name="close_select">
+              <option value="deals_1">...</option>
+              <option value="deals_2">... 1</option>
+              <option value="deals_3">... 2</option>
+            </select>
+            <button class="closed-deals-filter__btn" type="submit">Искать
+            </button>
+          </form>
+        </div>
+        <ul class="closed-deals-page__table closed-deals-table flex-table">
+          <li class="closed-deals-table__row flex-table__row">
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title _expired">Сделка
+                <span>| <span class="expired-text">Договор истек</span></span>
+              </p>
+              <a href="deal-card.html"
+                 class="closed-deals-table__info closed-deals-table__info-link">129/031
+                СТН и еще что-то
+              </a>
+            </div>
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title">Дата создания</p>
+              <p class="closed-deals-table__info">22.09.2021</p>
+            </div>
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title">Контрагент</p>
+              <a href="#" target="_blank">ООО
+                «Росавтодорпроектстроймашинвест»
+              </a>
+            </div>
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title text-ar text-ar">Плановый
+                доход</p>
+              <div class="closed-deals-table__info imask-wrapper">
+                <input class="currency-mask" disabled value="ч80000924300.54">
+              </div>
+            </div>
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title text-ar">Фактический доход</p>
+              <div class="closed-deals-table__info imask-wrapper">
+                <input class="currency-mask" disabled value="3022106">
+              </div>
+            </div>
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title text-ar">Сальдо</p>
+              <div class="closed-deals-table__info imask-wrapper">
+                <input class="currency-mask" disabled value="-5898902">
+              </div>
+            </div>
+            <div
+              class="closed-deals-table__cell flex-table__cell closed-deals-table__status">
+              <p class="closed-deals-table__info">Сделка закрыта</p>
+            </div>
+          </li>
+          <li class="closed-deals-table__row flex-table__row">
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title _expired">Сделка
+                <span>| <span class="expired-text">Договор истек</span></span>
+              </p>
+              <a href="deal-card.html"
+                 class="closed-deals-table__info closed-deals-table__info-link">129/031
+                СТН и еще что-то
+              </a>
+            </div>
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title">Дата создания</p>
+              <p class="closed-deals-table__info">22.09.2021</p>
+            </div>
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title">Контрагент</p>
+              <a href="#" target="_blank">ООО
+                «Росавтодорпроектстроймашинвест»
+              </a>
+            </div>
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title text-ar">Плановый доход</p>
+              <div class="closed-deals-table__info imask-wrapper">
+                <input class="currency-mask" disabled value="800009210000.54">
+              </div>
+            </div>
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title text-ar">Фактический доход</p>
+              <div class="closed-deals-table__info imask-wrapper">
+                <input class="currency-mask" disabled value="3022106">
+              </div>
+            </div>
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title text-ar">Сальдо</p>
+              <div class="closed-deals-table__info imask-wrapper">
+                <input class="currency-mask" disabled value="-5898902">
+              </div>
+            </div>
+            <div
+              class="closed-deals-table__cell flex-table__cell closed-deals-table__status">
+              <p class="closed-deals-table__info">Сделка закрыта</p>
+            </div>
+          </li>
+          <li class="closed-deals-table__row flex-table__row">
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title _expired">Сделка
+                <span>| <span class="expired-text">Договор истек</span></span>
+              </p>
+              <a href="deal-card.html"
+                 class="closed-deals-table__info closed-deals-table__info-link">129/031
+                СТН и еще что-то
+              </a>
+            </div>
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title">Дата создания</p>
+              <p class="closed-deals-table__info">22.09.2021</p>
+            </div>
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title">Контрагент</p>
+              <a href="#" target="_blank">ООО
+                «Росавтодорпроектстроймашинвест»
+              </a>
+            </div>
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title text-ar">Плановый доход</p>
+              <div class="closed-deals-table__info imask-wrapper">
+                <input class="currency-mask" disabled value="800009210000.54">
+              </div>
+            </div>
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title text-ar">Фактический доход</p>
+              <div class="closed-deals-table__info imask-wrapper">
+                <input class="currency-mask" disabled value="3022106">
+              </div>
+            </div>
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title text-ar">Сальдо</p>
+              <div class="closed-deals-table__info imask-wrapper">
+                <input class="currency-mask" disabled value="-5898902">
+              </div>
+            </div>
+            <div
+              class="closed-deals-table__cell flex-table__cell closed-deals-table__status">
+              <p class="closed-deals-table__info">Сделка закрыта</p>
+            </div>
+          </li>
+          <li class="closed-deals-table__row flex-table__row">
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title">Сделка
+                <span>| <span class="expired-text">Договор истек</span></span>
+              </p>
+              <a href="deal-card.html"
+                 class="closed-deals-table__info closed-deals-table__info-link">129/031
+                СТН и еще что-то
+              </a>
+            </div>
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title">Дата создания</p>
+              <p class="closed-deals-table__info">22.09.2021</p>
+            </div>
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title">Контрагент</p>
+              <a href="#" target="_blank">ООО
+                «Росавтодорпроектстроймашинвест»
+              </a>
+            </div>
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title text-ar">Плановый доход</p>
+              <div class="closed-deals-table__info imask-wrapper">
+                <input class="currency-mask" disabled value="800009210000.54">
+              </div>
+            </div>
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title text-ar">Фактический доход</p>
+              <div class="closed-deals-table__info imask-wrapper">
+                <input class="currency-mask" disabled value="3022106">
+              </div>
+            </div>
+            <div class="closed-deals-table__cell flex-table__cell">
+              <p class="closed-deals-table__title text-ar">Сальдо</p>
+              <div class="closed-deals-table__info imask-wrapper">
+                <input class="currency-mask" disabled value="-5898902">
+              </div>
+            </div>
+            <div
+              class="closed-deals-table__cell flex-table__cell closed-deals-table__status">
+              <p class="closed-deals-table__info">Сделка закрыта</p>
+            </div>
+          </li>
 
-				</ul>
-			</div>
-		</section>
-		@include('partials/info-modal.html')
-	</main>
+        </ul>
+      </div>
+    </section>
+    @include('partials/info-modal.html')
+  </main>
 
-	@include('partials/footer.html')
+  @include('partials/footer.html')
 </div>
 
 </body>

@@ -367,6 +367,7 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 input[type="number"] {
   -moz-appearance: textfield;
 }
@@ -458,7 +459,15 @@ input[type="number"] {
 }
 
 .imask-wrapper {
-  display: flex;
+  padding-right: 8px;
+  position: relative;
+
+  &::after {
+    content: '₽';
+    position: absolute;
+    right: -3px;
+    top: 1px;
+  }
 }
 
 .text-ar {
@@ -469,7 +478,7 @@ input[type="number"] {
   border: none;
   color: black;
   width: 100%;
-  text-align: right;
+  display: inline;
   background: none;
   line-height: 20px;
 }

@@ -310,6 +310,18 @@ const initCustomMasks = () => {
 initCustomMasks()
 
 
+const currencyMasks = document.querySelectorAll('.currency-mask')
+if (currencyMasks) {
+  currencyMasks.forEach(itemMask => {
+    Inputmask({
+      alias: 'currency',
+      showMaskOnHover: false,
+      showMaskOnFocus: false,
+    }).mask(itemMask)
+  })
+}
+
+
 export {
   initDatePaymentsMask,
   initDateDealMask,

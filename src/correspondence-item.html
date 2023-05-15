@@ -17,9 +17,20 @@
   <main class="main correspondence-item _closed">
     @include('partials/deal-submenu.html', {
     'deal-corr': 'deal-submenu_active',
-   })
+    })
     @include('partials/open-deal-modal.html')
     @include('partials/closed-deal-modal.html')
+    <div class="check-confirm-modal modal hidden">
+      <div class="check-confirm-modal__content">
+        <p class="check-confirm-modal__content-text">Вы действительно хотите
+          удалить письмо “Название письма”? Это действие необратимо,
+          восстановить письмо будет нельзя!</p>
+        <form class="check-confirm-modal__btns" action="#">
+          <button class="btn _confirm" type="button">Да, удалить</button>
+          <button class="btn _cancel" type="button">Нет, не удалять</button>
+        </form>
+      </div>
+    </div>
     <section class="newmail-one">
       <div class="container">
         @include('partials/create-letter-modal.html', {
@@ -144,9 +155,14 @@
             </ul>
           </div>
         </div>
-        <button class="newmail-one__btn" data-modal="create-letter-modal"
-                type="button">Редактировать письмо
-        </button>
+        <div class="newmail-one__btns">
+          <button class="newmail-one__btn" data-modal="create-letter-modal"
+                  type="button">Редактировать письмо
+          </button>
+          <button class="newmail-one__delete-btn"
+                  type="button">Удалить письмо
+          </button>
+        </div>
       </div>
 
     </section>

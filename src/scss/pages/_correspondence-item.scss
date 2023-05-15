@@ -195,23 +195,43 @@
       }
     }
 
-    &__btn {
-      margin-top: 20px;
-      padding: 13px 21px;
-      @include montserrat-medium;
-      border-radius: 5px;
-      font-size: 17px;
-      line-height: 21px;
-      color: #2f65f6;
-      background-color: #ffffff;
-      border: 1px solid #2f65f6;
-      cursor: pointer;
-      transition: .3s;
+    &__btns {
+      display: flex;
 
-      &:hover {
-        color: #FFFFFF;
-        background-color: #2f65f6;
+      button {
+        margin-top: 20px;
+        padding: 13px 21px;
+        @include montserrat-medium;
+        border-radius: 5px;
+        font-size: 17px;
+        line-height: 21px;
+        color: #2f65f6;
+        background-color: #ffffff;
+        border: 1px solid #2f65f6;
+        cursor: pointer;
+        transition: .3s;
+
+        &:hover {
+          color: #FFFFFF;
+          background-color: #2f65f6;
+        }
+
+        &:first-child {
+          margin-right: 15px;
+        }
       }
+
+      .newmail-one__delete-btn {
+        border: 1px solid #BC0D48;
+        color: #BC0D48;
+
+        &:hover {
+          color: #FFFFFF;
+          background-color: #BC0D48;
+        }
+      }
+
     }
+
   }
 }

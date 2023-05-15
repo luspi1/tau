@@ -18,16 +18,19 @@
     margin-bottom: 17px;
   }
 
+  &__prompt-wrapper {
+    display: flex;
+    align-items: flex-start;
+  }
+
   &__prompt {
-    position: absolute;
     background: #F4F7FB;
-    right: -530px;
-    top: 50%;
-    transform: translateY(-50%);
     border-radius: 5px;
+    position: relative;
     color: #2F65F6;
     padding: 13px 20px 13px 43px;
     max-width: 500px;
+
 
     p {
       font-size: 16px;
@@ -43,6 +46,11 @@
       height: 20px;
       background: url("../img/deal-prompt-icon.svg") no-repeat;
     }
+  }
+
+  &__prompt-terms {
+    margin-left: 30px;
+    margin-bottom: 14px;
   }
 
   &__copy-case-prompt {
