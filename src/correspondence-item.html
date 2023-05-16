@@ -26,7 +26,10 @@
           удалить письмо “Название письма”? Это действие необратимо,
           восстановить письмо будет нельзя!</p>
         <form class="check-confirm-modal__btns" action="#">
-          <button class="btn _confirm" type="button">Да, удалить</button>
+          <button class="btn _confirm" data-script="./data/getCases.txt"
+                  data-id="12e34" data-url="correspondence.html" type="button">
+            Да, удалить
+          </button>
           <button class="btn _cancel" type="button">Нет, не удалять</button>
         </form>
       </div>
@@ -167,7 +170,7 @@
 
     </section>
 
-
+    @include('partials/info-modal.html')
   </main>
 
   @include('partials/footer.html')
