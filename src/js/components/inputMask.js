@@ -315,6 +315,18 @@ if (currencyMasks) {
   currencyMasks.forEach(itemMask => {
     Inputmask({
       alias: 'currency',
+      groupSeparator: ' ',
+      showMaskOnHover: false,
+      showMaskOnFocus: false,
+    }).mask(itemMask)
+  })
+}
+
+const numberMasks = document.querySelectorAll('.number-mask')
+if (numberMasks) {
+  numberMasks.forEach(itemMask => {
+    Inputmask({
+      alias: 'numeric',
       showMaskOnHover: false,
       showMaskOnFocus: false,
     }).mask(itemMask)
