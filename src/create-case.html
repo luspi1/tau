@@ -374,8 +374,7 @@
               <input
                 class="create-case-page__input create-case-page__popup-input select-popup-input"
                 name="template_treaty" type="text"
-                placeholder="Выбрать шаблон договора" minlength="3"
-                maxlength="60" required>
+                placeholder="Выбрать шаблон договора">
               @include('partials/select-popup.html', {
               'submit-script': 'data/getCases.txt',
               'add-data':'{"idItem":3,"paramname":"test","id_unit":"0"}'
@@ -388,8 +387,7 @@
               <input
                 class="create-case-page__input create-case-page__popup-input select-popup-input"
                 name="template_act" type="text"
-                placeholder="Выбрать шаблон акта" minlength="3" maxlength="60"
-                required>
+                placeholder="Выбрать шаблон акта">
               @include('partials/select-popup.html', {
               'submit-script': 'data/getCases.txt',
               'add-data':'{"idItem":3,"paramname":"test","id_unit":"0"}'
@@ -402,8 +400,7 @@
               <input
                 class="create-case-page__input create-case-page__popup-input select-popup-input"
                 name="template_agreement" type="text"
-                placeholder="Выбрать шаблон допсоглашения" minlength="3"
-                maxlength="60" required>
+                placeholder="Выбрать шаблон допсоглашения">
               @include('partials/select-popup.html', {
               'submit-script': 'data/getCases.txt',
               'add-data':'{"idItem":3,"paramname":"test","id_unit":"0"}'
@@ -413,10 +410,6 @@
               Создать шаблон документа
             </a>
           </div>
-          <p class="warning-title case-templates__warning hidden">Необходимо
-            выбрать
-            "шаблон договора", "шаблон акта", "шаблон
-            допсоглашения!</p>
         </section>
         <div class="create-case-page__btns">
           <button class="create-case-page__save-btn" type="submit">Сохранить
