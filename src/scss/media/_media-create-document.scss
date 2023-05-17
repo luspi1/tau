@@ -1,4 +1,37 @@
+@media (max-width: 1280px) {
+  .create-doc-page__input-wrapper_lg {
+    flex-direction: column;
+    align-items: flex-start;
+
+    span {
+      margin-right: 0;
+      margin-top: 15px;
+    }
+
+    .create-doc-page__btn {
+      margin-top: 15px;
+    }
+
+  }
+  .create-doc-page__download-doc-btn .create-doc-page__btn {
+    height: auto;
+    padding: 12px 20px;
+  }
+
+
+}
+
 @media (max-width: 768px) {
+
+  .create-doc-page__deal-input-col {
+    margin-right: 0;
+    width: 100%;
+  }
+  .create-doc-page__input-wrapper_lg .create-doc-page__input {
+    width: 100%;
+  }
+
+
   .create-doc-page__input {
     font-size: 14px;
     line-height: 18px;

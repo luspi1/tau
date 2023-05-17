@@ -14,6 +14,8 @@
   })
 
   <main class="main create-doc-page" data-page-state="initial">
+    @include('partials/deal-selection-modal.html')
+
     <div class="container">
       <h1>Создание документа</h1>
       <form class="create-doc-page__form" action="#">
@@ -37,7 +39,8 @@
             </div>
 
             <span>или</span>
-            <button class="create-doc-page__btn" type="button">Выберите сделку
+            <button class="create-doc-page__btn" type="button"
+                    data-modal="deal-selection-modal">Выберите сделку
               из списка
             </button>
           </div>
@@ -51,6 +54,7 @@
               <option value="invoice">Счет</option>
               <option value="act">Акт</option>
               <option value="note">Записка</option>
+              <option value="commercial_offer">Коммерческое предложение</option>
               <option value="contract">Договор</option>
             </select>
             <svg class="ask-icon" width="24" height="24" viewBox="0 0 24 24"
@@ -187,7 +191,7 @@
 
           </div>
           <div
-            class="create-doc-page__input-wrapper select-input-wrapper select-input-wrapper_lg create-doc-page__doc-template">
+            class="create-doc-page__input-wrapper create-doc-page__input-wrapper_lg select-input-wrapper create-doc-page__doc-template">
             <div class="create-doc-page__deal-input-col">
               <label>Шаблон документа</label>
               <input name="id_template"
@@ -211,6 +215,13 @@
             </button>
 
 
+          </div>
+          <div
+            class="create-doc-page__input-wrapper create-doc-page__download-doc-btn">
+            <button class="create-doc-page__btn" type="button">Загрузить файл
+              документа из
+              внешнего источника
+            </button>
           </div>
           <div class="create-doc-page__input-wrapper">
             <label>Описание документа</label>

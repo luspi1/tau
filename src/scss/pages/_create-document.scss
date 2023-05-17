@@ -10,6 +10,10 @@
     display: none;
   }
 
+  &__planned-payment-select {
+    display: none;
+  }
+
   &__sum-invoice {
     display: none;
   }
@@ -17,6 +21,10 @@
   &[data-page-state="act"] {
     .create-doc-page__date-end {
       display: none;
+    }
+
+    .create-doc-page__planned-payment-select {
+      display: block;
     }
 
     .create-doc-page__sum-invoice {
@@ -44,6 +52,10 @@
   &[data-page-state="invoice"] {
     .create-doc-page__doc-template {
       display: none;
+    }
+
+    .create-doc-page__planned-payment-select {
+      display: block;
     }
 
     .create-doc-page__invoice-doc-select {
@@ -174,6 +186,11 @@
 
   }
 
+  &__download-doc-btn {
+    .create-doc-page__btn {
+      width: 100%;
+    }
+  }
 
   &__input-wrapper_lg {
     display: flex;
