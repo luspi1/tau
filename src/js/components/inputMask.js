@@ -329,6 +329,7 @@ export const initAllMasks = () => {
     numberMasks.forEach(itemMask => {
       Inputmask({
         alias: 'numeric',
+        allowMinus: false,
         showMaskOnHover: false,
         showMaskOnFocus: false,
       }).mask(itemMask)
