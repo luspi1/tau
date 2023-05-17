@@ -10,6 +10,7 @@ import {
 import { modalOverlay }        from "../_vars"
 import { initAllDates }        from './customDate'
 import { initSelects }         from './customSelect'
+import { initAllMasks }        from './inputMask'
 import { initChangeableLists } from './manageChangeableList'
 
 
@@ -82,6 +83,7 @@ if (createDealPage) {
         initChangeableLists()
         initAllDates()
         initSelects()
+        initAllMasks()
       } else {
         showInfoModal(errortext)
       }
