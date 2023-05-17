@@ -3,13 +3,13 @@ import { sendData, showInfoModal, togglePaymentState, toggleRequiredFields } fro
 import { body, modalOverlay }                                                from "../_vars"
 import { initAllDates }                                                      from './customDate'
 import { initSelects }                                                       from './customSelect'
-import { initDateInputMasks }                                                from './inputMask'
+import { initAllMasks }                                                      from './inputMask'
 import { initCloseModals }                                                   from './managePopup'
 
 const initPaymentModal = () => {
   initSelects()
   initAllDates()
-  initDateInputMasks()
+  initAllMasks()
   initCloseModals()
   const addPaymentFileBtn = document.querySelector('.add-payment__file-wrapper input')
   const addPaymentManualFill = document.querySelector('.add-payment__manual-fill')

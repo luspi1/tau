@@ -1,14 +1,14 @@
 import { checkValue, showInfoModal } from '../_functions'
 import { initAllDates }              from './customDate'
 import { initSelects }               from './customSelect'
-import { initDateDealMask }          from './inputMask'
+import { initAllMasks }              from './inputMask'
 
 
 // Инициализация необходимых кастомных инпутов
 
 const initInputs = () => {
   initAllDates()
-  initDateDealMask()
+  initAllMasks()
   initSelects()
 }
 

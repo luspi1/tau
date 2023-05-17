@@ -4,7 +4,7 @@ import { initAllDates }               from './customDate'
 import { initSelects }                from './customSelect'
 import { handleDocumentPreviewModal } from './documentPreviewModal'
 import { handleDocumentSendModal }    from './documentSendModal'
-import { initCustomMasks }            from './inputMask'
+import { initAllMasks }               from './inputMask'
 import { initCloseModals }            from './managePopup'
 import { handleDocumentSignModal }    from './signDocModal'
 
@@ -14,7 +14,7 @@ const initGeneratedModal = (modal) => {
   initCloseModals()
   initSelects()
   initAllDates()
-  initCustomMasks()
+  initAllMasks()
 
   //обработка конкретных модалок
   handleDocumentSignModal(modal)  // Модалка подписания документа

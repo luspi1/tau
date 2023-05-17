@@ -1,13 +1,11 @@
 import {
   checkValue,
   handlePopupInputs,
-  sendData,
-  serializeForm,
   showInfoModal
-}                               from "../_functions"
-import { initAllDates }         from "./customDate"
-import { initSelects }          from './customSelect'
-import { initDatePaymentsMask } from "./inputMask"
+}                       from "../_functions"
+import { initAllDates } from "./customDate"
+import { initSelects }  from './customSelect'
+import { initAllMasks } from "./inputMask"
 
 let annexOptionalIndex = 1
 
@@ -31,7 +29,7 @@ if (templateTermsFragment) {
       const termsEl = templateTerms.cloneNode(true)
       termsList.appendChild(termsEl)
       initSelects()
-      initDatePaymentsMask()
+      initAllMasks()
       initAllDates()
     })
   }
