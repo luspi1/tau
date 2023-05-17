@@ -317,10 +317,11 @@ export const resetSelect = (select, activityBtn) => {
 // отключаем прокрутку цифр в инпуте
 
 const inputTypeNumbers = document.querySelectorAll('input[type="number"]')
-if (inputTypeNumbers){
-inputTypeNumbers.forEach(input => {
-  input.addEventListener('wheel', (e)=>{
-    e.preventDefault()
+if (inputTypeNumbers) {
+  inputTypeNumbers.forEach(input => {
+    input.addEventListener('wheel', (e) => {
+      e.preventDefault()
+    })
   })
-})}
+}
 
