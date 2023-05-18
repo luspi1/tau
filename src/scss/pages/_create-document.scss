@@ -6,6 +6,10 @@
     display: none;
   }
 
+  .invoice-input-label {
+    display: none;
+  }
+
   &__invoice-doc-select {
     display: none;
   }
@@ -52,6 +56,18 @@
   &[data-page-state="invoice"] {
     .create-doc-page__doc-template {
       display: none;
+    }
+
+    .create-doc-page__name-doc-label {
+      display: none;
+    }
+
+    .create-doc-page__download-doc-btn {
+      display: none;
+    }
+
+    .invoice-input-label {
+      display: inline;
     }
 
     .create-doc-page__planned-payment-select {
