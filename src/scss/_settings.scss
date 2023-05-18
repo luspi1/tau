@@ -486,3 +486,26 @@ input[type="number"] {
 .number-mask {
   text-align: left !important;
 }
+
+.close-modal-btn {
+  position: absolute;
+  border: none;
+  background: none;
+  cursor: pointer;
+  right: 19px;
+  top: 18px;
+
+  svg {
+    pointer-events: none;
+  }
+
+  path {
+    transition: all .3s;
+  }
+
+  &:hover {
+    path {
+      fill: $link;
+    }
+  }
+}

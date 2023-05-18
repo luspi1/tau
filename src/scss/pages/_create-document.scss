@@ -6,7 +6,15 @@
     display: none;
   }
 
+  .invoice-input-label {
+    display: none;
+  }
+
   &__invoice-doc-select {
+    display: none;
+  }
+
+  &__planned-payment-select {
     display: none;
   }
 
@@ -17,6 +25,10 @@
   &[data-page-state="act"] {
     .create-doc-page__date-end {
       display: none;
+    }
+
+    .create-doc-page__planned-payment-select {
+      display: block;
     }
 
     .create-doc-page__sum-invoice {
@@ -44,6 +56,22 @@
   &[data-page-state="invoice"] {
     .create-doc-page__doc-template {
       display: none;
+    }
+
+    .create-doc-page__name-doc-label {
+      display: none;
+    }
+
+    .create-doc-page__download-doc-btn {
+      display: none;
+    }
+
+    .invoice-input-label {
+      display: inline;
+    }
+
+    .create-doc-page__planned-payment-select {
+      display: block;
     }
 
     .create-doc-page__invoice-doc-select {
@@ -174,6 +202,11 @@
 
   }
 
+  &__download-doc-btn {
+    .create-doc-page__btn {
+      width: 100%;
+    }
+  }
 
   &__input-wrapper_lg {
     display: flex;
