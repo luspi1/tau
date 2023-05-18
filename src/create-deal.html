@@ -13,8 +13,10 @@
   'header-title': ''
   })
 
-  @include('partials/counterparty-alert-modal.html')
+
   <main class="main create-deal-page">
+    @include('partials/counterparty-alert-modal.html')
+    @include('partials/choice-case-modal.html')
     <div class="container">
       <h1>Создание сделки</h1>
       <form class="create-deal-page__form" action="./data/getCases.txt">
@@ -29,25 +31,34 @@
               его отсутствия.
             </p>
           </div>
+          <div class="create-deal-page__inputs">
+            <div class="create-deal-page__input-wrapper select-input-wrapper">
+              <label>Выбор кейса (шаблона) сделки*</label>
+              <input name="id_case"
+                     class="create-deal-page__data-input create-deal-page__data-case select-popup-data"
+                     type="hidden">
+              <input
+                class="create-deal-page__input create-deal-page__case-input select-popup-input"
+                name="deal_choice" type="text"
+                data-info-url="/include/ajax/get_case_info.php"
+                data-invoices-url="/include/ajax/search_case_banks.php"
+                placeholder="Начните вводить название кейса..." required>
+              @include('partials/select-popup.html', {
+              'submit-script': 'data/getCases.txt',
+              'add-data':'{"idItem":3,"paramname":"test"}'
+              })
+              @include('partials/deal-create-alert.html')
 
-          <div class="create-deal-page__input-wrapper select-input-wrapper">
-            <label>Выбор кейса (шаблона) сделки*</label>
-            <input name="id_case"
-                   class="create-deal-page__data-input create-deal-page__data-case select-popup-data"
-                   type="hidden">
-            <input
-              class="create-deal-page__input create-deal-page__case-input select-popup-input"
-              name="deal_choice" type="text"
-              data-info-url="/include/ajax/get_case_info.php"
-              data-invoices-url="/include/ajax/search_case_banks.php"
-              placeholder="Начните вводить название кейса..." required>
-            @include('partials/select-popup.html', {
-            'submit-script': 'data/getCases.txt',
-            'add-data':'{"idItem":3,"paramname":"test"}'
-            })
-            @include('partials/deal-create-alert.html')
-
+            </div>
+            <div class="create-deal-caption__counterparty-wrapper">
+              <span>или</span>
+              <button class="create-deal-caption__counterparty-btn"
+                      data-modal="choice-case-modal"
+                      type="button"> Выберите кейс из списка
+              </button>
+            </div>
           </div>
+
           <div class="create-deal-page__input-wrapper">
             <label>Название сделки*</label>
             <input class="create-deal-page__input"

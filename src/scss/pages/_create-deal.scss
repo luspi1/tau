@@ -318,12 +318,14 @@
     }
 
     &__counterparty-btn {
+      min-width: 295px;
+      width: 295px;
       @include montserrat-medium;
       font-size: 17px;
       line-height: 21px;
       text-align: center;
       color: #2F65F6;
-      padding: 12px 13px;
+      padding: 12px 0;
       background: none;
       border: 1px solid #2F65F6;
       border-radius: 5px;

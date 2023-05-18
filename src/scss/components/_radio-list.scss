@@ -1,0 +1,82 @@
+.radio-list {
+  padding-right: 11px;
+  position: relative;
+  &::after {
+    content: '';
+    width: 11px;
+    height: 165px;
+    background-color: #F2F1F7;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  ul {
+    width: 100%;
+    height: 165px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    padding: 6px 11px 12px 8px;
+    background-color: #F2F1F7;
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      width: 8px;
+      background: #CECCD3;
+      border-radius: 10px;
+    }
+  }
+
+  &__item {
+    margin-right: 11px;
+
+    &:not(:last-child) {
+      margin-bottom: 6px;
+    }
+
+    label {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 6px 50px 6px 10px;
+      color: black;
+      cursor: pointer;
+      white-space: nowrap;
+      overflow-x: hidden;
+      text-overflow: ellipsis;
+    }
+
+    input {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+      visibility: hidden;
+
+      &:checked + label {
+        background-color: #FFFFFF;
+      }
+    }
+
+
+  }
+
+  &__btn-submit {
+    height: 47px;
+    padding: 0 22px;
+    text-align: center;
+    color: $link;
+    border: 1px solid $link;
+    border-radius: 5px;
+    background: none;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+      color: #FFFFFF;
+      background: $link;
+    }
+  }
+}
