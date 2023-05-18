@@ -14,7 +14,7 @@
   'deal-title': 'deal-link_active'
   })
 
-  <main class="main deals _overdue _closed">
+  <main class="main deals _not-created ">
     @include('partials/deal-submenu.html', {
     'deal-card': 'deal-submenu_active'
     })
@@ -25,7 +25,10 @@
             <div class="one-deal__flex-wrapper">
               <p class="minititle">Название сделки</p>
               <p class="one-deal__term">
-                <span>|</span><span>Срок договора истёк</span></p>
+                <span>|</span>
+                <span class="expired">Срок договора истёк</span>
+                <span class="uncreated">Договор не создан!</span>
+              </p>
             </div>
             <div class="one-deal__flex-wrapper title">
               <div class="one-deal__title">
@@ -76,7 +79,8 @@
                       d="M7.70157 14.3C7.40157 14 7.20157 13.6 7.20157 13.1C7.20157 12.6 7.40157 12.2 7.70157 11.9C8.00157 11.6 8.50157 11.4 9.00157 11.4C9.50157 11.4 10.0016 11.6 10.3016 11.9C10.6016 12.2 10.8016 12.6 10.8016 13.1C10.8016 13.6 10.6016 14 10.3016 14.3C10.0016 14.6 9.50157 14.8 9.00157 14.8C8.40157 14.8 8.00157 14.6 7.70157 14.3ZM7.10156 3.29999H10.8016L10.2016 10.5H7.80157L7.10156 3.29999Z"
                       fill="white"/>
                   </svg>
-                  <p>Срок договора истёк</p>
+                  <p class="expired">Срок договора истёк</p>
+                  <p class="uncreated">Договор не создан!</p>
                 </div>
               </div>
               <div class="one-deal__warning">
@@ -86,13 +90,15 @@
                 официально!
               </div>
               <div class="one-deal__name">
-                <p>Договор №
+                <p class="one-deal__name-contract">Договор №
                   <a href="#" target="_blank">22-ИТТУ-2021 от 14 февраля
                     2021
                   </a>
                 </p>
                 <button class="one-deal__btn-status _completed">подписан
                 </button>
+                <p class="one-deal__uncreated-contract">Договор сделки еще не создан!</p>
+                <a href="#" class="one-deal__link-create">Создать договор</a>
               </div>
             </div>
             <div class="payments">
@@ -523,6 +529,10 @@
           <button class="aside__btn-people" data-modal="change-employee-modal"
                   type="button">Поменять сотрудников
           </button>
+          <div class="aside__links">
+            <p><a href="deal-documents.html">Все документы сделки</a>&nbsp;(4)</p>
+            <a href="#">Создать документ</a>
+          </div>
         </div>
       </aside>
     </div>

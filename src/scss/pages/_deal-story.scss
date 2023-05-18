@@ -304,6 +304,7 @@
       display: inline-block;
       padding: 5px 9px;
       margin-top: 32px;
+      margin-bottom: 34px;
       color: #858584;
       background-color: #F7F8FA;
       border: 1px solid #858584;
@@ -312,6 +313,15 @@
 
       &:hover {
         background-color: #ffffff;
+      }
+    }
+    &__links {
+      border-top: 2px dashed #C4C4C4;
+      padding-top: 27px;
+
+      p {
+        margin-bottom: 13px;
+        color: $link;
       }
     }
   }

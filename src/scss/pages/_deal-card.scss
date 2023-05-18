@@ -1,4 +1,9 @@
 .deals {
+  .uncreated, .expired {
+    display: none;
+    color: #BC0D48;
+  }
+
   &._closed {
     .one-deal__info-status.completed {
       display: flex;
@@ -18,6 +23,35 @@
     .one-deal__term,
     .one-deal__info-status.term {
       display: flex;
+    }
+
+    .expired {
+      display: block;
+    }
+  }
+
+  &._not-created {
+    .one-deal__name-contract,
+    .one-deal__btn-status,
+    .one-deal__subject {
+      display: none;
+    }
+
+    .one-deal__term,
+    .one-deal__info-status.term {
+      display: flex;
+
+      .uncreated {
+        display: block;
+      }
+    }
+
+    .one-deal__link-create {
+      display: flex;
+    }
+
+    .one-deal__uncreated-contract {
+      display: block;
     }
   }
 
@@ -110,12 +144,7 @@
           margin-right: 5px;
           color: #858584;
         }
-
-        &:last-child {
-          color: #BC0D48;
-        }
       }
-
     }
 
     &__info-status {
@@ -287,6 +316,24 @@
         }
       }
 
+    }
+
+    &__uncreated-contract {
+      display: none;
+    }
+
+    &__link-create {
+      width: max-content;
+      height: 40px;
+      padding: 0 22px;
+      font-size: 16px;
+      line-height: 20px;
+      color: $link;
+      border: 1px solid $link;
+      border-radius: 5px;
+      font-weight: 600;
+      align-items: center;
+      display: none;
     }
 
     .payments {
@@ -470,6 +517,7 @@
       display: inline-block;
       padding: 5px 9px;
       margin-top: 32px;
+      margin-bottom: 34px;
       color: #858584;
       background-color: #F7F8FA;
       border: 1px solid #858584;
@@ -478,6 +526,16 @@
 
       &:hover {
         background-color: #ffffff;
+      }
+    }
+
+    &__links {
+      border-top: 2px dashed #C4C4C4;
+      padding-top: 27px;
+
+      p {
+        margin-bottom: 13px;
+        color: $link;
       }
     }
   }
