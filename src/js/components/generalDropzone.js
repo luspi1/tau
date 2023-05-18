@@ -80,7 +80,7 @@ if (genDropzones) {
             file.previewElement.parentNode.removeChild(file.previewElement)
 
             if (dropzoneEl.querySelectorAll('.dz-preview').length < filesCount) {
-              addBtn.classList.remove('btn_disabled')
+              addBtn?.classList.remove('btn_disabled')
             }
             updateAmountFiles()
           }
@@ -120,7 +120,7 @@ if (genDropzones) {
         const cutTitles = dropzoneEl.querySelectorAll('span[data-dz-name]')
 
         if (dropzoneEl.querySelectorAll('.dz-preview').length >= filesCount) {
-          addBtn.classList.add('btn_disabled')
+          addBtn?.classList.add('btn_disabled')
         }
 
         if (cutTitles) {
@@ -137,7 +137,7 @@ if (genDropzones) {
     if (existingFiles.length > 0) {
 
       if (existingFiles.length >= filesCount) {
-        addBtn.classList.add('btn_disabled')
+        addBtn?.classList.add('btn_disabled')
       }
 
       updateAmountFiles()
@@ -168,7 +168,7 @@ if (genDropzones) {
           if (status === 'ok') {
             el.parentNode.removeChild(el)
             if (dropzoneEl.querySelectorAll('.dz-preview').length < filesCount) {
-              addBtn.classList.remove('btn_disabled')
+              addBtn?.classList.remove('btn_disabled')
             }
             updateAmountFiles()
           } else {

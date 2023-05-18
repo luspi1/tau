@@ -40,4 +40,5 @@ import './components/tagsFiltration'
 import './components/documentSendModal'
 import './components/income-traffic'
 import './components/correspondenceItem'
+import './components/docTemplateModal'
 

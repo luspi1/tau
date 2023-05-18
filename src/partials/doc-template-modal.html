@@ -1,0 +1,275 @@
+<div class="modal-doc-template modal" id="doc-template-modal"
+     data-body-lock="true">
+  <button class="close-modal-btn" type="button"
+          data-close-modal="true">
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+         xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M15 30C6.71429 30 0 23.2857 0 15C0 6.71429 6.71429 0 15 0C23.2857 0 30 6.71429 30 15C30 23.2857 23.1429 30 15 30ZM15 1.42857C7.57143 1.42857 1.42857 7.57143 1.42857 15C1.42857 22.4286 7.57143 28.5714 15 28.5714C22.4286 28.5714 28.5714 22.4286 28.5714 15C28.5714 7.57143 22.4286 1.42857 15 1.42857Z"
+        fill="#A0A0A0"/>
+      <path
+        d="M14.9975 16.7144C14.2832 17.4286 13.4261 18.2858 12.7118 19C11.7118 20 10.8547 20.8572 9.85466 21.8572C9.28323 22.4286 8.56884 22.4286 8.14027 21.8572C7.7117 21.4286 7.7117 20.5715 8.14027 20.143C9.7117 18.5715 11.2832 17 12.8546 15.4286C12.9975 15.2858 12.9974 15.2858 13.1403 15.143C12.9974 15.0001 12.9975 15 12.8546 14.8571C11.2832 13.2857 9.7117 11.7144 8.14027 10.143C7.42599 9.42868 7.7118 8.42865 8.42609 8.14293C8.85466 8.00008 9.42609 8.00001 9.85466 8.42858C11.4261 10 12.9974 11.5715 14.5688 13.1429C14.7117 13.2858 14.7118 13.2857 14.8547 13.4286C14.9975 13.2857 14.9974 13.2858 15.1403 13.1429C16.7117 11.5715 18.2832 10 19.9975 8.28575C20.7118 7.71433 21.7118 7.85729 21.9975 8.57157C22.1404 9.143 22.1403 9.57157 21.7117 10.0001C20.1403 11.5716 18.5689 13.1429 16.9975 14.7143C16.8547 14.8572 16.8546 14.8573 16.7117 15.0001C16.8546 15.143 16.8547 15.1429 16.9975 15.2858C18.5689 16.8572 20.1403 18.4287 21.7117 20.0001C22.1403 20.4287 22.2832 21.0001 21.9975 21.4287C21.7118 21.8573 21.2832 22.1429 20.7118 22C20.4261 21.8571 20.1403 21.7144 19.9975 21.5715C18.4261 20.0001 16.8546 18.4286 15.2831 16.8572C15.1403 17 14.9975 16.8572 14.9975 16.7144Z"
+        fill="#A0A0A0"/>
+    </svg>
+  </button>
+
+  <div class="modal-doc-template__states" data-state="connected">
+    <div
+      class="modal-doc-template__not-use modal-doc-template__state-item">
+      <h2>Шаблон документа не применяется</h2>
+
+      <div class="modal-doc-template__desc">
+        <p>
+          Сейчас в создаваемом документе отключено использование шаблона
+          документа
+          как таковое. Вероятно, предполагается загрузка документа из внешнего
+          источника.
+        </p>
+        <p>Эту настройку можно изменить.</p>
+      </div>
+
+      <div class="modal-doc-template__link-block">
+        <button class="modal-doc-template__link-btn" type="button"
+                data-state-btn="choice-template">Подключить
+          шаблон документа
+        </button>
+        <p>
+          Вернуться к использованию шаблона документа и выбрать применяемый
+          шаблон.
+        </p>
+      </div>
+
+    </div>
+
+    <div
+      class="modal-doc-template__not-connected modal-doc-template__state-item">
+      <h2>Шаблон документа не подключен</h2>
+
+      <div class="modal-doc-template__desc">
+        <p>
+          Сейчас к создаваемой сделке не подключен шаблон, на основе которого
+          создается документ этого типа.
+        </p>
+        <p>Эту настройку можно изменить.</p>
+      </div>
+
+
+      <div class="modal-doc-template__link-block">
+        <button class="modal-doc-template__link-btn" type="button"
+                data-state-btn="choice-template">Загрузить
+          шаблон документа
+        </button>
+        <p>
+          Загрузите существующий шаблон документа того же типа.
+        </p>
+      </div>
+      <div class="modal-doc-template__link-block">
+        <button class="modal-doc-template__link-btn" type="button"
+                data-state-btn="not-use">Отменить использование шаблона
+        </button>
+        <p>
+          В случае, если документ будет получен из внешних источников, а не
+          построен на основе шаблона в системе.
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="modal-doc-template__choice-template modal-doc-template__state-item">
+      <h2>Выбор шаблона документа</h2>
+
+      <div class="modal-doc-template__desc">
+        <p>
+          Вы выбрали опцию подключения шаблона документа.
+          Пожалуйста, выберите шаблон из списка существующих и доступных Вам.
+        </p>
+      </div>
+
+      <form class="modal-doc-template__form radio-list" method="post"
+            action="data/getCases.txt"
+            enctype="multipart/form-data">
+        <ul>
+          <li class="radio-list__item">
+            <input id="rad1" type="radio" name="templateId" value="val1"
+                   checked>
+            <label for="rad1">
+              [Договор]Шаблон номер 1</label>
+          </li>
+          <li class="radio-list__item">
+            <input id="rad2" type="radio" name="templateId" value="val2">
+            <label for="rad2">
+              [Акт]Шаблон2</label>
+          </li>
+          <li class="radio-list__item">
+            <input id="rad3" type="radio" name="templateId" value="val3">
+            <label for="rad3">
+              [Счет] Еще какой то шаблон</label>
+          </li>
+          <li class="radio-list__item">
+            <input id="rad4" type="radio" name="templateId" value="val4">
+            <label for="rad4">
+              [Договор] Лучший шаблон!</label>
+          </li>
+          <li class="radio-list__item">
+            <input id="rad5" type="radio" name="templateId" value="val5">
+            <label for="rad5">
+              [Счет] Еще какой то шаблон</label>
+          </li>
+          <li class="radio-list__item">
+            <input id="rad6" type="radio" name="templateId" value="val6">
+            <label for="rad6">
+              [Акт]Шаблон2</label>
+          </li>
+          <li class="radio-list__item">
+            <input id="rad7" type="radio" name="templateId" value="val7">
+            <label for="rad7">
+              [Договор] Лучший шаблон!</label>
+          </li>
+          <li class="radio-list__item">
+            <input id="rad8" type="radio" name="templateId" value="val8">
+            <label for="rad8">
+              [Акт]Шаблон2</label>
+          </li>
+          <li class="radio-list__item">
+            <input id="rad9" type="radio" name="templateId" value="val9">
+            <label for="rad9">
+              [Договор]Шаблон номер 1</label>
+          </li>
+          <li class="radio-list__item">
+            <input id="rad10" type="radio" name="templateId" value="val10">
+            <label for="rad10">
+              [Договор] Лучший шаблон!</label>
+          </li>
+          <li class="radio-list__item">
+            <input id="rad11" type="radio" name="templateId" value="val11">
+            <label for="rad11">
+              [Счет] Еще какой то шаблон</label>
+          </li>
+        </ul>
+        <button class="modal-doc-template__btn radio-list__btn-submit"
+                type="submit">Использовать выбранный шаблон
+        </button>
+      </form>
+
+      <div class="modal-doc-template__link-block">
+        <a class="modal-doc-template__link-btn" href="create-template.html">Создать
+          новый
+          шаблон
+        </a>
+        <p>
+          Внимание! Переход к созданию нового шаблона закроет создание
+          документа, и его потребуется запустить заново!
+        </p>
+      </div>
+
+    </div>
+
+    <div
+      class="modal-doc-template__connected modal-doc-template__state-item">
+      <h2>Подключен шаблон документа</h2>
+
+      <div class="modal-doc-template__desc">
+        <p>
+          Документ будет создан на основе шаблона
+        </p>
+        <p>(<a href="#">Название актуального шаблона</a>)</p>
+        <p>загруженного в систему.</p>
+      </div>
+
+
+      <div class="modal-doc-template__link-block">
+        <button class="modal-doc-template__link-btn" type="button"
+                data-state-btn="not-connected">Удалить предустановленный
+          шаблон
+        </button>
+        <p>
+          Удаление актуального шаблона позволит Вам позже загрузить другой или
+          тот же, но измененный, шаблон.
+        </p>
+      </div>
+      <div class="modal-doc-template__link-block">
+        <button class="modal-doc-template__link-btn" type="button"
+                data-state-btn="choice-template">Загрузить другой шаблон
+          документа
+        </button>
+        <p>
+          Поменяйте этот шаблон на другой существующий шаблон документа того же
+          типа.
+        </p>
+      </div>
+      <div class="modal-doc-template__link-block">
+        <button class="modal-doc-template__link-btn" type="button"
+                data-state-btn="not-use">Отменить использование шаблона
+        </button>
+        <p>
+          В случае, если документ будет получен из внешних источников, а не
+          построен на основе шаблона в системе.
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="modal-doc-template__download modal-doc-template__state-item">
+      <h2>Загрузка внешнего
+        документа</h2>
+
+      <div class="modal-doc-template__desc">
+        <p>
+          В сделке, которую Вы создаете, будет использован документ договора,
+          полученный из внешнего источника.
+        </p>
+        <p>Выберите этот документ.</p>
+      </div>
+      <div
+        class="modal-doc-template__download-wrapper general-dropzone-wrapper">
+        <div
+          class="general-dropzone dropzone modal-doc-template__general-dropzone"
+          data-general-info='{"url": "/include/ajax/upload_image.php", "removeUrl":"/include/ajax/upload_image.php", "width":"350", "height":"170", "acceptedFiles": ".png, .jpeg, .jpg, .svg", "type":"doc_template", "filesCount": "1", "additional": "доп.контент", "customText":"Неправильный формат. Загрузите изображение в формате png, jpg или svg."}'>
+          <div
+            class="general-dropzone__message-wrapper modal-doc-template__message-wrapper">
+            <div class="dz-message">
+              <div class="modal-doc-template__dropzone-placeholder">
+                <svg width="28" height="38" viewBox="0 0 28 38" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M17.5 0H4.66667C3.42899 0 2.24201 0.500446 1.36684 1.39124C0.491666 2.28204 0 3.49022 0 4.75V33.25C0 34.5098 0.491666 35.718 1.36684 36.6088C2.24201 37.4996 3.42899 38 4.66667 38H23.3333C24.571 38 25.758 37.4996 26.6332 36.6088C27.5083 35.718 28 34.5098 28 33.25V10.6875L17.5 0Z"
+                    fill="#F4F7FB"/>
+                  <path
+                    d="M17.3828 0V7.125C17.3828 8.06983 17.7516 8.97597 18.4079 9.64407C19.0643 10.3122 19.9546 10.6875 20.8828 10.6875H27.8828L17.3828 0Z"
+                    fill="#91D9F9"/>
+                  <path
+                    d="M8.16667 16.9575C7.85725 16.9575 7.5605 17.0826 7.34171 17.3053C7.12292 17.528 7 17.8301 7 18.145C7.00597 18.4581 7.13081 18.7566 7.34832 18.978C7.56583 19.1994 7.85912 19.3264 8.16667 19.3325H19.8333C20.1428 19.3325 20.4395 19.2074 20.6583 18.9847C20.8771 18.762 21 18.46 21 18.145C21 17.8301 20.8771 17.528 20.6583 17.3053C20.4395 17.0826 20.1428 16.9575 19.8333 16.9575H8.16667ZM7 22.895C7 22.5801 7.12292 22.278 7.34171 22.0553C7.5605 21.8326 7.85725 21.7075 8.16667 21.7075H19.8333C20.1428 21.7075 20.4395 21.8326 20.6583 22.0553C20.8771 22.278 21 22.5801 21 22.895C21 23.21 20.8771 23.512 20.6583 23.7347C20.4395 23.9574 20.1428 24.0825 19.8333 24.0825H8.16667C7.85912 24.0764 7.56583 23.9494 7.34832 23.728C7.13081 23.5066 7.00597 23.2081 7 22.895ZM7 27.645C7 27.3301 7.12292 27.028 7.34171 26.8053C7.5605 26.5826 7.85725 26.4575 8.16667 26.4575H12.8333C13.1428 26.4575 13.4395 26.5826 13.6583 26.8053C13.8771 27.028 14 27.3301 14 27.645C14 27.96 13.8771 28.262 13.6583 28.4847C13.4395 28.7074 13.1428 28.8325 12.8333 28.8325H8.16667C7.85912 28.8264 7.56583 28.6994 7.34832 28.478C7.13081 28.2566 7.00597 27.9581 7 27.645Z"
+                    fill="#2F65F6"/>
+                </svg>
+
+                <p>Перетащите документ
+                  на это поле или нажмите на поле загрузки документа с
+                  компьютера</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <form action="#">
+        <button class="modal-doc-template__btn" type="submit">
+          Использовать выбранный документ
+        </button>
+      </form>
+
+    </div>
+
+    <div class="modal-doc-template__link-block">
+      <button class="modal-doc-template__link-btn" type="button"
+              data-close-modal="true">Ничего не менять
+      </button>
+      <p>
+        Оставить использование актуального шаблона.
+      </p>
+    </div>
+
+
+  </div>
+
+
+</div>

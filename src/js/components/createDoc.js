@@ -1,37 +1,58 @@
-import Choices from 'choices.js'
+import Choices                from 'choices.js'
 import {
-  closeSelectPopups, handlePopupInputs, handlePopupSubmit, sendData, showInfoModal
-}              from "../_functions"
+  closeSelectPopups,
+  formToObj,
+  handlePopupInputs,
+  handlePopupSubmit,
+  sendData,
+  serializeForm,
+  showInfoModal
+}                             from "../_functions"
+import { body, modalOverlay } from '../_vars'
 
 const createDocPage = document.querySelector('.create-doc-page')
+const invoicesSelect = createDocPage?.querySelector('.create-doc-page__invoice-doc-select .create-doc-page__select')
+const plannedPaymentSelect = createDocPage?.querySelector('.create-doc-page__planned-payment-select .create-doc-page__select')
+
+const plannedPaymentChoices = new Choices(plannedPaymentSelect, {
+  itemSelectText: '', searchEnabled: false, shouldSort: false, allowHTML: true
+})
+
+const invoicesChoices = new Choices(invoicesSelect, {
+  itemSelectText: '', searchEnabled: false, shouldSort: false, allowHTML: true
+})
+
+const initPlannedPaymentSelect = (plannedDataArr) => {
+  plannedPaymentChoices.destroy()
+  plannedPaymentChoices.init()
+  plannedPaymentChoices.setValue(plannedDataArr)
+}
+
+const updateInvoices = async (data, submitScript) => {
+  if (createDocPage) {
+    try {
+      const response = await sendData(data, submitScript)
+      const finishedResponse = await response.json()
+
+      const {status, errortext, invoices, planned_payments} = finishedResponse
+      if (status === 'ok') {
+        invoicesChoices.clearChoices()
+        invoicesChoices.setValue(invoices)
+        initPlannedPaymentSelect(planned_payments)
+        return true
+      } else {
+        showInfoModal(errortext)
+      }
+    } catch (err) {
+      showInfoModal("Во время выполнения запроса произошла ошибка")
+      console.error(err)
+    }
+  }
+}
 
 if (createDocPage) {
 
-  //Селект расчетных счетов
-
-  const invoicesSelect = createDocPage.querySelector('.create-doc-page__invoice-doc-select .create-doc-page__select')
-
-  const invoicesChoices = new Choices(invoicesSelect, {
-    itemSelectText: '', searchEnabled: false, shouldSort: false, allowHTML: true
-  })
-
-  const plannedPaymentSelect = createDocPage.querySelector('.create-doc-page__planned-payment-select .create-doc-page__select')
-  const plannedPaymentSelectWrapper = createDocPage.querySelector('.create-doc-page__planned-payment-select')
-
-  const plannedPaymentChoices = new Choices(plannedPaymentSelect, {
-    itemSelectText: '', searchEnabled: false, shouldSort: false, allowHTML: true
-  })
-
-  // Функция инициализации селекта плановых платежей при выборе договора в типе "Счет"
-
-  const initPlannedPaymentSelect = (plannedDataArr) => {
-    plannedPaymentChoices.destroy()
-    plannedPaymentChoices.init()
-    plannedPaymentChoices.setValue(plannedDataArr)
-  }
-
-// Появления списка элементов полученных от сервера в полях "Родительский договор", "Шаблон документа"
-
+// Появления списка элементов полученных от сервера в поле "Шаблон документа"
   const docPopupInputs = document.querySelectorAll('.create-doc-page .select-popup-input')
 
   if (docPopupInputs) {
@@ -41,34 +62,10 @@ if (createDocPage) {
   }
 
   const parentalContract = document.querySelector('.create-doc-page .parental-contract-input')
+  const invoiceDataUrl = parentalContract.dataset.invoicesUrl
 
   if (parentalContract) {
-
-    const invoiceDataUrl = parentalContract.dataset.invoicesUrl
-    const updateInvoices = async (data, submitScript) => {
-
-
-      try {
-        const response = await sendData(data, submitScript)
-        const finishedResponse = await response.json()
-
-        const {status, errortext, invoices, planned_payments} = finishedResponse
-        if (status === 'ok') {
-
-          invoicesChoices.clearChoices()
-          invoicesChoices.setValue(invoices)
-
-          initPlannedPaymentSelect(planned_payments)
-
-        } else {
-          showInfoModal(errortext)
-        }
-      } catch (err) {
-        showInfoModal("Во время выполнения запроса произошла ошибка")
-        console.error(err)
-      }
-    }
-
+    //обработка инпута сделки
     const handleParentalContractInput = (e) => {
       let inputValue = e.target.value
 
@@ -148,7 +145,38 @@ if (createDocPage) {
   }
 }
 
+// обработка списка сделок в модалке
+export const handleDealListModal = (dealListModal) => {
+  const parentalContract = document.querySelector('.create-doc-page .parental-contract-input')
+  if (parentalContract && (dealListModal.classList.contains('modal-deal-selection'))) {
+    const invoiceDataUrl = parentalContract.dataset.invoicesUrl
 
+    const dataDealInput = document.querySelector('.select-popup-data[name="id_parents"]')
+    const dealListForm = document.querySelector('.create-doc-page .modal-deal-selection__form')
+    const handleDealListForm = async (e) => {
+      e.preventDefault()
+      const dealValue = formToObj(serializeForm(e.currentTarget))
+      const dealInput = dealListForm.querySelector(`input[value=${dealValue?.dealId}]`)
+      const dealText = dealInput?.closest('.radio-list__item')?.querySelector('label').textContent.trim()
+
+      const invoiceData = {
+        id_dogovor: dealValue.dealId
+      }
+      const invoiceDataJson = JSON.stringify(invoiceData)
+      updateInvoices(invoiceDataJson, invoiceDataUrl)
+        .then((res) => {
+          if (res) {
+            parentalContract.value = dealText
+            dataDealInput.value = dealValue.dealId
+            body.classList.remove('_lock')
+            dealListModal.classList.remove('_active')
+            modalOverlay.classList.remove('modal-overlay_active')
+          }
+        })
+    }
+    dealListForm.addEventListener('submit', handleDealListForm)
+  }
+}
 
 
 

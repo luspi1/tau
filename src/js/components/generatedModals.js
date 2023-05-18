@@ -1,5 +1,6 @@
 import { sendData, showInfoModal }    from '../_functions'
 import { handleCloseDealModal }       from './closeDealModal'
+import { handleDealListModal }        from './createDoc'
 import { initAllDates }               from './customDate'
 import { initSelects }                from './customSelect'
 import { handleDocumentPreviewModal } from './documentPreviewModal'
@@ -21,6 +22,7 @@ const initGeneratedModal = (modal) => {
   handleDocumentPreviewModal(modal)  // Модалка предпросмотра документа
   handleCloseDealModal(modal) // Модалка закрытия сделки
   handleDocumentSendModal(modal) // Модалка отправки документа
+  handleDealListModal(modal) // Модалка cо списком сделок
 }
 
 
