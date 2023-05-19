@@ -16,6 +16,7 @@
   <main class="main create-doc-page" data-page-state="initial">
     @include('partials/deal-selection-modal.html')
     @include('partials/doc-template-modal.html')
+    @include('partials/doc-download-modal.html')
 
     <div class="container">
       <h1>Создание документа</h1>
@@ -40,10 +41,12 @@
             </div>
 
             <span>или</span>
-            <button class="create-doc-page__btn" type="button"
-                    data-modal="deal-selection-modal" data-type-btn="generated"
-                    data-script="data/getDealListModal.txt"
-                    data-id="vt9O50x5">Выберите сделку
+            <button
+              class="create-doc-page__btn create-doc-page__deal-selection-btn"
+              type="button"
+              data-modal="deal-selection-modal"
+              data-script="data/getDealListModal.txt"
+              data-id="vt9O50x5">Выберите сделку
               из списка
             </button>
           </div>
@@ -214,7 +217,8 @@
           </div>
           <div
             class="create-doc-page__input-wrapper create-doc-page__download-doc-btn">
-            <button class="create-doc-page__btn" type="button">Загрузить файл
+            <button class="create-doc-page__btn" type="button"
+                    data-modal="doc-download-modal">Загрузить файл
               документа из
               внешнего источника
             </button>

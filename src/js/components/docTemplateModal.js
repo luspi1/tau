@@ -14,3 +14,14 @@ if (docTemplateModal) {
   })
 
 }
+
+
+// Открытие модалки загрузки файла документа из внешнего источника
+
+const downloadDocBtn = document.querySelector('.create-doc-page__download-doc-btn')
+
+if (downloadDocBtn) {
+  downloadDocBtn.addEventListener('click', (e) => {
+    e.preventDefault()
+  })
+}

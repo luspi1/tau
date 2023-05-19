@@ -1,0 +1,169 @@
+.modal-doc-download {
+  position: fixed;
+  overflow-y: auto;
+  overflow-x: hidden;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 645px;
+  max-height: 90vh;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 50px 50px 50px 45px;
+  transition: all .2s;
+  opacity: 0;
+  visibility: hidden;
+
+  @media (max-width: 768px) {
+    width: 80%;
+    padding: 30px 45px 30px 25px;
+  }
+
+
+  &._active {
+    opacity: 1;
+    z-index: 999;
+    visibility: visible;
+  }
+
+  &__desc {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px dotted #C4C4C4;
+
+
+    p {
+      @include montserrat-light;
+      font-size: 16px;
+      line-height: 20px;
+
+      color: #000000;
+
+      &:not(:last-child) {
+        margin-bottom: 13px;
+      }
+    }
+  }
+
+  &__dropzone-placeholder {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    svg {
+      margin-bottom: 10px;
+    }
+
+    p {
+      text-align: center;
+      @include montserrat-regular;
+      font-size: 16px;
+      line-height: 20px;
+      color: #858584;
+      max-width: 365px;
+    }
+  }
+
+  &__general-dropzone {
+    padding: 32px 45px 30px;
+    border: 1px dashed #C4C4C4;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 67%;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    &.dz-started {
+      .modal-doc-download__dropzone-placeholder {
+        display: none;
+      }
+    }
+  }
+
+  .general-dropzone__message-wrapper {
+    position: static;
+    transform: none;
+    display: block;
+
+
+  }
+
+  &__general-dropzone .dz-image {
+    object-fit: cover;
+  }
+
+
+  h2 {
+    @include montserrat-semibold;
+    font-size: 38px;
+    line-height: 46px;
+    color: #000000;
+    margin-bottom: 35px;
+    @media (max-width: 768px) {
+      font-size: 30px;
+      line-height: 35px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__form {
+    margin-bottom: 30px;
+    padding-bottom: 35px;
+    border-bottom: 1px dotted #C4C4C4;
+  }
+
+  &__btn {
+    border: 1px solid #2F65F6;
+    background-color: #ffffff;
+    border-radius: 5px;
+    @include montserrat-medium;
+    font-size: 17px;
+    line-height: 21px;
+    text-align: center;
+    color: #2F65F6;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+      background-color: #2F65F6;
+      color: #ffffff
+    }
+  }
+
+  &__link-block {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    .modal-doc-download__link-btn {
+      @include montserrat-regular;
+      font-size: 16px;
+      line-height: 20px;
+      border: none;
+      background: none;
+      outline: none;
+      cursor: pointer;
+      color: #2F65F6;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    p {
+      @include montserrat-light;
+      font-size: 14px;
+      line-height: 17px;
+      color: #585757;
+    }
+
+  }
+
+
+}
+
+
+
+
+

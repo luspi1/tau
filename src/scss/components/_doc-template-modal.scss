@@ -51,6 +51,9 @@
     }
 
     .modal-doc-template__desc {
+      border: none;
+      padding-bottom: 0;
+
       p {
         @include montserrat-light;
         font-size: 14px;
@@ -76,59 +79,6 @@
 
   }
 
-  &__states[data-state="download"] {
-    .modal-doc-template__download {
-      display: block;
-    }
-  }
-
-
-  &__dropzone-placeholder {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-
-    svg {
-      margin-bottom: 10px;
-    }
-
-    p {
-      text-align: center;
-      @include montserrat-regular;
-      font-size: 16px;
-      line-height: 20px;
-      color: #858584;
-      max-width: 365px;
-    }
-  }
-
-  &__general-dropzone {
-    padding: 32px 45px 30px;
-    border: 1px dashed #C4C4C4;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    width: 67%;
-
-    &.dz-started {
-      .modal-doc-template__dropzone-placeholder {
-        display: none;
-      }
-    }
-  }
-
-  .general-dropzone__message-wrapper {
-    position: static;
-    transform: none;
-    display: block;
-
-
-  }
-
-  &__general-dropzone .dz-image {
-    object-fit: cover;
-  }
-
-
   h2 {
     @include montserrat-semibold;
     font-size: 38px;
@@ -140,6 +90,12 @@
       line-height: 35px;
       margin-bottom: 20px;
     }
+  }
+
+
+  .radio-list {
+    border-bottom: 1px dotted #C4C4C4;
+    margin-bottom: 25px;
   }
 
 
@@ -209,6 +165,27 @@
       font-size: 14px;
       line-height: 17px;
       color: #585757;
+    }
+
+    .modal-doc-template__prompt {
+      background: #F4F7FB;
+      border-radius: 5px;
+      color: #2F65F6;
+      padding: 13px 18px 15px 43px;
+      position: relative;
+      width: 100%;
+      font-size: 16px;
+      line-height: 24px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 13px;
+        top: 13px;
+        width: 20px;
+        height: 20px;
+        background: url("../img/deal-prompt-icon.svg") no-repeat;
+      }
     }
 
   }
