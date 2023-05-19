@@ -167,38 +167,6 @@ if (createDocPage) {
   }
   dealListForm.addEventListener('submit', handleDealListForm)
 
-  // рендер списка сделок с сервера по нажатию кнопки "Выберите сделку из списка"
-  const selectionDealsModalBtn = createDocPage.querySelector('.create-doc-page__deal-selection-btn')
-  const dealsList = dealListModal.querySelector('.modal-deal-selection__form-list')
-
-  selectionDealsModalBtn.addEventListener('click', async (e) => {
-    e.preventDefault()
-    const idDeal = e.currentTarget.dataset.id
-    const dataScript = e.currentTarget.dataset.script
-
-    const data = {
-      id: idDeal
-    }
-
-    const dataJson = JSON.stringify(data)
-
-    try {
-      const response = await sendData(dataJson, dataScript)
-      const finishedResponse = await response.json()
-      const {status, errortext, html} = finishedResponse
-      if (status === 'ok') {
-        dealsList.innerHTML = html
-        return true
-      } else {
-        showInfoModal(errortext)
-      }
-    } catch (err) {
-      showInfoModal("Во время выполнения запроса произошла ошибка")
-      console.error(err)
-    }
-  })
-
-
 // Появления списка элементов полученных от сервера в поле "Шаблон документа"
   const docPopupInputs = createDocPage.querySelectorAll('.select-popup-input')
 

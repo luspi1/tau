@@ -136,6 +136,7 @@
       color: #858584;
     }
 
+
     &__name {
       padding: 0 30px 22px 0;
       border-bottom: 2px dotted #C4C4C4;
@@ -150,12 +151,12 @@
         white-space: nowrap;
         font-weight: 600;
       }
-      .currency-mask {
-        width: 45%;
+
+      .currency-mask-text {
         font-weight: 600;
         margin-right: 5px;
-        text-align: left;
-              }
+      }
+
     }
 
     &__app {
@@ -189,6 +190,7 @@
       color: #ffffff;
     }
   }
+
   .aside {
     width: 550px;
     height: 100%;

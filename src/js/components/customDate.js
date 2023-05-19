@@ -6,12 +6,12 @@ const initAllDates = () => {
   if (allDateInputs) {
     allDateInputs.forEach(el => {
       const {dateStart} = el.dataset
+      const formatDate = dateStart.split(".").reverse().join(".")
 
       const customDate = new AirDatepicker(el, {
-        startDate: dateStart,
+        startDate: formatDate,
         container: '.date-custom-container',
       })
-
 
       el.addEventListener('click', (e) => {
         const featuredDate = e.currentTarget.value.split('.').reverse().join('-')

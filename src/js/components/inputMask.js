@@ -335,6 +335,19 @@ export const initAllMasks = () => {
       }).mask(itemMask)
     })
   }
+
+
+  //маска валют для текстовых элементов
+
+  const textCurrencyMasks = document.querySelectorAll('.currency-mask-text')
+
+  if (textCurrencyMasks) {
+    textCurrencyMasks.forEach(el => {
+      const textValue = el.textContent
+      el.textContent = Inputmask.format(textValue, {alias: "currency", groupSeparator: ' '})
+    })
+  }
+
 }
 
 initAllMasks()

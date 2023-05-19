@@ -483,6 +483,17 @@ input[type="number"] {
   line-height: 20px;
 }
 
+.currency-mask-text {
+  position: relative;
+
+  &::after {
+    content: '₽';
+    position: absolute;
+    right: -15px;
+    top: 0;
+  }
+}
+
 .number-mask {
   text-align: left !important;
 }
