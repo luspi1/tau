@@ -1,4 +1,5 @@
-<div class="modal-new-employee modal" id="new-employee-modal" data-body-lock="true">
+<div class="modal-new-employee modal" id="new-employee-modal"
+     data-body-lock="true">
   <h2>Новый сотрудник</h2>
   <p class="modal-new-employee__desc">
     Введите адрес электронной почты или фамилию сотрудника. Если пользователь
@@ -18,6 +19,7 @@
                  type="hidden">
           <input class="modal-new-employee__input select-popup-input "
                  type="text"
+                 autocomplete="off"
                  name="employee_emailOrSurname"
                  placeholder="Начните вводить адрес электронной почты...">
           @include('select-popup.html', {

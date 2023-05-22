@@ -13,8 +13,10 @@
   </button>
   <h2>Скопировать другой кейс</h2>
   <p class="modal-copy-case__desc">
-    Если Вы хотите создать новый кейс на основе существующего, Вы можете скопировать структуру ранее созданного кейса.
-    После того как кейс будет скопирован, Вы сможете внести требуемые изменения в новый кейс.
+    Если Вы хотите создать новый кейс на основе существующего, Вы можете
+    скопировать структуру ранее созданного кейса.
+    После того как кейс будет скопирован, Вы сможете внести требуемые изменения
+    в новый кейс.
   </p>
 
   <form class="modal-copy-case__form" action="#">
@@ -27,6 +29,7 @@
         <input class="modal-copy-case__input select-popup-input"
                type="text"
                name="copy_case"
+               autocomplete="off"
                placeholder="Начните вводить название">
         <svg class="modal-copy-case__delete-btn" width="20" height="20"
              viewBox="0 0 20 20" fill="none"
@@ -49,7 +52,8 @@
       <button class="modal-copy-case__save-btn" type="submit">
         Скопировать кейс
       </button>
-      <button type="button" class="modal-copy-case__close-btn" data-close-modal="true">
+      <button type="button" class="modal-copy-case__close-btn"
+              data-close-modal="true">
         Отменить
       </button>
     </div>

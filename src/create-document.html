@@ -32,7 +32,7 @@
               <input
                 class="create-doc-page__input parental-contract-input"
                 data-invoices-url="./data/getInvoices.txt"
-                name="doc_parents" type="text"
+                name="doc_parents" type="text" autocomplete="off"
                 placeholder="Начните вводить название" required>
               @include('partials/select-popup.html', {
               'submit-script': 'data/getCases.txt',
@@ -200,6 +200,7 @@
                 name="doc_template" type="text"
                 placeholder="Начните вводить название"
                 data-required="initial, act"
+                autocomplete="off"
                 required>
 
               @include('partials/select-popup.html', {
