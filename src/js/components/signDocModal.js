@@ -1,5 +1,5 @@
 import { formToObj, sendData, serializeForm, showInfoModal, toggleLoader } from '../_functions'
-import { modalOverlay }                                                    from '../_vars'
+
 
 export const handleDocumentSignModal = (signModal) => {
 
@@ -11,7 +11,6 @@ export const handleDocumentSignModal = (signModal) => {
 
     //форма нашей подписи
     const ourForm = signModal.querySelector('.modal-document-sign__form-author')
-    const ourFormContent = ourForm.querySelector('.modal-document-sign__author-info')
     const ourNameField = ourForm.querySelector('.modal-document-sign__lastname')
     const ourDateField = ourForm.querySelector('.modal-document-sign__date')
 
@@ -38,7 +37,7 @@ export const handleDocumentSignModal = (signModal) => {
         const {status, errortext, sign_fio, sign_date, sign_date_customer} = finishedResponse
         if (status === 'ok') {
           if (isOur) {
-            ourFormContent.classList.add('_completed')
+            ourForm.classList.add('_completed')
             ourNameField.textContent = sign_fio
             ourDateField.textContent = sign_date
             checkSigns()
@@ -46,7 +45,7 @@ export const handleDocumentSignModal = (signModal) => {
             customerFormContent.classList.add('_completed')
             customerNameField.textContent = sign_fio
             customerDateField.textContent = sign_date_customer
-            if (ourFormContent.classList.contains('_completed')) {
+            if (ourForm.classList.contains('_completed')) {
               checkSigns()
             }
           }
@@ -72,9 +71,14 @@ export const handleDocumentSignModal = (signModal) => {
     const docSendBtn = signModal.querySelector('.modal-document-sign__btn-doc-send')
     const docSendScript = docSendBtn.dataset.script
 
+
     docSendBtn.addEventListener('click', async () => {
-      const data = {id_document: signModalId}
+
+      const emailTextData = signModal.querySelector('.modal-document-sign__email-select-wrapper .choices__item--selectable').textContent
+
+      const data = {id: signModalId, email: emailTextData}
       const jsonData = JSON.stringify(data)
+
 
       toggleLoader()
 
@@ -86,9 +90,7 @@ export const handleDocumentSignModal = (signModal) => {
 
         const {status, errortext} = finishedResponse
         if (status === 'ok') {
-          signModal.classList.remove('_active')
-          modalOverlay.classList.remove('modal-overlay_active')
-          showInfoModal('Документ успешно отправлен')
+          docSendBtn.textContent = 'Документ отправлен. Повторить?'
         } else {
           showInfoModal(errortext)
         }
@@ -107,7 +109,7 @@ export const handleDocumentSignModal = (signModal) => {
 
     //Функция проверки подписей и показа/скрывания кнопки отмены подписи
     const checkSigns = () => {
-      const validatedSigns = signModal.querySelectorAll('.modal-document-sign__author-info, .modal-document-sign__client-info')
+      const validatedSigns = signModal.querySelectorAll('.modal-document-sign__form-author, .modal-document-sign__client-info')
       const isValid = Array.from(validatedSigns).every(el => el.classList.contains('_completed'))
       if (isValid) {
         cancelSignBtn.classList.add('hidden')
@@ -129,7 +131,7 @@ export const handleDocumentSignModal = (signModal) => {
         toggleLoader()
         const {status, errortext} = finishedResponse
         if (status === 'ok') {
-          ourFormContent.classList.remove('_completed')
+          ourForm.classList.remove('_completed')
           cancelSignBtn.classList.add('hidden')
         } else {
           showInfoModal(errortext)
@@ -142,5 +144,3 @@ export const handleDocumentSignModal = (signModal) => {
     })
   }
 }
-
-
