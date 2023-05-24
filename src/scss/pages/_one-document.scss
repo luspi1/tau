@@ -7,6 +7,9 @@
 
   a {
     color: #2F65F6;
+    &.currency-mask-text {
+      width: max-content;
+    }
   }
 
   .top {
@@ -126,13 +129,16 @@
       display: flex;
       font-size: 16px;
       line-height: 34px;
+
+      &.between {
+        justify-content: space-between;
+      }
     }
 
     &__minititle {
       min-width: 300px;
       margin-right: 25px;
       @include montserrat-regular;
-
       color: #858584;
     }
 
@@ -144,14 +150,21 @@
     &__payments {
       padding: 22px 0 19px;
       border-bottom: 2px dotted #C4C4C4;
-      .imask-wrapper {
-        white-space: nowrap;
-      }
-      .currency-mask {
-        width: 100%;
-        margin-right: 5px;
+    }
+
+    &__desc-row {
+      display: flex;
+
+      .currency-mask-text {
+        margin-right: 15px;
       }
 
+      p {
+        &:last-child {
+          margin-left: 10px;
+        }
+
+      }
     }
 
     &__data {
