@@ -145,17 +145,12 @@
       margin-bottom: 45px;
       padding: 22px 0;
       border-bottom: 2px dotted #C4C4C4;
-
-      .imask-wrapper {
-        white-space: nowrap;
-        font-weight: 600;
-      }
-      .currency-mask {
-        width: 45%;
-        font-weight: 600;
-        margin-right: 5px;
-        text-align: left;
-              }
+        }
+    &__desc {
+      &.currency-mask-text {
+      font-weight: 600;
+        width: max-content;
+    }
     }
 
     &__app {
