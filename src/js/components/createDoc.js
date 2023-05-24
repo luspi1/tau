@@ -123,7 +123,7 @@ if (createDocPage) {
                   targetSelectPopup.classList.remove('select-popup_active')
 
                   const selectData = {
-                    id_dogovor: el.dataset.id
+                    id_deal: el.dataset.id
                   }
                   const selectDataJson = JSON.stringify(selectData)
                   updateInvoices(selectDataJson, invoiceDataUrl)
@@ -151,7 +151,7 @@ if (createDocPage) {
     const dealText = dealInput?.closest('.radio-list__item')?.querySelector('label').textContent.trim()
 
     const invoiceData = {
-      id_dogovor: dealValue.dealId
+      id_deal: dealValue.dealId
     }
     const invoiceDataJson = JSON.stringify(invoiceData)
     updateInvoices(invoiceDataJson, invoiceDataUrl)
