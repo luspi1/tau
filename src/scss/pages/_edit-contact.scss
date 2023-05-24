@@ -150,6 +150,21 @@
       line-height: 24px;
       color: $link;
     }
+
+
+    .edit-contact__leader-fullname {
+      display: flex;
+      flex-wrap: wrap;
+
+      span {
+        margin-bottom: 2px;
+      }
+
+      span:not(:last-child) {
+        margin-right: 5px;
+      }
+    }
+
   }
 
   &__btn-director-delete {

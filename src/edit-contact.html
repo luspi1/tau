@@ -43,7 +43,7 @@
                     fill="#969696"/>
             </svg>
             @include('partials/select-popup.html', {
-            'submit-script': 'test.txt',
+            'submit-script': './data/getCases.txt',
             'add-data':'{"idItem":3,"paramname":"test"}'
             })
           </div>
@@ -158,7 +158,7 @@
                       Именительный падеж
                     </p>
                     <input class="edit-contact__input" type="text"
-                           name="editDirectorNominativeLastname"
+                           name="surname"
                            placeholder="Иванов / Иванова"
                            data-required="entity">
                   </div>
@@ -168,7 +168,7 @@
                       Имя
                     </p>
                     <input class="edit-contact__input" type="text"
-                           name="editDirectorNominativeName"
+                           name="firstname"
                            placeholder="Иван / Мария" data-required="entity">
                   </div>
                   <div
@@ -177,7 +177,7 @@
                       Отчество
                     </p>
                     <input class="edit-contact__input" type="text"
-                           name="editDirectorNominativePatronymic"
+                           name="fathname"
                            placeholder="Иванович / Ивановна"
                            data-required="entity">
                   </div>
@@ -193,7 +193,7 @@
                       Родительный падеж
                     </p>
                     <input class="edit-contact__input" type="text"
-                           name="editDirectorGenitiveLastname"
+                           name="surname_rod"
                            placeholder="Иванова / Ивановы"
                            data-required="entity">
                   </div>
@@ -203,7 +203,7 @@
                       Родительный падеж
                     </p>
                     <input class="edit-contact__input" type="text"
-                           name="editDirectorGenitiveName"
+                           name="firstname_rod"
                            placeholder="Ивана / Марии" data-required="entity">
                   </div>
                   <div
@@ -212,7 +212,7 @@
                       Родительный падеж
                     </p>
                     <input class="edit-contact__input" type="text"
-                           name="editDirectorGenitivePatronymic"
+                           name="fathname_rod"
                            placeholder="Ивановича / Ивановны"
                            data-required="entity">
                   </div>
@@ -228,7 +228,7 @@
                       Дательный падеж
                     </p>
                     <input class="edit-contact__input" type="text"
-                           name="editDirectorDativeLastname"
+                           name="surname_dat"
                            placeholder="Иванову / Ивановой"
                            data-required="entity">
                   </div>
@@ -238,7 +238,7 @@
                       Дательный падеж
                     </p>
                     <input class="edit-contact__input" type="text"
-                           name="editDirectorDativeName"
+                           name="firstname_dat"
                            placeholder="Ивану / Марии" data-required="entity">
                   </div>
                   <div
@@ -247,7 +247,7 @@
                       Дательный падеж
                     </p>
                     <input class="edit-contact__input" type="text"
-                           name="editDirectorDativePatronymic"
+                           name="fathname_dat"
                            placeholder="Ивановичу / Ивановне"
                            data-required="entity">
                   </div>
@@ -258,7 +258,11 @@
                   <li data-delete="element">
                     <span
                       class="edit-contact__input-title">Указан руководитель</span>
-                    <a href="#">Константинов Константин Константинович</a>
+                    <a class="edit-contact__leader-fullname" href="#">
+                      <span class="leader_surname">Константинов</span>
+                      <span class="leader_firstname">Константин</span>
+                      <span class="leader_fathname">Константинович</span>
+                    </a>
                     <p>исполнительный директор, действует на основании
                       Доверенности № 222-333 от 24.03.2023</p>
                     <button class="edit-contact__btn-director-delete"

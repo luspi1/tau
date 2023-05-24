@@ -84,7 +84,6 @@ export async function handlePopupSubmit(inputValue, popup, optionalInfo) {
   const addData = popup.dataset.json
   const addDataObj = JSON.parse(addData)
   const submitScript = popup.dataset.script
-
   let totalData = {}
 
   if (optionalInfo) {
@@ -325,3 +324,10 @@ if (inputTypeNumbers) {
   })
 }
 
+// фукция обновления полей по вводу значений в инпут
+
+export const updateFieldOnInput = (input, field) => {
+  input.addEventListener('input', (e) => {
+    field.textContent = e.target.value
+  })
+}
