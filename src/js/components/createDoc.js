@@ -80,7 +80,7 @@ if (createDocPage) {
   }
 
   // функция обновления селектов плановых платежей и расчетных счетов
-  const updateInvoices = async (data, submitScript) => {
+  const updateDocData = async (data, submitScript) => {
     try {
       const response = await sendData(data, submitScript)
       const finishedResponse = await response.json()
@@ -126,7 +126,7 @@ if (createDocPage) {
                     id_deal: el.dataset.id
                   }
                   const selectDataJson = JSON.stringify(selectData)
-                  updateInvoices(selectDataJson, invoiceDataUrl)
+                  updateDocData(selectDataJson, invoiceDataUrl)
                 })
               })
             } else {
@@ -154,7 +154,7 @@ if (createDocPage) {
       id_deal: dealValue.dealId
     }
     const invoiceDataJson = JSON.stringify(invoiceData)
-    updateInvoices(invoiceDataJson, invoiceDataUrl)
+    updateDocData(invoiceDataJson, invoiceDataUrl)
       .then((res) => {
         if (res) {
           parentalContract.value = dealText
@@ -176,7 +176,3 @@ if (createDocPage) {
     })
   }
 }
-
-
-
-

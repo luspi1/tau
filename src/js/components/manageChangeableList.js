@@ -12,6 +12,18 @@ const initInputs = () => {
   initSelects()
 }
 
+const updateSerialNumbers = (elArr) => {
+  if (elArr) {
+    elArr.forEach((changeEl, i) => {
+      const serialNumber = changeEl.querySelector('.changeable-serial-number')
+      if (serialNumber) {
+        serialNumber.textContent = i + 1
+      }
+    })
+  }
+}
+
+
 // добавление/удаление элементов в изменяемых списках
 
 export const initChangeableLists = () => {
@@ -24,6 +36,15 @@ export const initChangeableLists = () => {
     changeablePage.addEventListener('click', (e) => {
       if (e.target.dataset.btn === "delete") {
         e.target.closest('li').remove()
+
+        //обновление UI порядковых номеров элементов
+        const changeableLists = changeablePage.querySelectorAll('ul[data-list="changeable"]')
+
+        changeableLists.forEach(list => {
+          const listEls = list.querySelectorAll('li')
+          updateSerialNumbers(listEls)
+        })
+
       }
 
       // Добавление элементов в изменяемых списках
@@ -41,7 +62,9 @@ export const initChangeableLists = () => {
         let templateFragment = document.querySelector(`#${templateId}`)?.content
         let templateElement = templateFragment.firstElementChild.cloneNode(true)
         targetChangeableList.appendChild(templateElement)
+        const changeableElements = targetChangeableList.querySelectorAll('li')
         initInputs()
+        updateSerialNumbers(changeableElements)
       }
     })
 
