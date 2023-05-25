@@ -1,0 +1,17 @@
+@media (max-width: 768px) {
+  .subscribe-document-page .subscribe-doc__row {
+    flex-direction: column;
+    }
+  .subscribe-document-page .subscribe-doc__minititle {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+  .subscribe-document-page .subscribe-doc__row a {
+    max-width: max-content;
+  }
+  .subscribe-document-page .subscribe-doc__download-links {
+    padding-top: 25px;
+    padding-left: 0;
+  }
+
+}
