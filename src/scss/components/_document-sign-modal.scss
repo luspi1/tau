@@ -27,6 +27,7 @@
     color: #000000;
     margin-bottom: 30px;
     @media (max-width: 576px) {
+      line-height: 35px;
       font-size: 28px;
     }
   }
@@ -370,6 +371,10 @@
 
 
 .modal-document-turn-sign {
+
+  @media (max-width: 570px) {
+    padding-right: 40px;
+  }
 
   &__list-wrapper {
     margin-bottom: 25px;
