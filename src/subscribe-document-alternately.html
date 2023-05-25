@@ -156,18 +156,22 @@
   </header>
 
   <main class="main subscribe-document-alternately-page">
+    @include('partials/reject-signing-modal.html')
     <section class="subscribe-doc">
       <div class="container">
         <div class="subscribe-doc__inner">
           <h1>Подписать документ (по очереди)</h1>
-          <h3>Вы включены в очередь подписания документа. Пожалуйста, ознакомьтесь с этим документом, подпишите его или
+          <h3>Вы включены в очередь подписания документа. Пожалуйста,
+            ознакомьтесь с этим документом, подпишите его или
             отклоните подписание.</h3>
           <div class="subscribe-doc__row">
-            <h6 class="subscribe-doc__minititle">Название документа и его номер:</h6>
+            <h6 class="subscribe-doc__minititle">Название документа и его
+              номер:</h6>
             <a href="#">Акт выполненных работ № 222 от 23.07.2023</a>
           </div>
           <div class="subscribe-doc__row">
-            <h6 class="subscribe-doc__minititle">Документ относится к сделке:</h6>
+            <h6 class="subscribe-doc__minititle">Документ относится к
+              сделке:</h6>
             <a href="#">ДДТТ-22 «Раскопки Талдыкинской дороги на 277 км»</a>
           </div>
           <div class="subscribe-doc__row mb">
@@ -175,7 +179,8 @@
             <p>Акт</p>
           </div>
           <div class="subscribe-doc__row">
-            <h6 class="subscribe-doc__minititle">Организация (с нашей стороны):</h6>
+            <h6 class="subscribe-doc__minititle">Организация (с нашей
+              стороны):</h6>
             <a href="#">ИП Краснощеков</a>
           </div>
           <div class="subscribe-doc__row">
@@ -183,7 +188,8 @@
             <a href="#">ООО Инфографика-М</a>
           </div>
           <div class="subscribe-doc__row">
-            <h6 class="subscribe-doc__minititle">Дата направления на подписание:</h6>
+            <h6 class="subscribe-doc__minititle">Дата направления на
+              подписание:</h6>
             <p>27.02.2023</p>
           </div>
           <div class="subscribe-doc__row mb">
@@ -191,25 +197,32 @@
             <a href="#">Сиволапенко Е.А.</a>
           </div>
           <div class="subscribe-doc__row">
-            <h6 class="subscribe-doc__minititle">Перед Вами в очереди подписания:</h6>
+            <h6 class="subscribe-doc__minititle">Перед Вами в очереди
+              подписания:</h6>
             <a href="#">Петров Д.И.,</a>
             <a href="#">Симонов Р.Е.,</a>
             <a href="#">Джамсахурдия З.З.</a>
           </div>
           <div class="subscribe-doc__row mb">
-            <h6 class="subscribe-doc__minititle">После Вас в очереди подписания:</h6>
+            <h6 class="subscribe-doc__minititle">После Вас в очереди
+              подписания:</h6>
             <a href="#">Тедорадзе А.С.</a>
           </div>
           <div class="subscribe-doc__row">
             <h6 class="subscribe-doc__minititle">Описание документа:</h6>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida
-              dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque
-              penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra
-              vulputate, felis tellus mollis orci, sed rhoncus pronin sapien nunc accuan eget.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+              euismod bibendum laoreet. Proin gravida
+              dolor sit amet lacus accumsan et viverra justo commodo. Proin
+              sodales pulvinar sic tempor. Sociis natoque
+              penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+              Nam fermentum, nulla luctus pharetra
+              vulputate, felis tellus mollis orci, sed rhoncus pronin sapien
+              nunc accuan eget.</p>
           </div>
           <div class="subscribe-doc__download-links">
             <a href="#" download>
-              <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="18" height="20" viewBox="0 0 18 20" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M18 17.5V5.625L12.375 0H3C1.625 0 0.5 1.125 0.5 2.5V17.5C0.5 18.875 1.625 20 3 20H15.5C16.875 20 18 18.875 18 17.5ZM12.375 3.75C12.375 4.75 13.25 5.625 14.25 5.625H16.75V17.5C16.75 18.25 16.25 18.75 15.5 18.75H3C2.25 18.75 1.75 18.25 1.75 17.5V2.5C1.75 1.75 2.25 1.25 3 1.25H12.375V3.75Z"
                   fill="white"/>
@@ -219,7 +232,8 @@
               </svg>
               Скачать в pdf</a>
             <a href="#" download>
-              <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="18" height="20" viewBox="0 0 18 20" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M17.5 17.5V5.625L11.875 0H2.5C1.125 0 0 1.125 0 2.5V17.5C0 18.875 1.125 20 2.5 20H15C16.375 20 17.5 18.875 17.5 17.5ZM11.875 3.75C11.875 4.75 12.75 5.625 13.75 5.625H16.25V17.5C16.25 18.25 15.75 18.75 15 18.75H2.5C1.75 18.75 1.25 18.25 1.25 17.5V2.5C1.25 1.75 1.75 1.25 2.5 1.25H11.875V3.75Z"
                   fill="white"/>
@@ -229,7 +243,8 @@
               </svg>
               Скачать в doc</a>
             <button type="button">
-              <svg width="21" height="14" viewBox="0 0 21 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg width="21" height="14" viewBox="0 0 21 14" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M20.3636 7C20.3636 7 16.5455 0 10.1818 0C3.81818 0 0 7 0 7C0 7 3.81818 14 10.1818 14C16.5455 14 20.3636 7 20.3636 7ZM1.49291 7C2.10829 6.0647 2.81609 5.1936 3.60564 4.39982C5.24364 2.75927 7.48364 1.27273 10.1818 1.27273C12.88 1.27273 15.1187 2.75927 16.7593 4.39982C17.5488 5.1936 18.2566 6.0647 18.872 7C18.7982 7.11073 18.7167 7.23291 18.6238 7.36655C18.1975 7.97745 17.5675 8.792 16.7593 9.60018C15.1187 11.2407 12.8787 12.7273 10.1818 12.7273C7.48364 12.7273 5.24491 11.2407 3.60436 9.60018C2.81482 8.80639 2.1083 7.93529 1.49291 7Z"
                   fill="white"/>
@@ -241,8 +256,13 @@
             </button>
           </div>
           <div class="subscribe-doc__row-btns">
-            <button class="subscribe-doc__btn" type="button">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <button class="subscribe-doc__btn"
+                    data-modal="document-sign-turn-modal"
+                    data-type-btn="generated"
+                    data-script="./data/getSignTurnModal.txt"
+                    data-id="vt9O50x5" type="button">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M13.4835 0C13.8045 0.0802565 14.0453 0.321026 14.2861 0.561796C14.6873 0.963078 15.0084 1.2841 15.4096 1.68539C15.8912 2.16693 15.8912 2.80898 15.4096 3.29052C14.9281 3.77206 14.4466 4.25359 13.965 4.73513C14.1255 4.89565 14.2861 5.13642 14.5268 5.29693C14.7676 5.5377 14.9281 5.77847 15.0084 6.09949C15.1689 6.66129 15.0084 7.22309 14.6071 7.70462L14.5268 7.78488C13.002 9.30975 11.4771 10.7544 10.0325 12.2792C9.71144 12.52 9.47067 12.6003 9.14964 12.4398C8.74836 12.199 8.6681 11.7174 8.90887 11.3964C8.98913 11.3162 8.98913 11.3162 9.06938 11.2359C10.514 9.79129 12.0389 8.26642 13.4835 6.8218C13.7243 6.58103 13.7243 6.42052 13.4835 6.09949C13.323 5.93898 13.1625 5.77847 13.0822 5.69821C12.6809 6.09949 12.3599 6.42052 11.9586 6.8218C10.9955 5.85872 10.0325 4.89565 8.98913 3.85231C8.98913 3.85231 9.06938 3.85231 9.14964 3.77206C10.193 2.72872 11.2363 1.68539 12.3599 0.561796C12.6007 0.321026 12.8414 0.0802565 13.1625 0C13.2427 0 13.4032 0 13.4835 0Z"
                   fill="#2F65F6"/>
@@ -252,16 +272,45 @@
               </svg>
               Подписать документ
             </button>
-            <button class="subscribe-doc__btn subscribe-doc__btn-cancel" type="button">Отклонить</button>
+            <button class="subscribe-doc__btn subscribe-doc__btn-cancel"
+                    type="button" data-modal="reject-signing-modal">Отклонить
+            </button>
           </div>
         </div>
       </div>
     </section>
-
+    @include('partials/document-sign-turn-modal.html')
+    @include('partials/info-modal.html')
+    @include('partials/loader.html')
   </main>
   @include('partials/footer.html')
 </div>
-
+<template id="signatory-item">
+  <li
+    class="modal-document-turn-sign__list-item modal-document-sign__select-wrapper">
+    <button class="modal-document-turn-sign__delete-btn" type="button"
+            data-btn="delete">
+      <svg width="21" height="22" viewBox="0 0 21 22"
+           fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M10.5 21.3C4.7 21.3 0 16.6 0 10.8C0 5.00005 4.7 0.300049 10.5 0.300049C16.3 0.300049 21 5.00005 21 10.8C21 16.6 16.2 21.3 10.5 21.3ZM10.5 1.30005C5.3 1.30005 1 5.60005 1 10.8C1 16 5.3 20.3 10.5 20.3C15.7 20.3 20 16 20 10.8C20 5.60005 15.7 1.30005 10.5 1.30005Z"
+          fill="#A0A0A0"></path>
+        <path
+          d="M10.4998 11.9998C9.9998 12.4998 9.39983 13.0998 8.89983 13.5998C8.19983 14.2998 7.59983 14.8998 6.89983 15.5998C6.49983 15.9998 5.99975 15.9998 5.69975 15.5998C5.39975 15.2998 5.39975 14.6999 5.69975 14.3999C6.79975 13.2999 7.8998 12.1998 8.9998 11.0998C9.0998 10.9998 9.09975 10.9999 9.19975 10.8999C9.09975 10.7999 9.0998 10.7998 8.9998 10.6998C7.8998 9.59979 6.79975 8.49987 5.69975 7.39987C5.19975 6.89987 5.39983 6.19984 5.89983 5.99984C6.19983 5.89984 6.59983 5.89979 6.89983 6.19979C7.99983 7.29979 9.09975 8.39984 10.1998 9.49984C10.2998 9.59984 10.2998 9.59979 10.3998 9.69979C10.4998 9.59979 10.4998 9.59984 10.5998 9.49984C11.6998 8.39984 12.7998 7.29982 13.9998 6.09982C14.4998 5.69982 15.1998 5.79989 15.3998 6.29989C15.4998 6.69989 15.4998 6.99989 15.1998 7.29989C14.0998 8.39989 12.9998 9.49982 11.8998 10.5998C11.7998 10.6998 11.7998 10.6999 11.6998 10.7999C11.7998 10.8999 11.7998 10.8998 11.8998 10.9998C12.9998 12.0998 14.0998 13.1999 15.1998 14.2999C15.4998 14.5999 15.5998 14.9999 15.3998 15.2999C15.1998 15.5999 14.8998 15.7998 14.4998 15.6998C14.2998 15.5998 14.0998 15.4999 13.9998 15.3999C12.8998 14.2999 11.7998 13.1998 10.6998 12.0998C10.5998 12.1998 10.4998 12.0998 10.4998 11.9998Z"
+          fill="#A0A0A0"></path>
+      </svg>
+    </button>
+    <p class="modal-document-sign__label"><span
+      class="changeable-serial-number">1</span> подписант</p>
+    <select class="modal-document-sign__select custom-select"
+            name="id_contact[]">
+      <option value="">выбрать подписанта</option>
+      <option value="Author1">Author1</option>
+      <option value="Author2">Author2</option>
+      <option value="Author3">Author3</option>
+    </select>
+  </li>
+</template>
 </body>
 
 </html>
