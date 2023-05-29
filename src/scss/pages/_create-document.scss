@@ -119,7 +119,7 @@
 
   &__form {
     &[data-is-dogovor="true"] {
-      .choices__item--selectable[data-value="contract"] {
+      .choices__item--selectable[data-value="dogovor"] {
         display: none;
       }
     }
@@ -129,7 +129,7 @@
         display: block;
       }
 
-      .choices__item--selectable[data-value="contract"] {
+      .choices__item--selectable[data-value="dogovor"] {
         display: none;
       }
     }
