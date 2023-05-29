@@ -110,8 +110,29 @@
     .create-doc-page__inputs {
       max-width: 302px;
     }
+  }
 
 
+  &__org-wrapper {
+    display: none;
+  }
+
+  &__form {
+    &[data-is-dogovor="true"] {
+      .choices__item--selectable[data-value="contract"] {
+        display: none;
+      }
+    }
+
+    &[data-is-nondeal="true"] {
+      .create-doc-page__org-wrapper {
+        display: block;
+      }
+
+      .choices__item--selectable[data-value="contract"] {
+        display: none;
+      }
+    }
   }
 
 
@@ -277,6 +298,11 @@
     margin-top: 10px;
   }
 
+  &__type-doc-select {
+    option {
+      display: none;
+    }
+  }
 
   &__btns {
     display: flex;

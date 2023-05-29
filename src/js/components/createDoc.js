@@ -79,17 +79,23 @@ if (createDocPage) {
     plannedPaymentChoices.setValue(plannedDataArr)
   }
 
+  const typeDocForm = createDocPage.querySelector('.create-doc-page__form')
+
   // функция обновления селектов плановых платежей и расчетных счетов
   const updateDocData = async (data, submitScript) => {
     try {
       const response = await sendData(data, submitScript)
       const finishedResponse = await response.json()
 
-      const {status, errortext, invoices, planned_payments} = finishedResponse
+      const {status, errortext, invoices, planned_payments, is_dogovor} = finishedResponse
       if (status === 'ok') {
+        const idDeal = JSON.parse(data).id_deal
         invoicesChoices.clearChoices()
         invoicesChoices.setValue(invoices)
         initPlannedPaymentSelect(planned_payments)
+        typeDocForm.dataset.isDogovor = is_dogovor ? "true" : "false"
+        typeDocForm.dataset.isNondeal = idDeal === "0" ? "true" : "false"
+
         return true
       } else {
         showInfoModal(errortext)
@@ -141,13 +147,13 @@ if (createDocPage) {
 
   // обработка списка сделок в модалке
 
-  const dataDealInput = createDocPage.querySelector('.select-popup-data[name="id_parents"]')
+  const dataDealInput = createDocPage.querySelector('.select-popup-data[name="id_deal"]')
   const dealListForm = createDocPage.querySelector('.modal-deal-selection__form')
   const dealListModal = createDocPage.querySelector('.modal-deal-selection')
   const handleDealListForm = async (e) => {
     e.preventDefault()
     const dealValue = formToObj(serializeForm(e.currentTarget))
-    const dealInput = dealListForm.querySelector(`input[value=${dealValue?.dealId}]`)
+    const dealInput = dealListForm.querySelector(`input[value="${dealValue?.dealId}"]`)
     const dealText = dealInput?.closest('.radio-list__item')?.querySelector('label').textContent.trim()
 
     const invoiceData = {

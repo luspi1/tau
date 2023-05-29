@@ -20,13 +20,14 @@
 
     <div class="container">
       <h1>Создание документа</h1>
-      <form class="create-doc-page__form" action="#">
+      <form class="create-doc-page__form" action="#" data-is-dogovor="false"
+            data-is-nondeal="false">
         <section class="section">
           <div
             class="create-doc-page__input-wrapper select-input-wrapper create-doc-page__input-wrapper_lg">
             <div class="create-doc-page__deal-input-col">
               <label>Сделка</label>
-              <input name="id_parents"
+              <input name="id_deal"
                      class="create-doc-page__data-input select-popup-data"
                      type="hidden">
               <input
@@ -49,6 +50,24 @@
               из списка
             </button>
           </div>
+          <div
+            class="create-doc-page__input-wrapper select-input-wrapper create-doc-page__org-wrapper">
+            <div class="create-doc-page__deal-input-col">
+              <label>Выбор организации</label>
+              <input name="id_org"
+                     class="create-doc-page__data-input select-popup-data"
+                     type="hidden">
+              <input
+                class="create-doc-page__input select-popup-input"
+                name="organization" type="text" autocomplete="off"
+                placeholder="Начните вводить название" required>
+              @include('partials/select-popup.html', {
+              'submit-script': 'data/getCases.txt',
+              'add-data':'{"idItem":3,"paramname":"test"}'
+              })
+            </div>
+          </div>
+
 
           <div class="create-doc-page__input-wrapper">
             <label>Тип документа</label>
