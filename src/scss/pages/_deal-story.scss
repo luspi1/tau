@@ -4,10 +4,12 @@
     .deal-submenu .container .deals__btn.deals__btn-open-btn {
       display: block;
     }
+
     .deal-submenu .container .deals__btn.deals__btn-closed-btn {
       display: none;
     }
   }
+
   .minititle {
     color: #858584;
   }
@@ -93,7 +95,6 @@
       }
 
       .minititle {
-        margin-bottom: 5px;
         font-size: 16px;
         line-height: 20px;
         color: #858584;
@@ -315,6 +316,7 @@
         background-color: #ffffff;
       }
     }
+
     &__links {
       border-top: 2px dashed #C4C4C4;
       padding-top: 27px;
