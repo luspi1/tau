@@ -17,7 +17,7 @@
   <main class="main correspondence _closed">
     @include('partials/deal-submenu.html', {
     'deal-corr': 'deal-submenu_active',
-   })
+    })
     @include('partials/open-deal-modal.html')
     @include('partials/closed-deal-modal.html')
     <section class="newmails">
@@ -28,10 +28,10 @@
 
         <div class="newmails__top">
           <div class="newmails__top-wrapper">
-          <h1 class="newmails__title">Корреспонденция</h1>
-          <button class="search__btn newmail-btn"
-                  data-modal="create-letter-modal" type="button">Новое письмо
-          </button>
+            <h1 class="newmails__title">Корреспонденция</h1>
+            <button class="search__btn newmail-btn"
+                    data-modal="create-letter-modal" type="button">Новое письмо
+            </button>
           </div>
           <ul class="newmails__caption-list">
             <li>
@@ -96,7 +96,8 @@
             <p class="flex-table__col-4">
               <span>23.02.2018</span> <span>23.02.2018</span>
             </p>
-            <a href="correspondence-item.html" class="flex-table__col-5" data-shear="20">Относительно длинное455666</a>
+            <a href="correspondence-item.html" class="flex-table__col-5"
+               data-shear="20">Относительно длинное455666</a>
             <a href="#" class="flex-table__col-6">Тедорадзе А.С.</a>
             <a href="#" class="flex-table__col-7">ТВК — Почта РФ</a>
             <a href="#" class="flex-table__col-8">3 вложения</a>
@@ -108,7 +109,8 @@
             <p class="flex-table__col-4">
               <span>23.02.2018</span> <span>23.02.2018</span>
             </p>
-            <a href="correspondence-item.html" class="flex-table__col-5" data-shear="20">Относительно длинное455666</a>
+            <a href="correspondence-item.html" class="flex-table__col-5"
+               data-shear="20">Относительно длинное455666</a>
             <a href="#" class="flex-table__col-6">Файзуллин А.Р.</a>
             <a href="#" class="flex-table__col-7">ТВК — СДЭК</a>
             <a href="#" class="flex-table__col-8 _empty">Нет вложений</a>
@@ -120,7 +122,8 @@
             <p class="flex-table__col-4">
               <span>23.02.2018</span> <span>23.02.2018</span>
             </p>
-            <a href="correspondence-item.html" class="flex-table__col-5" data-shear="20">Относительно длинное455666</a>
+            <a href="correspondence-item.html" class="flex-table__col-5"
+               data-shear="20">Относительно длинное455666</a>
             <a href="#" class="flex-table__col-6">Джанибеков И.Р.</a>
             <a href="#" class="flex-table__col-7">Email</a>
             <a href="#" class="flex-table__col-8">1 вложение</a>
@@ -131,6 +134,8 @@
     </section>
 
 
+    @include('partials/info-modal.html')
+    @include('partials/loader.html')
   </main>
 
   @include('partials/footer.html')

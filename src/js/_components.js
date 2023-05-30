@@ -41,4 +41,5 @@ import './components/documentSendModal'
 import './components/income-traffic'
 import './components/correspondenceItem'
 import './components/docTemplateModal'
+import './components/fileUpload'
 

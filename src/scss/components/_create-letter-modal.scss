@@ -139,23 +139,23 @@
     li {
       margin-bottom: 15px;
 
-      p {
-        cursor: pointer;
-        display: flex;
-        align-items: center;
+
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      color: #222220;
+
+      a {
         color: #222220;
-
-        a {
-          color: #222220;
-          margin-right: 5px;
-        }
-
-        span {
-          color: #858584;
-          margin-left: 5px;
-          margin-right: 5px;
-        }
+        margin-right: 5px;
       }
+
+      span {
+        color: #858584;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+
 
       .modal-create-letter__attached-icon {
         margin-right: 11px;
