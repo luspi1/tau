@@ -111,10 +111,14 @@
                   class="edit-contact__item-wrapper edit-contact__item-director">
                   <div
                     class="edit-contact__input-wrapper edit-contact__director-wrapper">
-                    <select class="edit-contact__input"
-                            name="editContactDirector">
+                    <select
+                      class="edit-contact__input edit-contact__dir-position-select"
+                      name="editContactDirector">
                       <option value="director">Руководитель</option>
-                      <option value="non-director">Не руководитель</option>
+                      <option value="tech-director">Технический директор
+                      </option>
+                      <option value="executive-director">Исполнительный директор
+                      </option>
                     </select>
                   </div>
                   <div
@@ -135,11 +139,13 @@
                   <p class="edit-contact__input-title">
                     Действующий на основании (устава, доверенности...)
                   </p>
-                  <input class="edit-contact__input" type="text"
-                         name="editContactСharter"
-                         data-required="entity"
-                         placeholder="Введите наименование основания деятельности"
-                         required>
+                  <input
+                    class="edit-contact__input edit-contact__dir-base-input"
+                    type="text"
+                    name="editContactСharter"
+                    data-required="entity"
+                    placeholder="Введите наименование основания деятельности"
+                    required>
                 </div>
               </div>
             </div>
@@ -263,8 +269,10 @@
                       <span class="leader_firstname">Константин</span>
                       <span class="leader_fathname">Константинович</span>
                     </a>
-                    <p>исполнительный директор, действует на основании
-                      Доверенности № 222-333 от 24.03.2023</p>
+                    <p class="edit-contact__dir-destination"><span
+                      class="edit-contact__dir-position">Руководитель</span>,
+                      действует на основании <span
+                        class="edit-contact__dir-base">...</span></p>
                     <button class="edit-contact__btn-director-delete"
                             type="button" data-delete="btn">
                       <svg width="19" height="19" viewBox="0 0 19 19"

@@ -3,7 +3,6 @@ import { sendData, showInfoModal, toggleLoader } from "../_functions"
 
 
 const editContactForm = document.querySelector('.edit-contact .edit-contact__form')
-const editContactSelect = document.querySelector('.edit-contact .edit-contact__contact-type-btn')
 const entityRequiredFields = document.querySelectorAll('.edit-contact input[data-required="entity"]')
 const entityIndividualFields = document.querySelectorAll('.edit-contact input[data-required="individual"]')
 
@@ -146,6 +145,23 @@ if (editContactForm) {
       }
 
     })
+  })
+
+  // заполнение "Указан руководитель" из селекта и инпута
+
+  const dirBase = editContactForm.querySelector('.edit-contact__dir-base')
+  const dirPosition = editContactForm.querySelector('.edit-contact__dir-position')
+
+  const dirBaseInput = editContactForm.querySelector('.edit-contact__dir-base-input')
+  const dirPositionSelect = editContactForm.querySelector('.edit-contact__dir-position-select')
+
+  dirBaseInput.addEventListener('input', (e) => {
+    dirBase.textContent = e.target.value
+  })
+
+  dirPositionSelect.addEventListener('change', (e) => {
+    const choicesSelectable = e.target.closest('.choices').querySelector('.choices__item--selectable')
+    dirPosition.textContent = choicesSelectable.textContent
   })
 
 }

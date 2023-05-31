@@ -167,6 +167,13 @@
 
   }
 
+  &__dir-destination {
+    span {
+      margin-bottom: 0;
+      display: inline;
+    }
+  }
+
   &__btn-director-delete {
     position: absolute;
     right: 10px;
