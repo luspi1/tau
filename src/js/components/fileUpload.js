@@ -35,6 +35,7 @@ if (fileUploads) {
 
     const uploadScript = fileUploadEl.dataset.script
     const deleteScript = fileUploadEl.dataset.deleteScript
+    const addData = fileUploadEl.dataset.add
 
     uploadInput.addEventListener('input', (e) => {
       let fileItem = e.currentTarget.files[0]
@@ -44,6 +45,7 @@ if (fileUploads) {
       reader.addEventListener('load', async (e) => {
 
         const data = {
+          add_data: addData,
           file: e.target.result,
           file_info: {
             name: fileItem.name,
