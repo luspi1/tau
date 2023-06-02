@@ -37,8 +37,9 @@ if (fileUploads) {
     const deleteScript = fileUploadEl.dataset.deleteScript
     const addData = fileUploadEl.dataset.add
 
-    uploadInput.addEventListener('input', (e) => {
-      let fileItem = e.currentTarget.files[0]
+    uploadInput.addEventListener('input', (evt) => {
+      let targetInput = evt.currentTarget
+      let fileItem = targetInput.files[0]
       let reader = new FileReader()
       reader.readAsDataURL(fileItem)
 
@@ -64,6 +65,7 @@ if (fileUploads) {
 
           if (status === 'ok') {
             uploadWrapper.insertAdjacentHTML('beforeend', html)
+            targetInput.value = ''
           } else {
             showInfoModal(errortext)
           }
