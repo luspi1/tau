@@ -363,8 +363,7 @@
   }
 
   .create-deal-payments {
-    padding: 50px 0 60px;
-    border-bottom: 1px dotted #C4C4C4;
+    padding: 50px 0 20px;
 
     .create-deal-page__prompt-wrapper {
       align-items: flex-start;
@@ -439,6 +438,83 @@
 
   }
 
+  .create-deal-notcases-payments {
+    padding-bottom: 60px;
+
+    .deal-subtitle {
+      display: none;
+    }
+
+    .create-deal-payments__list {
+      display: none;
+    }
+
+    &._active {
+      border-top: 1px dotted #C4C4C4;
+      padding-top: 50px;
+
+      .deal-subtitle {
+        display: block;
+      }
+
+      .create-deal-payments__list {
+        display: block;
+      }
+    }
+
+
+    .create-deal-page__date-wrapper {
+      margin-left: 10px;
+      max-width: 262px;
+    }
+
+    .create-deal-payments__list-wrapper {
+      max-width: 770px;
+
+    }
+
+    .create-deal-page__days-inputs {
+      align-items: center;
+      justify-content: space-between;
+
+      @media (max-width: 1200px) {
+        align-items: flex-start;
+      }
+
+      p {
+        min-width: 90px;
+
+        span {
+          font-weight: 600;
+        }
+      }
+    }
+
+    .create-deal-page__input[name="deal_day_limit"] {
+      max-width: 82px;
+      margin-right: 10px;
+      @media (max-width: 1200px) {
+        margin: 5px 0 10px 0;
+      }
+    }
+
+    .create-deal-page__input[name="deal_day_reason"] {
+      max-width: 400px;
+      margin-left: 10px;
+      @media (max-width: 1200px) {
+        margin: 5px 0 0 0;
+      }
+    }
+
+    @media (max-width: 1200px) {
+      .create-deal-page__date-wrapper {
+        margin-left: 0;
+        max-width: 100%;
+      }
+    }
+
+  }
+
   .create-deal-data {
     .create-deal-page__prompt-wrapper {
       align-items: flex-start;
@@ -462,7 +538,11 @@
 
     &__item {
       padding: 50px 0 35px;
-      border-bottom: 1px dotted #C4C4C4;
+      border-top: 1px dotted #C4C4C4;
+
+      &:last-child {
+        border-bottom: 1px dotted #C4C4C4;
+      }
     }
   }
 

@@ -237,5 +237,24 @@ if (createDealPage) {
       e.currentTarget.value = e.currentTarget.value.trim()
     }
   })
+
+  // отслеживание необходимости появления разделителя "Платежи, которых нет в кейсе" при добавлении платежа
+
+  const notCasesPaymentsSection = createDealPage.querySelector('.create-deal-notcases-payments')
+  const notCasespaymentsList = createDealPage.querySelector('.create-deal-notcases-payments .create-deal-payments__list')
+
+  if (notCasespaymentsList) {
+    const callback = (mutations) => {
+      if (mutations[0].target.childElementCount > 0) {
+        notCasesPaymentsSection.classList.add('_active')
+      } else {
+        notCasesPaymentsSection.classList.remove('_active')
+      }
+    }
+    const observer = new MutationObserver(callback)
+    observer.observe(notCasespaymentsList, {
+      childList: true,
+    })
+  }
 }
 
