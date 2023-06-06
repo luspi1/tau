@@ -155,19 +155,21 @@
 
           </div>
           <div class="deals-documents__wrapper-border">
-            <div class="deals-documents__filter-inputs">
-              <input class="deals-documents__search-input" type="text"
-                     name="dealsDoc_search" placeholder="Поиск">
-              <select class="deals-documents__select-input"
-                      name="dealsDoc_select">
-                <option value="">...</option>
-                <option value="1">Value1</option>
-                <option value="2">Value2</option>
-                <option value="3">Value3</option>
-              </select>
-              <button class="deals-documents__search-btn" type="button">Искать
-              </button>
-            </div>
+            <form action="/deals/{deal.id_deal}/" method="GET">
+              <div class="deals-documents__filter-inputs">
+                <input class="deals-documents__search-input" type="text"
+                       name="search_text" placeholder="Поиск">
+                <select class="deals-documents__select-input"
+                        name="search_id_doc_type">
+                  <option value="">...</option>
+                  <option value="1">Value1</option>
+                  <option value="2">Value2</option>
+                  <option value="3">Value3</option>
+                </select>
+                <button class="deals-documents__search-btn" type="submit">Искать
+                </button>
+              </div>
+            </form>
             <ul class="deals-documents__table deals-documents-table">
               <li class="deals-documents-table__row">
                 <p
