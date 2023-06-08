@@ -373,11 +373,10 @@
           color: #000000;
           white-space: nowrap;
 
-          .currency-mask {
-            @include montserrat-medium;
-            font-size: 22px;
-            line-height: 27px;
-            color: #000000;
+          .currency-mask-text {
+            &::after {
+              right: -20px;
+            }
           }
         }
       }
