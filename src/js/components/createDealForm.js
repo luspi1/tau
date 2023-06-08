@@ -36,6 +36,30 @@ if (createDealPage) {
   const caseInvoicesUrl = dealCaseInput.dataset.invoicesUrl
 
 
+  // отслеживание необходимости появления разделителя "Платежи, которых нет в кейсе" при добавлении платежа
+
+
+  const initObservePaymentsList = () => {
+    const notCasesPaymentsSection = createDealPage.querySelector('.create-deal-notcases-payments')
+    const notCasespaymentsList = createDealPage.querySelector('.create-deal-notcases-payments .create-deal-payments__list')
+
+    if (notCasespaymentsList) {
+      const callback = (mutations) => {
+        if (mutations[0].target.childElementCount > 0) {
+          notCasesPaymentsSection.classList.add('_active')
+        } else {
+          notCasesPaymentsSection.classList.remove('_active')
+        }
+      }
+      const observer = new MutationObserver(callback)
+      observer.observe(notCasespaymentsList, {
+        childList: true,
+      })
+    }
+  }
+
+  initObservePaymentsList()
+
   //Селект расчетных счетов
 
   const invoicesSelect = createDealPage.querySelector('.create-deal-page__invoices-select')
@@ -84,6 +108,7 @@ if (createDealPage) {
         initAllDates()
         initSelects()
         initAllMasks()
+        initObservePaymentsList()
       } else {
         showInfoModal(errortext)
       }
@@ -238,23 +263,6 @@ if (createDealPage) {
     }
   })
 
-  // отслеживание необходимости появления разделителя "Платежи, которых нет в кейсе" при добавлении платежа
 
-  const notCasesPaymentsSection = createDealPage.querySelector('.create-deal-notcases-payments')
-  const notCasespaymentsList = createDealPage.querySelector('.create-deal-notcases-payments .create-deal-payments__list')
-
-  if (notCasespaymentsList) {
-    const callback = (mutations) => {
-      if (mutations[0].target.childElementCount > 0) {
-        notCasesPaymentsSection.classList.add('_active')
-      } else {
-        notCasesPaymentsSection.classList.remove('_active')
-      }
-    }
-    const observer = new MutationObserver(callback)
-    observer.observe(notCasespaymentsList, {
-      childList: true,
-    })
-  }
 }
 
