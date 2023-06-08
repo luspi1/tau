@@ -8,7 +8,6 @@ const handleCloseModalKeyboard = (e) => {
     document.querySelectorAll('.modal').forEach(modal => {
       if (modal.classList.contains('_active')) {
         modal.classList.remove('_active')
-        modal.closest('main').style.minHeight = "calc(100vh - 60px)"
       }
     })
     if (modalOverlay) {
@@ -43,7 +42,6 @@ if (openModalBtns) {
         }
       }
 
-      currentPageMain.style.minHeight = `${currentModal.clientHeight}px`
       currentModal.classList.add('_active')
       modalOverlay.classList.add('modal-overlay_active')
     })
@@ -64,7 +62,6 @@ const initCloseModals = () => {
         document.querySelectorAll('.modal').forEach(modal => {
           if (modal.classList.contains('_active')) {
             modal.classList.remove('_active')
-            modal.closest('main').style.minHeight = "calc(100vh - 60px)"
           }
         })
         if (modalOverlay) {
@@ -86,7 +83,6 @@ if (modalOverlay) {
     const activeModal = document.querySelector('.modal._active')
     if (activeModal) {
       activeModal.classList.remove('_active')
-      activeModal.closest('main').style.minHeight = "calc(100vh - 60px)"
     }
   })
 }

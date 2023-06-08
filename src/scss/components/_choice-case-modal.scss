@@ -1,6 +1,5 @@
 .modal-choice-case {
   position: fixed;
-  overflow: auto;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -68,6 +67,13 @@
       color: $link;
     }
 
+  }
+}
+
+
+@media (max-width: 900px) {
+  .modal-choice-case {
+    overflow: auto;
   }
 }
 
