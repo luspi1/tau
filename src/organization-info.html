@@ -118,6 +118,8 @@
             </li>
           </ul>
           <div class="header__nav-personal">
+            <a class="header__nav-corr"
+               href="correspondence.html">Корреспонденция</a>
             <a class="header__nav-doc" href="all-documents.html">Документы и
               шаблоны</a>
             <span class="account__group">
@@ -167,212 +169,220 @@
   </header>
   <main class="main organization-info">
     @include('partials/organization-item-submenu.html', {
-      'organization-item-info': 'organization-item-submenu_active',
-      })
-<section class="information">
-  <div class="container">
-    <div class="information__title-wrap">
-    <h1 class="information__title">ООО НПО ТАУ</h1>
-    <a href="#" class="information__edit-btn">Редактировать</a>
-  </div>
-    <div class="information__row">
-      <p class="minititle">Краткое название:</p>
-      <p class="text">ООО НПО ТАУ</p>
-    </div>
-    <div class="information__row">
-      <p class="minititle">Полное название:</p>
-      <p class="text">Общество с ограниченной ответственностью «Научно-производственное объединение Технологии
-        Автоматизированного управления»</p>
-    </div>
-    <div class="information__row">
-      <p class="minititle">Руководитель:</p>
-      <p class="text">Тедорадзе Анатолий Северьянович (ВЫ), генеральный директор, номер телефона не указан</p>
-    </div>
-    <div class="information__row">
-      <p class="minititle">Основная отрасль:</p>
-      <p class="text">разработка программного обеспечения</p>
-    </div>
-  </div>
-</section>
-<section class="contacts">
-  <div class="container">
-    <h3 class="contacts__title">Контактная информация</h3>
-    <div class="contacts__row">
-       <p class="minititle">Номер телефона:</p>
-      <p class="text">+7 (999) 999-99-00</p>
-    </div>
-    <div class="contacts__row">
-       <p class="minititle">Номер телефона 2:</p>
-      <p class="text">+7 (999) 999-99-00</p>
-    </div>
-    <div class="contacts__row">
-       <p class="minititle">Номер телефона 3:</p>
-      <p class="text">+7 (999) 999-99-00</p>
-    </div>
-    <div class="contacts__row">
-       <p class="minititle">Электронная почта:</p>
-      <a href="mailto:">info@site.com</a>
-    </div>
-    <div class="contacts__row">
-       <p class="minititle">Адрес сайта:</p>
-      <a href="#" target="_blank">www.site.com</a>
-    </div>
-    <div class="contacts__row">
-       <p class="minititle">Физический адрес:</p>
-       <a href="#" target="_blank">www.site.com</a>
-    </div>
-  </div>
-</section>
-<section class="slider">
-  <div class="container">
-    <h3 class="slider__title">Банковские реквизиты (счета)</h3>
-    <div class="swiper mySwiper slider-org">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <h4 class="swiper-title active">Основной Сбер</h4>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">Р/С:</p>
-            <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">Банк:</p>
-            <p class="text swiper-no-swiping">Северо-западный Сбербанк России по городу Бостону</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">БИК:</p>
-            <p class="text swiper-no-swiping">402 087 888</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">К/С:</p>
-            <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">Л/с:</p>
-            <p class="text swiper-no-swiping">288 922 ДИС</p>
-          </div>
+    'organization-item-info': 'organization-item-submenu_active',
+    })
+    <section class="information">
+      <div class="container">
+        <div class="information__title-wrap">
+          <h1 class="information__title">ООО НПО ТАУ</h1>
+          <a href="#" class="information__edit-btn">Редактировать</a>
         </div>
-        <div class="swiper-slide">
-          <h4 class="swiper-title">Зарплатный ВТБ</h4>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">Р/С:</p>
-            <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">Банк:</p>
-            <p class="text swiper-no-swiping">Северо-западный Сбербанк России по городу Бостону</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">БИК:</p>
-            <p class="text swiper-no-swiping">402 087 888</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">К/С:</p>
-            <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">Л/с:</p>
-            <p class="text swiper-no-swiping">288 922 ДИС</p>
-          </div>
+        <div class="information__row">
+          <p class="minititle">Краткое название:</p>
+          <p class="text">ООО НПО ТАУ</p>
         </div>
-        <div class="swiper-slide">
-          <h4 class="swiper-title">Резервный Тинькофф</h4>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">Р/С:</p>
-            <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">Банк:</p>
-            <p class="text swiper-no-swiping">Северо-западный Сбербанк России по городу Бостону</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">БИК:</p>
-            <p class="text swiper-no-swiping">402 087 888</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">К/С:</p>
-            <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">Л/с:</p>
-            <p class="text swiper-no-swiping">288 922 ДИС</p>
-          </div>
+        <div class="information__row">
+          <p class="minititle">Полное название:</p>
+          <p class="text">Общество с ограниченной ответственностью
+            «Научно-производственное объединение Технологии
+            Автоматизированного управления»</p>
         </div>
-         <div class="swiper-slide">
-          <h4 class="swiper-title">Резервный Тинькофф</h4>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">Р/С:</p>
-            <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">Банк:</p>
-            <p class="text swiper-no-swiping">Северо-западный Сбербанк России по городу Бостону</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">БИК:</p>
-            <p class="text swiper-no-swiping">402 087 888</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">К/С:</p>
-            <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">Л/с:</p>
-            <p class="text swiper-no-swiping">288 922 ДИС</p>
-          </div>
+        <div class="information__row">
+          <p class="minititle">Руководитель:</p>
+          <p class="text">Тедорадзе Анатолий Северьянович (ВЫ), генеральный
+            директор, номер телефона не указан</p>
         </div>
-        <div class="swiper-slide">
-          <h4 class="swiper-title">Резервный Тинькофф</h4>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">Р/С:</p>
-            <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">Банк:</p>
-            <p class="text swiper-no-swiping">Северо-западный Сбербанк России по городу Бостону</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">БИК:</p>
-            <p class="text swiper-no-swiping">402 087 888</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">К/С:</p>
-            <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">Л/с:</p>
-            <p class="text swiper-no-swiping">288 922 ДИС</p>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <h4 class="swiper-title">Резервный Тинькофф</h4>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">Р/С:</p>
-            <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">Банк:</p>
-            <p class="text swiper-no-swiping">Северо-западный Сбербанк России по городу Бостону</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">БИК:</p>
-            <p class="text swiper-no-swiping">402 087 888</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">К/С:</p>
-            <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
-          </div>
-          <div class="swiper-row">
-            <p class="minititle swiper-no-swiping">Л/с:</p>
-            <p class="text swiper-no-swiping">288 922 ДИС</p>
-          </div>
+        <div class="information__row">
+          <p class="minititle">Основная отрасль:</p>
+          <p class="text">разработка программного обеспечения</p>
         </div>
       </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </div>
-</section>
+    </section>
+    <section class="contacts">
+      <div class="container">
+        <h3 class="contacts__title">Контактная информация</h3>
+        <div class="contacts__row">
+          <p class="minititle">Номер телефона:</p>
+          <p class="text">+7 (999) 999-99-00</p>
+        </div>
+        <div class="contacts__row">
+          <p class="minititle">Номер телефона 2:</p>
+          <p class="text">+7 (999) 999-99-00</p>
+        </div>
+        <div class="contacts__row">
+          <p class="minititle">Номер телефона 3:</p>
+          <p class="text">+7 (999) 999-99-00</p>
+        </div>
+        <div class="contacts__row">
+          <p class="minititle">Электронная почта:</p>
+          <a href="mailto:">info@site.com</a>
+        </div>
+        <div class="contacts__row">
+          <p class="minititle">Адрес сайта:</p>
+          <a href="#" target="_blank">www.site.com</a>
+        </div>
+        <div class="contacts__row">
+          <p class="minititle">Физический адрес:</p>
+          <a href="#" target="_blank">www.site.com</a>
+        </div>
+      </div>
+    </section>
+    <section class="slider">
+      <div class="container">
+        <h3 class="slider__title">Банковские реквизиты (счета)</h3>
+        <div class="swiper mySwiper slider-org">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <h4 class="swiper-title active">Основной Сбер</h4>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">Р/С:</p>
+                <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">Банк:</p>
+                <p class="text swiper-no-swiping">Северо-западный Сбербанк
+                  России по городу Бостону</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">БИК:</p>
+                <p class="text swiper-no-swiping">402 087 888</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">К/С:</p>
+                <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">Л/с:</p>
+                <p class="text swiper-no-swiping">288 922 ДИС</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <h4 class="swiper-title">Зарплатный ВТБ</h4>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">Р/С:</p>
+                <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">Банк:</p>
+                <p class="text swiper-no-swiping">Северо-западный Сбербанк
+                  России по городу Бостону</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">БИК:</p>
+                <p class="text swiper-no-swiping">402 087 888</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">К/С:</p>
+                <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">Л/с:</p>
+                <p class="text swiper-no-swiping">288 922 ДИС</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <h4 class="swiper-title">Резервный Тинькофф</h4>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">Р/С:</p>
+                <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">Банк:</p>
+                <p class="text swiper-no-swiping">Северо-западный Сбербанк
+                  России по городу Бостону</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">БИК:</p>
+                <p class="text swiper-no-swiping">402 087 888</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">К/С:</p>
+                <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">Л/с:</p>
+                <p class="text swiper-no-swiping">288 922 ДИС</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <h4 class="swiper-title">Резервный Тинькофф</h4>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">Р/С:</p>
+                <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">Банк:</p>
+                <p class="text swiper-no-swiping">Северо-западный Сбербанк
+                  России по городу Бостону</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">БИК:</p>
+                <p class="text swiper-no-swiping">402 087 888</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">К/С:</p>
+                <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">Л/с:</p>
+                <p class="text swiper-no-swiping">288 922 ДИС</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <h4 class="swiper-title">Резервный Тинькофф</h4>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">Р/С:</p>
+                <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">Банк:</p>
+                <p class="text swiper-no-swiping">Северо-западный Сбербанк
+                  России по городу Бостону</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">БИК:</p>
+                <p class="text swiper-no-swiping">402 087 888</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">К/С:</p>
+                <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">Л/с:</p>
+                <p class="text swiper-no-swiping">288 922 ДИС</p>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <h4 class="swiper-title">Резервный Тинькофф</h4>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">Р/С:</p>
+                <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">Банк:</p>
+                <p class="text swiper-no-swiping">Северо-западный Сбербанк
+                  России по городу Бостону</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">БИК:</p>
+                <p class="text swiper-no-swiping">402 087 888</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">К/С:</p>
+                <p class="text swiper-no-swiping">402 087 888 000 992 043</p>
+              </div>
+              <div class="swiper-row">
+                <p class="minititle swiper-no-swiping">Л/с:</p>
+                <p class="text swiper-no-swiping">288 922 ДИС</p>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
   </main>
 
   @include('partials/footer.html')
