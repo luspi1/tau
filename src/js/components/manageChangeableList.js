@@ -51,7 +51,7 @@ export const initChangeableLists = () => {
 
       if (e.target.dataset.btn === "add") {
         const targetChangeableList = e.target.parentElement.querySelector('ul[data-list="changeable"]')
-        let changeableInputs = targetChangeableList.querySelectorAll('input')
+        let changeableInputs = targetChangeableList.querySelectorAll('input:not([type="hidden"])')
 
         //проверка наличия значений в инпутах, для запрета создания новых элементов без значения
         if (!checkValue(changeableInputs)) {

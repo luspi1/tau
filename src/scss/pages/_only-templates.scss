@@ -37,13 +37,29 @@
   &__select-flex {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+  }
+
+  &__filter-sort {
+    margin-right: 60px;
+  }
+
+  &__filter-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 55%;
+  }
+
+  &__filter-right {
+    display: flex;
+    align-items: center;
   }
 
   &__link-add {
     min-width: 190px;
     max-width: 200px;
     height: 40px;
-    margin: 13px 0 0 auto;
     color: #ffffff;
     background-color: #2F65F6;
     border-radius: 5px;
@@ -64,8 +80,11 @@
   }
 
   &__select-wrap {
-    width: 400px;
-    margin: 13px 18px 0 0;
+    width: 49%;
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
 
     .choices__placeholder {
       font-size: 16px;

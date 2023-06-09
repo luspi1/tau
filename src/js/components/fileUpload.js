@@ -89,3 +89,43 @@ if (fileUploads) {
   })
 }
 
+
+// доп логика загрузки сканов на странице one-document
+
+const oneDocPage = document.querySelector('.one-document-page')
+
+if (oneDocPage) {
+
+
+  const paperSection = oneDocPage.querySelector('.contract__paper')
+  const filesList = oneDocPage.querySelector('.contract__paper-list')
+  const callback = (mutations) => {
+    if (mutations[0].target.childElementCount > 0) {
+      paperSection.classList.add('_active')
+    } else {
+      paperSection.classList.remove('_active')
+    }
+  }
+
+
+  const observer = new MutationObserver(callback)
+  observer.observe(filesList, {
+    childList: true,
+  })
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

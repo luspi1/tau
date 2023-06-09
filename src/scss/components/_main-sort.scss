@@ -1,0 +1,37 @@
+.main-sort {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 220px;
+  height: 22px;
+
+  button {
+    border: none;
+    cursor: pointer;
+    background: none;
+
+    display: flex;
+    align-items: center;
+
+    &._active {
+      svg path {
+        fill: #2F65F6;
+      }
+    }
+
+
+    svg path {
+      transition: all .3s;
+    }
+
+    &:hover {
+      svg path {
+        fill: #2F65F6;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 18px;
+    }
+  }
+}

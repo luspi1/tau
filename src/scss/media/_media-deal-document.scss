@@ -21,6 +21,16 @@
   .deals-documents__info {
     flex-wrap: wrap;
   }
+
+  .deals-documents__filter-form {
+    flex-direction: column;
+  }
+  .deals-documents__filter-inputs {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+
   .deals-documents__info-treaty {
     margin-right: 0;
     width: 100%;

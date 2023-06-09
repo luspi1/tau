@@ -1,8 +1,22 @@
+@media (max-width: 1710px) {
+  .only-documents .list-doc__row-title-right {
+    width: 36.5%;
+  }
+}
+
+
 @media (max-width: 1400px) {
   .only-documents .list-doc__row-content {
     justify-content: flex-start;
   }
 }
+
+@media (max-width: 1280px) {
+  .only-documents .list-doc__column {
+    margin-bottom: 10px;
+  }
+}
+
 
 @media (max-width: 1200px) {
   .only-documents .list-doc__column:nth-child(n) {
@@ -16,6 +30,18 @@
 }
 
 @media (max-width: 1024px) {
+  .only-documents .list-doc__row-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .only-documents .list-doc__row-title-left {
+    margin-bottom: 20px;
+  }
+  .only-documents .list-doc__row-title-right {
+    width: 100%;
+  }
+
   .only-documents .list-doc__column:nth-child(n) {
     min-width: 45%;
     width: 45%;
@@ -23,6 +49,23 @@
 
   .only-documents .only-documents__title {
     font-size: 32px;
+  }
+
+}
+
+@media (max-width: 900px) {
+  .only-documents__select-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .only-documents__filter-right {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .only-documents__select-wrap {
+    margin-right: 0;
+    margin-bottom: 15px;
   }
 
 }
@@ -52,9 +95,7 @@
     flex-direction: column;
     align-items: flex-start;
   }
-  .only-documents .list-doc__row-title a {
-    margin-top: 10px;
-  }
+
   .only-documents .list-doc__status.active {
     margin-top: 10px;
   }
@@ -72,9 +113,26 @@
   .only-documents__select-wrap:last-of-type {
     margin-top: 20px;
   }
-  .only-documents__link-add {
-    margin-top: 25px;
+
+  .only-documents__filter-right {
+    flex-direction: column;
+    align-items: flex-start;
   }
+
+  .only-documents__filter-sort {
+    margin-bottom: 15px;
+  }
+
+
+  .only-documents .list-doc__row-title-right {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .only-documents .list-doc__row-title-right p {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
   .only-documents .only-documents__link {
     width: max-content;
   }

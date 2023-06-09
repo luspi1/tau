@@ -48,6 +48,15 @@
     margin-bottom: 25px;
   }
 
+  &__filter-form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+
   &__caption-list {
     max-width: 900px;
     display: flex;
@@ -311,13 +320,14 @@
   }
 
   &__filter-inputs {
+    flex-grow: 1;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-right: 35px;
   }
 
   &__search-input {
-    height: 40px;
+    height: 42px;
     flex-grow: 1;
     @include montserrat-regular;
     font-size: 16px;
@@ -339,6 +349,12 @@
     border: 1px solid #9A9A9A;
     border-radius: 5px;
     cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+      border: 1px solid #2F65F6;
+      color: #2F65F6;
+    }
   }
 
   .choices {

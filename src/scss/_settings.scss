@@ -79,7 +79,7 @@ textarea {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .hidden-text {
@@ -485,11 +485,12 @@ input[type="number"] {
 
 .currency-mask-text {
   position: relative;
+  padding-right: 15px;
 
   &::after {
     content: '₽';
     position: absolute;
-    right: -15px;
+    right: 0;
     top: 0;
   }
 }
