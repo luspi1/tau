@@ -4,18 +4,23 @@
   }
 }
 
+@media (max-width: 1400px) {
+  .all-documents .all-documents__wrapper {
+    flex-direction: column;
+  }
+  .all-documents .all-documents__wrapper-block {
+    width: 80%;
+  }
+}
+
 @media (max-width: 1024px) {
   .all-documents .all-documents__title {
     font-size: 32px;
   }
-
-  .all-documents .all-documents__wrapper {
-    flex-direction: column;
-  }
-
   .all-documents .all-documents__wrapper-block {
     width: 100%;
   }
+
 }
 
 @media (max-width: 768px) {
@@ -33,7 +38,7 @@
 
   .all-documents .all-documents__list,
   .all-documents .list {
-    min-width: 500px;
+    min-width: 750px;
   }
 }
 
