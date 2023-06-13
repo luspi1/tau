@@ -43,4 +43,5 @@ import './components/correspondenceItem'
 import './components/docTemplateModal'
 import './components/fileUpload'
 import './components/sortingElements'
+import './components/dealDoc'
 

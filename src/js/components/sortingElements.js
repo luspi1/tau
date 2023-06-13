@@ -1,30 +1,19 @@
+import { sortArr } from '../_functions'
+
 const sortWrappers = document.querySelectorAll('.sort-wrapper')
 
-
 if (sortWrappers) {
-
-
   sortWrappers.forEach(sortWrapper => {
-
     const sortSelect = sortWrapper.querySelector('.sort-select')
-    const sortElementsArr = Array.from(sortWrapper.querySelector('.sort-list').children)
+    const sortList = sortWrapper.querySelector('.sort-list')
+    const sortElementsArr = Array.from(sortList.children)
 
     if (sortSelect) {
+      sortArr('dateNew', sortElementsArr, sortList)
       sortSelect.addEventListener('change', (e) => {
         let selectValue = e.detail.value
-
-        switch (selectValue) {
-          case 'dateNew' :
-            sortElementsArr.sort()
-        }
-
-
+        sortArr(selectValue, sortElementsArr, sortList)
       })
-
     }
-
-
   })
-
-
 }

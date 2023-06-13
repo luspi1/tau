@@ -324,10 +324,44 @@ if (inputTypeNumbers) {
   })
 }
 
-// фукция обновления полей по вводу значений в инпут
+// функция обновления полей по вводу значений в инпут
 
 export const updateFieldOnInput = (input, field) => {
   input.addEventListener('input', (e) => {
     field.textContent = e.target.value
   })
+}
+
+
+// функция сортировки по дате и по алфавиту
+export const sortArr = (sortValue, sortArr, sortList) => {
+
+  let sortedArr = []
+
+  switch (sortValue) {
+    case 'dateNew' :
+      sortedArr = sortArr.sort((a, b) => {
+        const dateA = a.dataset.sortDate.split('.').reverse().join('')
+        const dateB = b.dataset.sortDate.split('.').reverse().join('')
+        return dateB - dateA
+      })
+      sortList.append(...sortedArr)
+      break
+    case 'dateOld' :
+      sortedArr = sortArr.sort((a, b) => {
+        const dateA = a.dataset.sortDate.split('.').reverse().join('')
+        const dateB = b.dataset.sortDate.split('.').reverse().join('')
+        return dateA - dateB
+      })
+      sortList.append(...sortedArr)
+      break
+    case 'abcDecr' :
+      sortedArr = sortArr.sort((a, b) => a.dataset.sortName.localeCompare(b.dataset.sortName))
+      sortList.append(...sortedArr)
+      break
+    case 'abcIncr' :
+      sortedArr = sortArr.sort((a, b) => b.dataset.sortName.localeCompare(a.dataset.sortName))
+      sortList.append(...sortedArr)
+      break
+  }
 }

@@ -57,6 +57,10 @@
   }
 
 
+  &__filter-title {
+    display: flex;
+  }
+
   &__caption-list {
     max-width: 900px;
     display: flex;
@@ -334,6 +338,7 @@
     justify-content: space-between;
     margin-right: 35px;
   }
+
 
   &__search-input {
     height: 42px;
