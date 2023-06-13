@@ -363,5 +363,9 @@ export const sortArr = (sortValue, sortArr, sortList) => {
       sortedArr = sortArr.sort((a, b) => b.dataset.sortName.localeCompare(a.dataset.sortName))
       sortList.append(...sortedArr)
       break
+    default :
+      sortedArr = sortArr.sort((a, b) => a.dataset.sortName.localeCompare(b.dataset.sortName))
+      sortList.append(...sortedArr)
+      break
   }
 }

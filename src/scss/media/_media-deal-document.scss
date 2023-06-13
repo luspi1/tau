@@ -3,6 +3,27 @@
   .deals-documents__buttons button:not(:last-of-type) {
     margin-right: 35px;
   }
+
+  .deals-documents__buttons a, .deals-documents__buttons button:not(:last-of-type) {
+    margin-right: 15px;
+  }
+
+  .deals-documents__buttons span {
+
+    margin-right: 30px;
+    margin-left: 15px;
+  }
+
+  .deals-documents__buttons {
+    width: 380px;
+  }
+
+  .deals-documents .deals-documents-table__type {
+    min-width: 21%;
+    width: 21%;
+  }
+
+
 }
 
 @media (max-width: 1280px) {
@@ -18,8 +39,14 @@
 }
 
 @media (max-width: 1024px) {
+
   .deals-documents__info {
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .deals-documents__buttons {
+    justify-content: flex-start;
   }
 
   .deals-documents__filter-form {
@@ -28,6 +55,15 @@
   .deals-documents__filter-inputs {
     margin-right: 0;
     margin-bottom: 20px;
+  }
+
+  .deals-documents__filter-form {
+    width: auto;
+  }
+
+  .deals-documents__top-controllers {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
 
@@ -45,10 +81,6 @@
   .deals-documents .deals-documents-table__row {
     min-width: 920px;
   }
-  .deals-documents__buttons a,
-  .deals-documents__buttons button:not(:last-of-type) {
-    margin-right: 50px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -58,7 +90,17 @@
 
   .deals-documents__filter-inputs {
     flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 35px;
   }
+
+
+  .deals-documents .deals-documents__filter-sort {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+
   .deals-documents__search-input,
   .deals-documents .choices {
     margin-bottom: 15px;

@@ -14,5 +14,4 @@ if (dealDocPage) {
       titleRaw.classList.toggle('hidden')
     }
   }))
-
 }
