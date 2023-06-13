@@ -38,8 +38,52 @@
     min-width: 265px;
     width: 265px;
 
+    margin-bottom: 0;
+    border: 1px solid #E6E6E6;
+    border-radius: 5px;
+
+    &.is-open {
+      border: 1px solid #3E29CA;
+    }
+
+    .choices__placeholder {
+      opacity: 1;
+    }
+
     .choices__list--single {
       padding: 4px 16px 4px 4px;
+    }
+
+    .choices__inner {
+      border: none;
+      background: none;
+      @include montserrat-medium;
+      font-size: 17px;
+      line-height: 21px;
+      color: #817D8C;
+    }
+
+    .choices[data-type*=select-one] .choices__inner {
+      min-height: unset;
+      height: 40px;
+      padding-bottom: 5px;
+      padding-top: 5px;
+      padding-left: 12px;
+    }
+
+    .choices__list--single {
+      padding: 7px 16px 4px 4px;
+    }
+
+    .choices__list--dropdown .choices__item--selectable.is-highlighted, .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+      background-color: #F8F8FA;
+      color: #2F65F6;
+    }
+
+    .choices__list--dropdown, .choices__list[aria-expanded] {
+      border: 1px solid #F2F1F7;
+      filter: drop-shadow(0px 0px 20px rgba(10, 35, 91, 0.15));
+      margin-top: 10px;
     }
 
   }

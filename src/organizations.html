@@ -7,278 +7,313 @@
 
 <body class="page__body">
 <div class="site-container">
-	<div class="modal-overlay"></div>
-	@include('partials/header.html', {
-	'bottom-menu-organizations' : 'bottom-menu-item_active',
-	'header-title': 'Ваш личный кабинет'
-	})
+  <div class="modal-overlay"></div>
+  @include('partials/header.html', {
+  'bottom-menu-organizations' : 'bottom-menu-item_active',
+  'header-title': 'Ваш личный кабинет'
+  })
 
-	<main class="main">
-		<section class="section page-organizations">
-			<div class="container">
-				<div class="page-organizations__top">
-					<h1 class="page-organizations__title">Организации</h1>
-					<a href="new-organization.html" class="page-organizations__btn">
-						Добавить организацию
-					</a>
-				</div>
-				<div class="flex-table">
-					<div class="flex-table__double-row">
-						<div class="flex-table__row flex-table__row-title">
-							<div class="flex-table__cell flex-table__cell-1">Основная
-								деятельность
-							</div>
-							<div class="flex-table__cell flex-table__cell-2">Регистрация</div>
-							<div class="flex-table__cell flex-table__cell-3">Сотрудников</div>
-							<div class="flex-table__cell flex-table__cell-4">Контрагентов
-							</div>
-							<div class="flex-table__cell flex-table__cell-5">Сделок</div>
-						</div>
-						<div class="flex-table__row flex-table__row-content">
-							<div class="flex-table__cell flex-table__cell-1">
-								<a href="#">ООО «Росавтодорпроектмашинвест Инновации»</a>
-								<span class="flex-table__owner-label">Я владелец</span>
-							</div>
-							<div class="flex-table__cell flex-table__cell-2">28 февраля 2022
-							</div>
-							<div class="flex-table__cell flex-table__cell-3">12</div>
-							<div class="flex-table__cell flex-table__cell-4">21</div>
-							<div class="flex-table__cell flex-table__cell-5">6</div>
-						</div>
-					</div>
-					<div class="flex-table__double-row">
-						<div class="flex-table__row flex-table__row-title mobile">
-							<div class="flex-table__cell flex-table__cell-1">Основная
-								деятельность
-							</div>
-							<div class="flex-table__cell flex-table__cell-2">Регистрация</div>
-							<div class="flex-table__cell flex-table__cell-3">Сотрудников</div>
-							<div class="flex-table__cell flex-table__cell-4">Контрагентов
-							</div>
-							<div class="flex-table__cell flex-table__cell-5">Сделок</div>
-						</div>
-						<div class="flex-table__row flex-table__row-content">
-							<div class="flex-table__cell flex-table__cell-1">
-								<a href="#">ООО
-									«Росавтодорпроектмашинвест Инновации»
-								</a>
-							</div>
-							<div class="flex-table__cell flex-table__cell-2">28 февраля 2022
-							</div>
-							<div class="flex-table__cell flex-table__cell-3">12</div>
-							<div class="flex-table__cell flex-table__cell-4">21</div>
-							<div class="flex-table__cell flex-table__cell-5">6</div>
-						</div>
-					</div>
-					<div class="flex-table__double-row">
-						<div class="flex-table__row flex-table__row-title mobile">
-							<div class="flex-table__cell flex-table__cell-1">Основная
-								деятельность
-							</div>
-							<div class="flex-table__cell flex-table__cell-2">Регистрация</div>
-							<div class="flex-table__cell flex-table__cell-3">Сотрудников</div>
-							<div class="flex-table__cell flex-table__cell-4">Контрагентов
-							</div>
-							<div class="flex-table__cell flex-table__cell-5">Сделок</div>
-						</div>
-						<div class="flex-table__row flex-table__row-content">
-							<div class="flex-table__cell flex-table__cell-1">
-								<a href="#"> Якименко Алексей
-									Викторович
-								</a>
-							</div>
-							<div class="flex-table__cell flex-table__cell-2">28 февраля 2022
-							</div>
-							<div class="flex-table__cell flex-table__cell-3">12</div>
-							<div class="flex-table__cell flex-table__cell-4">21</div>
-							<div class="flex-table__cell flex-table__cell-5">6</div>
-						</div>
-					</div>
-					<div class="flex-table__double-row">
-						<div class="flex-table__row flex-table__row-title mobile">
-							<div class="flex-table__cell flex-table__cell-1">Основная
-								деятельность
-							</div>
-							<div class="flex-table__cell flex-table__cell-2">Регистрация</div>
-							<div class="flex-table__cell flex-table__cell-3">Сотрудников</div>
-							<div class="flex-table__cell flex-table__cell-4">Контрагентов
-							</div>
-							<div class="flex-table__cell flex-table__cell-5">Сделок</div>
-						</div>
-						<div class="flex-table__row flex-table__row-content">
-							<div class="flex-table__cell flex-table__cell-1">
-								<a href="#">ООО «Росавтодорпроектмашинвест Инновации»</a>
-							</div>
-							<div class="flex-table__cell flex-table__cell-2">28 февраля 2022
-							</div>
-							<div class="flex-table__cell flex-table__cell-3">12</div>
-							<div class="flex-table__cell flex-table__cell-4">21</div>
-							<div class="flex-table__cell flex-table__cell-5">6</div>
-						</div>
-					</div>
-					<div class="flex-table__double-row">
-						<div class="flex-table__row flex-table__row-title mobile">
-							<div class="flex-table__cell flex-table__cell-1">Основная
-								деятельность
-							</div>
-							<div class="flex-table__cell flex-table__cell-2">Регистрация</div>
-							<div class="flex-table__cell flex-table__cell-3">Сотрудников</div>
-							<div class="flex-table__cell flex-table__cell-4">Контрагентов
-							</div>
-							<div class="flex-table__cell flex-table__cell-5">Сделок</div>
-						</div>
-						<div class="flex-table__row flex-table__row-content">
-							<div class="flex-table__cell flex-table__cell-1">
-								<a href="#">ООО «Росавтодорпроектмашинвест Инновации»</a>
-							</div>
-							<div class="flex-table__cell flex-table__cell-2">28 февраля 2022
-							</div>
-							<div class="flex-table__cell flex-table__cell-3">12</div>
-							<div class="flex-table__cell flex-table__cell-4">21</div>
-							<div class="flex-table__cell flex-table__cell-5">6</div>
-						</div>
-					</div>
-					<div class="flex-table__double-row">
-						<div class="flex-table__row flex-table__row-title mobile">
-							<div class="flex-table__cell flex-table__cell-1">Основная
-								деятельность
-							</div>
-							<div class="flex-table__cell flex-table__cell-2">Регистрация</div>
-							<div class="flex-table__cell flex-table__cell-3">Сотрудников</div>
-							<div class="flex-table__cell flex-table__cell-4">Контрагентов
-							</div>
-							<div class="flex-table__cell flex-table__cell-5">Сделок</div>
-						</div>
-						<div class="flex-table__row flex-table__row-content">
-							<div class="flex-table__cell flex-table__cell-1">
-								<a href="#">Якименко Алексей Викторович</a>
-							</div>
-							<div class="flex-table__cell flex-table__cell-2">28 февраля 2022
-							</div>
-							<div class="flex-table__cell flex-table__cell-3">12</div>
-							<div class="flex-table__cell flex-table__cell-4">21</div>
-							<div class="flex-table__cell flex-table__cell-5">6</div>
-						</div>
-					</div>
-					<div class="flex-table__double-row">
-						<div class="flex-table__row flex-table__row-title mobile">
-							<div class="flex-table__cell flex-table__cell-1">Основная
-								деятельность
-							</div>
-							<div class="flex-table__cell flex-table__cell-2">Регистрация</div>
-							<div class="flex-table__cell flex-table__cell-3">Сотрудников</div>
-							<div class="flex-table__cell flex-table__cell-4">Контрагентов
-							</div>
-							<div class="flex-table__cell flex-table__cell-5">Сделок</div>
-						</div>
-						<div class="flex-table__row flex-table__row-content">
-							<div class="flex-table__cell flex-table__cell-1">
-								<a href="#">ООО «Росавтодорпроектмашинвест Инновации»</a>
-							</div>
-							<div class="flex-table__cell flex-table__cell-2">28 февраля 2022
-							</div>
-							<div class="flex-table__cell flex-table__cell-3">12</div>
-							<div class="flex-table__cell flex-table__cell-4">21</div>
-							<div class="flex-table__cell flex-table__cell-5">6</div>
-						</div>
-					</div>
-					<div class="flex-table__double-row">
-						<div class="flex-table__row flex-table__row-title mobile">
-							<div class="flex-table__cell flex-table__cell-1">Основная
-								деятельность
-							</div>
-							<div class="flex-table__cell flex-table__cell-2">Регистрация</div>
-							<div class="flex-table__cell flex-table__cell-3">Сотрудников</div>
-							<div class="flex-table__cell flex-table__cell-4">Контрагентов
-							</div>
-							<div class="flex-table__cell flex-table__cell-5">Сделок</div>
-						</div>
-						<div class="flex-table__row flex-table__row-content">
-							<div class="flex-table__cell flex-table__cell-1">
-								<a href="#">ООО «Росавтодорпроектмашинвест Инновации»</a>
-							</div>
-							<div class="flex-table__cell flex-table__cell-2">28 февраля 2022
-							</div>
-							<div class="flex-table__cell flex-table__cell-3">12</div>
-							<div class="flex-table__cell flex-table__cell-4">21</div>
-							<div class="flex-table__cell flex-table__cell-5">6</div>
-						</div>
-					</div>
-					<div class="flex-table__double-row">
-						<div class="flex-table__row flex-table__row-title mobile">
-							<div class="flex-table__cell flex-table__cell-1">Основная
-								деятельность
-							</div>
-							<div class="flex-table__cell flex-table__cell-2">Регистрация</div>
-							<div class="flex-table__cell flex-table__cell-3">Сотрудников</div>
-							<div class="flex-table__cell flex-table__cell-4">Контрагентов
-							</div>
-							<div class="flex-table__cell flex-table__cell-5">Сделок</div>
-						</div>
-						<div class="flex-table__row flex-table__row-content">
-							<div class="flex-table__cell flex-table__cell-1">
-								<a href="#">ООО «Росавтодорпроектмашинвест Инновации»</a>
-							</div>
-							<div class="flex-table__cell flex-table__cell-2">28 февраля 2022
-							</div>
-							<div class="flex-table__cell flex-table__cell-3">12</div>
-							<div class="flex-table__cell flex-table__cell-4">21</div>
-							<div class="flex-table__cell flex-table__cell-5">6</div>
-						</div>
-					</div>
-					<div class="flex-table__double-row">
-						<div class="flex-table__row flex-table__row-title mobile">
-							<div class="flex-table__cell flex-table__cell-1">Основная
-								деятельность
-							</div>
-							<div class="flex-table__cell flex-table__cell-2">Регистрация</div>
-							<div class="flex-table__cell flex-table__cell-3">Сотрудников</div>
-							<div class="flex-table__cell flex-table__cell-4">Контрагентов
-							</div>
-							<div class="flex-table__cell flex-table__cell-5">Сделок</div>
-						</div>
-						<div class="flex-table__row flex-table__row-content">
-							<div class="flex-table__cell flex-table__cell-1">
-								<a href="#">Якименко Алексей Викторович</a>
-							</div>
-							<div class="flex-table__cell flex-table__cell-2">28 февраля 2022
-							</div>
-							<div class="flex-table__cell flex-table__cell-3">12</div>
-							<div class="flex-table__cell flex-table__cell-4">21</div>
-							<div class="flex-table__cell flex-table__cell-5">6</div>
-						</div>
-					</div>
-					<div class="flex-table__double-row">
-						<div class="flex-table__row flex-table__row-title mobile">
-							<div class="flex-table__cell flex-table__cell-1">Основная
-								деятельность
-							</div>
-							<div class="flex-table__cell flex-table__cell-2">Регистрация</div>
-							<div class="flex-table__cell flex-table__cell-3">Сотрудников</div>
-							<div class="flex-table__cell flex-table__cell-4">Контрагентов
-							</div>
-							<div class="flex-table__cell flex-table__cell-5">Сделок</div>
-						</div>
-						<div class="flex-table__row flex-table__row-content">
-							<div class="flex-table__cell flex-table__cell-1">
-								<a href="#">ООО «Росавтодорпроектмашинвест Инновации»</a>
-							</div>
-							<div class="flex-table__cell flex-table__cell-2">28 февраля 2022
-							</div>
-							<div class="flex-table__cell flex-table__cell-3">12</div>
-							<div class="flex-table__cell flex-table__cell-4">21</div>
-							<div class="flex-table__cell flex-table__cell-5">6</div>
-						</div>
-					</div>
-				</div>
-			</div>
+  <main class="main">
+    <section class="section page-organizations">
+      <div class="container sort-wrapper">
+        <div class="page-organizations__top">
+          <h1 class="page-organizations__title">Организации</h1>
+          <div class="page-organizations__top-right">
+            <div class="main-sort">
+              <select
+                class="custom-select sort-select"
+                name="sort_select">
+                <option value="dateNew">По дате, сначала новые</option>
+                <option value="dateOld">По дате, сначала старые</option>
+                <option value="abcDecr">По алфавиту А-Я</option>
+                <option value="abcIncr">По алфавиту Я-А</option>
+              </select>
+            </div>
+            <a href="new-organization.html" class="page-organizations__btn">
+              Добавить организацию
+            </a>
+          </div>
+        </div>
+        <div class="flex-table sort-list">
+          <div class="flex-table__double-row" data-sort-date="title"
+               data-sort-name="title">
+            <div class="flex-table__row flex-table__row-title">
+              <div class="flex-table__cell flex-table__cell-1">Основная
+                деятельность
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">Регистрация</div>
+              <div class="flex-table__cell flex-table__cell-3">Сотрудников</div>
+              <div class="flex-table__cell flex-table__cell-4">Контрагентов
+              </div>
+              <div class="flex-table__cell flex-table__cell-5">Сделок</div>
+            </div>
+          </div>
+          <div class="flex-table__double-row" data-sort-date="28.02.2022"
+               data-sort-name="ООО «Росавтодорпроектмашинвест Инновации»">
+            <div class="flex-table__row flex-table__row-title mobile">
+              <div class="flex-table__cell flex-table__cell-1">Основная
+                деятельность
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">Регистрация</div>
+              <div class="flex-table__cell flex-table__cell-3">Сотрудников</div>
+              <div class="flex-table__cell flex-table__cell-4">Контрагентов
+              </div>
+              <div class="flex-table__cell flex-table__cell-5">Сделок</div>
+            </div>
+            <div class="flex-table__row flex-table__row-content">
+              <div class="flex-table__cell flex-table__cell-1">
+                <a href="#">ООО «Росавтодорпроектмашинвест Инновации»</a>
+                <span class="flex-table__owner-label">Я владелец</span>
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">28 февраля 2022
+              </div>
+              <div class="flex-table__cell flex-table__cell-3">12</div>
+              <div class="flex-table__cell flex-table__cell-4">21</div>
+              <div class="flex-table__cell flex-table__cell-5">6</div>
+            </div>
+          </div>
+          <div class="flex-table__double-row" data-sort-date="01.04.2021"
+               data-sort-name="Якименко Алексей Викторович">
+            <div class="flex-table__row flex-table__row-title mobile">
+              <div class="flex-table__cell flex-table__cell-1">Основная
+                деятельность
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">Регистрация</div>
+              <div class="flex-table__cell flex-table__cell-3">Сотрудников</div>
+              <div class="flex-table__cell flex-table__cell-4">Контрагентов
+              </div>
+              <div class="flex-table__cell flex-table__cell-5">Сделок</div>
+            </div>
+            <div class="flex-table__row flex-table__row-content">
+              <div class="flex-table__cell flex-table__cell-1">
+                <a href="#">Якименко Алексей Викторович
+                </a>
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">1 апреля 2021
+              </div>
+              <div class="flex-table__cell flex-table__cell-3">12</div>
+              <div class="flex-table__cell flex-table__cell-4">21</div>
+              <div class="flex-table__cell flex-table__cell-5">6</div>
+            </div>
+          </div>
+          <div class="flex-table__double-row" data-sort-date="23.11.2018"
+               data-sort-name="Якименко Алексей Викторович">
+            <div class="flex-table__row flex-table__row-title mobile">
+              <div class="flex-table__cell flex-table__cell-1">Основная
+                деятельность
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">Регистрация</div>
+              <div class="flex-table__cell flex-table__cell-3">Сотрудников</div>
+              <div class="flex-table__cell flex-table__cell-4">Контрагентов
+              </div>
+              <div class="flex-table__cell flex-table__cell-5">Сделок</div>
+            </div>
+            <div class="flex-table__row flex-table__row-content">
+              <div class="flex-table__cell flex-table__cell-1">
+                <a href="#"> Якименко Алексей
+                  Викторович
+                </a>
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">23 ноября 2018
+              </div>
+              <div class="flex-table__cell flex-table__cell-3">12</div>
+              <div class="flex-table__cell flex-table__cell-4">21</div>
+              <div class="flex-table__cell flex-table__cell-5">6</div>
+            </div>
+          </div>
+          <div class="flex-table__double-row" data-sort-date="15.07.2014"
+               data-sort-name="ООО «Росавтодорпроектмашинвест Инновации»">
+            <div class="flex-table__row flex-table__row-title mobile">
+              <div class="flex-table__cell flex-table__cell-1">Основная
+                деятельность
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">Регистрация</div>
+              <div class="flex-table__cell flex-table__cell-3">Сотрудников</div>
+              <div class="flex-table__cell flex-table__cell-4">Контрагентов
+              </div>
+              <div class="flex-table__cell flex-table__cell-5">Сделок</div>
+            </div>
+            <div class="flex-table__row flex-table__row-content">
+              <div class="flex-table__cell flex-table__cell-1">
+                <a href="#">ООО «Росавтодорпроектмашинвест Инновации»</a>
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">15 июля 2014
+              </div>
+              <div class="flex-table__cell flex-table__cell-3">12</div>
+              <div class="flex-table__cell flex-table__cell-4">21</div>
+              <div class="flex-table__cell flex-table__cell-5">6</div>
+            </div>
+          </div>
+          <div class="flex-table__double-row" data-sort-date="28.02.2022"
+               data-sort-name="ООО «Росавтодорпроектмашинвест Инновации»">
+            <div class="flex-table__row flex-table__row-title mobile">
+              <div class="flex-table__cell flex-table__cell-1">Основная
+                деятельность
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">Регистрация</div>
+              <div class="flex-table__cell flex-table__cell-3">Сотрудников</div>
+              <div class="flex-table__cell flex-table__cell-4">Контрагентов
+              </div>
+              <div class="flex-table__cell flex-table__cell-5">Сделок</div>
+            </div>
+            <div class="flex-table__row flex-table__row-content">
+              <div class="flex-table__cell flex-table__cell-1">
+                <a href="#">ООО «Росавтодорпроектмашинвест Инновации»</a>
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">28 февраля 2022
+              </div>
+              <div class="flex-table__cell flex-table__cell-3">12</div>
+              <div class="flex-table__cell flex-table__cell-4">21</div>
+              <div class="flex-table__cell flex-table__cell-5">6</div>
+            </div>
+          </div>
+          <div class="flex-table__double-row" data-sort-date="28.02.2022"
+               data-sort-name="Якименко Алексей Викторович">
+            <div class="flex-table__row flex-table__row-title mobile">
+              <div class="flex-table__cell flex-table__cell-1">Основная
+                деятельность
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">Регистрация</div>
+              <div class="flex-table__cell flex-table__cell-3">Сотрудников</div>
+              <div class="flex-table__cell flex-table__cell-4">Контрагентов
+              </div>
+              <div class="flex-table__cell flex-table__cell-5">Сделок</div>
+            </div>
+            <div class="flex-table__row flex-table__row-content">
+              <div class="flex-table__cell flex-table__cell-1">
+                <a href="#">Якименко Алексей Викторович</a>
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">28 февраля 2022
+              </div>
+              <div class="flex-table__cell flex-table__cell-3">12</div>
+              <div class="flex-table__cell flex-table__cell-4">21</div>
+              <div class="flex-table__cell flex-table__cell-5">6</div>
+            </div>
+          </div>
+          <div class="flex-table__double-row" data-sort-date="28.02.2022"
+               data-sort-name="ООО «Росавтодорпроектмашинвест Инновации»">
+            <div class="flex-table__row flex-table__row-title mobile">
+              <div class="flex-table__cell flex-table__cell-1">Основная
+                деятельность
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">Регистрация</div>
+              <div class="flex-table__cell flex-table__cell-3">Сотрудников</div>
+              <div class="flex-table__cell flex-table__cell-4">Контрагентов
+              </div>
+              <div class="flex-table__cell flex-table__cell-5">Сделок</div>
+            </div>
+            <div class="flex-table__row flex-table__row-content">
+              <div class="flex-table__cell flex-table__cell-1">
+                <a href="#">ООО «Росавтодорпроектмашинвест Инновации»</a>
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">28 февраля 2022
+              </div>
+              <div class="flex-table__cell flex-table__cell-3">12</div>
+              <div class="flex-table__cell flex-table__cell-4">21</div>
+              <div class="flex-table__cell flex-table__cell-5">6</div>
+            </div>
+          </div>
+          <div class="flex-table__double-row" data-sort-date="28.02.2022"
+               data-sort-name="Якименко Алексей Викторович">
+            <div class="flex-table__row flex-table__row-title mobile">
+              <div class="flex-table__cell flex-table__cell-1">Основная
+                деятельность
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">Регистрация</div>
+              <div class="flex-table__cell flex-table__cell-3">Сотрудников</div>
+              <div class="flex-table__cell flex-table__cell-4">Контрагентов
+              </div>
+              <div class="flex-table__cell flex-table__cell-5">Сделок</div>
+            </div>
+            <div class="flex-table__row flex-table__row-content">
+              <div class="flex-table__cell flex-table__cell-1">
+                <a href="#">Якименко Алексей Викторович</a>
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">28 февраля 2022
+              </div>
+              <div class="flex-table__cell flex-table__cell-3">12</div>
+              <div class="flex-table__cell flex-table__cell-4">21</div>
+              <div class="flex-table__cell flex-table__cell-5">6</div>
+            </div>
+          </div>
+          <div class="flex-table__double-row" data-sort-date="28.02.2022"
+               data-sort-name="Якименко Алексей Викторович">
+            <div class="flex-table__row flex-table__row-title mobile">
+              <div class="flex-table__cell flex-table__cell-1">Основная
+                деятельность
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">Регистрация</div>
+              <div class="flex-table__cell flex-table__cell-3">Сотрудников</div>
+              <div class="flex-table__cell flex-table__cell-4">Контрагентов
+              </div>
+              <div class="flex-table__cell flex-table__cell-5">Сделок</div>
+            </div>
+            <div class="flex-table__row flex-table__row-content">
+              <div class="flex-table__cell flex-table__cell-1">
+                <a href="#">Якименко Алексей Викторович</a>
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">28 февраля 2022
+              </div>
+              <div class="flex-table__cell flex-table__cell-3">12</div>
+              <div class="flex-table__cell flex-table__cell-4">21</div>
+              <div class="flex-table__cell flex-table__cell-5">6</div>
+            </div>
+          </div>
+          <div class="flex-table__double-row" data-sort-date="28.02.2022"
+               data-sort-name="Якименко Алексей Викторович">
+            <div class="flex-table__row flex-table__row-title mobile">
+              <div class="flex-table__cell flex-table__cell-1">Основная
+                деятельность
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">Регистрация</div>
+              <div class="flex-table__cell flex-table__cell-3">Сотрудников</div>
+              <div class="flex-table__cell flex-table__cell-4">Контрагентов
+              </div>
+              <div class="flex-table__cell flex-table__cell-5">Сделок</div>
+            </div>
+            <div class="flex-table__row flex-table__row-content">
+              <div class="flex-table__cell flex-table__cell-1">
+                <a href="#">Якименко Алексей Викторович</a>
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">28 февраля 2022
+              </div>
+              <div class="flex-table__cell flex-table__cell-3">12</div>
+              <div class="flex-table__cell flex-table__cell-4">21</div>
+              <div class="flex-table__cell flex-table__cell-5">6</div>
+            </div>
+          </div>
+          <div class="flex-table__double-row" data-sort-date="28.02.2022"
+               data-sort-name="ООО «Росавтодорпроектмашинвест Инновации»">
+            <div class="flex-table__row flex-table__row-title mobile">
+              <div class="flex-table__cell flex-table__cell-1">Основная
+                деятельность
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">Регистрация</div>
+              <div class="flex-table__cell flex-table__cell-3">Сотрудников</div>
+              <div class="flex-table__cell flex-table__cell-4">Контрагентов
+              </div>
+              <div class="flex-table__cell flex-table__cell-5">Сделок</div>
+            </div>
+            <div class="flex-table__row flex-table__row-content">
+              <div class="flex-table__cell flex-table__cell-1">
+                <a href="#">ООО «Росавтодорпроектмашинвест Инновации»</a>
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">28 февраля 2022
+              </div>
+              <div class="flex-table__cell flex-table__cell-3">12</div>
+              <div class="flex-table__cell flex-table__cell-4">21</div>
+              <div class="flex-table__cell flex-table__cell-5">6</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
-			@include('partials/pagination.html')
-		</section>
-	</main>
+      @include('partials/pagination.html')
+    </section>
+  </main>
 
-	@include('partials/footer.html')
+  @include('partials/footer.html')
 </div>
 
 </body>

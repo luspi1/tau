@@ -9,6 +9,16 @@
     margin-bottom: 20px;
   }
 
+  &__top-right {
+    display: flex;
+    align-items: center;
+
+    .main-sort {
+      margin-right: 40px;
+    }
+  }
+
+
   &__title {
     @include montserrat-semibold;
     font-size: 36px;
@@ -34,16 +44,11 @@
   }
 
   .flex-table {
-    &__double-row {
-      &:nth-child(even) {
-        .flex-table__row-content {
-          background: #F7F8FA;
-        }
-      }
-    }
 
     &__row {
-      margin-bottom: 6px;
+      background: #F7F8FA;
+
+      margin-bottom: 5px;
       padding: 0 24px;
       border-radius: 5px;
 

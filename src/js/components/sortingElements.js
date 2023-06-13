@@ -6,7 +6,7 @@ if (sortWrappers) {
   sortWrappers.forEach(sortWrapper => {
     const sortSelect = sortWrapper.querySelector('.sort-select')
     const sortList = sortWrapper.querySelector('.sort-list')
-    const sortElementsArr = Array.from(sortList.children)
+    const sortElementsArr = Array.from(sortList.querySelectorAll('[data-sort-name]:not([data-sort-name="title"])'))
 
     if (sortSelect) {
       sortArr('dateNew', sortElementsArr, sortList)

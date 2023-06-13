@@ -335,14 +335,14 @@ export const updateFieldOnInput = (input, field) => {
 
 // функция сортировки по дате и по алфавиту
 export const sortArr = (sortValue, sortArr, sortList) => {
-
+  
   let sortedArr = []
 
   switch (sortValue) {
     case 'dateNew' :
       sortedArr = sortArr.sort((a, b) => {
-        const dateA = a.dataset.sortDate.split('.').reverse().join('')
-        const dateB = b.dataset.sortDate.split('.').reverse().join('')
+        const dateA = a.dataset.sortDate?.split('.').reverse().join('')
+        const dateB = b.dataset.sortDate?.split('.').reverse().join('')
         return dateB - dateA
       })
       sortList.append(...sortedArr)
