@@ -36,7 +36,7 @@ cutString(trimTemplateItemStrings)
 const trimAsideStrings = document.querySelectorAll('.aside__top a[data-shear]')
 cutString(trimAsideStrings)
 
-//обрезка длинных строк в aside на странице - correspondence
+//обрезка длинных строк на странице - correspondence
 
 const trimCorrStrings = document.querySelectorAll('.correspondence a[data-shear]')
 cutString(trimCorrStrings)
@@ -45,6 +45,10 @@ cutString(trimCorrStrings)
 const trimCorrItemStrings = document.querySelectorAll('.newmail-one [data-shear]')
 cutString(trimCorrItemStrings)
 
+//обрезка длинных строк на странице - correspondence-outside
+
+const trimCorrOutStrings = document.querySelectorAll('.correspondence-outside a[data-shear]')
+cutString(trimCorrOutStrings)
 
 //обрезка длинных строк на странице - deal-balance
 const trimBallanceItemStrings = document.querySelectorAll('.deals-balance-table__description[data-shear]')
