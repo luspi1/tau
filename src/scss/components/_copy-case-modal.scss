@@ -10,8 +10,9 @@
   border-radius: 20px;
   padding: 50px 130px 55px 45px;
   transition: all .2s;
-  opacity: 0;
+ opacity: 0;
   visibility: hidden;
+
 
   &._active {
     opacity: 1;
@@ -52,6 +53,10 @@
       color: #858584;
       margin-bottom: 5px;
     }
+  }
+
+  &__select-wrapper {
+    margin-bottom: 30px;
   }
 
   &__input-wrapper {

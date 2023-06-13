@@ -470,7 +470,6 @@
 
     .create-deal-payments__list-wrapper {
       max-width: 770px;
-
     }
 
     .create-deal-page__days-inputs {
@@ -490,19 +489,21 @@
       }
     }
 
-    .create-deal-page__input[name="deal_day_limit"] {
-      max-width: 82px;
-      margin-right: 10px;
-      @media (max-width: 1200px) {
-        margin: 5px 0 10px 0;
+    .create-deal-page__input {
+      &.deal_day_reason {
+        max-width: 400px;
+        margin-left: 10px;
+        @media (max-width: 1200px) {
+          margin: 5px 0 0 0;
+        }
       }
-    }
 
-    .create-deal-page__input[name="deal_day_reason"] {
-      max-width: 400px;
-      margin-left: 10px;
-      @media (max-width: 1200px) {
-        margin: 5px 0 0 0;
+      &.deal_day_limit {
+        max-width: 82px;
+        margin-right: 10px;
+        @media (max-width: 1200px) {
+          margin: 5px 0 10px 0;
+        }
       }
     }
 
@@ -512,7 +513,6 @@
         max-width: 100%;
       }
     }
-
   }
 
   .create-deal-data {
@@ -525,7 +525,6 @@
       }
     }
 
-
     .deal-subtitle {
       margin-bottom: 23px;
     }
@@ -534,7 +533,6 @@
       margin-top: 24px;
       margin-bottom: 0;
     }
-
 
     &__item {
       padding: 50px 0 35px;
@@ -545,6 +543,4 @@
       }
     }
   }
-
-
 }
