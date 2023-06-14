@@ -14,7 +14,7 @@
   })
 
   <main class="main">
-    <section class="section page-contacts">
+    <section class="section page-contacts sort-wrapper">
       <div class="container">
         <div class="new-contact modal" id="new-contact-modal">
           <button class="modal-document-send__close-btn" type="button"
@@ -95,6 +95,7 @@
               </button>
             </div>
           </form>
+
         </div>
         <div class="page-contacts__top">
           <form class="page-contacts__top-search" action="#">
@@ -104,6 +105,16 @@
             <button class="page-contacts__search-btn" type="submit">Искать
             </button>
           </form>
+          <div class="main-sort">
+            <select
+              class="custom-select sort-select"
+              name="sort_select">
+              <option value="dateNew">По дате, сначала новые</option>
+              <option value="dateOld">По дате, сначала старые</option>
+              <option value="abcDecr">По алфавиту А-Я</option>
+              <option value="abcIncr">По алфавиту Я-А</option>
+            </select>
+          </div>
           <div class="page-contacts__btns">
             <button class="page-contacts__btn page-contacts__create-contact-btn"
                     data-modal="new-contact-modal" type="button">
