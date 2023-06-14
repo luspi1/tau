@@ -1,5 +1,6 @@
 .correspondence-item {
 
+
   &._closed {
     .deal-submenu .container .deals__btn.deals__btn-open-btn {
       display: block;
@@ -9,6 +10,13 @@
       display: none;
     }
   }
+
+  &._no-deal {
+    .newmail-one__caption-list-top {
+      display: none;
+    }
+  }
+
 
   padding-bottom: 100px;
 

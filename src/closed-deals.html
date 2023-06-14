@@ -15,7 +15,7 @@
 
   <main class="main closed-deals-page">
     <section>
-      <div class="container">
+      <div class="container sort-wrapper">
         <div class="closed-deals-page__top">
           <h1>Закрытые сделки</h1>
           <form class="closed-deals-page__filter-form closed-deals-filter"
@@ -34,9 +34,22 @@
             <button class="closed-deals-filter__btn" type="submit">Искать
             </button>
           </form>
+          <div class="main-sort">
+            <select
+              class="custom-select sort-select"
+              name="sort_select">
+              <option value="dateNew">По дате, сначала новые</option>
+              <option value="dateOld">По дате, сначала старые</option>
+              <option value="abcDecr">По алфавиту А-Я</option>
+              <option value="abcIncr">По алфавиту Я-А</option>
+            </select>
+          </div>
         </div>
-        <ul class="closed-deals-page__table closed-deals-table flex-table">
-          <li class="closed-deals-table__row flex-table__row">
+        <ul
+          class="closed-deals-page__table closed-deals-table flex-table sort-list">
+          <li class="closed-deals-table__row flex-table__row"
+              data-sort-date="22.09.2021"
+              data-sort-name="129/031 СТН и еще что-то">
             <div class="closed-deals-table__cell flex-table__cell">
               <p class="closed-deals-table__title _expired">Сделка
                 <span>| <span class="expired-text">Договор истек</span></span>
@@ -80,19 +93,21 @@
               <p class="closed-deals-table__info">Сделка закрыта</p>
             </div>
           </li>
-          <li class="closed-deals-table__row flex-table__row">
+          <li class="closed-deals-table__row flex-table__row"
+              data-sort-date="21.11.2023"
+              data-sort-name="СТН и еще что-то">
             <div class="closed-deals-table__cell flex-table__cell">
               <p class="closed-deals-table__title _expired">Сделка
                 <span>| <span class="expired-text">Договор истек</span></span>
               </p>
               <a href="deal-card.html"
-                 class="closed-deals-table__info closed-deals-table__info-link">129/031
-                СТН и еще что-то
+                 class="closed-deals-table__info closed-deals-table__info-link">СТН
+                и еще что-то
               </a>
             </div>
             <div class="closed-deals-table__cell flex-table__cell">
               <p class="closed-deals-table__title">Дата создания</p>
-              <p class="closed-deals-table__info">22.09.2021</p>
+              <p class="closed-deals-table__info">21.11.2023</p>
             </div>
             <div class="closed-deals-table__cell flex-table__cell">
               <p class="closed-deals-table__title">Контрагент</p>
@@ -123,19 +138,21 @@
               <p class="closed-deals-table__info">Сделка закрыта</p>
             </div>
           </li>
-          <li class="closed-deals-table__row flex-table__row">
+          <li class="closed-deals-table__row flex-table__row"
+              data-sort-date="01.02.2022"
+              data-sort-name="Важная сделка 123/11">
             <div class="closed-deals-table__cell flex-table__cell">
               <p class="closed-deals-table__title _expired">Сделка
                 <span>| <span class="expired-text">Договор истек</span></span>
               </p>
               <a href="deal-card.html"
-                 class="closed-deals-table__info closed-deals-table__info-link">129/031
-                СТН и еще что-то
+                 class="closed-deals-table__info closed-deals-table__info-link">Важная
+                сделка 123/11
               </a>
             </div>
             <div class="closed-deals-table__cell flex-table__cell">
               <p class="closed-deals-table__title">Дата создания</p>
-              <p class="closed-deals-table__info">22.09.2021</p>
+              <p class="closed-deals-table__info">01.02.2022</p>
             </div>
             <div class="closed-deals-table__cell flex-table__cell">
               <p class="closed-deals-table__title">Контрагент</p>
@@ -166,7 +183,10 @@
               <p class="closed-deals-table__info">Сделка закрыта</p>
             </div>
           </li>
-          <li class="closed-deals-table__row flex-table__row">
+          <li class="closed-deals-table__row flex-table__row"
+              data-sort-date="14.12.2016"
+              data-sort-name="129/031
+                СТН и еще что-то">
             <div class="closed-deals-table__cell flex-table__cell">
               <p class="closed-deals-table__title">Сделка
                 <span>| <span class="expired-text">Договор истек</span></span>
@@ -178,7 +198,7 @@
             </div>
             <div class="closed-deals-table__cell flex-table__cell">
               <p class="closed-deals-table__title">Дата создания</p>
-              <p class="closed-deals-table__info">22.09.2021</p>
+              <p class="closed-deals-table__info">14.12.2016</p>
             </div>
             <div class="closed-deals-table__cell flex-table__cell">
               <p class="closed-deals-table__title">Контрагент</p>

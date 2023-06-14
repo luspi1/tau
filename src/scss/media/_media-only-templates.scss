@@ -55,6 +55,11 @@
     width: max-content;
   }
 
+  .only-templates__filter-right .main-sort {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
 
   .only-templates__filter-left {
     flex-direction: column;

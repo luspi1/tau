@@ -4,6 +4,7 @@
   &__title-content {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 25px;
   }
@@ -75,6 +76,13 @@
 
   }
 
+
+  .main-sort .choices {
+    min-width: 290px;
+    width: 290px;
+
+  }
+
   .income-list-table {
     .flex-table__row {
       background: #F7F8FA;
@@ -98,6 +106,7 @@
     .flex-table__cell {
       padding-top: 18px;
       padding-bottom: 18px;
+
       a {
         word-break: break-word;
       }

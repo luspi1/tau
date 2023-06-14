@@ -49,23 +49,21 @@
   }
 
 
+  .income-list-page .main-sort {
+    margin-bottom: 20px;
+  }
+
+
   .income-list-page .choices {
-    margin-bottom: 15px;
-    width: 140px;
-    margin-right: 5px;
+    height: 35px;
   }
-
-  .income-list-page .choices__list .choices__item--selectable, .income-list-page .choices__list .choices__list[aria-expanded] .choices__item--selectable {
-    padding-right: 5px;
-    font-size: 10px;
-    line-height: 12px;
-  }
-
   .income-list-page .choices__inner {
-    padding-left: 6px;
-    min-height: 22px;
-    height: 32px;
-    font-size: 4px;
+    padding: 4.5px 7.5px 3.75px;
+    font-size: 12px;
+  }
+  .income-list-page .choices__list .choices__item--selectable, .income-list-page .choices__list .choices__list[aria-expanded] .choices__item--selectable {
+    font-size: 12px;
+    line-height: 16px;
   }
 
 
@@ -76,9 +74,11 @@
     a, p, .imask-wrapper, .currency-mask {
       font-size: 10px;
     }
+
     .imask-wrapper {
       padding-right: 15px;
     }
+
     .currency-mask {
       text-align: left;
     }
