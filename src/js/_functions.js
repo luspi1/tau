@@ -389,6 +389,30 @@ export const sortArr = (sortValue, sortArr, sortList) => {
       }
       sortList.append(...sortedArr)
       break
+    case 'dateNew1' :
+      if (isTime) {
+        sortedArr = sortDateAndTime(sortArr)
+      } else {
+        sortedArr = sortArr.sort((a, b) => {
+          const dateA = a.dataset.sortDate1?.split('.').reverse().join('')
+          const dateB = b.dataset.sortDate1?.split('.').reverse().join('')
+          return dateB - dateA
+        })
+      }
+      sortList.append(...sortedArr)
+      break
+    case 'dateOld1' :
+      if (isTime) {
+        sortedArr = sortDateAndTime(sortArr, true)
+      } else {
+        sortedArr = sortArr.sort((a, b) => {
+          const dateA = a.dataset.sortDate1.split('.').reverse().join('')
+          const dateB = b.dataset.sortDate1.split('.').reverse().join('')
+          return dateA - dateB
+        })
+      }
+      sortList.append(...sortedArr)
+      break
     case 'abcDecr' :
       sortedArr = sortArr.sort((a, b) => a.dataset.sortName.localeCompare(b.dataset.sortName))
       sortList.append(...sortedArr)

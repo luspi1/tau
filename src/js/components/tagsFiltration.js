@@ -1,15 +1,11 @@
 import Choices                                    from 'choices.js'
 import { sendData, serializeForm, showInfoModal } from '../_functions'
-// import tagsData              from '../../resources/data/tagsData.json'
-import { nothingFoundBlock }                      from '../_vars'
-import { initCopyValues }                         from './copyValue'
+
+import { nothingFoundBlock } from '../_vars'
+import { initCopyValues }    from './copyValue'
 
 
 const tagsPage = document.querySelector('.templater-page')
-const tagsTypeMap = {
-  required: "Обязательное",
-  extra: "Дополнительное"
-}
 
 if (tagsPage) {
 
@@ -72,8 +68,7 @@ if (tagsPage) {
       const finishedResponse = await response.json()
       const {status, errortext, templaters} = finishedResponse
       if (status === 'ok') {
-        renderTags(templaters)
-        tagsArr = templaters
+        return templaters
       } else {
         showInfoModal(errortext)
       }
@@ -83,22 +78,22 @@ if (tagsPage) {
     }
   }
 
+  let filteredTags = []
+
   getTemplatersData()
+    .then((tags) => {
+      tagsArr = tags
+      filteredTags = tags
+      tagsArr = filteredTags.sort((a, b) => a.title.localeCompare(b.title))
+      renderTags(tagsArr)
+    })
 
   // функционал фильтрации
   const searchInput = tagsPage.querySelector('.templater__input-wrap input')
-  const filterTagsList = (searchValue, selectValue) => {
-    let filteredTags = []
-
-    if (selectValue === 'all') {
-      renderTags(tagsArr.filter(tag => tag.title.toLowerCase().includes(searchValue.toLowerCase())))
-      return
-    }
-
+  const filterTagsList = (searchValue) => {
     filteredTags = tagsArr.filter(tag => {
       return (
-        tag.title.toLowerCase().includes(searchValue.toLowerCase()) &&
-        tag.type === tagsTypeMap[selectValue]
+        tag.title.toLowerCase().includes(searchValue.toLowerCase())
       )
     })
     renderTags(filteredTags)
@@ -110,8 +105,27 @@ if (tagsPage) {
   })
 
   filterSelect.addEventListener('change', (e) => {
-    let searchInputValue = tagsPage.querySelector('.templater__input-wrap input').value
-    filterTagsList(searchInputValue, e.detail.value)
+    let sortValue = e.detail.value
+    let sortedArr = []
+    switch (sortValue) {
+      case 'abcDecr' :
+        sortedArr = filteredTags.sort((a, b) => a.title.localeCompare(b.title))
+        renderTags(sortedArr)
+        break
+      case 'abcIncr' :
+        sortedArr = filteredTags.sort((a, b) => b.title.localeCompare(a.title))
+        renderTags(sortedArr)
+        break
+      case 'required' :
+        sortedArr = filteredTags.sort((a, b) => a.type.localeCompare(b.type))
+        renderTags(sortedArr)
+        break
+      default :
+        sortedArr = filteredTags.sort((a, b) => a.title.localeCompare(b.title))
+        renderTags(sortedArr)
+        break
+
+    }
   })
 
   //сброс значений формы
@@ -121,7 +135,7 @@ if (tagsPage) {
     e.preventDefault()
     tagsFilterForm.reset()
     renderTags(tagsArr)
-    choicesFilter.setChoiceByValue('all')
+    choicesFilter.setChoiceByValue('abcDecr')
   })
 
 }

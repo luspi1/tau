@@ -14,7 +14,7 @@
   'deal-title': 'deal-link_active'
   })
 
-  <main class="main deals _not-created ">
+  <main class="main deals _not-created deal-card-page">
     @include('partials/deal-submenu.html', {
     'deal-card': 'deal-submenu_active'
     })
@@ -97,7 +97,8 @@
                 </p>
                 <button class="one-deal__btn-status _completed">подписан
                 </button>
-                <p class="one-deal__uncreated-contract">Договор сделки еще не создан!</p>
+                <p class="one-deal__uncreated-contract">Договор сделки еще не
+                  создан!</p>
                 <a href="#" class="one-deal__link-create">Создать договор</a>
               </div>
             </div>
@@ -530,12 +531,14 @@
                   type="button">Поменять сотрудников
           </button>
           <div class="aside__links">
-            <p><a href="deal-documents.html">Все документы сделки</a>&nbsp;(4)</p>
+            <p><a href="deal-documents.html">Все документы сделки</a>&nbsp;(4)
+            </p>
             <a href="#">Создать документ</a>
           </div>
         </div>
       </aside>
     </div>
+    @include('partials/check-confirm-modal.html')
     @include('partials/document-preview-modal.html')
     @include('partials/change-employee-modal.html')
     @include('partials/open-deal-modal.html')
