@@ -40,8 +40,11 @@
     padding: 15px 13px;
     border: 2px dotted #C4C4C4;
     border-radius: 10px;
-  }
 
+    .main-sort {
+      margin-bottom: 20px;
+    }
+  }
 
   .one-deal {
     flex-grow: 1;
@@ -182,30 +185,19 @@
       .table {
         width: 100%;
 
-        thead {
-          td {
-            padding: 15px 0 15px 14px;
-          }
+        li {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
 
-          tr {
-            color: #858584;
-            background: #F7F8FA;
-            line-height: 17px;
-          }
-        }
-
-        tbody tr {
-          text-align: left;
-          vertical-align: top;
-
-          &:nth-child(even) {
+          &:nth-child(odd) {
             background-color: #F7F8FA;
           }
 
-
-          td {
+          p {
             padding: 15px 0 10px 14px;
             line-height: 22px;
+            word-break: break-word;
 
             &:nth-child(1) {
               min-width: 150px;
@@ -229,6 +221,7 @@
 
             a {
               display: block;
+              word-break: break-word;
             }
           }
         }

@@ -1,4 +1,4 @@
-  .page-contacts {
+.page-contacts {
   padding-top: 15px;
   padding-bottom: 130px;
   min-height: calc(100vh + 60px);
@@ -8,12 +8,20 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
+
+    .main-sort {
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
   }
 
   &__top-search {
     display: flex;
     align-items: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
   }
 
   &__search-input {
@@ -57,7 +65,10 @@
     font-size: 36px;
     line-height: 44px;
     margin-right: 16px;
-    padding-bottom: 4px;
+          }
+
+  &__btns {
+    margin-bottom: 10px;
   }
 
   &__btn {
