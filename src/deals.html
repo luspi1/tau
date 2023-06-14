@@ -13,7 +13,7 @@
   'header-title': ''
   })
 
-  <main class="main deals">
+  <main class="main deals sort-wrapper">
     <section class="top">
       <div class="container">
         <h1>Сделки</h1>
@@ -30,18 +30,32 @@
           <button class="search__btn" type="submit">Искать</button>
 
         </form>
-        <a href="./create-deal.html" class="case-item__btn">Добавить сделку</a>
+        <div class="deals__right-sort">
+          <div class="main-sort">
+            <select
+              class="custom-select sort-select"
+              name="sort_select">
+              <option value="dateNew">По дате, сначала новые</option>
+              <option value="dateOld">По дате, сначала старые</option>
+              <option value="abcDecr">По алфавиту А-Я</option>
+              <option value="abcIncr">По алфавиту Я-А</option>
+            </select>
+          </div>
+          <a href="./create-deal.html" class="case-item__btn">Добавить
+            сделку</a>
+        </div>
       </div>
     </section>
     <section class="deals-list">
       <div class="container">
-        <ul class="deals-table">
-          <li class="deals-table__row">
+        <ul class="deals-table sort-list">
+          <li class="deals-table__row" data-sort-date="22.09.2021"
+              data-sort-name="СТН и еще что-то">
             <div class="deals-table__cell">
               <p class="deals-table__title">Сделка</p>
               <a href="deal-card.html"
-                 class="deals-table__info deals-table__info-link">129/031
-                СТН и еще что-то</a>
+                 class="deals-table__info deals-table__info-link">СТН и еще
+                что-то</a>
             </div>
             <div class="deals-table__cell">
               <p class="deals-table__title">Дата создания</p>
@@ -80,16 +94,17 @@
               <p class="deals-table__info">Задолженность больше месяца</p>
             </div>
           </li>
-          <li class="deals-table__row">
+          <li class="deals-table__row" data-sort-date="11.12.2019"
+              data-sort-name="Первая сделка">
             <div class="deals-table__cell">
               <p class="deals-table__title">Сделка</p>
               <a href="deal-card.html"
-                 class="deals-table__info deals-table__info-link">129/031
-                СТН и еще что-то</a>
+                 class="deals-table__info deals-table__info-link">Первая
+                сделка</a>
             </div>
             <div class="deals-table__cell">
               <p class="deals-table__title">Дата создания</p>
-              <p class="deals-table__info">22.09.2021</p>
+              <p class="deals-table__info">11.12.2019</p>
             </div>
             <div class="deals-table__cell">
               <p class="deals-table__title">Контрагент</p>
@@ -124,7 +139,9 @@
               <p class="deals-table__info">Задолженностей нет</p>
             </div>
           </li>
-          <li class="deals-table__row">
+          <li class="deals-table__row" data-sort-date="01.01.2023"
+              data-sort-name="129/031
+                СТН и еще что-то">
             <div class="deals-table__cell">
               <p class="deals-table__title">Сделка</p>
               <a href="deal-card.html"
@@ -133,7 +150,7 @@
             </div>
             <div class="deals-table__cell">
               <p class="deals-table__title">Дата создания</p>
-              <p class="deals-table__info">22.09.2021</p>
+              <p class="deals-table__info">01.01.2023</p>
             </div>
             <div class="deals-table__cell">
               <p class="deals-table__title">Контрагент</p>
@@ -168,7 +185,9 @@
               <p class="deals-table__info">Задолженностей нет</p>
             </div>
           </li>
-          <li class="deals-table__row">
+          <li class="deals-table__row" data-sort-date="12.06.2015"
+              data-sort-name="129/031
+                СТН и еще что-то">
             <div class="deals-table__cell">
               <p class="deals-table__title">Сделка</p>
               <a href="deal-card.html"
@@ -177,7 +196,7 @@
             </div>
             <div class="deals-table__cell">
               <p class="deals-table__title">Дата создания</p>
-              <p class="deals-table__info">22.09.2021</p>
+              <p class="deals-table__info">12.06.2015</p>
             </div>
             <div class="deals-table__cell">
               <p class="deals-table__title">Контрагент</p>

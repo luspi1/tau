@@ -13,11 +13,31 @@
 
   .deals {
     .deals-table {
-    overflow-x: auto;
+      overflow-x: auto;
     }
+
     .deals-table__row {
-        min-width: 1370px;
+      min-width: 1370px;
     }
+  }
+
+  .deals__right-sort {
+    margin-left: 0;
+    align-items: flex-start;
+  }
+
+  .deals .top .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .deals .top .search {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .deals .top h1 {
+    margin-bottom: 20px;
   }
 
 
@@ -42,7 +62,7 @@
   .deals .deals-list .container {
     overflow-x: scroll;
   }
-  }
+}
 
 
 @media(max-width: 768px) {
@@ -56,12 +76,22 @@
     margin-bottom: 15px;
   }
   .deals .top .search__btn {
-    margin-left: auto;
     margin-right: 0;
-    margin-bottom: 15px;
   }
   .deals .top .search__wrap {
     margin-right: 0;
     margin-bottom: 15px;
   }
+  .deals__right-sort {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .deals .top .case-item__btn {
+    margin-left: 0;
+    align-self: flex-start;
+    margin-top: 15px;
+  }
+
+
 }

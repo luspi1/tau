@@ -15,19 +15,36 @@
 
   <main class="main cases-page">
     <section class="section cases">
-      <div class="container">
-        <form action="#" class="cases__menu">
-          <h1>Кейсы</h1>
-          <input class="cases__input" name="cases_search" type="text"
-                 placeholder="Поиск">
-          <select class="cases__filter-input" name="cases_filter">
-            <option value="org">Организация Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid cumque delectus error facilis quod. Blanditiis enim harum laboriosam nobis, odio optio, quidem quisquam quo quos repellat saepe sequi veritatis voluptatum.</option>
-            <option value="non-org">Не организация Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet architecto aspernatur autem culpa exercitationem fuga, hic incidunt itaque iusto laudantium, minima placeat praesentium quos sit sunt, tempora ut vero.</option>
-          </select>
-          <button class="cases__search-btn" type="submit">Искать</button>
+      <div class="container sort-wrapper">
 
-          <a href="create-case.html" class="cases__btn">Добавить кейс</a>
-        </form>
+        <div class="cases-page__top">
+
+          <form action="#" class="cases__menu">
+            <h1>Кейсы</h1>
+            <input class="cases__input" name="cases_search" type="text"
+                   placeholder="Поиск">
+            <select class="cases__filter-input" name="cases_filter">
+              <option value="org">Организация</option>
+              <option value="non-org">Не организация</option>
+            </select>
+            <button class="cases__search-btn" type="submit">Искать</button>
+          </form>
+
+          <div class="cases-page__top-right">
+            <div class="main-sort">
+              <select
+                class="custom-select sort-select"
+                name="sort_select">
+                <option value="dateNew">По дате, сначала новые</option>
+                <option value="dateOld">По дате, сначала старые</option>
+                <option value="abcDecr">По алфавиту А-Я</option>
+                <option value="abcIncr">По алфавиту Я-А</option>
+              </select>
+            </div>
+            <a href="create-case.html" class="cases__btn">Добавить кейс</a>
+          </div>
+
+        </div>
 
         <ul class="cases__list">
           <li class="cases__list-item">
