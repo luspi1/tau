@@ -66,9 +66,21 @@
       align-items: center;
       margin-bottom: 10px;
       padding: 5px 0;
+
       .main-sort {
         margin-bottom: 15px;
+
+        .choices {
+          min-width: 280px;
+          width: 280px;
+
+          .choices__inner {
+            font-size: 15px;
+          }
+        }
+
       }
+
       &__form {
         width: 100%;
         display: flex;

@@ -3,7 +3,15 @@
     padding-top: 33px;
     padding-bottom: 150px;
   }
-
+  .main-sort {
+    margin-right: 10px;
+    .choices {
+      .choices__inner {
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+  }
   &__title {
     padding-bottom: 11px;
     @include montserrat-semibold;
