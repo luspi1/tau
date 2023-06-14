@@ -70,10 +70,6 @@
       padding-left: 12px;
     }
 
-    .choices__list--single {
-      padding: 7px 16px 4px 4px;
-    }
-
     .choices__list--dropdown .choices__item--selectable.is-highlighted, .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
       background-color: #F8F8FA;
       color: #2F65F6;
