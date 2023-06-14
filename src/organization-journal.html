@@ -2,7 +2,7 @@
 <html lang="ru" class="page">
 
 @include('partials/head.html', {
-'title': 'Сотрудники',
+'title': 'Журнал организации',
 })
 
 <body class="page__body">
@@ -173,12 +173,35 @@
     'organization-item-journal': 'organization-item-submenu_active',
     })
     <section class="journal">
-      <div class="container">
+      <div class="container sort-wrapper">
         <h1 class="journal__title">Журнал ООО НПО ТАУ</h1>
-
-        <div class="flex-table">
-          <div class="flex-table__double-row">
-            <div class="flex-table__row flex-table__row-title">
+        <div class="main-sort">
+          <select
+            class="custom-select sort-select"
+            name="sort_select">
+            <option value="dateNew">По дате, сначала новые</option>
+            <option value="dateOld">По дате, сначала старые</option>
+            <option value="abcDecr">По типу А-Я</option>
+            <option value="abcIncr">По типу Я-А</option>
+          </select>
+        </div>
+        <div class="flex-table sort-list">
+          <div class="flex-table__double-row" data-sort-date="title"
+               data-sort-name="title">
+            <div class="flex-table__row flex-table__row-title desktop">
+              <div class="flex-table__cell flex-table__cell-1">Тип действия
+              </div>
+              <div class="flex-table__cell flex-table__cell-2">Автор действия
+              </div>
+              <div class="flex-table__cell flex-table__cell-3">Данные действия
+              </div>
+              <div class="flex-table__cell flex-table__cell-4">Дата и время
+              </div>
+            </div>
+          </div>
+          <div class="flex-table__double-row" data-sort-date="12.04.2022"
+               data-sort-name="регистрация">
+            <div class="flex-table__row flex-table__row-title mobile">
               <div class="flex-table__cell flex-table__cell-1">Тип действия
               </div>
               <div class="flex-table__cell flex-table__cell-2">Автор действия
@@ -198,7 +221,8 @@
                 : 14:31:52</a></div>
             </div>
           </div>
-          <div class="flex-table__double-row">
+          <div class="flex-table__double-row" data-sort-date="14.04.2022"
+               data-sort-name="верификация">
             <div class="flex-table__row flex-table__row-title mobile">
               <div class="flex-table__cell flex-table__cell-1">Тип действия
               </div>
@@ -220,7 +244,8 @@
                 : 14:21:42</a></div>
             </div>
           </div>
-          <div class="flex-table__double-row">
+          <div class="flex-table__double-row" data-sort-date="15.05.2022"
+               data-sort-name="смена тарифа">
             <div class="flex-table__row flex-table__row-title mobile">
               <div class="flex-table__cell flex-table__cell-1">Тип действия
               </div>
@@ -232,14 +257,13 @@
               </div>
             </div>
             <div class="flex-table__row flex-table__row-content">
-              <div class="flex-table__cell flex-table__cell-1">смена тарифа
-              </div>
+              <div class="flex-table__cell flex-table__cell-1">смена тарифа</div>
               <div class="flex-table__cell flex-table__cell-2"><a href="#">Пользователь</a>
               </div>
               <div class="flex-table__cell flex-table__cell-3">Приобретен пакет
                 услуг Пакет Базовый
               </div>
-              <div class="flex-table__cell flex-table__cell-4"><a href="#">12.04.2022
+              <div class="flex-table__cell flex-table__cell-4"><a href="#">15.05.2022
                 : 14:31:52</a></div>
             </div>
           </div>

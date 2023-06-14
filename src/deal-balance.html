@@ -37,7 +37,7 @@
     </div>
     <section class="deals-balance">
       <div class="container">
-        <div class="deals-balance__content">
+        <div class="deals-balance__content sort-wrapper">
           <h1 class="deals-balance__title">Баланс сделки</h1>
           <div class="deals-balance__wrapper-width">
             <ul class="deals-balance__caption-list">
@@ -63,8 +63,20 @@
           </div>
           <h2 class="deals-balance__content-title">Фактические поступления
             сделки</h2>
-          <ul class="deals-balance__table deals-balance-table">
-            <li class="deals-balance-table__row" data-delete="element">
+          <div class="main-sort">
+            <select
+              class="custom-select sort-select"
+              name="sort_select">
+              <option value="dateNew">По дате, сначала новые</option>
+              <option value="dateOld">По дате, сначала старые</option>
+              <option value="abcDecr">По типу А-Я</option>
+              <option value="abcIncr">По типу Я-А</option>
+            </select>
+          </div>
+          <ul class="deals-balance__table deals-balance-table sort-list">
+            <li class="deals-balance-table__row" data-delete="element"
+                data-sort-date="15.02.2021"
+                data-sort-name="Авансовый платеж">
               <p
                 class="deals-balance-table__cell deals-balance-table__date">
                 15.02.2021
@@ -96,7 +108,9 @@
                 </svg>
               </button>
             </li>
-            <li class="deals-balance-table__row" data-delete="element">
+            <li class="deals-balance-table__row" data-delete="element"
+                data-sort-date="10.04.2021"
+                data-sort-name="Платеж 1 этапа">
               <p
                 class="deals-balance-table__cell deals-balance-table__date">
                 10.04.2021
@@ -128,7 +142,9 @@
                 </svg>
               </button>
             </li>
-            <li class="deals-balance-table__row" data-delete="element">
+            <li class="deals-balance-table__row" data-delete="element"
+                data-sort-date="21.05.2021"
+                data-sort-name="Платеж 2 этапа">
               <p
                 class="deals-balance-table__cell deals-balance-table__date">
                 21.05.2021
@@ -160,10 +176,12 @@
                 </svg>
               </button>
             </li>
-            <li class="deals-balance-table__row" data-delete="element">
+            <li class="deals-balance-table__row" data-delete="element"
+                data-sort-date="15.09.2021"
+                data-sort-name="Платеж 3 этапа">
               <p
                 class="deals-balance-table__cell deals-balance-table__date">
-                15.02.2021
+                15.09.2021
               </p>
               <p
                 class="deals-balance-table__cell deals-balance-table__type">
@@ -192,10 +210,12 @@
                 </svg>
               </button>
             </li>
-            <li class="deals-balance-table__row" data-delete="element">
+            <li class="deals-balance-table__row" data-delete="element"
+                data-sort-date="10.04.2023"
+                data-sort-name="Завершающий платеж">
               <p
                 class="deals-balance-table__cell deals-balance-table__date">
-                15.02.2021
+                10.04.2023
               </p>
               <p
                 class="deals-balance-table__cell deals-balance-table__type">

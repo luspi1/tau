@@ -25,7 +25,7 @@
   }
 
   .organization-journal .journal .flex-table__cell-4 {
-    white-space: break-spaces;
+    white-space: pre-line;
   }
 }
 
@@ -37,7 +37,9 @@
   .organization-journal .journal .flex-table__row-title.mobile {
     display: flex;
   }
-
+  .organization-journal .journal .flex-table__row-title.desktop {
+    display: none;
+  }
   .organization-journal .journal .flex-table__row {
     flex-direction: column;
   }
@@ -86,6 +88,9 @@
   .organization-journal .journal .flex-table__cell,
   .organization-journal .journal .flex-table__cell a {
     font-size: 10px;
+  }
+  .organization-journal .journal .flex-table__cell-4 {
+    white-space: nowrap;
   }
 }
 

@@ -106,6 +106,9 @@
 
   &__content {
     flex-grow: 1;
+    .main-sort {
+      margin-bottom: 20px;
+    }
   }
 
   &__content-title {
