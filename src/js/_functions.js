@@ -363,6 +363,7 @@ export const sortArr = (sortValue, sortArr, sortList) => {
 
   let isTime = sortArr[1].dataset.sortDate.split(',').length > 1
 
+
   switch (sortValue) {
     case 'dateNew' :
       if (isTime) {
@@ -396,14 +397,31 @@ export const sortArr = (sortValue, sortArr, sortList) => {
       sortedArr = sortArr.sort((a, b) => b.dataset.sortName.localeCompare(a.dataset.sortName))
       sortList.append(...sortedArr)
       break
-    case 'typeDecr' :
-      sortedArr = sortArr.sort((a, b) => a.dataset.sortType.localeCompare(b.dataset.sortType))
+    case 'abcDecr1' :
+      sortedArr = sortArr.sort((a, b) => a.dataset.sortName1.localeCompare(b.dataset.sortName1))
       sortList.append(...sortedArr)
       break
-    case 'typeIncr' :
-      sortedArr = sortArr.sort((a, b) => b.dataset.sortType.localeCompare(a.dataset.sortType))
+    case 'abcIncr1' :
+      sortedArr = sortArr.sort((a, b) => b.dataset.sortName1.localeCompare(a.dataset.sortName1))
       sortList.append(...sortedArr)
       break
+    case 'abcDecr2' :
+      sortedArr = sortArr.sort((a, b) => a.dataset.sortName2.localeCompare(b.dataset.sortName2))
+      sortList.append(...sortedArr)
+      break
+    case 'abcIncr2' :
+      sortedArr = sortArr.sort((a, b) => b.dataset.sortName2.localeCompare(a.dataset.sortName2))
+      sortList.append(...sortedArr)
+      break
+    case 'abcDecr3' :
+      sortedArr = sortArr.sort((a, b) => a.dataset.sortName3.localeCompare(b.dataset.sortName3))
+      sortList.append(...sortedArr)
+      break
+    case 'abcIncr3' :
+      sortedArr = sortArr.sort((a, b) => b.dataset.sortName3.localeCompare(a.dataset.sortName3))
+      sortList.append(...sortedArr)
+      break
+
     default :
       sortedArr = sortArr.sort((a, b) => a.dataset.sortName.localeCompare(b.dataset.sortName))
       sortList.append(...sortedArr)
