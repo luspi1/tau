@@ -15,6 +15,17 @@
   .only-documents .list-doc__column {
     margin-bottom: 10px;
   }
+  .only-documents .only-documents__select-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .only-documents__filter-right {
+    margin-left: 0;
+  }
+  .only-documents__select-wrap {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
 }
 
 
@@ -60,7 +71,6 @@
   }
   .only-documents__filter-right {
     margin-left: 0;
-    width: 100%;
   }
 
   .only-documents__select-wrap {
@@ -74,7 +84,10 @@
   .only-documents .only-documents__title {
     font-size: 28px;
   }
-
+  .only-documents__link-add,
+  .only-documents .main-sort {
+    margin-bottom: 15px;
+  }
   .only-documents .pagination {
     margin-top: 60px;
   }

@@ -2,7 +2,10 @@
   .correspondence-outside {
     padding-top: 0;
   }
-
+  .correspondence-outside .newmails .search {
+    flex-direction: column;
+    align-items: flex-start;
+  }
    .correspondence-outside .newmails .search__input {
     width: 100%;
   }
@@ -21,7 +24,6 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     margin-right: 0;
-    margin-bottom: 20px;
   }
 
   .correspondence-outside .newmails .search__input {

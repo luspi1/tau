@@ -84,15 +84,15 @@
         color: #ffffff;
       }
     }
-
   }
-
 }
 
 .deals-balance {
 
   padding: 17px 0 385px;
-
+  .flex-wrapper {
+    flex-wrap: wrap;
+  }
   .container {
     display: flex;
     justify-content: space-between;
