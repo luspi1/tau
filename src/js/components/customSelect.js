@@ -215,7 +215,7 @@ const initSelects = () => {
       })
     })
   }
-  
+
 
 // Селекторы фильтров на странице "корреспонденция(все письма)"
   const newMailsSelects = document.querySelectorAll('.newmails__search select')
@@ -344,6 +344,21 @@ const initSelects = () => {
       })
     })
   }
+}
+// Общая инциализация селектов с множественным выбором
+
+const generalMultSelects = document.querySelectorAll('.custom-mult-select__input')
+if (generalMultSelects) {
+  generalMultSelects.forEach(el => {
+    const choices = new Choices(el, {
+      itemSelectText: '',
+      searchEnabled: false,
+      shouldSort: false,
+      allowHTML: true,
+      removeItemButton: true,
+      noChoicesText: 'Пусто',
+    })
+  })
 }
 
 

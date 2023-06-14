@@ -1,5 +1,18 @@
 .cases-page {
 
+  &__top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    
+  }
+
+  &__top-right {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
   .cases {
 
     padding: 35px 0 580px;
@@ -15,8 +28,6 @@
     &__menu {
       display: flex;
       align-items: center;
-      margin-bottom: 25px;
-
     }
 
     &__input {

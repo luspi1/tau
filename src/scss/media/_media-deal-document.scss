@@ -99,6 +99,11 @@
     flex-direction: column;
     align-items: flex-start;
     height: auto;
+
+    .choices {
+      margin-bottom: 15px;
+    }
+
   }
 
   .deals-documents__search-input,
