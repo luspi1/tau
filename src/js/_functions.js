@@ -333,26 +333,59 @@ export const updateFieldOnInput = (input, field) => {
 }
 
 
+// сортировка по дате и времени одновременно
+
+const sortDateAndTime = (arrSort, reverse) => {
+  let resultArr = []
+  resultArr = arrSort.sort((a, b) => {
+    const dateA = a.dataset.sortDate?.split(',')[0].split('.').reverse()
+    const dateB = b.dataset.sortDate?.split(',')[0].split('.').reverse()
+    const timeA = a.dataset.sortDate?.split(',')[1].split('.')
+    const timeB = b.dataset.sortDate?.split(',')[1].split('.')
+    const resultA = [...dateA, ...timeA].join('')
+    const resultB = [...dateB, ...timeB].join('')
+    if (reverse) {
+      return resultA - resultB
+    } else {
+      return resultB - resultA
+    }
+  })
+  return resultArr
+
+}
+
+
 // функция сортировки по дате и по алфавиту
 export const sortArr = (sortValue, sortArr, sortList) => {
-  
+
   let sortedArr = []
+
+
+  let isTime = sortArr[1].dataset.sortDate.split(',').length > 1
 
   switch (sortValue) {
     case 'dateNew' :
-      sortedArr = sortArr.sort((a, b) => {
-        const dateA = a.dataset.sortDate?.split('.').reverse().join('')
-        const dateB = b.dataset.sortDate?.split('.').reverse().join('')
-        return dateB - dateA
-      })
+      if (isTime) {
+        sortedArr = sortDateAndTime(sortArr)
+      } else {
+        sortedArr = sortArr.sort((a, b) => {
+          const dateA = a.dataset.sortDate?.split('.').reverse().join('')
+          const dateB = b.dataset.sortDate?.split('.').reverse().join('')
+          return dateB - dateA
+        })
+      }
       sortList.append(...sortedArr)
       break
     case 'dateOld' :
-      sortedArr = sortArr.sort((a, b) => {
-        const dateA = a.dataset.sortDate.split('.').reverse().join('')
-        const dateB = b.dataset.sortDate.split('.').reverse().join('')
-        return dateA - dateB
-      })
+      if (isTime) {
+        sortedArr = sortDateAndTime(sortArr, true)
+      } else {
+        sortedArr = sortArr.sort((a, b) => {
+          const dateA = a.dataset.sortDate.split('.').reverse().join('')
+          const dateB = b.dataset.sortDate.split('.').reverse().join('')
+          return dateA - dateB
+        })
+      }
       sortList.append(...sortedArr)
       break
     case 'abcDecr' :
@@ -361,6 +394,14 @@ export const sortArr = (sortValue, sortArr, sortList) => {
       break
     case 'abcIncr' :
       sortedArr = sortArr.sort((a, b) => b.dataset.sortName.localeCompare(a.dataset.sortName))
+      sortList.append(...sortedArr)
+      break
+    case 'typeDecr' :
+      sortedArr = sortArr.sort((a, b) => a.dataset.sortType.localeCompare(b.dataset.sortType))
+      sortList.append(...sortedArr)
+      break
+    case 'typeIncr' :
+      sortedArr = sortArr.sort((a, b) => b.dataset.sortType.localeCompare(a.dataset.sortType))
       sortList.append(...sortedArr)
       break
     default :
