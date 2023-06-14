@@ -11,7 +11,10 @@
       @include montserrat-semibold;
       font-size: 36px;
       line-height: 44px;
+    }
 
+    .main-sort {
+      margin-bottom: 15px;
     }
 
     .flex-table {
@@ -21,13 +24,14 @@
         padding: 14px 20px 15px 14px;
         border-radius: 5px;
         background: #F7F8FA;
+
         &.mobile {
           display: none;
         }
       }
 
       &__row-title {
-       .flex-table__cell {
+        .flex-table__cell {
           color: #858584;
         }
 
@@ -40,21 +44,25 @@
           color: #2f65f6;
         }
       }
-      &__cell-1{
+
+      &__cell-1 {
         min-width: 200px;
         max-width: 22%;
       }
-      &__cell-2{
+
+      &__cell-2 {
         min-width: 160px;
         max-width: 22.3%;
       }
-      &__cell-3{
+
+      &__cell-3 {
         min-width: 425px;
-       max-width: 44.5%;
+        max-width: 44.5%;
       }
-      &__cell-4{
-      width: 11.2%;
-      white-space: nowrap;
+
+      &__cell-4 {
+        width: 11.2%;
+        white-space: nowrap;
       }
     }
   }
