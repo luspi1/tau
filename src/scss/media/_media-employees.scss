@@ -24,7 +24,9 @@
     align-items: flex-start;
     flex-direction: column;
   }
-
+  .page-employees__top .main-sort {
+    margin-left: 0;
+  }
   .page-employees .employees-table {
     overflow-x: auto;
   }

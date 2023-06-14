@@ -173,18 +173,34 @@
     'organization-item-employees': 'organization-item-submenu_active',
     })
     <section class="section page-employees">
-      <div class="container">
+      <div class="container sort-wrapper">
         @include('partials/new-employee-modal.html')
         @include('partials/job-change-modal.html')
         @include('partials/delete-employee-modal.html')
         <div class="page-employees__top">
           <h1 class="page-employees__title">Сотрудники ООО НПО ТАУ</h1>
+          <div class="main-sort">
+            <select
+              class="custom-select sort-select"
+              name="sort_select">
+              <option value="abcDecr">По алфавиту А-Я</option>
+              <option value="abcIncr">По алфавиту Я-А</option>
+              <option value="abcDecr1">По должности А-Я</option>
+              <option value="abcIncr1">По должности Я-А</option>
+              <option value="dateNew">По дате, сначала новые</option>
+              <option value="dateOld">По дате, сначала старые</option>
+            </select>
+          </div>
           <a class="page-employees__new-employees-link"
              data-modal="new-employee-modal" href="#">Новый
             сотрудник</a>
         </div>
-        <ul class="page-employees__table employees-table">
-          <li class="employees-table__row" data-id="123lkj4j2j">
+        <ul class="page-employees__table employees-table sort-list">
+          <li class="employees-table__row"
+              data-id="123lkj4j2j"
+              data-sort-date="28.02.2022"
+              data-sort-name="Иванов Иван Иванович"
+              data-sort-name1="руководитель">
             <a href="#" class="employees-table__cell employees-table__name">Иванов
               Иван
               Иванович (это Вы)</a>
@@ -237,13 +253,17 @@
               </svg>
             </button>
           </li>
-          <li class="employees-table__row" data-id="123lkjj">
+          <li class="employees-table__row"
+              data-id="123lkjj"
+              data-sort-date="29.02.2022"
+              data-sort-name="Сержантов-Шульц Константин Владимирович"
+              data-sort-name1="менеджер">
             <a href="#" class="employees-table__cell employees-table__name">
               Сержантов-Шульц Константин Владимирович</a>
             <p class="employees-table__cell employees-table__spot">
               менеджер</p>
             <p class="employees-table__cell employees-table__date">
-              Регистрация: <span>28 фев 2022</span></p>
+              Регистрация: <span>29 фев 2022</span></p>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-close"
               type="button" data-current="менеджер">
@@ -289,13 +309,17 @@
               </svg>
             </button>
           </li>
-          <li class="employees-table__row" data-id="123ldaw4j2j">
+          <li class="employees-table__row"
+              data-id="123ldaw4j2j"
+              data-sort-date="27.02.2022"
+              data-sort-name="Вильчес-Ногерол Антонио Владимирович"
+              data-sort-name1="менеджер">
             <a href="#" class="employees-table__cell employees-table__name">
               Вильчес-Ногерол Антонио Владимирович</a>
             <p class="employees-table__cell employees-table__spot">
               менеджер</p>
             <p class="employees-table__cell employees-table__date">
-              Регистрация: <span>28 фев 2022</span></p>
+              Регистрация: <span>27 фев 2022</span></p>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-close"
               type="button" data-current="менеджер">
@@ -341,13 +365,17 @@
               </svg>
             </button>
           </li>
-          <li class="employees-table__row" data-id="123l333j2j">
+          <li class="employees-table__row"
+              data-id="123l333j2j"
+              data-sort-date="15.04.2022"
+              data-sort-name="Отрадинский-Марков Марк Федорович"
+              data-sort-name1="постоянный">
             <a href="#" class="employees-table__cell employees-table__name">
               Отрадинский-Марков Марк Федорович</a>
             <p class="employees-table__cell employees-table__spot">
               постоянный</p>
             <p class="employees-table__cell employees-table__date">
-              Регистрация: <span>28 фев 2022</span></p>
+              Регистрация: <span>15 апр 2022</span></p>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-close employees-table__btn_disabled"
               type="button" data-current="постоянный">
@@ -393,13 +421,17 @@
               </svg>
             </button>
           </li>
-          <li class="employees-table__row" data-id="123lnnnj2j">
+          <li class="employees-table__row"
+              data-id="123lnnnj2j"
+              data-sort-date="25.04.2022"
+              data-sort-name="Иванов Иван Иванович"
+              data-sort-name1="временный">
             <a href="#" class="employees-table__cell employees-table__name">
               Иванов Иван Иванович</a>
             <p class="employees-table__cell employees-table__spot">
               временный</p>
             <p class="employees-table__cell employees-table__date">
-              Регистрация: <span>28 фев 2022</span></p>
+              Регистрация: <span>25 апр 2022</span></p>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-close employees-table__btn_disabled"
               type="button" data-current="временный">
@@ -445,13 +477,17 @@
               </svg>
             </button>
           </li>
-          <li class="employees-table__row" data-id="123qwrqwrj2j">
+          <li class="employees-table__row"
+              data-id="123qwrqwrj2j"
+              data-sort-date="25.05.2022"
+              data-sort-name="Сержантов-Шульц Константин Владимирович"
+              data-sort-name1="временный">
             <a href="#" class="employees-table__cell employees-table__name">
               Сержантов-Шульц Константин Владимирович</a>
             <p class="employees-table__cell employees-table__spot">
               временный</p>
             <p class="employees-table__cell employees-table__date">
-              Регистрация: <span>28 фев 2022</span></p>
+              Регистрация: <span>25 мая 2022</span></p>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-close"
               type="button" data-current="временный">
@@ -497,13 +533,17 @@
               </svg>
             </button>
           </li>
-          <li class="employees-table__row" data-id="123lrqwrqwrj">
+          <li class="employees-table__row"
+              data-id="123lrqwrqwrj"
+              data-sort-date="28.05.2022"
+              data-sort-name="Вильчес-Ногерол Антонио Владимирович"
+              data-sort-name1="постоянный">
             <a href="#" class="employees-table__cell employees-table__name">
               Вильчес-Ногерол Антонио Владимирович</a>
             <p class="employees-table__cell employees-table__spot">
               постоянный</p>
             <p class="employees-table__cell employees-table__date">
-              Регистрация: <span>28 фев 2022</span></p>
+              Регистрация: <span>28 мая 2022</span></p>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-close"
               type="button" data-current="постоянный">
@@ -549,13 +589,17 @@
               </svg>
             </button>
           </li>
-          <li class="employees-table__row" data-id="123lkj4qwert">
+          <li class="employees-table__row"
+              data-id="123lkj4qwert"
+              data-sort-date="31.05.2022"
+              data-sort-name="Отрадинский-Марков Марк Федорович"
+              data-sort-name1="постоянный">
             <a href="#" class="employees-table__cell employees-table__name">
               Отрадинский-Марков Марк Федорович</a>
             <p class="employees-table__cell employees-table__spot">
               постоянный</p>
             <p class="employees-table__cell employees-table__date">
-              Регистрация: <span>28 фев 2022</span></p>
+              Регистрация: <span>31 мая 2022</span></p>
             <button
               class="employees-table__cell employees-table__btn employees-table__btn-close employees-table__btn_disabled"
               type="button" data-current="постоянный">

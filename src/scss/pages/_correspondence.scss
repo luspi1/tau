@@ -63,13 +63,18 @@
     .search {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 25px;
+      align-items: center;
+      margin-bottom: 10px;
       padding: 5px 0;
-
+      .main-sort {
+        margin-bottom: 15px;
+      }
       &__form {
         width: 100%;
         display: flex;
         justify-content: space-between;
+        margin-right: 20px;
+        margin-bottom: 15px;
       }
 
       &__input {
