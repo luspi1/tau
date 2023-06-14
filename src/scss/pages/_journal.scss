@@ -1,12 +1,22 @@
 .page-journal {
   padding: 20px 0 290px;
 
+  .container {
+    &.df {
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+  }
+
   &__title {
+    margin-right: 5px;
     @include montserrat-semibold;
     font-size: 36px;
     line-height: 44px;
     color: #000000;
-    margin-bottom: 24px;
   }
 
   .journal-table {
@@ -26,6 +36,7 @@
       font-size: 16px;
       line-height: 20px;
       color: #222220;
+
       &:not(:last-child) {
         padding-right: 20px;
       }
