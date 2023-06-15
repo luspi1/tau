@@ -3,16 +3,21 @@
 
   .container {
     &.df {
-      margin-bottom: 24px;
+      margin-bottom: 10px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      .main-sort {
+        margin-bottom: 15px;
+      }
+
     }
   }
 
   &__title {
     margin-right: 5px;
+    margin-bottom: 15px;
     @include montserrat-semibold;
     font-size: 36px;
     line-height: 44px;

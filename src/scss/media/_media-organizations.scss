@@ -80,7 +80,11 @@
     display: flex;
     margin: 0 -20px;
     border-top: 1px solid #E6E6E6;
+ }
+  .page-organizations .flex-table__double-row.desktop {
+    display: none;
   }
+
 
   .page-organizations .flex-table__row {
     padding-left: 0;

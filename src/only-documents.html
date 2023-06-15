@@ -15,7 +15,7 @@
 
   <main class="main">
     <section class="only-documents">
-      <div class="container sort-wrapper">
+      <div class="container">
         <div class="only-documents__top">
           <h1 class="only-documents__title">Все документы</h1>
           <div class="only-documents__filter-links">
@@ -50,12 +50,12 @@
             <div class="only-documents__filter-right">
               <div class="main-sort">
                 <select
-                  class="custom-select sort-select"
+                  class="alt-select server-sort"
                   name="sort_select">
-                  <option value="dateNew">По дате, сначала новые</option>
-                  <option value="dateOld">По дате, сначала старые</option>
-                  <option value="abcDecr">По алфавиту А-Я</option>
-                  <option value="abcIncr">По алфавиту Я-А</option>
+                  <option value="dateNew" data-url="/#1">По дате, сначала новые</option>
+                  <option value="dateOld" data-url="/#2">По дате, сначала старые</option>
+                  <option value="abcDecr" data-url="/#3">По алфавиту А-Я</option>
+                  <option value="abcIncr" data-url="/#4">По алфавиту Я-А</option>
                 </select>
               </div>
               <a href="create-document.html" class="only-documents__link-add">Добавить
@@ -63,10 +63,8 @@
             </div>
           </div>
         </div>
-        <div class="only-documents__list-doc list-doc sort-list">
-          <div class="list-doc__item"
-               data-sort-date="10.04.2021"
-               data-sort-name="149/031 СТН">
+        <div class="only-documents__list-doc list-doc">
+          <div class="list-doc__item"             >
             <div class="list-doc__row-title">
               <div class="list-doc__row-title-left">
                 <h3>Договор</h3>
@@ -215,9 +213,7 @@
               </div>
             </div>
           </div>
-          <div class="list-doc__item"
-               data-sort-date="20.04.2021"
-               data-sort-name="128/031 СТН">
+          <div class="list-doc__item">
             <div class="list-doc__row-title">
               <div class="list-doc__row-title-left">
                 <h3>Счет</h3>
@@ -329,9 +325,7 @@
               </div>
             </div>
           </div>
-          <div class="list-doc__item"
-               data-sort-date="09.04.2021"
-               data-sort-name="131/031 СТН">
+          <div class="list-doc__item">
             <div class="list-doc__row-title">
               <div class="list-doc__row-title-left">
                 <h3>Акт</h3>
