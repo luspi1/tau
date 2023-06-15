@@ -14,26 +14,24 @@
   })
 
   <main class="main">
-    <section class="section page-journal sort-wrapper">
+    <section class="section page-journal">
       <div class="container df">
         <h1 class="page-journal__title">Журнал</h1>
         <div class="main-sort">
           <select
-            class="custom-select sort-select"
+            class="alt-select server-sort"
             name="sort_select">
-            <option value="dateNew">По дате, сначала новые</option>
-            <option value="dateOld">По дате, сначала старые</option>
-            <option value="abcDecr">По типу А-Я</option>
-            <option value="abcIncr">По типу Я-А</option>
+            <option value="dateNew" data-url="/#1">По дате, сначала новые</option>
+            <option value="dateOld" data-url="/#2">По дате, сначала старые</option>
+            <option value="abcDecr" data-url="/#3">По типу А-Я</option>
+            <option value="abcIncr" data-url="/#4">По типу Я-А</option>
           </select>
         </div>
       </div>
 
       <div class="container page-journal__table-container">
-        <ul class="page-journal__table journal-table sort-list">
-          <li class="journal-table__row journal-table__row-title"
-              data-sort-date="title"
-              data-sort-name="title">
+        <ul class="page-journal__table journal-table">
+          <li class="journal-table__row journal-table__row-title">
             <p class="journal-table__cell journal-table__type">Тип действия</p>
             <p class="journal-table__cell journal-table__author">Автор
               действия</p>
@@ -42,8 +40,7 @@
             <p class="journal-table__cell journal-table__time">
               Дата и время действия</p>
           </li>
-          <li class="journal-table__row" data-sort-date="12.04.2022,14.31.52"
-              data-sort-name="Регистрация">
+          <li class="journal-table__row">
             <p class="journal-table__cell journal-table__type">Регистрация</p>
             <p class="journal-table__cell journal-table__author">Система</p>
             <p class="journal-table__cell journal-table__data">Новый
@@ -51,8 +48,7 @@
             <p class="journal-table__cell journal-table__time">12.04.2022 |
               14:31:52</p>
           </li>
-          <li class="journal-table__row" data-sort-date="12.04.2022,14.32.22"
-              data-sort-name="Верификация">
+          <li class="journal-table__row">
             <p class="journal-table__cell journal-table__type">Верификация</p>
             <p class="journal-table__cell journal-table__author">Система</p>
             <p class="journal-table__cell journal-table__data">Авансовый платеж
@@ -60,8 +56,7 @@
             <p class="journal-table__cell journal-table__time">12.04.2022 |
               14:32:22</p>
           </li>
-          <li class="journal-table__row" data-sort-date="13.04.2022,14.32.22"
-              data-sort-name="Смена тарифа">
+          <li class="journal-table__row">
             <p class="journal-table__cell journal-table__type">Смена тарифа</p>
             <p class="journal-table__cell journal-table__author">
               Пользователь</p>
@@ -70,8 +65,7 @@
             <p class="journal-table__cell journal-table__time">13.04.2022 |
               14:32:22</p>
           </li>
-          <li class="journal-table__row" data-sort-date="20.05.2022,14.31.52"
-              data-sort-name="Регистрация">
+          <li class="journal-table__row">
             <p class="journal-table__cell journal-table__type">Регистрация</p>
             <p class="journal-table__cell journal-table__author">
               Система</p>
@@ -80,8 +74,7 @@
             <p class="journal-table__cell journal-table__time">20.05.2022 |
               14:31:52</p>
           </li>
-          <li class="journal-table__row" data-sort-date="22.05.2022,14.31.42"
-              data-sort-name="Верификация">
+          <li class="journal-table__row">
             <p class="journal-table__cell journal-table__type">Верификация</p>
             <p class="journal-table__cell journal-table__author">
               Система</p>
@@ -90,8 +83,7 @@
             <p class="journal-table__cell journal-table__time">22.05.2022 |
               14:31:42</p>
           </li>
-          <li class="journal-table__row" data-sort-date="01.05.2002,11.32.01"
-              data-sort-name="Смена тарифа">
+          <li class="journal-table__row">
             <p class="journal-table__cell journal-table__type">Смена тарифа</p>
             <p class="journal-table__cell journal-table__author">
               Пользователь</p>
@@ -100,8 +92,7 @@
             <p class="journal-table__cell journal-table__time">01.05.2002 |
               11:32:01</p>
           </li>
-          <li class="journal-table__row" data-sort-date="01.05.2020,17.12.52"
-              data-sort-name="Регистрация">
+          <li class="journal-table__row">
             <p class="journal-table__cell journal-table__type">Регистрация</p>
             <p class="journal-table__cell journal-table__author">
               Система</p>
@@ -110,8 +101,7 @@
             <p class="journal-table__cell journal-table__time">01.05.2020 |
               17:12:52</p>
           </li>
-          <li class="journal-table__row" data-sort-date="10.10.2010,14.31.42"
-              data-sort-name="Верификация">
+          <li class="journal-table__row">
             <p class="journal-table__cell journal-table__type">Верификация</p>
             <p class="journal-table__cell journal-table__author">
               Система</p>
@@ -120,8 +110,7 @@
             <p class="journal-table__cell journal-table__time">10.10.2010 |
               14:31:42</p>
           </li>
-          <li class="journal-table__row" data-sort-date="17.03.2023,22.11.23"
-              data-sort-name="Смена тарифа">
+          <li class="journal-table__row">
             <p class="journal-table__cell journal-table__type">Смена тарифа</p>
             <p class="journal-table__cell journal-table__author">
               Пользователь</p>
@@ -130,8 +119,7 @@
             <p class="journal-table__cell journal-table__time">17.03.2023 |
               22:11:23</p>
           </li>
-          <li class="journal-table__row" data-sort-date="17.03.2023,14.12.23"
-              data-sort-name="Смена тарифа">
+          <li class="journal-table__row">
             <p class="journal-table__cell journal-table__type">Смена тарифа</p>
             <p class="journal-table__cell journal-table__author">
               Пользователь</p>

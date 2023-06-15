@@ -15,27 +15,25 @@
 
   <main class="main income-list-page">
     <section class="income-list-page__caption">
-      <div class="container sort-wrapper">
+      <div class="container">
         <div class="income-list-page__title-content">
           <h1 class="income-list-page__title">
             Доходы
           </h1>
           <div class="main-sort">
             <select
-              class="custom-select sort-select"
+              class="alt-select server-sort"
               name="sort_select">
-              <option value="dateNew">По дате, сначала новые</option>
-              <option value="dateOld">По дате, сначала старые</option>
-              <option value="abcDecr">По организации А-Я</option>
-              <option value="abcIncr">По организации Я-А</option>
-              <option value="abcDecr1">По статусу</option>
+              <option value="dateNew" data-url="/#1">По дате, сначала новые</option>
+              <option value="dateOld" data-url="/#2">По дате, сначала старые</option>
+              <option value="abcDecr" data-url="/#3">По организации А-Я</option>
+              <option value="abcIncr" data-url="/#4">По организации Я-А</option>
+              <option value="abcDecr1" data-url="/#5">По статусу</option>
             </select>
           </div>
         </div>
-        <ul class="flex-table income-list-table sort-list">
-          <li class="flex-table__row" data-sort-date="28.02.2022"
-              data-sort-name="ООО «Росавтодорпроектстроймашинвест»"
-              data-sort-name1="1">
+        <ul class="flex-table income-list-table">
+          <li class="flex-table__row">
             <div class="flex-table__cell income-list-table__activity-cell">
               <a href="balance/1"
                  class="flex-table__cell-text flex-table__cell-link"
@@ -77,9 +75,7 @@
               </div>
             </div>
           </li>
-          <li class="flex-table__row" data-sort-date="28.03.2021"
-              data-sort-name="ООО «Технологии Автоматизированного Управления»"
-              data-sort-name1="2">
+          <li class="flex-table__row">
             <div class="flex-table__cell income-list-table__activity-cell">
               <a href="balance/3"
                  class="flex-table__cell-text flex-table__cell-link"
@@ -121,8 +117,7 @@
               </div>
             </div>
           </li>
-          <li class="flex-table__row" data-sort-date="28.04.2023"
-              data-sort-name="ООО «НПО ТАУ»" data-sort-name1="2">
+          <li class="flex-table__row">
             <div class="flex-table__cell income-list-table__activity-cell">
               <a href="balance/3"
                  class="flex-table__cell-text flex-table__cell-link"
@@ -164,9 +159,7 @@
               </div>
             </div>
           </li>
-          <li class="flex-table__row" data-sort-date="11.11.2019"
-              data-sort-name="ООО «Росавтодорпроектстроймашинве»"
-              data-sort-name1="1">
+          <li class="flex-table__row">
             <div class="flex-table__cell income-list-table__activity-cell">
               <a href="balance/4"
                  class="flex-table__cell-text flex-table__cell-link"
@@ -208,9 +201,7 @@
               </div>
             </div>
           </li>
-          <li class="flex-table__row" data-sort-date="11.12.2018"
-              data-sort-name="ООО «Технологии Автоматизированного Управления»"
-              data-sort-name1="1">
+          <li class="flex-table__row">
             <div class="flex-table__cell income-list-table__activity-cell">
               <a href="balance/5"
                  class="flex-table__cell-text flex-table__cell-link"
@@ -252,8 +243,7 @@
               </div>
             </div>
           </li>
-          <li class="flex-table__row" data-sort-date="14.04.2020"
-              data-sort-name="ООО «НПО ТАУ»" data-sort-name1="2">
+          <li class="flex-table__row">
             <div class="flex-table__cell income-list-table__activity-cell">
               <a href="balance/6"
                  class="flex-table__cell-text flex-table__cell-link"
@@ -295,9 +285,7 @@
               </div>
             </div>
           </li>
-          <li class="flex-table__row" data-sort-date="14.05.2020"
-              data-sort-name="ООО «Росавтодорпроектстроймашинвест»"
-              data-sort-name1="2">
+          <li class="flex-table__row">
             <div class="flex-table__cell income-list-table__activity-cell">
               <a href="balance/1"
                  class="flex-table__cell-text flex-table__cell-link"

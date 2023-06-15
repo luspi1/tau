@@ -28,27 +28,25 @@
           </div>
         </div>
         <div class="all-documents__wrapper">
-          <div class="all-documents__wrapper-block sort-wrapper">
+          <div class="all-documents__wrapper-block">
             <div class="all-documents__block all-documents__templates">
               <div class="all-documents__block-row">
                 <h3 class="all-documents__subtitle">Шаблоны</h3>
                 <div class="main-sort">
                   <select
-                    class="custom-select sort-select"
+                    class="alt-select server-sort"
                     name="sort_select">
-                    <option value="dateNew">По дате, сначала новые</option>
-                    <option value="dateOld">По дате, сначала старые</option>
-                    <option value="abcDecr">По типу А-Я</option>
-                    <option value="abcIncr">По типу Я-А</option>
-                    <option value="abcDecr1">По алфавиту А-Я</option>
-                    <option value="abcIncr1">По алфавиту Я-А</option>
+                    <option value="dateNew" data-url="/#1">По дате, сначала новые</option>
+                    <option value="dateOld" data-url="/#2">По дате, сначала старые</option>
+                    <option value="abcDecr" data-url="/#3">По типу А-Я</option>
+                    <option value="abcIncr" data-url="/#4">По типу Я-А</option>
+                    <option value="abcDecr1" data-url="/#5">По алфавиту А-Я</option>
+                    <option value="abcIncr1" data-url="/#6">По алфавиту Я-А</option>
                   </select>
                 </div>
               </div>
-              <ul class="all-documents__list templates__list sort-list">
-                <li data-sort-date="22.02.2023"
-                    data-sort-name="договор"
-                    data-sort-name1="Уборка мусора - 21">
+              <ul class="all-documents__list templates__list">
+                <li>
                   <div class="list__subtitle">
                     <p>договор</p>
                     <p>создан <span>22.02.2023</span></p>
@@ -87,9 +85,7 @@
                   </button>
                   <a href="#" class="list__edit _pen"></a>
                 </li>
-                <li  data-sort-date="21.02.2023"
-                     data-sort-name="договор"
-                     data-sort-name1="Археологические исследования">
+                <li>
                   <div class="list__subtitle">
                     <p>договор</p>
                     <p>создан <span>21.02.2023</span></p>
@@ -128,9 +124,7 @@
                   </button>
                   <a href="#" class="list__edit _lock"></a>
                 </li>
-                <li  data-sort-date="01.02.2023"
-                     data-sort-name="допсоглашение"
-                     data-sort-name1="Вынос мозга в прыжке">
+                <li>
                   <div class="list__subtitle">
                     <p>допсоглашение</p>
                     <p>создан <span>01.02.2023</span></p>
@@ -165,9 +159,7 @@
                   </button>
                   <a href="#" class="list__edit _pen"></a>
                 </li>
-                <li data-sort-date="01.03.2023"
-                    data-sort-name="акт"
-                    data-sort-name1="Вынос мозга в прыжке">
+                <li>
                   <div class="list__subtitle">
                     <p>акт</p>
                     <p>создан <span>01.03.2023</span></p>
@@ -211,27 +203,25 @@
             <a href="#" class="all-documents__link-add">Добавить шаблон</a>
             @include('partials/pagination.html')
           </div>
-          <div class="all-documents__wrapper-block sort-wrapper">
+          <div class="all-documents__wrapper-block">
             <div class="all-documents__block all-documents__documents">
               <div class="all-documents__block-row">
                 <h3 class="all-documents__subtitle">Документы</h3>
                 <div class="main-sort">
                   <select
-                    class="custom-select sort-select"
+                    class="alt-select server-sort"
                     name="sort_select">
-                    <option value="dateNew">По дате, сначала новые</option>
-                    <option value="dateOld">По дате, сначала старые</option>
-                    <option value="abcDecr">По типу А-Я</option>
-                    <option value="abcIncr">По типу Я-А</option>
-                    <option value="abcDecr1">По алфавиту А-Я</option>
-                    <option value="abcIncr1">По алфавиту Я-А</option>
+                    <option value="dateNew" data-url="/#1">По дате, сначала новые</option>
+                    <option value="dateOld" data-url="/#2">По дате, сначала старые</option>
+                    <option value="abcDecr" data-url="/#3">По типу А-Я</option>
+                    <option value="abcIncr" data-url="/#4">По типу Я-А</option>
+                    <option value="abcDecr1" data-url="/#5">По алфавиту А-Я</option>
+                    <option value="abcIncr1" data-url="/#6">По алфавиту Я-А</option>
                   </select>
                 </div>
               </div>
-              <ul class="all-documents__list documents__list sort-list">
-                <li data-sort-date="10.04.2021"
-                    data-sort-name="договор"
-                    data-sort-name1="№ 129/031 СТН">
+              <ul class="all-documents__list documents__list">
+                <li>
                   <div class="list__subtitle">
                     <p>договор</p>
                     <p>
@@ -347,9 +337,7 @@
                     </button>
                   </div>
                 </li>
-                <li data-sort-date="10.05.2021"
-                    data-sort-name="договор"
-                    data-sort-name1="№ 129/0322 СТН">
+                <li>
                   <div class="list__subtitle">
                     <p>договор</p>
                     <p>
@@ -465,9 +453,7 @@
                     </button>
                   </div>
                 </li>
-                <li data-sort-date="09.05.2021"
-                    data-sort-name="договор"
-                    data-sort-name1="№ 129/033 СТН">
+                <li>
                   <div class="list__subtitle">
                     <p>договор</p>
                     <p>

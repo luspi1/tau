@@ -15,7 +15,7 @@
 
   <main class="main">
     <section class="only-templates">
-      <div class="container sort-wrapper">
+      <div class="container">
         <div class="only-templates__top">
           <h1 class="only-templates__title">Все шаблоны</h1>
           <div class="only-templates__filter-links">
@@ -40,14 +40,14 @@
             <div class="only-templates__filter-right">
               <div class="main-sort">
                 <select
-                  class="custom-select sort-select"
+                  class="alt-select server-sort"
                   name="sort_select">
-                  <option value="dateNew">По дате, сначала новые</option>
-                  <option value="dateOld">По дате, сначала старые</option>
-                  <option value="abcDecr">По алфавиту А-Я</option>
-                  <option value="abcIncr">По алфавиту Я-А</option>
-                  <option value="abcDecr1">По типу А-Я</option>
-                  <option value="abcIncr1">По типу Я-А</option>
+                  <option value="dateNew" data-url="/#1">По дате, сначала новые</option>
+                  <option value="dateOld" data-url="/#2">По дате, сначала старые</option>
+                  <option value="abcDecr" data-url="/#3">По алфавиту А-Я</option>
+                  <option value="abcIncr" data-url="/#4">По алфавиту Я-А</option>
+                  <option value="abcDecr1" data-url="/#5">По типу А-Я</option>
+                  <option value="abcIncr1" data-url="/#6">По типу Я-А</option>
                 </select>
               </div>
               <a href="create-template.html" class="only-templates__link-add">Добавить
@@ -68,10 +68,8 @@
               <td>Автор шаблона</td>
             </tr>
             </thead>
-            <tbody class="table__body sort-list">
-            <tr data-sort-date="20.02.2019"
-                data-sort-name="Первый договор на создание сайта"
-                data-sort-name1="Отчет">
+            <tbody class="table__body">
+            <tr>
               <td>1</td>
               <td>Отчет</td>
               <td><a href="#">СББР, ... еще 3 кейса</a></td>
@@ -79,9 +77,7 @@
               <td>20 фев 2019</td>
               <td><a href="#">Вильчес-Ногерол А. В.</a></td>
             </tr>
-            <tr data-sort-date="15.04.2020"
-                data-sort-name="Второй договор на создание сайта"
-                data-sort-name1="Акт">
+            <tr>
               <td>2</td>
               <td>Акт</td>
               <td><a href="#">СББР, ... еще 3 кейса</a></td>
@@ -89,9 +85,7 @@
               <td>15 апр 2020</td>
               <td><a href="#">Сержантов-Шульц К. В.</a></td>
             </tr>
-            <tr data-sort-date="01.07.2011"
-                data-sort-name="Третий договор на создание сайта"
-                data-sort-name1="Договор">
+            <tr>
               <td>3</td>
               <td>Договор</td>
               <td><a href="#">СББР, ... еще 3 кейса</a></td>
@@ -99,9 +93,7 @@
               <td>1 июля 2011</td>
               <td><a href="#">Отрадинский-Марков М. Ф.</a></td>
             </tr>
-            <tr data-sort-date="01.08.2011"
-                data-sort-name="Четвертый договор на создание сайта"
-                data-sort-name1="Договор">
+            <tr>
               <td>4</td>
               <td>Договор</td>
               <td><a href="#">СББР, ... еще 3 кейса</a></td>
