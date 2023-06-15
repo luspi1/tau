@@ -41,6 +41,11 @@ cutString(trimAsideStrings)
 const trimCorrStrings = document.querySelectorAll('.correspondence a[data-shear]')
 cutString(trimCorrStrings)
 
+//обрезка длинных строк на странице - contact-correspondence
+
+const trimContactCorrStrings = document.querySelectorAll('.contact-correspondence a[data-shear]')
+cutString(trimContactCorrStrings)
+
 //обрезка длинных строк в aside на странице - correspondence-item
 const trimCorrItemStrings = document.querySelectorAll('.newmail-one [data-shear]')
 cutString(trimCorrItemStrings)
