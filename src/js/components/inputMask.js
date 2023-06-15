@@ -332,6 +332,7 @@ export const initAllMasks = () => {
         allowMinus: false,
         showMaskOnHover: false,
         showMaskOnFocus: false,
+        shortcuts: null
       }).mask(itemMask)
     })
   }

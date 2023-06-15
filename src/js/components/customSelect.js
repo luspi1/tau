@@ -357,6 +357,7 @@ if (generalMultSelects) {
       allowHTML: true,
       removeItemButton: true,
       noChoicesText: 'Пусто',
+      noResultsText: 'Не найдено'
     })
   })
 }

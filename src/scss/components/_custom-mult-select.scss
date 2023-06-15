@@ -21,12 +21,15 @@
     line-height: 21px;
     color: #222220;
     background-color: transparent;
-    padding: 10px 10px;
+    min-width: 100%;
   }
 
   .choices__placeholder {
     display: none;
   }
 
+  .choices__inner {
+    padding: 16px 18px 10px;
+  }
 
 }
