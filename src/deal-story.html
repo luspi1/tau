@@ -20,7 +20,7 @@
     })
     <div class="container">
       <section class="one-deal">
-        <div class="container sort-wrapper">
+        <div class="container">
           <div class="one-deal__info">
             <div class="one-deal__title">
               <h1>Журнал сделки</h1>
@@ -44,40 +44,43 @@
           </div>
           <div class="deal-story__border-wrapper">
             <div class="flex-wrapper">
-            <form action="#" class="search">
-              <input class="search__input" type="text" name="" id=""
-                     placeholder="Найти активность">
-              <div class="search__wrap">
-                <select class="search__select" name="search__select">
-                  <option value="story_1">...</option>
-                  <option value="story_2">... 1</option>
-                  <option value="story_3">... 2</option>
+              <form action="#" class="search">
+                <input class="search__input" type="text" name="" id=""
+                       placeholder="Найти активность">
+                <div class="search__wrap">
+                  <select class="search__select" name="search__select">
+                    <option value="story_1">...</option>
+                    <option value="story_2">... 1</option>
+                    <option value="story_3">... 2</option>
+                  </select>
+                </div>
+                <button class="deal-story__search-btn" type="submit">Искать
+                </button>
+              </form>
+              <div class="main-sort">
+                <select
+                  class="alt-select server-sort"
+                  name="sort_select">
+                  <option value="dateNew" data-url="/#1">
+                    По дате,
+                    сначала новые
+                  </option>
+                  <option value="dateOld" data-url="/#2">По дате, сначала старые
+                  </option>
+                  <option value="abcDecr" data-url="/#3">По типу А-Я</option>
+                  <option value="abcIncr" data-url="/#4">По типу Я-А</option>
                 </select>
               </div>
-              <button class="deal-story__search-btn" type="submit">Искать
-              </button>
-            </form>
-            <div class="main-sort">
-              <select
-                class="custom-select sort-select"
-                name="sort_select">
-                <option value="dateNew">По дате, сначала новые</option>
-                <option value="dateOld">По дате, сначала старые</option>
-                <option value="abcDecr">По типу А-Я</option>
-                <option value="abcIncr">По типу Я-А</option>
-              </select>
-            </div>
             </div>
             <div class="table-wrap">
-              <ul class="table sort-list">
-                <li data-sort-date="title" data-sort-name="title">
+              <ul class="table">
+                <li>
                   <p>Тип действия</p>
                   <p>Автор действия</p>
                   <p>Данные действия</p>
                   <p>Дата и время</p>
                 </li>
-                <li data-sort-date="12.04.2022,14.31.52"
-                    data-sort-name="смена ответственного">
+                <li>
                   <p>смена ответственного</p>
                   <p><a href="#">Тедорадзе А.С.</a></p>
                   <p>Новый ответственный за сделку
@@ -88,8 +91,7 @@
                     <span>14:31:52</span>
                   </p>
                 </li>
-                <li data-sort-date="13.04.2022,14.21.42"
-                    data-sort-name="добавление факт. платежа">
+                <li>
                   <p>добавление факт. платежа</p>
                   <p><a href="#">Файзуллин А.Р.</a></p>
                   <p>Авансовый платеж от 14.04.2022 на сумму 23 000 руб</p>
@@ -97,8 +99,7 @@
                     <span>13.04.2022</span> :
                     <span>14:21:42</span></p>
                 </li>
-                <li data-sort-date="13.05.2022,14.31.52"
-                    data-sort-name="смена ответственного">
+                <li>
                   <p>смена ответственного</p>
                   <p><a href="#">Тедорадзе А.С.</a></p>
                   <p>Новый ответственный за сделку
@@ -109,8 +110,7 @@
                     <span>14:31:52</span>
                   </p>
                 </li>
-                <li data-sort-date="10.03.2022,14.21.42"
-                    data-sort-name="добавление факт. платежа">
+                <li>
                   <p>добавление факт. платежа</p>
                   <p><a href="#">Константинопольский Константин
                     Константинович</a></p>
@@ -120,8 +120,7 @@
                     <span>14:21:42</span>
                   </p>
                 </li>
-                <li data-sort-date="09.01.2022,14.31.52"
-                    data-sort-name="смена ответственного">
+                <li>
                   <p>смена ответственного</p>
                   <p><a href="#">Тедорадзе А.С.</a></p>
                   <p>Новый ответственный за сделку
@@ -132,8 +131,7 @@
                     <span>14:31:52</span>
                   </p>
                 </li>
-                <li data-sort-date="09.01.2023,14.21.42"
-                    data-sort-name="добавление факт. платежа">
+                <li>
                   <p>добавление факт. платежа</p>
                   <p><a href="#">Отрадинский-Марков Марк Федорович</a></p>
                   <p>Авансовый платеж от 14.04.2022 на сумму 23 000 руб</p>
@@ -142,8 +140,7 @@
                     <span>14:21:42</span>
                   </p>
                 </li>
-                <li data-sort-date="19.01.2023,14.31.52"
-                    data-sort-name="смена ответственного">
+                <li>
                   <p>смена ответственного</p>
                   <p><a href="#">Тедорадзе А.С.</a></p>
                   <p>Новый ответственный за сделку
@@ -154,8 +151,7 @@
                     <span>14:31:52</span>
                   </p>
                 </li>
-                <li data-sort-date="03.09.2020,14.21.42"
-                    data-sort-name="добавление факт. платежа">
+                <li>
                   <p>добавление факт. платежа</p>
                   <p><a href="#">Сержантов-Шульц Константин Владимирович</a>
                   </p>
@@ -165,8 +161,7 @@
                     <span>14:21:42</span>
                   </p>
                 </li>
-                <li data-sort-date="25.09.2020,14.31.52"
-                    data-sort-name="смена ответственного">
+                <li>
                   <p>смена ответственного</p>
                   <p><a href="#">Тедорадзе А.С.</a></p>
                   <p>Новый ответственный за сделку
@@ -177,8 +172,7 @@
                     <span>14:31:52</span>
                   </p>
                 </li>
-                <li data-sort-date="25.12.2022,14.21.42"
-                    data-sort-name="добавление факт. платежач">
+                <li>
                   <p>добавление факт. платежа</p>
                   <p><a href="#">Вильчес-Ногерол Антонио Владимирович</a></p>
                   <p>Авансовый платеж от 14.04.2022 на сумму 23 000 руб</p>
@@ -232,7 +226,8 @@
                   data-modal="change-employee-modal">Поменять сотрудников
           </button>
           <div class="aside__links">
-            <p><a href="deal-documents.html">Все документы сделки</a>&nbsp;(4)</p>
+            <p><a href="deal-documents.html">Все документы сделки</a>&nbsp;(4)
+            </p>
             <a href="#">Создать документ</a>
           </div>
         </div>

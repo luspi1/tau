@@ -21,8 +21,7 @@
   .cases-page .cases h1,
   .cases-page .cases__input,
   .cases-page .cases__search-btn,
-  .cases-page .cases .choices,
-  .cases-page .cases__btn {
+  .cases-page .cases .choices {
     margin-bottom: 15px;
   }
   .cases-page .cases__list-item h3 {
@@ -94,6 +93,10 @@
   .cases-page__top-right {
     flex-direction: column;
     align-items: flex-start;
+
+    .main-sort {
+      margin-bottom: 10px;
+    }
   }
 
   .cases-page .cases__btn {

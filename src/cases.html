@@ -15,7 +15,7 @@
 
   <main class="main cases-page">
     <section class="section cases">
-      <div class="container sort-wrapper">
+      <div class="container">
 
         <div class="cases-page__top">
 
@@ -33,12 +33,16 @@
           <div class="cases-page__top-right">
             <div class="main-sort">
               <select
-                class="custom-select sort-select"
+                class="alt-select server-sort"
                 name="sort_select">
-                <option value="dateNew">По дате, сначала новые</option>
-                <option value="dateOld">По дате, сначала старые</option>
-                <option value="abcDecr">По алфавиту А-Я</option>
-                <option value="abcIncr">По алфавиту Я-А</option>
+                <option value="dateNew" data-url="/#1">
+                  По дате,
+                  сначала новые
+                </option>
+                <option value="dateOld" data-url="/#2">По дате, сначала старые
+                </option>
+                <option value="abcDecr" data-url="/#3">По алфавиту А-Я</option>
+                <option value="abcIncr" data-url="/#4">По алфавиту Я-А</option>
               </select>
             </div>
             <a href="create-case.html" class="cases__btn">Добавить кейс</a>
@@ -46,9 +50,8 @@
 
         </div>
 
-        <ul class="cases__list sort-list">
-          <li class="cases__list-item" data-sort-date="14.01.2022"
-              data-sort-name="Ремонт автотехники (кейс 2198)">
+        <ul class="cases__list">
+          <li class="cases__list-item">
             <div class="cases__item-left">
               <a href="case-item.html">
                 <h3>Ремонт автотехники (кейс 2198)</h3>
@@ -64,8 +67,7 @@
               </p>
             </div>
           </li>
-          <li class="cases__list-item" data-sort-date="10.03.2022"
-              data-sort-name="Археологические изыскания (кейс 0017)">
+          <li class="cases__list-item">
             <div class="cases__item-left">
               <a href="case-item.html">
                 <h3>Археологические изыскания (кейс 0017)</h3>
@@ -81,8 +83,7 @@
               </p>
             </div>
           </li>
-          <li class="cases__list-item" data-sort-date="14.02.2020"
-              data-sort-name="Ремонт автотехники (кейс 2198)">
+          <li class="cases__list-item">
             <div class="cases__item-left">
               <a href="case-item.html">
                 <h3>Ремонт автотехники (кейс 2198)</h3>
@@ -98,8 +99,7 @@
               </p>
             </div>
           </li>
-          <li class="cases__list-item" data-sort-date="01.04.2015"
-              data-sort-name="Археологические изыскания (кейс 0017)">
+          <li class="cases__list-item">
             <div class="cases__item-left">
               <a href="case-item.html">
                 <h3>Археологические изыскания (кейс 0017)</h3>
