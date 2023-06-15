@@ -1,0 +1,36 @@
+.alt-select {
+  display: block;
+  @include montserrat-medium;
+  font-size: 17px;
+  line-height: 21px;
+  color: #817D8C;
+  padding: 8px 0 8px 10px;
+  width: 270px;
+  max-width: 270px;
+  margin: 0;
+  border: 1px solid #E6E6E6;
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-appearance: initial;
+  -moz-appearance: initial;
+  appearance: auto;
+
+  &::-ms-expand {
+    display: none;
+  }
+
+  &:hover {
+    border: 1px solid #3E29CA;
+  }
+
+  &:focus {
+    border: 1px solid #3E29CA;
+    outline: none;
+  }
+
+  option {
+    cursor: pointer;
+  }
+
+}

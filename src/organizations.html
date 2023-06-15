@@ -15,18 +15,22 @@
 
   <main class="main">
     <section class="section page-organizations">
-      <div class="container sort-wrapper">
+      <div class="container">
         <div class="page-organizations__top">
           <h1 class="page-organizations__title">Организации</h1>
           <div class="page-organizations__top-right">
             <div class="main-sort">
               <select
-                class="custom-select sort-select"
+                class="alt-select server-sort"
                 name="sort_select">
-                <option value="dateNew">По дате, сначала новые</option>
-                <option value="dateOld">По дате, сначала старые</option>
-                <option value="abcDecr">По алфавиту А-Я</option>
-                <option value="abcIncr">По алфавиту Я-А</option>
+                <option value="dateNew" data-url="/#1">
+                  По дате,
+                  сначала новые
+                </option>
+                <option value="dateOld" data-url="/#2">По дате, сначала старые
+                </option>
+                <option value="abcDecr" data-url="/#3">По алфавиту А-Я</option>
+                <option value="abcIncr" data-url="/#4">По алфавиту Я-А</option>
               </select>
             </div>
             <a href="new-organization.html" class="page-organizations__btn">
@@ -34,9 +38,8 @@
             </a>
           </div>
         </div>
-        <div class="flex-table sort-list">
-          <div class="flex-table__double-row" data-sort-date="title"
-               data-sort-name="title">
+        <div class="flex-table">
+          <div class="flex-table__double-row">
             <div class="flex-table__row flex-table__row-title">
               <div class="flex-table__cell flex-table__cell-1">Основная
                 деятельность
@@ -48,8 +51,7 @@
               <div class="flex-table__cell flex-table__cell-5">Сделок</div>
             </div>
           </div>
-          <div class="flex-table__double-row" data-sort-date="28.02.2022"
-               data-sort-name="ООО «Росавтодорпроектмашинвест Инновации»">
+          <div class="flex-table__double-row">
             <div class="flex-table__row flex-table__row-title mobile">
               <div class="flex-table__cell flex-table__cell-1">Основная
                 деятельность
@@ -72,8 +74,7 @@
               <div class="flex-table__cell flex-table__cell-5">6</div>
             </div>
           </div>
-          <div class="flex-table__double-row" data-sort-date="01.04.2021"
-               data-sort-name="Якименко Алексей Викторович">
+          <div class="flex-table__double-row">
             <div class="flex-table__row flex-table__row-title mobile">
               <div class="flex-table__cell flex-table__cell-1">Основная
                 деятельность
@@ -96,8 +97,7 @@
               <div class="flex-table__cell flex-table__cell-5">6</div>
             </div>
           </div>
-          <div class="flex-table__double-row" data-sort-date="23.11.2018"
-               data-sort-name="Якименко Алексей Викторович">
+          <div class="flex-table__double-row">
             <div class="flex-table__row flex-table__row-title mobile">
               <div class="flex-table__cell flex-table__cell-1">Основная
                 деятельность
@@ -121,8 +121,7 @@
               <div class="flex-table__cell flex-table__cell-5">6</div>
             </div>
           </div>
-          <div class="flex-table__double-row" data-sort-date="15.07.2014"
-               data-sort-name="ООО «Росавтодорпроектмашинвест Инновации»">
+          <div class="flex-table__double-row">
             <div class="flex-table__row flex-table__row-title mobile">
               <div class="flex-table__cell flex-table__cell-1">Основная
                 деятельность
@@ -144,8 +143,7 @@
               <div class="flex-table__cell flex-table__cell-5">6</div>
             </div>
           </div>
-          <div class="flex-table__double-row" data-sort-date="28.02.2022"
-               data-sort-name="ООО «Росавтодорпроектмашинвест Инновации»">
+          <div class="flex-table__double-row">
             <div class="flex-table__row flex-table__row-title mobile">
               <div class="flex-table__cell flex-table__cell-1">Основная
                 деятельность
@@ -167,8 +165,7 @@
               <div class="flex-table__cell flex-table__cell-5">6</div>
             </div>
           </div>
-          <div class="flex-table__double-row" data-sort-date="28.02.2022"
-               data-sort-name="Якименко Алексей Викторович">
+          <div class="flex-table__double-row">
             <div class="flex-table__row flex-table__row-title mobile">
               <div class="flex-table__cell flex-table__cell-1">Основная
                 деятельность
@@ -190,8 +187,7 @@
               <div class="flex-table__cell flex-table__cell-5">6</div>
             </div>
           </div>
-          <div class="flex-table__double-row" data-sort-date="28.02.2022"
-               data-sort-name="ООО «Росавтодорпроектмашинвест Инновации»">
+          <div class="flex-table__double-row">
             <div class="flex-table__row flex-table__row-title mobile">
               <div class="flex-table__cell flex-table__cell-1">Основная
                 деятельность
@@ -213,8 +209,7 @@
               <div class="flex-table__cell flex-table__cell-5">6</div>
             </div>
           </div>
-          <div class="flex-table__double-row" data-sort-date="28.02.2022"
-               data-sort-name="Якименко Алексей Викторович">
+          <div class="flex-table__double-row">
             <div class="flex-table__row flex-table__row-title mobile">
               <div class="flex-table__cell flex-table__cell-1">Основная
                 деятельность
@@ -236,8 +231,7 @@
               <div class="flex-table__cell flex-table__cell-5">6</div>
             </div>
           </div>
-          <div class="flex-table__double-row" data-sort-date="28.02.2022"
-               data-sort-name="Якименко Алексей Викторович">
+          <div class="flex-table__double-row">
             <div class="flex-table__row flex-table__row-title mobile">
               <div class="flex-table__cell flex-table__cell-1">Основная
                 деятельность
@@ -259,8 +253,7 @@
               <div class="flex-table__cell flex-table__cell-5">6</div>
             </div>
           </div>
-          <div class="flex-table__double-row" data-sort-date="28.02.2022"
-               data-sort-name="Якименко Алексей Викторович">
+          <div class="flex-table__double-row">
             <div class="flex-table__row flex-table__row-title mobile">
               <div class="flex-table__cell flex-table__cell-1">Основная
                 деятельность
@@ -282,8 +275,7 @@
               <div class="flex-table__cell flex-table__cell-5">6</div>
             </div>
           </div>
-          <div class="flex-table__double-row" data-sort-date="28.02.2022"
-               data-sort-name="ООО «Росавтодорпроектмашинвест Инновации»">
+          <div class="flex-table__double-row">
             <div class="flex-table__row flex-table__row-title mobile">
               <div class="flex-table__cell flex-table__cell-1">Основная
                 деятельность

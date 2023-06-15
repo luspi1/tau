@@ -1,5 +1,7 @@
 import { sortArr } from '../_functions'
 
+//Сортировка на клиенте
+
 const sortWrappers = document.querySelectorAll('.sort-wrapper')
 
 if (sortWrappers) {
@@ -15,5 +17,22 @@ if (sortWrappers) {
         sortArr(selectValue, sortElementsArr, sortList)
       })
     }
+  })
+}
+
+
+//Сортировка на сервере
+
+
+const serverSelects = document.querySelectorAll('.server-sort')
+
+if (serverSelects) {
+  serverSelects.forEach(select => {
+    select.addEventListener('input', (e) => {
+      let linkUrl = e.target.selectedOptions[0].dataset.url
+      if (linkUrl) {
+        window.location.href = linkUrl
+      }
+    })
   })
 }
