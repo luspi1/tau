@@ -30,6 +30,30 @@
     margin-bottom: 25px;
   }
 
+
+  &__warning {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 16px;
+    background-color: #F4F7FB;
+    border-radius: 5px;
+
+    svg {
+      min-width: 18px;
+      width: 18px;
+      margin-right: 14px;
+    }
+
+    p {
+      width: max-content;
+      font-size: 14px;
+      line-height: 17px;
+      color: $link;
+    }
+  }
+
   &__input-title {
     margin-bottom: 9px;
     @include montserrat-regular;
