@@ -18,11 +18,11 @@
     <p class="open-deal__label">Название сделки</p>
     <p class="open-deal__description">Длинное название сделки, не ссылка</p>
   </div>
-  <form id="form-open-deal" name="formOpenDeal"  action="">
-    <input type="hidden" name="id_deal" value="567xvs1100A" >
+  <form id="form-open-deal" name="formOpenDeal" action="">
+    <input type="hidden" name="id_deal" value="567xvs1100A">
     <div class="open-deal__select-wrapper">
       <p class="open-deal__label">Основание закрытия сделки*</p>
-      <select class="open-deal__select custom-select" name="openDealSelect"  required>
+      <select class="open-deal__select custom-select" name="openDealSelect">
         <option value="">выбрать основание открытия сделки</option>
         <option value="basis_1">Основание 1</option>
         <option value="basis_2">Основание 2</option>
@@ -31,7 +31,8 @@
     </div>
 
     <div class="open-deal__textarea-wrapper">
-      <p class="open-deal__label">Обстоятельства открытия сделки в свободной форме*</p>
+      <p class="open-deal__label">Обстоятельства открытия сделки в свободной
+        форме*</p>
       <textarea name="openDealText" required></textarea>
     </div>
     <div class="open-deal__row">
@@ -51,13 +52,15 @@
       </div>
       <div class="open-deal__item col-2">
         <p class="open-deal__label">Обстоятельства закрытия сделки</p>
-        <p class="open-deal__description">Пришло время закрыть, и мы ее закрыли!</p>
+        <p class="open-deal__description">Пришло время закрыть, и мы ее
+          закрыли!</p>
       </div>
     </div>
 
     <div class="open-deal__warning">
       <div class="open-deal__warning-title">
-        <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="18" height="19" viewBox="0 0 18 19" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
           <path
             d="M9 18.2C13.9706 18.2 18 14.1705 18 9.19995C18 4.22939 13.9706 0.199951 9 0.199951C4.02944 0.199951 0 4.22939 0 9.19995C0 14.1705 4.02944 18.2 9 18.2Z"
             fill="#2F65F6"/>
@@ -65,7 +68,8 @@
             d="M7.49844 14.5C7.19844 14.2 6.99844 13.8 6.99844 13.3C6.99844 12.8 7.19844 12.4 7.49844 12.1C7.79844 11.8 8.29845 11.6 8.79845 11.6C9.29845 11.6 9.79845 11.8 10.0984 12.1C10.3984 12.4 10.5984 12.8 10.5984 13.3C10.5984 13.8 10.3984 14.2 10.0984 14.5C9.79845 14.8 9.29845 15 8.79845 15C8.19845 15 7.79844 14.8 7.49844 14.5ZM6.89844 3.5H10.5984L9.99844 10.7H7.59845L6.89844 3.5Z"
             fill="white"/>
         </svg>
-        <p>Внимание! Если Вы откроете сделку, сделка откроется и произойдет вот это, по списку:</p>
+        <p>Внимание! Если Вы откроете сделку, сделка откроется и произойдет вот
+          это, по списку:</p>
       </div>
       <ul class="open-deal__warning-list">
         <li>— сделка откроется;</li>
@@ -74,8 +78,12 @@
       </ul>
     </div>
 
-    <button class="open-deal__btn open-deal__btn-submit" type="submit" data-script="data/getCases.txt">Открыть сделку</button>
-    <button class="open-deal__btn open-deal__btn-cancel" data-close-modal="true" type="button">Отменить</button>
+    <button class="open-deal__btn open-deal__btn-submit" type="submit"
+            data-script="data/getCases.txt">Открыть сделку
+    </button>
+    <button class="open-deal__btn open-deal__btn-cancel" data-close-modal="true"
+            type="button">Отменить
+    </button>
   </form>
 
 </div>
