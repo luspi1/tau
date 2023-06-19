@@ -443,6 +443,10 @@
             </div>
           </div>
         </div>
+        <div class="contract__correspondence">
+          <h4>Корреспонденция</h4>
+          <button class="contract__correspondence-btn-create" data-modal="create-letter-modal" type="button">Создать письмо из документа</button>
+        </div>
       </aside>
     </div>
     <div class="modal-contract modal " id="contract-subject-modal">
@@ -630,6 +634,8 @@
     </div>
     @include('partials/info-modal.html')
     @include('partials/loader.html')
+    @include('partials/create-letter-modal.html', {
+    'letter-title' : 'название документа'})
   </main>
   @include('partials/footer.html')
 </div>
