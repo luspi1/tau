@@ -1,17 +1,18 @@
-import { sendData, showInfoModal }    from '../_functions'
-import { handleCloseDealModal }       from './closeDealModal'
-import { initAllDates }               from './customDate'
-import { initSelects }                from './customSelect'
-import { handleDocumentPreviewModal } from './documentPreviewModal'
-import { handleDocumentSendModal }    from './documentSendModal'
-import { initAllMasks }               from './inputMask'
-import { initCloseModals }            from './managePopup'
-import { handleDocumentSignModal }    from './signDocModal'
+import { sendData, showInfoModal }         from '../_functions'
+import { handleCloseDealModal }            from './closeDealModal'
+import { initAllDates }                    from './customDate'
+import { initSelects }                     from './customSelect'
+import { handleDocumentPreviewModal }      from './documentPreviewModal'
+import { handleDocumentSendModal }         from './documentSendModal'
+import { initAllMasks }                    from './inputMask'
+import { initCloseModals, initOpenModals } from './managePopup'
+import { handleDocumentSignModal }         from './signDocModal'
 
 
 const initGeneratedModal = (modal) => {
   //инициализация всех кастомных библиотек
   initCloseModals()
+  initOpenModals()
   initSelects()
   initAllDates()
   initAllMasks()

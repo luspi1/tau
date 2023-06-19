@@ -1,6 +1,5 @@
 import { body, modalOverlay } from "../_vars"
 
-const openModalBtns = document.querySelectorAll('[data-modal]')
 
 const handleCloseModalKeyboard = (e) => {
   if (e.keyCode === 27) {
@@ -18,41 +17,47 @@ const handleCloseModalKeyboard = (e) => {
 }
 
 
-if (openModalBtns) {
-  openModalBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault()
+const initOpenModals = () => {
+  const openModalBtns = document.querySelectorAll('[data-modal]')
 
-      document.addEventListener('keydown', handleCloseModalKeyboard)
-      const btnCurrentModal = btn.dataset.modal
-      const currentBtn = e.currentTarget
-      const currentPageMain = btn.closest('main')
-      const currentModal = document.querySelector(`#${btnCurrentModal}`)
-      const isBodyLock = currentModal.dataset.bodyLock
-      const activeModal = document.querySelector('.modal._active')
+  if (openModalBtns) {
+    openModalBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault()
 
-      if (activeModal) {
-        activeModal.classList.remove('_active')
-      }
+        document.addEventListener('keydown', handleCloseModalKeyboard)
+        const btnCurrentModal = btn.dataset.modal
+        const currentBtn = e.currentTarget
+        const currentPageMain = btn.closest('main')
+        const currentModal = document.querySelector(`#${btnCurrentModal}`)
+        const isBodyLock = currentModal.dataset.bodyLock
+        const activeModal = document.querySelector('.modal._active')
 
-      currentModal.scrollTo(0, 0)
-
-      if (isBodyLock) {
-        body.classList.add('_lock')
-      }
-
-      if (currentBtn.dataset.id) {
-        const dataIdInput = currentModal.querySelector('.data-modal-id')
-        if (dataIdInput) {
-          dataIdInput.value = currentBtn.dataset.id
+        if (activeModal) {
+          activeModal.classList.remove('_active')
         }
-      }
 
-      currentModal.classList.add('_active')
-      modalOverlay.classList.add('modal-overlay_active')
+        currentModal.scrollTo(0, 0)
+
+        if (isBodyLock) {
+          body.classList.add('_lock')
+        }
+
+        if (currentBtn.dataset.id) {
+          const dataIdInput = currentModal.querySelector('.data-modal-id')
+          if (dataIdInput) {
+            dataIdInput.value = currentBtn.dataset.id
+          }
+        }
+
+        currentModal.classList.add('_active')
+        modalOverlay.classList.add('modal-overlay_active')
+      })
     })
-  })
+  }
 }
+
+initOpenModals()
 
 
 const initCloseModals = () => {
@@ -93,4 +98,4 @@ if (modalOverlay) {
   })
 }
 
-export { initCloseModals }
+export { initCloseModals, initOpenModals }

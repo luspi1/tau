@@ -310,7 +310,4 @@ if (createDealPage) {
     }
   }
   caseListForm.addEventListener('submit', handleCaseListForm)
-
-
 }
-

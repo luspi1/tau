@@ -40,7 +40,7 @@ export const handleDocumentSendModal = (sendModal) => {
         console.error(err)
       }
     }
-    sendForm.addEventListener('submit', handleSendSubmit)
+    // sendForm.addEventListener('submit', handleSendSubmit)
   }
 }
 
