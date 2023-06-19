@@ -361,7 +361,7 @@ export const sortArr = (sortValue, sortArr, sortList) => {
   let sortedArr = []
 
 
-  let isTime = sortArr[1].dataset.sortDate.split(',').length > 1
+  let isTime = sortArr[1]?.dataset.sortDate.split(',').length > 1
 
 
   switch (sortValue) {

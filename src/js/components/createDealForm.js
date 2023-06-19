@@ -1,13 +1,13 @@
 import Choices                 from 'choices.js'
 import {
   checkValue,
-  closeSelectPopups,
+  closeSelectPopups, formToObj,
   handlePopupInputs,
   handlePopupSubmit,
-  sendData,
+  sendData, serializeForm,
   showInfoModal,
 }                              from "../_functions"
-import { modalOverlay }        from "../_vars"
+import { body, modalOverlay }  from "../_vars"
 import { initAllDates }        from './customDate'
 import { initSelects }         from './customSelect'
 import { initAllMasks }        from './inputMask'
@@ -262,6 +262,54 @@ if (createDealPage) {
       e.currentTarget.value = e.currentTarget.value.trim()
     }
   })
+
+
+// обработка списка кейсов
+
+  const caseListModal = createDealPage.querySelector('#choice-case-modal')
+  const caseListForm = createDealPage.querySelector('.modal-choice-case__form')
+  const handleCaseListForm = async (e) => {
+    e.preventDefault()
+    const caseValue = formToObj(serializeForm(e.currentTarget))
+
+    const caseInput = caseListForm.querySelector(`input[value="${caseValue?.radioCase}"]`)
+    const caseText = caseInput?.closest('.radio-list__item')?.querySelector('label').textContent.trim()
+
+
+    const data = {
+      id_case: caseValue.radioCase
+    }
+    const dataJson = JSON.stringify(data)
+
+    try {
+      const response = await sendData(dataJson, caseInfoUrl)
+      const finishedResponse = await response.json()
+
+      const {status, errortext, html} = finishedResponse
+      if (status === 'ok') {
+        caseListModal.classList.remove('_active')
+        modalOverlay.classList.remove('modal-overlay_active')
+        body.classList.remove('_lock')
+        dealTreatyData.innerHTML = html
+        dealCaseDataInput.value = caseValue.radioCase
+        dealCaseInput.value = caseText
+        dealCaseSelectPopup.dataset.selected = "true"
+        submitBtn.classList.remove('btn_disabled')
+        updateInvoices(dataJson, caseInvoicesUrl)
+        initChangeableLists()
+        initAllDates()
+        initSelects()
+        initAllMasks()
+        initObservePaymentsList()
+      } else {
+        showInfoModal(errortext)
+      }
+    } catch (err) {
+      showInfoModal("Во время выполнения запроса произошла ошибка")
+      console.error(err)
+    }
+  }
+  caseListForm.addEventListener('submit', handleCaseListForm)
 
 
 }
