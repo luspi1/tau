@@ -1,7 +1,12 @@
 @media (max-width: 1710px) {
   .only-documents .list-doc__row-title-right {
-    width: 36.5%;
+    width: 44.5%;
   }
+
+  .only-documents .list-doc__column:last-child {
+    margin-left: auto;
+  }
+
 }
 
 
