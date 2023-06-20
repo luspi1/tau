@@ -18,7 +18,7 @@
   }
 
   @media (max-width: 1280px) {
-    width: 80%;
+    width: 96%;
   }
 
   @media (max-width: 1024px) {
@@ -73,34 +73,47 @@
 
   }
 
+  &__btn-create {
+    width: max-content;
+    height: 40px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    margin-bottom: 16px;
+    color: $link;
+    background: none;
+    border: 1px solid $link;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+    @media (max-width: 600px) {
+      width: 100%;
+      padding: 0 5px;
+    }
+  }
+
   &__main-btn {
+    margin-bottom: 16px;
+    padding: 10px 14px;
     border: 1px solid #2F65F6;
     color: #2F65F6;
     border-radius: 5px;
     @include montserrat-medium;
-    font-size: 17px;
-    line-height: 21px;
-    padding: 10px 14px;
+    font-size: 16px;
+    line-height: 20px;
     display: flex;
     align-items: center;
     cursor: pointer;
     background-color: #ffffff;
 
-    @media (max-width: 862px) {
-      &.modal-document-preview__edit-btn {
-        margin-top: 15px;
-      }
-    }
-
     @media (max-width: 600px) {
-
       width: 100%;
 
-      &:not(:last-child) {
-        margin-bottom: 15px;
-      }
     }
-
 
     svg {
       margin-right: 6px;
@@ -133,6 +146,10 @@
       }
     }
 
+  }
+
+  &__edit-btn {
+    width: max-content;
   }
 
   &__btns-group {
@@ -200,10 +217,6 @@
     }
   }
 
-  &__panel-btns-top {
-    margin-bottom: 16px;
-  }
-
   .choices {
     margin-bottom: 0;
     margin-right: 8px;
@@ -251,11 +264,6 @@
 
   }
 
-  &__panel-btns-left {
-    @media (max-width: 1280px) {
-      margin-bottom: 20px;
-    }
-  }
 
   &__panel-btns-right {
     @media (max-width: 900px) {
@@ -280,6 +288,4 @@
     }
 
   }
-
-
 }

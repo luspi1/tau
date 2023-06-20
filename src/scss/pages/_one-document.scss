@@ -195,7 +195,7 @@
     &__correspondence-btn-create {
       height: 30px;
       margin-bottom: 32px;
-      padding: 0 22px;
+      padding: 0 14px;
       display: flex;
       align-items: center;
       color: $link;
@@ -211,6 +211,48 @@
       &:hover {
         background-color: #2F65F6;
         color: #ffffff;
+      }
+    }
+
+    &__correspondence-info {
+      h6 {
+        margin-bottom: 13px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+
+    &__correspondence-list {
+      li {
+        max-width: 280px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+
+        p {
+          font-size: 14px;
+          line-height: 17px;
+          &:first-child {
+            min-width: 130px;
+            width: 130px;
+            margin-right: 10px;
+          }
+          &:last-child {
+            min-width: 102px;
+            width: 102px;
+            white-space: nowrap;
+            overflow-x: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+
+        &:first-child {
+          p {
+            color: #858584;
+          }
+        }
+
       }
     }
   }
@@ -313,6 +355,9 @@
 
 
     .contract__paper {
+      margin-bottom: 29px;
+      border-bottom: 2px dotted #C4C4C4;
+
       h4 {
         margin-bottom: 10px;
       }
