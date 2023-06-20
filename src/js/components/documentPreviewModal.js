@@ -4,9 +4,9 @@ import {
   sendData,
   serializeForm,
   showInfoModal
-}                                     from '../_functions'
-import { modalOverlay, sendDocModal } from '../_vars'
-import { initDocLetterBtns }          from './createLetterModal'
+}                             from '../_functions'
+import { modalOverlay }       from '../_vars'
+import { handleGeneratedBtn } from './generatedModals'
 
 export const handleDocumentPreviewModal = (previewModal) => {
   if (previewModal.classList.contains('modal-document-preview')) {
@@ -47,7 +47,13 @@ export const handleDocumentPreviewModal = (previewModal) => {
       }
     }
     previewForms.forEach(form => form.addEventListener('submit', handlePreviewSubmit))
-    initDocLetterBtns()
+
+    const generatedModalBtns = previewModal.querySelectorAll('button[data-type-btn="generated"]')
+    if (generatedModalBtns) {
+      generatedModalBtns.forEach(genBtn => {
+        genBtn.addEventListener('click', handleGeneratedBtn)
+      })
+    }
   }
 }
 

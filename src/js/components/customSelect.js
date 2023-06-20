@@ -215,7 +215,7 @@ const initSelects = () => {
       })
     })
   }
-  
+
   const trafficSelects = document.querySelectorAll('.traffic__select-wrap select')
 
   if (trafficSelects) {
@@ -328,22 +328,22 @@ const initSelects = () => {
       })
     })
   }
-}
-// Общая инциализация селектов с множественным выбором
+  // Общая инциализация селектов с множественным выбором
 
-const generalMultSelects = document.querySelectorAll('.custom-mult-select__input')
-if (generalMultSelects) {
-  generalMultSelects.forEach(el => {
-    const choices = new Choices(el, {
-      itemSelectText: '',
-      searchEnabled: false,
-      shouldSort: false,
-      allowHTML: true,
-      removeItemButton: true,
-      noChoicesText: 'Пусто',
-      noResultsText: 'Не найдено'
+  const generalMultSelects = document.querySelectorAll('.custom-mult-select__input')
+  if (generalMultSelects) {
+    generalMultSelects.forEach(el => {
+      const choices = new Choices(el, {
+        itemSelectText: '',
+        searchEnabled: false,
+        shouldSort: false,
+        allowHTML: true,
+        removeItemButton: true,
+        noChoicesText: 'Пусто',
+        noResultsText: 'Не найдено'
+      })
     })
-  })
+  }
 }
 
 

@@ -445,11 +445,12 @@
         </div>
         <div class="contract__correspondence">
           <h4>Корреспонденция</h4>
-          <button class="contract__correspondence-btn-create letter-doc-btn"
+          <button class="contract__correspondence-btn-create"
                   data-modal="create-letter-modal"
-                  data-script="./data/getDocFile.txt" data-id="docid4131"
-                  type="button">Создать
-            письмо из документа
+                  data-type-btn="generated"
+                  data-script="./data/getCreateLetterDocModal.txt"
+                  data-id="docid4131"
+                  type="button">Создать письмо из документа
           </button>
           <div class="contract__correspondence-info">
             <h6>Документ был отправлен: </h6>
@@ -483,7 +484,7 @@
         </div>
       </aside>
     </div>
-    <div class="modal-contract modal " id="contract-subject-modal">
+    <div class="modal-contract modal" id="contract-subject-modal">
       <button class="modal-contract__close modal-contract__close-subject"
               type="button" data-close-modal="true">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -545,7 +546,7 @@
         feugiat nulla facilisis.
       </p>
     </div>
-    <div class="modal-contract modal " id="contract-confidential-modal">
+    <div class="modal-contract modal" id="contract-confidential-modal">
       <button class="modal-contract__close modal-contract__close-confidential"
               type="button" data-close-modal="true">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -606,7 +607,7 @@
         feugiat nulla facilisis.
       </p>
     </div>
-    <div class="modal-contract modal " id="contract-app-modal">
+    <div class="modal-contract modal" id="contract-app-modal">
       <button class="modal-contract__close modal-contract__close-app"
               type="button" data-close-modal="true">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -921,6 +922,7 @@
         <div class="modal-create-letter__sys-doc">
           <p class="modal-create-letter__attached-title">Системные документы</p>
           <div class="modal-create-letter__sys-doc-list">
+            <a href="#">Какой то документ</a>
           </div>
         </div>
 
