@@ -11,7 +11,8 @@
   }
 
   &__deals-link,
-  &__letters-link {
+  &__letters-link,
+  &__mails-link{
     display: none;
     margin-left: 23px;
     align-items: center;
@@ -42,6 +43,12 @@
 
   &.deal-link_active {
     .header__deals-link {
+      display: flex;
+    }
+  }
+
+  &.deal-mails_active {
+    .header__mails-link {
       display: flex;
     }
   }
