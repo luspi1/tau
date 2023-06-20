@@ -6,6 +6,7 @@ import {
   showInfoModal
 }                                     from '../_functions'
 import { modalOverlay, sendDocModal } from '../_vars'
+import { initDocLetterBtns }          from './createLetterModal'
 
 export const handleDocumentPreviewModal = (previewModal) => {
   if (previewModal.classList.contains('modal-document-preview')) {
@@ -46,6 +47,7 @@ export const handleDocumentPreviewModal = (previewModal) => {
       }
     }
     previewForms.forEach(form => form.addEventListener('submit', handlePreviewSubmit))
+    initDocLetterBtns()
   }
 }
 

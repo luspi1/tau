@@ -31,9 +31,9 @@ if (createLetterModal) {
 
 export const initDocLetterBtns = () => {
   const docLetterBtns = document.querySelectorAll('.letter-doc-btn')
-  const createLetterModal = document.querySelector('#create-letter-modal')
-  const letterModalDocName = createLetterModal.querySelector('.modal-create-letter__warning-doc-name')
-  const letterModalDoc = createLetterModal.querySelector('.modal-create-letter__sys-doc-list')
+  const createLetterModal = document?.querySelector('#create-letter-modal')
+  const letterModalDocName = createLetterModal?.querySelector('.modal-create-letter__warning-doc-name')
+  const letterModalDoc = createLetterModal?.querySelector('.modal-create-letter__sys-doc-list')
 
   if (docLetterBtns) {
     docLetterBtns.forEach(letterBtn => {
@@ -50,7 +50,7 @@ export const initDocLetterBtns = () => {
           const {status, errortext, html} = finishedResponse
           if (status === 'ok') {
             const htmlEl = parseStringToHtml(html, 'a')
-
+            letterModalDoc.innerHTML = ''
             letterModalDoc.insertAdjacentElement('beforeend', htmlEl)
             letterModalDocName.textContent = htmlEl.textContent
           } else {
@@ -67,4 +67,5 @@ export const initDocLetterBtns = () => {
 }
 
 initDocLetterBtns()
+
 

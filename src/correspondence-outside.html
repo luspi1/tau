@@ -15,7 +15,7 @@
 
   <main class="main correspondence-outside">
     <section class="newmails">
-      <div class="container sort-wrapper">
+      <div class="container">
         @include('partials/create-letter-modal.html', {
         'letter-title' : 'Создать письмо'
         })
@@ -34,7 +34,7 @@
             <input class="search__input" type="text" name="" id=""
                    placeholder="поиск">
             <div class="search__wrap">
-              <select class="search__mails" name="search-mails">
+              <select class="search__mails custom-select" name="search-mails">
                 <option selected value="">все письма</option>
                 <option value="mail_1">...</option>
                 <option value="mail_2">... 1</option>
@@ -42,7 +42,8 @@
               </select>
             </div>
             <div class="search__wrap">
-              <select class="search__attachments" name="search-attachments">
+              <select class="search__attachments custom-select"
+                      name="search-attachments">
                 <option selected value="">вложения: все</option>
                 <option value="attachment_1">...</option>
                 <option value="attachment_2">... 1</option>
@@ -53,22 +54,24 @@
           </form>
           <div class="main-sort">
             <select
-              class="custom-select sort-select"
+              class="alt-select server-sort"
               name="sort_select">
-              <option value="abcDecr">По алфавиту А-Я</option>
-              <option value="abcIncr">По алфавиту Я-А</option>
-              <option value="dateNew">По дате отправки, новые</option>
-              <option value="dateOld">По дате отправки, старые</option>
-              <option value="dateNew1">По дате получения, новые</option>
-              <option value="dateOld1">По дате получения, старые</option>
+              <option value="abcDecr" data-url="/#1">По алфавиту А-Я</option>
+              <option value="abcIncr" data-url="/#2">По алфавиту Я-А</option>
+              <option value="dateNew" data-url="/#3">По дате отправки, новые
+              </option>
+              <option value="dateOld" data-url="/#4">По дате отправки, старые
+              </option>
+              <option value="dateNew" data-url="/#5">
+                По дате получения, новые
+              </option>
+              <option value="dateOld" data-url="/#6">По дате получения, старые
+              </option>
             </select>
           </div>
         </div>
-        <ul class="newmails__table flex-table sort-list">
-          <li class="flex-table__row top"
-              data-sort-date="title"
-              data-sort-date1="title"
-              data-sort-name="title">
+        <ul class="newmails__table flex-table">
+          <li class="flex-table__row top">
             <p class="flex-table__col-1">Направление</p>
             <p class="flex-table__col-2">№ ВХД</p>
             <p class="flex-table__col-3">№ ИСХД</p>
@@ -78,10 +81,7 @@
             <p class="flex-table__col-7">Тип письма</p>
             <p class="flex-table__col-8">Вложения</p>
           </li>
-          <li class="flex-table__row"
-              data-sort-date="22.02.2018"
-              data-sort-date1="23.02.2018"
-              data-sort-name="Относительно длинное1111">
+          <li class="flex-table__row">
             <p class="flex-table__col-1">Входящее</p>
             <a href="#" class="flex-table__col-2">23-127-09</a>
             <a href="#" class="flex-table__col-3">23-127-09</a>
@@ -94,10 +94,7 @@
             <a href="#" class="flex-table__col-7">ТВК — Почта РФ</a>
             <a href="#" class="flex-table__col-8">3 вложения</a>
           </li>
-          <li class="flex-table__row"
-              data-sort-date="21.02.2018"
-              data-sort-date1="25.02.2018"
-              data-sort-name="Относительно длинное2222">
+          <li class="flex-table__row">
             <p class="flex-table__col-1">Исходящее</p>
             <a href="#" class="flex-table__col-2">39-008-02</a>
             <a href="#" class="flex-table__col-3">39-008-02</a>
@@ -110,10 +107,7 @@
             <a href="#" class="flex-table__col-7">ТВК — СДЭК</a>
             <a href="#" class="flex-table__col-8 _empty">Нет вложений</a>
           </li>
-          <li class="flex-table__row"
-              data-sort-date="01.03.2019"
-              data-sort-date1="03.03.2019"
-              data-sort-name="Относительно длинное333">
+          <li class="flex-table__row">
             <p class="flex-table__col-1">Исходящее</p>
             <a href="#" class="flex-table__col-2">64-408-22</a>
             <a href="#" class="flex-table__col-3">64-408-22</a>
