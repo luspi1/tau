@@ -215,23 +215,7 @@ const initSelects = () => {
       })
     })
   }
-
-
-// Селекторы фильтров на странице "корреспонденция(все письма)"
-  const newMailsSelects = document.querySelectorAll('.newmails__search select')
-
-  if (newMailsSelects) {
-    newMailsSelects.forEach(el => {
-      const choices = new Choices(el, {
-        itemSelectText: '',
-        searchEnabled: false,
-        shouldSort: false,
-        allowHTML: true
-      })
-    })
-  }
-
-
+  
   const trafficSelects = document.querySelectorAll('.traffic__select-wrap select')
 
   if (trafficSelects) {
