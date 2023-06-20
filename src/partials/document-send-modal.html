@@ -12,10 +12,15 @@
     </svg>
   </button>
   <h2>Отправить документ «название документа»</h2>
-  <button class="modal-document-send__btn-create" data-modal="create-letter-modal" type="button">Создать письмо из документа</button>
+  <button class="modal-document-send__btn-create letter-doc-btn"
+          data-modal="create-letter-modal" type="button"
+          data-script="./data/getDocFile.txt" data-id="docid4131">
+    Создать письмо из
+    документа
+  </button>
   <div class="modal-document-send__information">
     <h3>Документ «название документа» <span>был отправлен:</span></h3>
-      <ul class="modal-document-send__list">
+    <ul class="modal-document-send__list">
       <li class="modal-document-send__list-title">
         <p class="modal-document-send__cell">Дата и время</p>
         <p class="modal-document-send__cell">Отправитель</p>

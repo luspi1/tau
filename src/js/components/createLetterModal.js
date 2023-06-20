@@ -1,7 +1,8 @@
+import { parseStringToHtml, sendData, showInfoModal } from '../_functions'
+
 const createLetterModal = document.querySelector('#create-letter-modal')
 
 if (createLetterModal) {
-
 
   // показ/скрытие прикрепления квитанции при методе "Курьер"
   const shippingMethodSelect = createLetterModal.querySelector('.modal-create-letter__shipping-select')
@@ -24,4 +25,46 @@ if (createLetterModal) {
       trackInput.classList.add('hidden')
     }
   })
+
 }
+// обработка модалок с письмом из документа
+
+export const initDocLetterBtns = () => {
+  const docLetterBtns = document.querySelectorAll('.letter-doc-btn')
+  const createLetterModal = document.querySelector('#create-letter-modal')
+  const letterModalDocName = createLetterModal.querySelector('.modal-create-letter__warning-doc-name')
+  const letterModalDoc = createLetterModal.querySelector('.modal-create-letter__sys-doc-list')
+
+  if (docLetterBtns) {
+    docLetterBtns.forEach(letterBtn => {
+      letterBtn.addEventListener('click', async (e) => {
+        const docScript = e.currentTarget.dataset.script
+        const docId = e.currentTarget.dataset.id
+        const data = {id_doc: docId}
+        const jsonData = JSON.stringify(data)
+        try {
+          const response = await sendData(jsonData, docScript)
+          const finishedResponse = await response.json()
+
+
+          const {status, errortext, html} = finishedResponse
+          if (status === 'ok') {
+            const htmlEl = parseStringToHtml(html, 'a')
+
+            letterModalDoc.insertAdjacentElement('beforeend', htmlEl)
+            letterModalDocName.textContent = htmlEl.textContent
+          } else {
+            showInfoModal(errortext)
+          }
+        } catch (err) {
+          showInfoModal("Во время выполнения запроса произошла ошибка")
+          console.error(err)
+        }
+
+      })
+    })
+  }
+}
+
+initDocLetterBtns()
+
