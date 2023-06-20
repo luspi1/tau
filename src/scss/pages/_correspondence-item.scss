@@ -1,7 +1,6 @@
 .correspondence-item {
 
   .newmail-one__deals-list {
-    display: none;
     padding-bottom: 30px;
     margin-bottom: 30px;
     border-bottom: 1px solid #E6E6E6;
@@ -38,7 +37,18 @@
     }
   }
 
+  &._one-deal {
+    .newmail-one__deals-list {
+      display: none;
+    }
+  }
+
   &._no-deal {
+
+    .newmail-one__deals-list {
+      display: none;
+    }
+
     .newmail-one__caption-list-top {
       display: none;
     }
