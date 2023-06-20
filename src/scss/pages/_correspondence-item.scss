@@ -1,5 +1,32 @@
 .correspondence-item {
 
+  .newmail-one__deals-list {
+    display: none;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #E6E6E6;
+
+    h4 {
+      margin-bottom: 20px;
+      @include montserrat-semibold;
+      font-size: 16px;
+      line-height: 20px;
+      color: #000000;
+    }
+
+    li {
+      &:not(:last-child) {
+        margin-bottom: 15px;
+      }
+
+      a {
+        @include montserrat-regular;
+        color: #2F65F6;
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+  }
 
   &._closed {
     .deal-submenu .container .deals__btn.deals__btn-open-btn {
@@ -14,6 +41,16 @@
   &._no-deal {
     .newmail-one__caption-list-top {
       display: none;
+    }
+  }
+
+  &._deals-list {
+    .newmail-one__caption-list-top {
+      display: none;
+    }
+
+    .newmail-one__deals-list {
+      display: block;
     }
   }
 

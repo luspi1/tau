@@ -27,6 +27,6 @@ export const handleCreateDocLetterModal = (createLetterModal) => {
 
 const letterModal = document.querySelector('#create-letter-modal')
 
-if (letterModal.children.length) {
+if (letterModal?.children.length) {
   handleCreateDocLetterModal(letterModal)
 }

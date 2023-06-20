@@ -14,7 +14,7 @@
   'deal-title': 'letters-link_active'
   })
 
-  <main class="main correspondence-item _closed">
+  <main class="main correspondence-item _closed _deals-list">
     @include('partials/deal-submenu.html', {
     'deal-corr': 'deal-submenu_active',
     })
@@ -118,12 +118,34 @@
           <div class="newmail-one__right-block">
             <ul class="newmail-one__caption-list newmail-one__caption-list-top">
               <li>
+                <p class="newmail-one__list-title">Сделка</p>
+                <p class="newmail-one__list-content">129/031 СТН</p>
+              </li>
+              <li>
+                <p class="newmail-one__list-title">Дата создания сделки</p>
+                <p class="newmail-one__list-content">22.09.2021</p>
+              </li>
+              <li>
+                <p class="newmail-one__list-title">Исполнитель</p>
                 <a href="#" class="newmail-one__list-content">ИП Масякин А.
                   Н.</a>
               </li>
               <li>
-                <a href="#" class="newmail-one__list-content">ООО
-                  «Росавтодорпроектстроймашинвест»</a>
+                <p class="newmail-one__list-title">Контрагент</p>
+                <a href="#" class="newmail-one__list-content wrap"
+                   data-shear="24">ООО «Росавтодорпроектстроймашинвест»</a>
+              </li>
+            </ul>
+            <ul class="newmail-one__deals-list">
+              <li>
+                <h4>Связь со сделками</h4>
+                <a href="#">Сделка 131/2c</a>
+              </li>
+              <li>
+                <a href="#">Сделка 323</a>
+              </li>
+              <li>
+                <a href="#">Сделка 8fds</a>
               </li>
             </ul>
             <ul
