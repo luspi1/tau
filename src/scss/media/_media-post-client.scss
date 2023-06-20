@@ -1,0 +1,27 @@
+@media (max-width: 1400px) {
+  .post-client .post .search {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 1024px) {
+  .post-client .post__title {
+    font-size: 28px;
+  }
+  .post-client .post .search__form {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .post-client .post__inner {
+    flex-direction: column;
+  }
+  .post-client .post .post-list {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .post-client .post .search__input {
+    width: 100%;
+  }
+}
