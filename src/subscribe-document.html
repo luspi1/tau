@@ -232,7 +232,11 @@
                   fill="white"/>
               </svg>
               Скачать в doc</a>
-            <button type="button">
+            <button type="button" data-modal="document-preview-modal"
+                    data-type-btn="generated"
+                    data-script="/include/ajax/get_document_view.php"
+                    data-add="доп. инфо"
+                    data-id="vt9O50x5">
               <svg width="21" height="14" viewBox="0 0 21 14" fill="none"
                    xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -248,6 +252,7 @@
           <div class="subscribe-doc__row-btns">
             <button class="subscribe-doc__btn" data-modal="document-sign-modal"
                     data-type-btn="generated"
+                    data-add="доп. инфо"
                     data-script="./data/getSignModal.txt"
                     data-id="vt9O50x5" type="button">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -268,6 +273,7 @@
         </div>
       </div>
     </section>
+    @include('partials/document-preview-modal.html')
     @include('partials/document-sign-modal.html')
     @include('partials/info-modal.html')
     @include('partials/loader.html')

@@ -35,8 +35,9 @@ export const handleGeneratedBtn = async (e) => {
 
   const generateId = e.currentTarget.dataset.id
   const generateScript = e.currentTarget.dataset.script
+  const dataAdd = e.currentTarget.dataset.add
 
-  const data = {id: generateId}
+  const data = {id: generateId, add: dataAdd}
   const jsonData = JSON.stringify(data)
 
   try {
