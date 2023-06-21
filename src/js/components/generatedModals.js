@@ -36,11 +36,11 @@ export const handleGeneratedBtn = async (e) => {
   const generateId = e.currentTarget.dataset.id
   const generateScript = e.currentTarget.dataset.script
 
-  const paymentData = {id: generateId}
-  const jsonPaymentData = JSON.stringify(paymentData)
+  const data = {id: generateId}
+  const jsonData = JSON.stringify(data)
 
   try {
-    const response = await sendData(jsonPaymentData, generateScript)
+    const response = await sendData(jsonData, generateScript)
     const finishedResponse = await response.json()
     const {status, errortext, html} = finishedResponse
 
