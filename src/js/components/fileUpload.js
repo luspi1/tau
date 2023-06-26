@@ -93,14 +93,14 @@ export const initFileUploading = () => {
 
 initFileUploading()
 
-// доп логика загрузки сканов на странице one-document
+// доп логика загрузки сканов на страницах с боковым меню doc-sidebar
 
-const oneDocPage = document.querySelector('.one-document-page')
+const docSidebar = document.querySelector('.doc-sidebar')
 
-if (oneDocPage) {
+if (docSidebar) {
 
-  const paperSection = oneDocPage.querySelector('.contract__paper')
-  const filesList = oneDocPage.querySelector('.contract__paper-list')
+  const paperSection = docSidebar.querySelector('.contract__paper')
+  const filesList = docSidebar.querySelector('.contract__paper-list')
   const callback = (mutations) => {
     if (mutations[0].target.childElementCount > 0) {
       paperSection.classList.add('_active')

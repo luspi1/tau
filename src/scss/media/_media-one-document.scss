@@ -2,10 +2,6 @@
   .one-document-page > .container {
     flex-direction: column;
   }
-
-  .one-document-page .aside {
-    margin-top: 50px;
-  }
 }
 
 @media(max-width: 992px) {
@@ -40,16 +36,8 @@
   .one-document-page .contract .contract__item {
     flex-direction: column;
   }
-  .one-document-page .aside {
-    width: 100%;
-  }
-  .one-document-page .aside .contract__item {
-    white-space: nowrap;
-  }
 
-  .one-document-page .aside .contract__connection {
-    overflow-x: scroll;
-  }
+
   .one-document-page .modal-contract {
     padding: 60px 30px 80px;
   }
@@ -70,13 +58,6 @@
     max-width: 260px;
   }
 
-  .one-document-page .aside {
-    padding: 20px 10px;
-  }
-
-  .one-document-page .aside .contract__info .contract__item {
-    flex-direction: column;
-  }
 
   .one-document-page .modal-contract {
     max-height: 570px;
