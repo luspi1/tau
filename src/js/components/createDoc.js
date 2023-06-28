@@ -87,13 +87,20 @@ if (createDocPage) {
       const response = await sendData(data, submitScript)
       const finishedResponse = await response.json()
 
-      const {status, errortext, invoices, planned_payments, is_dogovor} = finishedResponse
+      const {status, errortext, invoices, planned_payments, is_dogovor, id_dogovor} = finishedResponse
       if (status === 'ok') {
         const idDeal = JSON.parse(data).id_deal
         invoicesChoices.clearChoices()
         invoicesChoices.setValue(invoices)
         initPlannedPaymentSelect(planned_payments)
-        typeDocForm.dataset.isDogovor = is_dogovor ? "true" : "false"
+        const docFormDogovorId = typeDocForm.querySelector('.create-doc-page__doc-id-data').value
+        //
+        if (is_dogovor && docFormDogovorId !== id_dogovor) {
+          typeDocForm.dataset.isDogovor = "true"
+        } else {
+          typeDocForm.dataset.isDogovor = "false"
+        }
+
         typeDocForm.dataset.isNondeal = idDeal === "0" ? "true" : "false"
 
         return true
