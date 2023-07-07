@@ -1,4 +1,4 @@
-import Choices                from 'choices.js'
+import Choices from 'choices.js'
 import {
   closeSelectPopups,
   formToObj,
@@ -7,8 +7,8 @@ import {
   sendData,
   serializeForm,
   showInfoModal
-}                             from "../_functions"
-import { body, modalOverlay } from '../_vars'
+} from "../_functions"
+import {body, modalOverlay} from '../_vars'
 
 const createDocPage = document.querySelector('.create-doc-page')
 
@@ -19,6 +19,36 @@ if (createDocPage) {
     const currentPageState = createDocPage.dataset.pageState
     changeRequiredInputs(currentPageState)
   })
+
+  // Функция установки ссылки шаблона в модалке "Операции м шаблонами" в состоянии "подключено" после выбора сделки и типа документа (акт, договор или доп. соглашения)
+
+  const setTemplate = (docType) => {
+    const templatesModalForm = createDocPage.querySelector('.modal-doc-template .modal-doc-template__states')
+    const currentInfoInput = createDocPage.querySelector(`.create-doc-page__templates-info input[name="${docType}_template"]`)
+    const templatesModalLink = createDocPage.querySelector('.modal-doc-template__template-basis-link')
+    const templateManualInput = createDocPage.querySelector('.create-doc-page__tmpl-input')
+    const templateManualInputData = createDocPage.querySelector('.create-doc-page__tmpl-input-data')
+    templateManualInput.value = ''
+    templateManualInputData.value = ''
+    templatesModalForm.dataset.state = 'connected'
+    templatesModalLink.textContent = currentInfoInput.value
+    templatesModalLink.href = currentInfoInput.dataset.link
+  }
+  const setTemplateOfInput = () => {
+    const docType = createDocPage.dataset.pageState
+    if (docType === 'act' || docType === 'dogovor' || docType === 'dop') {
+      setTemplate(docType)
+    }
+  }
+
+  const setTemplateOfSelect = () => {
+    const dealInputData = createDocPage.querySelector('.create-doc-page__data-input[name="id_deal"]')
+    const docType = createDocPage.dataset.pageState
+    if (dealInputData.value) {
+      setTemplate(docType)
+    }
+  }
+
 
   // закрытие попап-селектов
 
@@ -46,6 +76,13 @@ if (createDocPage) {
         break
       case 'act':
         changeRequiredOnTarget(allOptionalRequiredInputs, 'act')
+        setTemplateOfSelect()
+        break
+      case 'dogovor':
+        setTemplateOfSelect()
+        break
+      case 'dop':
+        setTemplateOfSelect()
         break
     }
   }
@@ -80,20 +117,29 @@ if (createDocPage) {
   }
 
   const typeDocForm = createDocPage.querySelector('.create-doc-page__form')
-
+  const templatesInfo = typeDocForm.querySelector('.create-doc-page__templates-info')
   // функция обновления селектов плановых платежей и расчетных счетов
   const updateDocData = async (data, submitScript) => {
     try {
       const response = await sendData(data, submitScript)
       const finishedResponse = await response.json()
 
-      const {status, errortext, invoices, planned_payments, is_dogovor, id_dogovor} = finishedResponse
+      const {
+        status,
+        errortext,
+        invoices,
+        planned_payments,
+        is_dogovor,
+        id_dogovor,
+        templates
+      } = finishedResponse
       if (status === 'ok') {
         const idDeal = JSON.parse(data).id_deal
         invoicesChoices.clearChoices()
         invoicesChoices.setValue(invoices)
         initPlannedPaymentSelect(planned_payments)
         const docFormDogovorId = typeDocForm.querySelector('.create-doc-page__doc-id-data').value
+
         //
         if (is_dogovor && docFormDogovorId !== id_dogovor) {
           typeDocForm.dataset.isDogovor = "true"
@@ -102,6 +148,10 @@ if (createDocPage) {
         }
 
         typeDocForm.dataset.isNondeal = idDeal === "0" ? "true" : "false"
+
+        // получение инпутов для работы с модалкой "Операции с шаблонами"
+
+        templatesInfo.innerHTML = templates
 
         return true
       } else {
@@ -140,6 +190,11 @@ if (createDocPage) {
                   }
                   const selectDataJson = JSON.stringify(selectData)
                   updateDocData(selectDataJson, invoiceDataUrl)
+                    .then(res => {
+                      if (res) {
+                        setTemplateOfInput()
+                      }
+                    })
                 })
               })
             } else {
@@ -175,6 +230,7 @@ if (createDocPage) {
           body.classList.remove('_lock')
           dealListModal.classList.remove('_active')
           modalOverlay.classList.remove('modal-overlay_active')
+          setTemplateOfInput()
         }
       })
   }
@@ -189,3 +245,5 @@ if (createDocPage) {
     })
   }
 }
+
+
