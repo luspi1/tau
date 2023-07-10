@@ -244,6 +244,23 @@ if (createDocPage) {
       input.addEventListener('input', handlePopupInputs)
     })
   }
+
+
+// Передача состояния модалки "операции с шаблонами" скрытому инпуту на странице
+
+  const templateModal = createDocPage.querySelector('.modal-doc-template__states')
+  const templateStateInput = createDocPage.querySelector('.create-doc-page__template-state')
+
+  const callback = (mutations) => {
+    if (mutations[0].target) {
+      templateStateInput.value = mutations[0].target.dataset.state
+    }
+  }
+  const observer = new MutationObserver(callback)
+  observer.observe(templateModal, {
+    attributeFilter: ['data-state']
+  })
 }
+
 
 
