@@ -17,7 +17,7 @@ if (createDocPage) {
   // установка обязательных полей при загрузке страницы
   document.addEventListener("DOMContentLoaded", () => {
     const currentPageState = createDocPage.dataset.pageState
-    changeRequiredInputs(currentPageState)
+    changeRequiredInputs(currentPageState, true)
   })
 
   // Функция установки ссылки шаблона в модалке "Операции м шаблонами" в состоянии "подключено" после выбора сделки и типа документа (акт, договор или доп. соглашения)
@@ -63,7 +63,7 @@ if (createDocPage) {
     })
   }
 
-  const changeRequiredInputs = (pageState) => {
+  const changeRequiredInputs = (pageState, isInitialLoading) => {
     const allOptionalRequiredInputs = createDocPage.querySelectorAll('[data-required]')
     allOptionalRequiredInputs.forEach(el => el.required = false)
 
@@ -76,13 +76,19 @@ if (createDocPage) {
         break
       case 'act':
         changeRequiredOnTarget(allOptionalRequiredInputs, 'act')
-        setTemplateOfSelect()
+        if (!isInitialLoading) {
+          setTemplateOfSelect()
+        }
         break
       case 'dogovor':
-        setTemplateOfSelect()
+        if (!isInitialLoading) {
+          setTemplateOfSelect()
+        }
         break
       case 'dop':
-        setTemplateOfSelect()
+        if (!isInitialLoading) {
+          setTemplateOfSelect()
+        }
         break
     }
   }
