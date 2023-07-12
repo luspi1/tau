@@ -265,6 +265,23 @@
       }
 
     }
+
+    .modal-document-sign__variant {
+      display: none;
+    }
+
+    &[data-variant-state="turn"] {
+      .modal-document-sign__variant[data-variant="turn"] {
+        display: block;
+      }
+    }
+
+    &[data-variant-state="director"] {
+      .modal-document-sign__variant[data-variant="director"] {
+        display: block;
+      }
+    }
+
   }
 
   &__email-wrapper {
@@ -354,6 +371,66 @@
     }
   }
 
+
+  &__list-wrapper {
+    margin-bottom: 25px;
+  }
+
+  &__list-item {
+    position: relative;
+
+    .modal-document-sign__delete-btn {
+      position: absolute;
+      right: -30px;
+      top: 35px;
+      cursor: pointer;
+      border: none;
+      background: none;
+
+      svg path {
+        transition: all .3s;
+      }
+
+      &:hover {
+        svg path {
+          fill: #2F65F6;
+        }
+      }
+
+    }
+  }
+
+  &__list-add {
+    background: none;
+    border: none;
+    @include montserrat-medium;
+    font-size: 17px;
+    line-height: 21px;
+    color: #A0A0A0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all .3s;
+
+    svg {
+      margin-right: 6px;
+
+      path {
+        transition: all .3s;
+      }
+    }
+
+    &:hover {
+      color: #2F65F6;
+
+      svg path {
+        fill: #2F65F6;
+      }
+    }
+
+  }
+
+
   @media (max-width: 992px) {
     width: 98%;
     padding: 50px 20px;
@@ -364,6 +441,8 @@
   .air-datepicker--pointer {
     display: none;
   }
+
+
 }
 
 

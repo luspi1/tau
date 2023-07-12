@@ -1,4 +1,10 @@
-import { formToObj, sendData, serializeForm, showInfoModal, toggleLoader } from '../_functions'
+import {
+  formToObj,
+  sendData,
+  serializeForm,
+  showInfoModal,
+  toggleLoader
+} from '../_functions'
 
 
 export const handleDocumentSignModal = (signModal) => {
@@ -34,7 +40,13 @@ export const handleDocumentSignModal = (signModal) => {
 
         toggleLoader()
 
-        const {status, errortext, sign_fio, sign_date, sign_date_customer} = finishedResponse
+        const {
+          status,
+          errortext,
+          sign_fio,
+          sign_date,
+          sign_date_customer
+        } = finishedResponse
         if (status === 'ok') {
           if (isOur) {
             ourForm.classList.add('_completed')
@@ -142,5 +154,16 @@ export const handleDocumentSignModal = (signModal) => {
         console.error(err)
       }
     })
+
+
+    // смена вариантов подписания формы
+
+    const variantSelect = ourForm.querySelector('.modal-document-sign__select-variant')
+
+    variantSelect.addEventListener('change', (e) => {
+      ourForm.dataset.variantState = e.target.value
+    })
+
   }
 }
+
