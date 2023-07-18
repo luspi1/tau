@@ -5,12 +5,12 @@ const dealCardPage = document.querySelector('.deal-card-page')
 if (dealCardPage) {
     const createContractBtn = dealCardPage.querySelector('.one-deal__link-create')
 
+
     createContractBtn.addEventListener('click', (e) => {
         e.preventDefault()
-        const caseTitle = document.querySelector('[data-caseTitle]')
 
 //проверка наличия шаблона сделки
-        if (caseTitle?.textContent.trim().length) {
+        if (createContractBtn.dataset.template === '') {
             const contractLink = e.target.href
             const navigateByLink = () => {
                 window.location.href = contractLink
@@ -20,14 +20,13 @@ if (dealCardPage) {
             const infoModal = document.querySelector('.info-modal.modal')
             infoModal.classList.remove('hidden')
             infoModal.querySelector(
-                '.info-modal__content-text').innerHTML = 'Для продолжения работы загрузите <a href="#">шаблон договора</a>'
+                '.info-modal__content-text').innerHTML = 'Для продолжения работы загрузите <a href="create-template.html">шаблон договора</a>'
             document.body.style.overflow = 'hidden'
-            infoModal.addEventListener('click', ({target})=>{
-                if (target && target === infoModal ){
-                    document.body.style.overflow = '';
+            infoModal.addEventListener('click', ({target}) => {
+                if (target && target === infoModal) {
+                    document.body.style.overflow = ''
                     infoModal.classList.add('hidden')
                 }
-
             })
         }
     })
