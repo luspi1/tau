@@ -212,7 +212,7 @@
                 </p>
                 <p class="page-doc__item-content passport-number copy-field">
                   <span class="copy-value"
-                        data-updfield="passport_num">4003 546992</span>
+                        data-updfield="passport_num">  </span>
                   <span>
                 <svg
                   class="copy-btn" width="13" height="15" viewBox="0 0 13 15"
@@ -344,7 +344,9 @@
               <p class="page-doc__insurance-subtitle">
                 Номер СНИЛСа
               </p>
-
+				<p class="visibility-subtitle">
+					СНИЛС не загружен
+				</p>
               <div class="page-doc__snils-input edit-doc-wrapper__input">
                 <input name="snils" type="text">
                 <svg class="agree-btn" width="18" height="13"
@@ -362,9 +364,10 @@
                     fill="#9A9A9A"/>
                 </svg>
               </div>
-              <p
+							<div class="page-doc__visibility-wrapper">
+			              <p
                 class="page-doc__insurance-content page-doc__editable-wrapper copy-field">
-                <span class="copy-value edit-value">551-837-847 73</span>
+                <span class="copy-value edit-value"></span>
                 <span>
                 <svg
                   class="copy-btn" width="13" height="15" viewBox="0 0 13 15"
@@ -375,7 +378,8 @@
                   d="M12.2998 8.40002C12.2998 9.90002 12.2998 11.3 12.2998 12.8C12.2998 13.3 12.0998 13.8 11.5998 14C11.3998 14.1 11.1998 14.1 10.9998 14.1C8.69982 14.1 6.39982 14.1 4.09982 14.1C3.29982 14.1 2.7998 13.5 2.7998 12.8C2.7998 9.90005 2.7998 6.9 2.7998 4C2.7998 3.2 3.29982 2.69995 4.09982 2.69995C6.39982 2.69995 8.69982 2.69995 10.9998 2.69995C11.7998 2.69995 12.2998 3.3 12.2998 4C12.2998 5.5 12.2998 7.00002 12.2998 8.40002ZM3.99982 4C3.99982 7 3.99982 9.90002 3.99982 12.9C6.29982 12.9 8.69982 12.9 10.9998 12.9C10.9998 9.90002 10.9998 7 10.9998 4C8.69982 4 6.29982 4 3.99982 4Z"
                   fill="#858584"/></g></svg></span>
               </p>
-              <p class="page-doc__scan-title">Скан</p>
+
+			 <p class="page-doc__scan-title">Скан</p>
               <div class="page-doc__scan">
                 <form class="dropzone general-dropzone" action="/target"
                       id="insurance-dropzone"
@@ -400,6 +404,7 @@
                   </button>
                 </form>
               </div>
+				</div>
             </div>
             <div
               class="page-doc__tax edit-doc-wrapper general-dropzone-wrapper"
@@ -419,6 +424,9 @@
               <p class="page-doc__tax-subtitle">
                 Номер ИНН
               </p>
+				<p class="visibility-subtitle">
+					ИНН не загружен
+				</p>
               <div class="page-doc__inn-input edit-doc-wrapper__input">
                 <input name="inn" type="number">
                 <svg class="agree-btn" width="18" height="13"
@@ -436,6 +444,8 @@
                     fill="#9A9A9A"/>
                 </svg>
               </div>
+
+				<div class="page-doc__visibility-wrapper">
               <p
                 class="page-doc__tax-content page-doc__editable-wrapper copy-field">
                 <span class="copy-value edit-value">782801868911</span>
@@ -474,6 +484,7 @@
                   </button>
                 </form>
               </div>
+				</div>
             </div>
           </div>
 
