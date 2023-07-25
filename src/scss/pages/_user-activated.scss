@@ -1,18 +1,44 @@
 .user-activated {
-  .container {
-    padding-top: 44px;
-    padding-bottom: 100px;
+  position: fixed;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%);
+  width: 522px;
+  min-height: 170px;
+  border-radius: 20px;
+  border: 1px solid #A0A0A0;
+  background: #FFF;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
   }
 
-  &__title-row {
-    display: flex;
-    align-items: center;
-    svg {
-      margin-right: 8px;
-    }
-    h1 {
-      @include montserrat-semibold;
-      line-height: 28px;
-    }
+  &._active {
+    opacity: 1;
+    z-index: 19;
+    visibility: visible;
+  }
+
+  svg {
+    margin-bottom: 25px;
+  }
+
+  h1 {
+    @include montserrat-semibold;
+    line-height: 28px;
+  }
+  @media (max-width: 576px) {
+    width: 98%;
+    padding: 0 10px;
   }
 }
