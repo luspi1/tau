@@ -8,496 +8,492 @@
 
 <body class="page__body">
 <div class="site-container">
-  <div class="modal-overlay"></div>
-  @include('partials/header.html', {
-  'bottom-menu-documents' : 'bottom-menu-item_active',
-  'header-title': 'Ваш личный кабинет'
-  })
+	<div class="modal-overlay"></div>
+	@include('partials/header.html', {
+	'bottom-menu-documents' : 'bottom-menu-item_active',
+	'header-title': 'Ваш личный кабинет'
+	})
 
-  <main class="main">
-    <section class="section page-doc">
-      <div class="container">
-        <h1 class="page-doc__title">Паспорт и документы</h1>
-        <div class="page-doc__inner edit-modal">
-          <div class="passport-modal modal" id="passport-modal">
-            <h2>Данные паспорта гражданина РФ</h2>
-            <form action="/include/ajax/save_passport.php"
-                  class="passport-modal__form"
-                  data-url="/include/ajax/save_passport.php">
-              <div class="passport-modal__item">
-                <h3 class="passport-modal__item-title">
-                  Паспортные данные
-                </h3>
-                <div class="passport-modal__item-inner">
-                  <div class="passport-modal__item-inputs">
+	<main class="main">
+		<section class="section page-doc">
+			<div class="container">
+				<h1 class="page-doc__title">Паспорт и документы</h1>
+				<div class="page-doc__inner edit-modal">
+					<div class="passport-modal modal" id="passport-modal">
+						<h2>Данные паспорта гражданина РФ</h2>
+						<form action="/include/ajax/save_passport.php"
+							  class="passport-modal__form"
+							  data-url="/include/ajax/save_passport.php">
+							<div class="passport-modal__item">
+								<h3 class="passport-modal__item-title">
+									Паспортные данные
+								</h3>
+								<div class="passport-modal__item-inner">
+									<div class="passport-modal__item-inputs">
 
-                    <div class="passport-modal__item-input">
-                      <div class="passport-modal__input-wrapper">
-                        <input
-                          class="passport-modal__input passport-modal__series-input"
-                          name="passport_num" type="text" minlength="11"
-                          maxlength="11">
-                        <label class="passport-modal__label">Серия и
-                          номер</label>
-                      </div>
-                    </div>
-                    <div class="passport-modal__item-input">
-                      <div class="passport-modal__input-wrapper">
-                        <input
-                          class="passport-modal__input passport-modal__date-input"
-                          name="passport_whn" placeholder="Дата выдачи"
-                          type="text" data-date-start="2023-01-23"
-                          autocomplete="off">
-                        <svg width="21" height="22" viewBox="0 0 21 22"
-                             fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path
-                            d="M18.5002 21.8C13.4002 21.8 8.3002 21.8 3.2002 21.8C2.9002 21.7 2.70018 21.7 2.40018 21.6C1.30018 21.1 0.700195 20.2 0.700195 18.9C0.700195 15.2 0.700195 11.6 0.700195 7.89999C0.700195 6.99999 0.700195 6.10001 0.700195 5.20001C0.700195 3.80001 1.60018 2.7 2.90018 2.5C3.40018 2.4 3.90017 2.39999 4.30017 2.39999C4.40017 2.39999 4.50019 2.39999 4.60019 2.39999C4.60019 2.19999 4.60019 1.99999 4.60019 1.79999C4.60019 1.29999 4.7002 0.999988 5.2002 0.799988C5.3002 0.799988 5.40019 0.799988 5.60019 0.799988C6.10019 0.999988 6.2002 1.29999 6.2002 1.79999C6.2002 1.99999 6.2002 2.09999 6.2002 2.29999C9.3002 2.29999 12.4002 2.29999 15.5002 2.29999C15.5002 2.09999 15.5002 1.90001 15.5002 1.70001C15.5002 1.60001 15.5002 1.39999 15.5002 1.29999C15.6002 0.999988 15.8002 0.899988 16.0002 0.799988C16.1002 0.799988 16.2002 0.799988 16.4002 0.799988C16.9002 0.999988 17.0002 1.29999 17.0002 1.79999C17.0002 1.99999 17.0002 2.19999 17.0002 2.39999C17.4002 2.39999 17.7002 2.39999 18.1002 2.39999C18.4002 2.39999 18.8002 2.50001 19.1002 2.60001C20.2002 3.00001 20.9002 3.99999 20.9002 5.29999C20.9002 8.19999 20.9002 11.2 20.9002 14.1C20.9002 15.7 20.9002 17.4 20.9002 19C20.9002 20.3 20.1002 21.4 18.9002 21.8C18.8002 21.7 18.7002 21.7 18.5002 21.8ZM2.30017 8.89999C2.30017 8.99999 2.30017 9.00001 2.30017 9.10001C2.30017 12.3 2.30017 15.6 2.30017 18.8C2.30017 19.6 2.80019 20.1 3.60019 20.1C8.40019 20.1 13.2002 20.1 18.0002 20.1C18.8002 20.1 19.3002 19.6 19.3002 18.8C19.3002 15.6 19.3002 12.3 19.3002 9.10001C19.3002 9.00001 19.3002 8.99999 19.3002 8.89999C13.7002 8.89999 8.00017 8.89999 2.30017 8.89999ZM6.2002 3.89999C6.2002 4.19999 6.2002 4.40001 6.2002 4.70001C6.2002 5.00001 6.00019 5.29999 5.60019 5.39999C5.10019 5.49999 4.60019 5.20001 4.60019 4.60001C4.60019 4.40001 4.60019 4.09999 4.60019 3.79999C4.20019 3.79999 3.90019 3.79999 3.60019 3.79999C2.80019 3.79999 2.30017 4.30001 2.30017 5.10001C2.30017 5.70001 2.30017 6.4 2.30017 7C2.30017 7.1 2.30017 7.10001 2.30017 7.20001C8.00017 7.20001 13.7002 7.20001 19.4002 7.20001C19.4002 6.40001 19.4002 5.59999 19.4002 4.79999C19.4002 4.29999 19.1002 3.89999 18.6002 3.79999C18.1002 3.69999 17.6002 3.70001 17.1002 3.70001C17.1002 4.00001 17.1002 4.19999 17.1002 4.39999C17.1002 4.89999 16.8002 5.20001 16.3002 5.20001C15.9002 5.20001 15.5002 4.79999 15.5002 4.29999C15.5002 4.09999 15.5002 3.80001 15.5002 3.60001C12.4002 3.90001 9.3002 3.89999 6.2002 3.89999Z"
-                            fill="#817D8C"/>
-                        </svg>
+										<div class="passport-modal__item-input">
+											<div class="passport-modal__input-wrapper">
+												<input
+														class="passport-modal__input passport-modal__series-input"
+														name="passport_num" type="text" minlength="11"
+														maxlength="11">
+												<label class="passport-modal__label">Серия и
+													номер</label>
+											</div>
+										</div>
+										<div class="passport-modal__item-input">
+											<div class="passport-modal__input-wrapper">
+												<input
+														class="passport-modal__input passport-modal__date-input"
+														name="passport_whn" placeholder="Дата выдачи"
+														type="text" data-date-start="2023-01-23"
+														autocomplete="off">
+												<svg width="21" height="22" viewBox="0 0 21 22"
+													 fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path
+															d="M18.5002 21.8C13.4002 21.8 8.3002 21.8 3.2002 21.8C2.9002 21.7 2.70018 21.7 2.40018 21.6C1.30018 21.1 0.700195 20.2 0.700195 18.9C0.700195 15.2 0.700195 11.6 0.700195 7.89999C0.700195 6.99999 0.700195 6.10001 0.700195 5.20001C0.700195 3.80001 1.60018 2.7 2.90018 2.5C3.40018 2.4 3.90017 2.39999 4.30017 2.39999C4.40017 2.39999 4.50019 2.39999 4.60019 2.39999C4.60019 2.19999 4.60019 1.99999 4.60019 1.79999C4.60019 1.29999 4.7002 0.999988 5.2002 0.799988C5.3002 0.799988 5.40019 0.799988 5.60019 0.799988C6.10019 0.999988 6.2002 1.29999 6.2002 1.79999C6.2002 1.99999 6.2002 2.09999 6.2002 2.29999C9.3002 2.29999 12.4002 2.29999 15.5002 2.29999C15.5002 2.09999 15.5002 1.90001 15.5002 1.70001C15.5002 1.60001 15.5002 1.39999 15.5002 1.29999C15.6002 0.999988 15.8002 0.899988 16.0002 0.799988C16.1002 0.799988 16.2002 0.799988 16.4002 0.799988C16.9002 0.999988 17.0002 1.29999 17.0002 1.79999C17.0002 1.99999 17.0002 2.19999 17.0002 2.39999C17.4002 2.39999 17.7002 2.39999 18.1002 2.39999C18.4002 2.39999 18.8002 2.50001 19.1002 2.60001C20.2002 3.00001 20.9002 3.99999 20.9002 5.29999C20.9002 8.19999 20.9002 11.2 20.9002 14.1C20.9002 15.7 20.9002 17.4 20.9002 19C20.9002 20.3 20.1002 21.4 18.9002 21.8C18.8002 21.7 18.7002 21.7 18.5002 21.8ZM2.30017 8.89999C2.30017 8.99999 2.30017 9.00001 2.30017 9.10001C2.30017 12.3 2.30017 15.6 2.30017 18.8C2.30017 19.6 2.80019 20.1 3.60019 20.1C8.40019 20.1 13.2002 20.1 18.0002 20.1C18.8002 20.1 19.3002 19.6 19.3002 18.8C19.3002 15.6 19.3002 12.3 19.3002 9.10001C19.3002 9.00001 19.3002 8.99999 19.3002 8.89999C13.7002 8.89999 8.00017 8.89999 2.30017 8.89999ZM6.2002 3.89999C6.2002 4.19999 6.2002 4.40001 6.2002 4.70001C6.2002 5.00001 6.00019 5.29999 5.60019 5.39999C5.10019 5.49999 4.60019 5.20001 4.60019 4.60001C4.60019 4.40001 4.60019 4.09999 4.60019 3.79999C4.20019 3.79999 3.90019 3.79999 3.60019 3.79999C2.80019 3.79999 2.30017 4.30001 2.30017 5.10001C2.30017 5.70001 2.30017 6.4 2.30017 7C2.30017 7.1 2.30017 7.10001 2.30017 7.20001C8.00017 7.20001 13.7002 7.20001 19.4002 7.20001C19.4002 6.40001 19.4002 5.59999 19.4002 4.79999C19.4002 4.29999 19.1002 3.89999 18.6002 3.79999C18.1002 3.69999 17.6002 3.70001 17.1002 3.70001C17.1002 4.00001 17.1002 4.19999 17.1002 4.39999C17.1002 4.89999 16.8002 5.20001 16.3002 5.20001C15.9002 5.20001 15.5002 4.79999 15.5002 4.29999C15.5002 4.09999 15.5002 3.80001 15.5002 3.60001C12.4002 3.90001 9.3002 3.89999 6.2002 3.89999Z"
+															fill="#817D8C"/>
+												</svg>
 
-                      </div>
-                    </div>
+											</div>
+										</div>
 
-                  </div>
-                  <textarea class="passport-modal__item-textarea"
-                            name="passport_who"
-                            placeholder="Кем выдан"></textarea>
-                </div>
-                <div
-                  class="passport-modal__item-inner passport-modal__item-code">
-                  <div class="passport-modal__item-input">
-                    <div class="passport-modal__input-wrapper">
-                      <input
-                        class="passport-modal__input passport-modal__code-input"
-                        name="passport_code" type="text">
-                      <label class="passport-modal__label">Код
-                        подразделения</label>
-                    </div>
-                  </div>
-                  <div class="passport-modal__item-input">
-                    <div class="passport-modal__input-wrapper">
-                      <input
-                        class="passport-modal__input"
-                        name="passport_birthplace" type="text">
-                      <label class="passport-modal__label">Место
-                        рождения</label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="passport-modal__item">
-                <h3 class="passport-modal__item-title">
-                  Адрес постоянной регистрации
-                </h3>
-                <div class="passport-modal__item-inner">
-                  <div class="passport-modal__item-inputs">
+									</div>
+									<textarea class="passport-modal__item-textarea"
+											  name="passport_who"
+											  placeholder="Кем выдан"></textarea>
+								</div>
+								<div
+										class="passport-modal__item-inner passport-modal__item-code">
+									<div class="passport-modal__item-input">
+										<div class="passport-modal__input-wrapper">
+											<input
+													class="passport-modal__input passport-modal__code-input"
+													name="passport_code" type="text">
+											<label class="passport-modal__label">Код
+												подразделения</label>
+										</div>
+									</div>
+									<div class="passport-modal__item-input">
+										<div class="passport-modal__input-wrapper">
+											<input
+													class="passport-modal__input"
+													name="passport_birthplace" type="text">
+											<label class="passport-modal__label">Место
+												рождения</label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="passport-modal__item">
+								<h3 class="passport-modal__item-title">
+									Адрес постоянной регистрации
+								</h3>
+								<div class="passport-modal__item-inner">
+									<div class="passport-modal__item-inputs">
 
-                    <div class="passport-modal__item-input">
-                      <div class="passport-modal__input-wrapper">
-                        <input
-                          class="passport-modal__input passport-modal__series-input"
-                          name="reg_per_city" type="text">
-                        <label class="passport-modal__label">Город</label>
-                      </div>
-                    </div>
-                    <div class="passport-modal__item-input">
-                      <div class="passport-modal__input-wrapper">
-                        <input class="passport-modal__input"
-                               name="reg_per_zip" type="number">
-                        <label class="passport-modal__label">Индекс</label>
-                      </div>
-                    </div>
+										<div class="passport-modal__item-input">
+											<div class="passport-modal__input-wrapper">
+												<input
+														class="passport-modal__input passport-modal__series-input"
+														name="reg_per_city" type="text">
+												<label class="passport-modal__label">Город</label>
+											</div>
+										</div>
+										<div class="passport-modal__item-input">
+											<div class="passport-modal__input-wrapper">
+												<input class="passport-modal__input"
+													   name="reg_per_zip" type="number">
+												<label class="passport-modal__label">Индекс</label>
+											</div>
+										</div>
 
-                  </div>
-                  <textarea class="passport-modal__item-textarea"
-                            name="reg_per_address"
-                            placeholder="Улица, дом, строение, корпус, квартира"></textarea>
-                </div>
-              </div>
-              <div class="passport-modal__item">
-                <h3 class="passport-modal__item-title">
-                  Адрес временной регистрации
-                </h3>
-                <div class="passport-modal__item-inner">
-                  <div class="passport-modal__item-inputs">
-                    <div class="passport-modal__item-input">
-                      <div class="passport-modal__input-wrapper">
-                        <input
-                          class="passport-modal__input passport-modal__series-input"
-                          name="reg_vrm_city" type="text">
-                        <label class="passport-modal__label">Город</label>
-                      </div>
-                    </div>
-                    <div class="passport-modal__item-input">
-                      <div class="passport-modal__input-wrapper">
-                        <input class="passport-modal__input"
-                               name="reg_vrm_zip" type="number">
-                        <label class="passport-modal__label">Индекс</label>
-                      </div>
-                    </div>
+									</div>
+									<textarea class="passport-modal__item-textarea"
+											  name="reg_per_address"
+											  placeholder="Улица, дом, строение, корпус, квартира"></textarea>
+								</div>
+							</div>
+							<div class="passport-modal__item">
+								<h3 class="passport-modal__item-title">
+									Адрес временной регистрации
+								</h3>
+								<div class="passport-modal__item-inner">
+									<div class="passport-modal__item-inputs">
+										<div class="passport-modal__item-input">
+											<div class="passport-modal__input-wrapper">
+												<input
+														class="passport-modal__input passport-modal__series-input"
+														name="reg_vrm_city" type="text">
+												<label class="passport-modal__label">Город</label>
+											</div>
+										</div>
+										<div class="passport-modal__item-input">
+											<div class="passport-modal__input-wrapper">
+												<input class="passport-modal__input"
+													   name="reg_vrm_zip" type="number">
+												<label class="passport-modal__label">Индекс</label>
+											</div>
+										</div>
 
-                  </div>
-                  <textarea class="passport-modal__item-textarea"
-                            name="reg_vrm_address"
-                            placeholder="Улица, дом, строение, корпус, квартира"></textarea>
-                </div>
-              </div>
-              <div class="passport-modal__item">
-                <h3 class="passport-modal__item-title">
-                  Адрес проживания
-                </h3>
-                <div class="passport-modal__type-reg">
-                  <input type="checkbox" class="passport-modal__reg-checkbox"
-                         id="constReg" name="typeReg" value="proj_use_vrem">
-                  <label for="constReg">По постоянной регистрации</label>
-                  <input type="checkbox" class="passport-modal__reg-checkbox"
-                         id="temporaryReg" name="typeReg" value="proj_use_per">
-                  <label for="temporaryReg">По временной регистрации</label>
-                </div>
-                <div
-                  class="passport-modal__item-inner passport-modal__item-check">
-                  <div class="passport-modal__item-inputs">
-                    <div class="passport-modal__item-input">
-                      <div class="passport-modal__input-wrapper">
-                        <input
-                          class="passport-modal__input passport-modal__series-input"
-                          name="proj_city" type="text">
-                        <label class="passport-modal__label">Город</label>
-                      </div>
-                    </div>
-                    <div class="passport-modal__item-input">
-                      <div class="passport-modal__input-wrapper">
-                        <input class="passport-modal__input" name="proj_zip"
-                               type="number">
-                        <label class="passport-modal__label">Индекс</label>
-                      </div>
-                    </div>
-                  </div>
-                  <textarea class="passport-modal__item-textarea"
-                            name="proj_address"
-                            placeholder="Улица, дом, строение, корпус, квартира"></textarea>
-                </div>
-              </div>
-              <div class="passport-modal__control-btns">
-                <button class="passport-modal__save-btn" type="submit">
-                  Сохранить
-                </button>
-                <button class="passport-modal__close-btn" type="button"
-                        data-close-modal="true">
-                  Отменить
-                </button>
-              </div>
-              @include('partials/loader.html')
-            </form>
-          </div>
-          <div class="page-doc__passport">
-            <h2 class="page-doc__passport-title">
-              Паспорт РФ
-              <svg class="edit-btn edit-passport" data-modal="passport-modal"
-                   width="17" height="16" viewBox="0 0 17 16"
-                   fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M0.399902 15.5C0.499902 15.2 0.599921 14.8 0.699921 14.5C0.899921 13.6 1.1999 12.6 1.3999 11.7C1.3999 11.6 1.49991 11.5 1.59991 11.4C4.49991 8.50002 7.3999 5.60001 10.2999 2.70001L10.3999 2.59998C11.4999 3.69998 12.6999 4.9 13.7999 6L13.6999 6.09998C10.7999 8.99998 7.99991 11.8 5.09991 14.7C4.99991 14.8 4.8999 14.9 4.7999 14.9C3.5999 15.2 2.29991 15.5 1.09991 15.8H0.999908C0.899908 15.8 0.899896 15.8 0.799896 15.8C0.699896 15.7 0.599908 15.6 0.499908 15.5C0.399908 15.6 0.399902 15.6 0.399902 15.5Z"
-                  fill="#9A9A9A"/>
-                <path
-                  d="M16.3998 2.90002C16.3998 3.00002 16.3998 3.10001 16.2998 3.20001C16.1998 3.40001 16.0998 3.69999 15.9998 3.79999C15.5998 4.19999 15.0998 4.69998 14.6998 5.09998C13.5998 3.99998 12.3998 2.80001 11.2998 1.70001C11.6998 1.30001 12.0998 0.800024 12.5998 0.400024C13.1998 -0.0999756 14.1998 -0.0999756 14.7998 0.400024C15.1998 0.800024 15.5998 1.19998 15.9998 1.59998C16.1998 1.79998 16.2998 2.2 16.3998 2.5C16.3998 2.6 16.3998 2.80002 16.3998 2.90002Z"
-                  fill="#9A9A9A"/>
-              </svg>
-            </h2>
-
-            <ul class="page-doc__passport-list">
-              <li class="page-doc__passport-item">
-                <p class="page-doc__item-title">
-                  Серия и номер паспорта
-                </p>
-                <p class="page-doc__item-content passport-number copy-field">
+									</div>
+									<textarea class="passport-modal__item-textarea"
+											  name="reg_vrm_address"
+											  placeholder="Улица, дом, строение, корпус, квартира"></textarea>
+								</div>
+							</div>
+							<div class="passport-modal__item">
+								<h3 class="passport-modal__item-title">
+									Адрес проживания
+								</h3>
+								<div class="passport-modal__type-reg">
+									<input type="checkbox" class="passport-modal__reg-checkbox"
+										   id="constReg" name="typeReg" value="proj_use_vrem">
+									<label for="constReg">По постоянной регистрации</label>
+									<input type="checkbox" class="passport-modal__reg-checkbox"
+										   id="temporaryReg" name="typeReg" value="proj_use_per">
+									<label for="temporaryReg">По временной регистрации</label>
+								</div>
+								<div
+										class="passport-modal__item-inner passport-modal__item-check">
+									<div class="passport-modal__item-inputs">
+										<div class="passport-modal__item-input">
+											<div class="passport-modal__input-wrapper">
+												<input
+														class="passport-modal__input passport-modal__series-input"
+														name="proj_city" type="text">
+												<label class="passport-modal__label">Город</label>
+											</div>
+										</div>
+										<div class="passport-modal__item-input">
+											<div class="passport-modal__input-wrapper">
+												<input class="passport-modal__input" name="proj_zip"
+													   type="number">
+												<label class="passport-modal__label">Индекс</label>
+											</div>
+										</div>
+									</div>
+									<textarea class="passport-modal__item-textarea"
+											  name="proj_address"
+											  placeholder="Улица, дом, строение, корпус, квартира"></textarea>
+								</div>
+							</div>
+							<div class="passport-modal__control-btns">
+								<button class="passport-modal__save-btn" type="submit">
+									Сохранить
+								</button>
+								<button class="passport-modal__close-btn" type="button"
+										data-close-modal="true">
+									Отменить
+								</button>
+							</div>
+							@include('partials/loader.html')
+						</form>
+					</div>
+					<div class="page-doc__passport _hidden">
+						<h2 class="page-doc__passport-title">
+							Паспорт РФ
+							<svg class="edit-btn edit-passport" data-modal="passport-modal"
+								 width="17" height="16" viewBox="0 0 17 16"
+								 fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path
+										d="M0.399902 15.5C0.499902 15.2 0.599921 14.8 0.699921 14.5C0.899921 13.6 1.1999 12.6 1.3999 11.7C1.3999 11.6 1.49991 11.5 1.59991 11.4C4.49991 8.50002 7.3999 5.60001 10.2999 2.70001L10.3999 2.59998C11.4999 3.69998 12.6999 4.9 13.7999 6L13.6999 6.09998C10.7999 8.99998 7.99991 11.8 5.09991 14.7C4.99991 14.8 4.8999 14.9 4.7999 14.9C3.5999 15.2 2.29991 15.5 1.09991 15.8H0.999908C0.899908 15.8 0.899896 15.8 0.799896 15.8C0.699896 15.7 0.599908 15.6 0.499908 15.5C0.399908 15.6 0.399902 15.6 0.399902 15.5Z"
+										fill="#9A9A9A"/>
+								<path
+										d="M16.3998 2.90002C16.3998 3.00002 16.3998 3.10001 16.2998 3.20001C16.1998 3.40001 16.0998 3.69999 15.9998 3.79999C15.5998 4.19999 15.0998 4.69998 14.6998 5.09998C13.5998 3.99998 12.3998 2.80001 11.2998 1.70001C11.6998 1.30001 12.0998 0.800024 12.5998 0.400024C13.1998 -0.0999756 14.1998 -0.0999756 14.7998 0.400024C15.1998 0.800024 15.5998 1.19998 15.9998 1.59998C16.1998 1.79998 16.2998 2.2 16.3998 2.5C16.3998 2.6 16.3998 2.80002 16.3998 2.90002Z"
+										fill="#9A9A9A"/>
+							</svg>
+						</h2>
+						<p class="visibility-subtitle">
+							Паспортные данные еще не были загружены
+						</p>
+						<ul class="page-doc__passport-list">
+							<li class="page-doc__passport-item">
+								<p class="page-doc__item-title">
+									Серия и номер паспорта
+								</p>
+								<p class="page-doc__item-content passport-number copy-field">
                   <span class="copy-value"
-                        data-updfield="passport_num">  </span>
-                  <span>
+						data-updfield="passport_num">2020 333555</span>
+									<span>
                 <svg
-                  class="copy-btn" width="13" height="15" viewBox="0 0 13 15"
-                  fill="none" xmlns="http://www.w3.org/2000/svg"><g
-                  opacity="0.5"><path
-                  d="M9.09995 0.199951C9.09995 0.599951 9.09995 1 9.09995 1.5C6.49995 1.5 3.99994 1.5 1.49994 1.5C1.49994 4.5 1.49994 7.40002 1.49994 10.4C1.09994 10.4 0.699951 10.4 0.199951 10.4C0.199951 10.3 0.199951 10.3 0.199951 10.2C0.199951 7.29995 0.199951 4.39998 0.199951 1.59998C0.199951 0.899976 0.699927 0.299951 1.29993 0.199951C3.89993 0.199951 6.49995 0.199951 9.09995 0.199951Z"
-                  fill="#858584"/><path
-                  d="M12.2998 8.40002C12.2998 9.90002 12.2998 11.3 12.2998 12.8C12.2998 13.3 12.0998 13.8 11.5998 14C11.3998 14.1 11.1998 14.1 10.9998 14.1C8.69982 14.1 6.39982 14.1 4.09982 14.1C3.29982 14.1 2.7998 13.5 2.7998 12.8C2.7998 9.90005 2.7998 6.9 2.7998 4C2.7998 3.2 3.29982 2.69995 4.09982 2.69995C6.39982 2.69995 8.69982 2.69995 10.9998 2.69995C11.7998 2.69995 12.2998 3.3 12.2998 4C12.2998 5.5 12.2998 7.00002 12.2998 8.40002ZM3.99982 4C3.99982 7 3.99982 9.90002 3.99982 12.9C6.29982 12.9 8.69982 12.9 10.9998 12.9C10.9998 9.90002 10.9998 7 10.9998 4C8.69982 4 6.29982 4 3.99982 4Z"
-                  fill="#858584"/></g></svg></span>
-                </p>
-              </li>
-              <li class="page-doc__passport-item">
-                <p class="page-doc__item-title">
-                  Место рождения
-                </p>
-                <p class="page-doc__item-content"
-                   data-updfield="passport_birthplace">
-                  гор. Дубна Московской обл.
-                </p>
-              </li>
-              <li class="page-doc__passport-item">
-                <p class="page-doc__item-title">
-                  Выдан
-                </p>
-                <p class="page-doc__item-content" data-updfield="passport_who">
-                  ТП №50 отдела УФМС России по Санкт-Петербургу и Ленинградской
-                  обл. в Московском р-не гор. Санкт-Петербурга
-                </p>
-              </li>
-              <li class="page-doc__passport-item">
-                <p class="page-doc__item-title">
-                  Адрес постоянной регистрации
-                </p>
-                <p class="page-doc__item-content">
-                  <span data-updfield="reg_per_zip">196070</span>, г. <span
-                  data-updfield="reg_per_city">Санкт-Петербург</span>, <span
-                  data-updfield="reg_per_address">ул. Фрунзе, д. 6, кв. 210</span>
-                </p>
-              </li>
-              <li class="page-doc__passport-item">
-                <p class="page-doc__item-title">
-                  Дата выдачи
-                </p>
-                <p class="page-doc__item-content" data-updfield="passport_whn">
-                  06.11.2009
-                </p>
-              </li>
-              <li class="page-doc__passport-item">
-                <p class="page-doc__item-title">
-                  Адрес временной регистрации
-                </p>
-                <p class="page-doc__item-content">
-                  <span data-updfield="reg_vrm_zip">196602</span>, г. <span
-                  data-updfield="reg_vrm_city">Пушкин</span>, <span
-                  data-updfield="reg_vrm_address">ул. Малиновская, д. 17,
+						class="copy-btn" width="13" height="15" viewBox="0 0 13 15"
+						fill="none" xmlns="http://www.w3.org/2000/svg"><g
+						opacity="0.5"><path
+						d="M9.09995 0.199951C9.09995 0.599951 9.09995 1 9.09995 1.5C6.49995 1.5 3.99994 1.5 1.49994 1.5C1.49994 4.5 1.49994 7.40002 1.49994 10.4C1.09994 10.4 0.699951 10.4 0.199951 10.4C0.199951 10.3 0.199951 10.3 0.199951 10.2C0.199951 7.29995 0.199951 4.39998 0.199951 1.59998C0.199951 0.899976 0.699927 0.299951 1.29993 0.199951C3.89993 0.199951 6.49995 0.199951 9.09995 0.199951Z"
+						fill="#858584"/><path
+						d="M12.2998 8.40002C12.2998 9.90002 12.2998 11.3 12.2998 12.8C12.2998 13.3 12.0998 13.8 11.5998 14C11.3998 14.1 11.1998 14.1 10.9998 14.1C8.69982 14.1 6.39982 14.1 4.09982 14.1C3.29982 14.1 2.7998 13.5 2.7998 12.8C2.7998 9.90005 2.7998 6.9 2.7998 4C2.7998 3.2 3.29982 2.69995 4.09982 2.69995C6.39982 2.69995 8.69982 2.69995 10.9998 2.69995C11.7998 2.69995 12.2998 3.3 12.2998 4C12.2998 5.5 12.2998 7.00002 12.2998 8.40002ZM3.99982 4C3.99982 7 3.99982 9.90002 3.99982 12.9C6.29982 12.9 8.69982 12.9 10.9998 12.9C10.9998 9.90002 10.9998 7 10.9998 4C8.69982 4 6.29982 4 3.99982 4Z"
+						fill="#858584"/></g></svg></span>
+								</p>
+							</li>
+							<li class="page-doc__passport-item">
+								<p class="page-doc__item-title">
+									Место рождения
+								</p>
+								<p class="page-doc__item-content"
+								   data-updfield="passport_birthplace">
+									гор. Дубна Московской обл.
+								</p>
+							</li>
+							<li class="page-doc__passport-item">
+								<p class="page-doc__item-title">
+									Выдан
+								</p>
+								<p class="page-doc__item-content" data-updfield="passport_who">
+									ТП №50 отдела УФМС России по Санкт-Петербургу и Ленинградской
+									обл. в Московском р-не гор. Санкт-Петербурга
+								</p>
+							</li>
+							<li class="page-doc__passport-item">
+								<p class="page-doc__item-title">
+									Адрес постоянной регистрации
+								</p>
+								<p class="page-doc__item-content">
+									<span data-updfield="reg_per_zip">196070</span>, г. <span
+										data-updfield="reg_per_city">Санкт-Петербург</span>, <span
+										data-updfield="reg_per_address">ул. Фрунзе, д. 6, кв. 210</span>
+								</p>
+							</li>
+							<li class="page-doc__passport-item">
+								<p class="page-doc__item-title">
+									Дата выдачи
+								</p>
+								<p class="page-doc__item-content" data-updfield="passport_whn">
+									06.11.2009
+								</p>
+							</li>
+							<li class="page-doc__passport-item">
+								<p class="page-doc__item-title">
+									Адрес временной регистрации
+								</p>
+								<p class="page-doc__item-content">
+									<span data-updfield="reg_vrm_zip">196602</span>, г. <span
+										data-updfield="reg_vrm_city">Пушкин</span>, <span
+										data-updfield="reg_vrm_address">ул. Малиновская, д. 17,
                   литера Г, кв. 400</span>
-                </p>
-              </li>
-              <li class="page-doc__passport-item">
-                <p class="page-doc__item-title">
-                  Код подразделения
-                </p>
-                <p class="page-doc__item-content" data-updfield="passport_code">
-                  782-056
-                </p>
-              </li>
-              <li class="page-doc__passport-item">
-                <p class="page-doc__item-title">
-                  Адрес проживания
-                </p>
-                <p class="page-doc__item-content">
-                  <span data-updfield="proj_zip">196602</span>, г. <span
-                  data-updfield="proj_city">Пушкин</span>, <span
-                  data-updfield="proj_address">ул. Малиновская, д.
+								</p>
+							</li>
+							<li class="page-doc__passport-item">
+								<p class="page-doc__item-title">
+									Код подразделения
+								</p>
+								<p class="page-doc__item-content" data-updfield="passport_code">
+									782-056
+								</p>
+							</li>
+							<li class="page-doc__passport-item">
+								<p class="page-doc__item-title">
+									Адрес проживания
+								</p>
+								<p class="page-doc__item-content">
+									<span data-updfield="proj_zip">196602</span>, г. <span
+										data-updfield="proj_city">Пушкин</span>, <span
+										data-updfield="proj_address">ул. Малиновская, д.
                   17, литера Г, кв. 400</span>
-                </p>
-              </li>
-              <li class="page-doc__passport-item general-dropzone-wrapper">
-                <p class="page-doc__item-title">
-                  Сканы (<span
-                  class="page-doc__passport-amount general-dropzone-amount">0</span>/16)
-                </p>
+								</p>
+							</li>
+							<li class="page-doc__passport-item general-dropzone-wrapper">
+								<p class="page-doc__item-title">
+									Сканы (<span
+										class="page-doc__passport-amount general-dropzone-amount">0</span>/16)
+								</p>
 
-                <div class="page-doc__scans-wrapper ">
-                  <form action="/target" id="passport-dropzone"
-                        data-show-preview="true"
-                        class="dropzone general-dropzone"
-                        data-general-info='{"url": "/include/ajax/upload_image.php", "removeUrl": "/include/ajax/delete_image.php", "width": "50", "height": "50", "acceptedFiles": ".png, .jpeg, .jpg", "type": "passport", "filesCount": "16", "additional": "доп.контент"}'>
-                    <div class="dz-message">
-                    </div>
-                    <button
-                      class="page-doc__scan-add page-doc__passport-doc-btn general-dropzone__add-btn"
-                      id="passport-add"
-                      type="button">
-                      <svg width="33" height="32" viewBox="0 0 33 32"
-                           fill="none"
-                           xmlns="http://www.w3.org/2000/svg">
-                        <path
-                          d="M15.3 0.100098C16 0.100098 16.6 0.100098 17.3 0.100098C17.8 0.200098 18.4001 0.20011 18.9001 0.30011C23.0001 1.00011 26.4001 3.00015 28.9001 6.40015C31.7001 10.2001 32.7001 14.4001 31.9001 19.0001C31.2001 22.7001 29.4001 25.8001 26.5001 28.2001C22.9001 31.2001 18.8001 32.4001 14.1001 31.8001C10.9001 31.4001 8.10007 30.1001 5.70007 28.0001C2.90007 25.5001 1.20006 22.5001 0.500061 18.8001C0.400061 18.2001 0.300049 17.6001 0.300049 17.0001C0.300049 16.3001 0.300049 15.7001 0.300049 15.0001C0.400049 14.5001 0.400061 13.9001 0.500061 13.4001C1.10006 10.1001 2.50005 7.20011 4.90005 4.80011C7.30006 2.40011 10.2001 0.90011 13.5001 0.30011C14.2001 0.20011 14.8 0.200098 15.3 0.100098ZM16.3 30.0001C24 30.0001 30.2 23.8001 30.3 16.1001C30.3 8.4001 24 2.1001 16.3 2.1001C8.60005 2.1001 2.40005 8.30012 2.30005 16.0001C2.40005 23.7001 8.60005 30.0001 16.3 30.0001Z"
-                          fill="#9A9A9A"/>
-                        <path
-                          d="M15.3 17.0002C14.4 17.0002 13.5 17.0002 12.7 17.0002C11.6 17.0002 9.50001 17.0002 8.40001 17.0002C7.80001 17.0002 7.30001 16.6002 7.40001 16.0002C7.40001 15.4002 7.80002 15.0002 8.50002 15.0002C10.3 15.0002 13.2 15.0002 15 15.0002C15.1 15.0002 15.2 15.0002 15.4 15.0002C15.4 14.9002 15.4 14.8002 15.4 14.7002C15.4 12.8002 15.4 10.0002 15.4 8.10021C15.4 7.30021 16.1 6.80021 16.8 7.10021C17.2 7.30021 17.4 7.60021 17.4 8.10021C17.4 9.90021 17.4 12.8002 17.4 14.6002C17.4 14.7002 17.4 14.8002 17.4 15.0002C17.5 15.0002 17.6 15.0002 17.7 15.0002C19.6 15.0002 22.4 15.0002 24.3 15.0002C25 15.0002 25.5 15.7003 25.3 16.4003C25.1 16.8003 24.8 17.0002 24.3 17.0002C22.5 17.0002 19.6 17.0002 17.8 17.0002C17.7 17.0002 17.6 17.0002 17.4 17.0002C17.4 17.1002 17.4 17.2003 17.4 17.4003C17.4 19.3003 17.4 22.1002 17.4 24.0002C17.4 24.5002 17.1 24.9002 16.7 25.0002C16.3 25.1002 15.8 25.0002 15.6 24.6002C15.5 24.4002 15.4 24.2003 15.4 23.9003C15.4 22.1003 15.4 19.2003 15.4 17.4003C15.3 17.3003 15.3 17.2002 15.3 17.0002Z"
-                          fill="#9A9A9A"/>
-                      </svg>
-                    </button>
-                  </form>
-                </div>
-              </li>
-            </ul>
-          </div>
+								<div class="page-doc__scans-wrapper ">
+									<form action="/target" id="passport-dropzone"
+										  data-show-preview="true"
+										  class="dropzone general-dropzone"
+										  data-general-info='{"url": "/include/ajax/upload_image.php", "removeUrl": "/include/ajax/delete_image.php", "width": "50", "height": "50", "acceptedFiles": ".png, .jpeg, .jpg", "type": "passport", "filesCount": "16", "additional": "доп.контент"}'>
+										<div class="dz-message">
+										</div>
+										<button
+												class="page-doc__scan-add page-doc__passport-doc-btn general-dropzone__add-btn"
+												id="passport-add"
+												type="button">
+											<svg width="33" height="32" viewBox="0 0 33 32"
+												 fill="none"
+												 xmlns="http://www.w3.org/2000/svg">
+												<path
+														d="M15.3 0.100098C16 0.100098 16.6 0.100098 17.3 0.100098C17.8 0.200098 18.4001 0.20011 18.9001 0.30011C23.0001 1.00011 26.4001 3.00015 28.9001 6.40015C31.7001 10.2001 32.7001 14.4001 31.9001 19.0001C31.2001 22.7001 29.4001 25.8001 26.5001 28.2001C22.9001 31.2001 18.8001 32.4001 14.1001 31.8001C10.9001 31.4001 8.10007 30.1001 5.70007 28.0001C2.90007 25.5001 1.20006 22.5001 0.500061 18.8001C0.400061 18.2001 0.300049 17.6001 0.300049 17.0001C0.300049 16.3001 0.300049 15.7001 0.300049 15.0001C0.400049 14.5001 0.400061 13.9001 0.500061 13.4001C1.10006 10.1001 2.50005 7.20011 4.90005 4.80011C7.30006 2.40011 10.2001 0.90011 13.5001 0.30011C14.2001 0.20011 14.8 0.200098 15.3 0.100098ZM16.3 30.0001C24 30.0001 30.2 23.8001 30.3 16.1001C30.3 8.4001 24 2.1001 16.3 2.1001C8.60005 2.1001 2.40005 8.30012 2.30005 16.0001C2.40005 23.7001 8.60005 30.0001 16.3 30.0001Z"
+														fill="#9A9A9A"/>
+												<path
+														d="M15.3 17.0002C14.4 17.0002 13.5 17.0002 12.7 17.0002C11.6 17.0002 9.50001 17.0002 8.40001 17.0002C7.80001 17.0002 7.30001 16.6002 7.40001 16.0002C7.40001 15.4002 7.80002 15.0002 8.50002 15.0002C10.3 15.0002 13.2 15.0002 15 15.0002C15.1 15.0002 15.2 15.0002 15.4 15.0002C15.4 14.9002 15.4 14.8002 15.4 14.7002C15.4 12.8002 15.4 10.0002 15.4 8.10021C15.4 7.30021 16.1 6.80021 16.8 7.10021C17.2 7.30021 17.4 7.60021 17.4 8.10021C17.4 9.90021 17.4 12.8002 17.4 14.6002C17.4 14.7002 17.4 14.8002 17.4 15.0002C17.5 15.0002 17.6 15.0002 17.7 15.0002C19.6 15.0002 22.4 15.0002 24.3 15.0002C25 15.0002 25.5 15.7003 25.3 16.4003C25.1 16.8003 24.8 17.0002 24.3 17.0002C22.5 17.0002 19.6 17.0002 17.8 17.0002C17.7 17.0002 17.6 17.0002 17.4 17.0002C17.4 17.1002 17.4 17.2003 17.4 17.4003C17.4 19.3003 17.4 22.1002 17.4 24.0002C17.4 24.5002 17.1 24.9002 16.7 25.0002C16.3 25.1002 15.8 25.0002 15.6 24.6002C15.5 24.4002 15.4 24.2003 15.4 23.9003C15.4 22.1003 15.4 19.2003 15.4 17.4003C15.3 17.3003 15.3 17.2002 15.3 17.0002Z"
+														fill="#9A9A9A"/>
+											</svg>
+										</button>
+									</form>
+								</div>
+							</li>
+						</ul>
+					</div>
 
-          <div class="page-doc__inner-right">
-            <div
-              class="page-doc__insurance edit-doc-wrapper general-dropzone-wrapper"
-              data-url="/include/ajax/save_userfield.php">
-              <h2 class="page-doc__insurance-title">
-                СНИЛС
-                <svg class="edit-btn edit-snils" width="17" height="16"
-                     viewBox="0 0 17 16"
-                     fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M0.399902 15.5C0.499902 15.2 0.599921 14.8 0.699921 14.5C0.899921 13.6 1.1999 12.6 1.3999 11.7C1.3999 11.6 1.49991 11.5 1.59991 11.4C4.49991 8.50002 7.3999 5.60001 10.2999 2.70001L10.3999 2.59998C11.4999 3.69998 12.6999 4.9 13.7999 6L13.6999 6.09998C10.7999 8.99998 7.99991 11.8 5.09991 14.7C4.99991 14.8 4.8999 14.9 4.7999 14.9C3.5999 15.2 2.29991 15.5 1.09991 15.8H0.999908C0.899908 15.8 0.899896 15.8 0.799896 15.8C0.699896 15.7 0.599908 15.6 0.499908 15.5C0.399908 15.6 0.399902 15.6 0.399902 15.5Z"
-                    fill="#9A9A9A"/>
-                  <path
-                    d="M16.3998 2.90002C16.3998 3.00002 16.3998 3.10001 16.2998 3.20001C16.1998 3.40001 16.0998 3.69999 15.9998 3.79999C15.5998 4.19999 15.0998 4.69998 14.6998 5.09998C13.5998 3.99998 12.3998 2.80001 11.2998 1.70001C11.6998 1.30001 12.0998 0.800024 12.5998 0.400024C13.1998 -0.0999756 14.1998 -0.0999756 14.7998 0.400024C15.1998 0.800024 15.5998 1.19998 15.9998 1.59998C16.1998 1.79998 16.2998 2.2 16.3998 2.5C16.3998 2.6 16.3998 2.80002 16.3998 2.90002Z"
-                    fill="#9A9A9A"/>
-                </svg>
-              </h2>
-              <p class="page-doc__insurance-subtitle">
-                Номер СНИЛСа
-              </p>
-				<p class="visibility-subtitle">
-					СНИЛС не загружен
-				</p>
-              <div class="page-doc__snils-input edit-doc-wrapper__input">
-                <input name="snils" type="text">
-                <svg class="agree-btn" width="18" height="13"
-                     viewBox="0 0 18 13" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M16.8001 2.70004C16.9001 2.60004 17.0001 2.50002 17.1001 2.40002C17.3001 2.10002 17.4001 1.70002 17.3001 1.30002C17.2001 0.900015 16.9001 0.700034 16.5001 0.600034C16.0001 0.500034 15.6001 0.600028 15.2001 1.00003L11.3001 4.90002C9.90014 6.30002 8.50014 7.70004 7.00014 9.20004C7.00014 9.20004 6.90014 9.30002 6.90014 9.40002C6.90014 9.40002 6.80014 9.50003 6.80014 9.60003L6.60014 9.90002L3.70014 7.00003C3.40014 6.70003 3.00014 6.30003 2.70014 6.00003C2.50014 5.80003 2.20014 5.70004 1.90014 5.70004C1.50014 5.70004 1.20014 5.90004 0.900139 6.20004C0.500139 6.70004 0.600136 7.30002 1.10014 7.80002C2.20014 8.90002 3.20014 9.90003 4.30014 11L5.40014 12.1C6.20014 12.9 6.70014 12.9 7.50014 12.1L16.8001 2.70004Z"
-                    fill="#9A9A9A"/>
-                </svg>
-                <svg class="close-btn" width="14" height="14"
-                     viewBox="0 0 14 14" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M7.40002 7.89999C6.80002 8.49999 6.20002 9.10001 5.60002 9.70001C4.80002 10.5 3.40002 11.9 2.60002 12.7C2.20002 13.1 1.60002 13.1 1.20002 12.7C0.80002 12.3 0.80002 11.7 1.20002 11.3C2.50002 9.99998 4.50002 7.99998 5.70002 6.79998C5.80002 6.69999 5.90002 6.6 6.00002 6.5C5.90002 6.4 5.80003 6.29998 5.80003 6.29998C4.50003 4.99998 2.50002 3.00001 1.20002 1.70001C0.70002 1.20001 0.800025 0.400003 1.40002 0.100003C1.80002 -0.0999968 2.20002 -9.05991e-06 2.50002 0.399991C3.80002 1.69999 5.70002 3.59999 7.00002 4.89999C7.10002 4.99999 7.20003 5.10001 7.30003 5.20001C7.40003 5.10001 7.50002 5 7.50002 5C8.80002 3.7 10.8 1.69999 12.1 0.399991C12.6 -0.100009 13.5 9.29832e-06 13.7 0.700009C13.9 1.10001 13.8 1.49998 13.4 1.79998C12.1 3.09998 10.1 5.09999 8.90002 6.29998C8.80002 6.39998 8.70002 6.5 8.60002 6.6C8.70002 6.7 8.80003 6.79998 8.80003 6.79998C10.1 8.09999 12.1 10.1 13.4 11.4C13.7 11.7 13.8 12.2 13.6 12.6C13.4 13 13 13.2 12.6 13.1C12.4 13 12.2 12.9 12 12.8C10.7 11.5 8.80002 9.59999 7.50002 8.29998C7.50002 8.09999 7.50002 7.99999 7.40002 7.89999Z"
-                    fill="#9A9A9A"/>
-                </svg>
-              </div>
+					<div class="page-doc__inner-right">
+						<div class="page-doc__insurance edit-doc-wrapper general-dropzone-wrapper _hidden"
+							 data-url="/include/ajax/save_userfield.php">
+							<h2 class="page-doc__insurance-title">
+								СНИЛС
+								<svg class="edit-btn edit-snils" width="17" height="16"
+									 viewBox="0 0 17 16"
+									 fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+											d="M0.399902 15.5C0.499902 15.2 0.599921 14.8 0.699921 14.5C0.899921 13.6 1.1999 12.6 1.3999 11.7C1.3999 11.6 1.49991 11.5 1.59991 11.4C4.49991 8.50002 7.3999 5.60001 10.2999 2.70001L10.3999 2.59998C11.4999 3.69998 12.6999 4.9 13.7999 6L13.6999 6.09998C10.7999 8.99998 7.99991 11.8 5.09991 14.7C4.99991 14.8 4.8999 14.9 4.7999 14.9C3.5999 15.2 2.29991 15.5 1.09991 15.8H0.999908C0.899908 15.8 0.899896 15.8 0.799896 15.8C0.699896 15.7 0.599908 15.6 0.499908 15.5C0.399908 15.6 0.399902 15.6 0.399902 15.5Z"
+											fill="#9A9A9A"/>
+									<path
+											d="M16.3998 2.90002C16.3998 3.00002 16.3998 3.10001 16.2998 3.20001C16.1998 3.40001 16.0998 3.69999 15.9998 3.79999C15.5998 4.19999 15.0998 4.69998 14.6998 5.09998C13.5998 3.99998 12.3998 2.80001 11.2998 1.70001C11.6998 1.30001 12.0998 0.800024 12.5998 0.400024C13.1998 -0.0999756 14.1998 -0.0999756 14.7998 0.400024C15.1998 0.800024 15.5998 1.19998 15.9998 1.59998C16.1998 1.79998 16.2998 2.2 16.3998 2.5C16.3998 2.6 16.3998 2.80002 16.3998 2.90002Z"
+											fill="#9A9A9A"/>
+								</svg>
+							</h2>
+							<p class="page-doc__insurance-subtitle">
+								Номер СНИЛСа
+							</p>
+							<p class="visibility-subtitle">
+								СНИЛС не загружен
+							</p>
+							<div class="page-doc__snils-input edit-doc-wrapper__input">
+								<input name="snils" type="text">
+								<svg class="agree-btn" width="18" height="13"
+									 viewBox="0 0 18 13" fill="none"
+									 xmlns="http://www.w3.org/2000/svg">
+									<path
+											d="M16.8001 2.70004C16.9001 2.60004 17.0001 2.50002 17.1001 2.40002C17.3001 2.10002 17.4001 1.70002 17.3001 1.30002C17.2001 0.900015 16.9001 0.700034 16.5001 0.600034C16.0001 0.500034 15.6001 0.600028 15.2001 1.00003L11.3001 4.90002C9.90014 6.30002 8.50014 7.70004 7.00014 9.20004C7.00014 9.20004 6.90014 9.30002 6.90014 9.40002C6.90014 9.40002 6.80014 9.50003 6.80014 9.60003L6.60014 9.90002L3.70014 7.00003C3.40014 6.70003 3.00014 6.30003 2.70014 6.00003C2.50014 5.80003 2.20014 5.70004 1.90014 5.70004C1.50014 5.70004 1.20014 5.90004 0.900139 6.20004C0.500139 6.70004 0.600136 7.30002 1.10014 7.80002C2.20014 8.90002 3.20014 9.90003 4.30014 11L5.40014 12.1C6.20014 12.9 6.70014 12.9 7.50014 12.1L16.8001 2.70004Z"
+											fill="#9A9A9A"/>
+								</svg>
+								<svg class="close-btn" width="14" height="14"
+									 viewBox="0 0 14 14" fill="none"
+									 xmlns="http://www.w3.org/2000/svg">
+									<path
+											d="M7.40002 7.89999C6.80002 8.49999 6.20002 9.10001 5.60002 9.70001C4.80002 10.5 3.40002 11.9 2.60002 12.7C2.20002 13.1 1.60002 13.1 1.20002 12.7C0.80002 12.3 0.80002 11.7 1.20002 11.3C2.50002 9.99998 4.50002 7.99998 5.70002 6.79998C5.80002 6.69999 5.90002 6.6 6.00002 6.5C5.90002 6.4 5.80003 6.29998 5.80003 6.29998C4.50003 4.99998 2.50002 3.00001 1.20002 1.70001C0.70002 1.20001 0.800025 0.400003 1.40002 0.100003C1.80002 -0.0999968 2.20002 -9.05991e-06 2.50002 0.399991C3.80002 1.69999 5.70002 3.59999 7.00002 4.89999C7.10002 4.99999 7.20003 5.10001 7.30003 5.20001C7.40003 5.10001 7.50002 5 7.50002 5C8.80002 3.7 10.8 1.69999 12.1 0.399991C12.6 -0.100009 13.5 9.29832e-06 13.7 0.700009C13.9 1.10001 13.8 1.49998 13.4 1.79998C12.1 3.09998 10.1 5.09999 8.90002 6.29998C8.80002 6.39998 8.70002 6.5 8.60002 6.6C8.70002 6.7 8.80003 6.79998 8.80003 6.79998C10.1 8.09999 12.1 10.1 13.4 11.4C13.7 11.7 13.8 12.2 13.6 12.6C13.4 13 13 13.2 12.6 13.1C12.4 13 12.2 12.9 12 12.8C10.7 11.5 8.80002 9.59999 7.50002 8.29998C7.50002 8.09999 7.50002 7.99999 7.40002 7.89999Z"
+											fill="#9A9A9A"/>
+								</svg>
+							</div>
 							<div class="page-doc__visibility-wrapper">
-			              <p
-                class="page-doc__insurance-content page-doc__editable-wrapper copy-field">
-                <span class="copy-value edit-value"></span>
-                <span>
+								<p class="page-doc__insurance-content page-doc__editable-wrapper copy-field">
+									<span class="copy-value edit-value">78945613455</span>
+									<span>
                 <svg
-                  class="copy-btn" width="13" height="15" viewBox="0 0 13 15"
-                  fill="none" xmlns="http://www.w3.org/2000/svg"><g
-                  opacity="0.5"><path
-                  d="M9.09995 0.199951C9.09995 0.599951 9.09995 1 9.09995 1.5C6.49995 1.5 3.99994 1.5 1.49994 1.5C1.49994 4.5 1.49994 7.40002 1.49994 10.4C1.09994 10.4 0.699951 10.4 0.199951 10.4C0.199951 10.3 0.199951 10.3 0.199951 10.2C0.199951 7.29995 0.199951 4.39998 0.199951 1.59998C0.199951 0.899976 0.699927 0.299951 1.29993 0.199951C3.89993 0.199951 6.49995 0.199951 9.09995 0.199951Z"
-                  fill="#858584"/><path
-                  d="M12.2998 8.40002C12.2998 9.90002 12.2998 11.3 12.2998 12.8C12.2998 13.3 12.0998 13.8 11.5998 14C11.3998 14.1 11.1998 14.1 10.9998 14.1C8.69982 14.1 6.39982 14.1 4.09982 14.1C3.29982 14.1 2.7998 13.5 2.7998 12.8C2.7998 9.90005 2.7998 6.9 2.7998 4C2.7998 3.2 3.29982 2.69995 4.09982 2.69995C6.39982 2.69995 8.69982 2.69995 10.9998 2.69995C11.7998 2.69995 12.2998 3.3 12.2998 4C12.2998 5.5 12.2998 7.00002 12.2998 8.40002ZM3.99982 4C3.99982 7 3.99982 9.90002 3.99982 12.9C6.29982 12.9 8.69982 12.9 10.9998 12.9C10.9998 9.90002 10.9998 7 10.9998 4C8.69982 4 6.29982 4 3.99982 4Z"
-                  fill="#858584"/></g></svg></span>
-              </p>
-
-			 <p class="page-doc__scan-title">Скан</p>
-              <div class="page-doc__scan">
-                <form class="dropzone general-dropzone" action="/target"
-                      id="insurance-dropzone"
-                      data-general-info='{"url": "/include/ajax/upload_image.php", "removeUrl": "/include/ajax/delete_image.php", "width": "50", "height": "50", "acceptedFiles": ".png, .jpeg, .jpg", "type": "snils", "filesCount": "1", "additional": "доп.контент"}'
-                      data-show-preview="true">
-                  <div class="dz-message">
-                  </div>
-                  <button
-                    class="page-doc__scan-add page-doc__insurance-doc-btn general-dropzone__add-btn"
-                    id="insurance-add"
-                    type="button">
-                    <svg width="33" height="32" viewBox="0 0 33 32"
-                         fill="none"
-                         xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M15.3 0.100098C16 0.100098 16.6 0.100098 17.3 0.100098C17.8 0.200098 18.4001 0.20011 18.9001 0.30011C23.0001 1.00011 26.4001 3.00015 28.9001 6.40015C31.7001 10.2001 32.7001 14.4001 31.9001 19.0001C31.2001 22.7001 29.4001 25.8001 26.5001 28.2001C22.9001 31.2001 18.8001 32.4001 14.1001 31.8001C10.9001 31.4001 8.10007 30.1001 5.70007 28.0001C2.90007 25.5001 1.20006 22.5001 0.500061 18.8001C0.400061 18.2001 0.300049 17.6001 0.300049 17.0001C0.300049 16.3001 0.300049 15.7001 0.300049 15.0001C0.400049 14.5001 0.400061 13.9001 0.500061 13.4001C1.10006 10.1001 2.50005 7.20011 4.90005 4.80011C7.30006 2.40011 10.2001 0.90011 13.5001 0.30011C14.2001 0.20011 14.8 0.200098 15.3 0.100098ZM16.3 30.0001C24 30.0001 30.2 23.8001 30.3 16.1001C30.3 8.4001 24 2.1001 16.3 2.1001C8.60005 2.1001 2.40005 8.30012 2.30005 16.0001C2.40005 23.7001 8.60005 30.0001 16.3 30.0001Z"
-                        fill="#9A9A9A"/>
-                      <path
-                        d="M15.3 17.0002C14.4 17.0002 13.5 17.0002 12.7 17.0002C11.6 17.0002 9.50001 17.0002 8.40001 17.0002C7.80001 17.0002 7.30001 16.6002 7.40001 16.0002C7.40001 15.4002 7.80002 15.0002 8.50002 15.0002C10.3 15.0002 13.2 15.0002 15 15.0002C15.1 15.0002 15.2 15.0002 15.4 15.0002C15.4 14.9002 15.4 14.8002 15.4 14.7002C15.4 12.8002 15.4 10.0002 15.4 8.10021C15.4 7.30021 16.1 6.80021 16.8 7.10021C17.2 7.30021 17.4 7.60021 17.4 8.10021C17.4 9.90021 17.4 12.8002 17.4 14.6002C17.4 14.7002 17.4 14.8002 17.4 15.0002C17.5 15.0002 17.6 15.0002 17.7 15.0002C19.6 15.0002 22.4 15.0002 24.3 15.0002C25 15.0002 25.5 15.7003 25.3 16.4003C25.1 16.8003 24.8 17.0002 24.3 17.0002C22.5 17.0002 19.6 17.0002 17.8 17.0002C17.7 17.0002 17.6 17.0002 17.4 17.0002C17.4 17.1002 17.4 17.2003 17.4 17.4003C17.4 19.3003 17.4 22.1002 17.4 24.0002C17.4 24.5002 17.1 24.9002 16.7 25.0002C16.3 25.1002 15.8 25.0002 15.6 24.6002C15.5 24.4002 15.4 24.2003 15.4 23.9003C15.4 22.1003 15.4 19.2003 15.4 17.4003C15.3 17.3003 15.3 17.2002 15.3 17.0002Z"
-                        fill="#9A9A9A"/>
-                    </svg>
-                  </button>
-                </form>
-              </div>
-				</div>
-            </div>
-            <div
-              class="page-doc__tax edit-doc-wrapper general-dropzone-wrapper"
-              data-url="/include/ajax/save_userfield.php">
-              <h2 class="page-doc__tax-title">
-                ИНН
-                <svg class="edit-btn" width="17" height="16" viewBox="0 0 17 16"
-                     fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M0.399902 15.5C0.499902 15.2 0.599921 14.8 0.699921 14.5C0.899921 13.6 1.1999 12.6 1.3999 11.7C1.3999 11.6 1.49991 11.5 1.59991 11.4C4.49991 8.50002 7.3999 5.60001 10.2999 2.70001L10.3999 2.59998C11.4999 3.69998 12.6999 4.9 13.7999 6L13.6999 6.09998C10.7999 8.99998 7.99991 11.8 5.09991 14.7C4.99991 14.8 4.8999 14.9 4.7999 14.9C3.5999 15.2 2.29991 15.5 1.09991 15.8H0.999908C0.899908 15.8 0.899896 15.8 0.799896 15.8C0.699896 15.7 0.599908 15.6 0.499908 15.5C0.399908 15.6 0.399902 15.6 0.399902 15.5Z"
-                    fill="#9A9A9A"/>
-                  <path
-                    d="M16.3998 2.90002C16.3998 3.00002 16.3998 3.10001 16.2998 3.20001C16.1998 3.40001 16.0998 3.69999 15.9998 3.79999C15.5998 4.19999 15.0998 4.69998 14.6998 5.09998C13.5998 3.99998 12.3998 2.80001 11.2998 1.70001C11.6998 1.30001 12.0998 0.800024 12.5998 0.400024C13.1998 -0.0999756 14.1998 -0.0999756 14.7998 0.400024C15.1998 0.800024 15.5998 1.19998 15.9998 1.59998C16.1998 1.79998 16.2998 2.2 16.3998 2.5C16.3998 2.6 16.3998 2.80002 16.3998 2.90002Z"
-                    fill="#9A9A9A"/>
-                </svg>
-              </h2>
-              <p class="page-doc__tax-subtitle">
-                Номер ИНН
-              </p>
-				<p class="visibility-subtitle">
-					ИНН не загружен
-				</p>
-              <div class="page-doc__inn-input edit-doc-wrapper__input">
-                <input name="inn" type="number">
-                <svg class="agree-btn" width="18" height="13"
-                     viewBox="0 0 18 13" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M16.8001 2.70004C16.9001 2.60004 17.0001 2.50002 17.1001 2.40002C17.3001 2.10002 17.4001 1.70002 17.3001 1.30002C17.2001 0.900015 16.9001 0.700034 16.5001 0.600034C16.0001 0.500034 15.6001 0.600028 15.2001 1.00003L11.3001 4.90002C9.90014 6.30002 8.50014 7.70004 7.00014 9.20004C7.00014 9.20004 6.90014 9.30002 6.90014 9.40002C6.90014 9.40002 6.80014 9.50003 6.80014 9.60003L6.60014 9.90002L3.70014 7.00003C3.40014 6.70003 3.00014 6.30003 2.70014 6.00003C2.50014 5.80003 2.20014 5.70004 1.90014 5.70004C1.50014 5.70004 1.20014 5.90004 0.900139 6.20004C0.500139 6.70004 0.600136 7.30002 1.10014 7.80002C2.20014 8.90002 3.20014 9.90003 4.30014 11L5.40014 12.1C6.20014 12.9 6.70014 12.9 7.50014 12.1L16.8001 2.70004Z"
-                    fill="#9A9A9A"/>
-                </svg>
-                <svg class="close-btn" width="14" height="14"
-                     viewBox="0 0 14 14" fill="none"
-                     xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M7.40002 7.89999C6.80002 8.49999 6.20002 9.10001 5.60002 9.70001C4.80002 10.5 3.40002 11.9 2.60002 12.7C2.20002 13.1 1.60002 13.1 1.20002 12.7C0.80002 12.3 0.80002 11.7 1.20002 11.3C2.50002 9.99998 4.50002 7.99998 5.70002 6.79998C5.80002 6.69999 5.90002 6.6 6.00002 6.5C5.90002 6.4 5.80003 6.29998 5.80003 6.29998C4.50003 4.99998 2.50002 3.00001 1.20002 1.70001C0.70002 1.20001 0.800025 0.400003 1.40002 0.100003C1.80002 -0.0999968 2.20002 -9.05991e-06 2.50002 0.399991C3.80002 1.69999 5.70002 3.59999 7.00002 4.89999C7.10002 4.99999 7.20003 5.10001 7.30003 5.20001C7.40003 5.10001 7.50002 5 7.50002 5C8.80002 3.7 10.8 1.69999 12.1 0.399991C12.6 -0.100009 13.5 9.29832e-06 13.7 0.700009C13.9 1.10001 13.8 1.49998 13.4 1.79998C12.1 3.09998 10.1 5.09999 8.90002 6.29998C8.80002 6.39998 8.70002 6.5 8.60002 6.6C8.70002 6.7 8.80003 6.79998 8.80003 6.79998C10.1 8.09999 12.1 10.1 13.4 11.4C13.7 11.7 13.8 12.2 13.6 12.6C13.4 13 13 13.2 12.6 13.1C12.4 13 12.2 12.9 12 12.8C10.7 11.5 8.80002 9.59999 7.50002 8.29998C7.50002 8.09999 7.50002 7.99999 7.40002 7.89999Z"
-                    fill="#9A9A9A"/>
-                </svg>
-              </div>
-
-				<div class="page-doc__visibility-wrapper">
-              <p
-                class="page-doc__tax-content page-doc__editable-wrapper copy-field">
-                <span class="copy-value edit-value">782801868911</span>
-                <span>
+						class="copy-btn" width="13" height="15" viewBox="0 0 13 15"
+						fill="none" xmlns="http://www.w3.org/2000/svg"><g
+						opacity="0.5"><path
+						d="M9.09995 0.199951C9.09995 0.599951 9.09995 1 9.09995 1.5C6.49995 1.5 3.99994 1.5 1.49994 1.5C1.49994 4.5 1.49994 7.40002 1.49994 10.4C1.09994 10.4 0.699951 10.4 0.199951 10.4C0.199951 10.3 0.199951 10.3 0.199951 10.2C0.199951 7.29995 0.199951 4.39998 0.199951 1.59998C0.199951 0.899976 0.699927 0.299951 1.29993 0.199951C3.89993 0.199951 6.49995 0.199951 9.09995 0.199951Z"
+						fill="#858584"/><path
+						d="M12.2998 8.40002C12.2998 9.90002 12.2998 11.3 12.2998 12.8C12.2998 13.3 12.0998 13.8 11.5998 14C11.3998 14.1 11.1998 14.1 10.9998 14.1C8.69982 14.1 6.39982 14.1 4.09982 14.1C3.29982 14.1 2.7998 13.5 2.7998 12.8C2.7998 9.90005 2.7998 6.9 2.7998 4C2.7998 3.2 3.29982 2.69995 4.09982 2.69995C6.39982 2.69995 8.69982 2.69995 10.9998 2.69995C11.7998 2.69995 12.2998 3.3 12.2998 4C12.2998 5.5 12.2998 7.00002 12.2998 8.40002ZM3.99982 4C3.99982 7 3.99982 9.90002 3.99982 12.9C6.29982 12.9 8.69982 12.9 10.9998 12.9C10.9998 9.90002 10.9998 7 10.9998 4C8.69982 4 6.29982 4 3.99982 4Z"
+						fill="#858584"/></g></svg></span>
+								</p>
+								<p class="page-doc__scan-title">Скан</p>
+								<div class="page-doc__scan">
+									<form class="dropzone general-dropzone" action="/target"
+										  id="insurance-dropzone"
+										  data-general-info='{"url": "/include/ajax/upload_image.php", "removeUrl": "/include/ajax/delete_image.php", "width": "50", "height": "50", "acceptedFiles": ".png, .jpeg, .jpg", "type": "snils", "filesCount": "1", "additional": "доп.контент"}'
+										  data-show-preview="true">
+										<div class="dz-message">
+										</div>
+										<button
+												class="page-doc__scan-add page-doc__insurance-doc-btn general-dropzone__add-btn"
+												id="insurance-add"
+												type="button">
+											<svg width="33" height="32" viewBox="0 0 33 32"
+												 fill="none"
+												 xmlns="http://www.w3.org/2000/svg">
+												<path
+														d="M15.3 0.100098C16 0.100098 16.6 0.100098 17.3 0.100098C17.8 0.200098 18.4001 0.20011 18.9001 0.30011C23.0001 1.00011 26.4001 3.00015 28.9001 6.40015C31.7001 10.2001 32.7001 14.4001 31.9001 19.0001C31.2001 22.7001 29.4001 25.8001 26.5001 28.2001C22.9001 31.2001 18.8001 32.4001 14.1001 31.8001C10.9001 31.4001 8.10007 30.1001 5.70007 28.0001C2.90007 25.5001 1.20006 22.5001 0.500061 18.8001C0.400061 18.2001 0.300049 17.6001 0.300049 17.0001C0.300049 16.3001 0.300049 15.7001 0.300049 15.0001C0.400049 14.5001 0.400061 13.9001 0.500061 13.4001C1.10006 10.1001 2.50005 7.20011 4.90005 4.80011C7.30006 2.40011 10.2001 0.90011 13.5001 0.30011C14.2001 0.20011 14.8 0.200098 15.3 0.100098ZM16.3 30.0001C24 30.0001 30.2 23.8001 30.3 16.1001C30.3 8.4001 24 2.1001 16.3 2.1001C8.60005 2.1001 2.40005 8.30012 2.30005 16.0001C2.40005 23.7001 8.60005 30.0001 16.3 30.0001Z"
+														fill="#9A9A9A"/>
+												<path
+														d="M15.3 17.0002C14.4 17.0002 13.5 17.0002 12.7 17.0002C11.6 17.0002 9.50001 17.0002 8.40001 17.0002C7.80001 17.0002 7.30001 16.6002 7.40001 16.0002C7.40001 15.4002 7.80002 15.0002 8.50002 15.0002C10.3 15.0002 13.2 15.0002 15 15.0002C15.1 15.0002 15.2 15.0002 15.4 15.0002C15.4 14.9002 15.4 14.8002 15.4 14.7002C15.4 12.8002 15.4 10.0002 15.4 8.10021C15.4 7.30021 16.1 6.80021 16.8 7.10021C17.2 7.30021 17.4 7.60021 17.4 8.10021C17.4 9.90021 17.4 12.8002 17.4 14.6002C17.4 14.7002 17.4 14.8002 17.4 15.0002C17.5 15.0002 17.6 15.0002 17.7 15.0002C19.6 15.0002 22.4 15.0002 24.3 15.0002C25 15.0002 25.5 15.7003 25.3 16.4003C25.1 16.8003 24.8 17.0002 24.3 17.0002C22.5 17.0002 19.6 17.0002 17.8 17.0002C17.7 17.0002 17.6 17.0002 17.4 17.0002C17.4 17.1002 17.4 17.2003 17.4 17.4003C17.4 19.3003 17.4 22.1002 17.4 24.0002C17.4 24.5002 17.1 24.9002 16.7 25.0002C16.3 25.1002 15.8 25.0002 15.6 24.6002C15.5 24.4002 15.4 24.2003 15.4 23.9003C15.4 22.1003 15.4 19.2003 15.4 17.4003C15.3 17.3003 15.3 17.2002 15.3 17.0002Z"
+														fill="#9A9A9A"/>
+											</svg>
+										</button>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="page-doc__tax edit-doc-wrapper general-dropzone-wrapper _hidden"
+							 data-url="/include/ajax/save_userfield.php">
+							<h2 class="page-doc__tax-title">
+								ИНН
+								<svg class="edit-btn" width="17" height="16" viewBox="0 0 17 16"
+									 fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path
+											d="M0.399902 15.5C0.499902 15.2 0.599921 14.8 0.699921 14.5C0.899921 13.6 1.1999 12.6 1.3999 11.7C1.3999 11.6 1.49991 11.5 1.59991 11.4C4.49991 8.50002 7.3999 5.60001 10.2999 2.70001L10.3999 2.59998C11.4999 3.69998 12.6999 4.9 13.7999 6L13.6999 6.09998C10.7999 8.99998 7.99991 11.8 5.09991 14.7C4.99991 14.8 4.8999 14.9 4.7999 14.9C3.5999 15.2 2.29991 15.5 1.09991 15.8H0.999908C0.899908 15.8 0.899896 15.8 0.799896 15.8C0.699896 15.7 0.599908 15.6 0.499908 15.5C0.399908 15.6 0.399902 15.6 0.399902 15.5Z"
+											fill="#9A9A9A"/>
+									<path
+											d="M16.3998 2.90002C16.3998 3.00002 16.3998 3.10001 16.2998 3.20001C16.1998 3.40001 16.0998 3.69999 15.9998 3.79999C15.5998 4.19999 15.0998 4.69998 14.6998 5.09998C13.5998 3.99998 12.3998 2.80001 11.2998 1.70001C11.6998 1.30001 12.0998 0.800024 12.5998 0.400024C13.1998 -0.0999756 14.1998 -0.0999756 14.7998 0.400024C15.1998 0.800024 15.5998 1.19998 15.9998 1.59998C16.1998 1.79998 16.2998 2.2 16.3998 2.5C16.3998 2.6 16.3998 2.80002 16.3998 2.90002Z"
+											fill="#9A9A9A"/>
+								</svg>
+							</h2>
+							<p class="page-doc__tax-subtitle">
+								Номер ИНН
+							</p>
+							<p class="visibility-subtitle">
+								ИНН не загружен
+							</p>
+							<div class="page-doc__inn-input edit-doc-wrapper__input">
+								<input name="inn" type="number">
+								<svg class="agree-btn" width="18" height="13"
+									 viewBox="0 0 18 13" fill="none"
+									 xmlns="http://www.w3.org/2000/svg">
+									<path
+											d="M16.8001 2.70004C16.9001 2.60004 17.0001 2.50002 17.1001 2.40002C17.3001 2.10002 17.4001 1.70002 17.3001 1.30002C17.2001 0.900015 16.9001 0.700034 16.5001 0.600034C16.0001 0.500034 15.6001 0.600028 15.2001 1.00003L11.3001 4.90002C9.90014 6.30002 8.50014 7.70004 7.00014 9.20004C7.00014 9.20004 6.90014 9.30002 6.90014 9.40002C6.90014 9.40002 6.80014 9.50003 6.80014 9.60003L6.60014 9.90002L3.70014 7.00003C3.40014 6.70003 3.00014 6.30003 2.70014 6.00003C2.50014 5.80003 2.20014 5.70004 1.90014 5.70004C1.50014 5.70004 1.20014 5.90004 0.900139 6.20004C0.500139 6.70004 0.600136 7.30002 1.10014 7.80002C2.20014 8.90002 3.20014 9.90003 4.30014 11L5.40014 12.1C6.20014 12.9 6.70014 12.9 7.50014 12.1L16.8001 2.70004Z"
+											fill="#9A9A9A"/>
+								</svg>
+								<svg class="close-btn" width="14" height="14"
+									 viewBox="0 0 14 14" fill="none"
+									 xmlns="http://www.w3.org/2000/svg">
+									<path
+											d="M7.40002 7.89999C6.80002 8.49999 6.20002 9.10001 5.60002 9.70001C4.80002 10.5 3.40002 11.9 2.60002 12.7C2.20002 13.1 1.60002 13.1 1.20002 12.7C0.80002 12.3 0.80002 11.7 1.20002 11.3C2.50002 9.99998 4.50002 7.99998 5.70002 6.79998C5.80002 6.69999 5.90002 6.6 6.00002 6.5C5.90002 6.4 5.80003 6.29998 5.80003 6.29998C4.50003 4.99998 2.50002 3.00001 1.20002 1.70001C0.70002 1.20001 0.800025 0.400003 1.40002 0.100003C1.80002 -0.0999968 2.20002 -9.05991e-06 2.50002 0.399991C3.80002 1.69999 5.70002 3.59999 7.00002 4.89999C7.10002 4.99999 7.20003 5.10001 7.30003 5.20001C7.40003 5.10001 7.50002 5 7.50002 5C8.80002 3.7 10.8 1.69999 12.1 0.399991C12.6 -0.100009 13.5 9.29832e-06 13.7 0.700009C13.9 1.10001 13.8 1.49998 13.4 1.79998C12.1 3.09998 10.1 5.09999 8.90002 6.29998C8.80002 6.39998 8.70002 6.5 8.60002 6.6C8.70002 6.7 8.80003 6.79998 8.80003 6.79998C10.1 8.09999 12.1 10.1 13.4 11.4C13.7 11.7 13.8 12.2 13.6 12.6C13.4 13 13 13.2 12.6 13.1C12.4 13 12.2 12.9 12 12.8C10.7 11.5 8.80002 9.59999 7.50002 8.29998C7.50002 8.09999 7.50002 7.99999 7.40002 7.89999Z"
+											fill="#9A9A9A"/>
+								</svg>
+							</div>
+							<d	iv class="page-doc__visibility-wrapper">
+								<p class="page-doc__tax-content page-doc__editable-wrapper copy-field">
+									<span class="copy-value edit-value">782801868911</span>
+									<span>
                 <svg
-                  class="copy-btn" width="13" height="15" viewBox="0 0 13 15"
-                  fill="none" xmlns="http://www.w3.org/2000/svg"><g
-                  opacity="0.5"><path
-                  d="M9.09995 0.199951C9.09995 0.599951 9.09995 1 9.09995 1.5C6.49995 1.5 3.99994 1.5 1.49994 1.5C1.49994 4.5 1.49994 7.40002 1.49994 10.4C1.09994 10.4 0.699951 10.4 0.199951 10.4C0.199951 10.3 0.199951 10.3 0.199951 10.2C0.199951 7.29995 0.199951 4.39998 0.199951 1.59998C0.199951 0.899976 0.699927 0.299951 1.29993 0.199951C3.89993 0.199951 6.49995 0.199951 9.09995 0.199951Z"
-                  fill="#858584"/><path
-                  d="M12.2998 8.40002C12.2998 9.90002 12.2998 11.3 12.2998 12.8C12.2998 13.3 12.0998 13.8 11.5998 14C11.3998 14.1 11.1998 14.1 10.9998 14.1C8.69982 14.1 6.39982 14.1 4.09982 14.1C3.29982 14.1 2.7998 13.5 2.7998 12.8C2.7998 9.90005 2.7998 6.9 2.7998 4C2.7998 3.2 3.29982 2.69995 4.09982 2.69995C6.39982 2.69995 8.69982 2.69995 10.9998 2.69995C11.7998 2.69995 12.2998 3.3 12.2998 4C12.2998 5.5 12.2998 7.00002 12.2998 8.40002ZM3.99982 4C3.99982 7 3.99982 9.90002 3.99982 12.9C6.29982 12.9 8.69982 12.9 10.9998 12.9C10.9998 9.90002 10.9998 7 10.9998 4C8.69982 4 6.29982 4 3.99982 4Z"
-                  fill="#858584"/></g></svg></span>
-              </p>
-              <p class="page-doc__scan-title">Скан</p>
-              <div class="page-doc__scan">
-                <form class="dropzone general-dropzone" action="/target"
-                      id="tax-dropzone"
-                      data-general-info='{"url": "/include/ajax/upload_image.php", "removeUrl": "/include/ajax/delete_image.php", "width": "50", "height": "50", "acceptedFiles": ".png, .jpeg, .jpg", "type": "inn", "filesCount": "1", "additional": "доп.контент"}'
-                      data-show-preview="true">
-                  <div class="dz-message">
-                  </div>
-                  <button
-                    class="page-doc__scan-add page-doc__tax-doc-btn general-dropzone__add-btn"
-                    id="tax-add"
-                    type="button">
-                    <svg width="33" height="32" viewBox="0 0 33 32"
-                         fill="none"
-                         xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M15.3 0.100098C16 0.100098 16.6 0.100098 17.3 0.100098C17.8 0.200098 18.4001 0.20011 18.9001 0.30011C23.0001 1.00011 26.4001 3.00015 28.9001 6.40015C31.7001 10.2001 32.7001 14.4001 31.9001 19.0001C31.2001 22.7001 29.4001 25.8001 26.5001 28.2001C22.9001 31.2001 18.8001 32.4001 14.1001 31.8001C10.9001 31.4001 8.10007 30.1001 5.70007 28.0001C2.90007 25.5001 1.20006 22.5001 0.500061 18.8001C0.400061 18.2001 0.300049 17.6001 0.300049 17.0001C0.300049 16.3001 0.300049 15.7001 0.300049 15.0001C0.400049 14.5001 0.400061 13.9001 0.500061 13.4001C1.10006 10.1001 2.50005 7.20011 4.90005 4.80011C7.30006 2.40011 10.2001 0.90011 13.5001 0.30011C14.2001 0.20011 14.8 0.200098 15.3 0.100098ZM16.3 30.0001C24 30.0001 30.2 23.8001 30.3 16.1001C30.3 8.4001 24 2.1001 16.3 2.1001C8.60005 2.1001 2.40005 8.30012 2.30005 16.0001C2.40005 23.7001 8.60005 30.0001 16.3 30.0001Z"
-                        fill="#9A9A9A"/>
-                      <path
-                        d="M15.3 17.0002C14.4 17.0002 13.5 17.0002 12.7 17.0002C11.6 17.0002 9.50001 17.0002 8.40001 17.0002C7.80001 17.0002 7.30001 16.6002 7.40001 16.0002C7.40001 15.4002 7.80002 15.0002 8.50002 15.0002C10.3 15.0002 13.2 15.0002 15 15.0002C15.1 15.0002 15.2 15.0002 15.4 15.0002C15.4 14.9002 15.4 14.8002 15.4 14.7002C15.4 12.8002 15.4 10.0002 15.4 8.10021C15.4 7.30021 16.1 6.80021 16.8 7.10021C17.2 7.30021 17.4 7.60021 17.4 8.10021C17.4 9.90021 17.4 12.8002 17.4 14.6002C17.4 14.7002 17.4 14.8002 17.4 15.0002C17.5 15.0002 17.6 15.0002 17.7 15.0002C19.6 15.0002 22.4 15.0002 24.3 15.0002C25 15.0002 25.5 15.7003 25.3 16.4003C25.1 16.8003 24.8 17.0002 24.3 17.0002C22.5 17.0002 19.6 17.0002 17.8 17.0002C17.7 17.0002 17.6 17.0002 17.4 17.0002C17.4 17.1002 17.4 17.2003 17.4 17.4003C17.4 19.3003 17.4 22.1002 17.4 24.0002C17.4 24.5002 17.1 24.9002 16.7 25.0002C16.3 25.1002 15.8 25.0002 15.6 24.6002C15.5 24.4002 15.4 24.2003 15.4 23.9003C15.4 22.1003 15.4 19.2003 15.4 17.4003C15.3 17.3003 15.3 17.2002 15.3 17.0002Z"
-                        fill="#9A9A9A"/>
-                    </svg>
-                  </button>
-                </form>
-              </div>
+						class="copy-btn" width="13" height="15" viewBox="0 0 13 15"
+						fill="none" xmlns="http://www.w3.org/2000/svg"><g
+						opacity="0.5"><path
+						d="M9.09995 0.199951C9.09995 0.599951 9.09995 1 9.09995 1.5C6.49995 1.5 3.99994 1.5 1.49994 1.5C1.49994 4.5 1.49994 7.40002 1.49994 10.4C1.09994 10.4 0.699951 10.4 0.199951 10.4C0.199951 10.3 0.199951 10.3 0.199951 10.2C0.199951 7.29995 0.199951 4.39998 0.199951 1.59998C0.199951 0.899976 0.699927 0.299951 1.29993 0.199951C3.89993 0.199951 6.49995 0.199951 9.09995 0.199951Z"
+						fill="#858584"/><path
+						d="M12.2998 8.40002C12.2998 9.90002 12.2998 11.3 12.2998 12.8C12.2998 13.3 12.0998 13.8 11.5998 14C11.3998 14.1 11.1998 14.1 10.9998 14.1C8.69982 14.1 6.39982 14.1 4.09982 14.1C3.29982 14.1 2.7998 13.5 2.7998 12.8C2.7998 9.90005 2.7998 6.9 2.7998 4C2.7998 3.2 3.29982 2.69995 4.09982 2.69995C6.39982 2.69995 8.69982 2.69995 10.9998 2.69995C11.7998 2.69995 12.2998 3.3 12.2998 4C12.2998 5.5 12.2998 7.00002 12.2998 8.40002ZM3.99982 4C3.99982 7 3.99982 9.90002 3.99982 12.9C6.29982 12.9 8.69982 12.9 10.9998 12.9C10.9998 9.90002 10.9998 7 10.9998 4C8.69982 4 6.29982 4 3.99982 4Z"
+						fill="#858584"/></g></svg></span>
+								</p>
+								<p class="page-doc__scan-title">Скан</p>
+								<div class="page-doc__scan">
+									<form class="dropzone general-dropzone" action="/target"
+										  id="tax-dropzone"
+										  data-general-info='{"url": "/include/ajax/upload_image.php", "removeUrl": "/include/ajax/delete_image.php", "width": "50", "height": "50", "acceptedFiles": ".png, .jpeg, .jpg", "type": "inn", "filesCount": "1", "additional": "доп.контент"}'
+										  data-show-preview="true">
+										<div class="dz-message">
+										</div>
+										<button
+												class="page-doc__scan-add page-doc__tax-doc-btn general-dropzone__add-btn"
+												id="tax-add"
+												type="button">
+											<svg width="33" height="32" viewBox="0 0 33 32"
+												 fill="none"
+												 xmlns="http://www.w3.org/2000/svg">
+												<path
+														d="M15.3 0.100098C16 0.100098 16.6 0.100098 17.3 0.100098C17.8 0.200098 18.4001 0.20011 18.9001 0.30011C23.0001 1.00011 26.4001 3.00015 28.9001 6.40015C31.7001 10.2001 32.7001 14.4001 31.9001 19.0001C31.2001 22.7001 29.4001 25.8001 26.5001 28.2001C22.9001 31.2001 18.8001 32.4001 14.1001 31.8001C10.9001 31.4001 8.10007 30.1001 5.70007 28.0001C2.90007 25.5001 1.20006 22.5001 0.500061 18.8001C0.400061 18.2001 0.300049 17.6001 0.300049 17.0001C0.300049 16.3001 0.300049 15.7001 0.300049 15.0001C0.400049 14.5001 0.400061 13.9001 0.500061 13.4001C1.10006 10.1001 2.50005 7.20011 4.90005 4.80011C7.30006 2.40011 10.2001 0.90011 13.5001 0.30011C14.2001 0.20011 14.8 0.200098 15.3 0.100098ZM16.3 30.0001C24 30.0001 30.2 23.8001 30.3 16.1001C30.3 8.4001 24 2.1001 16.3 2.1001C8.60005 2.1001 2.40005 8.30012 2.30005 16.0001C2.40005 23.7001 8.60005 30.0001 16.3 30.0001Z"
+														fill="#9A9A9A"/>
+												<path
+														d="M15.3 17.0002C14.4 17.0002 13.5 17.0002 12.7 17.0002C11.6 17.0002 9.50001 17.0002 8.40001 17.0002C7.80001 17.0002 7.30001 16.6002 7.40001 16.0002C7.40001 15.4002 7.80002 15.0002 8.50002 15.0002C10.3 15.0002 13.2 15.0002 15 15.0002C15.1 15.0002 15.2 15.0002 15.4 15.0002C15.4 14.9002 15.4 14.8002 15.4 14.7002C15.4 12.8002 15.4 10.0002 15.4 8.10021C15.4 7.30021 16.1 6.80021 16.8 7.10021C17.2 7.30021 17.4 7.60021 17.4 8.10021C17.4 9.90021 17.4 12.8002 17.4 14.6002C17.4 14.7002 17.4 14.8002 17.4 15.0002C17.5 15.0002 17.6 15.0002 17.7 15.0002C19.6 15.0002 22.4 15.0002 24.3 15.0002C25 15.0002 25.5 15.7003 25.3 16.4003C25.1 16.8003 24.8 17.0002 24.3 17.0002C22.5 17.0002 19.6 17.0002 17.8 17.0002C17.7 17.0002 17.6 17.0002 17.4 17.0002C17.4 17.1002 17.4 17.2003 17.4 17.4003C17.4 19.3003 17.4 22.1002 17.4 24.0002C17.4 24.5002 17.1 24.9002 16.7 25.0002C16.3 25.1002 15.8 25.0002 15.6 24.6002C15.5 24.4002 15.4 24.2003 15.4 23.9003C15.4 22.1003 15.4 19.2003 15.4 17.4003C15.3 17.3003 15.3 17.2002 15.3 17.0002Z"
+														fill="#9A9A9A"/>
+											</svg>
+										</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+
 				</div>
-            </div>
-          </div>
+			</div>
 
-        </div>
-      </div>
+			@include('partials/info-modal.html')
+			@include('partials/big-img-modal.html')
 
-      @include('partials/info-modal.html')
-      @include('partials/big-img-modal.html')
+		</section>
+	</main>
 
-    </section>
-  </main>
-
-  @include('partials/footer.html')
+	@include('partials/footer.html')
 </div>
 
 </body>

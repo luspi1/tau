@@ -12,7 +12,7 @@ import {modalOverlay, modalPassport} from '../_vars'
 const passportForm = document.querySelector('.passport-modal__form')
 const docPage = document.querySelector('.page-doc')
 const passportUpdatableFields = docPage?.querySelectorAll('[data-updField]')
-
+const passportBlock = document.querySelector('.page-doc__passport')
 // Обработка события отправки
 
 if (passportForm) {
@@ -38,6 +38,11 @@ if (passportForm) {
                 updateFields(objData, passportUpdatableFields)
                 modalPassport.classList.remove('_active')
                 modalOverlay.classList.remove('modal-overlay_active')
+
+                if (passportBlock.classList.contains('_hidden')){
+                    passportBlock.classList.remove('_hidden')
+                }
+
             } else {
                 showInfoModal(errortext)
             }
@@ -83,13 +88,8 @@ if (editDocWrappers) {
         const agreeBtn = wrapper.querySelector('.agree-btn')
         const closeBtn = wrapper.querySelector('.close-btn')
         const dataUrl = wrapper.dataset.url
-        const values = document.querySelectorAll('.copy-value.edit-value')
 
-        values.forEach(item => {
-            if (!item?.textContent.trim().length) {
-                item.closest('.edit-doc-wrapper').classList.add('_hidden')
-            }
-        })
+
 
         editBtn.addEventListener('click', (e) => {
             e.preventDefault()
@@ -124,6 +124,11 @@ if (editDocWrappers) {
                     editValue.textContent = inputValue
                     editInputWrapper.classList.remove('_active')
                     editableWrapper.style.visibility = 'visible'
+
+                    if(wrapper.classList.contains('_hidden')){
+                        wrapper.classList.remove('_hidden')
+                    }
+
                 } else {
                     showInfoModal(errortext)
                 }
@@ -140,15 +145,6 @@ if (editDocWrappers) {
             editableWrapper.style.visibility = 'visible'
         })
     })
-}
-
-//Проверка наличия паспортных данных
-
-const passportNum = document.querySelector('[data-updfield="passport_num"]')
-const passportList = document.querySelector('.page-doc__passport-list')
-
-if (!passportNum?.textContent.trim().length && passportList) {
-    passportList.innerHTML = '<p class="page-doc__item-title">Паспортные данные еще не были загружены</p>'
 }
 
 // Переключение адреса проживания по постоянной или временной регистрации
@@ -177,6 +173,8 @@ if (regCheckboxes) {
         })
     })
 }
+
+
 
 
 

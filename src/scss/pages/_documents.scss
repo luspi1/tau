@@ -73,12 +73,29 @@
     margin-bottom: 27px;
   }
 
+  .visibility-subtitle {
+    display: none;
+  }
   &__passport {
     border: 1px solid #D8D8D8;
     border-radius: 15px;
     padding: 30px 30px 0 20px;
     width: 66%;
     margin-right: 20px;
+
+    &._hidden {
+      .visibility-subtitle {
+        display: block;
+      }
+
+      .page-doc__passport-list {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+        width: 0;
+      }
+    }
   }
 
   &__passport-list {
@@ -207,17 +224,14 @@
     border-radius: 15px;
     padding: 35px 30px 62px 30px;
   }
-
-
   &__insurance-subtitle,
   &__tax-subtitle,
-  .visibility-subtitle {
+  .visibility-subtitle{
     font-size: 16px;
     line-height: 20px;
     color: #858584;
     margin-bottom: 10px;
   }
-
   &__insurance-content,
   &__tax-content {
     @include montserrat-medium;
@@ -228,9 +242,6 @@
   }
 
   .edit-doc-wrapper {
-    .visibility-subtitle {
-      display: none;
-    }
 
     &._hidden {
       .visibility-subtitle {
@@ -249,8 +260,6 @@
         z-index: -1;
         width: 0;
       }
-
-
     }
   }
 }
