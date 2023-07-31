@@ -1,11 +1,7 @@
-import {
-  checkValue,
-  handlePopupInputs,
-  showInfoModal
-}                       from "../_functions"
-import { initAllDates } from "./customDate"
-import { initSelects }  from './customSelect'
-import { initAllMasks } from "./inputMask"
+import {checkValue, handlePopupInputs, showInfoModal} from "../_functions"
+import {initAllDates} from "./customDate"
+import {initSelects} from './customSelect'
+import {initAllMasks} from "./inputMask"
 
 let annexOptionalIndex = 1
 
@@ -193,14 +189,34 @@ if (createCasePage) {
 
   const orgCaseSelect = createCasePage.querySelector('.create-case-page__organization select')
   const docTemplatePopupInputs = createCasePage.querySelectorAll('.case-templates .select-popup')
+  const caseOrgWarning = createCasePage.querySelector('.warning-title__case-org')
+
 
   orgCaseSelect.addEventListener('change', e => {
     let orgIdUnit = e.detail.value
+
+    // скрытие сообщения о необходимости выбора организации, для которой создается кейс
+    if (orgIdUnit !== '0') {
+      caseOrgWarning.classList.add('hidden')
+    }
     docTemplatePopupInputs.forEach(el => {
       const prevTemplateData = JSON.parse(el.dataset.json)
       const newTemplateData = {...prevTemplateData, id_unit: orgIdUnit}
       el.dataset.json = JSON.stringify(newTemplateData)
     })
+  })
+
+
+  //проверка выбрана ли организация в селекте
+
+  const createCaseForm = createCasePage.querySelector('.create-case-page__form')
+
+  createCaseForm.addEventListener('submit', (e) => {
+    const caseSelectValue = orgCaseSelect.value
+    if (caseSelectValue === '0') {
+      e.preventDefault()
+      caseOrgWarning.classList.remove('hidden')
+    }
   })
 }
 
