@@ -357,14 +357,15 @@
     }
   }
 
-
   &__controllers {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     width: 170px;
-
+    a {
+      margin-right: 15px;
+    }
     button {
+      margin-right: 15px;
       background: none;
       border: none;
       height: 15px;

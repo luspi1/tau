@@ -3,7 +3,9 @@
     flex-direction: column;
     align-items: stretch;
   }
-
+.create-deal-page__inputs .create-deal-page__prompt {
+  margin-top: 0;
+}
   .create-deal-page .create-deal-caption__counterparty-wrapper {
     padding: 20px 0;
     margin-left: 0;

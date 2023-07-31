@@ -155,6 +155,9 @@
   &__inputs {
     display: flex;
     align-items: flex-start;
+    .create-deal-page__prompt {
+      margin-top: 25px;
+    }
   }
 
   &__date-inputs {
