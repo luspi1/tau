@@ -548,3 +548,9 @@ input[type="number"] {
   justify-content: space-between;
   align-items: center;
 }
+
+.trim-string {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
