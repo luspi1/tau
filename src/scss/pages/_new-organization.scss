@@ -3,6 +3,7 @@
     color: #BB1225;
   }
 }
+
 .new-organization {
   padding-top: 22px;
   padding-bottom: 143px;
@@ -79,6 +80,10 @@
     }
   }
 
+  &__input-wrapper-inn {
+    padding-bottom: 40px;
+    border-bottom: 1px dotted #C4C4C4;
+  }
 
   &__item {
     margin-bottom: 25px;
@@ -122,6 +127,7 @@
       margin-top: 10px;
     }
   }
+
   &__list-director {
 
     li {
@@ -156,6 +162,7 @@
     border: none;
     background: none;
     cursor: pointer;
+
     svg path {
       transition: all .3s;
     }
@@ -192,9 +199,11 @@
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-  &.general-dropzone-wrapper {justify-content: flex-start;
 
-  }
+    &.general-dropzone-wrapper {
+      justify-content: flex-start;
+
+    }
   }
 
   &__input-title {
@@ -231,11 +240,6 @@
     font-size: 22px;
     line-height: 27px;
     margin-bottom: 23px;
-  }
-
-
-  &__logo-section {
-    margin-top: 40px;
   }
 
 
@@ -303,11 +307,13 @@
     padding-bottom: 20px;
     border-bottom: 1px dotted #C4C4C4;
   }
+
   &__charter-wrapper {
     .new-organization__input {
       width: 50%;
     }
   }
+
   &__item-director {
     justify-content: stretch;
 
@@ -399,9 +405,11 @@
   &__sign-section {
     padding: 0 0 40px;
     border-bottom: 1px dotted #C4C4C4;
+
     .general-dropzone__message-wrapper {
       margin-bottom: 25px;
     }
+
     .general-dropzone-wrapper {
       flex-direction: column-reverse;
       align-items: flex-start;
@@ -526,7 +534,7 @@
     justify-content: space-between;
 
     .new-organization__input-wrapper {
-      width: 24%;
+      width: 32.5%;
     }
   }
 
